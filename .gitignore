@@ -1,0 +1,9 @@
+# Ignora todos los archivos de texto
+*.gz
+*.dvi
+*.ps
+*.log
+*.aux
+*.out
+*.bak
+/.idea/
