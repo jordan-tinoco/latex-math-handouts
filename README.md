@@ -7,4 +7,4 @@ For convenience, we will refer to the name of the directory containing the files
 ### Example
 
     document functional-equations
-    docuemnt problem-list
+    document problem-list
