@@ -7,4 +7,8 @@
 *.out
 *.bak
 *.toc
+*.bbl
+*.bcf
+*.blg
+*.run.xml
 /.idea/
