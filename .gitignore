@@ -6,4 +6,5 @@
 *.aux
 *.out
 *.bak
+*.toc
 /.idea/

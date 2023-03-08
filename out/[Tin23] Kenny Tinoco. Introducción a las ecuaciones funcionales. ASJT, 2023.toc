@@ -1,5 +1,0 @@
-\babel@toc {spanish}{}
-\contentsline {section}{\numberline {1}\large Métodos básicos}{1}%
-\contentsline {section}{\numberline {2}\large Ecuaciones funcionales de Cauchy}{2}%
-\contentsline {section}{\numberline {3}\large Problemas resueltos}{2}%
-\contentsline {section}{\numberline {4}\large Problemas}{2}%
