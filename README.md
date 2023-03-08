@@ -6,5 +6,5 @@ For convenience, we will refer to the name of the directory containing the files
 
 ### Example
 
-    document functional-equations
-    document problem-list
+    problem-list document
+    functional-equations document
