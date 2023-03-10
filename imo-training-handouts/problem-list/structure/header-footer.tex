@@ -1,12 +1,23 @@
 \pagestyle{fancy}
 
-\lhead{J\_tinoco}
-\chead{Entrenamiento IMO 2023}
-\rhead{Pág. \thepage}
+\fancyhead[L]{J\_tinoco}
+\fancyhead[C]{Entrenamiento IMO 2023}
+\fancyhead[R]{Pág. \thepage}
 
-\lfoot{\empty}
-\cfoot{ASJT - Nic}
-\rfoot{\empty}
+\fancyfoot[L]{\empty}
+\fancyfoot[C]{\empty}
+\fancyfoot[R]{\empty}
 
-\renewcommand{\headrulewidth}{0.5pt}
-\renewcommand{\footrulewidth}{0.5pt}
+\fancypagestyle{first-page-style}
+{
+    \lhead{\empty}
+    \chead{\empty}
+    \rhead{\empty}
+
+    \lfoot{\empty}
+    \cfoot{Pág. \thepage}
+    \rfoot{\empty}
+
+    \setlength{\headheight}{0pt}
+    \renewcommand{\headrulewidth}{0pt}
+}

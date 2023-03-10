@@ -18,6 +18,7 @@
 \usepackage{pst-node,wrapfig}
 \usepackage{fancyhdr}
 \usepackage{newcent}
+\usepackage{cite}
 
 \label{key}
 
@@ -27,63 +28,5 @@
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{2.5mm}
 
-%A bunch of definitions that make my life easier
-\newcommand{\cvec}[1]{{\mathbf #1}}
-\newcommand{\rvec}[1]{\vec{\mathbf #1}}
-\newcommand{\ihat}{\hat{\textbf{\i}}}
-\newcommand{\jhat}{\hat{\textbf{\j}}}
-\newcommand{\khat}{\hat{\textbf{k}}}
-\newcommand{\minor}{{\rm minor}}
-\newcommand{\trace}{{\rm trace}}
-\newcommand{\spn}{{\rm Span}}
-\newcommand{\rem}{{\rm rem}}
-\newcommand{\ran}{{\rm range}}
-\newcommand{\range}{{\rm range}}
-\newcommand{\mdiv}{{\rm div}}
-\newcommand{\proj}{{\rm proj}}
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\N}{\mathbb{N}}
-\newcommand{\Q}{\mathbb{Q}}
-\newcommand{\Z}{\mathbb{Z}}
-\newcommand{\ZP}{\mathbb{Z^+}}
-\newcommand{\ZN}{\mathbb{Z^-}}
-
-\newcommand{\<}{\langle}
-\renewcommand{\>}{\rangle}
-
-\newcommand{\attn}[1]{\textbf{#1}}
-\renewcommand{\emptyset}{\varnothing}
-
-\theoremstyle{definition}
-
-\newtheorem*{definition}{Definición}
-\newtheorem*{note}{Nota}
-\newtheorem{lemma}{Lema}[section]
-\newtheorem{cor}{Corolario}[section]
-\newtheorem{case}{Caso}
-\newtheorem{exercise}{Ejercicio}
-\newtheorem{example}{Ejemplo}
-\newtheorem{problem}{Problema}
-\newtheorem{corollary}{Corolario}
-\newtheorem{theorem}{Teorema}
-
-\newcommand{\ModIn}[1]{\mbox{ (mód }#1\mbox{)}}
-\newcommand{\FullModIn}[2]{\equiv #1 \mbox{ (mód }#2\mbox{)}}
-
-\newcommand{\MDIF}{\textit{(MDIF)}}
-\newcommand{\WellOrderingPrinciple}{\textit{Principio del Buen Orden}}
-
-\newcommand{\ProductPrinciple}{\textit{Principio del producto} }
-\newcommand{\AdditionPrinciple}{\textit{Principio de la suma} }
-\renewcommand{\theenumi}{\alph{enumi}}
-
-\newcommand{\sen}{\operatorname{sen}}
-\newcommand{\arcsen}{\operatorname{arcsen}}
-\newcommand{\li}{\displaystyle\lim}
-\newcommand*{\QEDA}{\hfill\ensuremath{\blacksquare}}
-\newcommand{\QED}{\hfill {\qed}}
-
-\newcommand{\bproof}{\bigskip {\bf Proof. }}
-\newcommand{\eproof}{\hfill\qedsymbol}
-\newcommand{\Disp}{\displaystyle}
-\newcommand{\qe}{\hfill\(\bigtriangledown\)}
+\input{../../utils/math-commands}
+\input{../../utils/math-sections}
