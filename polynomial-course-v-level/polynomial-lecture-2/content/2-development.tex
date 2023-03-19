@@ -7,10 +7,10 @@
     \end{section-definition}
 
     \begin{example}
-        Demuestre que $u$ es raíz del polinomio $P(x) = x^2 - (u + 17) x + 17u$.
+        Demuestre que $u$ es raíz del polinomio $R(x) = x^2 - (u + 17) x + 17u$.
         \exampleProof
         {
-            Para demostrar que $u$ es raíz\footnote{¿Podés encontrar otra raíz de $P(x)$?} de $P(x)$, basta probar que $P(u) = 0$. Lo cual es fácil ver cuando evaluamos en $P(u) = u^2 - (a+17)u + 17u = u^2 - u^2 - 17u + 17u = 0.$
+            Para demostrar que $u$ es raíz\footnote{¿Podés encontrar otra raíz de $R(x)$?} de $R(x)$, basta probar que $R(u) = 0$. Lo cual es fácil ver cuando evaluamos $R(u) = u^2 - (a+17)u + 17u = u^2 - u^2 - 17u + 17u = 0.$
         }
     \end{example}
 
@@ -20,10 +20,11 @@
     \end{section-definition}
 
     \begin{theorem}[\textbf{Teorema del factor}]
-        Dado un polinomio $P$, de grado $n$ y $a \in \R$, diremos que $a$ es una raíz de $P$ si y sólo si $(x-a)$ es un factor de $P(x)$. Es decir \[P(a) = 0 \leftrightarrow P(x) = (x-a)Q(x)\] para algún polinomio\footnote{¿Por qué $\deg{(Q)} = n-1$} $Q(x).$
+        Dado un polinomio $P$, de grado $n$ y $a \in \R$, diremos que $a$ es una raíz de $P$ si y sólo si $(x-a)$ es un factor de $P(x)$. Es decir \[P(a) = 0 \leftrightarrow P(x) = (x-a)Q(x)\] para algún polinomio\footnote{¿Por qué $\deg{(Q)} = (n-1)$?} $Q(x).$
     \end{theorem}
 
-    \textbf{Cantidad de raíces de un polinomio:} Un polinomio de grado $n\geq 1$ tiene como máximo $n$ raíces (o ceros). Así, por ejemplo, un polinomio $P$ con $\deg{(P)} = 7$, tiene a lo más 7 raíces.
+    \textbf{Cantidad de raíces de un polinomio:} Un polinomio de grado $n\geq 1$ tiene como máximo $n$ raíces (o ceros). Así, por ejemplo, un polinomio $P$ con $\deg{(P)} = 7$, tiene a lo más 7 raíces. Ejemplo (asumiendo que $P(x)$ es factorizable) \[P(x) = (x - r_1)(x - r_2)(x - r_3)(x - r_4)(x - r_5)(x - r_6)(x - r_7).\]
+    \textbf{Multiplicidad de raíces:} Si existe $m \in \N$ y un polinomio $Q(x)$ tal que \[P(x) = (x - a)^m Q(x)\] diremos que la raíz $a$ tiene multiplicidad $m$. Cuando $m = 1$ diremos que la raíz $a$ es simple.
 }
 \label{subsec:definiciones}
 
@@ -33,7 +34,10 @@
 
     \subsubsection{Factorización}
     {
-        Determinar las raíces de una ecuación cuadrática por factorización implica user el hecho de que
+        Si un polinomio $P(x)$ es equivalente al producto de otros polinomios con grado menor, entonces diremos que $P(x)$ está factorizado.\\
+        Por ejemplo, el polinomio $M(x) = 5x^3 + 4x^2 + 5x + 4$, es equivalente a $M(x) = (5x+4)(x^2 + 1)$\\
+
+
     }
 
     \subsubsection{Completación de cuadrados}
