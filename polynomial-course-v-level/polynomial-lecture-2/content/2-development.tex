@@ -1,1 +1,57 @@
-\section{Desarrollo}
+\section{Desarrollo}\label{sec:desarrollo}
+
+\subsection{Definiciones}
+{
+    \begin{section-definition}[\textbf{Raíz de un Polinomio}]
+        La raíz de un polinomio $P(x)$ es un número $r$, tal que $P(r) = 0$. También, diremos que $r$ es una solución de la ecuación $P(x) = 0$.
+    \end{section-definition}
+
+    \begin{example}
+        Demuestre que $u$ es raíz del polinomio $P(x) = x^2 - (u + 17) x + 17u$.
+        \exampleProof
+        {
+            Para demostrar que $u$ es raíz\footnote{¿Podés encontrar otra raíz de $P(x)$?} de $P(x)$, basta probar que $P(u) = 0$. Lo cual es fácil ver cuando evaluamos en $P(u) = u^2 - (a+17)u + 17u = u^2 - u^2 - 17u + 17u = 0.$
+        }
+    \end{example}
+
+
+    \begin{section-definition}[\textbf{Factor de un Polinomio}]
+        Sea $P$ un polinomio y $a \in \R$. Entonces, $(x - a)$ es un \emph{factor} de $P(x)$ si existe un polinomio $Q(x)$ tal que $P(x) = (x-a)Q(x).$
+    \end{section-definition}
+
+    \begin{theorem}[\textbf{Teorema del factor}]
+        Dado un polinomio $P$, de grado $n$ y $a \in \R$, diremos que $a$ es una raíz de $P$ si y sólo si $(x-a)$ es un factor de $P(x)$. Es decir \[P(a) = 0 \leftrightarrow P(x) = (x-a)Q(x)\] para algún polinomio\footnote{¿Por qué $\deg{(Q)} = n-1$} $Q(x).$
+    \end{theorem}
+
+    \textbf{Cantidad de raíces de un polinomio:} Un polinomio de grado $n\geq 1$ tiene como máximo $n$ raíces (o ceros). Así, por ejemplo, un polinomio $P$ con $\deg{(P)} = 7$, tiene a lo más 7 raíces.
+}
+\label{subsec:definiciones}
+
+\subsection{Métodos para determinar raíces de polinomios}
+{
+    En este apartado nos centraremos en los métodos para la determinación de raíces de polinomios, particularmente para polinomios cuadráticos y cúbicos.
+
+    \subsubsection{Factorización}
+    {
+        Determinar las raíces de una ecuación cuadrática por factorización implica user el hecho de que
+    }
+
+    \subsubsection{Completación de cuadrados}
+    {
+    }
+
+    \subsubsection{Fórmula general}
+    {
+    }
+
+    \subsubsection{Análisis del discriminante}
+    {
+    }
+}
+\label{subsec:determinar-raices}
+
+\subsection{Agregados culturales y preguntas}
+{
+    \textbf{Pregunta:} ¿Cuántas raíces reales tiene el polinomio $P(x) = x^2+1$?
+
+}\label{subsec:agregados-culturales}
