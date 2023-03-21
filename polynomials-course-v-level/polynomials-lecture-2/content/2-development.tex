@@ -10,21 +10,44 @@
         Demuestre que $u$ es raíz del polinomio $R(x) = x^2 - (u + 17) x + 17u$.
         \exampleProof
         {
-            Para demostrar que $u$ es raíz\footnote{¿Podés encontrar otra raíz de $R(x)$?} de $R(x)$, basta probar que $R(u) = 0$. Lo cual es fácil ver cuando evaluamos $R(u) = u^2 - (a+17)u + 17u = u^2 - u^2 - 17u + 17u = 0.$
+            Para demostrar que $u$ es raíz\footnote{¿Podés encontrar otra raíz de $R(x)$?} de $R(x)$, basta probar que $R(u) = 0$. Lo cual es fácil ver cuando evaluamos $R(u) = u^2 - (u+17)u + 17u = u^2 - u^2 - 17u + 17u = 0.$
         }
     \end{example}
 
 
     \begin{section-definition}[\textbf{Factor de un Polinomio}]
-        Sea $P$ un polinomio y $a \in \R$. Entonces, $(x - a)$ es un \emph{factor} de $P(x)$ si existe un polinomio $Q(x)$ tal que $P(x) = (x-a)Q(x).$
+        Sea $P$ un polinomio con $\deg{(P)} = n$ y $a \in \R$. Entonces, $(x - a)$ es un \emph{factor} de $P(x)$ si existe un polinomio\footnote{¿Por qué $\deg{(Q)} = (n-1)$?} $Q(x)$ tal que \[P(x) = (x-a)Q(x).\]
     \end{section-definition}
 
-    \begin{theorem}[\textbf{Teorema del factor}]
-        Dado un polinomio $P$, de grado $n$ y $a \in \R$, diremos que $a$ es una raíz de $P$ si y sólo si $(x-a)$ es un factor de $P(x)$. Es decir \[P(a) = 0 \leftrightarrow P(x) = (x-a)Q(x)\] para algún polinomio\footnote{¿Por qué $\deg{(Q)} = (n-1)$?} $Q(x).$
+    \begin{theorem}[\textbf{Teorema del factor}]\label{factor-theorem}
+        Dado un polinomio $P$, de grado $n$ y $a \in \R$, diremos que $a$ es una raíz de $P$ si y sólo si $(x-a)$ es un factor de $P(x)$. Es decir \[P(a) = 0 \leftrightarrow P(x) = (x-a)Q(x)\] para algún polinomio $Q(x).$
     \end{theorem}
 
-    \textbf{Cantidad de raíces de un polinomio:} Un polinomio de grado $n\geq 1$ tiene como máximo $n$ raíces (o ceros). Así, por ejemplo, un polinomio $P$ con $\deg{(P)} = 7$, tiene a lo más 7 raíces. Ejemplo (asumiendo que $P(x)$ es factorizable) \[P(x) = (x - r_1)(x - r_2)(x - r_3)(x - r_4)(x - r_5)(x - r_6)(x - r_7).\]
+    Si $a_1, a_2 \mbox{ y } a_3$ son tres raíces distintas del polinomio cúbico $P(x)$, por el ~\textbf{Teorema \ref{factor-theorem}}, \[P(x) = (x - a_1)Q(x)\]
+    Para algún $Q(x)$, pero como $P(a_2) = (a_2 - a_1)Q(a_2) = 0$ y $a_2 \neq a_1$, entonces $Q(a_2) = 0$, es decir $a_2$ es raíz de $Q$, por lo tanto por el \textbf{Teorema \ref{factor-theorem}} \[Q(x) = (x - a_2)R(x)\]
+    Para algún $R(x)$. Analogamente, podemos expresar a $R(x) = (x - a_3)\times c$, para alguna constante $c$. Así, \[P(x) = c(x - a_1)(x - a_2)(x - a_3) \mbox{, con } c \in \R.\]
+    Vemos que saber las raíces de $P$ nos condujo a su factorización\footnote{Tema que se introduce en la sección~\ref{factorization}.}. Y en general, para un polinomio $P(x)$ de grado $n$ y raíces $r_i \mbox{ con } 1 \leq i \leq n$, este puede ser expresado como:
+    \[P(x) = c(x - r_1)(x - r_2)\cdots(x - r_{n-1})(x - r_n), \mbox{ con } c \in \R.\]
+
+    \textbf{Cantidad de raíces de un polinomio:} Un polinomio de grado $n$ tiene como máximo $n$ raíces (o ceros). Así, por ejemplo, un polinomio $P$ con $\deg{(P)} = 7$, tiene a lo más 7 raíces.
+
     \textbf{Multiplicidad de raíces:} Si existe $m \in \N$ y un polinomio $Q(x)$ tal que \[P(x) = (x - a)^m Q(x)\] diremos que la raíz $a$ tiene multiplicidad $m$. Cuando $m = 1$ diremos que la raíz $a$ es simple.
+
+    \begin{example}
+        Sea $P(x)$ un polinomio con coeficientes enteros y suponga que $P(1)$ y $P(2)$ son ambos impares. Demuestre que no existe ningún entero $n$ para el cual $P(n) = 0$.
+        \exampleProof
+        {
+            Nos piden mostrar que $P(x)$ no tiene raíces enteras, entonces supongamos por el contrario, que existe un entero $n$ tal que $P(n) = 0$. Entonces, por el \textbf{Teorema \ref{factor-theorem}} $P(x) = (x - n)Q(x)$, con $Q(x)$ un polinomio con coeficientes enteros. Así podemos ver que, $P(1) = (1 - n)Q(1)$ y $P(2) = (2 - n)Q(2)$ son impares, pero $(1 - n)$ y $(2 - n)$ son enteros consecutivos, así que uno de ellos debe ser par. Por lo tanto, $P(1)$ o bien $P(2)$ tiene que ser par, lo cual contradice las condiciones del problema. Luego, $n$ no existe.
+        }
+    \end{example}
+
+    \begin{example}
+        Sea $M(x)$ un polinomio cúbico con coeficientes enteros y $a, b, c \in \Z$ tal que $M(a) = M(b) = M(c) = 2$. Demuestre que no existe $d \in \Z$ para el que $M(d) = 3.$
+        \exampleProof
+        {
+            Sea $N(x) = M(x) - 2$, como $a, b \mbox{ y } c$ son raíces de $N(x)$, es claro que $N(x) = \alpha (x - a)(x - b)(x - c)$, para algún entero $\alpha$. Si para algún entero $d$ se tiene que $M(d) = 3$, entonces $N(d) = \alpha (d - a)(d - b)(d - c) = 1$, y para esto los factores de la ecuación deben ser 1 o $-1$, luego dos de ellos deben ser iguales. Pero esto es una contradicción a la condición del problema, luego $d$ no existe.
+        }
+    \end{example}
 }
 \label{subsec:definiciones}
 
@@ -34,18 +57,64 @@
 
     \subsubsection{Factorización}
     {
-        Si un polinomio $P(x)$ es equivalente al producto de otros polinomios con grado menor, entonces diremos que $P(x)$ está factorizado.\\
-        Por ejemplo, el polinomio $M(x) = 5x^3 + 4x^2 + 5x + 4$, es equivalente a $M(x) = (5x+4)(x^2 + 1)$\\
+        Si un polinomio $P(x)$ es equivalente al producto de otros polinomios con grado menor, entonces diremos que $P(x)$ está factorizado. Por ejemplo, el polinomio $M(x) = 5x^3 + 4x^2 + 5x + 4$, es equivalente a $(5x+4)(x^2 + 1)$, así diremos que $M(x)$ está factorizado y sus factores son $(5x+4) \mbox{ y } (x^2 + 1)$.
 
+        \begin{section-definition}
+            Dado un polinomio cuadrático $P(x) = ax^2 + bx + c$ con $a, b, c \in \R$, este puede ser factorizado como
+            \[ P(x) = \frac{(ax+m)(ax+n)}{a}, \mbox{ con } m + n = b \land mn = ac\]
+        \end{section-definition}
 
-    }
+        \begin{exercise}
+            Determina las raíces los siguietes polinomios
+            \begin{multicols}{3}
+                \begin{enumerate}
+                    \item $x^2 + x - 20$
+                    \item $9t^2 + 88t - 20$
+                    \item $(c + d)^2 - 18(c + d) + 65$
+                    \item $-21x^2 - 11x + 2$
+                    \item $12p^2 - 7p - 12$
+                \end{enumerate}
+            \end{multicols}
+        \end{exercise}
+    }\label{factorization}
 
     \subsubsection{Completación de cuadrados}
     {
+        No todos los polinomios cuadráticos pueden ser factorizados facilmente. Por ejemplo, al tratar de factorizar $x^2 + 6x - 1$ no resulta tan evidente llegar de golpe a $(x + 3 - \sqrt {10})(x-3-\sqrt {10})$, por lo cual podemos auxiliarnos en la \textbf{completación de cuadrados}.
+        Sea el polinomio\footnote{¿Cómo sería la fórmula si $P(x) = ax^2 + bx$?} $P(x) = x^2 + bx$, los podemos transformar en:
+        \[P(x) = \left( x + \frac{b}{2} \right)^2 - \left( \frac{b}{2} \right)^2.\]
+        Que luego nos permite utilzar más fácilmente la \textbf{diferencia de cuadrados}.
+
+        \begin{example}
+            Hallar las raíces del polinomio $R(x) = r^2 - 10r + 7.$
+            \exampleProof
+            {
+                Utilizando la completación de cuadrados, tenemos que
+                \begin{gather*}
+                    R(x) = r^2 - 10r + 7\\
+                    = \left( r - \frac{10}{2} \right)^2 - \left( \frac{10}{2} \right)^2 + 7\\
+                    = \left( r - 5 \right)^2 - 18\\
+                    = \left( r - 5 + \sqrt {18} \right)\left( r - 5 - \sqrt {18} \right)\\
+                    = \left[ r - \left( 5 - 3\sqrt {2} \right)\right]\left[ r - \left( 5 + 3\sqrt {2} \right)\right]
+                \end{gather*}
+                De esta manera sabemos que $R(x)$ tiene como raíces a $\left( 5 - 3\sqrt {2} \right) \mbox{ y } \left( 5 + 3\sqrt {2} \right).$
+            }
+        \end{example}
     }
 
-    \subsubsection{Fórmula general}
+
+\subsubsection{Fórmula general}
     {
+        Cuando tenemos un polinomio cuadrático $P(x) = ax^2 + bx + c$ con $a \neq 0$, podemos encontrar los valores para sus dos raíces en función de los coeficientes, a esta fórmula le conoceremos como fórmula general \[r_1 = \frac{-b - \sqrt {b^2 - 4ac}}{2a} \land r_2 = \frac{-b + \sqrt {b^2 - 4ac}}{2a}.\]
+        \textbf{Demostración:} Al completar cuadrado en $P(x)$ tenemos que
+        \begin{gather*}
+            P(x) = ax^2 + bx + c = a \left( x^2 + \frac{b}{a}x + \frac{c}{a} \right) \\
+            = a \left[ \left( x + \frac{b}{2a} \right)^2 - \left( \frac{b}{2a} \right)^2 + \frac{c}{a} \right]
+            = a \left[ \left( x + \frac{b}{2a} \right)^2 - \left( \frac{b^2 - 4ac}{4a^2}\right) \right] \\
+            = a \left[ x + \frac{b}{2a} - \frac{\sqrt {b^2 - 4ac}}{2a}\right]\left[ x + \frac{b}{2a} + \frac{\sqrt {b^2 - 4ac}}{2a}\right] \\
+            = a \left[ x - \left( \frac{-b + \sqrt {b^2 - 4ac}}{2a} \right) \right]\left[ x - \left( \frac{-b - \sqrt {b^2 - 4ac}}{2a} \right) \right]
+        \end{gather*}
+        Así, $\frac{-b - \sqrt {b^2 - 4ac}}{2a}$ y $\frac{-b + \sqrt {b^2 - 4ac}}{2a}$ son la raíces del polinomio.
     }
 
     \subsubsection{Análisis del discriminante}
