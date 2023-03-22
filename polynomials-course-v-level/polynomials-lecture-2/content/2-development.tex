@@ -31,7 +31,7 @@
 
     \textbf{Cantidad de raíces de un polinomio:} Un polinomio de grado $n$ tiene como máximo $n$ raíces (o ceros). Así, por ejemplo, un polinomio $P$ con $\deg{(P)} = 7$, tiene a lo más 7 raíces.
 
-    \textbf{Multiplicidad de raíces:} Si existe $m \in \N$ y un polinomio $Q(x)$ tal que \[P(x) = (x - a)^m Q(x)\] diremos que la raíz $a$ tiene multiplicidad $m$. Cuando $m = 1$ diremos que la raíz $a$ es simple.
+    \textbf{Multiplicidad de raíces:} Si existe $m \in \N$ y un polinomio $Q(x)$ tal que \[P(x) = (x - a)^m Q(x)\] diremos que la raíz $a$ tiene multiplicidad $m$. Si $m = 1$ diremos que la raíz $a$ es simple.
 
     \begin{example}
         Sea $P(x)$ un polinomio con coeficientes enteros y suponga que $P(1)$ y $P(2)$ son ambos impares. Demuestre que no existe ningún entero $n$ para el cual $P(n) = 0$.
@@ -54,6 +54,8 @@
 \subsection{Métodos para determinar raíces de polinomios}
 {
     En este apartado nos centraremos en los métodos para la determinación de raíces de polinomios, particularmente para polinomios cuadráticos y cúbicos.
+    Para determinar el valor de las raíces de polinomios se pueden utilizar diversos métodos, como por ejemplo; la factorización, las fórmulas de Cardano, la completación de cuadrados, fórmulas cuadráticas y cúbicas general, soluciones trigonométricas e hiperbólicas con valores auxiliares, métodos númericos, entre otros.
+    El presente escrito, solo abordará algunos de estos métodos y se invita al lector complementar su aprendizaje con la búsqueda e investigación de otros métodos.
 
     \subsubsection{Factorización}
     {
@@ -61,21 +63,11 @@
 
         \begin{section-definition}
             Dado un polinomio cuadrático $P(x) = ax^2 + bx + c$ con $a, b, c \in \R$, este puede ser factorizado como
-            \[ P(x) = \frac{(ax+m)(ax+n)}{a}, \mbox{ con } m + n = b \land mn = ac\]
+            \begin{gather*}
+                P(x) = \frac{(ax+m)(ax+n)}{a}
+                \mbox{, donde  } \left\{{m + n = b \atop mn = ac} \right
+            \end{gather*}
         \end{section-definition}
-
-        \begin{exercise}
-            Determina las raíces los siguietes polinomios
-            \begin{multicols}{3}
-                \begin{enumerate}
-                    \item $x^2 + x - 20$
-                    \item $9t^2 + 88t - 20$
-                    \item $(c + d)^2 - 18(c + d) + 65$
-                    \item $-21x^2 - 11x + 2$
-                    \item $12p^2 - 7p - 12$
-                \end{enumerate}
-            \end{multicols}
-        \end{exercise}
     }\label{factorization}
 
     \subsubsection{Completación de cuadrados}
@@ -93,7 +85,7 @@
                 \begin{gather*}
                     R(x) = r^2 - 10r + 7\\
                     = \left( r - \frac{10}{2} \right)^2 - \left( \frac{10}{2} \right)^2 + 7\\
-                    = \left( r - 5 \right)^2 - 18\\
+                    = \left( r - 5 \right)^2 - 18
                     = \left( r - 5 + \sqrt {18} \right)\left( r - 5 - \sqrt {18} \right)\\
                     = \left[ r - \left( 5 - 3\sqrt {2} \right)\right]\left[ r - \left( 5 + 3\sqrt {2} \right)\right]
                 \end{gather*}
@@ -101,9 +93,7 @@
             }
         \end{example}
     }
-
-
-\subsubsection{Fórmula general}
+    \subsubsection{Fórmula general}
     {
         Cuando tenemos un polinomio cuadrático $P(x) = ax^2 + bx + c$ con $a \neq 0$, podemos encontrar los valores para sus dos raíces en función de los coeficientes, a esta fórmula le conoceremos como fórmula general \[r_1 = \frac{-b - \sqrt {b^2 - 4ac}}{2a} \land r_2 = \frac{-b + \sqrt {b^2 - 4ac}}{2a}.\]
         \textbf{Demostración:} Al completar cuadrado en $P(x)$ tenemos que
@@ -119,12 +109,91 @@
 
     \subsubsection{Análisis del discriminante}
     {
+        Sea el polinomio cuadrático $P(x) = ax^2 + bx + c$. Denotaremos a $\Delta$ como el \textbf{discriminante} del polinomio.
+        Siendo este equivalente a $\Delta = b^2 - 4ac$ y dependiendo del signo que tome, se cumpliran los siguientes hechos:
+        \begin{itemize}
+            \item Si $\Delta > 0$, entonces $P$ tiene dos raíces reales distintas, las cuales son:
+            \[r_1 = \frac{-b - \sqrt {b^2 - 4ac}}{2a} \land r_2 = \frac{-b + \sqrt {b^2 - 4ac}}{2a}.\]
+            \item Si $\Delta = 0$, entonces $P$ tiene una raíz real de multiplicidad 2, la cual es $r = -\frac{b}{2a}.$
+            \item Si $\Delta < 0$, entonces $P$ no tiene raíces reales, sino raíces complejas conjugadas\footnote{Vale aclarar que el presente curso no entrará de lleno con las raíces complejas.\\Aunque sí veremos algunos ejercicios y problemas bonitos.}.
+        \end{itemize}
+
+        Sea el polinomio cúbico $P(x) = ax^3 + bx^2 + cx + d$, al calcular las raíces de $P$ por medio de la ecuación
+        \[ ax^3 + bx^2 + cx + d = 0, \mbox{ con } a \neq 0. \] Podremos hacer la sustitución $y = x + \frac{b}{3a}$, que nos da como resultado
+        la ecuación de la forma $y^3 + py + q$, que desde ahora llamaremos la ecuación \textbf{Cúbica reducida}.
+        Esta nos ayudará a analizar el \textbf{discriminante} el cual denotaremos por $\Delta = \frac{q^2}{4} + \frac{p^3}{27}$ y que dependiendo de su signo se cumpliran los siguientes hechos:
+        \begin{itemize}
+            \item Si $\Delta > 0$, entonces $P$ tiene una raíz real y dos raíces complejas.
+            \item Si $\Delta = 0$, entonces $P$ tiene una raíz real de multiplicidad tres en el caso de que $p = q = 0$ o bien dos raíces reales (de multiplicidad uno y dos, respectivamente) en el caso de que $p^3 = -q^3 \neq 0.$
+            \item Si $\Delta < 0$, entonces $P$ tiene tres raíces reales diferentes.
+        \end{itemize}
     }
+
+    \subsubsection{Método de Cardano}
+    {
+        Si se hace $y = A + B$, elevando al cubo y reacomodano se obtiene: \[y^3 -3ABy - (A^3 + B^3) = 0\]
+        Así, al comparar coeficientes homólogos con la ecuación \textbf{cúbica reducida}, se obtiene que $3AB = - p$ y $A^3 + B^3 = -q$, y en base a estas dos ecuaciones podemos formar:
+        \[(A^3)^2 + q(A^3) - \frac{p^3}{27} = 0\] la cual es una ecuación cuadrática en $A^3$, que por la \textbf{fórmula general} podemos encontrar sus soluciones. Procediendo análogamente para $B^3$, llegamos a
+        \begin{gather*}
+            A = \sqrt[3]{\frac{-q - \sqrt{q^2 + \frac{4p^3}{27}}}{2}} = \sqrt[3]{\frac{-q}{4} - \sqrt{\frac{q^2}{4} + \frac{p^3}{27}}}\\
+            B = \sqrt[3]{\frac{-q + \sqrt{q^2 + \frac{4p^3}{27}}}{2}} = \sqrt[3]{\frac{-q}{4} + \sqrt{\frac{q^2}{4} + \frac{p^3}{27}}}
+        \end{gather*}
+        Finalmente, obtenemos que $y = \sqrt[3]{\frac{-q}{4} - \sqrt{\Delta}} + \sqrt[3]{\frac{-q}{4} + \sqrt{\Delta}}$. Es decir, obtuvimos las soluciones de la ecuación \textbf{cúbica reducida} y por lo tanto las soluciones de la ecuación cúbica general.
+        A este resultado le conoceremos como la fórmula o Método de Cardano para un polinomio cúbico.
+    }
+
+    \begin{example}
+        ¿Para qué valores de $\delta$ el polinomio $\delta x^2 + 2x + 1 - \frac{1}{\delta}$ tiene sus dos raíces iguales?
+        \exampleProof
+        {
+            El polinomio tiene raíces iguales si el discriminante es nulo. Es decir , $\Delta = 4 - 4\delta (1 - \frac{1}{\delta})$ de donde es fácil ver que $\delta (1 - \frac{1}{\delta}) = 1.$ Luego, $\delta = 2$ es la única posibilidad.
+        }
+    \end{example}
 }
 \label{subsec:determinar-raices}
 
 \subsection{Agregados culturales y preguntas}
 {
-    \textbf{Pregunta:} ¿Cuántas raíces reales tiene el polinomio $P(x) = x^2+1$?
-
+    \begin{enumerate}
+        \item Los números reales son un subconjunto de los números complejos. $(\R \subset \mathbb{C}).$
+        \item El Teorema Fundamental del Álgebra dice que cualquier polinomio de grado mayor a cero con coeficientes complejos tiene al menos una raíz compleja\footnote{Este teorema lo veremos más adelante.}.
+        \item \textbf{Pregunta:} ¿Cuántas raíces reales tiene el polinomio $P(x) = x^2+1$?
+    \end{enumerate}
 }\label{subsec:agregados-culturales}
+
+\section{Ejercicios y Problemas}
+{
+    \begin{exercise}
+        Determina las raíces los siguientes polinomios con el método que más te guste
+        \begin{multicols}{3}
+            \begin{enumerate}
+                \item $x^2 + x - 20$
+                \item $9t^2 + 88t - 20$
+                \item $x^3 - 6x + 9$
+                \item $x^3 - 1331$
+                \item $-21x^2 - 11x + 2$
+                \item $(c + d)^2 - 18(c + d) + 65$
+                \item $r^4 - 13r^2 + 36$
+                \item $x^3 - 9x^2 - 9x - 15$
+                \item $12p^2 - 7p - 12$
+            \end{enumerate}
+        \end{multicols}
+    \end{exercise}
+
+    \begin{section-problem}
+        Determine todos los posibles valores que puede tomar $\frac{x}{y}$ si $x, y \neq 0$ y $6x^2 + xy = 15y^2.$
+    \end{section-problem}
+
+    \begin{section-problem}
+        Hallar $K \in \R$ tal que $x = K^2(x - 1)(x - 2)$ tiene raíces reales.
+    \end{section-problem}
+
+    \begin{section-problem}
+        Encontrar todas las soluciones de la ecuación $m^2 - 3m + 1 = n^2 + n - 1$, con $m, n \in \ZP$.
+    \end{section-problem}
+
+    \begin{section-problem}
+        Sean $a, b$ y $c$ números reales positivos. ¿Es posible que cada uno de los polinomios $P(x) = ax^2 + bx + c \mbox{, } Q(x) = bx^2 + cx + a \mbox{ y } R(x) = cx^2 + ax + b$ tenga sus dos raíces reales?
+    \end{section-problem}
+
+}\label{sec:ejercicios-y-problemas}
