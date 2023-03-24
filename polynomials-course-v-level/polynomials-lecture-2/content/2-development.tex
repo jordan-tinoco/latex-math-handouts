@@ -20,12 +20,15 @@
     \end{section-definition}
 
     \begin{theorem}[\textbf{Teorema del factor}]\label{factor-theorem}
-        Dado un polinomio $P$, de grado $n$ y $a \in \R$, diremos que $a$ es una raíz de $P$ si y sólo si $(x-a)$ es un factor de $P(x)$. Es decir \[P(a) = 0 \leftrightarrow P(x) = (x-a)Q(x)\] para algún polinomio $Q(x).$
+        Dado un polinomio $P$, de grado $n$ y $a \in \R$, diremos que $a$ es una raíz de $P$ si y sólo si $(x-a)$ es un factor de $P(x)$. Es decir \[P(a) = 0 \Leftrightarrow P(x) = (x-a)Q(x)\] para algún polinomio $Q(x).$
     \end{theorem}
 
-    Si $a_1, a_2 \mbox{ y } a_3$ son tres raíces distintas del polinomio cúbico $P(x)$, por el ~\textbf{Teorema \ref{factor-theorem}}, \[P(x) = (x - a_1)Q(x)\]
-    Para algún $Q(x)$, pero como $P(a_2) = (a_2 - a_1)Q(a_2) = 0$ y $a_2 \neq a_1$, entonces $Q(a_2) = 0$, es decir $a_2$ es raíz de $Q$, por lo tanto por el \textbf{Teorema \ref{factor-theorem}} \[Q(x) = (x - a_2)R(x)\]
-    Para algún $R(x)$. Analogamente, podemos expresar a $R(x) = (x - a_3)\times c$, para alguna constante $c$. Así, \[P(x) = c(x - a_1)(x - a_2)(x - a_3) \mbox{, con } c \in \R.\]
+    Si $a_1, a_2 \mbox{ y } a_3$ son tres raíces distintas del polinomio cúbico $P(x)$, por el ~\textbf{Teorema \ref{factor-theorem}},
+    \[P(x) = (x - a_1)Q(x)\]
+    Para algún $Q(x)$, pero como $P(a_2) = (a_2 - a_1)Q(a_2) = 0$ y $a_2 \neq a_1$, entonces $Q(a_2) = 0$, es decir $a_2$ es raíz de $Q$, por lo tanto por el \textbf{Teorema \ref{factor-theorem}}
+    \[Q(x) = (x - a_2)R(x)\]
+    Para algún $R(x)$. Análogamente, tendremos que $R(x) = (x - a_3)S(x)$, para algún $S$ constante. Así,
+    \[P(x) = c(x - a_1)(x - a_2)(x - a_3) \mbox{, con } c \in \R.\]
     Vemos que saber las raíces de $P$ nos condujo a su factorización\footnote{Tema que se introduce en la sección~\ref{factorization}.}. Y en general, para un polinomio $P(x)$ de grado $n$ y raíces $r_i \mbox{ con } 1 \leq i \leq n$, este puede ser expresado como:
     \[P(x) = c(x - r_1)(x - r_2)\cdots(x - r_{n-1})(x - r_n), \mbox{ con } c \in \R.\]
 
@@ -42,10 +45,10 @@
     \end{example}
 
     \begin{example}
-        Sea $M(x)$ un polinomio cúbico con coeficientes enteros y $a, b, c \in \Z$ tal que $M(a) = M(b) = M(c) = 2$. Demuestre que no existe $d \in \Z$ para el que $M(d) = 3.$
+        Sea $M(x)$ un polinomio cúbico con coeficientes enteros y sean $a, b, c \in \Z$, con $a \neq b \neq c$ tal que $M(a) = M(b) = M(c) = 2$. Demostrar que no existe un $d \in \Z$ para el que $M(d) = 3.$
         \exampleProof
         {
-            Sea $N(x) = M(x) - 2$, como $a, b \mbox{ y } c$ son raíces de $N(x)$, es claro que $N(x) = \alpha (x - a)(x - b)(x - c)$, para algún entero $\alpha$. Si para algún entero $d$ se tiene que $M(d) = 3$, entonces $N(d) = \alpha (d - a)(d - b)(d - c) = 1$, y para esto los factores de la ecuación deben ser 1 o $-1$, luego dos de ellos deben ser iguales. Pero esto es una contradicción a la condición del problema, luego $d$ no existe.
+            Sea $N(x) = M(x) - 2$, como $a, b \mbox{ y } c$ son raíces de $N(x)$, es claro que $N(x) = \alpha (x - a)(x - b)(x - c)$, para algún entero $\alpha$. Si para algún entero $d$ se tiene que $M(d) = 3$, entonces $N(d) = \alpha (d - a)(d - b)(d - c) = 1$. Para que esto suceda los factores deben ser 1 o $-1$ y por lo tanto dos de ellos tendrían que ser iguales. Pero por la condición $a \neq b \neq c$ esto no puede ser, luego $d$ no existe.
         }
     \end{example}
 }
@@ -72,30 +75,31 @@
 
     \subsubsection{Completación de cuadrados}
     {
-        No todos los polinomios cuadráticos pueden ser factorizados facilmente. Por ejemplo, al tratar de factorizar $x^2 + 6x - 1$ no resulta tan evidente llegar de golpe a $(x + 3 - \sqrt {10})(x-3-\sqrt {10})$, por lo cual podemos auxiliarnos en la \textbf{completación de cuadrados}.
-        Sea el polinomio\footnote{¿Cómo sería la fórmula si $P(x) = ax^2 + bx$?} $P(x) = x^2 + bx$, los podemos transformar en:
-        \[P(x) = \left( x + \frac{b}{2} \right)^2 - \left( \frac{b}{2} \right)^2.\]
-        Que luego nos permite utilzar más fácilmente la \textbf{diferencia de cuadrados}.
+        No todos los polinomios cuadráticos pueden ser factorizados fácilmente.
+        Por ejemplo, al tratar de factorizar $x^2 + 6x - 1$ llegar directamente a $(x + 3 - \sqrt {10})(x-3-\sqrt {10})$ no resulta tan evidente, por lo cual podemos auxiliarnos en técnicas como la \textbf{completación de cuadrados}.
+        Si se tiene el polinomio\footnote{¿Cómo sería la fórmula si $P(x) = ax^2 + bx$?} $P(x) = x^2 + bx$ entonces podemos expresarlo de la forma:
+        \[P(x) = \left( x + \frac{b}{2} \right)^2 - \left( \frac{b}{2} \right)^2\]
+        Lo cual facilita aplicar la \textbf{diferencia de cuadrados}.
 
         \begin{example}
-            Hallar las raíces del polinomio $R(x) = r^2 - 10r + 7.$
+            Hallar las raíces del polinomio $R(r) = r^2 - 10r + 7.$
             \exampleProof
             {
                 Utilizando la completación de cuadrados, tenemos que
                 \begin{gather*}
-                    R(x) = r^2 - 10r + 7\\
+                    R(r) = r^2 - 10r + 7\\
                     = \left( r - \frac{10}{2} \right)^2 - \left( \frac{10}{2} \right)^2 + 7\\
                     = \left( r - 5 \right)^2 - 18
                     = \left( r - 5 + \sqrt {18} \right)\left( r - 5 - \sqrt {18} \right)\\
                     = \left[ r - \left( 5 - 3\sqrt {2} \right)\right]\left[ r - \left( 5 + 3\sqrt {2} \right)\right]
                 \end{gather*}
-                De esta manera sabemos que $R(x)$ tiene como raíces a $\left( 5 - 3\sqrt {2} \right) \mbox{ y } \left( 5 + 3\sqrt {2} \right).$
+                De esta manera sabemos que $R(r)$ tiene como raíces a $\left( 5 - 3\sqrt {2} \right) \mbox{ y } \left( 5 + 3\sqrt {2} \right).$
             }
         \end{example}
     }
     \subsubsection{Fórmula general}
     {
-        Cuando tenemos un polinomio cuadrático $P(x) = ax^2 + bx + c$ con $a \neq 0$, podemos encontrar los valores para sus dos raíces en función de los coeficientes, a esta fórmula le conoceremos como fórmula general \[r_1 = \frac{-b - \sqrt {b^2 - 4ac}}{2a} \land r_2 = \frac{-b + \sqrt {b^2 - 4ac}}{2a}.\]
+        Cuando tenemos un polinomio cuadrático $P(x) = ax^2 + bx + c$ con $a \neq 0$, podemos encontrar los valores para sus dos raíces en función de los coeficientes, a esta fórmula le conoceremos como fórmula general \[x_1 = \frac{-b - \sqrt {b^2 - 4ac}}{2a} \land x_2 = \frac{-b + \sqrt {b^2 - 4ac}}{2a}.\]
         \textbf{Demostración:} Al completar cuadrado en $P(x)$ tenemos que
         \begin{gather*}
             P(x) = ax^2 + bx + c = a \left( x^2 + \frac{b}{a}x + \frac{c}{a} \right) \\
@@ -109,19 +113,19 @@
 
     \subsubsection{Análisis del discriminante}
     {
-        Sea el polinomio cuadrático $P(x) = ax^2 + bx + c$. Denotaremos a $\Delta$ como el \textbf{discriminante} del polinomio.
-        Siendo este equivalente a $\Delta = b^2 - 4ac$ y dependiendo del signo que tome, se cumpliran los siguientes hechos:
+        Sea el polinomio cuadrático $P(x) = ax^2 + bx + c$ y sea $\Delta = b^2 - 4ac$.
+        Diremos que $\Delta$ es el \textbf{discriminante} de $P$ y que dependiendo de su signo se cumplirán los siguientes hechos:
         \begin{itemize}
             \item Si $\Delta > 0$, entonces $P$ tiene dos raíces reales distintas, las cuales son:
-            \[r_1 = \frac{-b - \sqrt {b^2 - 4ac}}{2a} \land r_2 = \frac{-b + \sqrt {b^2 - 4ac}}{2a}.\]
-            \item Si $\Delta = 0$, entonces $P$ tiene una raíz real de multiplicidad 2, la cual es $r = -\frac{b}{2a}.$
+            \[x_1 = \frac{-b - \sqrt{\Delta}}{2a} \land x_2 = \frac{-b + \sqrt {\Delta}}{2a}.\]
+            \item Si $\Delta = 0$, entonces $P$ tiene una raíz real de multiplicidad 2, la cual es $x = -\frac{b}{2a}.$
             \item Si $\Delta < 0$, entonces $P$ no tiene raíces reales, sino raíces complejas conjugadas\footnote{Vale aclarar que el presente curso no entrará de lleno con las raíces complejas.\\Aunque sí veremos algunos ejercicios y problemas bonitos.}.
         \end{itemize}
 
-        Sea el polinomio cúbico $P(x) = ax^3 + bx^2 + cx + d$, al calcular las raíces de $P$ por medio de la ecuación
-        \[ ax^3 + bx^2 + cx + d = 0, \mbox{ con } a \neq 0. \] Podremos hacer la sustitución $y = x + \frac{b}{3a}$, que nos da como resultado
-        la ecuación de la forma $y^3 + py + q$, que desde ahora llamaremos la ecuación \textbf{Cúbica reducida}.
-        Esta nos ayudará a analizar el \textbf{discriminante} el cual denotaremos por $\Delta = \frac{q^2}{4} + \frac{p^3}{27}$ y que dependiendo de su signo se cumpliran los siguientes hechos:
+        Nos piden hallar las raíces del polinomio $P(x) = ax^3 + bx^2 + cx + d$. Para ello podemos plantear la ecuación
+        \[ ax^3 + bx^2 + cx + d = 0, \mbox{ con } a \neq 0. \]
+        Al hacer la sustitución $y = x + \frac{b}{3a}$ nos da como resultado la ecuación de la forma $y^3 + py + q$, que desde ahora llamaremos la ecuación \textbf{Cúbica reducida}.
+        La cual nos ayuda a obtener la expresión $\Delta = \frac{q^2}{4} + \frac{p^3}{27}$ que llamaremos \textbf{discriminante} y que dependiendo de su signo se cumplirán los siguientes hechos:
         \begin{itemize}
             \item Si $\Delta > 0$, entonces $P$ tiene una raíz real y dos raíces complejas.
             \item Si $\Delta = 0$, entonces $P$ tiene una raíz real de multiplicidad tres en el caso de que $p = q = 0$ o bien dos raíces reales (de multiplicidad uno y dos, respectivamente) en el caso de que $p^3 = -q^3 \neq 0.$
@@ -138,7 +142,7 @@
             A = \sqrt[3]{\frac{-q - \sqrt{q^2 + \frac{4p^3}{27}}}{2}} = \sqrt[3]{\frac{-q}{4} - \sqrt{\frac{q^2}{4} + \frac{p^3}{27}}}\\
             B = \sqrt[3]{\frac{-q + \sqrt{q^2 + \frac{4p^3}{27}}}{2}} = \sqrt[3]{\frac{-q}{4} + \sqrt{\frac{q^2}{4} + \frac{p^3}{27}}}
         \end{gather*}
-        Finalmente, obtenemos que $y = \sqrt[3]{\frac{-q}{4} - \sqrt{\Delta}} + \sqrt[3]{\frac{-q}{4} + \sqrt{\Delta}}$. Es decir, obtuvimos las soluciones de la ecuación \textbf{cúbica reducida} y por lo tanto las soluciones de la ecuación cúbica general.
+        Así obtenemos que $y = \sqrt[3]{\frac{-q}{4} - \sqrt{\Delta}} + \sqrt[3]{\frac{-q}{4} + \sqrt{\Delta}}$. Finalmente, obtuvimos las soluciones de la ecuación \textbf{cúbica reducida} y por lo tanto las soluciones de la ecuación cúbica general.
         A este resultado le conoceremos como la fórmula o Método de Cardano para un polinomio cúbico.
     }
 
