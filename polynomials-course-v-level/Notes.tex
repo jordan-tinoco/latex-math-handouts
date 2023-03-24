@@ -34,7 +34,50 @@
 
     \section{Clase 02}
     {
-        Sea el polinomio $M(x) = $
+        Sea el polinomio $M(x) = x^5 - 3x^4 - 29x^3 - 13x^2 + 120x + 140.$
+
+        ¿Qué característcas tiene $M$? ¿Es mónico? ¿Es completo? ¿Es simétrico? ¿Está ordenado?
+        Comprobar que $x = 7$ es una raíz. Con la ayuda de los datos
+        \begin{gather*}
+            7^5 = 16807 \\
+            7^4 = 2401 \\
+            7^3 = 343 \\
+            7^2 = 49 \\
+            7^1 = 7
+        \end{gather*}
+        \begin{align*}
+            16807 \\
+            3\times 2401 = 7203\\
+            29\times 343 = 9947\\
+            13\times 49 = 637\\
+            120\times 7 = 840\\
+            140
+        \end{align*}
+        \begin{align*}
+            +16807 \\
+            -\_\_7203\\
+            -\_\_9947\\
+            -\_\_\_637\\
+            +\_\_\_840\\
+            +\_\_\_140
+        \end{align*}
+
+        ¿Es fácil deducir que $x = 7$ es una raíz?. Luego mostrar la factorización
+        \begin{align*}
+            x^5 + 4x^4 - x^3 - 20x^2 - 20x + 0 \\
+            0x^5 - 7x^4 - 28x^3 + 7x^2 + 140x + 140\\
+            x^5 - 3x^4 - 29x^3 - 13x^2 + 120x + 140
+        \end{align*}
+
+        Es decir $M(x) = (x - 7)(x^4 + 4x^3 - x^2 - 20x - 20)$
+        \begin{align*}
+            x^4 + 4x^3 + 4x^2 \\
+            -5x^2 - 20x - 20\\
+            x^4 + 4x^3 - x^2 - 20x - 20
+        \end{align*}
+
+        Es decir $M(x) = (x - 7)(x^2 - 5)(x + 2)^2$\\
+        Indicar que $x = -2$ tiene multiplicidad dos.
     }\label{sec:clase-02}
 
 \end{document}
