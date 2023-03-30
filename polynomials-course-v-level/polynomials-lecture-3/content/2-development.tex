@@ -1,1 +1,132 @@
 \section{Desarrollo}
+{
+    \begin{exercise}
+        Si $P(x^2 - 2x + 1) = x^2 - 3$, determine $P((x - 2)^2).$
+        \solution
+        {
+            Notemos que $P(x^2 - 2x + 1) = P\left[ (x - 1)^2 \right] = x^2 - 3$. Luego es fácil ver que si hacemos $x \rightarrow x - 1$, entonces
+            $P\left[ \left( (x - 1) - 1 \right)^2 \right] = (x - 1)^2 - 3$, es decir $P\left[ (x - 2)^2 \right] = x^2 - 2x - 2.$
+        }
+    \end{exercise}
+
+    \begin{exercise}
+        Sea $P(x) = x^2$, encontrar $Q(x)$ si $(P \circ Q)(x) = 4x^2 - 12x + 9$.
+        \solution
+        {
+            Por la primera condición $(P \circ Q)(x) = P(Q(x)) = Q(x)^2$ y usando la segunda condición tenemos
+            $P(Q(x)) = Q(x)^2 = 4x^2 - 12x + 9$. Al factorizar y sacar raíz cuadrada llegamos a $Q(x) = \pm (2x - 3).$
+        }
+    \end{exercise}
+
+    \begin{exercise}
+        Sea $Q(x) = \frac{1}{5} x - 2$ y $P(x) = Q^4(x)$, probar que $P(1560) = 0$.
+
+        \solution
+        {
+            Primero encontramos $Q^4(x)$.
+            \begin{align*}
+                Q^1(x) = Q(x)\\
+                Q^2(x) = Q(Q(x)) = Q\left( \frac{1}{5} x - 2 \right) = \frac{1}{5^2} x - 2(1 + \frac{1}{5})\\
+                Q^3(x) = Q(Q(Q(x))) = Q(Q^2(x)) = Q\left(\frac{1}{5^2} x - 2(1 + \frac{1}{5})\right) =  \frac{1}{5^3} x - 2(1 + \frac{1}{5} + \frac{1}{5^2})\\
+                Q^4(x) = Q(Q(Q(Q(x)))) = Q(Q^3(x)) = Q\left(\frac{1}{5^3} x - 2(1 + \frac{1}{5} + \frac{1}{5^2})\right) =  \frac{1}{5^4} x - 2(1 + \frac{1}{5} + \frac{1}{5^2} + \frac{1}{5^3})
+            \end{align*}
+            Así \[P(x) = \frac{1}{5^4} x - 2(\frac{1 + 5 + 5^2 + 5^3}{5^3}) = \frac{x - 1560}{5^4}\]
+            De donde es fácil ver que $P(x)$ es cero\footnote{También podemos decir que $x = 1560$ es raíz de $P$.} solo cuando $x = 1560$.
+        }
+
+    \end{exercise}
+
+    \begin{exercise}
+        Sea $P(x)$ un polinomio cuadrático. Demostrar que existen polinomios cuadráticos $G(x)$ y $H(x)$ tales que $P(x)P(x+1) = (G \circ H)(x).$
+
+        \solution
+        {
+            Denotemos a $P(x) = ax^2 + bx +  c$, luego la ecuación es igual a
+            \[P(x)P(x+1) = \left( ax^2 + bx +  c \right)\left[ a(x + 1)^2 + b(x + 1) +  c \right]\]
+            \[P(x)P(x+1) = \left( ax^2 + bx +  c \right)\left( ax^2 + (2a + b)x +  a + b + c \right)\]
+            Que al trabajarla ordenadamente llegamos a
+
+            {\footnotesize
+            \begin{array}{rrrrrrrrr}
+                a^2 x^4& + &(2a^2 + ab)x^3& + &(a^2 + ab + ac)x^2&&&&\\
+                &&abx^3& + &(2ab + b^2)x^2& + &(ab + b^2 + bc)x\\
+                &&&&acx^2& + &(2ac + bc)x& + &(ac + bc + c^2)&&\\
+                \cline{0-8}\\
+                a^2 x^4& + &(2a^2 + 2ab)x^3& + &(a^2 + b^2 + 3ab + 2ac)x^2& + &(b^2 + ab + 2ac + 2bc)x& + &(ac + bc + c^2)
+            \end{array}
+            }
+
+            Resultado que podemos expresar como
+            \begin{align*}
+                a^2 x^4 + (a^2 + 2ab + b^2)x^2 + c^2 + 2a(a + b)x^3 + 2c(a + b)x + 2acx^2\\
+                + abx^2  + b(a + b)x + bc\\
+                + ac
+            \end{align*}
+            Lo cual es\footnote{Recordar que $(x + y + z)^2 = x^2 + y^2 + z^2 + 2(xy + yz + zx)$.}
+            igual a $\left[ ax^2 + (a + b)x + c\right]^2 + b\left[ ax^2  + (a + b)x + c \right] + ac$.
+            De donde es fácil ver que es equivalente a una composición de dos polinomios cuadráticos.
+            Más concretamente a lo polinomios con la forma $G(x) = x^2 + bx + ac$ y $H(x) = ax^2  + (a + b)x + c$.
+        }
+    \end{exercise}
+
+    \begin{exercise}
+        Sea $P(x) = mx^3 + mx^2 + nx + n$ un polinomio cuyas raíces son $a, b \mbox{ y } c$. Demostrar que
+        \[\frac{1}{a} + \frac{1}{b} + \frac{1}{c} = \frac{1}{a + b + c}.\]
+
+        \solution
+        {
+            Rápidamente nos damos cuenta que $P$ puede factorizarse de la forma $P(x) = m(x + 1)(x - \sqrt {\frac{n}{m}}i)(x + \sqrt {\frac{n}{m}}i)$. Por el \textbf{Teorema del Factor} de \cite{TD23-clase2}
+            sabemos que sus raíces serán $\{ -1, -\sqrt {\frac{n}{m}}i, \sqrt {\frac{n}{m}}i\}$, luego vemos
+            \begin{gather*}
+                \frac{1}{-1} + \frac{1}{-\sqrt {\frac{n}{m}}i} + \frac{1}{\sqrt {\frac{n}{m}}i} = \frac{1}{ -1 - \sqrt {\frac{n}{m}}i + \sqrt {\frac{n}{m}}i}\\
+                \frac{1}{-1} + 0 = \frac{1}{ -1 - 0}
+            \end{gather*}
+            Lo cual es cierto.
+        }
+    \end{exercise}
+
+    \begin{exercise}
+        Sea $P(x)$ un polinomio cúbico mónico tal que $P(1) = 1$, $P(2) = 2$ y $P(3) = 3$. Encontrar $P(4).$
+
+        \solution
+        {
+            Denotemos a $P(x) = x^3 + ax^2 + bx +  c$, por las condiciones del problema es fácil ver que se forma el siguiente sistema de ecuaciones
+            \begin{align}
+                a + b + c = 0 \\
+                4a + 2b + c = -6 \\
+                9a + 3b + c = -24
+            \end{align}
+            De donde rápidamente vemos que $(a, b, c) = (-6, 12, -6)$ es la única solución. Así, tendremos que $P(x) = x^3 - 6x^2 + 12x - 6$.
+            Luego $P(4) = (4)^3 - 6(4)^2 + 12(4) - 6 = 64 - 126 + 36 - 6 = -2$.
+        }
+    \end{exercise}
+
+
+    \begin{exercise}
+        Dado que
+        \begin{gather*}
+            Q(x) = 2x + 3 \\
+            Q( F(x) + G(x) ) = 4x + 3 \\
+            Q( F(x) \times G(x) ) = 5
+        \end{gather*}
+        Calcular $F(G(F(G(\dots F(G(1))\dots))))$.
+    \end{exercise}
+
+    \begin{exercise}
+        Sea $P(x)$ un polinomio mónico de grado 3. Halle la suma de coeficientes del término cuadrático y lineal, siendo su término independiente igual a 5. Además, $P(x + 1) = P(x) + nx + 2$.
+    \end{exercise}
+
+    \begin{exercise}
+        Determine todos los posibles valores que puede tomar $\frac{x}{y}$ si $x, y \neq 0$ y $6x^2 + xy = 15y^2.$
+    \end{exercise}
+
+    \begin{exercise}
+        Hallar $K \in \R$ tal que $P(x) = K^2(x - 1)(x - 2)$ tiene raíces reales.
+    \end{exercise}
+
+    \begin{exercise}
+        Encontrar todas las soluciones de la ecuación $m^2 - 3m + 1 = n^2 + n - 1$, con $m, n \in \ZP$.
+    \end{exercise}
+}
+\label{sec:desarrollo}
+

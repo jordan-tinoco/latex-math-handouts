@@ -8,7 +8,7 @@
 
     \begin{example}
         Demuestre que $u$ es raíz del polinomio $R(x) = x^2 - (u + 17) x + 17u$.
-        \exampleProof
+        \solution
         {
             Para demostrar que $u$ es raíz\footnote{¿Podés encontrar otra raíz de $R(x)$?} de $R(x)$, basta probar que $R(u) = 0$. Lo cual es fácil ver cuando evaluamos $R(u) = u^2 - (u+17)u + 17u = u^2 - u^2 - 17u + 17u = 0.$
         }
@@ -38,7 +38,7 @@
 
     \begin{example}
         Sea $P(x)$ un polinomio con coeficientes enteros y suponga que $P(1)$ y $P(2)$ son ambos impares. Demuestre que no existe ningún entero $n$ para el cual $P(n) = 0$.
-        \exampleProof
+        \solution
         {
             Nos piden mostrar que $P(x)$ no tiene raíces enteras, entonces supongamos por el contrario, que existe un entero $n$ tal que $P(n) = 0$. Entonces, por el \textbf{Teorema \ref{factor-theorem}} $P(x) = (x - n)Q(x)$, con $Q(x)$ un polinomio con coeficientes enteros. Así podemos ver que, $P(1) = (1 - n)Q(1)$ y $P(2) = (2 - n)Q(2)$ son impares, pero $(1 - n)$ y $(2 - n)$ son enteros consecutivos, así que uno de ellos debe ser par. Por lo tanto, $P(1)$ o bien $P(2)$ tiene que ser par, lo cual contradice las condiciones del problema. Luego, $n$ no existe.
         }
@@ -46,7 +46,7 @@
 
     \begin{example}
         Sea $M(x)$ un polinomio cúbico con coeficientes enteros y sean $a, b, c \in \Z$, con $a \neq b \neq c$ tal que $M(a) = M(b) = M(c) = 2$. Demostrar que no existe un $d \in \Z$ para el que $M(d) = 3.$
-        \exampleProof
+        \solution
         {
             Sea $N(x) = M(x) - 2$, como $a, b \mbox{ y } c$ son raíces de $N(x)$, es claro que $N(x) = \alpha (x - a)(x - b)(x - c)$, para algún entero $\alpha$. Si para algún entero $d$ se tiene que $M(d) = 3$, entonces $N(d) = \alpha (d - a)(d - b)(d - c) = 1$. Para que esto suceda los factores deben ser 1 o $-1$ y por lo tanto dos de ellos tendrían que ser iguales. Pero por la condición $a \neq b \neq c$ esto no puede ser, luego $d$ no existe.
         }
@@ -83,7 +83,7 @@
 
         \begin{example}
             Hallar las raíces del polinomio $R(r) = r^2 - 10r + 7.$
-            \exampleProof
+            \solution
             {
                 Utilizando la completación de cuadrados, tenemos que
                 \begin{gather*}
@@ -148,7 +148,7 @@
 
     \begin{example}
         ¿Para qué valores de $\delta$ el polinomio $\delta x^2 + 2x + 1 - \frac{1}{\delta}$ tiene sus dos raíces iguales?
-        \exampleProof
+        \solution
         {
             El polinomio tiene raíces iguales si el discriminante es nulo. Es decir , $\Delta = 4 - 4\delta (1 - \frac{1}{\delta})$ de donde es fácil ver que $\delta (1 - \frac{1}{\delta}) = 1.$ Luego, $\delta = 2$ es la única posibilidad.
         }
