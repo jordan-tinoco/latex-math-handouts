@@ -1,0 +1,165 @@
+\section{Clase 04}\label{sec:clase-04}
+
+    \subsection{Solución de la tarea}\label{subsec:solucion-tarea}
+
+        \begin{section-problem}
+            Sea el polinomio $P$ para el cual $P(x^2 + 1) = x^4 + 4x^2$. Encontrar $P(x^2 - 1)$.
+
+            \enumSolution{1}
+            {
+                La solución de este problema se reduce a encontrar una expresión '$E$' que al remplazarla por $x$ nos de como resultado $x^2 - 1$.
+                Podemos encontrar esta expresión con una simple ecuación:
+                \begin{gather*}
+                    E^2 + 1 = x^2 - 1 \\
+                    E^2 = x^2 - 2 \\
+                    E = \pm \sqrt{x^2 - 2}
+                \end{gather*}
+                Es decir que si transformamos $x$ en $\pm \sqrt{x^2 - 2}$ obtendremos lo que nos piden\footnote{A esta transformación vamos
+                a denotarla por $x \rightarrow \pm \sqrt{x^2 - 2}$}.
+
+                Haciendo $x \rightarrow \pm \sqrt{x^2 - 2}$
+                \begin{gather*}
+                    P\left[ \left(\pm \sqrt{x^2 - 2}\right)^2 + 1 \right] = \left(\pm \sqrt{x^2 - 2}\right)^4 + 4 \left(\pm \sqrt{x^2 - 2}\right)^2 \\
+                    P\left( x^2 - 2 + 1 \right) = \left(x^2 - 2\right)^2 + 4 \left(x^2 - 2\right)\\
+                    P\left( x^2 - 1 \right) = x^4 - 4 x^2 + 4 + 4 x^2 - 8\\
+                    P\left( x^2 - 1 \right) = \boxed{x^4 - 4}
+                \end{gather*}
+            }
+
+            \enumSolution{2}
+            {
+                La segunda solución es muy parecida a la primera pero en lugar de
+                encontrar directamente $P(x^2 - 1)$ encontramos $P(x)$ como paso intermedio.
+                \begin{gather*}
+                    E^2 + 1 = x \\
+                    E^2 = x - 1 \\
+                    E = \pm \sqrt{x - 1}
+                \end{gather*}
+
+                Haciendo $x \rightarrow \pm \sqrt{x - 1}$
+                \begin{gather*}
+                    P\left[ \left(\pm \sqrt{x - 1}\right)^2 + 1 \right] = \left(\pm \sqrt{x - 1}\right)^4 + 4 \left(\pm \sqrt{x - 1}\right)^2 \\
+                    P\left( x - 1 + 1 \right) = \left(x - 1\right)^2 + 4 \left(x - 1\right)\\
+                    P\left( x \right) = x^2 - 2 x + 1 + 4 x - 4\\
+                    P\left( x \right) = x^2 + 2x - 3
+                \end{gather*}
+                Luego solo evaluamos $P(x^2 - 1)$
+                \begin{gather*}
+                    P\left( x^2 - 1 \right) = \left(x^2 - 1\right)^2 + 2\left(x^2 - 1\right) - 3\\
+                    P\left( x^2 - 1 \right) = x^4 - 2 x^2 + 1 + 2 x^2 - 2 - 3\\
+                    P\left( x^2 - 1 \right) = \boxed{x^4 - 4}
+                \end{gather*}
+            }
+
+        \end{section-problem}
+
+        \begin{section-problem}
+            Sea $S(x)$ un polinomio cúbico con $S(1) = 1$, $S(2) = 2$, $S(3) = 3$ y $S(4) = 5$. Encontrar $S(6)$.
+
+            \enumSolution{1}
+            {
+                Al tomar al polinomio auxiliar $R$ como $R(x) = S(x) - x$. Vemos que $R(1) = 0$, $R(2) = 0$ y $R(3) = 0$.
+                Es decir que 1, 2 y 3 son raíces de $R$. Luego, por el teorema del factor
+                \[R(x) = a(x - 1)(x - 2)(x - 3)\]
+                Donde $a$ es el coefiente principal de $R$. Nos piden $S(6)$, lo cual lo podemos encontrar como $S(6) = R(6) + 6$.
+                Pero para obtener $R(6)$ primero debemos saber el valor de $a$. Valor que podemos encontrar como
+                \begin{gather*}
+                    R(4) = S(4) - 4\\
+                    a(4 - 1)(4 - 2)(4 - 3) = 5 - 4\\
+                    6a = 1\\
+                    a = \frac{1}{6}
+                \end{gather*}
+                Finalmente hallamos $S(6)$:
+                \begin{gather*}
+                    S(6) = R(6) + 6\\
+                    S(6) = \frac{1}{6} (6 - 1)(6 - 2)(6 - 3) + 6 = \frac{5\times 4 \times 3}{6} + 6 \\
+                    S(6) = 10 + 6 = \boxed{16}
+                \end{gather*}
+            }
+
+            \enumSolution{2}
+            {
+                Sabemos que $S$ tiene la forma $S(x) = a x^3 + b x^2 + c x + d$.
+                Al utilizar las evaluaciones que nos dan como datos podemos formar el siguiente sistema de ecuaciones $4 \times 4$
+                \[
+                    \left\{
+                    \begin{array}{rcl}
+                          a +   b +  c + d & = & 1\\
+                         8a +  4b + 2c + d & = & 2\\
+                        27a +  9b + 3c + d & = & 3\\
+                        64a + 16b + 4c + d & = & 5
+                    \end{array}
+                    \right
+                \]
+                Al resolver este sistema, por el método que más te guste, veremos que $(a, b, c, d) =  (\frac{1}{6}, -1, \frac{17}{6}, -1)$ es la única solución.
+                Luego $S(x) = \frac{1}{6} x^3 - x^2 + \frac{17}{6} x - 1$. Finalmente al evualuar $S(6)$, llegamos a
+                \begin{gather*}
+                    S(6) = \frac{1}{6} \times 6^3 - 6^2 + \frac{17}{6} \times 6 - 1\\
+                    S(6) = 6^2 - 6^2 + 17 - 1 = \boxed{16}
+                \end{gather*}
+            }
+
+        \end{section-problem}
+
+        \begin{section-problem}
+            Determine un polinomio cúbico $P$ en los reales, con una raíz igual a cero y que satisface $P(x - 1) = P(x) + 25x^2$.
+
+            \enumSolution{1}
+            {
+                Como $P$ tiene una solución igual a cero, entonces este no tiene término independiente, es decir, tiene la forma
+                $P(x) = a x^3 + b x^2 + c x$. Al evaluar el polinomio en ciertos valores veremos que
+
+                Si $x = 0$: \[P(-1) = P(0) + 25(0)^2 \longrightarrow \boxed{P(-1) = 0}\]
+                Si $x = 1$: \[P(0) = P(1) + 25(1)^2 \longrightarrow \boxed{P(1) = -25}\]
+                Si $x = -1$: \[P(-2) = P(-1) + 25(-1)^2 \longrightarrow \boxed{P(-2) = 25}\]
+
+                Con estas evaluaciones formaremos el siguiente sistema de ecuaciones $3 \times 3$
+                \[
+                    \left\{
+                    \begin{array}{rcl}
+                         - a +  b -  c & = & 0 \\
+                           a +  b +  c & = & -25 \\
+                        - 8a + 4b - 3c & = & 25
+                    \end{array}
+                    \right
+                \]
+                Que al resolverlo, con el método que más te guste, vemos que tiene a $(a, b, c) = \left(-\frac{25}{3}, \frac{25}{2}, -\frac{25}{6} \right)$
+                como única solución. Luego
+                \[\boxed{ P(x) = -\frac{25}{3}x^3 + \frac{25}{2} x^2 - \frac{25}{6} x }\]
+                es la solución.
+            }
+
+            \enumSolution{2}
+            {
+                Esta solución se basa en la compración de coeficientes del polinomio. Primero caracterizemos a $P$, como ya sabemos de la solución anterior
+                \[P(x) = a x^3 + b x^2 + cx\]
+                Así $P(x - 1)$ es igual a
+                \begin{gather*}
+                    P(x - 1) = a \left(x - 1\right)^3 + b \left(x - 1\right)^2 + c\left(x - 1\right)\\
+                    P(x - 1) = a \left[x^3 - 3 x^2 + 3 x - 1\right] + b \left[x^2 - 2x + 1\right] + c\left(x - 1\right)\\
+                    P(x - 1) = a x^3 - 3a x^2 + 3a x - a + b x^2 - 2b x + b + c x - c\\
+                    P(x - 1) = a x^3 - 3a x^2 + b x^2 + 3a x  - 2b x + c x  - a + b - c\\
+                    P(x - 1) = a x^3 + (- 3a + b) x^2 + (3a - 2b + c) x  + (- a + b - c)
+                \end{gather*}
+                Luego
+                \begin{gather*}
+                    a x^3 + (- 3a + b) x^2 + (3a - 2b + c) x  + (- a + b - c) = a x^3 + b x^2 + cx + 25 x^2\\
+                    a x^3 + \fcolorbox{olive}{white}{$(- 3a + b)$} x^2 + \fcolorbox{red}{white}{$(3a - 2b + c)$} x  + \fcolorbox{blue}{white}{$(- a + b - c)$} =
+                    a x^3 + \fcolorbox{olive}{white}{$(b + 25)$} x^2 + \fcolorbox{red}{white}{$c$}x + \fcolorbox{blue}{white}{0}
+                \end{gather*}
+                De la comparación de coeficientes, obtenemos el siguiente sistema de ecuaciones $3 \times 3$
+                \[
+                    \left\{
+                    \begin{array}{rcl}
+                        - a +  b -  c & = & 0 \\
+                        3 a - 2 b +  c & = & c \\
+                        - 3a + b & = & b + 25
+                    \end{array}
+                    \right
+                \]
+                De donde rápidamente vemos que la única solución es $(a, b, c) = \left(-\frac{25}{3}, \frac{25}{2}, -\frac{25}{6} \right)$.
+                Luego
+                \[\boxed{ P(x) = -\frac{25}{3}x^3 + \frac{25}{2} x^2 - \frac{25}{6} x }\]
+            }
+        \end{section-problem}
+
