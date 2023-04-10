@@ -1,18 +1,49 @@
-\section*{\large Problemas}
+\section*{\large Ejercicios}
 
-Estimado estudiante, resolver los siguientes ejercicios de manera clara y ordenada.
+Estimado estudiante, resolver los siguientes ejercicios de manera clara y ordenada. Recordar justificar la respuesta.
 
 \begin{exercise}
+    Sea $R(y) = 3x^2 - 12x - 36 + 3y^2 + 6xy - 12y$, factorize $R$ y responda. ¿Cuáles son las raíces de $R$?
+    \begin{multicols}{3}
+        \begin{enumerate}
+            \item $6$ y $-2$
+            \item $6 - y$ y $-2 - y$
+            \item $-6 + y$ y $-2 + y$
+            \item $6 - x$ y $-2 - x$
+            \item $-6 - y$ y $2 + x$
+        \end{enumerate}
+    \end{multicols}
 \end{exercise}
 
 \begin{exercise}
+    Si el polinomio $S(x) = \left( \frac{11 - 5k}{4} \right) x^2 + (k - 1)x + 1$ tiene dos raíces iguales, hallar los valores enteros negativos de $k$.
 \end{exercise}
+
 
 \newpage
 
 \section*{\large Soluciones}
 {
     \textbf{Ejercicio 1.}
+        Factorizemos $R$:
+        \begin{gather*}
+            R(y) = 3x^2 + 6xy + 3y^2 - 12x - 12y - 36 \\
+            R(y) = 3(x^2 + 2xy + y^2) - 12(x + y) - 36 \\
+            R(y) = 3(x + y)^2 - 12(x + y) - 36 \\
+            R(y) = 3\left[ (x + y)^2 - 4(x + y) - 12 \right] \\
+            R(y) = 3\left[ x + y - 6 \right]\left[ x + y + 2 \right] \\
+            R(y) = 3\left[ y - (6 - x) \right]\left[ y - (- 2 - x) \right]
+        \end{gather*}
+        Es claro ver que $(6 - x)$ y $(-2 - x)$ son las raíces de $R$. Luego, la opción correcta es la \boxed{d}.
 
     \textbf{Ejercicio 2.}
-}\label{sec:soluciones}
+        Si $S$ tiene dos raíces iguales entonces debe pasar que $\Delta = 0$. Es decir
+        \begin{gather*}
+            (k - 1)^2 - 4\left( \frac{11 - 5k}{4} \right)(1) = 0\\
+            k^2 - 2k + 1 - (11 - 5k) = 0\\
+            k^2 - 2k + 1 - 11 + 5k = k^2 + 3k - 10 = 0\\
+            (k + 5)(k - 2) = 0
+        \end{gather*}
+        Es fácil ver que $k$ solo puede tomar dos valores $-5$ y 2. Luego, la respuesta es $\boxed{-5}$.
+
+}\label{sec:large-soluciones}\label{sec:soluciones}
