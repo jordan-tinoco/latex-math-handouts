@@ -28,3 +28,13 @@
 
 \input{../../utils/math-commands}
 \input{../../utils/math-sections}
+
+\newtcolorbox[auto counter]{debox}[1][]
+{
+    colback = gray!8!white,
+    colframe = white!30!black,
+    enhanced,
+    attach boxed title to top left = {xshift = 1cm, yshift = -2mm},
+    breakable,
+    #1
+}

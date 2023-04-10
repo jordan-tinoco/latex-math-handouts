@@ -2,7 +2,7 @@
 {
     \begin{section-definition}[\textbf{Fórmulas de Vieta}]
         Sea $P(x) = a_n x^n + a_{n - 1} x^{n - 1} + \cdots  + a_1 x + a_0$ un polinomio con $n$ raíces $r_1, r_2, \cdots, r_n$,
-        el cual, por el \textit{Teorema del Factor}\footnote{Ver \cite{TD23-clase2} página 1.}, podemos escribir como
+        el cual, por el \textit{Teorema del Factor}\footnote{Ver~\cite{TD23-clase2} página 1.}, podemos escribir como
         \[a_n x^n + a_{n - 1} x^{n - 1} + \cdots  + a_1 x + a_0 = a_n (x - r_1)(x - r_2) \cdots (x - r_n)\]
         Cuando expandimos los $n$ factores lineales del lado derecho de la ecuación, obtenemos
         \[a_n x^n - a_n(r_1 + r_2 + \cdots + r_n)x^{n - 1} + a_n(r_1 r_2 + r_1 r_3 + \cdots + r_{n - 1} r_n)x^{n - 2} + \cdots + (-1)^n a_n r_1 r_2 \cdots r_n\]
@@ -10,13 +10,30 @@
         \begin{gather*}
             r_1 + r_2 + \cdots + r_n = - \frac{a_{n - 1}}{a_n}\\
             r_1 r_2 + r_1 r_3 + \cdots + r_{n - 1} r_n = \frac{a_{n - 2}}{a_n}\\
-            \cdots\\
+            r_1 r_2 r_3 + r_1 r_2 r_4 + \cdots + r_{n - 2} r_{n - 1} r_n = \frac{a_{n - 3}}{a_n}\\
+            \vdots\\
             r_1 r_2 \cdots r_n = (-1)^n \frac{a_0}{a_n}
         \end{gather*}
         A estas ecuaciones entre las raíces de un polinomio y sus coeficientes son llamadas las fórmulas de Vieta y puede
         ayudar a calcular varias expresiones que involucran las raíces de un polinomio sin tener que calcular las propias raíces.
     \end{section-definition}
-    \newpage
+
+    Para ser más prácticos, en esta primera clase de Vieta solo nos centraremos en la aplicación de las fómulas en polinomios cuadráticos y cúbico.
+
+    \begin{debox}
+        Si $r_1$ y $r_2$ son la raíces de $P(x) = a_2 x^2 + a_1 x + a_0$, entonces
+        \begin{gather*}
+            r_1 + r_2 = - \frac{a_1}{a_2} \qquad r_1 r_2 = \frac{a_0}{a_2}
+        \end{gather*}
+
+        Si $r_1, r_2$ y $r_3$ son las raíces de $P(x) = a_3 x^3 + a_2 x^2 + a_1 x + a_0$, entonces
+        \begin{gather*}
+            r_1 + r_2 + r_3 = - \frac{a_2}{a_3}\qquad
+            r_1 r_2 + r_2 r_3 + r_3 r_1 = \frac{a_1}{a_3}\qquad
+            r_1 r_2 r_3 = - \frac{a_0}{a_3}
+        \end{gather*}
+    \end{debox}
+
     \begin{example}
         Si $p$ y $q$ son raíces de la ecuación $x^2 + 2bx + 2c = 0$, determina el valor de $\frac{1}{p^2} + \frac{1}{q^2}.$
 
@@ -99,7 +116,15 @@
 
 }\label{sec:desarrollo}
 
-\vspace{-10mm}
+\subsection{Agregados culturales y preguntas}
+{
+    \begin{enumerate}
+        \item IMO son las siglas de \textit{International Mathematical Olympiad}. La IMO, básicamente, es la olimpiada mundial más dificil e importante en la que Nicaragua participa.
+        \item El método de Descenso Infinito de Fermat es una propiedad de los enteros no negativos. El cual dice que no puede existir una secuencia $n_1 > n_2 > \cdots$ con $n_i \in \Z^{\geq 0}$.
+        \item Existe una técnica llamada \textbf{Vieta Jumping} la cual es una combinación de las fórmulas de Vieta y el método de Descenso Infinito de Fermat.
+        Esta técnica es muy útil en problemas nivel IMO.
+    \end{enumerate}
+}\label{subsec:agregados-culturales}
 
 \section{Ejercicios y Problemas}
 {
