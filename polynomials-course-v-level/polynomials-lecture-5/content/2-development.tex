@@ -1,1 +1,41 @@
 \section{Desarrollo}
+{
+    \begin{section-definition}[\textbf{División con resto}]
+        Para todo polinomio $F$ y $G$ existen los polinomios $Q$ y $R$ tal que
+        \[F(x) = G(x)Q(x) + R(x), \quad\mbox{con }  0 \leq \deg{(R)} < \deg{(G)}.\]
+        Donde $Q$ y $R$ son el \emph{cociente} y \emph{resto} (o \emph{residuo}) de la división de $F$ por $G$.
+        Si $R(x) = 0$, entonces diremos que $G$ divide a $F$, y lo vamos a denotar como $G(x) \mid F(x)$.
+    \end{section-definition }
+
+    Abreviaremos $G(x) \mid F(x)$ como $G \mid F$ ya que al efectuar una división polinomica los polinomios en cuestión deben de tener la misma variable.
+
+    \begin{example}
+        Con $F(x) = x^7 - 1$ y $G(x) = x^3 + x + 1$ llegaremos a que
+        \[x^7 - 1 = (x^3 + x + 1)(x^4 - x^2 - x + 1) + 2 x^2 - 2.\]
+        Aquí $Q(x) = x^4 - x^2 - x + 1$ y $R(x) = 2 x^2 - 2$.
+    \end{example}
+
+    \subsection{Método clásico}
+    {
+        Se recomienda cuando los polinomios a dividir son de una sola variable.
+
+        \begin{example}
+            Sean los polinomios $P(x) = x^5 + x^3 + 2x$ y $Q(x) = x^2 - x + 1$, encontrar el cociente y resto de la división de $P$ por $Q$.
+        \end{example}
+    }
+
+    \subsection{Método de Horner}
+    {
+    
+    }
+    
+    \subsection{Método de Ruffini}
+    {
+
+    }
+
+    \subsection{Agregados culturales y preguntas}
+    {
+
+    }
+}
