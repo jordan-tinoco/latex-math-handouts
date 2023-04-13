@@ -10,7 +10,7 @@
         \begin{gather*}
             r_1 + r_2 + \cdots + r_n = - \frac{a_{n - 1}}{a_n}\\
             r_1 r_2 + r_1 r_3 + \cdots + r_{n - 1} r_n = \frac{a_{n - 2}}{a_n}\\
-            r_1 r_2 r_3 + r_1 r_2 r_4 + \cdots + r_{n - 2} r_{n - 1} r_n = \frac{a_{n - 3}}{a_n}\\
+            r_1 r_2 r_3 + r_1 r_2 r_4 + \cdots + r_{n - 2} r_{n - 1} r_n = -\frac{a_{n - 3}}{a_n}\\
             \vdots\\
             r_1 r_2 \cdots r_n = (-1)^n \frac{a_0}{a_n}
         \end{gather*}
@@ -18,7 +18,7 @@
         ayudar a calcular varias expresiones que involucran las raíces de un polinomio sin tener que calcular las propias raíces.
     \end{section-definition}
 
-    Para ser más prácticos, en esta primera clase de Vieta solo nos centraremos en la aplicación de las fómulas en polinomios cuadráticos y cúbico.
+    Para ser más prácticos, en esta primera clase de Vieta solo nos centraremos en la aplicación de las fómulas en polinomios cuadráticos y cúbicos.
 
     \begin{debox}
         Si $r_1$ y $r_2$ son la raíces de $P(x) = a_2 x^2 + a_1 x + a_0$, entonces
@@ -53,7 +53,7 @@
     \end{example}
 
     \begin{example}
-        Encuentre el valor de $\frac{1}{r_1} + \frac{1}{r_2} + \frac{1}{r_3}$ si $r_1, r_2, r_3$ son raíces del polinomio $P(x) = x^3 - 7^2 + 3x + 1$.
+        Encuentre el valor de $\frac{1}{r_1} + \frac{1}{r_2} + \frac{1}{r_3}$ si $r_1, r_2, r_3$ son raíces de $P(x) = x^3 - 7 x^2 + 3x + 1$.
         \solution
         {
             Por la fórmulas de Vieta sabemos lo siguiente
@@ -77,7 +77,7 @@
                 r_1 + r_2 = -a\\
                 r_1 r_2 = b + 1
             \end{gather*}
-            Que al elevar al cuadrado y sumar tenemos $a^2 + b^2 = (r_1 + r_2)^2 + (r_1 r_2 - 1)^2$. Así, desarrollando
+            Que al elevar al cuadrado y sumar tenemos $a^2 + b^2 = (r_1 + r_2)^2 + (r_1 r_2 - 1)^2$. Desarrollando
             \begin{gather*}
                 a^2 + b^2 = r^2_1 + 2r_1 r_2 + r^2_2 + r^2_1 r^2_2 - 2r_1 r_2 + 1 \\
                 a^2 + b^2 = r^2_1 + r^2_2 + r^2_1 r^2_2+ 1 = \boxed{(r^2_1 + 1)(r^2_2 + 1)}
@@ -103,9 +103,9 @@
             Por la primera ecuación, podemos ver inmediantamente que $r + s = -t$ y por lo tanto $(r + s)^3 = - t^3$.
             Análogamente, llegaremos a
             \[(r + s)^3 + (s + t)^3 + (t + r)^3 =  -(r^3 + s^3 + t^3)\]
-            El mejor método para resolver este problema es expresar $r^3 + s^3 + t^3$ en termino de $r +  s + t$, $rs +  st + tr$ y $r s t$.
-            Para lo cual podemos análizar las relaciones entre el cúbo de un trinomio y la suma de tres cubos.
-            De ellas\footnote{Se deja como ejercicio al lector la búsqueda de otras identidades similares.} tenemos la siguiente
+            Para evitar calcular los valores individuales de las raíces, podemos auxiliarnos de indentidades algebraicas
+            que nos relacionan $r^3 + s^3 + t^3$ con la expresiones $r +  s + t$, $rs +  st + tr$ y $rst$ cuyos valores ya conocemos.
+            Una de estas identidades es\footnote{Se deja como ejercicio al lector la demostración de esta indentidad. Así como la búsqueda de otras identidades similares.}
             \[(x + y + z)^3 = x^3 + y^3 + z^3 + 3(x + y)(y + z)(z + x)\]
             De donde rápidamente vemos que
             \[-(r^3 + s^3 + t^3) = - (r + s + t)^3 + 3(r + s)(s + t)(t + r)\]
