@@ -1,5 +1,111 @@
 \section{Desarrollo}
 
+\begin{theorem}[\textbf{Teorema del resto}]
+    Dado un polinomio $P$, de grado $n$ y $a \in \R$, diremos que el resto de $P$ cuando es dividido por $x - a$ es $P(a)$.
+    Es decir
+    \[P(a)   = r \Leftrightarrow P(x) = (x-a)Q(x) + r\]
+    para algún polinomio $Q(x).$
+
+    \textbf{Demostración.} Por la definición de \textit{División con resto}\footnote{Ver~\cite{TD23-clase5} página 1.} podemos escribir
+    \[P(x) = (x-a)Q(x) + R(x)\]
+    Donde $\deg (R) < \deg(x - a) = 1$, es decir $R$ necesariamente tiene que ser un polinomio constante, digamos $R(x) = r$.
+    Sustituyendo $x = a$ en la ecuación anterior, obtenemos que
+    \[P(a) = (a - a)Q(a) + R(a) = R(a) = r\]
+    Esto es, el residuo de la división de $P$ por $x - a$ es $P(a)$.
+\end{theorem}
+
+Notemos que el \textit{Teorema del resto} inmediatamente implica al \textit{Teorema del factor} el cual ya hemos estudiado.
+
+\begin{theorem}[\textbf{Teorema del factor}]
+    Dado un polinomio $P$, de grado $n$ y $a \in \R$, diremos que $a$ es una raíz de $P$ si y sólo si $(x-a)$ es un factor de $P(x)$.
+    Es decir
+    \[P(a) = 0 \Leftrightarrow P(x) = (x-a)Q(x)\]
+    para algún polinomio $Q(x).$
+
+    \textbf{Demostración.} Si $x - a \mid P(x)$, entonces existe un polinomio $Q(x)$ tal que
+    \[P(x) = (x-a)Q(x)\]
+    Y por la unicidad del cociente y el residuo de la \textit{División con resto}, se sigue que el residuo de la división de $P$ entre $x - a$ es cero.
+    Luego, $P(a) = 0$.
+\end{theorem}
+
+\begin{theorem}[\textbf{Teorema fundamental del Álgebra}]
+    Todo polinomio $P(z) = a_n z^n + a_{n - 1} z^{n - 1} + \cdots + a_1 z + a_0$, donde $n \geq 1$, $a_i \in \C$ y $a_n \neq 0$, tiene al menos una raíz en $\C$.
+\end{theorem}
+
+Desafortunadamente, la prueba del \textit{Teorema fundamental del Álgebra} es un poco\footnote{Por no decir demasiado XD.} complicada para nuestro pequeño curso de polinomios.
+Sin embargo, vamos usar este teorema para demostrar que todo polinomio de grado $n > 0$ tiene exactamente $n$ raíces (hecho que ya hemos venido utilizando).
+Esto significa que podemos escribir cualquier polinomio $P(x)$ en la forma
+\[P(x) = a_n x^n + a_{n - 1} x^{n - 1} + \cdots  + a_1 x + a_0 = a_n (x - r_1)(x - r_2) \cdots (x - r_n)\]
+donde $r_1, r_2, \cdots, r_n$ son reales o complejos.
+
+Esta prueba la haremos por inducción\footnote{La Inducción Matemática es un tema que aún no hemos visto, pero por el momento podés buscarlo por tu cuenta.} en el grado del polinomio.
+Si el polinomio es de grado 1, el resultado es inmediato. Supongamos que el resultado es cierto para polinomios de grado $n - 1$ y consideremos un polinomio $P(x)$ de grado n.
+De acuerdo con el \textit{Teorema Fundamental del Álgebra}, $P(x)$ tiene una raíz $r_1$, esto es, $(x - r_1) \mid P(x)$.
+Luego, existe un polinomio $Q_1 (x)$ tal que $P(x) = (x - r_1)Q_1(x)$.
+
+Como $\deg(P) = n = \deg[(x - r-1)Q_1(x)] = \deg(x - r_1) + \deg[Q_1(x)]$, tenemos que $\deg[Q_1(x)] = n - 1$.
+Luego, por la hipótesis de inducción, el polinomio $Q_1(x)$ tiene exactamente $n - 1$ raíces, esto es $Q_1(x) = c(x - r_2)(x - r_3)\cdots(x - r_n)$.
+Por lo tanto, $P(x) = c(x - r_1)(x - r_2)\cdots(x - r_n).$
+
+El resultado que acabamos de demostrar, solo muestra al existencia de las raíces; encontrarlas es otro problema, que podemos atacar con la fórmulas de Vieta o la división de polinomios.
+
+\begin{example}
+    Sea $P(x)$ un polinomio con coeficientes reales. Cuando $P(x)$ es dividido por $x - 1$, el resto es 3.
+    Cuando $P(x)$ es dividido por $x - 2$, es resto es 5. Determinar el resto cuando $P(x)$ es dividido por el polinomio $x^2 - 3x + 2$.
+
+    \solution
+    {
+        Escribamos
+        \[P(x) = (x^2 - 3x + 2)Q(x) + R(x)\]
+        donde $R$ es el resto que buscamos. Como $\deg(R) < \deg(x^2 - 3x + 2) =  2$, podemos escribir $R(x) = ax + b$ para constantes $a, b$.
+        Por otra parte, por el \textit{Teorema del resto}, tenemos que $P(1) = 3$ y $P(2) = 5$. Como 1 y 2 son raíces de $x^2 - 3x + 2$, al sustituir estos valores en $P$, obtenemos que
+        \begin{gather*}
+            P(1) = 0\times Q(1) + R(1) = a + b\\
+            P(2) = 0\times Q(2) + R(2) = 2a + b
+        \end{gather*}
+        Como $P(1) = 3$ y $P(2) = 5$, obtenemos el sistema de ecuaciones
+        \[
+            \left\{
+            \begin{array}{rcl}
+                a + b & =& 3\\
+                2a + b & =& 5
+            \end{array}
+            \right
+        \]
+        De donde obtenemos $(a, b) = (2, 1)$. Por lo tanto, el resto buscado es $\boxed{2x + 1}$.
+    }
+\end{example}
+
+\begin{example}
+    Encontrar el residuo cuando $x^{100} - 4x^{98} + 5x + 6$ es dividido por $x^3 - 2x^2 - x + 2$.
+
+    \solution
+    {
+        Como el grado de $x^3 - 2x^2 - x + 2$ es 3, el grado del resto puede ser a lo más 2, asi que podemos expresar el resto como el polinomio
+        $ax^2 + bx + c$ para constantes $a, b, c$. Escribamos la división como
+        \[x^{100} - 4x^{98} + 5x + 6 = \left( x^3 - 2x^2 - x + 2 \right)Q(x) + \left( ax^2 + bx + c \right)\]
+        Rápidamente, notamos que $x^3 - 2x^2 - x + 2$ puede factorizarse
+        \[x^{100} - 4x^{98} + 5x + 6 = (x - 2)(x - 1)(x + 1)Q(x) + ( ax^2 + bx + c )\]
+        Por el \textbf{Teorema del resto}, si sustituimos $x = 2, 1, -1$, los cuales hacen al término que multiplica a $Q(x)$ cero
+        \begin{gather*}
+            (2)^{100} - 4(2)^{98} + 5(2) + 6 = 0\times Q(2) + a(2)^2 + b(2) + c\\
+            (1)^{100} - 4(1)^{98} + 5(1) + 6 = 0\times Q(1) + a(1)^2 + b(1) + c\\
+            (-1)^{100} - 4(-1)^{98} + 5(-1) + 6 = 0\times Q(-1) + a(-1)^2 + b(-1) + c
+        \end{gather*}
+        Del cual formamos
+        \[
+            \left\{
+            \begin{array}{rcl}
+                4a + 2b +  c & = & 16\\
+                a +  b + c & = & 8\\
+                a - b + c & = & -2
+            \end{array}
+            \right
+        \]
+        Que al resolverlo obtenemos $(a, b, c) = (1, 5, 2)$, de aquí que el residuo sea $\boxed{x^2 + 5x + 2}$.
+    }
+\end{example}
+
 \subsection{Agregados culturales y preguntas}
 {
 
@@ -8,4 +114,29 @@
 \section{Ejercicios y Problemas}
 {
     Sección de ejercicios y problemas para el autoestudio.
+
+    \begin{section-problem}
+        ¿Para qué valores de $k$ se cumple que $x - 2$ es factor de $x^3 + 2kx^2 + k^2 x + k - 3$?
+    \end{section-problem}
+
+    \begin{section-problem}
+        Para un polinomio desconocido que deja un resto 2 al dividirlo por $x - 1$, y un resto 1 al dividirlo por $x - 2$.
+        ¿Cuál es el resto que se obtiene si este polinomio es dividido por $(x - 1)(x - 2)$?
+    \end{section-problem}
+
+    \begin{section-problem}
+        Encontrar el resto cuando $(x + 3)^5 + (x + 2)^8 + (5x + 9)^{1997}$ es dividido por $x + 2$.
+    \end{section-problem}
+
+    \begin{section-problem}
+        Encontrar el resto cuando $x^{2006} + x^{2005} + \cdots + x + 1$ es dividido por $x + 1$.
+    \end{section-problem}
+
+    \begin{section-problem}
+        Sea $F(x) = x^4 + x^3 + x^2 + x + 1$. Encontrar el residuo cuando $F(x^5)$ es dividido por $F(x)$.
+    \end{section-problem}
+
+    \begin{section-problem}
+        Determinar todos los enteros positivos $n$, tales que el polinomio $x^n + x - 1$ sea divisible por el polinomio $x^2 - x + 1$.
+    \end{section-problem}
 }
