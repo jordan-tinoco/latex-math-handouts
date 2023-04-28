@@ -22,7 +22,7 @@ Notemos que el \textit{Teorema del resto} inmediatamente implica al \textit{Teor
     \[P(a) = 0 \Leftrightarrow P(x) = (x-a)Q(x)\]
     para algún polinomio $Q(x).$
 
-    \textbf{Demostración.} Si $x - a \mid P(x)$, entonces existe un polinomio $Q(x)$ tal que
+    \textbf{Demostración.} Si $(x - a) \mid P(x)$, entonces existe un polinomio $Q(x)$ tal que
     \[P(x) = (x-a)Q(x)\]
     Y por la unicidad del cociente y el residuo de la \textit{División con resto}, se sigue que el residuo de la división de $P$ entre $x - a$ es cero.
     Luego, $P(a) = 0$.
@@ -33,32 +33,49 @@ Notemos que el \textit{Teorema del resto} inmediatamente implica al \textit{Teor
 \end{theorem}
 
 Desafortunadamente, la prueba del \textit{Teorema fundamental del Álgebra} es un poco\footnote{Por no decir demasiado XD.} complicada para nuestro pequeño curso de polinomios.
-Sin embargo, vamos usar este teorema para demostrar que todo polinomio de grado $n > 0$ tiene exactamente $n$ raíces (hecho que ya hemos venido utilizando).
+Sin embargo, vamos usar este teorema para demostrar que todo polinomio de grado $n > 0$ tiene exactamente $n$ raíces (hecho que ya hemos venido utilizando\footnote{Ver~\cite{TD23-clase2} página 2.}).
 Esto significa que podemos escribir cualquier polinomio $P(x)$ en la forma
 \[P(x) = a_n x^n + a_{n - 1} x^{n - 1} + \cdots  + a_1 x + a_0 = a_n (x - r_1)(x - r_2) \cdots (x - r_n)\]
 donde $r_1, r_2, \cdots, r_n$ son reales o complejos.
 
 Esta prueba la haremos por inducción\footnote{La Inducción Matemática es un tema que aún no hemos visto, pero por el momento podés buscarlo por tu cuenta.} en el grado del polinomio.
-Si el polinomio es de grado 1, el resultado es inmediato. Supongamos que el resultado es cierto para polinomios de grado $n - 1$ y consideremos un polinomio $P(x)$ de grado n.
+Si el polinomio es de grado 1, el resultado es inmediato. Supongamos que el resultado es cierto para polinomios de grado $n - 1$ y consideremos un polinomio $P(x)$ de grado $n$.
 De acuerdo con el \textit{Teorema Fundamental del Álgebra}, $P(x)$ tiene una raíz $r_1$, esto es, $(x - r_1) \mid P(x)$.
 Luego, existe un polinomio $Q_1 (x)$ tal que $P(x) = (x - r_1)Q_1(x)$.
 
-Como $\deg(P) = n = \deg[(x - r-1)Q_1(x)] = \deg(x - r_1) + \deg[Q_1(x)]$, tenemos que $\deg[Q_1(x)] = n - 1$.
+Como $\deg(P) = n = \deg[(x - r_1)Q_1(x)] = \deg(x - r_1)\ +\ \deg[Q_1(x)]$, tenemos que $\deg[Q_1(x)] = n - 1$.
 Luego, por la hipótesis de inducción, el polinomio $Q_1(x)$ tiene exactamente $n - 1$ raíces, esto es $Q_1(x) = c(x - r_2)(x - r_3)\cdots(x - r_n)$.
 Por lo tanto, $P(x) = c(x - r_1)(x - r_2)\cdots(x - r_n).$
 
 El resultado que acabamos de demostrar, solo muestra al existencia de las raíces; encontrarlas es otro problema, que podemos atacar con la fórmulas de Vieta o la división de polinomios.
 
 \begin{example}
-    Sea $P(x)$ un polinomio con coeficientes reales. Cuando $P(x)$ es dividido por $x - 1$, el resto es 3.
-    Cuando $P(x)$ es dividido por $x - 2$, es resto es 5. Determinar el resto cuando $P(x)$ es dividido por el polinomio $x^2 - 3x + 2$.
+    ¿Es el polinomio $P(x) = x^4 + 2x^3 - 2x^2 + x - 6$ divisible por $x + 3$?
+
+    \solution
+    {
+        Es claro ver, por el \textit{Teorema del factor}, que si $x + 3$ es factor de $P$ entonces solo basta probar que $P(-3) = 0$.
+        Rápidamente vemos que
+        \begin{gather*}
+            P(-3) = (-3)^4 + 2(-3)^3 - 2(-3)^2 + (-3) - 6\\
+            P(-3) = 81 - 54 - 18 - 3 - 6 = 81 - 81 = \boxed{0}
+        \end{gather*}
+    }
+\end{example}
+
+\begin{example}
+    Sea $P(x)$ un polinomio con coeficientes reales.
+    Cuando $P(x)$ es dividido por $x - 1$, el resto es 3.
+    Cuando $P(x)$ es dividido por $x - 2$, el resto es 5.
+    Determinar el resto cuando $P(x)$ es dividido por el polinomio $x^2 - 3x + 2$.
 
     \solution
     {
         Escribamos
         \[P(x) = (x^2 - 3x + 2)Q(x) + R(x)\]
         donde $R$ es el resto que buscamos. Como $\deg(R) < \deg(x^2 - 3x + 2) =  2$, podemos escribir $R(x) = ax + b$ para constantes $a, b$.
-        Por otra parte, por el \textit{Teorema del resto}, tenemos que $P(1) = 3$ y $P(2) = 5$. Como 1 y 2 son raíces de $x^2 - 3x + 2$, al sustituir estos valores en $P$, obtenemos que
+        Por otra parte, por el \textit{Teorema del resto}, tenemos que $P(1) = 3$ y $P(2) = 5$.
+        Como 1 y 2 son raíces de $x^2 - 3x + 2$, al sustituir estos valores en $P$, obtenemos que
         \begin{gather*}
             P(1) = 0\times Q(1) + R(1) = a + b\\
             P(2) = 0\times Q(2) + R(2) = 2a + b
@@ -81,18 +98,19 @@ El resultado que acabamos de demostrar, solo muestra al existencia de las raíce
 
     \solution
     {
-        Como el grado de $x^3 - 2x^2 - x + 2$ es 3, el grado del resto puede ser a lo más 2, asi que podemos expresar el resto como el polinomio
-        $ax^2 + bx + c$ para constantes $a, b, c$. Escribamos la división como
+        Como el grado de $x^3 - 2x^2 - x + 2$ es 3, el grado del resto puede ser a lo más 2,
+        así que podemos expresar el resto que buscamos como el polinomio cuadrático $ax^2 + bx + c$ para constantes $a, b, c$.
+        Al escribir la división como
         \[x^{100} - 4x^{98} + 5x + 6 = \left( x^3 - 2x^2 - x + 2 \right)Q(x) + \left( ax^2 + bx + c \right)\]
         Rápidamente, notamos que $x^3 - 2x^2 - x + 2$ puede factorizarse
         \[x^{100} - 4x^{98} + 5x + 6 = (x - 2)(x - 1)(x + 1)Q(x) + ( ax^2 + bx + c )\]
-        Por el \textbf{Teorema del resto}, si sustituimos $x = 2, 1, -1$, los cuales hacen al término que multiplica a $Q(x)$ cero
+        Por el \textit{Teorema del resto}, si sustituimos $x$ en los valores $2, 1, -1$ el término que multiplica a $Q(x)$ se hace cero
         \begin{gather*}
             (2)^{100} - 4(2)^{98} + 5(2) + 6 = 0\times Q(2) + a(2)^2 + b(2) + c\\
             (1)^{100} - 4(1)^{98} + 5(1) + 6 = 0\times Q(1) + a(1)^2 + b(1) + c\\
             (-1)^{100} - 4(-1)^{98} + 5(-1) + 6 = 0\times Q(-1) + a(-1)^2 + b(-1) + c
         \end{gather*}
-        Del cual formamos
+        De donde formamos el siguiente sistema
         \[
             \left\{
             \begin{array}{rcl}
@@ -108,12 +126,22 @@ El resultado que acabamos de demostrar, solo muestra al existencia de las raíce
 
 \subsection{Agregados culturales y preguntas}
 {
-
+    \begin{itemize}
+        \item Para un estudiante de matemáticas, escuchar a alguien hablar sobre las matemáticas difícilmente le hace mayor bien que a un estudiante de natación el escuchar a alguien hablar sobre la natación.
+        Vos no podés aprender la técnica de natación teniendo a alguien que te dice cómo poner tus brazos y piernas; y no podés aprender a resolver problemas teniendo a alguien que te dice a cada momento cómo completar el cuadrado o sustitur $sen(u)$ por $y$.
+        ¡La mejor forma de aprender es hacer!
+        \item No te limités a memorizar teoremas importantes. Aprendé a probarlos. Los métodos usados para probar teoremas también pueden usarse para resolver otros problemas a los que no es fácil aplicar directamente estos teoremas.
+        \item Si $(a + b)^2 = a^2 + b^2 + 2ab$ y $(a + b + c)^2 = a^2 + b^2 + c^2 + 2ab + 2bc + 2ca$ ¿será cierto que $(a_1 + a_2 + \cdots + a_n)^2 = a_1^2 + a_2^2 + \cdots + a_n^2 + 2a_1 a_2 + 2a_1 a_3 + \cdots + 2a_{n-1}a_n$?
+    \end{itemize}
 }
 
 \section{Ejercicios y Problemas}
 {
     Sección de ejercicios y problemas para el autoestudio.
+
+    \begin{section-problem}
+        Calcular el valor de $a + b$ si $1 + i$ es raíz del polinomio $x^5 + ax^3 + b$.
+    \end{section-problem}
 
     \begin{section-problem}
         ¿Para qué valores de $k$ se cumple que $x - 2$ es factor de $x^3 + 2kx^2 + k^2 x + k - 3$?
