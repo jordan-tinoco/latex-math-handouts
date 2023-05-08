@@ -38,13 +38,9 @@
 \newcommand{\sen}{\operatorname{sen}}
 \newcommand{\arcsen}{\operatorname{arcsen}}
 \newcommand{\li}{\displaystyle\lim}
-\newcommand*{\QEDA}{\hfill\ensuremath{\blacksquare}}
-\newcommand{\QED}{\hfill {\qed}}
 
-\newcommand{\bproof}{\bigskip {\bf Proof. }}
-\newcommand{\eproof}{\hfill\qedsymbol}
-\newcommand{\Disp}{\displaystyle}
-\newcommand{\qe}{\hfill\(\bigtriangledown\)}
+\newcommand{\qedWhite}{\hfill\qed}
+\newcommand{\qedBlack}{\hfill\ensuremath{\blacksquare}}
 
 \newcommand{\sourceProblem}[1]
 {
@@ -67,13 +63,41 @@
     P(x) = a_nx^n+a_{n-1}x^{n-1}+\dots+a_{1}x+a_0
 }
 
-\newcommand{\solution}[1]
+\newcommand{\tempsolution}[1]
 {
     \vspace{-3mm}
     \begin{proof}[\textbf{\textup{Solución}}]
         #1
     \end{proof}
     \vspace{1mm}
+}
+
+\newenvironment{solution}[1][\empty]
+{
+    \ifthenelse{ \equal{#1}{\empty} }
+    {
+        \textbf{Solución.}
+    }
+    {
+        \textbf{Solución #1.}
+    }
+    }
+    {
+    \qedWhite
+}
+
+\newenvironment{math-proof}[1][\empty]
+{
+    \ifthenelse{ \equal{#1}{\empty} }
+    {
+        \textbf{Demostración.}
+    }
+    {
+        \textbf{Demostración #1.}
+    }
+    }
+    {
+    \qedBlack
 }
 
 \newcommand{\enumSolution}[2]

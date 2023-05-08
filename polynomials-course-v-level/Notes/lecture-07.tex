@@ -1,0 +1,244 @@
+\section{Clase 07}
+
+\subsection{Solución de la clase práctica}
+
+\begin{section-problem}
+    Para que la división de $6x^4 - 11x^2 + ax + b$ entre $3x^2 - 3x - 1$ sea exacta, encuentre los valores de $a$ y $b$ apropiados.
+
+    \begin{solution}
+        La solución de este problema en complicada hacerla en latex, por eso no la hago.
+        Pero la respuesta es $a = 1$ y $b = 1$.
+    \end{solution}
+\end{section-problem}
+
+\begin{section-problem}
+    Calcular la suma de coeficientes del resto que deja $x^{3333} - 9$ entre $x^2 - 729$.
+
+    \begin{solution}
+        Podemos expresar el problema de la siguiente manera
+        \[x^{3333} - 3^2 = (x - 3^3)(x + 3^3)Q(x) + ax + b\]
+        Por el teorema del resto $P(3^3) = 3^3 a + b$ y $P(-3^3) = -3^3 a + b$, con lo cual podemos sacamos el siguiente sistema de ecuaciones
+        \[
+            \left\{
+            \begin{array}{rcl}
+            3^{9999} - 3^2 & =& 3^3 a + b\\
+            -3^{9999} - 3^2 & =& -3^3 a + b
+            \end{array}
+            \right.
+        \]
+        De donde obtenemos las soluciones $(a, b) = (3^{9996}, -3^2)$.
+        Luego, la suma que nos piden es
+        \[a + b = 3^{9996} - 3^2 = \boxed{3^2(3^{9994} - 1)}\]
+    \end{solution}
+\end{section-problem}
+
+\begin{section-problem}
+    Sea $r$ una raíz de $x^2 - x + 7$.
+    Hallar el valor de $r^3 + 6r + \pi$.
+
+    \begin{solution}
+        Por defición $r^2 - r + 7 = 0$.
+        Con esta ecuación podemos obtener que $r^2 + 6 = r - 1$ y $r^2 - 4 = -7$.
+        Luego, transformando la expresión y evaluando llegamos a
+        \begin{gather*}
+            r^3 + 6r + \pi\\
+            r(r^2 + 6) + \pi\\
+            r(r - 1) + \pi\\
+            r^2 - 4 + \pi = \boxed{ -7 + \pi}
+        \end{gather*}
+    \end{solution}
+
+\end{section-problem}
+
+\begin{section-problem}
+    Sean $a$, $b$ y $c$ las raíces reales de la ecuación $x^3 + 3x^2 - 24x + 1 = 0$.
+    Probar que $\sqrt[3]{a} + \sqrt[3]{b} + \sqrt[3]{c} = 0$.
+
+    \begin{solution}
+        Sabemos que $(x + y + z)^3 = x^3 + y^3 + z^3 + 3(x + y + z)(xy + yz + zx) - 3xyz$.
+        Cuando hacemos $x = \sqrt[3]{a}$, $y = \sqrt[3]{b}$ y $z = \sqrt[3]{c}$, tenemos que
+        \[\left(\sqrt[3]{a} + \sqrt[3]{b} + \sqrt[3]{c}\right)^3 = a + b + c + 3\left(\sqrt[3]{a} + \sqrt[3]{b} + \sqrt[3]{c}\right)\left(\sqrt[3]{ab} + \sqrt[3]{bc} + \sqrt[3]{ca}\right) - 3\sqrt[3]{abc}\]
+        Digamos que $\alpha = \sqrt[3]{a} + \sqrt[3]{b} + \sqrt[3]{c}$, también, por Vieta sabemos que $a + b + c = -3$ y $abc = -1$.
+        Al agrupar $\alpha$ y sustituir
+        \begin{gather*}
+            \alpha^3 - 3\alpha\left(\sqrt[3]{ab} + \sqrt[3]{bc} + \sqrt[3]{ca}\right)= a + b + c - 3\sqrt[3]{abc}\\
+            \alpha\left[ \alpha^2 - 3\left(\sqrt[3]{ab} + \sqrt[3]{bc} + \sqrt[3]{ca}\right) \right]= -3 - 3\sqrt[3]{-1}\\
+            \alpha\left[ \alpha^2 - 3\left(\sqrt[3]{ab} + \sqrt[3]{bc} + \sqrt[3]{ca}\right) \right]= 0
+        \end{gather*}
+
+        Esta ecuación nos permite ver que si queremos probar que $\alpha = 0$, entonces tenemos que probar
+        \[\alpha^2 - 3\left(\sqrt[3]{ab} + \sqrt[3]{bc} + \sqrt[3]{ca}\right) \neq 0.\]
+        Por Vieta tenemos que $ab = -\dfrac{1}{c}$, $bc = -\dfrac{1}{a}$ y $ca = -\dfrac{1}{b}$, entonces si
+        \begin{gather*}
+            \alpha^2 - 3\left(\sqrt[3]{ab} + \sqrt[3]{bc} + \sqrt[3]{ca}\right) = 0\\
+            \alpha^2 = 3\left(\sqrt[3]{-\frac{1}{a}} + \sqrt[3]{-\frac{1}{b}} + \sqrt[3]{-\frac{1}{c}}\right) \\
+            \alpha^2 = - 3\left(\sqrt[3]{\frac{1}{a}} + \sqrt[3]{\frac{1}{b}} + \sqrt[3]{\frac{1}{c}}\right) \\
+            \alpha = \pm \sqrt{ - 3\left(\sqrt[3]{\frac{1}{a}} + \sqrt[3]{\frac{1}{b}} + \sqrt[3]{\frac{1}{c}}\right)}
+        \end{gather*}
+        Lo cual no puede ser, ya que las raíces son reales.
+        Luego, $\alpha = \boxed{\sqrt[3]{a} + \sqrt[3]{b} + \sqrt[3]{c} = 0}$.
+    \end{solution}
+\end{section-problem}
+
+\begin{section-problem}
+    Sean $r_1$, $r_2$ y $r_3$ raíces distintas del polinomio $y^3 - 22 y^2 + 80 y - 67$.
+    De tal manera que existen números reales $\alpha$, $\beta$ y $\theta$ tal que
+    \[\frac{1}{y^3 - 22 y^2 + 80 y - 67} = \frac{\alpha}{y - r_1} + \frac{\beta}{y - r_2} + \frac{\theta}{y - r_3}\]
+    $\forall y \notin \left\{ r_1, r_2, r_3 \right\}$.
+    ¿Cuál es valor de $\dfrac{1}{\alpha} + \dfrac{1}{\beta} + \dfrac{1}{\theta}$?
+
+    \begin{solution}
+        Por el teorema del factor, sabemos que $y^3 - 22 y^2 + 80 y - 67 = (y - r_1)(y - r_2)(y - r_3)$, por lo tanto
+        \[\frac{1}{(y - r_1)(y - r_2)(y - r_3)} = \frac{\alpha}{y - r_1} + \frac{\beta}{y - r_2} + \frac{\theta}{y - r_3}\]
+        Al multiplicar esta ecuación por $(y - r_1)(y - r_2)(y - r_3)$, obtenemos una ecuación donde $y \in \left\{ r_1, r_2, r_3 \right\}$
+        \[1 = \alpha(y - r_2)(y - r_3) + \beta(y - r_1)(y - r_3) + \theta(y - r_1)(y - r_2)\]
+        Si $y = r_1$, entonces
+        \begin{gather*}
+            1 = \alpha(r_1 - r_2)(r_1 - r_3) + 0 + 0\\
+            1 = \alpha(r_1^2 - r_1 r_2 - r_1 r_3 + r_2 r_3)\\
+            \frac{1}{\alpha} = r_1^2 - r_1 r_2 - r_1 r_3 + r_2 r_3
+        \end{gather*}
+        Análogamente, con $y = r_2$ y $y = r_3$ obtenemos $\dfrac{1}{\beta} = r_2^2 - r_1 r_2 - r_2 r_3 + r_3 r_1$ y $\dfrac{1}{\theta} = r_3^2 - r_2 r_3 - r_3 r_1 + r_1 r_2$ respectivamente.
+        Sumando estos resultado llegamos a
+        \begin{gather*}
+            \frac{1}{\alpha} + \frac{1}{\beta} + \frac{1}{\theta} = (r_1^2 - r_1 r_2 - r_1 r_3 + r_2 r_3) + (r_2^2 - r_1 r_2 - r_2 r_3 + r_3 r_1) + (r_3^2 - r_2 r_3 - r_3 r_1 + r_1 r_2)\\
+            \frac{1}{\alpha} + \frac{1}{\beta} + \frac{1}{\theta} = r_1^2 + r_2^2 + r_3^2 - (r_1 r_2 + r_2 r_3 + r_3 r_1)\\
+            \frac{1}{\alpha} + \frac{1}{\beta} + \frac{1}{\theta} = (r_1 + r_2 + r_3)^2 - 3(r_1 r_2 + r_2 r_3 + r_3 r_1)\\
+        \end{gather*}
+        Luego, por Vieta es fácil ver que $r_1 + r_2 + r_3 = 22$ y $r_1 r_2 + r_2 r_3 + r_3 r_1 = 80$.
+        Finalmente
+        \begin{gather*}
+            \frac{1}{\alpha} + \frac{1}{\beta} + \frac{1}{\theta} = (22)^2 - 3(80) = 484 - 240 = \boxed{244}
+        \end{gather*}
+    \end{solution}
+\end{section-problem}
+
+\begin{section-problem}
+    La ecuación $2^{333x - 2} + 2^{111x + 2} = 2^{222x + 1} + 1$ tiene tres raíces reales.
+    Dado que su suma es $\dfrac{m}{n}$ con $m, n \in \ZP$ y $mcd(m, n) = 1$.
+    Calcular $m + n$.
+
+    \begin{solution}
+        Si hacemos el cambio de variable $y = (2^x)^{111}$, vemos que la ecuación se transforma en
+        \begin{gather*}
+            2^{333x} \cdot 2^{-2} + 2^{111x} \cdot 2^2 = 2^{222x}\cdot 2^1 + 1\\
+            y^3\cdot 2^{-2} + y \cdot 2^2 = y^2\cdot 2 + 1\\
+            \frac{1}{4} y^3 - 2 y^2 + 4y - 1 = 0\\
+            y^3 - 8 y^2 + 16y - 4 = 0
+        \end{gather*}
+
+        Esta nueva ecuación tendrá raíces $a$, $b$ y $c$ de la forma $a = (2^{r_1})^{111}$, $b = (2^{r_2})^{111}$ y $c = (2^{r_3})^{111}$.
+        Donde $r_1$, $r_2$ y $r_3$ son la raíces de la ecuación original.
+        Luego, si nos fijamos cuidadosamente, por Vieta tenemos que
+        \begin{gather*}
+            abc = 4\\
+            (2^{111 r_1})(2^{111 r_2})(2^{111 r_3}) = 2^2\\
+            2^{111(r_1 + r_2 + r_3)} = 2^2\\
+            \rightarrow 111(r_1 + r_2 + r_3) = 2\\
+            \rightarrow r_1 + r_2 + r_3 = \frac{2}{111}
+        \end{gather*}
+        Como 2 y 111 son coprimos o $mcd(2, 111) = 1$, entonces $m + n = 2 + 111 = \boxed{113}$
+    \end{solution}
+\end{section-problem}
+
+\begin{section-problem}
+    Si $P(x) = x^4 + ax^3 + bx^2 + cx + d$ es un polinomio tal que $P(1) = 10$, $P(2) = 20$ y $P(3) = 30$, determine el valor de
+    \[\frac{P(12) + P(-8)}{10}.\]
+
+    Probablemente al idea más elemental para atacar este problema es formar un sistema de ecuaciones, pero nos toparemos que dicho sistema tendrá 4 variable y 3 ecuaciones, lo cual no puede resolverse.
+    Sin embargo ya conocemos el teorema del factor y veremos que este problema se vuelve sencillo.
+
+    \begin{solution}
+        Veamos que para el polinomio auxiliar $A(x) = P(x) - 10x$, los valores de 1, 2 y 3 son raíces.
+        Como $P(x)$ es de grado 4 y mónico, entonces $A$ también será de grado 4 y mónico\footnote{Hay que tener cuidado con este argumento, ya que puede darse el caso en el que un polinomio auxilar no sea del mismo grado que el polinomio original.}, es decir $A$ tiene 4 raíces.
+        Luego, por el teorema del factor sabemos que
+        \[A(x) = (x - 1)(x - 2)(x - 3)(x - r)\]
+        Donde $r$ es la raíz que falta.
+        Vemos que
+        \begin{gather*}
+            P(12) = A(12) + 10\times 12\\
+            P(12) = (12 - 1)(12 - 2)(12 - 3)(12 - r) + 120\\
+            P(12) = 11\cdot 10 \cdot 9 \cdot (12 - r) + 120\\
+            P(12) = 12\cdot 11\cdot 10 \cdot 9 - \fcolorbox{red}{white}{$11\cdot 10 \cdot 9 \cdot r$} + 120
+        \end{gather*}
+        Y
+        \begin{gather*}
+            P(-8) = A(-8) + 10\times -8\\
+            P(-8) = (-8 - 1)(-8 - 2)(-8 - 3)(-8 - r) - 80\\
+            P(-8) = -9\cdot -10 \cdot -11 \cdot (-8 - r) - 80\\
+            P(-8) = 11\cdot 10\cdot 9 \cdot 8  + \fcolorbox{red}{white}{$11\cdot 10 \cdot 9 \cdot r$} - 80
+        \end{gather*}
+        De esta manera, la expresión que nos piden evaluar se transforma en
+        \begin{gather*}
+            \frac{P(12) + P(-8)}{10}\\
+            \frac{12\cdot 11\cdot 10 \cdot 9 - \fcolorbox{red}{white}{$11\cdot 10 \cdot 9 \cdot r$} + 120 + \fcolorbox{red}{white}{$11\cdot 10 \cdot 9 \cdot r$} - 80}{10}\\
+            \frac{12\cdot 11\cdot 10 \cdot 9 + 11\cdot 10\cdot 9 \cdot 8 + 120 - 80}{10}\\
+            \frac{10(12\cdot 11 \cdot 9 + 11 \cdot 9 \cdot 8) + 40}{10}\\
+            12\cdot 11 \cdot 9 + 11 \cdot 9 \cdot 8 + 4 \\ 99\cdot 20 + 4 = 198 + 4 = \boxed{202}
+        \end{gather*}
+    \end{solution}
+\end{section-problem}
+
+\begin{section-problem}
+    Sea $F(x)$ un polinomio mónico con coeficientes enteros.
+    Probar que si existen cuatro enteros diferentes $a$, $b$, $c$ y $d$ tal que $F(a) = F(b) = F(c)  = F(d) = 5$,
+    entonces no existe un entero $k$ tal que $F(k) = 8$.
+
+    \begin{solution}
+        De la misma manera que en el problema anterior, definamos al polinomio auxiliar $A(x) = F(x) - 5$, los valores de $a$, $b$, $c$ y $d$ son raíces de $A$.
+        Como $F(x)$ es de grado $n$ y mónico, entonces $A$ también será de grado $n$ y mónico, es decir
+        \[A(x) = (x - a)(x - b)(x - c)(x - d)G(x)\]
+        Donde $G$ es un polinomio de grado $n - 4$.
+        Digamos que existe un entero $r$ tal que $F(r) = 8$, entonces $A(r) = F(r) - 5 = 8 - 5 = 3$.
+        \[(r - a)(r - b)(r - c)(r - d)G(r) = 3\]
+        Del lado izquierdo tenemos 4 enteros distintos los cuales deben de ser divisores de 3.
+        Los posibles factores de 3 son $-1, 1, -3, 3$, pero resulta que 3 solo puede ser expresado como $-1 \times 1 \times -3$.
+        Luego, $r$ no puede existir.
+    \end{solution}
+\end{section-problem}
+
+\begin{section-problem}
+    Sea el polinomio $P_0(x) = x^3 + 313x^2 - 77x - 8$.
+    Para enteros $n \geq 0$, definimos $P_n(x) = P_{n - 1}(x - n)$.
+    ¿Cuál es el coeficiente de $x$ en $P_{20}(x)$?
+
+    \begin{solution}
+        Veamos que pasa con $P_1(x)$
+        \begin{gather*}
+            P_1(x) = P_{1 - 1}(x - 1)\\
+            P_1(x) = P_0(x - 1)\\
+            P_1(x) = (x - 1)^3 + 313(x - 1)^2 - 77(x - 1) - 8
+        \end{gather*}
+
+        Bien, ahora veamos que pasa con $P_2(x)$
+        \begin{gather*}
+            P_2(x) = P_{2 - 1}(x - 2)\\
+            P_2(x) = P_1(x - 2)\\
+            P_2(x) = [(x - 2) - 1]^3 + 313[(x - 2) - 1]^2 - 77[(x - 2) - 1] - 8\\
+            P_2(x) = [x - (1 + 2)]^3 + 313[x - (1 + 2)]^2 - 77[x - (1 + 2)] - 8
+        \end{gather*}
+        Rápidamente, nos damos cuenta del patron que se forma con los números que se restan a $x$
+        \begin{gather*}
+            P_3(x) = [x - (1 + 2 + 3)]^3 + 313[x - (1 + 2 + 3)]^2 - 77[x - (1 + 2 + 3)] - 8\\
+            P_4(x) = [x - (1 + 2 + 3 + 4)]^3 + 313[x - (1 + 2 + 3 + 4)]^2 - 77[x - (1 + 2 + 3 + 4)] - 8\\
+            P_5(x) = [x - (1 + 2 + 3 + 4 + 5)]^3 + 313[x - (1 + 2 + 3 + 4 + 5)]^2 - 77[x - (1 + 2 + 3 + 4 + 5)] - 8\\
+            \vdots\\
+            P_{20}(x) = [x - (1 + \cdots + 20)]^3 + 313[x - (1 + \cdots + 20)]^2 - 77[x - (1 + \cdots + 20)] - 8
+        \end{gather*}
+        Por la fórmulas de Gauss sabemos que $1 + 2 + 3 + \cdots + n = \frac{n(n +1)}{2}$, entonces
+        \begin{gather*}
+            P_{20}(x) = \left(x - \frac{20\cdot21}{2}\right)^3 + 313\left(x - \frac{20\cdot21}{2}\right)^2 - 77\left(x - \frac{20\cdot21}{2}\right) - 8\\
+            \boxed{P_{20}(x) = (x - 210)^3 + 313(x - 210)^2 - 77(x - 210) - 8}
+        \end{gather*}
+        En el desarrollo de $(x + a)^3$ el coeficiente de $x$ es $3a^2$, en el de $(x + a)^2$ el coeficiente de $x$ es $2a$.
+        Por lo tanto, el coeficiente que buscamos es
+        \begin{gather*}
+            3(-210)^2 + 313\cdot2(-210) - 77\\
+            (-210)\left[3(-210) + 313\cdot2\right]  - 77 \\
+            (-210)\left[-630 + 626\right]  - 77 \\
+            (-210)\left[-4\right]  - 77 \\
+            840 - 77\\
+            \boxed{763}
+        \end{gather*}
+    \end{solution}
+\end{section-problem}
