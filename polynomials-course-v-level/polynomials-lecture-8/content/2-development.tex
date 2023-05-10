@@ -2,13 +2,14 @@
 
 \begin{theorem}
     Si $P(x)$ es un polinomio con coeficientes enteros, entonces $P(a) - P(b)$ es divisible entre $(a - b)$, para cualesquiera enteros distintos $a$ y $b$.
+    \[(a - b) \mid P(a) - P(b)\]
 \end{theorem}
 
 En particular, todas las raíces enteras de $P(x)$ dividen a $P(0)$.
 Esto nos conduce a la siguente propiedad aritmética.
 
 \begin{section-definition}
-    Sea $P(x) = a_n x^n + \cdots + a_0$ en los enteros y sea $z \in \Z$.
+    Sea $P(x) = a_n x^n + \cdots + a_1 x + a_0$ en los enteros y sea $z \in \Z$.
     Entonces \[P(z) = 0 \Leftrightarrow z \mid a_0.\]
 \end{section-definition}
 
@@ -23,7 +24,7 @@ Entonces
 El lado derecho de la ecuación es entera, por lo tanto $q = 1$.
 
 \begin{theorem}[\textbf{Teorema de la raíz racional}]
-    Sea $P(x) = a_n x^n + \cdots + a_0$ en los enteros y sea $\frac{p}{q}$ con $mcd(p, q) = 1$ una raíz cualquiera de $P$.
+    Sea $P(x) = a_n x^n + \cdots + a_0$ en los enteros y sea $\frac{p}{q}$, con $mcd(p, q) = 1$, una raíz cualquiera de $P$.
     Entonces se cumple que $p \mid a_0$ y $q \mid a_n$.
 \end{theorem}
 
@@ -36,10 +37,61 @@ El lado derecho de la ecuación es entera, por lo tanto $q = 1$.
 Todos los sumandos excepto, posiblemente, el primero, son múltiplos de $q$ y todos los sumandos excepto, posiblemente, el último son múltiplos de $p$.
 Como $p$ y $q$ dividen a 0, se deberá tener que $q \mid a_n p^n$ y $p \mid a_0 q^n$, y de aquí se sigue la afirmación, ya que\footnote{$(p, q) =  1$ es una manera corta de escribir $mcd(p, q) = 1$.} $(p, q) = 1$.
 
-\subsection{Agregados culturales y preguntas}
-{
 
-}
+\begin{example}
+    Encontrar todas la raíces de $x^3 - 2x^2 - 5x + 6$.
+    
+    \begin{solution}
+        Primero tratemos de ver las raíces racionales de la ecuación.
+        Los divisores del término principal y los divisores del término independiente son
+        \begin{gather*}
+            \left\{ -1, 1 \right\}\\
+            \left\{ \pm 1, \pm 2, \pm 3, \pm6 \right\}
+        \end{gather*}
+        respectivamente.
+        Por el Teorema de la raíz racional, las raíces de la ecuación tiene la forma $\dfrac{p}{q}$, es decir, el conjunto de valores candidatos a ser raíces es (ya simplificado)
+        \begin{gather*}
+            \left\{ \dfrac{\pm 1}{\pm 1}, \dfrac{\pm 2}{\pm 1}, \dfrac{\pm 3}{\pm 1}, \dfrac{\pm 6}{\pm 1} \right\} =
+            \left\{ \pm 1, \pm 2, \pm 3, \pm 6 \right\}
+        \end{gather*}
+        Pero, ¿cómo sabemos cuáles de estos valores es una raíz?.
+        Por el Teorema del factor, sabemos que $x^3 - 2x^2 - 5x + 6$ es divisible por $x - r$, donde $r$ es una raíz.
+
+        Entonces, por ejemplo si $x = -6$ la división $\frac{x^3 - 2x^2 - 5x + 6}{x + 6} = x^2 - 8x + 3 - \frac{12}{x + 6}$ no es exacta, por lo tanto $-6$ no es raíz\footnote
+        {También, se puede ir evaluado los valores en el polinomio y ver si da cero. Como hacer este análisis es elección del estudiante.}.
+        Este proceso lo aplicamos a todos los valores del conjunto.
+
+        En particular, si $x = 1$ la división $\frac{x^3 - 2x^2 - 5x + 6}{x - 1} = x^2 - x - 6$ en este caso es exacta, por lo tanto 1 es raíz.
+        Para términar solo falta encontar las raíces de $x^2 - x - 6 = (x - 3)(x + 2)$, las cuales son $-2$ y 3.
+        Luego, las raíces del polinomio son $\left\{ -2, 1, 3 \right\}$.
+    \end{solution}
+\end{example}
+
+\begin{example}
+    Sea $P$ un polinomio con coeficientes enteros tal que $P(1) = 2$, $P(2) = 3$ y $P(3) = 2016$.
+    Si $n$ es el menor valor positivo posible de $P(2016)$, encontrar el resto cuando $n$ es dividido por 2016.
+
+    \begin{solution}
+        Rápidamente, por el Teorema del resto
+        \[P(x) = (x - 1)(x - 2)Q(x) + x + 1\]
+
+        Cuando hacemos $x = 3$, entonces obtenemos $2016 = 2Q(3) + 4$, lo cual es $Q(3) = 1006$.
+        Ahora bien, cuando hacemos $x = 2016$, obtenemos $P(2016) = 2015\cdot2014Q(2016) + 2017$.
+        Por el Teorema 1.1, sabemos que
+        \begin{gather*}
+            2016 - 3 \mid Q(2016) - Q(3)\\
+            2013 \mid Q(2016) - Q(3)
+        \end{gather*}
+        El mínimo valor de $Q(2016)$ tal que $P(2016) \geq 0$ es $Q(2016) = Q(3) = 1006$, por lo tanto
+        \begin{gather*}
+            P(2016) = 2015\cdot2014\cdot1006 + 2017 \equiv (-1)(-2)(1006) + 2017 \fullModIn{\boxed{2013}}{2016}
+        \end{gather*}
+    \end{solution}
+\end{example}
+
+\vspace{-2mm}
+Otra solución al problema anterior sería por medio del Teorema Chino del Resto.
+
 
 \section{Ejercicios y Problemas}
 {
@@ -54,11 +106,11 @@ Como $p$ y $q$ dividen a 0, se deberá tener que $q \mid a_n p^n$ y $p \mid a_0 
     \end{section-problem}
 
     \begin{section-problem}
-        Si la división entre los polinomios $12x^5 - 9x^4 + 14x^3 - mx^2 + nx - p$
+        Encontrar todas las raíces racionales del polinomio $30x^4 - 133 x^3 - 121x^2 + 189x - 45$.
     \end{section-problem}
 
     \begin{section-problem}
-        Si el polinomio $P(x) = 16x^5 + ax^2 + bx + c$ es divisible por $2x^3 - x^2 + 1$, hallar $a + b + c$.
+        Encontrar todos los $r$ tal que $12r^4 - 16r^3 > 41r^2 - 69r + 18$.
     \end{section-problem}
 
     \begin{section-problem}
