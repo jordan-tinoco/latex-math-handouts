@@ -1,5 +1,146 @@
 \section{Desarrollo}
 
+\subsection{Polinomios simétricos elementales}
+
+Un polinomio de dos variables $P(x, y)$ es simétrico si $P(x, y) = P(y, x)$ para toda $x$, $y$.
+Por ejemplo, $7x^2 - 5xy + 7y^2$ es simétrico, ya que $P(x, y) = 7x^2 - 5xy + 7y^2$ es igual a $P(y, x) = 7y^2 - 5yx + 7x^2$.
+
+Así mismo, un polinmio de tres variables $P(x, y, z)$ es simétrico si $P(x, y, z) = P(x, z, y) = P(y, x, z) = P(y, z, x) = P(z, x, y) = P(z, y, x)$.
+Por ejemplo, $13x^5 + 13y^5 + 13z^5 - 8xyz + 1$ es simétrico, ya que
+\begin{gather*}
+    P(x, y, z) = 13x^5 + 13y^5 + 13z^5 - 8xyz + 1\\
+    P(x, z, y) = 13x^5 + 13z^5 + 13y^5 - 8xzy + 1\\
+    P(y, x, z) = 13y^5 + 13x^5 + 13z^5 - 8yxz + 1\\
+    P(y, z, x) = 13y^5 + 13z^5 + 13x^5 - 8yzx + 1\\
+    P(z, x, y) = 13z^5 + 13x^5 + 13y^5 - 8zxy + 1\\
+    P(z, y, x) = 13z^5 + 13y^5 + 13x^5 - 8zyx + 1
+\end{gather*}
+son todos iguales.
+Análogamente, un polinomio de $n$ variables $P(x_1, x_2, \dots, x_n)$ es simétrico si $P(x_1, x_2, \cdots, x_n) = P(x_1, x_3, \cdots, x_n) = \cdots$, es decir si $P$ evaluado en todas las permutaciones de las $n$ variables da el mismo resultado.
+
+\begin{remark}
+    En el polinomio de ejemplo $7x^2 - 5xy + 7y^2$, veamos que $P(x, 1) =  P(1, x)$.
+    Es decir, $7x^2 - 5x + 7$ es un polinomio simétrico o \textbf{recíproco}, esta es la manera en la que se presentaron los polinomios recíprocos en la primera clase del curso\footnote{Ver~\cite{TD23-clase1}, página 1.}.
+\end{remark}
+
+Resulta que los polinomios simétricos más simples son los que tienen sus variables con grado 1, como por ejemplo $x + y$, $xy$, $x + y + z$, etc.
+Esto se puede llevar a la formalización, por lo cual veamos la siguiente definición.
+
+\begin{definition}[\textbf{Polinomio simétrico elemental}]
+    Sea $k \in \left\{ 1, 2, \cdots, n \right\}$.
+    El $k$-ésimo polinomio simétrico elemental en las variables $x_1, \cdots, x_n$ es el polinomio\footnote{$\sigma_k$: Se lee sigma sub k.} $\sigma_k$ definido por
+    \[\sigma_k = \sigma_k(x_1, x_2, \cdots, x_n) = \Sigma x_{i_1} x_{i_2} \cdots x_{i_k}\]
+    donde la suma se realiza sobre los subconjuntos $\left\{ i_1, i_2, \cdots, i_k \right\}$ de tamaño $k$ del conjunto $\left\{ 1, 2, \cdots, n\right\}$.
+\end{definition}
+
+Para más claridad veamos algunos casos:
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{2.5cm} | p{12cm}|}
+        \hline
+        Variables & Polinomios simétricos elementales \\
+        \hline \hline
+        $a$, $b$
+        &
+        $
+        \begin{array}{lcl}
+            \sigma_1 &=& a + b\\
+            \sigma_2 &=& ab
+        \end{array}
+        $
+        \\\hline
+        $a$, $b$, $c$
+        &
+        $
+        \begin{array}{lcl}
+            \sigma_1 &=& a + b + c\\
+            \sigma_2 &=& ab + bc + ca\\
+            \sigma_3 &=& abc
+        \end{array}
+        $
+        \\\hline
+        $a$, $b$, $c$, $d$
+        &
+        $
+        \begin{array}{lcl}
+            \sigma_1 &=& a + b + c + d\\
+            \sigma_2 &=& ab + ac + ad + bc + bd + da\\
+            \sigma_3 &=& abc + bcd + cda\\
+            \sigma_4 &=& abcd
+        \end{array}
+        $
+        \\\hline
+        $a$, $b$, $c$, $d$, $e$
+        &
+        $
+        \begin{array}{lcl}
+            \sigma_1 &=& a + b + c + d + e\\
+            \sigma_2 &=& ab + ac + ad + ae + bc + bd + be + cb + ce + de\\
+            \sigma_3 &=& abc + abd + abe + acd + ace + ade + bcd + bce + bde + ced\\
+            \sigma_4 &=& abcd + abce + abde + acde + bced\\
+            \sigma_5 &=& abcde
+        \end{array}
+        $
+        \\\hline
+    \end{tabular}
+\end{table}
+
+\begin{example}
+    Hallar $x^2 + y^2$ si
+    \[
+        \left\{
+        \begin{array}{rcl}
+            x + y & =& 1\\
+            x^4 + y^4 & =& 7
+        \end{array}
+        \right.
+    \]
+\end{example}
+\begin{solution}
+    De la primera ecuación $x + y = 1$ al cuadrado obtenemos que $x^2 + 2xy + y^2 = 1$, es decir $x^2 + y^2 = 1 - 2xy$.
+    Por lo tanto sólo basta encontrar el valor de $xy$ para solucionar el problema.
+    Veamos que
+    \begin{gather*}
+        (x^2 + y^2)^2 = (1 - 2xy)^2 \\
+        x^4 + 2x^2 y^2 + y^4 = 1 - 4xy + 4x^2 y^2\\
+        x^4 + y^4 = 2x^2 y^2 - 4xy + 1\\
+        7 = 2x^2 y^2 - 4xy + 1\\
+        2x^2 y^2 - 4xy - 6 = 0\\
+        2(x^2 y^2 - 2xy - 3) = 0\\
+        2(xy - 3)(xy + 1) = 0
+    \end{gather*}
+    Es decir, $xy$ puede tomar los valores de $3$ y $-1$.
+    Luego, $x^2 + y^2$ puede tomar los valores de $\boxed{-5}$ y $\boxed{3}$.
+\end{solution}
+
+
+
+\subsection{Fórmulas de Vieta}
+
+Ya conociendo los polinomios simétricos elementales, podemos volver a ver la defición de las fórmulas de Vieta que ya conocemos\footnote{Ver~\cite{TD23-clase4}, página 1.}.
+
+\begin{definition}[\textbf{Fórmulas de Vieta}]
+    Sea $P(x) = a_n x^n + a_{n - 1} x^{n - 1} + \cdots  + a_1 x + a_0$ un polinomio con raíces $r_1, r_2, \cdots, r_n$,
+    entonces
+    \begin{gather*}
+        \sigma_k = (-1)^k\times \frac{a_{n - k}}{a_n}.
+    \end{gather*}
+\end{definition}
+
+\begin{example}
+    Determine el producto de las raíces de $50x^{50} + 49x^{49} + \cdots + x + 1.$
+\end{example}
+\begin{solution}
+    Por las fórmulas de Vieta, tenemos que
+    \[\sigma_{50} = (-1)^{50} \times \frac{a_0}{a_{50}} = \boxed{\frac{1}{50}}. \]
+\end{solution}
+
+\begin{example}
+    Consideremos el polinomio $P(x) = x^n - (x - 1)^n$, donde $n$ es un entero positivo impar.
+    Encontrar el valor de la suma y el valor del producto de sus raíces.
+\end{example}
+
 \subsection{Agregados culturales y preguntas}
 {
 
@@ -8,4 +149,9 @@
 \section{Ejercicios y Problemas}
 {
     Sección de ejercicios y problemas para el autoestudio.
+
+    \begin{section-problem}
+        Sean $a$, $b$ y $c$ las raíces de la ecuación $3x^3 + x + 2015 = 0$.
+        Calcular \[(a + b)^3 + (b + c)^3 + (c + a)^3\]
+    \end{section-problem}
 }
