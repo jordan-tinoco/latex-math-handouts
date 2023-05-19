@@ -26,12 +26,12 @@ Análogamente, un polinomio de $n$ variables $P(x_1, x_2, \dots, x_n)$ es simét
 Resulta que los polinomios simétricos más simples son los que tienen sus variables con grado 1, como por ejemplo $x + y$, $xy$, $x + y + z$, etc.
 Esto se puede llevar a la formalización, por lo cual veamos la siguiente definición.
 
-\begin{definition}[\textbf{Polinomio simétrico elemental}]
+\begin{section-definition}[\textbf{Polinomio simétrico elemental}]
     Sea $k \in \left\{ 1, 2, \cdots, n \right\}$.
     El $k$-ésimo polinomio simétrico elemental en las variables $x_1, \cdots, x_n$ es el polinomio\footnote{$\sigma_k$: Se lee sigma sub k.} $\sigma_k$ definido por
     \[\sigma_k = \sigma_k(x_1, x_2, \cdots, x_n) = \Sigma x_{i_1} x_{i_2} \cdots x_{i_k}\]
     donde la suma se realiza sobre los subconjuntos $\left\{ i_1, i_2, \cdots, i_k \right\}$ de tamaño $k$ del conjunto $\left\{ 1, 2, \cdots, n\right\}$.
-\end{definition}
+\end{section-definition}
 
 Para más claridad veamos algunos casos:
 
@@ -114,7 +114,18 @@ Para más claridad veamos algunos casos:
     Luego, $x^2 + y^2$ puede tomar los valores de $\boxed{-5}$ y $\boxed{3}$.
 \end{solution}
 
+Otra notación útil para polinomios simétricos, es la siguiente.
 
+\begin{section-definition}[\textbf{Suma simétrica de potencias}]
+    La suma simétrica de la $k$-ésimas potencias en las variables $x_1, \cdots, x_n$ es el polinomio $s_k$ definido por
+    \[s_k = s_k(x_1, x_2, \cdots, x_n) = x_1^k + x_2^k + \cdots + x_n^k, \quad \forall k \in \Z^{\geq 0}.\]
+\end{section-definition}
+
+Algunas relaciones clásicas entre las sumas simétricas de potencias y los polinomios simétricos elementales, como por ejemplo $\boxed{s_2 = \sigma_1^2 - 2\sigma_2}$ para cualquier cantidad de variables.
+La relación $\boxed{s_k = \sigma_1 s_{k - 1} - \sigma_2 s_{k - 2}}$ para dos variables y $\boxed{s_k = \sigma_1 s_{k - 1} - \sigma_2 s_{k - 2} + \sigma_3 s_{k - 3}}$ para tres variables.
+
+Estas relaciones casos particulares de las llamadas \textbf{Fórmulas de Newton}.
+Se invita al estudiante investigar por su propia cuenta sobre estas fórmulas.
 
 \subsection{Fórmulas de Vieta}
 
@@ -136,22 +147,63 @@ Ya conociendo los polinomios simétricos elementales, podemos volver a ver la de
     \[\sigma_{50} = (-1)^{50} \times \frac{a_0}{a_{50}} = \boxed{\frac{1}{50}}. \]
 \end{solution}
 
-\begin{example}
-    Consideremos el polinomio $P(x) = x^n - (x - 1)^n$, donde $n$ es un entero positivo impar.
-    Encontrar el valor de la suma y el valor del producto de sus raíces.
-\end{example}
-
-\subsection{Agregados culturales y preguntas}
-{
-
-}
-
 \section{Ejercicios y Problemas}
 {
     Sección de ejercicios y problemas para el autoestudio.
 
     \begin{section-problem}
-        Sean $a$, $b$ y $c$ las raíces de la ecuación $3x^3 + x + 2015 = 0$.
-        Calcular \[(a + b)^3 + (b + c)^3 + (c + a)^3\]
+        Consideremos el polinomio $P(x) = x^n - (x - 1)^n$, donde $n$ es un entero positivo impar.
+        Encontrar el valor de la suma y el valor del producto de sus raíces.
     \end{section-problem}
+
+    \begin{section-problem}
+        Encontrar los números reales $x$ y $y$, que satisfacen
+        \[
+            \left\{
+            \begin{array}{rcl}
+                x^3 + y^3 & =& 7\\
+                x^2 + y^2 + x + y + xy & =& 4
+            \end{array}
+            \right.
+        \]
+    \end{section-problem}
+
+    \begin{section-problem}
+        Encontrar todas las soluciones reales del sistema
+        \[
+            \left\{
+            \begin{array}{rcl}
+                x + y + z & =& 1\\
+                x^3 + y^3 + z^3 + xyz & =& x^4 + y^4 + z^4 + 1
+            \end{array}
+            \right.
+        \]
+    \end{section-problem}
+
+    \begin{section-problem}
+        Sean $x$, $y$ y $z$ números reales, encontrar todas las soluciones del siguiente sistema de ecuaciones
+        \[
+            \left\{
+            \begin{array}{rcl}
+                x + y + z & =& 6\\
+                x^2 + y^2 + z^2 & =& 30\\
+                x^3 + y^3 + z^3 & =& 132
+            \end{array}
+            \right.
+        \]
+    \end{section-problem}
+
+    \begin{section-problem}
+        Si $\alpha + \beta + \gamma = 0$, demostrar que
+        \[3 (\alpha^2 + \beta^2 + \gamma^2) (\alpha^5 + \beta^5 + \gamma^5) = 5 (\alpha^3 + \beta^3 + \gamma^3) (\alpha^4 + \beta^4 + \gamma^4).\]
+    \end{section-problem}
+
+    \begin{section-problem}
+        Sean $a$, $b$ y $c$ números reales distintos de cero, con $a + b + c \neq 0$.
+        Probar que si
+        \[\frac{1}{a} + \frac{1}{b} + \frac{1}{c} = \frac{1}{a + b + c},\]
+        entonces para $n$ impar se cumple
+        \[\frac{1}{a^n} + \frac{1}{b^n} + \frac{1}{c^n} = \frac{1}{a^n + b^n + c^n}.\]
+    \end{section-problem}
+
 }
