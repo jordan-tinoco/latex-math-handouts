@@ -5,13 +5,53 @@
         Si $p$ y $q$ son las raíces del polinomio $P(x) = 4x^2 + 5x + 3$.
         Determina $(p + 7)(q + 7)$, sin calcular los valores de $p$ y $q$.
     \end{section-problem}
+    \begin{solution}
+        Por Vieta $p + q = -\dfrac{5}{4}$ y $pq = \dfrac{3}{4}$, así al desarrollar
+        \begin{gather*}
+        (p + 7)(q + 7) \\
+        pq + 7(p + q) + 49\\
+        \dfrac{3}{4} + 7\left(- \dfrac{5}{4}\right) + 49\\
+        \dfrac{3}{4} - \dfrac{35}{4} + 49\\
+        -8 + 49 = \boxed{41}
+        \end{gather*}
+    \end{solution}
 
     \begin{section-problem}
         Supóngase que el polinomio $5x^3 + 4x^2 - 8x + 6$ tiene tres raíces reales $a, b \mbox{ y } c$.
         Demostra que \[(5a)^2\left(\frac{b}{2}\right)\left(\frac{1}{a} + \frac{1}{b}\right) + (5b)^2\left(\frac{c}{2}\right)\left(\frac{1}{b} + \frac{1}{c}\right)+ (5c)^2\left(\frac{a}{2}\right)\left(\frac{1}{c} + \frac{1}{a}\right) = 3^3 + 1.\]
     \end{section-problem}
+    \begin{solution}
+        Simplificando la expresión y usando las fórmulas de Vieta, tendremos que
+        \begin{gather*}
+        (5a)^2\left(\frac{b}{2}\right)\left(\frac{1}{a} + \frac{1}{b}\right) + (5b)^2\left(\frac{c}{2}\right)\left(\frac{1}{b} + \frac{1}{c}\right)+ (5c)^2\left(\frac{a}{2}\right)\left(\frac{1}{c} + \frac{1}{a}\right) = 3^3 + 1\\
+        \frac{25}{2}a^2 b\left(\frac{a + b}{ab}\right) + \frac{25}{2} b^2 c\left(\frac{b + c}{bc}\right) + \frac{25}{2}c^2 a\left(\frac{c + a}{ca}\right) = 3^3 + 1\\
+        \frac{25}{2}a\left(a + b\right) + \frac{25}{2}b\left(b + c \right) + \frac{25}{2}c\left(c + a\right) = 3^3 + 1\\
+        \frac{25}{2}\left[ a^2 + ab + b^2 + bc + c^2 + ca \right] = 3^3 + 1\\
+        \frac{25}{2}\left[ a^2 + b^2 + c^2 + ab + bc + ca \right] = 3^3 + 1\\
+        \frac{25}{2}\left[ (a + b + c)^2 - 2(ab + bc + ca) + (ab + bc + ca)\right] = 3^3 + 1\\
+        \frac{25}{2}\left[ (a + b + c)^2 - (ab + bc + ca)\right] = 3^3 + 1\\
+        \frac{25}{2}\left[ \left(\frac{4}{5}\right)^2 - (-\frac{8}{5})\right] = 3^3 + 1\\
+        \frac{25}{2}\left[ \frac{16}{25} + \frac{8}{5}\right] = 3^3 + 1\\
+        \frac{25}{2}\left[ \frac{56}{25}\right] = 3^3 + 1\\
+        28 = 3^3 + 1
+        \end{gather*}
+    \end{solution}
 
     \begin{section-problem}
         Sean $r_1, r_2, r_3$ las raíces del polinomio $P(x) = x^3 - x^2 + x - 2$.
         Determina el valor de $r^3_1 + r^3_2 + r^3_3$, sin calcular los valores de $r_1, r_2, r_3$.
     \end{section-problem}
+
+    \begin{solution}
+        Por propiedad
+        \begin{gather*}
+            r_1^3 - r_1^2 + r_1 - 2 = 0 \rightarrow r_1^3 = r_1^2 - r_1 + 2\\
+            r_2^3 - r_2^2 + r_2 - 2 = 0 \rightarrow r_2^3 = r_2^2 - r_2 + 2\\
+            r_3^3 - r_3^2 + r_3 - 2 = 0 \rightarrow r_3^3 = r_3^2 - r_3 + 2
+        \end{gather*}
+        Así que la expresión en cuestión toma la forma $r^3_1 + r^3_2 + r^3_3 = r^2_1 + r^2_2 + r^2_3 - (r_1 + r_2 + r_3) + 6$,
+        como $a^2 + b^2 + c^2 = (a + b + c)^2 - 2(ab + bc + ca)$, entonces $r^3_1 + r^3_2 + r^3_3 = (r_1 + r_2 + r_3)^2 - 2(r_1 r_2 + r_2 r_3 + r_3 r_1) - (r_1 + r_2 + r_3) + 6$.
+        Usando Vieta, finalmente llegamos a
+        \[r^3_1 + r^3_2 + r^3_3 = (-1)^2 -2(1) - (-1) + 6 = \boxed{6}\]
+
+    \end{solution}
