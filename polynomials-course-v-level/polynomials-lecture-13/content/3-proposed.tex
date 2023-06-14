@@ -1,17 +1,6 @@
 \section{Problemas propuestos}
 
 \begin{section-problem}
-    Sea $Q(x) = 2x - 4096$ y $P(x) = Q^{12}(x)$, hallar la raíz de $P$.
-\end{section-problem}
-
-\begin{section-problem}
-    Si $a$ y $b$ son raíces distintas del polinomio $x^2 + 1012x + 1011$, entonces
-    \[\frac{1}{a^2 + 1011a + 1011} + \frac{1}{b^2 + 1011b + 1011} = \frac{m}{n},\]
-    donde $m$ y $n$ son primos relativos.
-    Calcular $m + n$.
-\end{section-problem}
-
-\begin{section-problem}
     Dado el polinomio $P(x)$ para el cual se cumple que
     \[x^{23} + 23x^{17} - 18x^{16} - 24x^{15} + 108x^{14} = (x^4 - 3x^2 - 2x + 9)P(x)\]
     Calcular la suma de coeficientes de $P$.
@@ -27,35 +16,102 @@
 
 \begin{section-problem}
     Dado que
-    \begin{gather*}
-        Q(x) = 2x + 3 \\
-        Q( F(x) + G(x) ) = 4x + 3 \\
-        Q( F(x) \times G(x) ) = 5
-    \end{gather*}
-    Calcular $F(G(F(G(\dots F(G(1))\dots))))$.
+    \[
+        \left\{
+        \begin{array}{rcl}
+            Q(x + 1) & =& \dfrac{3}{2} x + 3\\
+            Q( F(x) + G(x) ) & =& 3x + \dfrac{3}{2}\\
+            Q( F(x) \times G(x) ) & =& \dfrac{15}{2}
+        \end{array}
+        \right.
+    \]
+    Calcular $F(G(F(G(\dots F(G(-2))\dots))))$.
 \end{section-problem}
 
 \begin{section-problem}
-    Dado que $m$ y $n$ son raíces del polinomio $6x^2 - 5x - 3$, encuentra un polinomio cuyas raíces sean
-    $m - n^2$ y $n - m^2$, sin calcular los valores de $m$ y $n$.
+    Sea $Q(x) = 2x - 4096$ y $P(x) = Q^{12}(x)$, hallar la raíz de $P$.
 \end{section-problem}
 
 \begin{section-problem}
-    Si $P(x - 2) = x^3 - 10x^2 + 28x - 24$, hallar el resto de dividir $P(x)$ por $x - 3$
+    Hallar el resto de la división de $\left[(x - 1)(x)(x + 2)(x + 3)\right]^2 + (x^2 + 2x)^3 x - 50$ entre $x^2 + 2x - 5$.
 \end{section-problem}
 
 \begin{section-problem}
-    Encontrar el resto cuando $(x + 3)^5 + (x + 2)^8 + (5x + 9)^{1997}$ es dividido por $x + 2$.
+    Si $P\left(x + \dfrac{1}{x}\right) = x^2 + \dfrac{1}{x^2} + 227$, ¿cuál es el valor de $\sqrt {P(28)}$?
 \end{section-problem}
 
 \begin{section-problem}
-    Encontrar el resto cuando $x^{2006} + x^{2005} + \cdots + x + 1$ es dividido por $x + 1$.
+    Si $a$ y $b$ son raíces distintas del polinomio $x^2 + 1012x + 1011$, entonces
+    \[\frac{1}{a^2 + 1011a + 1011} + \frac{1}{b^2 + 1011b + 1011} = \frac{m}{n},\]
+    donde $m$ y $n$ son primos relativos.
+    Calcular $m + n$.
+\end{section-problem}
+
+\begin{section-problem}
+    Encontrar el resto cuando $(5x + 16)^{2023} + (x + 6)^{98} + (7x + 30)^{49}$ es dividido por $x + 3$.
+\end{section-problem}
+
+\begin{section-problem}
+    Si la división
+    \[\frac{x^{80} - 7 x^{30} + 9x^5 - mx + 1}{x^3 + x - 2}\]
+    Deja como resto a $R(x) = x^2 + x - 1$, hallar el valor de $m$.
+\end{section-problem}
+
+\begin{section-problem}
+    Demostrar por inducción matemática, que $\forall n \in \Z^{\geq 0}$, se cumple
+    \[17 \mid 2^{5n + 3} + 5^n \cdot 3^{n + 2}.\]
+\end{section-problem}
+
+\begin{section-problem}
+    Sea $R(c) = a^2 + b^2 + 65c^2 + 2ab - 18bc - 18ca$, factorize $R$ y responda.
+    ¿Cuáles son las raíces de $R$?
+\end{section-problem}
+
+\begin{section-problem}
+    Encontrar el resto cuando $x^{2022} + x^{2021} + \cdots + x + 1$ es dividido por $x - 3$.
 \end{section-problem}
 
 \begin{section-problem}
     Sea el polinomio $P_0(x) = x^3 + 313x^2 - 77x - 8$.
     Para enteros $n \geq 0$, definimos $P_n(x) = P_{n - 1}(x - n)$.
-    ¿Cuál es el coeficiente de $x$ en $P_{20}(x)$?
+    ¿Cuál es el coeficiente del término cuadrático en $P_{23}(x)$?
+\end{section-problem}
+
+\begin{section-problem}
+    Indique el valor de la expresión
+    \[M(3)  + M(5) + M(7) + \cdots + M(2021) + M(2023)\]
+    Si $M(x) = \dfrac{2\cdot 2023}{x(x - 2)}$.
+\end{section-problem}
+
+\begin{section-problem}
+    Dado el polinomio $S(x) = (11 - 15x^3)(17x^6 - 37) + 2^8 x^6 (16 - x + x^2)(16 + x)$, responda lo siguiente:
+    \begin{multicols}{2}
+        \begin{enumerate}
+            \item ¿$S(x)$ es mónico? \\R: \rule{1cm}{0.1mm}
+            \item ¿$S(x)$ es completo? \\R: \rule{1cm}{0.1mm}
+            \item ¿$S(x)$ es simétrico? \\R: \rule{1cm}{0.1mm}
+            \item Escriba el coeficiente de $x^6$. \\R: \rule{1cm}{0.1mm}
+            \item Escriba el término independiente.\\ R: \rule{1cm}{0.1mm}
+            \item ¿Es $S\left(\sqrt[3]{x}\right)$ un polimonio? \\ R: \rule{2cm}{0.1mm}
+        \end{enumerate}
+    \end{multicols}
+\end{section-problem}
+
+\begin{section-problem}
+    Si $P(x - 2) = x^3 - 10x^2 + 28x - 24$, hallar el resto de dividir $P(x)$ por $x - 3$.
+\end{section-problem}
+
+\begin{section-problem}
+    Encontrar todas las tripletas $(x, y, z)$ de números reales, tal que cumplen el siguiente sistema de ecuaciones
+    \[
+        \left\{
+        \begin{array}{rcl}
+            x + y + z & =& 17\\
+            xy + yz + zx & =& 94\\
+            x y z & =& 168
+        \end{array}
+        \right.
+    \]
 \end{section-problem}
 
 \begin{section-problem}
@@ -67,96 +123,29 @@
 \end{section-problem}
 
 \begin{section-problem}
-    Sean $x$, $y$ y $z$ números reales, encontrar todas las soluciones del siguiente sistema de ecuaciones
-    \[
-        \left\{
-        \begin{array}{rcl}
-            x + y + z & =& 6\\
-            x^2 + y^2 + z^2 & =& 30\\
-            x^3 + y^3 + z^3 & =& 132
-        \end{array}
-        \right.
-    \]
+    Hallar $Q(x)$, si $P\left(Q(x) - 3\right) = 6x + 2$ y $P(x + 3) = 2x + 10$.
 \end{section-problem}
 
 \begin{section-problem}
-    Demostrar $\forall n \in \N$, que
-    \[8 \mid 3^{2n + 2} + 8n - 9\]
-\end{section-problem}
-
-
-\begin{section-problem}
-    Con la ayuda del teorema de la raíz racional, encontrar todas las raíces de los siguientes polinomios
-    \[2 x^3 - 21 x^2 + 52 x - 21\]
+    Con la ayuda del teorema de la raíz racional, encontrar todas las raíces de los siguiente polinomio
+    \[2 x^3 - 21 x^2 + 52 x - 21.\]
 \end{section-problem}
 
 \begin{section-problem}
-    Si la división
-    \[\frac{x^{80} - 7 x^{30} + 9x^5 - mx + 1}{x^3 + x - 2}\]
-    Deja como resto a $R(x) = x^2 + x - 1$, hallar el valor de $m$.
-\end{section-problem}
-
-\begin{section-problem}
-    Hallar $Q(x)$, si $P\left[Q(x) - 3\right] = 6x + 2$ y $P(x + 3) = 2x + 10$.
-\end{section-problem}
-
-\begin{section-problem}
-    Indique el valor de la expresión
-    \[E(3)  \cdot E(5) \cdot E(7) \cdots E(2021) \cdot E(2023)\]
-    Si $E(x) = 1 + \dfrac{2}{x - 1}$
-\end{section-problem}
-
-\begin{section-problem}
-    Hallar el resto de la división de $\left[(x - 1)(x)(x + 2)(x + 3)\right]^2 + (x^2 + 2x)^3 x - 50$ entre $x^2 + 2x - 5$.
-\end{section-problem}
-
-\begin{section-problem}
-    Si $P\left(x + \dfrac{1}{x}\right) = x^2 + \dfrac{1}{x^2} + 2023$, ¿cuál es el valor de $P(2024)$?
-\end{section-problem}
-
-\begin{section-problem}
-    Dado el polinomio $S(x) = (11 - 15x^3)(17x^6 - 43) + 2^8 x^6 (1 - x + x^2)(1 + x)$, responda lo siguiente:
-    \begin{multicols}{2}
-        \begin{enumerate}
-            \item ¿$S(x)$ es mónico? \\R: \rule{1cm}{0.1mm}
-            \item ¿$S(x)$ es completo? \\R: \rule{1cm}{0.1mm}
-            \item ¿$S(x)$ es simétrico? \\R: \rule{1cm}{0.1mm}
-            \item Escriba el coeficiente de $x^6$. \\R: \rule{1cm}{0.1mm}
-            \item Escriba el término independiente.\\ R: \rule{1cm}{0.1mm}
-            \item ¿Es $S(\sqrt[3]{x})$ un polimonio? \\ R: \rule{2cm}{0.1mm}
-        \end{enumerate}
-    \end{multicols}
+    Dado que $m$ y $n$ son raíces del polinomio $6x^2 - 5x - 3$, encuentra un polinomio cuyas raíces sean
+    $m - n^2$ y $n - m^2$, sin calcular los valores de $m$ y $n$.
 \end{section-problem}
 
 \begin{section-problem}
     Si tenemos que
-    \begin{align*}
-        P(x) = \frac{x - 1}{3} \\
-        Q(x) = 3x^2 - 2x \\
-        R(x) = (Q \circ P)(x) - 673x
-    \end{align*}
-    ¿Cuál es el valor de $R(2023)$?
-    \begin{multicols}{5}
-        \begin{enumerate}
-            \item -4
-            \item 2023
-            \item 2729701
-            \item 0
-            \item 1
-        \end{enumerate}
-    \end{multicols}
-\end{section-problem}
-
-\begin{section-problem}
-    Sea $R(y) = 3x^2 - 12x - 36 + 3y^2 + 6xy - 12y$, factorize $R$ y responda.
-    ¿Cuáles son las raíces de $R$?
-    \begin{multicols}{3}
-        \begin{enumerate}
-            \item $6$ y $-2$
-            \item $6 - y$ y $-2 - y$
-            \item $-6 + y$ y $-2 + y$
-            \item $6 - x$ y $-2 - x$
-            \item $-6 - y$ y $2 + x$
-        \end{enumerate}
-    \end{multicols}
+    \[
+        \left\{
+        \begin{array}{rcl}
+            P(x) & =& 3x^2 - 2x \\
+            Q(x) & =& \dfrac{x - 1}{3} \\
+            R(x) & =& (P \circ Q)(x) - 673x
+        \end{array}
+        \right.
+    \]
+    Calcular el valor de $R(2023)$.
 \end{section-problem}
