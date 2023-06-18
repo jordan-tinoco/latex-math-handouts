@@ -1,12 +1,42 @@
-\documentclass[12pt]{article}
+\documentclass[twocolumn, 12pt]{article}
 
 \input{structure/preamble}
 
-\input{../common/header-footer}
+\makeatletter
+\newcommand*{\trinum}{}
+
+\DeclareRobustCommand*{\trinum}[1]
+{%
+   \ensuremath
+   {%
+      \mathpalette\@trinum{#1}%
+   }%
+}
+\newdimen\trinum@sep
+\newdimen\trinum@rule
+\newcommand*{\@trinum}[2]
+{%
+% #1: math style
+% #2: num
+   \settowidth\trinum@sep{$\m@th#1\mkern1mu$}%
+   \setlength{\trinum@rule}{.8\trinum@sep}
+   \tikz\node[
+      regular polygon,
+      regular polygon sides=3,
+      draw,
+      line width=\trinum@rule,
+      inner sep=\trinum@sep,
+   ]{$\m@th#1#2$};
+}
+\makeatother
+
+%\input{../common/header-footer}
 
 \begin{document}
-   \input{content/1-introduction}
-   \input{content/2-development}
-   \input{content/5-bibliography}
+
+   %\input{content/1-introduction}
+   %\input{content/2-development}
+   %\input{content/5-bibliography}
+   \input{content/competencia}
 
 \end{document}
