@@ -1,6 +1,80 @@
 \newpage
 \section*{\large Soluciones}
 
-    \textbf{Ejercicio 1.}
+    \textbf{Problema 1.}
+
+Los divisores del término principal son : $\{\pm 1, \pm 2\}$.
+
+Los divisores del término independiente son: $\{\pm 1, \pm 3, \pm 7, \pm 21\}$
+
+Por lo tanto, el conjunto de todas las posibles raíces racionales del polinomio en cuestión es $\{\pm 1, \pm 3, \pm 7, \pm 21, \pm \dfrac{1}{2}, \pm \dfrac{3}{2}, \pm \dfrac{7}{2}, \pm \dfrac{21}{2}\}.$
+Al ir probando los valores, de preferencia primero los enteros, vemos que $3$ es raíz del polinomio.
+Luego, al dividir el polinomio entre $x - 3$ obtenemos
+\[2 x^3 - 21 x^2 + 52 x - 21 = (x - 3)(2x^2 - 15x + 7)\]
+El polinomio $2x^2 - 15x + 7$ es sencillo de factorizar, por factorización clásica, por lo tanto
+\[2 x^3 - 21 x^2 + 52 x - 21 = (x - 3)(x - 7)(2x - 1)\]
+Luego, las raíces del polinomios son $\left\{ \dfrac{1}{2}, 3, 7 \right\}$.
 
 
+\textbf{Problema 2.}
+
+Es fácil ver que $\left(x + \dfrac{1}{x}\right)^2 = x^2 + 2 + \dfrac{1}{x^2}$, de aquí que
+\begin{gather*}
+    P\left(x + \dfrac{1}{x}\right) = x^2 + 2 + \dfrac{1}{x^2} + 225\\
+    P\left(x + \dfrac{1}{x}\right) = \left(x + \dfrac{1}{x}\right)^2 + 225\\
+    P(y) =  y^2 + 225
+\end{gather*}
+De aquí que, si $y = 20$, entonces $P(20) = 20^2 + 225 = 400 + 225 = 625 = 25^2$.
+Luego, $\sqrt {P(20)} =\sqrt {25^2} = \boxed{\pm 25}$
+
+
+\textbf{Problema 3.}
+
+Como $a$ es raíz del polinomio, entonces $a^2 + 1012a + 1011 = 0$, de esta ecuación podemos ver que $\boxed{a^2 + 1011a + 1011 = -a}$.
+Análogamente con $b$, $\boxed{b^2 + 1011b + 1011 = -b}$.
+Entonces
+\begin{gather*}
+    \frac{1}{a^2 + 1011a + 1011} + \frac{1}{b^2 + 1011b + 1011} = \frac{m}{n}\\
+    \frac{1}{-a} + \frac{1}{-b} = \frac{m}{n}\\
+    -\frac{a + b}{ab} = \frac{m}{n}
+\end{gather*}
+Que por Vieta sabemos que $a + b = - 1012$ y $ab = 1011$, entonces
+\begin{gather*}
+    -\frac{a + b}{ab} = \frac{m}{n}\\
+    -\frac{-1012}{1011} = \frac{m}{n}\\
+    \frac{1012}{1011} = \frac{m}{n}
+\end{gather*}
+Como 1012 y 1011 son consecutivos, entonces son coprimos.
+Por lo tanto, $m = 1012$ y $n = 1011$.
+Luego $m + n = \boxed{2023}.$
+
+\textbf{Problema 4.}
+
+Veamos que
+\begin{gather*}
+    R(c) = a^2 + b^2 + 65c^2 + 2ab - 18bc - 18ca\\
+    R(c) = 65c^2 - 18bc - 18ca + a^2 + 2ab + b^2\\
+    R(c) = 65c^2 - 18c(a + b) + (a + b)^2\\
+    R(c) = 65c^2 - 18c(a + b) + (a + b)^2\\
+    R(c) = [13c - (a + b)][5c - (a + b)]
+\end{gather*}
+
+Luego, las raíces de $R$ son $\boxed{\dfrac{a + b}{13}}$ y $\boxed{\dfrac{a + b}{5}}$.
+
+\textbf{Problema 5.}
+\begin{gather*}
+    S(x) = (11 - 15x^3)(17x^6 - 43) + 2^8 x^6 (16 - x + x^2)(16 + x)\\
+    S(x) = (187 x^6 - 473 - 255x^9 + 645x^3) + 256 x^6 (x^3 - 15x^2 + 256)\\
+    S(x) = (187 x^6 - 473 - 255x^9 + 645x^3) + (256 x^9 - 3840 x^8 + 256^2 x^6)\\
+    S(x) = (256 x^9 - 255x^9) - 3840 x^8 + (187 x^6 + 256^2 x^6) + 645x^3 - 473\\
+    S(x) = x^9 - 3840 x^8 + 65536 x^6 + 645x^3 - 473
+\end{gather*}
+
+\begin{enumerate}
+    \item Sí, ya que el su coeficiente principal es $1$.
+    \item No, ya que faltan los términos de $x^7$, $x^5$, $x^4$, $x^2$, y $x$.
+    \item No, ya que con sólo ver que el coeficiente principal y el término independiente no son iguales el polinomio no es simétrico.
+    \item El coeficiente es 65723.
+    \item El término independiente es $-473$.
+    \item No, ya que al evaluar el polinomio obtenemos $S(\sqrt[3]{x}) = x^3 - 3840 x^2\sqrt[3]{x^2} + 65536 x^2 + 645x - 473$. Expresión que tiene radicales y por lo tanto no es un polinomio.
+\end{enumerate}
