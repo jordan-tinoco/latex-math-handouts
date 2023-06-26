@@ -1,5 +1,7 @@
 \section{IMO y OIM}
 
+\subsection{Encuentro 1}
+
 \begin{section-problem}
     Hallar todos los posibles números reales que satisfacen\footnote{$\lfloor x \rfloor$ representa la parte entera de $x$.}
     \[x\cdot\lfloor x \rfloor + 2022 = \lfloor x^2 \rfloor\]
@@ -37,7 +39,9 @@
 \begin{section-problem}
     Sea $n > 2$, un entero y $P(x)$ un polinomio de coeficientes reales tal que para un real $k$
     \begin{gather*}
-        \frac{P(2) - P(1)}{1} = \frac{P(4) - P(2)}{2} = \frac{P(8) - P(4)}{4} = \cdots = \frac{P(2^n) - P(2^{n - 1})}{2^{n - 1}} = k \\
+        \frac{P(2) - P(1)}{1} = \frac{P(4) - P(2)}{2} =\\
+        \frac{P(8) - P(4)}{4} = \cdots = \frac{P(2^n) - P(2^{n - 1})}{2^{n - 1}} = k \\
+        \\
         \frac{P(2^{n + 1}) - P(2^n)}{2^n} \neq k
     \end{gather*}
     Hallar el valor mínimo del grado de $P$ y todos los posibles polinomios $P$ con grado mínimo.
@@ -62,3 +66,56 @@
     son iguales.
 
 \end{section-problem}
+
+
+
+\subsection{Encuentro 2}
+
+\begin{section-problem}
+    Encuentra todas las funciones $f: \Z \rightarrow \Z$ tales que para cualesquiera enteros $m$, $n$ tenemos
+    \[f(m + n) + f(mn - 1) = f(m)f(n).\]
+\end{section-problem}
+
+\begin{section-problem}
+    Encontrar todas las fuciones $f: \N \rightarrow \N$ que para todo $x,y \in N$ se cumple que
+    \[f(x + y) = f(x) + f(y) + 3(x + y)\sqrt[3]{f(x)f(y)}.\]
+\end{section-problem}
+
+\begin{section-problem}
+    Encontrar todas las funciones $f$ tal que
+    \[f(f(x) + y) = f(x^2 - y) + 4yf(x)\]
+    para todo real $x$ y $y$.
+\end{section-problem}
+
+\begin{section-problem}
+    Determinar todos los enteros $n \geq 2$ que tengan la siguiente propiedad:
+    para cualquier entero $a_1$, $a_2$, $\cdots$, $a_n$ cuya suma no sea divisible por $n$, existe un índice $1 \leq i \leq n$ tal que ninguno de los números
+    \[a_i, a_i + a_{i + 1}, \cdots, a_i + a_{i + 1} + \cdots + a_{i + n - 1}\]
+    es divisible por $n$.
+    Aquí, dejamos $a_i = a_{i - n}$ cuando $i > n$.
+\end{section-problem}
+
+\begin{section-problem}
+    Sea $n$ un entero impar.
+    Pintaremos los vértices de un n-ágono regular con tres colores talque hay un número impar de vértices de cada color.
+    Probar que existen un triángulo isósceles con los tres vértices de diferente color.
+\end{section-problem}
+
+\begin{section-problem}
+    Determinar todas las funciones $f: \Z \rightarrow \Z$ con la propiedad
+    \[f(x - f(y)) = f(f(x)) - f(y) - 1\]
+    para todo entero $x, y \in \Z$.
+\end{section-problem}
+
+\begin{section-problem}
+    Sea ${a_i}_{n}$ una sucesión de reales positivos que satisface
+    \[a_{k + 1} \geq \frac{k a_k}{a_k^2 + (k - 1)}\]
+    para todo entero positivo $k$.
+    Muestra que $a_1 + a_2 + \cdots + a_n \geq n$, para todo $n \geq 2$.
+\end{section-problem}
+
+\begin{section-problem}
+    Encuentre todas las funciones $f: \R^{+} \rightarrow \R^{+}$ que satisfacen
+    \[x^2(f(x) + f(y)) = (x + y)f(yf(x)).\]
+\end{section-problem}
+
