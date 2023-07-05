@@ -1,0 +1,220 @@
+\section{Desigualdades}
+
+Lo números reales tienen la importante propiedad de poseer un orden.
+El orden en los números reales nos permitirá comparar dos números y decidir cual de ellos es mayor o bien si son iguales.
+Para ser prácticos, denotaremos a $\Ṛ^+$ como el conjunto de todos los números reales positivos,
+si tenemos que un número $x$ pertenece a los reales positivos lo denotaremos como $x \in \R^+$ y simbólicamente escribiremos $x > 0$.
+
+Cada número real $x$ tiene una y sólo una de las siguientes características:
+\begin{itemize}
+    \item $x = 0$
+    \item $x \in \Ṛ^+$ (es decir $x > 0$)
+    \item $-x \in \Ṛ^+$ (es decir $-x > 0$)
+\end{itemize}
+
+Ahora definamos la relación, $a$ \textbf{es mayor que} $b$, si $a - b \in \R^+$ (en símbolos $a > b$).
+Análogamente, $a$ \textbf{es menor que} $b$, si $b - a \in \R^+$ (en símbolos $a < b$).
+Observemos que $a < b$ es equivalente a $b > a$.
+Definimos también $a$ \textbf{es menor o igual que} $b$, si $a < b$ ó $a = b$, (en símbolos $a \leq b$).
+
+Si tenemos dos números $a$ y $b$, una y sólo una de las siguientes afirmaciones se cumple
+\begin{gather*}
+    a = b, \quad
+    a > b, \quad
+    a < b
+\end{gather*}
+
+Finalmente, una desigualdad muy útil en los números reales es $\boxed{x^2 \geq 0}$, la cual es válida para cualquier número real $x$.
+De esta se deducen muchas otras desigualdades.
+
+\subsection{Propiedades básicas}
+
+\begin{multicols}{2}
+
+    \begin{itemize}
+        \item $a > 0$, $b > 0 \Longrightarrow a + b > 0$
+        \item $a > 0$, $b > 0 \Longrightarrow ab > 0$
+        \item $a > b$, $\Longrightarrow a + c > b + c$.\\(Donde $c$ es cualquier número)
+        \item $a > b$, $c > 0$ $\Longrightarrow ac > bc$
+        \item $0 > a$, $0 > b$ $\Longrightarrow ab > 0$
+        \item $a > 0$, $0 > b$ $\Longrightarrow ab < 0$
+        \item $a > b$, $c > d$ $\Longrightarrow a + c > b + d$
+        \item $a > b$ $\Longrightarrow -b > -a$
+        \item $a > 0$ $\Longrightarrow \dfrac{1}{a} > 0$
+        \item $a < 0$ $\Longrightarrow \dfrac{1}{a} < 0$
+        \item $a > 0$, $b > 0$ $\Longrightarrow \dfrac{a}{b} > 0$
+        \item $b > a > 0$, $d > c > 0$ $\Longrightarrow bd > ac$
+        \item $a > b$, $b > 0$ $\Longrightarrow \dfrac{a}{b} > 1$
+        \item $a > 1$ $\Longrightarrow a^2 > a$
+        \item $1 > a > 0$ $\Longrightarrow a > a^2$
+    \end{itemize}
+\end{multicols}
+
+\subsection{Media Aritmética - Media Geométrica (MA-MG)}
+Si $a_1, a_2, \cdots, a_n$ son $n$ números reales no negativos, tomamos los números $A$ y $G$ definidos como
+\begin{gather*}
+    A = \frac{a_1 + a_2 + \cdots + a_n}{n} \quad \mbox{y} \quad
+    G = \sqrt[n]{a_1 \cdot a_2 \cdots a_n}
+\end{gather*}
+Estos números se conocen como la \textbf{media aritmética} y la \textbf{media geométrica} de los números $a_1, a_2, \cdots, a_n$, respectivamente.
+
+\begin{theorem}[\textbf{Media aritmética $\geq$ Media geométrica}]
+    Sean $a_1, a_2, \cdots, a_n$ números reales no negativos.
+    Entonces
+    \begin{gather*}
+        \boxed
+        {
+            \frac{a_1 + a_2 + \cdots + a_n}{n} \geq \sqrt[n]{a_1 \cdot a_2 \cdots a_n}
+        }
+    \end{gather*}
+    La igualdad ocurre si $a_1 = a_2 = \cdots = a_n$.
+\end{theorem}
+
+\textbf{Demostración.} $\dfrac{a + b}{2} \geq \sqrt {ab} \Leftrightarrow (a + b)^2 \geq 4ab \Leftrightarrow a^2 + 2ab + b^2 \geq 4ab \Leftrightarrow (a - b)^2 \geq 0$, lo cual se cumple siempre.
+La igualdad sólo puede ocurrir si $a = b$.
+El caso $n > 2$ requiere una demostración distinta (por inducción matemática).
+
+\subsection{Ejercicios}
+
+\begin{exercise}
+    Probar que la suma de un número positivo y su inverso es mayor o igual a 2.
+\end{exercise}
+
+\begin{exercise}
+    Si $a, b, c \geq 0$, demostrar que $(ab + bc + ca)^3 \geq 27 a^2 b^2 c^2$.
+\end{exercise}
+
+\begin{exercise}
+    Sean $x_i > 0$, $i = 1, 2, \cdots, n$.
+    Demostrar que
+    \begin{gather*}
+    \left(x_1 + x_2 + \cdots + x_n\right)\left(\inverseOf{x_1} + \inverseOf{x_2} + \cdots + \inverseOf{x_n}\right) \geq n^2
+    \end{gather*}
+\end{exercise}
+
+\begin{exercise}
+    Si $a, b, c \geq 0$, demostrar que $ \dfrac{a^3}{b} + \dfrac{b^3}{c} + \dfrac{c^3}{a} \geq ab + bc + ca$.
+\end{exercise}
+
+\begin{exercise}
+    Si $a, b, c \geq 0$ y $(1 + a)(1 + b)(1 + c) = 8$, entonces, demostrar que $1 \geq abc$.
+\end{exercise}
+
+\begin{exercise}
+    Si $a, b, c > 0$, probar que $\dfrac{(a + b + c)^3}{27} \geq \dfrac{(a + b)(b + c)(c + a)}{8}$.
+\end{exercise}
+
+\begin{exercise}
+    Si $a, b, c > 0$, probar que $\dfrac{a + b}{c} + \dfrac{b + c}{a} + \dfrac{c + a}{b} \geq 6$.
+\end{exercise}
+
+\begin{exercise}
+    Sean $a, b$ y $c$ enteros no negativos tales que $a + b + c = 12$.
+    Determinar el valor máximo de la suma $A = abc + ab + bc + ca$.
+\end{exercise}
+
+\begin{exercise}
+    Sean $a, b, c \in \R^+$ que satisfacen $abc = 1$.
+    Probar que
+    \[\frac{a}{(a + 1)(b + 1)} + \frac{b}{(b + 1)(c + 1)} + \frac{c}{(c + 1)(a + 1)} \geq \frac{3}{4}.\]
+\end{exercise}
+
+\begin{exercise}
+    Si $a, b, c > 0$, probar que $a^3 + b^3 + c^3 + ab^2 + bc^2 + ca^2 \geq 2(a^2 b + b^2 c + c^2 a)$.
+\end{exercise}
+
+\begin{exercise}
+    Si $a,b$ son positivos, probar que $a^2 + b^2 \geq 2ab$, $a^3 + b^3 \geq a^2 b + ab^2$, y en general, $a^{n +  1} + b^{n + 1} \geq a^n b + a b^n$ para todo entero positivo $n$.
+\end{exercise}
+
+\textbf{Advertencia y regla de oro:} El signo $\geq$ tiene la propiedad transitiva.
+Para demostrar $A \geq B$, podemos demostrar que $A \geq C \geq B$.
+Pero debemos estar dispuestos a soportar \ldots admitir que no es fácil encadenar satisfactoriamente más de una desigualdad.
+Por ejemplo, para demostrar que $2(a^2 + b^2) \geq (a + b)^2$, no podemos empezar acotando $2(a^2 + b^2) \geq 4ab$ porque $4ab \ngeq (a + b)^2$
+\ldots\footnote{Pero tranqui, con el tiempo y mucha práctica estos encadenamientos de desigualdades se vuelven más fácil de identificar.}.
+
+
+\vspace{-4mm}
+\subsection{Desigualdad de Cauchy-Schwarz}
+
+\begin{theorem}[\textbf{Desigualdad de Cauchy-Schwarz}]
+    Para cualesquiera números reales $a_1, a_2, \cdots, a_n$ y $b_1, b_2, \cdots, b_n$, se tiene que
+    \begin{gather*}
+        \boxed
+        {
+            \left(a_1^2 + a_2^2 + \cdots + a_n^2\right)\left(b_1^2 + b_2^2 + \cdots + b_n^2\right) \geq \left(a_1 b_1 + a_2 b_2 + \cdots + a_n b_n\right)^2
+        }
+    \end{gather*}
+    La igualdad ocurre si las sucesiones son proporcionales, es decir $\dfrac{a_1}{b_1} = \dfrac{a_2}{b_2} = \cdots = \dfrac{a_n}{b_n}$.
+\end{theorem}
+
+La desigualdad de Cauchy-Schwarz admite otra formulación equivalente, que es muy útil para 'sumar denominadores'
+
+\begin{theorem}[\textbf{Cauchy-Schwarz en forma de Engel}]
+    Para números reales $a_1, a_2, \cdots, a_n$ arbitrarios y $b_1, b_2, \cdots, b_n$ positivos, se tiene que
+    \begin{gather*}
+        \boxed
+        {
+            \frac{a_1^2}{b_1} + \frac{a_2^2}{b_2} + \cdots + \frac{a_n^2}{b_n} \geq \frac{\left(a_1 + a_2 + \cdots + a_n\right)^2}{ \left(b_1 + b_2 + \cdots + b_n\right)}
+        }
+    \end{gather*}
+\end{theorem}
+
+
+\subsection{Ejercicios}
+
+\begin{exercise}
+    Sean $a, b, c$ números reales postivos, muestre que
+    \[\frac{a^2 + b^2}{a + b} + \frac{b^2 + c^2}{b + c} + \frac{c^2 + a^2}{c + a} \geq a + b + c\]
+\end{exercise}
+
+\begin{exercise}
+    Sea $a, b, c$ números reales postivos.
+    Probar que
+    \[\dfrac{a}{b + 1} + \dfrac{b}{c + 1} + \dfrac{c}{a + 1} \geq \dfrac{3(a + b + c)}{3 + a + b + c}.\]
+\end{exercise}
+
+\begin{exercise}
+    Si $a, b, c > 0$, probar que $3 \geq \dfrac{\sqrt {2a + b} + \sqrt {2b + c} + \sqrt {2c + a}}{\sqrt {a + b + c}}$.
+\end{exercise}
+
+\begin{exercise}
+    Probar que $2(x + y + z) \geq \sqrt {3x^2 + xy} + \sqrt {3y^2 + yz} + \sqrt {3z^2 + zx}$.
+\end{exercise}
+
+\begin{exercise}
+    Si $a, b, c$ son positivos, probar que $\dfrac{(a^2 + b^2 + c^2)^3}{3} \geq (a^2 b + b^2 c + c^2 a)^2$.
+\end{exercise}
+
+\begin{exercise}
+    Si $a, b, c > 0$, demostrar que $\dfrac{a}{a + 2b} + \dfrac{b}{b + 2c} + \dfrac{c}{c + 2a} \geq 1$.
+\end{exercise}
+
+\begin{exercise}
+    Si $a, b, c$ son positivos, demostrar que $\dfrac{a^2}{b} + \dfrac{b^2}{c} + \dfrac{c^2}{a} \geq \sqrt {3(a^2 + b^2 + c^2)}$.
+\end{exercise}
+
+\begin{exercise}
+    Sean $a,b, c$ números reales tales que $a + b + c = 1$.
+    Demostrar que
+    \[(a + b)̣^2 (1 + 2c) (2a + 3c) (2b + 3c) \geq 54 abc.\]
+\end{exercise}
+
+\begin{exercise}
+    Sean $a, b, c$ números reales positivos tales que
+    \[\dfrac{1}{a + b + 1} + \dfrac{1}{b + c + 1} + \dfrac{1}{c + a + 1} \geq 1.\]
+    Demostrar que la siguiente desigualdad se cumple
+    \[a + b + c \geq ab + bc + ca.\]
+\end{exercise}
+
+\begin{exercise}
+    Sean $x, y, z \geq 1$ números reales positivos tales que $\inverseOf{x} + \inverseOf{y} + \inverseOf{z} = 2$.
+    Probar que
+    \[\sqrt {x + y + z} \geq \sqrt {x - 1} + \sqrt {y - 1} + \sqrt {z - 1}.\]
+\end{exercise}
+
+\begin{exercise}
+    Sean $a, b, c$ números reales positivos tales que $ab + bc + ca = 1$.
+    Probar que la desigualdad siguiente se cumple
+    \[\inverseOf{4ạ^2 - bc + 1} + \inverseOf{4b^2 - ca + 1} + \inverseOf{4c^2 - ab + 1} \geq \frac{3}{2}.\]
+\end{exercise}
