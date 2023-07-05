@@ -1,4 +1,4 @@
-\documentclass[twocolumn, 12pt]{article}
+\documentclass[12pt]{article}
 
 \input{structure/preamble}
 
@@ -30,13 +30,15 @@
 }
 \makeatother
 
-%\input{../common/header-footer}
+\input{../common/header-footer}
 
 \begin{document}
 
-   %\input{content/1-introduction}
-   %\input{content/2-development}
-   %\input{content/5-bibliography}
-   \input{content/competencia}
+   \input{content/1-introduction}
+   \input{content/2-development}
+   \input{content/5-bibliography}
+   \begin{multicols}{2}
+      \input{content/competencia}
+   \end{multicols}
 
 \end{document}
