@@ -1,0 +1,56 @@
+
+\newrgbcolor{wwwwff}{0.4 0.4 1}
+\newrgbcolor{xdxdff}{0.49 0.49 1}
+\newrgbcolor{wwwwww}{0.4 0.4 0.4}
+\newrgbcolor{fftttt}{1 0.2 0.2}
+\newrgbcolor{qqwuqq}{0 0.39 0}
+\psset{xunit=1.0cm,yunit=1.0cm,algebraic=true,dotstyle=o,dotsize=3pt 0,linewidth=0.8pt,arrowsize=3pt 2,arrowinset=0.25}
+\begin{pspicture*}(3.95,0.43)(4.23,0.57)
+    \pspolygon[linecolor=wwwwww,fillcolor=wwwwww,fillstyle=solid,opacity=0.1](4.05,0.47)(4.05,0.48)(4.04,0.48)(4.04,0.47)
+    \pspolygon[linecolor=wwwwww,fillcolor=wwwwww,fillstyle=solid,opacity=0.1](4.07,0.54)(4.08,0.54)(4.08,0.54)(4.08,0.55)
+    \pspolygon[linecolor=wwwwww,fillcolor=wwwwww,fillstyle=solid,opacity=0.1](4.13,0.5)(4.13,0.49)(4.13,0.49)(4.14,0.49)
+    \psline(4.04,0.52)(4.21,0.47)
+    \psline(4.21,0.47)(4.04,0.47)
+    \psline(4.04,0.47)(4.04,0.52)
+    \pscircle(4.09,0.5){0.05}
+    \psline(4.04,0.52)(4.13,0.47)
+    \psline(4.04,0.47)(4.11,0.5)
+    \psline(4.13,0.47)(4.11,0.5)
+    \psline(4.04,0.52)(4.08,0.55)
+    \psline(4.08,0.55)(4.13,0.47)
+    \psline(4.13,0.47)(4.14,0.51)
+    \psline(4.08,0.55)(4.21,0.47)
+    \psline(4.04,0.47)(4.14,0.51)
+    \psline(4.04,0.47)(4.08,0.55)
+    \pscustom[linecolor=fftttt,fillcolor=fftttt,fillstyle=solid,opacity=0.1]{\parametricplot{-1.5777263008556721}{-0.26449709450774117}{0.01*cos(t)+4.04|0.01*sin(t)+0.52}\lineto(4.04,0.52)\closepath}
+    \parametricplot[linecolor=fftttt]{-1.5777263008556721}{-0.26449709450774117}{0.01*cos(t)+4.04|0.01*sin(t)+0.52}
+    \psline[linecolor=fftttt](4.04,0.51)(4.04,0.51)
+    \psline[linecolor=fftttt](4.05,0.51)(4.05,0.51)
+    \pscustom[linecolor=fftttt,fillcolor=fftttt,fillstyle=solid,opacity=0.1]{\parametricplot{-0.006929974060796531}{1.3062992322865183}{0.01*cos(t)+4.13|0.01*sin(t)+0.47}\lineto(4.13,0.47)\closepath}
+    \parametricplot[linecolor=fftttt]{-0.006929974060796531}{1.3062992322865183}{0.01*cos(t)+4.13|0.01*sin(t)+0.47}
+    \psline[linecolor=fftttt](4.14,0.48)(4.14,0.48)
+    \psline[linecolor=fftttt](4.13,0.48)(4.14,0.48)
+    \pscustom[linecolor=qqwuqq,fillcolor=qqwuqq,fillstyle=solid,opacity=0.1]{\parametricplot{-0.26449709450774117}{0.6364522317884327}{0.01*cos(t)+4.04|0.01*sin(t)+0.52}\lineto(4.04,0.52)\closepath}
+    \parametricplot[linecolor=qqwuqq]{-0.26449709450774117}{0.6364522317884327}{0.01*cos(t)+4.04|0.01*sin(t)+0.52}
+    \psline[linecolor=qqwuqq](4.05,0.52)(4.05,0.52)
+    \pscustom[linecolor=qqwuqq,fillcolor=qqwuqq,fillstyle=solid,opacity=0.1]{\parametricplot{1.3062992322871425}{2.2072485585830424}{0.01*cos(t)+4.13|0.01*sin(t)+0.47}\lineto(4.13,0.47)\closepath}
+    \parametricplot[linecolor=qqwuqq]{1.3062992322871425}{2.2072485585830424}{0.01*cos(t)+4.13|0.01*sin(t)+0.47}
+    \psline[linecolor=qqwuqq](4.13,0.48)(4.13,0.48)
+    \begin{scriptsize}
+        \psdots[dotsize=5pt 0,dotstyle=*,linecolor=wwwwff](4.04,0.47)
+        \rput[bl](4.04,0.47){\wwwwff{$A$}}
+        \psdots[dotsize=5pt 0,dotstyle=*,linecolor=xdxdff](4.04,0.52)
+        \rput[bl](4.04,0.52){\xdxdff{$B$}}
+        \psdots[dotsize=5pt 0,dotstyle=*,linecolor=darkgray](4.21,0.47)
+        \rput[bl](4.21,0.48){\darkgray{$C$}}
+        \psdots[dotsize=5pt 0,dotstyle=*,linecolor=xdxdff](4.13,0.47)
+        \psdots[dotsize=5pt 0,dotstyle=*,linecolor=darkgray](4.08,0.55)
+        \rput[bl](4.08,0.55){\darkgray{$E$}}
+        \psdots[dotsize=5pt 0,dotstyle=*,linecolor=darkgray](4.14,0.51)
+        \rput[bl](4.14,0.51){\darkgray{$F$}}
+        \psdots[dotsize=5pt 0,dotstyle=*,linecolor=darkgray](4.14,0.49)
+        \rput[bl](4.14,0.49){\darkgray{$P$}}
+        \psdots[dotsize=5pt 0,dotstyle=*,linecolor=darkgray](4.06,0.51)
+        \rput[bl](4.06,0.52){\darkgray{$Q$}}
+    \end{scriptsize}
+\end{pspicture*}

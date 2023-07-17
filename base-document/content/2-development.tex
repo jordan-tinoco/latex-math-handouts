@@ -6,3 +6,126 @@
     \caption{Una imagen de Alf}
     \label{fig:figure}
 \end{figure}
+
+\begin{section-theorem}[\textbf{Ejemplo de teorema}]
+    Hola, este un ejemplo de como escribir un teorema matemático en la plantilla.
+\end{section-theorem}
+
+\begin{proof}
+    Este es el ejemplo de como escribir la demostración de un teorema matemático en la plantilla.
+    \[
+        \sen^2(x) + \cos^2(x) = 1. \qedhere
+    \]
+\end{proof}
+
+\begin{section-exercise}
+    Es es un ejemplo de ejercicio.
+\end{section-exercise}
+
+\begin{solution}
+    Este es un ejemplo de solución.
+    \[
+        x = x + 1.
+    \]
+    Solución del ejercicio o problema.
+\end{solution}
+
+
+\begin{problem}
+    Nueve celdas de un tablero $10\times10$ están infectadas. Dos celdas son vecinas si tienen un lado en común. En cada minuto, las celdas que tengan al menos dos vecinos infectados se vuelven infectadas. ¿Puede llegar a suceder que todas las celdas del tablero estén infectadas?
+
+    \begin{source-problem}
+        Soluciones a los problemas de entrenamiento, problema 4.\\ Tzaloa, 2022
+    \end{source-problem}
+\end{problem}
+
+\begin{solution}[1]
+    Ejemplo de solución enumerada.
+\end{solution}
+
+\begin{problem}
+    Determina el menor entero positivo $n$ con las siguientes propiedades:
+    \begin{enumerate}
+        \item Su dígito de las unidades es 6.
+        \item Si el último dígito 6 se borra y se coloca al principio del número, el resultado es 4 veces $n$.
+    \end{enumerate}
+    \begin{source-problem}
+        IMO 2040
+    \end{source-problem}
+\end{problem}
+
+\begin{section-problem.tcb}
+        Un agricultor cosechó en el primer día $(x - 2)^{2023}$ granos de maíz y el segundo día $(x - 1)^{2024} + 7$ granos de maíz.
+        Si el agricultor almacena los granos de los dos días en sacos, los cuales tiene una capacidad de $x^2 - 3x + 2$ granos cada uno.
+        ¿cuál es el polinomio que representa los granos sobrantes?
+\end{section-problem.tcb}
+
+Ejemplo de cómo escribir los conjuntos de números
+\begin{align*}
+    \N & \quad \text{signo que representa los números naturales}\ \left\{ 1, 2, \cdots \right\}\\
+    \Q & \quad \text{signo que representa los números racionales}\\
+    \Z & \quad \text{signo que representa los números enteros}\\
+    \ZP &\quad \text{signo que representa los números enteros positivos}\\
+    \ZN &\quad \text{signo que representa los números enteros negativos}\\
+    \ZNN &\quad \text{signo que representa los números enteros no negativos}\\
+    \R &\quad \text{signo que representa los números reales}\\
+    \RP &\quad \text{signo que representa los números reales positivos}\\
+    \RN &\quad \text{signo que representa los números reales negativos}\\
+    \C &\quad \text{signo que representa los números complejos}
+\end{align*}
+
+Ejemplos de cómo utilizar módulos
+\begin{gather*}
+    x \equiv 1 \pmod{n}\\
+    x \fullMod{1}{n}
+\end{gather*}
+
+Diferencia entre \emph{enfasís} y \textit{texto modo italico.}
+
+\begin{center}
+    \emph{hola} $\overset{\text{¿?}}{=}$ \textit{hola}
+\end{center}
+
+\begin{section-theorem.tcb}[Teorema de Ceva sobre la circunferencia]
+    Sean $ABC$ y $DEF$ dos triángulos sobre la misma circunferencia.
+    Entonces las rectas $AD$, $BE$ y $CF$ son concurrentes si y sólo si
+    \[\frac{BD}{DC} \cdot \frac{CE}{EA} \cdot \frac{AF}{FB} = 1.\]
+\end{section-theorem.tcb}
+
+\begin{section-theorem.tcb}[Teorema del resto]{}
+    Dado un polinomio $P$, de grado $n$ y $a \in \R$, diremos que el resto de $P$ cuando es dividido por $x - a$ es $P(a)$.
+    Es decir
+    \[P(a)   = r \Leftrightarrow P(x) = (x-a)Q(x) + r\]
+    para algún polinomio $Q(x).$
+\end{section-theorem.tcb}
+
+Prueba de algunos comandos matemáticos.
+
+\begin{gather*}
+    \underbrace{\overbrace{a + \cdots + a}^{n\ \text{veces}} + 1 + \cdots + 1 + \overbrace{b + \cdots + b}^{m\ \text{veces}}}_{k + n + m\ \text{sumandos}}
+\end{gather*}
+
+\begin{gather*}
+    f_n(x) =
+    \begin{cases}
+        -x^2 + n,   & \text{si $x < 0$ y $n$ par},\\
+        \alpha + x, & \text{si}\ x > 0, \\
+        x^2,        & \text{en otros casos.}
+    \end{cases}
+\end{gather*}
+
+$p$\nobreakdash-ádico
+
+\begin{gather*}
+    \upla{x}{n} & \quad \text{ejemplo de una tupla}\\
+    \kupla{x}{k - 10} &\quad \text{ejemplo de una $k$\nobreakdash-upla}\\
+    \kupla[m]{r}{i} &\quad \text{ejemplo de una $m$\nobreakdash-upla}\\
+    P(x) = \polinom {n}{a} &\quad \text{ejemplo de polinomio}\\
+    Q(x) = \polinom[y]{m}{c} &  \quad \text{otro ejemplo de polinomio}\\
+    \asum {}{k} &  \quad \text{otro ejemplo de suma}\\
+    \gprod {}{k} &  \quad \text{otro ejemplo de producto}\\
+    \frac{\asum {}{n}}{n} \ge \sqrt[n]{\gprod {}{n}} & \quad \text{Ejemplo AM-MG}
+\end{gather*}
+
+
+

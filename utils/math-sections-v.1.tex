@@ -1,0 +1,147 @@
+\theoremstyle{definition}
+
+%With section
+\newtheorem{section-lemma}{Lema}[section]
+\newtheorem{section-theorem}{Teorema}[section]
+\newtheorem{section-problem}{Problema}[section]
+\newtheorem{section-exercise}{Ejercicio}[section]
+\newtheorem{section-corollary}{Corolario}[section]
+\newtheorem{section-definition}{Definición}[section]
+
+%Without section
+\newtheorem{case}{Caso}
+\newtheorem{example}{Ejemplo}
+\newtheorem{problem}{Problema}
+\newtheorem{remark}{Observación}
+\newtheorem{corollary}{Corolario}
+
+%With numeration
+\newtheorem*{note}{Nota}
+\newtheorem*{definition}{Definición}
+
+
+%Text Color Box styles
+\newtcbtheorem[number within=section]{tcb-theorem-style}{Teorema}
+{
+    enhanced,
+    frame empty,
+    interior empty,
+    coltitle = black,
+    colbacktitle = white,
+    fonttitle = \bfseries,
+    extras broken = {frame empty, interior empty},
+    borderline = {0.4mm}{0mm}{black},
+    breakable = true,
+    top = 4mm,
+    before skip = 3.5mm,
+    attach boxed title to top left = {yshift = -3mm, xshift = 3mm},
+    boxed title style = {boxrule = 0.3mm, borderline = {0.3mm}{0mm}{black}},
+    varwidth boxed title,
+    separator sign none, description delimiters parenthesis,
+    description font=\bfseries,
+    terminator sign={.\hspace{1mm}}
+}
+{theorem.tcb-label}
+
+\newtcbtheorem[number within=section]{tcb-problem-style}{Problema}
+{
+    enhanced,
+    frame empty,
+    interior empty,
+    coltitle = black,
+    colbacktitle = white,
+    fonttitle = \bfseries,
+    extras broken = {frame empty, interior empty},
+    borderline = {0.4mm}{0mm}{black},
+    breakable = true,
+    top = 4mm,
+    before skip = 3.5mm,
+    attach boxed title to top left = {yshift = -3mm, xshift = 3mm},
+    boxed title style = {boxrule = 0.3mm, borderline = {0.3mm}{0mm}{black}},
+    varwidth boxed title,
+    terminator sign={.\hspace{1mm}}
+}
+{problem.tcb-label}
+
+\newtcbtheorem[number within=section]{tcb-exercise-style}{Ejercicio}
+{
+    enhanced,
+    frame empty,
+    interior empty,
+    coltitle = black,
+    colbacktitle = white,
+    fonttitle = \bfseries,
+    extras broken = {frame empty, interior empty},
+    borderline = {0.4mm}{0mm}{black},
+    breakable = true,
+    top = 4mm,
+    before skip = 3.5mm,
+    attach boxed title to top left = {yshift = -3mm, xshift = 3mm},
+    boxed title style = {boxrule = 0.3mm, borderline = {0.3mm}{0mm}{black}},
+    varwidth boxed title,
+    terminator sign={.\hspace{1mm}}
+}
+{exercise.tcb-label}
+
+\newtcbtheorem[number within=section]{tcb-definition-style}{Definición}
+{
+    enhanced,
+    frame empty,
+    interior empty,
+    coltitle = black,
+    colbacktitle = white,
+    fonttitle = \bfseries,
+    extras broken = {frame empty, interior empty},
+    borderline = {0.4mm}{0mm}{black},
+    breakable = true,
+    top = 4mm,
+    before skip = 3.5mm,
+    attach boxed title to top left = {yshift = -3mm, xshift = 3mm},
+    boxed title style = {boxrule = 0.3mm, borderline = {0.3mm}{0mm}{black}},
+    varwidth boxed title,
+    separator sign none, description delimiters parenthesis,
+    description font=\bfseries,
+    terminator sign={.\hspace{1mm}}
+}
+{definition.tcb-label}
+
+%Enviroments section-x.tcb
+\newenvironment{section-theorem.tcb}[1][]
+{
+    \ifstrempty{#1}
+    {
+        \begin{tcb-theorem-style}{}{}
+    }
+    {
+        \begin{tcb-theorem-style}{#1}{}
+    }
+    }{
+    \end{tcb-theorem-style}
+}
+
+\newenvironment{section-problem.tcb}
+{
+    \begin{tcb-problem-style}{}{}
+    }{
+    \end{tcb-problem-style}
+}
+
+\newenvironment{section-exercise.tcb}
+{
+    \begin{tcb-exercise-style}{}{}
+    }{
+    \end{tcb-exercise-style}
+}
+
+\newenvironment{section-definition.tcb}[1][]
+{
+    \ifstrempty{#1}
+    {
+        \begin{tcb-definition-style}{}{}
+    }
+    {
+        \begin{tcb-definition-style}{#1}{}
+    }
+    }{
+    \end{tcb-definition-style}
+}
