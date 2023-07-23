@@ -8,13 +8,13 @@
 Tres rectas son concurrentes si pasan por un punto común.
 Sabiendo esto, veamos el primer hecho fundamental para abordar los problemas de concurrencia.
 
-\begin{theorem}[\textbf{Teorema de Ceva}]
+\begin{section-theorem.tcb}[\textbf{Teorema de Ceva}]
     Dado un triángulo $ABC$, sean $D$, $E$ y $F$ puntos sobre los lados $BC$, $CA$ y $AB$ (o sus prolongaciones), respectivamente.
     Entonces las rectas $AD$, $BE$ y $CF$ son concurrentes si y sólo si
     \begin{gather*}
         \frac{BD}{DC} \cdot \frac{CE}{EA} \cdot \frac{AF}{FB} = 1.
     \end{gather*}
-\end{theorem}
+\end{section-theorem.tcb}
 
 A partir de este teorema se vuelve evidente la concurrencia de las principales rectas notables\footnote{Ver los ejercicios del 2.1 al 2.4.}.
 De igual forma muchos otros problemas pueden ser resueltos por el teorema de Ceva, la dificultad radica en transformar las proporciones evidentes en otras que sean más fáciles de manipular para que el producto de todas sea igual a 1.
@@ -25,14 +25,19 @@ Es importante resaltar que la manipulación de razones con áreas no funciona, p
     A toda recta que parte del vértice hacia el lado opuesto se le denomina \textit{ceviana.}
 \end{section-definition}
 
-\begin{theorem}[\textbf{Ceva trigonométrico}]
+\begin{section-definition}[\textbf{Triángulo ceviano}]
+    Para todo punto $P$, las cevianas desde $A$, $B$ y $C$ que pasan por $P$ y cortan a los lados opuestos en $A'$, $B'$ y $C'$.
+    El triángulo $A'B'C'$ es el triángulo ceviano de $P$ y sus vértices se llaman trazas cevianas de $P$.
+\end{section-definition}
+
+\begin{section-theorem.tcb}[\textbf{Ceva trigonométrico}]
     Las rectas $AD$, $BE$ y $CF$ son cevianas concurrentes del triángulo $ABC$ si y sólo si
     \begin{gather*}
         \frac{sen(\angle BAD)}{sen(\angle DAC)} \cdot \frac{sen(\angle CBE)}{sen(\angle EBA)} \cdot \frac{sen(\angle ACF)}{sen(\angle FCB)} = 1.
     \end{gather*}
-\end{theorem}
+\end{section-theorem.tcb}
 
-La manipulación trigonometríca del teorema de Ceva se vuelve muy importante a la hora de enfrentarse a problemas que pueden parecer práticamente inaccesibles, pues es más general y más aplicable que la semajanza de triángulos.
+La manipulación trigonométrica del teorema de Ceva se vuelve muy importante a la hora de enfrentarse a problemas que pueden parecer práticamente inaccesibles, pues es más general y más aplicable que la semajanza de triángulos.
 
 \begin{section-definition}[\textbf{El punto de Gergonne}]
     Sea $ABC$ un triángulo, y sean $D$, $E$ y $F$ los puntos de tangencia del incírculo con $BC$, $CA$ y $AB$, respectivamente.
@@ -49,37 +54,37 @@ La manipulación trigonometríca del teorema de Ceva se vuelve muy importante a 
 {
     Sección de ejercicios y problemas para el autoestudio.
 
-    \begin{exercise}
+    \begin{section-exercise}
         Demostrar que todas las medianas de un triángulo concurren en un punto (Baricentro).
-    \end{exercise}
+    \end{section-exercise}
 
-    \begin{exercise}
+    \begin{section-exercise}
         Demostrar que todas las alturas de un triángulo concurren en un punto (Ortocentro).
-    \end{exercise}
+    \end{section-exercise}
 
-    \begin{exercise}
+    \begin{section-exercise}
         Demostrar que todas las bisectrices interiores de un triángulo concurren en un punto (Incentro).
-    \end{exercise}
+    \end{section-exercise}
 
-    \begin{exercise}
+    \begin{section-exercise}
         Demostrar que dos bisectrices exteriores y una bisectriz interior de un triángulo concurren en un punto (Excentro).
-    \end{exercise}
+    \end{section-exercise}
 
-    \begin{exercise}
+    \begin{section-exercise}
         Sean $BE$, $AD$ y $CF$ líneas tales que dividen a un triángulo en $AE = 12$, $EC = 6$, $CD = 7$, $DB = 10$, $BF = 5$, $FA = 7$.
         Demostrar que $BE$, $AD$ y $CF$ son concurrentes.
-    \end{exercise}
+    \end{section-exercise}
 
-    \begin{exercise}
-        Sea $ABC$ un triángulo con lados $AB$, $AC$, $BC$ que tienen longitudes 13, 14, 15, respectivamente.
+    \begin{section-exercise}
+        Sea $ABC$ un triángulo con lados $AB$, $BC$, $CA$ que tienen longitudes 13, 15, 14, respectivamente.
         Si $CF$, $AD$ y $BE$ concurren y $\dfrac{AF}{FB} = \dfrac{2}{5}$ y $\dfrac{CE}{EA} = \dfrac{5}{8}$, encuentra el valor de $BD$ y $DC$.
-    \end{exercise}
+    \end{section-exercise}
 
-    \begin{exercise}
+    \begin{section-exercise}
         Sean $ABC$ y $DEF$ dos triángulos sobre la misma circunferencia.
         Probar que las rectas $AD$, $BE$ y $CF$ son concurrentes si y solo si
         \begin{gather*}
             \frac{BD}{DC} \cdot \frac{CE}{EA} \cdot \frac{AF}{FB} = 1.
         \end{gather*}
-    \end{exercise}
+    \end{section-exercise}
 }

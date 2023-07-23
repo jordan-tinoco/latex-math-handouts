@@ -15,7 +15,7 @@
 \newtheorem{remark}{Observación}
 \newtheorem{corollary}{Corolario}
 
-%With numeration
+%Without numeration
 \newtheorem*{note}{Nota}
 \newtheorem*{definition}{Definición}
 
@@ -105,6 +105,28 @@
 }
 {definition.tcb-label}
 
+\newtcbtheorem[number within=section]{tcb-lemma-style}{Lema}
+{
+    enhanced,
+    frame empty,
+    interior empty,
+    coltitle = black,
+    colbacktitle = white,
+    fonttitle = \bfseries,
+    extras broken = {frame empty, interior empty},
+    borderline = {0.4mm}{0mm}{black},
+    breakable = true,
+    top = 4mm,
+    before skip = 3.5mm,
+    attach boxed title to top left = {yshift = -3mm, xshift = 3mm},
+    boxed title style = {boxrule = 0.3mm, borderline = {0.3mm}{0mm}{black}},
+    varwidth boxed title,
+    separator sign none, description delimiters parenthesis,
+    description font=\bfseries,
+    terminator sign={.\hspace{1mm}}
+}
+{lemma.tcb-label}
+
 %Enviroments section-x.tcb
 \newenvironment{section-theorem.tcb}[1][]
 {
@@ -144,4 +166,17 @@
     }
     }{
     \end{tcb-definition-style}
+}
+
+\newenvironment{section-lemma.tcb}[1][]
+{
+\ifstrempty{#1}
+{
+\begin{tcb-lemma-style}{}{}
+}
+{
+\begin{tcb-lemma-style}{#1}{}
+}
+}{
+\end{tcb-lemma-style}
 }
