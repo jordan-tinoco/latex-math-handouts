@@ -1,0 +1,89 @@
+\documentclass[12pt]{article}
+%math packages
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+
+\usepackage{graphicx}
+\usepackage{asymptote}
+\usepackage{multicol}
+\usepackage[left=2.5cm,right=2.5cm,top=2.1cm,bottom=2.1cm]{geometry}
+\usepackage{fancyhdr}
+\usepackage{cite}
+
+%Text color box dependences
+\usepackage{tcolorbox}
+\usepackage{varwidth}
+\tcbuselibrary{theorems}
+\tcbuselibrary{breakable}
+\tcbuselibrary{skins}
+
+\usepackage[spanish]{babel}
+\everymath{\displaystyle}
+
+\spanishdecimal{.}
+
+\setlength{\parskip}{2mm}
+\setlength{\parindent}{0pt}
+\input{../utils/math-commands-v.1}
+\input{../utils/math-sections-v.1}
+
+\begin{document}
+
+   \section{}
+   \begin{section-theorem}[\textbf{Teorema de Ceva sobre la circunferencia}]
+      Sean $ABC$ y $DEF$ dos triángulos sobre la misma circunferencia.
+      Entonces las rectas $AD$, $BE$ y $CF$ son concurrentes si y sólo si
+      \[\frac{BD}{DC} \cdot \frac{CE}{EA} \cdot \frac{AF}{FB} = 1.\]
+   \end{section-theorem}
+
+   \begin{section-definition}[\textbf{Triángulo circunceviano}]
+      A todo punto que no esté sobre alguno de los lados de un triángulo dado es posible asignarle un nuevo triángulo, que surge a partir de la intersección de las cevianas con el circuncírculo del triángulo.
+   \end{section-definition}
+
+   \begin{section-theorem}
+   \end{section-theorem}
+
+   \begin{section-theorem}[\textbf{Teorema de Jacobi}]
+      Sea $ABC$ un triángulo, y sean $X$, $Y$, $Z$ tres puntos en el plano tales que $\angle YAC = \angle BAZ$, $\angle ZBA = \angle CBX$, $\angle XCB = \angle ACY$.
+      Entonces las rectas $AX$, $BY$ y $CZ$ son concurrentes.
+   \end{section-theorem}
+
+   \begin{section-definition}[\textbf{Puntos isotómicos}]
+      Dos puntos son isotómicos si estos coinciden al ser reflejados por el punto medio del segmento al que pertenecen.
+   \end{section-definition}
+
+   \begin{section-definition}[\textbf{Conjugados isotómicos}]
+      Dado un triángulo $ABC$ se tienen tres cevianas $AD$, $BE$ y $CF$ las cuales son concurrentes en un punto $P$.
+      Sean $D'$, $E'$ y $F'$ las reflexiones de $D$, $E$ y $F$ sobre los puntos medios de $BC$, $CA$ y $AB$ respectivamente.
+      Entonces las rectas $AD'$, $BE'$ y $CF'$ son concurrentes.
+   \end{section-definition}
+
+   \begin{section-definition}[\textbf{Cevianas isogonales}]
+      Dos cevianas son isogonales del $\triangle ABC$ si ambas parte del mismo vértice del triángulo y una es la reflexión de la otra con respecto a la bisectriz interna de $\triangle ABC$.
+   \end{section-definition}
+
+   \begin{section-definition}[\textbf{Conjugados isogonales}]
+      Dado un triángulo $ABC$ se tienen tres cevianas $AD$, $BE$ y $CF$ las cuales son concurrentes en un punto $P$.
+      Sean $AD'$, $BE'$ y $CF'$ las reflexiones de $AD$, $BE$ y $CF$ sobre las bisectrices de $\angle A$, $\angle B$ y $\angle C$ respectivamente.
+      Entonces las rectas $AD'$, $BE'$, $CF'$ son concurrentes.
+   \end{section-definition}
+   
+   \section{}
+   \section{}
+
+   \begin{section-problem}
+      Sea $ABC$ un triángulo rectángulo en $A$, y sea $D$ un punto en el lado $AC$.
+      Denotemos por $E$ la reflexión de $A$ en la recta $BD$, y por $F$ la intersección de $CE$ con la perpendicular a $BC$ por $D$.
+      Probar que $AF$, $DE$ y $BC$ son concurrentes.
+   \end{section-problem}
+
+   \begin{section-problem}
+      En el $\Delta ABC$, sea $M$ el punto medio del lado $AB$.
+      Sea $P$ un punto arbitrario en el segmento $CM$ ($P \neq C$, $P \neq M$).
+      Sea $AP \cap BC = D$ y $BP \cap AC = E$.
+      Probar que $ED \parallel AB$.
+   \end{section-problem}
+
+\end{document}
