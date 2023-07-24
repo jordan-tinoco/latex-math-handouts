@@ -19,6 +19,8 @@
 \newcommand{\RNN}{\ensuremath{\mathbb{R}^{\geq 0}}}
 
 %Useful commands
+\newcommand{\refTheorem}[1]{\textbf{Teorema #1}}
+\newcommand{\refDefinition}[1]{\textbf{Definición #1}}
 \renewcommand{\emptyset}{\varnothing}
 \newcommand{\inverseOf}[1]{\frac{1}{#1}}
 \newcommand{\fullMod}[2]{\equiv #1 \pmod{#2}}
@@ -30,7 +32,7 @@
 {
     (#2_{#3}, \ldots, #2_{#1})
 }
-\newcommand{\polinom}[3][x]
+\newcommand{\polynom}[3][x]
 {
     #3_{#2} #1^{#2} + #3_{#2 - 1} #1^{#2 - 1} + \cdots + #3_{1} #1 + #3_{0}
 }
@@ -62,13 +64,15 @@
     \cdots #1_{#3}
 }
 
-
 \newcommand{\problemImage}[2]
 {
     \begin{center}
         \includegraphics[width=#2]{#1}
     \end{center}
 }
+
+
+
 
 %Enviroments
 \newenvironment{source-problem}

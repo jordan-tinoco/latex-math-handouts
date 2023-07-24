@@ -1,0 +1,185 @@
+\newpage
+\section{Fórmulas de Vieta}
+
+\subsection{Definiciones}
+
+\begin{section-definition.tcb}[Fórmulas de Vieta]\label{vietas-formula}
+    Para un polinomio de la forma $P(x) = a_n x^n + a_{n - 1} x^{n - 1} + \cdots  + a_1 x + a_0$ con raíces $r_1, r_2, \cdots, r_n$ y $a_n \neq 0$, se denomina como Fórmulas de Vieta a las ecuaciones
+    \begin{align*}
+        r_1 + r_2 + \cdots + r_n &= - \frac{a_{n - 1}}{a_n}\\
+        r_1 r_2 + r_1 r_3 + \cdots + r_{n - 1} r_n &= \frac{a_{n - 2}}{a_n}\\
+        r_1 r_2 r_3 + r_1 r_2 r_4 + \cdots + r_{n - 2} r_{n - 1} r_n &= -\frac{a_{n - 3}}{a_n}\\
+        \vdots\\
+        r_1 r_2 \cdots r_n &= (-1)^n \frac{a_0}{a_n}
+    \end{align*}
+\end{section-definition.tcb}
+
+Veamos que por el~\refTheorem{\ref{factor-theorem}}, podemos escribir a $P$ como
+\[
+    P(x) = a_n x^n + a_{n - 1} x^{n - 1} + \cdots  + a_1 x + a_0 = a_n (x - r_1)(x - r_2) \cdots (x - r_n)
+\]
+Cuando expandimos los $n$ factores lineales del lado derecho de la ecuación, obtenemos
+\[
+    a_n x^n - a_n(r_1 + r_2 + \cdots + r_n)x^{n - 1} + a_n(r_1 r_2 + r_1 r_3 + \cdots + r_{n - 1} r_n)x^{n - 2} + \cdots + (-1)^n a_n r_1 r_2 \cdots r_n
+\]
+donde el signo del coeficiente $x^k$ está dado por $(-1)^{n - k}$.
+Al comparar los coeficientes podemos ver que
+\begin{align*}
+    a_{n - 1} = - a_n(r_1 + r_2 + \cdots + r_n) &\to& r_1 + r_2 + \cdots + r_n = - \frac{a_{n - 1}}{a_n}\\
+    a_{n - 2} =   a_n (r_1 r_2 + r_1 r_3 + \cdots + r_{n - 1} r_n) &\to& r_1 r_2 + r_1 r_3 + \cdots + r_{n - 1} r_n = \frac{a_{n - 2}}{a_n}\\
+    \vdots\\
+    a_{0} = - a_n (r_1 r_2 \cdots r_n)&\to& r_1 r_2 \cdots r_n = (-1)^n \frac{a_0}{a_n}
+\end{align*}
+
+Las fórmulas de Vieta son de mucha utilidad para calcular expresiones que involucran las raíces de un polinomio sin tener que calcular las propias raíces.
+Ya que dichas raíces se puede dejar en función de los coeficientes, los cuales muchas veces ya se conocen de antemano.
+En particular es útil conocer la fórmulas de Vieta para polinomios cuadráticos y cúbicos, gran variedad de los problemas que veremos las involucran.
+
+\begin{multicols}{2}
+    \begin{enumerate}
+        \item Sea el polinimio cuadrático \[P(x) = a_2 x^2 + a_1 x + a_0\] con raíces $r_1$ y $r_2$, entonces se cumple que
+        \[
+            \begin{cases}
+                r_1 + r_2 = - \frac{a_1}{a_2} \\
+                r_1 r_2 = \frac{a_0}{a_2}
+            \end{cases}
+        \]
+        \\
+        \item Sea el polinimio cúbico \[P(x) = a_3 x^3 + a_2 x^2 + a_1 x + a_0\] con raíces $r_1, r_2$ y $r_3$, entonces se cumple que
+        \[
+            \begin{cases}
+                r_1 + r_2 + r_3 = - \frac{a_2}{a_3}\\
+                r_1 r_2 + r_2 r_3 + r_3 r_1 = \frac{a_1}{a_3}\\
+                r_1 r_2 r_3 = - \frac{a_0}{a_3}
+            \end{cases}
+        \]
+    \end{enumerate}
+\end{multicols}
+
+Ahora veamos algunos ejemplos de cómo se utilizan las formulas de Vieta en problemas de polinomios.
+
+\begin{section-example.tcb}
+    Si $p$ y $q$ son raíces de la ecuación $x^2 + 2bx + 2c = 0$, determina el valor de $\frac{1}{p^2} + \frac{1}{q^2}.$
+\end{section-example.tcb}
+\begin{solution}
+    Aplicando las fórmulas de Vieta
+    \begin{gather*}
+        p + q = - \frac{2b}{1} = - 2b \\
+        pq = \frac{2c}{1} = 2c
+    \end{gather*}
+    La expresión que nos piden hallar puede ser transformada de la siguente manera
+    \[
+        \frac{1}{p^2} + \frac{1}{q^2} = \frac{p^2 + q^2}{p^2 q^2} = \frac{p^2 + 2pq + q^2 - 2pq}{p^2 q^2} = \frac{ (p + q)^2 - 2pq}{(pq)^2}
+    \]
+    Finalmente, al sustituir llegamos a
+    \[
+        \frac{ (p + q)^2 - 2pq}{(pq)^2} = \frac{ (-2b)^2 - 2(2c)}{(2c)^2} = \boxed{\frac{b^2 - c}{c^2}} \qedhere
+    \]
+\end{solution}
+
+\begin{section-example.tcb}
+    Encuentre el valor de $\frac{1}{r_1} + \frac{1}{r_2} + \frac{1}{r_3}$ si $r_1, r_2, r_3$ son raíces de $P(x) = x^3 - 7 x^2 + 3x + 1$.
+\end{section-example.tcb}
+\begin{solution}
+    Por la fórmulas de Vieta sabemos lo siguiente
+    \begin{gather*}
+        r_1 r_2 + r_2 r_3 + r_3 r_1 = \frac{3}{1} = 3 \\
+        r_1 r_2 r_3 = - \frac{1}{1} = -1
+    \end{gather*}
+    Ahora, notemos que
+    \[\frac{r_1 r_2 + r_2 r_3 + r_3 r_2}{r_1 r_2 r_3} = \frac{r_1 r_2}{r_1 r_2 r_3} + \frac{r_2 r_3}{r_1 r_2 r_3} + \frac{r_3 r_1}{r_1 r_2 r_3} = \frac{1}{r_3} + \frac{1}{r_1} + \frac{1}{r_2}\]
+    Luego $\frac{1}{r_3} + \frac{1}{r_1} + \frac{1}{r_2} = \frac{3}{-1} = \boxed{-3}.$
+\end{solution}
+
+\begin{section-example.tcb}[1986 URSS]
+    Las raíces del polinomio $x^2 + ax + b + 1$ son números naturales. Mostrar que $a^2 + b^2$ no es un primo.
+\end{section-example.tcb}
+\begin{solution}
+    Para demostrar que $a^2 + b^2$ no es primo, entonces tendremos que demostrar que es igual a producto de dos enteros mayores a 1.
+    Digamos entonces que $r_1$ y $r_2$ son las raíces, por las Fórmulas de Vieta
+    \begin{gather*}
+        r_1 + r_2 = -a\\
+        r_1 r_2 = b + 1
+    \end{gather*}
+    Que al elevar al cuadrado y sumar tenemos $a^2 + b^2 = (r_1 + r_2)^2 + (r_1 r_2 - 1)^2$.
+    Desarrollando
+    \begin{gather*}
+        a^2 + b^2 = r^2_1 + 2r_1 r_2 + r^2_2 + r^2_1 r^2_2 - 2r_1 r_2 + 1 \\
+        a^2 + b^2 = r^2_1 + r^2_2 + r^2_1 r^2_2+ 1 = \boxed{(r^2_1 + 1)(r^2_2 + 1)}
+    \end{gather*}
+    Por dato del problemas sabemos que $r_1$ y $r_2$ son naturales así $(r^2_1 + 1)$ y $(r^2_2 + 1)$ son mayores a 1.
+    Luego la prueba está hecha.
+\end{solution}
+
+\begin{section-example.tcb}[2008 AIME II \#7]
+    Sean $r, s$ y $t$ las tres raíces de la ecuación
+    \[8x^3 + 1001x + 2008 = 0.\]
+    Encontrar $(r + s)^3 + (s + t)^3 + (t + r)^3.$
+\end{section-example.tcb}
+\begin{solution}
+    Por las fórmulas de Vieta, sabemos lo siguiente
+    \begin{gather*}
+        r +  s + t = - \frac{0}{8} = 0 \\
+        rs +  st + tr = \frac{1001}{8} \\
+        r s t = - \frac{2008}{8} = -251
+    \end{gather*}
+    Por la primera ecuación, podemos ver inmediantamente que $r + s = -t$ y por lo tanto $(r + s)^3 = - t^3$.
+    Análogamente, llegaremos a
+    \[(r + s)^3 + (s + t)^3 + (t + r)^3 =  -(r^3 + s^3 + t^3)\]
+    Para evitar calcular los valores individuales de las raíces, podemos auxiliarnos de indentidades algebraicas
+    que nos relacionan $r^3 + s^3 + t^3$ con la expresiones $r +  s + t$, $rs +  st + tr$ y $rst$ cuyos valores ya conocemos.
+    Una de estas identidades es\footnote{Se deja como ejercicio al lector la demostración de esta indentidad. Así como la búsqueda de otras identidades similares.}
+    \[(x + y + z)^3 = x^3 + y^3 + z^3 + 3(x + y)(y + z)(z + x)\]
+    De donde rápidamente vemos que
+    \begin{gather*}
+        -(r^3 + s^3 + t^3) = - (r + s + t)^3 + 3(r + s)(s + t)(t + r)\\
+        -(r^3 + s^3 + t^3) = -(0)^3 + 3(-t)(-r)(-s)\\
+        -(r^3 + s^3 + t^3) = - 3rst = -3(-251) = \boxed{753} \qedhere
+    \end{gather*}
+\end{solution}
+
+
+
+\subsection{Agregados culturales y preguntas}
+
+\begin{enumerate}
+    \item IMO son las siglas de \textit{International Mathematical Olympiad}. La IMO, básicamente, es la olimpiada mundial más dificil e importante en la que Nicaragua participa.
+    \item El método de Descenso Infinito de Fermat es una propiedad de los enteros no negativos. El cual dice que no puede existir una secuencia $n_1 > n_2 > \cdots$ con $n_i \in \Z^{\geq 0}$.
+    \item Existe una técnica llamada \textbf{Vieta Jumping} la cual es una combinación de las fórmulas de Vieta y el método de Descenso Infinito de Fermat.
+    Esta técnica es muy útil en problemas nivel IMO.
+\end{enumerate}
+
+\subsection{Ejercicios y Problemas}
+
+Sección de ejercicios y problemas para el autoestudio.
+
+\begin{section-exercise}
+    Sean $r_1$ y $r_2$ las raíces del polinomio $P(x) = ax^2 + bx + c$.
+    Encontrar los siguientes valores en función del los coeficientes de $P.$
+    \begin{multicols}{3}
+        \begin{enumerate}
+            \item $r_1 - r_2$
+            \item $\frac{1}{r_1} - \frac{1}{r_2}$
+            \item $r^2_1 + r^2_2$
+            \item $r^3_1 + r^3_2$
+            \item $(r_1 + 1)^2 + (r_2 + 1)^2$
+        \end{enumerate}
+    \end{multicols}
+\end{section-exercise}
+
+\begin{section-problem}
+    Sean $a$ y $b$ las raíces de la ecuación $x^2 - 6x + 5 = 0$, encuentra $(a + 1)(b + 1).$
+\end{section-problem}
+
+\begin{section-problem}
+    Dado que $m$ y $n$ son raíces del polinomio $6x^2 - 5x - 3$, encuentra un polinomio cuyas raíces sean
+    $m - n^2$ y $n - m^2$, sin calcular los valores de $m$ y $n$.
+\end{section-problem}
+
+\begin{section-problem}
+    ¿Para qué valores reales positivos de $m$, las raíces $x_1$ y $x_2$ de la ecuación
+    \[
+        x^2 - \left( \frac{2m - 1}{2} \right)x  + \frac{m^2 - 3}{2} = 0
+    \]
+    cumplen que $x_1 = x_2 - \frac{1}{2}$?
+\end{section-problem}
