@@ -76,23 +76,23 @@ Podemos utilizar la notación de sumatoria y quedaría como:
 
 \begin{proof}
     La demostración la haremos por inducción sobre $n$.
-
     Si $n = 0$, entonces $(a + b)^0 = 1$ y $\binom{0}{0}a^0 b^0 = 1$.
-
     Supongamos que para un entero fijo $k \geq 0$ la declaración es cierta, es decir
-    \[(a + b)^k = \sum\limits_{i = 0}^{k} \binom{k}{i}a^{k - i}b^i\]
+    \[
+        (a + b)^k = \sum\limits_{i = 0}^{k} \binom{k}{i}a^{k - i}b^i
+    \]
     es válida, entonces
-    \[(a + b)^{k + 1} = (a + b)(a + b)^k = (a + b) \sum\limits_{i = 0}^{k} \binom{k}{i}a^{k - i}b^i\]
-    \begin{gather*}
-        = (a + b) \sum\limits_{i = 0}^{k} \binom{k}{i}a^{k - i}b^i\\
-        = a\sum\limits_{i = 0}^{k} \binom{k}{i}a^{k - i}b^i + b\sum\limits_{i = 0}^{k} \binom{k}{i}a^{k - i}b^i\\
-        = a\left[\binom{k}{0}a^{k} + \sum\limits_{i = 1}^{k} \binom{k}{i}a^{k - i}b^i\right] + b\left[\sum\limits_{i = 0}^{k - 1} \binom{k}{i}a^{k - i}b^i + \binom{k}{k}b^k\right]\\
-        = \binom{k}{0}a^{k + 1} + \sum\limits_{i = 1}^{k} \binom{k}{i}a^{k + 1 - i}b^i+ \sum\limits_{i = 0}^{k - 1} \binom{k}{i}a^{k - i}b^{i + 1} + \binom{k}{k}b^{k + 1} \\
-        = \binom{k}{0}a^{k + 1} + \sum\limits_{i = 1}^{k} \binom{k}{i}a^{k + 1 - i}b^i+ \sum\limits_{i = 1}^{k} \binom{k}{i - 1}a^{k + 1 - i}b^{i} + \binom{k}{k}b^{k + 1} \\
-        = \binom{k + 1}{0}a^{k + 1} + \sum\limits_{i = 1}^{k} \left[ \binom{k}{i} + \binom{k}{i - 1}\right] a^{k + 1 - i}b^i + \binom{k + 1}{k + 1}b^{k + 1} \\
-        = \binom{k + 1}{0}a^{k + 1} + \sum\limits_{i = 1}^{k} \binom{k + 1}{i} a^{k + 1 - i}b^i + \binom{k + 1}{k + 1}b^{k + 1} \\
-        = \boxed{\sum\limits_{i = 0}^{k + 1} \binom{k + 1}{i} a^{k + 1 - i}b^i} \qedhere
-    \end{gather*}
+    \begin{align*}
+        (a + b)^{k + 1} &= (a + b)(a + b)^k\\
+        &= (a + b) \sum\limits_{i = 0}^{k} \binom{k}{i}a^{k - i}b^i\\
+        &= a\sum\limits_{i = 0}^{k} \binom{k}{i}a^{k - i}b^i + b\sum\limits_{i = 0}^{k} \binom{k}{i}a^{k - i}b^i\\
+        &= a\left[\binom{k}{0}a^{k} + \sum\limits_{i = 1}^{k} \binom{k}{i}a^{k - i}b^i\right] + b\left[\sum\limits_{i = 0}^{k - 1} \binom{k}{i}a^{k - i}b^i + \binom{k}{k}b^k\right]\\
+        &= \binom{k}{0}a^{k + 1} + \sum\limits_{i = 1}^{k} \binom{k}{i}a^{k + 1 - i}b^i+ \sum\limits_{i = 0}^{k - 1} \binom{k}{i}a^{k - i}b^{i + 1} + \binom{k}{k}b^{k + 1} \\
+        &= \binom{k}{0}a^{k + 1} + \sum\limits_{i = 1}^{k} \binom{k}{i}a^{k + 1 - i}b^i+ \sum\limits_{i = 1}^{k} \binom{k}{i - 1}a^{k + 1 - i}b^{i} + \binom{k}{k}b^{k + 1} \\
+        &= \binom{k + 1}{0}a^{k + 1} + \sum\limits_{i = 1}^{k} \left[ \binom{k}{i} + \binom{k}{i - 1}\right] a^{k + 1 - i}b^i + \binom{k + 1}{k + 1}b^{k + 1} \\
+        &= \binom{k + 1}{0}a^{k + 1} + \sum\limits_{i = 1}^{k} \binom{k + 1}{i} a^{k + 1 - i}b^i + \binom{k + 1}{k + 1}b^{k + 1} \\
+        (a + b)^{k + 1} &= \boxed{\sum\limits_{i = 0}^{k + 1} \binom{k + 1}{i} a^{k + 1 - i}b^i} \qedhere
+    \end{align*}
 \end{proof}
 
 
@@ -129,8 +129,8 @@ Podemos utilizar la notación de sumatoria y quedaría como:
     \end{section-problem}
 
     \begin{section-problem}
-        Sea $\{a_n\}$ una secuencia tal que $a_1 = 5 \mbox{ , } a_2 = 13 \mbox{ y } a_{n+2}=5a_{n+1}-6a_n \mbox{, } \forall n \in \N$.
-        Probar que $a_n = 2^n+3^n$, $\forall n \in \N$.
+        Sea $\{a_n\}$ una secuencia tal que $a_1 = 5$, $a_2 = 13$ y $a_{n+2}=5a_{n+1}-6a_n\text{,}\ \forall n \in \N$.
+        Probar que $a_n = 2^n+3^n \text{,}\ \forall n \in \N$.
     \end{section-problem}
 
     \begin{section-problem}

@@ -138,13 +138,13 @@ Lo cual facilita aplicar la \textbf{diferencia de cuadrados}.
 \begin{solution}
 {
     Utilizando la completación de cuadrados, tenemos que
-    \begin{gather*}
-        R(r) = r^2 - 10r + 7\\
-        = \left( r - \frac{10}{2} \right)^2 - \left( \frac{10}{2} \right)^2 + 7\\
-        = \left( r - 5 \right)^2 - 18
-        = \left( r - 5 + \sqrt {18} \right)\left( r - 5 - \sqrt {18} \right)\\
-        = \left[ r - \left( 5 - 3\sqrt {2} \right)\right]\left[ r - \left( 5 + 3\sqrt {2} \right)\right]
-    \end{gather*}
+    \begin{align*}
+        R(r) &= r^2 - 10r + 7\\
+        &= \left( r - \frac{10}{2} \right)^2 - \left( \frac{10}{2} \right)^2 + 7\\
+        &= \left( r - 5 \right)^2 - 18\\
+        &= \left( r - 5 + \sqrt {18} \right)\left( r - 5 - \sqrt {18} \right)\\
+        &= \left[ r - \left( 5 - 3\sqrt {2} \right)\right]\left[ r - \left( 5 + 3\sqrt {2} \right)\right]
+    \end{align*}
     De esta manera sabemos que $R(r)$ tiene como raíces a $\left( 5 - 3\sqrt {2} \right) \mbox{ y } \left( 5 + 3\sqrt {2} \right).$
 }
 \end{solution}
@@ -159,13 +159,13 @@ Cuando tenemos un polinomio cuadrático $P(x) = ax^2 + bx + c$ con $a \neq 0$, p
 
 \begin{proof}
     Al completar cuadrado en $P(x)$ tenemos que
-    \begin{gather*}
-        P(x) = ax^2 + bx + c = a \left( x^2 + \frac{b}{a}x + \frac{c}{a} \right) \\
-        = a \left[ \left( x + \frac{b}{2a} \right)^2 - \left( \frac{b}{2a} \right)^2 + \frac{c}{a} \right]
-        = a \left[ \left( x + \frac{b}{2a} \right)^2 - \left( \frac{b^2 - 4ac}{4a^2}\right) \right] \\
-        = a \left[ x + \frac{b}{2a} - \frac{\sqrt {b^2 - 4ac}}{2a}\right]\left[ x + \frac{b}{2a} + \frac{\sqrt {b^2 - 4ac}}{2a}\right] \\
-        = a \left[ x - \left( \frac{-b + \sqrt {b^2 - 4ac}}{2a} \right) \right]\left[ x - \left( \frac{-b - \sqrt {b^2 - 4ac}}{2a} \right) \right]
-    \end{gather*}
+    \begin{align*}
+        P(x) &= ax^2 + bx + c = a \left( x^2 + \frac{b}{a}x + \frac{c}{a} \right) \\
+        &= a \left[ \left( x + \frac{b}{2a} \right)^2 - \left( \frac{b}{2a} \right)^2 + \frac{c}{a} \right]\\
+        &= a \left[ \left( x + \frac{b}{2a} \right)^2 - \left( \frac{b^2 - 4ac}{4a^2}\right) \right] \\
+        &= a \left[ x + \frac{b}{2a} - \frac{\sqrt {b^2 - 4ac}}{2a}\right]\left[ x + \frac{b}{2a} + \frac{\sqrt {b^2 - 4ac}}{2a}\right] \\
+        &= a \left[ x - \left( \frac{-b + \sqrt {b^2 - 4ac}}{2a} \right) \right]\left[ x - \left( \frac{-b - \sqrt {b^2 - 4ac}}{2a} \right) \right]
+    \end{align*}
     Así, $\frac{-b - \sqrt {b^2 - 4ac}}{2a}$ y $\frac{-b + \sqrt {b^2 - 4ac}}{2a}$ son la raíces del polinomio.
 \end{proof}
 
