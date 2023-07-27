@@ -1,0 +1,49 @@
+\begin{tikzpicture}[xscale = 0.4, yscale = 0.4]
+    \clip(-2.36,-10.08) rectangle (13.47,5.06);
+    \draw [shift={(-0.54,-3.07)},fill=black,fill opacity=0.05] (0,0) -- (0.2:1.5) arc (0.2:78.71:1.5) -- cycle;
+    \draw [shift={(7.48,-3.04)},fill=black,fill opacity=0.05] (0,0) -- (-124.46:1.5) arc (-124.46:-45.95:1.5) -- cycle;
+    \draw [shift={(-1.7,-8.88)},fill=black,fill opacity=0.05] (0,0) -- (0.2:1.5) arc (0.2:78.71:1.5) -- cycle;
+    \draw [shift={(-0.54,-3.07)},fill=black,fill opacity=0.05] (0,0) -- (-101.29:1.5) arc (-101.29:-55.14:1.5) -- cycle;
+    \draw [shift={(7.48,-3.04)},fill=black,fill opacity=0.05] (0,0) -- (134.05:1.5) arc (134.05:180.2:1.5) -- cycle;
+    \draw [shift={(13.08,-8.83)},fill=black,fill opacity=0.05] (0,0) -- (134.05:1.5) arc (134.05:180.2:1.5) -- cycle;
+    \draw [shift={(0.83,3.83)},fill=black,fill opacity=0.05] (0,0) -- (-101.29:1.67) arc (-101.29:-78.18:1.67) -- cycle;
+    \draw [shift={(0.83,3.83)},fill=black,fill opacity=0.05] (0,0) -- (-69.06:1.67) arc (-69.06:-45.95:1.67) -- cycle;
+    \draw(3.46,-0.28) circle (4.88cm);
+    \draw (-0.54,-3.07)-- (7.48,-3.04);
+    \draw (0.83,3.83)-- (-1.7,-8.88);
+    \draw (0.83,3.83)-- (13.08,-8.83);
+    \draw (-1.7,-8.88)-- (13.08,-8.83);
+    \draw (0.83,3.83)-- (3.49,-8.86);
+    \draw (0.83,3.83)-- (3.47,-3.06);
+    \draw [dash pattern=on 3pt off 3pt,domain=-2.1176316762214267:13.472829432059696] plot(\x,{(-21.59-8.05*\x)/5.61});
+    \draw [dash pattern=on 3pt off 3pt,domain=-2.361745286484902:10.226227746616733] plot(\x,{(--93.93-9.81*\x)/-6.74});
+    \draw [shift={(-0.54,-3.07)}] (-101.29:1.5) arc (-101.29:-55.14:1.5);
+    \draw [shift={(-0.54,-3.07)}] (-101.29:1.33) arc (-101.29:-55.14:1.33);
+    \draw [shift={(7.48,-3.04)}] (134.05:1.5) arc (134.05:180.2:1.5);
+    \draw [shift={(7.48,-3.04)}] (134.05:1.33) arc (134.05:180.2:1.33);
+    \draw [shift={(13.08,-8.83)}] (134.05:1.5) arc (134.05:180.2:1.5);
+    \draw [shift={(13.08,-8.83)}] (134.05:1.33) arc (134.05:180.2:1.33);
+    \draw [shift={(0.83,3.83)}] (-101.29:1.67) arc (-101.29:-78.18:1.67);
+    \draw(0.84,2.27) -- (0.84,2.07);
+    \draw [shift={(0.83,3.83)}] (-69.06:1.67) arc (-69.06:-45.95:1.67);
+    \draw(1.68,2.51) -- (1.78,2.34);
+    \begin{scriptsize}
+        \normalsize
+        \fill [color=black] (0.83,3.83) circle (5pt);
+        \draw[color=black] (0.31,4.56) node {$A$};
+        \fill [color=black] (3.49,-8.86) circle (5pt);
+        \draw[color=black] (3.47,-9.7) node {$P$};
+        \fill [color=black] (-0.54,-3.07) circle (5pt);
+        \draw[color=black] (-1.36,-3.04) node {$B$};
+        \fill [color=black] (7.48,-3.04) circle (5pt);
+        \draw[color=black] (8.47,-2.88) node {$C$};
+        \fill [color=black] (-1.7,-8.88) circle (5pt);
+        \draw[color=black] (-1.76,-9.68) node {$S$};
+        \fill [color=black] (13.08,-8.83) circle (5pt);
+        \draw[color=black] (13.04,-9.54) node {$T$};
+        \fill [color=black] (2.28,-3.06) circle (5pt);
+        \draw[color=black] (1.67,-3.81) node {$L$};
+        \fill [color=black] (3.47,-3.06) circle (5pt);
+        \draw[color=black] (4.04,-3.78) node {$M$};
+    \end{scriptsize}
+\end{tikzpicture}

@@ -1,35 +1,155 @@
 \section{Desarrollo}
 
-\begin{section-theorem.tcb}[Steiner]
+\begin{section-theorem.tcb}[Steiner]\label{steiner-theorem}
     Sean $D$ y $E$ dos puntos sobre el segmento $BC$ del triángulo $ABC$ tal que $\angle BAE = \angle DAC$.
     Así
-    \[\frac{BD}{CD} \cdot \frac{BE}{CE} = \frac{AB^2}{AC^2}\]
+    \[
+        \frac{BD}{CD} \cdot \frac{BE}{CE} = \left(\frac{AB}{AC}\right)^2.
+    \]
 \end{section-theorem.tcb}
+\begin{figure}[H]
+    \centering
+    \input{figures/figure-3}
+\end{figure}
+\begin{proof}
+    Aplicando el \refTheorem{\ref{ratio-lemma}} al $\triangle ABC$ con los puntos $D$ y $E$, respectivamente, se obtiene:
+    \begin{align*}
+        \frac{BD}{DC} &= \frac{AB}{AC} \cdot \frac{\sen(\angle BAD)}{\sen(\angle DAC)}\\
+        \frac{BE}{EC} &= \frac{AB}{AC} \cdot \frac{\sen(\angle BAE)}{\sen(\angle EAC)}\\
+        \Rightarrow \frac{BD}{DC} &\cdot \frac{BE}{EC} = \left(\frac{AB}{AC}\right)^2 \cdot \frac{\sen(\angle BAD)}{\sen(\angle DAC)} \cdot \frac{\sen(\angle BAE)}{\sen(\angle EAC)}\\
+    \end{align*}
+    Pero como $\angle BAE = \angle DAC$, entonces $\angle BAD = \angle EAC$, de donde se sigue el resultado.
+\end{proof}
+
 
 
 \subsection{Simedianas}
 
-La simediana es la reflexión de la mediana con respecto a la bisectriz interna del mismo vértice.
-El siguiente lema proporciona una construcción alternativa a esta recta.
+
+\begin{section-definition.tcb}[Simediana]
+    La simediana correspondiente al vértice $A$ se define como la reflexión de $A$\nobreakdash-mediana con respecto a la bisectriz interna del ángulo $BAC$.
+    En otras palabras, es la recta isogonal correspondiente a la mediana que parte del mismo vértice de referencia.
+\end{section-definition.tcb}
+\begin{figure}[H]
+    \centering
+    \input{figures/figure-1}
+    \caption{La recta $AL$ es la $A$-simediana del triángulo $ABC$.}
+    \label{fig:symmedian-definition}
+\end{figure}
+
+En el caso de la figura~\ref{fig:symmedian-definition}, la recta $AL$ es la $A$-simediana del $\triangle ABC$.
+Es decir $\angle BAL = \angle MAC$.
+No hace falta decir que todo triángulo contiene tres simedianas.
+Por el teorema de \textbf{Ceva} en forma trigonometríca, sabemos que, al concurrir las medianas en el baricentro, las simedianas comparten también un punto en común, llamado el punto de \textbf{Lemoine}.
+
+
+\begin{section-lemma.tcb}\label{symmendian-proportion}
+    Sea $N$ un punto sobre el segmento $BC$; entonces, $N$ pertenece a la $A$\nobreakdash-simediana si y solo si
+    \[
+        \frac{BN}{NC} = \left(\frac{AB}{AC}\right)^2.
+    \]
+\end{section-lemma.tcb}
+\begin{proof}
+    Es una aplicación directa del~\refTheorem{\ref{steiner-theorem}}.
+\end{proof}
+
 
 \begin{section-lemma.tcb}\label{simedian-lemma}
     Sea $D$ el punto de intersección de las tangentes por $B$ y $C$ al circuncírculo del triángulo $ABC$.
     Luego, $AD$ es una simediana de $\triangle ABC$.
 \end{section-lemma.tcb}
+\begin{proof}
+    Supongamos que las prolongaciones de los lados $AB$ y $AC$ cortan a la paralela a $BC$ por $P$ en $S$ y $T$, respectivamente.
+    Es claro que $\angle PSB = \angle CBA$ y $\angle PTC = \angle BCA$.
+    Además, $\angle PBS = \angle BCA$ y $\angle PCT = \angle CBA$ por la condición de tangencia de $PB$ y $PC$.
 
-Existen diversas pruebas del lema~\ref{simedian-lemma}.
-Un camino considera polares y cuartetas armónicos.
-Una vía adicional utiliza manipulación trigonométrica y el siguiente hecho.
+    \begin{figure}[H]
+        \centering
+        \input{figures/figure-2}
+        \caption{Una forma de construir e identificar la $A$-simediana.}
+    \end{figure}
 
-\begin{section-lemma.tcb}
-    Sea $N$ un punto sobre el segmento $BC$; entonces, $N$ pertenece a la $A$\nobreakdash-simediana si y solo si
-    \[\frac{BN}{NC} = \left(\frac{AB}{AC}\right)^2\]
-\end{section-lemma.tcb}
+    De este modo, $\triangle BPS \sim \triangle CAB \sim \triangle TCP$, lo que a su vez implica que:
+    \begin{align*}
+        \frac{SP}{PB} = \frac{AB}{AC} \ \land \ \frac{PC}{PT} = \frac{AB}{AC}
+        \ \Rightarrow \ \frac{SP}{PB} \cdot \frac{PC}{PT} &= \left(\frac{AB}{AC}\right)^2\\
+        \frac{SP}{PB} \cdot \frac{PC}{PT} &= \left(\frac{AS}{AT}\right)^2 \quad \text{(Por $\triangle CAB \sim \triangle TAS$)}\\
+        \frac{SP}{PT}  &= \left(\frac{AS}{AT}\right)^2 \quad \text{($PB = PC$ por tangencia)}
+    \end{align*}
+    por consiguiente, por el lema~\ref{symmendian-proportion}, $AP$ es simediana de $\triangle SAT$ y, de paso, también de $\triangle BAC$.
+\end{proof}
 
 
+\begin{section-definition.tcb}[Recta de Lemoine]
+    En un triángulo $ABC$ y $\Omega$ su circuncírculo, las tangentes a $\Omega$ por $A$, $B$ y $C$ se intersecan con los lados opuestos $BC$, $AC$ y $BA$ en los puntos $E$, $F$ y $D$, respectivamente.
+    Entonces, se cumple que $E$, $F$ y $D$ están sobre una misma recta, llamada la recta de \textbf{Lemoine} del triángulo $ABC$.
+\end{section-definition.tcb}
+
+
+
+
+\section{Conocimiento previo}
+
+\begin{section-theorem.tcb}[Ley de los Senos]
+    Sea el triángulo $ABC$ con circunradio $R$.
+    Entonces
+    \[
+        \frac{a}{\sen(\angle A)} = \frac{b}{\sen(\angle B)} = \frac{c}{\sen(\angle C)} = 2R.
+    \]
+\end{section-theorem.tcb}
+
+\begin{section-theorem.tcb}[Teorema de bisectriz generalizada]\label{ratio-lemma}
+    Dado el triángulo $ABC$, sea el punto $X$ en $BC$.
+    Entonces se cumple que
+    \[
+        \frac{BX}{XC} = \frac{AB}{AC} \cdot \frac{\sen(\angle BAX)}{\sen(\angle XAC)}.
+    \]
+\end{section-theorem.tcb}
 
 
 
 
 \section{Ejercicios y Problemas}
 Sección de ejercicios y problemas para el autoestudio.
+
+\begin{section-exercise}
+    Realizar la construcción de las tres simedianas de un triángulo $ABC$ con la ayuda del Lemma \ref{simedian-lemma} y ubicar el punto de \textbf{Lemoine}.
+\end{section-exercise}
+
+\begin{section-exercise}
+    Realizar la construcción de la recta de \textbf{Lemoine} para un triángulo $ABC$.
+\end{section-exercise}
+
+\begin{section-problem}
+    Sea $L$ el punto de \textbf{Lemoine} de un triángulo $ABC$ y $M$ el punto en $BC$ tal que $AM$ contiene a $L$.
+    Demostrar que
+    \[
+        \frac{AL}{LM} = \frac{BA^2 + AC^2}{BC^2}.
+    \]
+\end{section-problem}
+
+\begin{section-problem}
+    Las bisectrices interna y externa del ángulo $\angle BAC$ de $\triangle ABC$, intersecan a la recta $BC$ en $E$ y $D$, respectivamente.
+    El circuncírculo de $\triangle DEA$ interseca al circuncírculo de $\triangle ABC$ en $X$.
+    Probar que $AX$ es la $A$-simediana de $\triangle ABC$.
+\end{section-problem}
+
+\begin{section-problem}
+    Sea $AD$ una altura de $\triangle ABC$.
+    Consideremos $AD$ como diámetro de una circunferencia que corta los $AB$ y $AC$ en $K$ y $L$, respectivamente.
+    Las tangentes a la circunferencia en los puntos $K$ y $L$ se intersectan en un punto $M$.
+    Demuestra que la recta $AM$ divide $BC$ por la mitad.
+\end{section-problem}
+
+\begin{section-problem}
+    Un cuadrilátero convexo $ABCD$ tiene $AD = CD$ y $\angle DAB = \angle ABC < 90^\circ$.
+    La recta por $D$ y el punto medio de $BC$ intersecta a la recta $AB$ en un punto $E$.
+    Demuestra qur $\angle BEC = \angle DAC$.
+\end{section-problem}
+
+\begin{section-problem}
+    Una recta paralela a $BC$ corta a los lados $AB$ y $AC$ en $M$ y $N$ en el $\triangle ABC$, respectivamente.
+    Sea $P$ el punto de corte de $BN$ y $CM$.
+    Sea $Q$ el segundo punto de corte de los circuncírculos de $MPB$ y $NCP$.
+    Demostrar que $\angle BAQ = \angle PAC$.
+\end{section-problem}
