@@ -1,22 +1,26 @@
 \section{Desarrollo}
 
-\begin{figure}[htb]
+
+
+\subsection{Colinealidad}
+
+\begin{figure}[H]
     \centering
-    %\includegraphics[width=14cm]{figures/colinealidad-1}
+    \input{figures/figure-1}
 \end{figure}
 
-Tres puntos son colineales si se encuentran sobre una misma línea.
+Tres puntos son \textbf{colineales} si se encuentran sobre una misma línea.
 Dicho esto, presentaremos algunos enfoques que nos ayudarán a probar que tres puntos son colineales al resolver problemas de geometría.
 
 Hay tres formas más comunes de angulear que nos permiten probar que tres puntos $A$, $B$ y $C$ son colineales.
 
-\begin{figure}[htb]
+\begin{figure}[H]
     \centering
-    %\includegraphics[width=14cm]{figures/colinealidad-6}
+    \input{figures/figure-2}
     \caption{Tres configuraciones de colinealidad.}
 \end{figure}
 
-En la primera configuración\footnote{Comenzando de izquierda a derecha.}, necesitaremos dos puntos adicionales que ya son colineales con nuestro punto \("\)medio\("\) B.
+En la primera configuración\footnote{Comenzando de izquierda a derecha.}, necesitaremos dos puntos adicionales que ya son colineales con nuestro punto ``medio'' $B$.
 Sean esos puntos $X$ e $Y$.
 Si $\angle XBA = \angle YBC$, entonces los puntos $A$, $B$ y $C$ son colineales.
 
@@ -24,39 +28,62 @@ En la segunda configuración, necesitaremos un punto extra $X$ que no esté en l
 Si $\angle ABX + \angle XBC = 180^\circ$, entonces los puntos $A$, $B$ y $C$ son colineales.
 
 En la tercera configuración, también necesitaremos un punto extra $X$ que no esté en la supuesta línea $A - B - C$.
-Si $\angle XAB = \angle XAC$, entonces los puntos $A$, $B$ y $C$ son colineales.%
-\begin{figure}[htb]
-    \centering
-    %\includegraphics[width=14cm]{figures/colinealidad-1}
-\end{figure}
-
-Tres puntos son colineales si se encuentran sobre una misma línea.
-Dicho esto, presentaremos algunos enfoques que nos ayudarán a probar que tres puntos son colineales al resolver problemas de geometría.
-
-Hay tres formas más comunes de angulear que nos permiten probar que tres puntos $A$, $B$ y $C$ son colineales.
-
-\begin{figure}[htb]
-    \centering
-    %\includegraphics[width=14cm]{figures/colinealidad-6}
-    \caption{Tres configuraciones de colinealidad.}
-\end{figure}
-
-En la primera configuración\footnote{Comenzando de izquierda a derecha.}, necesitaremos dos puntos adicionales que ya son colineales con nuestro punto \("\)medio\("\) B.
-Sean esos puntos $X$ e $Y$.
-Si $\angle XBA = \angle YBC$, entonces los puntos $A$, $B$ y $C$ son colineales.
-
-En la segunda configuración, necesitaremos un punto extra $X$ que no esté en la supuesta línea $A - B - C$.
-Si $\angle ABX + \angle XBC = 180^\circ$, entonces los puntos $A$, $B$ y $C$ son colineales.
-
-En la tercera configuración, también necesitaremos un punto extra $X$ que no esté en la supuesta línea $A - B - C$.
-Si $\angle XAB = \angle XAC$, entonces los puntos $A$, $B$ y $C$ son colineales.%
+Si $\angle XAB = \angle XAC$, entonces los puntos $A$, $B$ y $C$ son colineales.
 
 
+\begin{section-theorem.tcb}[Teorema de Menelao]
+    Dado un triángulo $ABC$, sean $D$, $E$ y $F$ puntos sobre los lados (o sus prolongaciones) $BC$, $CA$ y $AB$, respectivamente.
+    Entonces los puntos $D$, $E$ y $F$ son colineales si y sólo si
+    \[
+        \frac{CD}{BD} \cdot \frac{BF}{FA} \cdot \frac{AE}{EC} = 1.
+    \]
+\end{section-theorem.tcb}
+\begin{proof}
+    La demostración se deja como ejercicio al lector.
+\end{proof}
+
+\begin{section-theorem.tcb}[Menelao trigonométrico]
+    Dado un triángulo $ABC$, sean $D$, $E$ y $F$ puntos sobre los lados (o sus prolongaciones) $BC$, $CA$ y $AB$, respectivamente.
+    Entonces los puntos $D$, $E$ y $F$ son colineales si y sólo si
+    \[
+        \frac{\sen(\angle CAD)}{\sen(\angle BAD)} \cdot \frac{\sen(\angle BCF)}{\sen(\angle FCA)} \cdot \frac{\sen(\angle ABE)}{\sen(\angle EBC)} = 1.
+    \]
+\end{section-theorem.tcb}
+\begin{proof}
+    La demostración se deja como ejercicio al lector.
+\end{proof}
+
+
+\begin{section-theorem.tcb}[Recta de Gauss]
+    Sean $L$ y $M$ los puntos medios de las diagonales $AC$ y $BD$ del cuadrilátero $ABCD$.
+    Las rectas $AB$ y $CD$ se cortan en $E$, y las rectas $AD$ y $BC$ se cortan en $F$.
+    Sea $N$ el punto medio de $EF$.
+    Entonces los puntos $L$, $M$ y $N$ colineales.
+\end{section-theorem.tcb}
+
+
+
+\subsection{Teorema de Pappus}
+
+\begin{section-theorem.tcb}[Teorema de Pappus]
+    En todo hexágono (no necesariamente convexo) en el que sus vértices no consecutivos están alineados, las intersecciones de sus lados opuestos son colineales.
+\end{section-theorem.tcb}
 
 
 
 
+\subsection{Teorema de Desargues}
+\begin{section-theorem.tcb}[Teorema de Desargues]
+    Dos triángulos están en perspectiva si y solo si son coaxiales.
+\end{section-theorem.tcb}
 
+\begin{remark.tcb}
+    Dos triángulos están en \textbf{perspectiva} si las rectas que unen sus vértices correspondientes son concurrentes.
+\end{remark.tcb}
+
+\begin{remark.tcb}
+    Dos triángulos son \textbf{coaxiales} cuando los puntos de intersección de los lados correspondientes son colineales.
+\end{remark.tcb}
 
 \subsection{Agregados culturales y preguntas}
 

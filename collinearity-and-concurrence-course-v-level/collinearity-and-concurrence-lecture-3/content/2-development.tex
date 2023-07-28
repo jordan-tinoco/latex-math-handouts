@@ -12,7 +12,7 @@
     \input{figures/figure-3}
 \end{figure}
 \begin{proof}
-    Aplicando el \refTheorem{\ref{ratio-lemma}} al $\triangle ABC$ con los puntos $D$ y $E$, respectivamente, se obtiene:
+    Aplicando el \refTheorem{\ref{ratio-lemma}}  al $\triangle ABC$ con los puntos $D$ y $E$, respectivamente, se obtiene:
     \begin{align*}
         \frac{BD}{DC} &= \frac{AB}{AC} \cdot \frac{\sen(\angle BAD)}{\sen(\angle DAC)}\\
         \frac{BE}{EC} &= \frac{AB}{AC} \cdot \frac{\sen(\angle BAE)}{\sen(\angle EAC)}\\
@@ -40,7 +40,7 @@
 En el caso de la figura~\ref{fig:symmedian-definition}, la recta $AL$ es la $A$-simediana del $\triangle ABC$.
 Es decir $\angle BAL = \angle MAC$.
 No hace falta decir que todo triángulo contiene tres simedianas.
-Por el teorema de \textbf{Ceva} en forma trigonometríca, sabemos que, al concurrir las medianas en el baricentro, las simedianas comparten también un punto en común, llamado el punto de \textbf{Lemoine}.
+Por la \refDefinition{1.4} vista en la clase anterior, sabemos que, al concurrir las medianas en el baricentro, las simedianas comparten también un punto en común, llamado el \textbf{punto de Lemoine}.
 
 
 \begin{section-lemma.tcb}\label{symmendian-proportion}
@@ -76,27 +76,28 @@ Por el teorema de \textbf{Ceva} en forma trigonometríca, sabemos que, al concur
         \frac{SP}{PB} \cdot \frac{PC}{PT} &= \left(\frac{AS}{AT}\right)^2 \quad \text{(Por $\triangle CAB \sim \triangle TAS$)}\\
         \frac{SP}{PT}  &= \left(\frac{AS}{AT}\right)^2 \quad \text{($PB = PC$ por tangencia)}
     \end{align*}
-    por consiguiente, por el lema~\ref{symmendian-proportion}, $AP$ es simediana de $\triangle SAT$ y, de paso, también de $\triangle BAC$.
+    luego, por el lema~\ref{symmendian-proportion}, $AP$ es simediana de $\triangle SAT$ y, de paso, también de $\triangle BAC$.
 \end{proof}
 
 
 \begin{section-definition.tcb}[Recta de Lemoine]
-    En un triángulo $ABC$ y $\Omega$ su circuncírculo, las tangentes a $\Omega$ por $A$, $B$ y $C$ se intersecan con los lados opuestos $BC$, $AC$ y $BA$ en los puntos $E$, $F$ y $D$, respectivamente.
-    Entonces, se cumple que $E$, $F$ y $D$ están sobre una misma recta, llamada la recta de \textbf{Lemoine} del triángulo $ABC$.
+    Sea el triángulo $ABC$ y $\Omega$ su circuncírculo, las tangentes a $\Omega$ por $A$, $B$ y $C$ se intersecan con los lados opuestos $BC$, $AC$ y $BA$ en los puntos $E$, $F$ y $D$, respectivamente.
+    Así, se cumple que $E$, $F$ y $D$ están sobre una misma recta, llamada la \textbf{recta de Lemoine} del triángulo $ABC$.
 \end{section-definition.tcb}
-
 
 
 
 \section{Conocimiento previo}
 
-\begin{section-theorem.tcb}[Ley de los Senos]
+\begin{section-theorem.tcb}[Ley de los Senos]\label{ratio-lemma1}
     Sea el triángulo $ABC$ con circunradio $R$.
     Entonces
     \[
         \frac{a}{\sen(\angle A)} = \frac{b}{\sen(\angle B)} = \frac{c}{\sen(\angle C)} = 2R.
     \]
 \end{section-theorem.tcb}
+
+\textbf{Pista:} Considerar las antipodas de los verticie en el circuncírculo de $\triangle ABC$, notar ciertos cuadriláteros cíclicos y luego utilzar la definción del seno para el triángulo rectángulo.
 
 \begin{section-theorem.tcb}[Teorema de bisectriz generalizada]\label{ratio-lemma}
     Dado el triángulo $ABC$, sea el punto $X$ en $BC$.
@@ -106,6 +107,7 @@ Por el teorema de \textbf{Ceva} en forma trigonometríca, sabemos que, al concur
     \]
 \end{section-theorem.tcb}
 
+\textbf{Pista:} Utilizar el teorema anterior.
 
 
 
