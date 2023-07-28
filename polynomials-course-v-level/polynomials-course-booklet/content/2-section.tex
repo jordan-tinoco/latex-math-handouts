@@ -1,21 +1,24 @@
 \newpage
 \section{Introducción a los Polinomios}
 
+
+
 \subsection{Definiciones}
 
 \begin{section-definition.tcb}
-    Un \textbf{\emph{polinomio}} en $x$ es una expresión de la forma
+    Un \textbf{polinomio} en $x$ es una expresión de la forma
     \[
-        \polynom{n}{a},
+        P(x) = \polynom{n}{a},\quad \text{con} \ n \in \ZNN.
     \]
-    donde $n$ es un entero mayor o igual que cero y $a_1, a_2, \dots, a_n$ son números que pueden ser enteros,
-    racionales, reales o complejos y son llamados los \textbf{\emph{coeficientes}} de $P(x)$.
+    Donde $a_1, a_2, \dots, a_n$ son números que pueden ser tanto reales como complejos y son llamados los \textbf{coeficientes} de $P(x)$.
 \end{section-definition.tcb}
 
-Si $a_n \neq 0$, se dice que $P(x)$ es de \emph{grado n} y se denota por $\deg{(P)} = n$; en este caso $a_n$ es llamado \textbf{\emph{coeficiente principal}}.
+Cada uno de los sumandos $a_i x^i$ son llamados \textbf{términos} de $P(x)$.
+Si $a_n \neq 0$, se dice que $P(x)$ es de \textbf{grado n} y se denota por $\deg{(P)} = n$.
+En este caso $a_n x^n$ es llamado \textbf{término principal} y $a_n$ \textbf{coeficiente principal} del polinomio.
 
-En particular, los polinomios de grado 1, 2 y 3 son llamados \emph{líneal, cuadrático y cúbico},
-respectivamente, y son estos el caso de estudio de esta primera sesión.
+En particular, los polinomios de grado 1, 2, 3 y 4 son llamados \emph{líneal, cuadrático, cúbico y cuártico}, respectivamente.
+He aquí la forma de dichos polinomios:
 
 \begin{table}[H]
     \centering
@@ -31,63 +34,52 @@ respectivamente, y son estos el caso de estudio de esta primera sesión.
     \end{tabular}
 \end{table}
 
-Veremos a continuación algunas caracteristicas resaltables sobre los polinomios.
+Veremos a continuación algunas caracteristicas y definiciones resaltables sobre los polinomios:
 
-\textbf{Término principal:} El término (monomio) que contiene la mayor potencia es conocido \emph{término principal} y su coeficiente como \emph{coeficiente principal}.
+\begin{itemize}
+    \item \textbf{Polinomio mónico:} Polinomio cuyo coeficiente principal es 1.
+    \item \textbf{Polinomio completo:} Un polinomio de grado $n$ es completo si tiene todos sus $n + 1$ términos.
+    \item \textbf{Polinomio ordenado:} Un polinomio es ordenado cuando los exponente de la variable de referencia, guardan cierto orden, ya sea ascendente o descendente.
+    \item \textbf{Polinomios iguales:} Dos polinomios $P(x)$ y $Q(x)$ con coeficientes $a_i$ y $b_i$, respectivamente, son iguales si y solo si tienen el mismo grado y $a_i = b_i$, para todo $i$ en $0\leq i\leq n$.
+    \item \textbf{Polinomio recíproco:}\label{reci-polynomial} Un polinomio $P(x)$ de grado $n$ es recíproco si cumple que $a_i = a_{n-i}$, para todo $i$ en $0\leq i\leq n$.
+    \item \textbf{Polinomio de varias variables:} Un polinomio que dependen de más de una variable es llamado multivariante o multivariable, y es denotado por $P(x_1, x_2, \dots, x_k)$.
+    \item \textbf{Grado absoluto:} El grado absoluto de un término de la forma $x_1^{\alpha_1} x_2^{\alpha_2} \cdots x_k^{\alpha_k}$, es la suma de las potencias de cada una de las variables.
+    \item \textbf{Polinomio homogéneo:} Un polinomio multivariable es homogéneo si todos sus términos tienen el mismo grado absoluto.
+    \item \textbf{Evaluación en un polinomio:} Valor númerico que se obtiene al reemplazar la $x$ por una constante $a$ en un polinomio $P(x)$, lo cual denotamos por $P(a)$\footnote{Se lee ``$P$ de $a$'' o ``$P$ evaluado en $a$''.}.
+\end{itemize}
 
-\textbf{Valor numérico:} Resultado que se obtiene al evaluar el polinomio en una constante $c$, es decir $P(c)$.
-Además, cuando el valor de $c$ es 0 o 1, el valor numérico
-es igual al \textbf{\textit{término independiente}} y a la suma de todos los coeficientes, respectivamente.
-Siendo el término independiente aquel monomio que no tiene variable.
-
-\textbf{Polinomio mónico:} Polinomio cuyo término principal tiene como coeficiente a 1.
-
-\textbf{Polinomio completo:} Polinomio que tiene todos sus términos.
-Desde el término con exponente $n$ hasta el término con exponente 0.
-
-\textbf{Polinomio iguales:} Diremos que dos polinomios $P(x)$ y $Q(x)$ son iguales si y solo si $\deg{(P)} = \deg{(Q)} = n$ y $a_i = b_i,$ con $0\leq i\leq n$.
-Donde $a_i, b_i$ son los coeficientes de $P(x)$ y $Q(x)$, respectivamente.
-
-\textbf{Polinomio recíproco:}\label{reci-polynomial}
-Un polinomio $P(x)$ es recíproco si cumple que $a_i = a_{n-i}$, con $0\leq i\leq n$, donde $\deg{(P)} = n$.
-
-\textbf{Polinomio de varias variables:} Un polinomio que dependen de más de una variable es llamado multivariante o multivariable, y es denotado por $P(x_1, x_2, \dots, x_k)$.
-
-\textbf{Polinomio ordenado:} Un polinomio es ordenado cuando los exponente de la variable de referencia, guardan cierto orden, ya sea ascendente o descendente.
-
-\textbf{Polinomio homogéneo:} Un polinomio multivariable es homogéneo si todos usus términos tienen el mismo grado absoluto.
 
 
 \subsection{Operaciones con polinomios}
 
 Sean dos polinomios $P(x)$ y $Q(x)$ de grado 3,
-\begin{gather*}
-    P(x) = a_3 x^3 + a_2 x^2 + a_1 x + a_0\\
-    Q(x) = b_3 x^3 + b_2 x^2 + b_1 x + b_0
-\end{gather*}
+\begin{align*}
+    P(x) &= a_3 x^3 + a_2 x^2 + a_1 x + a_0\\
+    Q(x) &= b_3 x^3 + b_2 x^2 + b_1 x + b_0
+\end{align*}
 se definen:
 \[
     \begin{array}{lcll}
-        \text{\textbf{Suma:}} && P(x) + Q(x) =& (a_3+b_3)x^3+(a_2+b_2)x^2+(a_1+b_1)x+(a_0+b_0)\\
-        \text{\textbf{Resta:}} && P(x) - Q(x) =& (a_3-b_3)x^3+(a_2-b_2)x^2+(a_1-b_1)x+(a_0-b_0)\\
+        \text{\textbf{Suma:}} && P(x) + Q(x) =& (a_3+b_3)x^3+(a_2+b_2)x^2+(a_1+b_1)x+(a_0+b_0)\\[3mm]
+        \text{\textbf{Resta:}} && P(x) - Q(x) =& (a_3-b_3)x^3+(a_2-b_2)x^2+(a_1-b_1)x+(a_0-b_0)\\[3mm]
         \text{\textbf{Producto:}} && P(x)\times Q(x) =& a_3 b_3 x^6 + (a_2 b_3 + a_3 b_2)x^5 + (a_1 b_3 + a_2 b_2 + a_3 b_1)x^4 +\\
                                   &&&(a_0 b_3 + a_1 b_2 + a_2 b_1 + a_3 b_0)x^3 + (a_0 b_2 + a_1 b_1 + a_2 b_0)x^2 +\\
-                                  &&&(a_0 b_1 + a_1 b_0)x + a_0 b_0\\
+                                  &&&(a_0 b_1 + a_1 b_0)x + a_0 b_0\\[3mm]
         \text{\textbf{Composición:}} && (P \circ Q)(x) =& P(Q(x)) = a_3 Q(x)^3 + a_2 Q(x)^2 + a_1 Q(x) + a_0
     \end{array}
 \]
+Evidentemente estas operaciones son análogas para polinomios de grado mayor a 3.
 
 \begin{remark.tcb}
     En general si $P(x)$ y $Q(x)$ son polinomios no nulos, entonces se verifica que
-    \begin{gather*}
-        \deg{(P\pm Q)} \leq m\acute ax\{\deg{(P)}, \deg{(Q)}\}\\
-        \deg{(P\times Q)} = \deg{(P)} + \deg{(Q)}
-    \end{gather*}
+    \begin{align*}
+        \deg{(P\pm Q)} &\leq m\acute ax\{\deg{(P)}, \deg{(Q)}\}\\
+        \deg{(P\times Q)} &= \deg{(P)} + \deg{(Q)}
+    \end{align*}
 \end{remark.tcb}
 
 \begin{remark.tcb}
-    La composición se lee $P$ compuesto de $Q$.
-    Consiste en evaluar la variable $x$ en $Q$ $(x \to Q(x))$ y luego sustituir en el polinomio $P(x)$.
+    La composición $(P \circ Q)(x)$ se lee ``$P$ compuesto de $Q$'' o ``$Q$ evaluado en $P$'' y consiste en igualar la variable $x$ a $Q(x)$ ($x : = Q(x)$) y luego sustituir en el polinomio $P(x)$.
 \end{remark.tcb}
 
 La composición de polinomios es asociativa, es decir, $(P \circ Q) \circ R = P \circ (Q \circ R)$, mas no conmutativa, salvo casos especiales, así que generalmente supondremos que $P \circ Q \neq  Q \circ P$.
@@ -95,10 +87,10 @@ La composición de polinomios es asociativa, es decir, $(P \circ Q) \circ R = P 
 \begin{remark.tcb}
     $P(x)^n \neq P^n(x)$.
     Denotaremos como $P(x)^n$ al polinomio elevado a la $n$-ésima potencia y a $P^n(x)$ como la composición $n$-ésima de $P(x)$ con si mismo, es decir:
-    \begin{gather*}
+    \[
         P(x)^n = \underbrace{P(x) \cdot P(x) \cdots P(x)}_{n\ \text{veces}} \quad \land \quad
         P^n (x) = \underbrace{P(P(P\cdots(P}_{n\ \text{veces}}(x))\cdots)).
-    \end{gather*}
+    \]
 \end{remark.tcb}
 
 

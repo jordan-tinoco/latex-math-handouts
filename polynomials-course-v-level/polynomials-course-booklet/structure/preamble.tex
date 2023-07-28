@@ -1,15 +1,40 @@
+\usepackage[spanish]{babel}
+\spanishdecimal{.}
+
+
+\usepackage{cite}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{multicol}
+\usepackage
+[
+    left = 2.5cm,
+    right = 2.5cm,
+    top = 2.1cm,
+    bottom = 2.1cm
+]
+{geometry}
+\hypersetup
+{
+    colorlinks = true,
+    linkcolor = black
+}
+
+
 %math packages
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amsthm}
 \usepackage{amsfonts}
+\allowdisplaybreaks
 
-\usepackage{graphicx}
-\usepackage{multicol}
+
+%Figures dependences
 \usepackage{float}
-\usepackage[left=2.5cm,right=2.5cm,top=2.1cm,bottom=2.1cm]{geometry}
-\usepackage{fancyhdr}
-\usepackage{cite}
+\usepackage{graphicx}
+\usepackage{pgf, tikz}
+\usetikzlibrary{arrows}
+
 
 %Text color box dependences
 \usepackage{tcolorbox}
@@ -19,14 +44,8 @@
 \tcbuselibrary{skins}
 
 
-\usepackage[spanish]{babel}
-\everymath{\displaystyle}
-
-\spanishdecimal{.}
-
 \setlength{\parskip}{2mm}
 \setlength{\parindent}{0pt}
-
 
 \input{../../utils/math-commands-v.1}
 \input{../../utils/math-sections-v.1}
