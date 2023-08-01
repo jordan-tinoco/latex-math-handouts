@@ -30,21 +30,28 @@ Si $\angle ABX + \angle XBC = 180^\circ$, entonces los puntos $A$, $B$ y $C$ son
 En la tercera configuración, también necesitaremos un punto extra $X$ que no esté en la supuesta línea $A - B - C$.
 Si $\angle XAB = \angle XAC$, entonces los puntos $A$, $B$ y $C$ son colineales.
 
+\subsection{Teorema de Menelao}
 
-\begin{section-theorem.tcb}[Teorema de Menelao]
+\begin{section-theorem.tcb}[Teorema de Menelao]\label{menelaus-theorem}
     Dado un triángulo $ABC$, sean $D$, $E$ y $F$ puntos sobre los lados (posiblemente en sus prolongaciones) $BC$, $CA$ y $AB$, respectivamente.
     Entonces los puntos $D$, $E$ y $F$ son colineales si y sólo si
     \[
         \frac{BD}{DC} \cdot \frac{CE}{EA} \cdot \frac{AF}{FB} = -1.
     \]
 \end{section-theorem.tcb}
+\begin{figure}[H]
+    \centering
+    \input{figures/figure-11}
+    \caption{Configuraciones típicas del teorema de Menelao.}
+\end{figure}
+
 \begin{proof}
     La demostración se deja como ejercicio al lector.
 \end{proof}
 
 \begin{remark.tcb}
     Una manera fácil de recordar cómo escribir esas proporciones\footnote{También funciona para el teorema de \textbf{Ceva}.} es la siguiente.
-    Si tenemos el $\triangle XYZ$ y los puntos $M \in XY$, $N \in YZ$ y $P \in ZX$, entonces primero, vamos a escribir los lados de manera cíclica, es decir
+    Si tenemos el $\triangle XYZ$ y los puntos $M \in XY$, $N \in YZ$ y $P \in ZX$, entonces primero, vamos a escribir los lados de manera cíclica, algo como
     \[
         \frac{X\quad}{\quad Y} \cdot \frac{Y\quad}{\quad Z} \cdot \frac{Z\quad}{\quad X}
     \]
@@ -75,11 +82,12 @@ Si $\angle XAB = \angle XAC$, entonces los puntos $A$, $B$ y $C$ son colineales.
 \begin{proof}
     Sean $P$, $Q$ y $R$ los puntos medios de $AE$, $AD$ y $DE$ respectivamente.
     Las rectas $PQ$, $QR$ y $PR$ son bases medias de $ADE$, por lo tanto son las respectivas bases medias de $ACE$, $BDE$ y $AFE$, así que estas pasan por $L$,$M$ y $N$.
+    \begin{multicols}{2}
     \begin{figure}[H]
         \centering
         \input{figures/figure-3}
     \end{figure}
-    Por semejanza
+    Por semejanza, tenemos que
     \[
         \frac{LQ}{LP} = \frac{CD}{DE},\quad \frac{NP}{NR} = \frac{FA}{FD}\quad \text{y} \quad \frac{MR}{MQ} = \frac{BE}{BA}.
     \]
@@ -87,6 +95,7 @@ Si $\angle XAB = \angle XAC$, entonces los puntos $A$, $B$ y $C$ son colineales.
     \[
         \frac{LQ}{LP} \cdot \frac{NP}{NR} \cdot \frac{MR}{MQ} = \frac{CD}{DE} \cdot \frac{FA}{FD} \cdot \frac{BE}{BA}
     \]
+    \end{multicols}
     Pero este producto es igual a 1, ya que cumple el teorema de Menelao para el triángulo $ADE$ con respecto a la transversal $B-C-F$.
     Se concluye entonces que $L$, $M$ y $N$ con colineales.
 \end{proof}
@@ -96,27 +105,148 @@ Si $\angle XAB = \angle XAC$, entonces los puntos $A$, $B$ y $C$ son colineales.
 \subsection{Teorema de Pappus}
 
 \begin{section-theorem.tcb}[Teorema de Pappus]
-    En todo hexágono (no necesariamente convexo) en el que sus vértices no consecutivos están alineados, las intersecciones de sus lados opuestos son colineales.
+    Sean $A$, $B$ y $C$ tres puntos colineales (no necesariamente en ese orden) y $D$, $E$ y $F$ otros tres puntos colineales (no necesariamente en ese orden).
+    Entonces, los puntos de intersección de las rectas $AE$, $BD$; $AF$, $CD$ y $BF$, $CE$ son colineales.
 \end{section-theorem.tcb}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=4.1cm]{images/pappus-points}
+\end{figure}
+\vspace{-15mm}
+\begin{figure}[H]
+    \centering
+    \input{figures/figure-4}
+\end{figure}
+
+\begin{proof}
+    Sean $M = AE \cap BD$, $N = BF \cap CE$ y $P = AF \cap CD$.
+    Divideremos la demostración en dos casos, basado en si las rectas $AE$ y $BF$ se intersecan o son paralelas.
+    
+    \textbf{Caso 1.}
+    Si estas se interseca, sea $AE \cap BF = X$.
+    Sea $Y = BF \cap CD$ y $Z = AE \cap CD$.
+
+    \begin{multicols}{2}
+    \begin{figure}[H]
+        \centering
+        \input{figures/figure-5}
+    \end{figure}
+
+    Dado que $M$, $N$ y $P$ se encuentran al margen de $\triangle XYZ$, podemos usar el \refTheorem{\ref{menelaus-theorem}} para tratar de probar que son colineales, es decir necesitamos probar que
+    \[
+        \frac{XN}{NY} \cdot \frac{YP}{PZ} \cdot \frac{ZM}{MX} = 1.
+    \]
+    Ahora, trataremos de encontrar cada una de estas tres proporciones por medio de la aplicación del~\refTheorem{\ref{menelaus-theorem}} con otras rectas que se cruzen con $\triangle XYZ$.
+    \end{multicols}
+    Para lograr esto, usaremos el \refTheorem{\ref{menelaus-theorem}} tres veces en el $\triangle XYZ$ con las transversales $C - E - N$, $P - A - F$ y $D - M - B$, respectivamente, obtendremos
+    \[
+        \frac{XN}{NY} \cdot \frac{YC}{CZ} \cdot \frac{ZE}{EX} = 1, \quad \frac{XF}{FY} \cdot \frac{YP}{PZ} \cdot \frac{ZA}{AX} = 1 \quad \text{y} \quad \frac{XB}{BY} \cdot \frac{YD}{DZ} \cdot \frac{ZM}{MX} = 1.
+    \]
+    Sin embargo, vemos que nada se cancela, así que necesitamos hallar otras igualdades que tal que usen esos segmentos de recta.
+    Rápidamente, vemos que usando el \refTheorem{\ref{menelaus-theorem}} dos veces más en $\triangle XYZ$, pero ahora con las transversales $C - A - B$ y $D - E - F$, obtenemos
+    \[
+        1 = \frac{XB}{BY} \cdot \frac{YC}{CZ} \cdot \frac{ZA}{AX} \quad \text{y} \quad 1 = \frac{XF}{FY} \cdot \frac{YD}{DZ} \cdot \frac{ZE}{EX}.
+    \]
+    Multiplicando estas 5 igualdades lado a lado, y viendo que 6 de las fraciones del lado izquierdo de la ecuación se cancela con cada una las fracciones del lado derecho.
+    Quedandonos con lo que queríamos demostrar.
+
+    \textbf{Caso 2.}
+    Ahora, veamos que pasa si el punto $X$ no existe, es decir $AE \parallel BF$.
+    Observemos que el punto $X$ aparece exactamente dos veces en cada una de las 5 equaciones arriba, una vez en el numerador y una vez en el denominador.
+    Trataremos de encontrar ecuaciones análogas tal que no usen segmentos que contengan $X$.
+    En realidad podemos lograr esto, usando rectas paralelas para encontrar triángulos semejantes.
+    \begin{multicols}{2}
+    \begin{figure}[H]
+        \centering
+        \input{figures/figure-6}
+    \end{figure}
+
+    Por el criterio (AAA), obtenemos que $\triangle CYN \sim \triangle CZE$.
+    \[
+        \therefore  \quad \frac{CY}{YN} = \frac{CZ}{ZE} \quad \Rightarrow \quad \frac{CY}{YN} \cdot \frac{ZE}{CZ} = 1.
+    \]
+    Análogamente, obtenemos que $\triangle PYF \sim \triangle PZA$, $\triangle DYB \sim \triangle DZM$, $\triangle YCB \sim \triangle ZCA$ y $\triangle YDF \sim \triangle ZDE$.
+    \end{multicols}
+
+    Multiplicando estas ecuaciones análogas, obtenemos
+    \begin{align*}
+        &\frac{CY}{YN} \cdot \frac{ZE}{CZ} \cdot \frac{PY}{YF} \cdot \frac{ZA}{PZ} \cdot \frac{DY}{YB} \cdot \frac{ZM}{DZ} \cdot \frac{YB}{YC} \cdot \frac{ZC}{ZA} \cdot \frac{YF}{YD} \cdot \frac{ZD}{ZE} = 1\\[3mm]
+        &\therefore \quad \frac{PY}{YN} \cdot \frac{ZM}{PZ} = 1 \quad \Rightarrow \quad \frac{PY}{YN} = \frac{PZ}{ZM}
+    \end{align*}
+    Como $\angle PYN = \angle PZM$, por (LAL) obtenemos que $\triangle PYN \sim \triangle PZM$ y por lo tanto $\angle YPN = \angle ZPM$.
+    Ya que $Y - P - Z$ son colineales, por consiguiente $N - P - M$.
+\end{proof}
 
 
 
 
 \subsection{Teorema de Desargues}
+Consideremos dos triángulos arbitrario \theTriangle{ABC} y \theTriangle{XYZ}.
+Antes de establecer el resultado principal, es necesario proporcionar dos definiciones fundamentales.
+\begin{section-definition.tcb}
+    \begin{itemize}
+        \item Dos triángulos $\triangle ABC$ y $\triangle XYZ$ están en \textit{perspectiva respecto a un \textbf{punto}} (digamos $O$) si las rectas $AX$, $BY$ y $CZ$ son concurrentes.
+        \item Dos triángulos $\triangle ABC$ y $\triangle XYZ$ están en \textit{perspectiva respecto a una \textbf{recta}} si los puntos de intersección de los pares de lados correspondientes de ambos triángulos (digamos $P = AB \cap XY$, $Q = CA \cap ZX$ y $R = BC \cap YZ$) son colineales.
+    \end{itemize}
+\end{section-definition.tcb}
+\begin{figure}[H]
+    \centering
+    \input{figures/figure-7}
+    \caption{Perspectiva de dos triángulos.}
+\end{figure}
+
 \begin{section-theorem.tcb}[Teorema de Desargues]
-    Dos triángulos están en perspectiva si y solo si son coaxiales.
+    Dos triángulos están en perspectiva con respecto a una recta si y solo si están en perspectiva con respecto un punto.
 \end{section-theorem.tcb}
+\begin{figure}[H]
+    \centering
+    \input{figures/figure-8}
+    \caption{Los triángulos \theTriangle{ABC} y \theTriangle{XYZ} están en perspectiva con $O$ y la recta $PR$.}
+\end{figure}
+\begin{proof}
+    Sean $\triangle ABC$ y $\triangle XYZ$ dos triángulos en perspectiva a un punto, entonces $AX$, $BY$ y $CZ$ son concurrentes con el punto $O$.
+    Sea $P = AB \cap XY$, $R = BC \cap YZ$ y $Q = CA \cap ZX$.
+    \begin{multicols}{2}
+    \begin{figure}[H]
+        \centering
+        \input{figures/figure-9}
+    \end{figure}
+    Aplicando el~\refTheorem{\ref{menelaus-theorem}} a los triángulos $\triangle OAB$ con la transversal $P - Y - X$, $\triangle OBC$ con la transversal $R - Z - Y$ y $\triangle OCA$ con la transversal $Q - Z - X$, obtenemos que;
+    \begin{align*}
+        \frac{OX}{XA} \cdot \frac{AP}{PB} \cdot \frac{BY}{YO} &= 1,\\[1mm]
+        \frac{OY}{YB} \cdot \frac{BR}{RC} \cdot \frac{CZ}{ZO} &= 1\quad \text{y}\\[1mm]
+        \frac{OZ}{ZC} \cdot \frac{CQ}{QA} \cdot \frac{AX}{XO} &= 1.
+    \end{align*}
+    \end{multicols}
+    Multiplicando estas tres ecuaciones, llegamos al siguiente resultado
+    \[
+        \frac{AP}{PB} \cdot \frac{BR}{RC} \cdot \frac{CQ}{QA} = 1,
+    \]
+    que por el \refTheorem{\ref{menelaus-theorem}} aplicado al triángulo $\triangle ABC$, significa que los puntos $P$, $R$ y $Q$ son colineales, es decir $\triangle ABC$ y $\triangle XYZ$ están en perspectiva con respecto a la recta.
 
+    Ahora, probaremos la otra dirección.
+    Sean $\triangle ABC$ y $\triangle XYZ$ dos triángulos en perspectiva a un recta, entonces los puntos $P = AB \cap XY$, $Q = CA \cap ZX$ y $R = BC \cap YZ$ son colineales.
+    \begin{multicols}{2}
+    \begin{figure}[H]
+        \centering
+        \input{figures/figure-10}
+    \end{figure}
+    Sean $O = BY \cap CZ$.
+    Debemos de probar que $AX$ también pasa por $O$.
+
+    Observemos los triángulos \theTriangle{QCZ} y \theTriangle{PBY}.
+    Las rectas $QP$, $CB$ y $ZY$ con concurrentes en $R$, así que los triángulos están en perspectiva con respecto a ese punto.
+
+    Por la dirección del teorema de Desargues que acabamos de demostrar, se deduce que los triángulos deben de estar en perspectiva respecto a una recta.
+    \end{multicols}
+    \vspace{-6mm}
+    Es decir, los puntos $QC \cap PB = A$, $CZ \cap BY = O$ y $ZQ \cap YP = X$ son colineales.
+    Con esto, probamos que $AX$ pasa por $O$, luego \theTriangle{ABC} y \theTriangle{XYZ} están en perspectiva respecto a un punto.
+\end{proof}
 \begin{remark.tcb}
-    Dos triángulos están en \textbf{perspectiva} si las rectas que unen sus vértices correspondientes son concurrentes.
+    El teorema de Desargues puede servir para transformar una colinealidad en una concurrencia más fácil de trabajar por Ceva, o viceversa, transformando una concurrencia en una colinealidad más fácil de trabajar por Menelao.
 \end{remark.tcb}
-
-\begin{remark.tcb}
-    Dos triángulos son \textbf{coaxiales} cuando los puntos de intersección de los lados correspondientes son colineales.
-\end{remark.tcb}
-
-\subsection{Agregados culturales y preguntas}
-
 
 
 
@@ -124,3 +254,47 @@ Si $\angle XAB = \angle XAC$, entonces los puntos $A$, $B$ y $C$ son colineales.
 
 \section{Ejercicios y Problemas}
 Sección de ejercicios y problemas para el autoestudio.
+\begin{section-problem}
+    Demuestre que las tangentes a la circunferencia circunscrita a un triángulo en los vértices de este, cortan a los lados opuestos de dicho triángulo en tres puntos colineales.
+\end{section-problem}
+
+\begin{section-problem}
+    Si los lados $AB$, $BC$, $CD$ y $DA$ de un cuadrilátero $ABCD$ son cortados por una transversal en los puntos $A'$, $B'$, $C'$ y $D'$, respectivamente.
+    Probar que
+    \[
+        \dfrac{AA}{A'B} \cdot \dfrac{BB'}{B'C} \cdot \dfrac{CC'}{C'D} \cdot \dfrac{DD'}{D'A} = 1.
+    \]
+\end{section-problem}
+
+\begin{section-problem}
+    Sean $AD$, $BE$ y $CF$ tres cevianas concurrentes en un triángulo \theTriangle{ABC}.
+    Se toma un punto $D'$ en $BC$ tal que $BD = CD'$.
+    Las paralelas a $BC$ por $E$ y $F$ cortan $AD$ y $AD'$ en $G$ y $H$ respectivamente.
+    Prueba que $C$, $G$ y $H$ son colineales.
+\end{section-problem}
+
+\begin{section-problem}
+    En un paralelogramo $ABCD$ con $\angle B < 90^\circ$, el círculo de diámetro $AC$ corta las rectas $CB$ y $CD$ en $E$ y $F$, respectivamente, y la tangente al círculo por $A$ corto $BD$ en $P$.
+    Demuestre que $P$, $F$ y $E$ están alineados.
+\end{section-problem}
+
+\begin{section-problem}
+    Sea $ABCD$ un cuadrilátero cíclico.
+    Las diagonales $AC$ y $BD$ se cortan en $E$, y los lados $AB$ y $CD$ se cortan en $F$.
+    Sean $J$ y $K$ los ortocentros de \theTriangle{ADF} y \theTriangle{BCF} respectivamente.
+    Demuestre que $J$, $E$ y $K$ están alineados.
+\end{section-problem}
+
+    \end{multicols}
+\begin{section-problem}
+    Sea $ABCD$ un trapecio con $AB$ mayor y paralelo a $CD$.
+    Sean $E$ y $F$ puntos en $AB$ y $CD$ respectivamente, tales que $\frac{AE}{EB} = \frac{DF}{FC}$.
+    Sean $K$ y $L$ puntos en $EF$ tales que $\angle AKB = \angle DCB$ y $\angle CLD = \angle CBA$.
+    Demuestre que $KLCB$ es cíclo.
+\end{section-problem}
+
+\begin{section-problem}
+    Sea $P$ la intersección de las diagonales $AC$ y $BD$ en el cuadrilátero cíclico $ABCD$.
+    Sean $E$, $F$, $G$ y $H$ los pies de las perpendiculares desde $P$ hacía $AB$, $BC$, $CD$ y $DA$, respectivamente.
+    Pruebe que las rectas $EH$, $BD$ y $FG$ son concurrentes o son paralelas.
+\end{section-problem}
