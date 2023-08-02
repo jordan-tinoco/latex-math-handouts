@@ -36,7 +36,7 @@ Si $\angle XAB = \angle XAC$, entonces los puntos $A$, $B$ y $C$ son colineales.
 
 \subsection{Teorema de Menelao}
 
-\begin{section-theorem.tcb}[Teorema de Menelao]\label{menelaus-theorem}
+\begin{section-theorem.tcb}{Teorema de Menelao}{menelaus-theorem}
     Dado un triángulo $ABC$, sean $D$, $E$ y $F$ puntos sobre los lados (posiblemente en sus prolongaciones) $BC$, $CA$ y $AB$, respectivamente.
     Entonces los puntos $D$, $E$ y $F$ son colineales si y sólo si
     \[
@@ -68,7 +68,7 @@ Si $\angle XAB = \angle XAC$, entonces los puntos $A$, $B$ y $C$ son colineales.
 \end{remark.tcb}
 
 
-\begin{section-theorem.tcb}[Menelao trigonométrico]
+\begin{section-theorem.tcb}{Menelao trigonométrico}{}
     Dado un triángulo $ABC$, sean $D$, $E$ y $F$ puntos sobre los lados (posiblemente en sus prolongaciones) $BC$, $CA$ y $AB$, respectivamente.
     Entonces los puntos $D$, $E$ y $F$ son colineales si y sólo si
     \[
@@ -80,7 +80,7 @@ Si $\angle XAB = \angle XAC$, entonces los puntos $A$, $B$ y $C$ son colineales.
     La demostración se deja como ejercicio al lector.
 \end{proof}
 
-\begin{section-theorem.tcb}[Recta de Gauss]
+\begin{section-theorem.tcb}{Recta de Gauss}{}
     Sean $L$ y $M$ los puntos medios de las diagonales $AC$ y $BD$ del cuadrilátero $ABCD$.
     Las rectas $AB$ y $CD$ se cortan en $E$, y las rectas $AD$ y $BC$ se cortan en $F$.
     Sea $N$ el punto medio de $EF$.
@@ -109,7 +109,7 @@ Si $\angle XAB = \angle XAC$, entonces los puntos $A$, $B$ y $C$ son colineales.
         \]
     \end{multicols}
 
-    Pero este producto es igual a 1, ya que se cumple el teorema de Menelao para el triángulo $ADE$ con respecto a la transversal $B-C-F$.
+    Pero este producto es igual a 1, ya que se cumple el~\refTheorem{\ref{t:menelaus-theorem}} para el triángulo $ADE$ con respecto a la transversal $B-C-F$.
     Se concluye entonces que $L$, $M$ y $N$ son colineales.
 \end{proof}
 
@@ -118,7 +118,7 @@ Si $\angle XAB = \angle XAC$, entonces los puntos $A$, $B$ y $C$ son colineales.
 
 \subsection{Teorema de Pappus}
 
-\begin{section-theorem.tcb}[Teorema de Pappus]\label{pappus-theorem}
+\begin{section-theorem.tcb}{Teorema de Pappus}{pappus-theorem}
     Sean $A$, $B$ y $C$ tres puntos colineales (no necesariamente en ese orden) y $D$, $E$ y $F$ otros tres puntos colineales (no necesariamente en ese orden).
     Entonces, los puntos de intersección de las rectas $AE$, $BD$; $AF$, $CD$ y $BF$, $CE$ son colineales.
 \end{section-theorem.tcb}
@@ -156,20 +156,20 @@ Si $\angle XAB = \angle XAC$, entonces los puntos $A$, $B$ y $C$ son colineales.
             \input{figures/figure-5}
         \end{figure}
 
-        Dado que $M$, $N$ y $P$ son laterales a $\triangle XYZ$, podemos usar el~\refTheorem{\ref{menelaus-theorem}} para tratar de probar que son colineales, es decir necesitamos probar que
+        Dado que $M$, $N$ y $P$ son laterales a $\triangle XYZ$, podemos usar el~\refTheorem{\ref{t:menelaus-theorem}} para tratar de probar que son colineales, es decir necesitamos probar que
         \[
             \frac{XN}{NY} \cdot \frac{YP}{PZ} \cdot \frac{ZM}{MX} = 1.
         \]
-        Ahora, trataremos de encontrar cada una de estas tres proporciones por medio de la aplicación del~\refTheorem{\ref{menelaus-theorem}} con otras rectas que se cruzen con $\triangle XYZ$.
+        Ahora, trataremos de encontrar cada una de estas tres proporciones por medio de la aplicación del~\refTheorem{\ref{t:menelaus-theorem}} con otras rectas que se cruzen con $\triangle XYZ$.
     \end{multicols}
 
-    Para lograr esto, usaremos el~\refTheorem{\ref{menelaus-theorem}} tres veces en el $\triangle XYZ$ con las transversales $C - N - E$, $A - P - F$ y $D - M - B$, respectivamente, obtendremos
+    Para lograr esto, usaremos el~\refTheorem{\ref{t:menelaus-theorem}} tres veces en el $\triangle XYZ$ con las transversales $C - N - E$, $A - P - F$ y $D - M - B$, respectivamente, obtendremos
     \[
         \frac{XN}{NY} \cdot \frac{YC}{CZ} \cdot \frac{ZE}{EX} = 1, \quad \frac{XF}{FY} \cdot \frac{YP}{PZ} \cdot \frac{ZA}{AX} = 1 \quad \text{y} \quad \frac{XB}{BY} \cdot \frac{YD}{DZ} \cdot \frac{ZM}{MX} = 1.
     \]
     Sin embargo, vemos que al multiplicar estos resultados nada se cancela, así que necesitamos hallar otras igualdades tal que usen esos segmentos de recta.
 
-    Rápidamente, vemos que usando el~\refTheorem{\ref{menelaus-theorem}} dos veces más en $\triangle XYZ$, pero ahora con las transversales $A - B - C$ y $D - E - F$, obtenemos
+    Rápidamente, vemos que usando el~\refTheorem{\ref{t:menelaus-theorem}} dos veces más en $\triangle XYZ$, pero ahora con las transversales $A - B - C$ y $D - E - F$, obtenemos
     \[
         1 = \frac{XB}{BY} \cdot \frac{YC}{CZ} \cdot \frac{ZA}{AX} \quad \text{y} \quad 1 = \frac{XF}{FY} \cdot \frac{YD}{DZ} \cdot \frac{ZE}{EX}.
     \]
@@ -227,7 +227,7 @@ Antes de establecer el resultado principal, es necesario proporcionar dos defini
 \end{figure}
 
 
-\begin{section-theorem.tcb}[Teorema de Desargues]
+\begin{section-theorem.tcb}{Teorema de Desargues}{}
     Dos triángulos están en perspectiva con respecto a una recta si y solo si están en perspectiva con respecto un punto.
 \end{section-theorem.tcb}
 
@@ -237,7 +237,7 @@ Antes de establecer el resultado principal, es necesario proporcionar dos defini
     \caption{Los triángulos \theTriangle{ABC} y \theTriangle{XYZ} están en perspectiva con $O$ y la recta $PR$.}
 \end{figure}
 
-Claramente, al igual que el \refTheorem{\ref{pappus-theorem}}, el teorema de Desargues tiene muchas más configuraciones.
+Claramente, al igual que el~\refTheorem{\ref{t:pappus-theorem}}, el teorema de Desargues tiene muchas más configuraciones.
 
 \begin{proof}
     Sean $\triangle ABC$ y $\triangle XYZ$ dos triángulos en perspectiva a un punto, entonces $AX$, $BY$ y $CZ$ son concurrentes con el punto $O$.
@@ -249,7 +249,7 @@ Claramente, al igual que el \refTheorem{\ref{pappus-theorem}}, el teorema de Des
             \input{figures/figure-9}
         \end{figure}
 
-        Aplicando el~\refTheorem{\ref{menelaus-theorem}} a los triángulos $\triangle OAB$ con la transversal $P - Y - X$, $\triangle OBC$ con la transversal $R - Z - Y$ y $\triangle OCA$ con la transversal $Q - Z - X$, obtenemos que;
+        Aplicando el~\refTheorem{\ref{t:menelaus-theorem}} a los triángulos $\triangle OAB$ con la transversal $P - Y - X$, $\triangle OBC$ con la transversal $R - Z - Y$ y $\triangle OCA$ con la transversal $Q - Z - X$, obtenemos que;
         \begin{align*}
             \frac{OX}{XA} \cdot \frac{AP}{PB} \cdot \frac{BY}{YO} &= 1,\\[1mm]
             \frac{OY}{YB} \cdot \frac{BR}{RC} \cdot \frac{CZ}{ZO} &= 1\quad \text{y}\\[1mm]
@@ -261,7 +261,7 @@ Claramente, al igual que el \refTheorem{\ref{pappus-theorem}}, el teorema de Des
     \[
         \frac{AP}{PB} \cdot \frac{BR}{RC} \cdot \frac{CQ}{QA} = 1,
     \]
-    que por el~\refTheorem{\ref{menelaus-theorem}} aplicado al triángulo $\triangle ABC$, significa que los puntos $P$, $R$ y $Q$ son colineales, es decir $\triangle ABC$ y $\triangle XYZ$ están en perspectiva con respecto a la recta $PQ$.
+    que por el~\refTheorem{\ref{t:menelaus-theorem}} aplicado al triángulo $\triangle ABC$, significa que los puntos $P$, $R$ y $Q$ son colineales, es decir $\triangle ABC$ y $\triangle XYZ$ están en perspectiva con respecto a la recta $PQ$.
 
     Ahora, probaremos la otra dirección.
     Sean $\triangle ABC$ y $\triangle XYZ$ dos triángulos en perspectiva a un recta, entonces los puntos $P = AB \cap XY$, $Q = CA \cap ZX$ y $R = BC \cap YZ$ son colineales.
@@ -295,8 +295,8 @@ Claramente, al igual que el \refTheorem{\ref{pappus-theorem}}, el teorema de Des
     \item El teorema de Desargues puede servir para transformar una colinealidad en una concurrencia más fácil de trabajar por Ceva, o viceversa, transformando una concurrencia en una colinealidad más fácil de trabajar por Menelao.
     \item ¿Conoces los polígonos degenerados?
     Pues es un polígono en el que algunos de sus vértices coinciden.
-    Ejemplos, una recta la podemos considerar tanto como un triángulo degenerado o cuadrilátero degenerado, un pentagono como un héxagono degenerado, etc.
-    \item Tanto el teorema de Menelao, Pappus como Desargues tienen su versiones degeneradas, las cuales pueden verse afectadas.
+    Ejemplos, una recta la podemos considerar tanto como un triángulo degenerado o cuadrilátero degenerado, un pentágono como un héxagono degenerado, etc.
+    \item Tanto el teorema de Menelao, Pappus como Desargues tienen su versiones degeneradas, para lo cual se vuelve conveniente considerar rectas paralelas y puntos al infinito.
     En particular la versión degenerada del teorema de Desargues aparece frecuentemente.
 \end{itemize}
 

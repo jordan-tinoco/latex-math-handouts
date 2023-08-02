@@ -22,7 +22,7 @@
 
 
 %Text Color Box styles
-\newtcbtheorem[number within=section]{tcb-theorem-style}{Teorema}
+\newtcbtheorem[use counter*= section-theorem, number within=section]{section-theorem.tcb}{Teorema}
 {
     enhanced,
     frame empty,
@@ -42,7 +42,7 @@
     description font=\bfseries,
     terminator sign={.\hspace{1mm}}
 }
-{theorem.tcb-label}
+{t}
 
 \newtcbtheorem[number within=section]{tcb-problem-style}{Problema}
 {
@@ -62,7 +62,7 @@
     varwidth boxed title,
     terminator sign={.\hspace{1mm}}
 }
-{problem.tcb-label}
+{p}
 
 \newtcbtheorem[number within=section]{tcb-example-style}{Ejemplo}
 {
@@ -85,7 +85,7 @@
     description font=\bfseries,
     terminator sign={.\hspace{1mm}}
 }
-{example.tcb-label}
+{e}
 
 \newtcbtheorem[number within=section]{tcb-definition-style}{Definición}
 {
@@ -107,7 +107,7 @@
     description font=\bfseries,
     terminator sign={.\hspace{1mm}}
 }
-{definition.tcb-label}
+{d}
 
 \newtcbtheorem[number within=section]{tcb-lemma-style}{Lema}
 {
@@ -129,7 +129,7 @@
     description font=\bfseries,
     terminator sign={.\hspace{1mm}}
 }
-{lemma.tcb-label}
+{l}
 
 \newtcolorbox[auto counter]{remark.tcb}[1][]
 {
@@ -152,18 +152,7 @@
 
 
 %Enviroments section-x.tcb
-\newenvironment{section-theorem.tcb}[1][]
-{
-    \ifstrempty{#1}
-    {
-        \begin{tcb-theorem-style}{}{}
-    }
-    {
-        \begin{tcb-theorem-style}{#1}{}
-    }
-    }{
-    \end{tcb-theorem-style}
-}
+
 
 \newenvironment{section-problem.tcb}
 {

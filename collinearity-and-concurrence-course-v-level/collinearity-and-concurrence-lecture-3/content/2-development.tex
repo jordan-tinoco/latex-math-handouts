@@ -1,35 +1,41 @@
 \section{Desarrollo}
 
-\begin{section-theorem.tcb}[Steiner]\label{steiner-theorem}
+
+
+
+\begin{section-theorem.tcb}{Steiner}{steiner-theorem}
     Sean $D$ y $E$ dos puntos sobre el segmento $BC$ del triángulo $ABC$ tal que $\angle BAE = \angle DAC$.
     Así
     \[
         \frac{BD}{CD} \cdot \frac{BE}{CE} = \left(\frac{AB}{AC}\right)^2.
     \]
 \end{section-theorem.tcb}
+
 \begin{figure}[H]
     \centering
     \input{figures/figure-3}
 \end{figure}
+
 \begin{proof}
-    Aplicando el \refTheorem{\ref{ratio-lemma}}  al $\triangle ABC$ con los puntos $D$ y $E$, respectivamente, se obtiene:
+    Aplicando el~\refTheorem{\ref{t:ratio-lemma}} al $\triangle ABC$ con los puntos $D$ y $E$, respectivamente, se obtiene:
     \begin{align*}
-        \frac{BD}{DC} &= \frac{AB}{AC} \cdot \frac{\sen(\angle BAD)}{\sen(\angle DAC)}\\
-        \frac{BE}{EC} &= \frac{AB}{AC} \cdot \frac{\sen(\angle BAE)}{\sen(\angle EAC)}\\
-        \Rightarrow \frac{BD}{DC} &\cdot \frac{BE}{EC} = \left(\frac{AB}{AC}\right)^2 \cdot \frac{\sen(\angle BAD)}{\sen(\angle DAC)} \cdot \frac{\sen(\angle BAE)}{\sen(\angle EAC)}\\
+        \frac{BD}{DC} = \frac{AB}{AC} \cdot \frac{\sen(\angle BAD)}{\sen(\angle DAC)} \quad \land \quad
+        \frac{BE}{EC} = \frac{AB}{AC} \cdot \frac{\sen(\angle BAE)}{\sen(\angle EAC)} \\[3mm]
+        \Rightarrow \frac{BD}{DC} \cdot \frac{BE}{EC} = \left(\frac{AB}{AC}\right)^2 \cdot \frac{\sen(\angle BAD)}{\sen(\angle DAC)} \cdot \frac{\sen(\angle BAE)}{\sen(\angle EAC)}
     \end{align*}
     Pero como $\angle BAE = \angle DAC$, entonces $\angle BAD = \angle EAC$, de donde se sigue el resultado.
 \end{proof}
 
 
 
+
 \subsection{Simedianas}
 
-
 \begin{section-definition.tcb}[Simediana]
-    La simediana correspondiente al vértice $A$ se define como la reflexión de $A$\nobreakdash-mediana con respecto a la bisectriz interna del ángulo $BAC$.
+    La simediana correspondiente al vértice $A$ se define como la reflexión de $A$\nobreakdash-mediana con respecto a la bisectriz interna del ángulo $\angle BAC$.
     En otras palabras, es la recta isogonal correspondiente a la mediana que parte del mismo vértice de referencia.
 \end{section-definition.tcb}
+
 \begin{figure}[H]
     \centering
     \input{figures/figure-1}
@@ -49,8 +55,9 @@ Por la \refDefinition{1.4} vista en la clase anterior, sabemos que, al concurrir
         \frac{BN}{NC} = \left(\frac{AB}{AC}\right)^2.
     \]
 \end{section-lemma.tcb}
+
 \begin{proof}
-    Es una aplicación directa del~\refTheorem{\ref{steiner-theorem}}.
+    Es una aplicación directa del~\refTheorem{\ref{t:steiner-theorem}}.
 \end{proof}
 
 
@@ -58,6 +65,7 @@ Por la \refDefinition{1.4} vista en la clase anterior, sabemos que, al concurrir
     Sea $D$ el punto de intersección de las tangentes por $B$ y $C$ al circuncírculo del triángulo $ABC$.
     Luego, $AD$ es una simediana de $\triangle ABC$.
 \end{section-lemma.tcb}
+
 \begin{proof}
     Supongamos que las prolongaciones de los lados $AB$ y $AC$ cortan a la paralela a $BC$ por $P$ en $S$ y $T$, respectivamente.
     Es claro que $\angle PSB = \angle CBA$ y $\angle PTC = \angle BCA$.
@@ -69,7 +77,7 @@ Por la \refDefinition{1.4} vista en la clase anterior, sabemos que, al concurrir
         \caption{Una forma de construir e identificar la $A$-simediana.}
     \end{figure}
 
-    De este modo, $\triangle BPS \sim \triangle CAB \sim \triangle TCP$, lo que a su vez implica que:
+    De este modo, $\triangle BPS \sim \triangle CAB \sim \triangle TPC$, lo que a su vez implica que:
     \begin{align*}
         \frac{SP}{PB} = \frac{AB}{AC} \ \land \ \frac{PC}{PT} = \frac{AB}{AC}
         \ \Rightarrow \ \frac{SP}{PB} \cdot \frac{PC}{PT} &= \left(\frac{AB}{AC}\right)^2\\
@@ -84,12 +92,15 @@ Por la \refDefinition{1.4} vista en la clase anterior, sabemos que, al concurrir
     Sea el triángulo $ABC$ y $\Omega$ su circuncírculo, las tangentes a $\Omega$ por $A$, $B$ y $C$ se intersecan con los lados opuestos $BC$, $AC$ y $BA$ en los puntos $E$, $F$ y $D$, respectivamente.
     Así, se cumple que $E$, $F$ y $D$ están sobre una misma recta, llamada la \textbf{recta de Lemoine} del triángulo $ABC$.
 \end{section-definition.tcb}
+\vspace{-2mm}
+
 
 
 
 \section{Conocimiento previo}
 
-\begin{section-theorem.tcb}[Ley de los Senos]\label{ratio-lemma1}
+
+\begin{section-theorem.tcb}{Ley de los Senos}{law-of-sines}
     Sea el triángulo $ABC$ con circunradio $R$.
     Entonces
     \[
@@ -97,9 +108,10 @@ Por la \refDefinition{1.4} vista en la clase anterior, sabemos que, al concurrir
     \]
 \end{section-theorem.tcb}
 
-\textbf{Pista:} Considerar las antipodas de los vertices en el circuncírculo de $\triangle ABC$, notar ciertos cuadriláteros cíclicos y luego utilzar la definción del seno para el triángulo rectángulo.
+\textbf{Pista:} Considerar las antípodas de los vértices en el circuncírculo de $\triangle ABC$, notar ciertas igualdades de ángulos por cuadriláteros cíclicos y luego utilizar la definción del seno para el triángulo rectángulo.
 
-\begin{section-theorem.tcb}[Teorema de bisectriz generalizada]\label{ratio-lemma}
+
+\begin{section-theorem.tcb}{Teorema de bisectriz generalizada}{ratio-lemma}
     Dado el triángulo $ABC$, sea el punto $X$ en $BC$.
     Entonces se cumple que
     \[
@@ -107,15 +119,20 @@ Por la \refDefinition{1.4} vista en la clase anterior, sabemos que, al concurrir
     \]
 \end{section-theorem.tcb}
 
-\textbf{Pista:} Utilizar el teorema anterior.
+\textbf{Pista:} Utilizar el~\refTheorem{\ref{t:law-of-sines}} y la siguiente identidad trigonométrica:
+\[
+    \text{Si}\ \alpha + \beta = 180^\circ\text{,}\ \text{entonces}\ \sen(\alpha) = \sen(\beta).
+\]
+
 
 
 
 \section{Ejercicios y Problemas}
+
 Sección de ejercicios y problemas para el autoestudio.
 
 \begin{section-exercise}
-    Realizar la construcción de las tres simedianas de un triángulo $ABC$ con la ayuda del Lemma \ref{simedian-lemma} y ubicar el punto de \textbf{Lemoine}.
+    Realizar la construcción de las tres simedianas de un triángulo $ABC$ con la ayuda del Lemma~\ref{simedian-lemma} y ubicar el punto de \textbf{Lemoine}.
 \end{section-exercise}
 
 \begin{section-exercise}
