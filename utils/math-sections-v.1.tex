@@ -5,6 +5,7 @@
 \newtheorem{section-example}{Ejemplo}[section]
 \newtheorem{section-theorem}{Teorema}[section]
 \newtheorem{section-problem}{Problema}[section]
+\newtheorem{section-property}{Propiedad}[section]
 \newtheorem{section-exercise}{Ejercicio}[section]
 \newtheorem{section-corollary}{Corolario}[section]
 \newtheorem{section-definition}{Definición}[section]
@@ -28,7 +29,7 @@
     frame empty,
     interior empty,
     coltitle = black,
-    colbacktitle = blue!25!white,
+    colbacktitle = blue!18!white,
     fonttitle = \bfseries,
     extras broken = {frame empty, interior empty},
     borderline = {0.3mm}{0mm}{black},
@@ -64,7 +65,7 @@
 }
 {p}
 
-\newtcbtheorem[number within=section]{tcb-example-style}{Ejemplo}
+\newtcbtheorem[number within=section]{section-example.tcb}{Ejemplo}
 {
     enhanced,
     frame empty,
@@ -87,7 +88,7 @@
 }
 {e}
 
-\newtcbtheorem[number within=section]{tcb-definition-style}{Definición}
+\newtcbtheorem[number within=section]{section-definition.tcb}{Definición}
 {
     enhanced,
     frame empty,
@@ -109,13 +110,13 @@
 }
 {d}
 
-\newtcbtheorem[number within=section]{tcb-lemma-style}{Lema}
+\newtcbtheorem[number within=section]{section-lemma.tcb}{Lema}
 {
     enhanced,
     frame empty,
     interior empty,
     coltitle = black,
-    colbacktitle = yellow!25!white,
+    colbacktitle = orange!25!white,
     fonttitle = \bfseries,
     extras broken = {frame empty, interior empty},
     borderline = {0.3mm}{0mm}{black},
@@ -136,8 +137,7 @@
     breakable,
     title = Observación~\thetcbcounter.,
     colback = white,
-    %colbacktitle = green!20!white,
-    colbacktitle = violet!25!white,
+    colbacktitle = yellow!25!white,
     coltitle = black,
     fonttitle = \bfseries,
     bottomrule = 0pt,
@@ -159,43 +159,4 @@
     \begin{tcb-problem-style}{}{}
     }{
     \end{tcb-problem-style}
-}
-
-\newenvironment{section-example.tcb}[1][]
-{
-    \ifstrempty{#1}
-    {
-        \begin{tcb-example-style}{}{}
-    }
-    {
-        \begin{tcb-example-style}{#1}{}
-    }
-    }{
-    \end{tcb-example-style}
-}
-
-\newenvironment{section-definition.tcb}[1][]
-{
-    \ifstrempty{#1}
-    {
-        \begin{tcb-definition-style}{}{}
-    }
-    {
-        \begin{tcb-definition-style}{#1}{}
-    }
-    }{
-    \end{tcb-definition-style}
-}
-
-\newenvironment{section-lemma.tcb}[1][]
-{
-    \ifstrempty{#1}
-    {
-        \begin{tcb-lemma-style}{}{}
-    }
-    {
-        \begin{tcb-lemma-style}{#1}{}
-    }
-    }{
-    \end{tcb-lemma-style}
 }

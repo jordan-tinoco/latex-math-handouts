@@ -2,16 +2,147 @@
 
 
 
-\begin{section-theorem.tcb}{Teorema de Pascal}{}
+\begin{section-theorem.tcb}{Teorema de Pascal}{pascal-theorem}
+    Sea $ABCDEF$ un héxagono inscrito (no necesariamente convexo) en una círcunferencia $\Omega$.
+    Entonces, los puntos $M = AB \cap DE$, $N = BC \cap EF$ y $P = CD \cap FA$ son colineales.
 \end{section-theorem.tcb}
 
-\begin{section-theorem.tcb}{Teorema de Brianchon}{}
+\begin{proof}
+    Sean $X = BC \cap DE$, $Y = DE \cap FA$ y $Z = FA \cap BC$.
+
+    \begin{multicols}{2}
+        \begin{figure}[H]
+            \centering
+            \input{figures/figure-1}
+        \end{figure}
+        Al usar el teorema de \textbf{Menelao} tres veces en el \theTriangle{XYZ}, primero con la transversal $A - B - M$, después con la transversal $P - C - D$ y finalmente con $F - N - E$, respectivamente, obtenemos que
+        \begin{align*}
+            &\rations{Z}{X}{Y}{M}{A}{B} = 1,\\[3mm]
+            &\rations{Z}{X}{Y}{D}{P}{C} = 1\ \text{y}\\[3mm]
+            &\rations{Z}{X}{Y}{E}{F}{N} = 1.
+        \end{align*}
+    \end{multicols}
+    \vspace{-10mm}
+    Multiplicando estas tres igualdades y reordenando los miembros, obtenemos que
+    \begin{align*}
+        \frac{XM}{MY} \cdot \frac{XM}{MY} \cdot \frac{XM}{MY} \cdot \frac{(YA\cdot YF) \cdot (ZB\cdot ZC) \cdot (XD\cdot XE)}{(AZ\cdot FZ) \cdot (BX \cdot CX) \cdot (DY\cdot EF)} = 1. \tag{$\ast$}
+    \end{align*}
+    Ahora por la \textbf{Propiedad~\ref{power-external-point}} sabemos que para los punto $X$, $Y$ y $Z$ se cumple que
+    \begin{align*}
+        XD \cdot XE = XC \cdot XB \quad \land \quad
+        YF \cdot YA = YE \cdot YD \quad \land \quad
+        ZB \cdot ZC = ZA \cdot ZE
+    \end{align*}
+    Así $(\ast)$ se nos convierte en
+    \[
+        \rations{Z}{X}{Y}{M}{P}{N} = 1,
+    \]
+    que por el teorema de \textbf{Menelao} significa que $M$, $N$ y $P$ son colineales.
+\end{proof}
+
+\begin{remark.tcb}
+    Una manera fácil de recordar las intersecciones es la siguiente:
+    Tomamos dos letras consecutivas, dejamos una letra de espacio, y tomamos otras dos letras consecutivas.
+    La intersección de las rectas formadas con eso pares puntos es el primer punto de la colinealidad.
+    Luego nos movemos a la derecha y repetimos el proceso dos veces más.\footnote{Otra manera de verlos es tomar vértices consecutivos módulo 3.}
+    \begin{multicols}{2}
+        \begin{figure}[H]
+            \centering
+            \input{figures/figure-2}
+            \caption{Teorema de Pascal.}
+            \label{fig:pascal-theorem}
+        \end{figure}
+        \hfill\\
+        \hfill\\
+        \hfill\\
+        \hfill
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.4\textwidth]{images/pascal-mnemotec}
+            \caption{Mnemotécnia de Pascal.}
+        \end{figure}
+    \end{multicols}
+\end{remark.tcb}
+
+
+El~\refTheorem{\ref{t:pascal-theorem}} es independiente de cómo haya sido tomado el hexágono.
+El mostrado en la demostración es el caso más sencillo en el cual el hexágono es convexo.
+Sin embargo, la colinealidad se sigue cumpliendo aunque el hexágono no sea convexo, como se puede ver en la figura \ref{fig:pascal-theorem}.
+La demostración de este caso y de cualquier otro es análoga a la primera.
+
+\begin{section-example.tcb}{}{}
+    Sean $D$ y $E$ los puntos medios de los arcos menores $\wideparen{AB}$ y $\wideparen{AC}$ del circuncírculo del \theTriangle{ABC}, respectivamente.
+    Sea $P$ un punto en el arco menor $BC$, $Q = PD \cap AB$ y $R = PE \cap AC$.
+    Probar que la recta $QR$ pasa a traves de incentro $I$ del \theTriangle{ABC}.
+\end{section-example.tcb}
+
+\begin{solution}
+    Dado que $D$ es el punto medio del arco $\wideparen{AB}$, $CD$ es bisectriz del ángulo $\angle BCA$.
+    Análogamentes, $BE$ es bisectriz de $\angle ABC$.
+    Por lo tanto, $CD \cap BE = I$.
+    Ahora, aplicando el~\refTheorem{\ref{t:pascal-theorem}} al hexágono $CDPEBA$ tenemos que los puntos $CD \cap BE = I$, $DP \cap BA = Q$ y $PE \cap AC = R$ son colineales.
+\end{solution}
+
+
+El~\refTheorem{\ref{t:pascal-theorem}} puede presentar versiones degeneradas, aunque puede suceder, el caso más habitual ya no consiste en un paralelismo, sino en la transformación de un polígono de seis lados a un polígono de cinco, cuatro o tres lados.
+Como lo podemos ver en el siguiente ejemplo.
+
+\begin{section-example.tcb}{}{}
+    Sea $\omega$ el circuncírculo del \theTriangle{ABC}.
+    Las tangentes a $\omega$ por lo puntos $A$, $B$ y $C$ intersecan a las rectas $BC$, $CA$ y $AB$ en los puntos $D$, $E$ y $F$, respectivamente.
+    Probar que los puntos $D$, $E$ y $F$ está alineados.
+\end{section-example.tcb}
+
+\begin{solution}
+    Aplicando el~\refTheorem{\ref{t:pascal-theorem}} al hexágono $AABBCC$.
+    Tenemos que los puntos $AA \cap BC = D$, $AB \cap CC = F$ y $BB \cap CA = E$ son colineales.
+\end{solution}
+
+\begin{remark.tcb}
+
+\end{remark.tcb}
+
+
+
+\newpage
+\begin{section-theorem.tcb}{Teorema de Brianchon}{brianchon-theorem}
+    Sea $ABCDEF$ un hexágono circunscrito (no necesariamente convexo) a un círculo $\Omega$.
+    Entonces, las rectas $AD$, $BE$ y $CF$ son concurrentes.
 \end{section-theorem.tcb}
 
 
 
 
 \subsection{Agregados culturales y preguntas}
+
+
+
+
+\section{Conocimiento previo}
+
+\begin{section-property}[Potencia de un punto exterior]\label{power-external-point}
+Sean $AD$ y $CD$ dos rectas que se intersecan en $X$ tales que $X - A - B$ y $X - C - D$.
+Entonces el cuadrilátero $ABCD$ es cíclico si y solo si
+\[
+    \overline{XA} \cdot \overline{XB} = \overline{XC} \cdot \overline{XD}.
+\]\end{section-property}
+
+\begin{multicols}{2}
+    \begin{proof}
+        Rápidamente nos damos cuenta de que $\angle CXB = \angle AXD\quad (\ast).$
+        Entonces $ABCD$ es cíclico
+        \begin{align*}
+            &\iff \angle ABC = \angle ADC\\
+            &\iff \angle XBC = \angle ADX\\
+            &\overset{(\ast)}{\iff} \triangle XBC \sim \triangle XDA \ \overset{(\ast)}{\iff} \ \frac{\overline{XB}}{\overline{XC}} = \frac{\overline{XD}}{\overline{XA}}\\[2mm]
+            &\iff \overline{XA} \cdot \overline{XB} = \overline{XC} \cdot \overline{XD}. \qedhere
+        \end{align*}
+    \end{proof}
+    \begin{figure}[H]
+        \centering
+        \input{figures/figure-6}
+    \end{figure}
+\end{multicols}
 
 
 

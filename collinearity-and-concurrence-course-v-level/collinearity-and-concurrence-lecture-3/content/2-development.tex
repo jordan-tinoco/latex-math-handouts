@@ -31,7 +31,7 @@
 
 \subsection{Simedianas}
 
-\begin{section-definition.tcb}[Simediana]
+\begin{section-definition.tcb}{Simediana}{}
     La simediana correspondiente al vértice $A$ se define como la reflexión de $A$\nobreakdash-mediana con respecto a la bisectriz interna del ángulo $\angle BAC$.
     En otras palabras, es la recta isogonal correspondiente a la mediana que parte del mismo vértice de referencia.
 \end{section-definition.tcb}
@@ -49,7 +49,7 @@ No hace falta decir que todo triángulo contiene tres simedianas.
 Por la \refDefinition{1.4} vista en la clase anterior, sabemos que, al concurrir las medianas en el baricentro, las simedianas comparten también un punto en común, llamado el \textbf{punto de Lemoine}.
 
 
-\begin{section-lemma.tcb}\label{symmendian-proportion}
+\begin{section-lemma.tcb}{}{symmendian-proportion}
     Sea $N$ un punto sobre el segmento $BC$; entonces, $N$ pertenece a la $A$\nobreakdash-simediana si y solo si
     \[
         \frac{BN}{NC} = \left(\frac{AB}{AC}\right)^2.
@@ -61,7 +61,7 @@ Por la \refDefinition{1.4} vista en la clase anterior, sabemos que, al concurrir
 \end{proof}
 
 
-\begin{section-lemma.tcb}\label{simedian-lemma}
+\begin{section-lemma.tcb}{}{simedian-lemma}
     Sea $D$ el punto de intersección de las tangentes por $B$ y $C$ al circuncírculo del triángulo $ABC$.
     Luego, $AD$ es una simediana de $\triangle ABC$.
 \end{section-lemma.tcb}
@@ -84,11 +84,11 @@ Por la \refDefinition{1.4} vista en la clase anterior, sabemos que, al concurrir
         \frac{SP}{PB} \cdot \frac{PC}{PT} &= \left(\frac{AS}{AT}\right)^2 \quad \text{(Por $\triangle CAB \sim \triangle TAS$)}\\
         \frac{SP}{PT}  &= \left(\frac{AS}{AT}\right)^2 \quad \text{($PB = PC$ por tangencia)}
     \end{align*}
-    luego, por el lema~\ref{symmendian-proportion}, $AP$ es simediana de $\triangle SAT$ y, de paso, también de $\triangle BAC$.
+    luego, por el lema~\ref{l:symmendian-proportion}, $AP$ es simediana de $\triangle SAT$ y, de paso, también de $\triangle BAC$.
 \end{proof}
 
 
-\begin{section-definition.tcb}[Recta de Lemoine]
+\begin{section-definition.tcb}{Recta de Lemoine}{}
     Sea el triángulo $ABC$ y $\Omega$ su circuncírculo, las tangentes a $\Omega$ por $A$, $B$ y $C$ se intersecan con los lados opuestos $BC$, $AC$ y $BA$ en los puntos $E$, $F$ y $D$, respectivamente.
     Así, se cumple que $E$, $F$ y $D$ están sobre una misma recta, llamada la \textbf{recta de Lemoine} del triángulo $ABC$.
 \end{section-definition.tcb}
