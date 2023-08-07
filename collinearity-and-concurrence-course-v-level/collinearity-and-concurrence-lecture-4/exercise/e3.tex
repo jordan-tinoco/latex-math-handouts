@@ -1,0 +1,19 @@
+\begin{tikzpicture}[scale = 1.5]
+    \clip(-3.97,0.64) rectangle (4.46,5);
+    \draw [line width=1.2pt,domain=-3.97:4.46] plot(\x,{(--4.3--0.16*\x)/1.2});
+    \draw [line width=1.2pt,domain=-3.97:4.46] plot(\x,{(--3.6--0.03*\x)/2});
+    \begin{scriptsize}
+        \fill [color=black] (-2.53,3.23) circle (2.0pt);
+        \draw[color=black] (-2.57,3.63) node {$A$};
+        \fill [color=black] (-1.33,3.39) circle (2.0pt);
+        \draw[color=black] (-1.33,3.8) node {$B$};
+        \fill [color=black] (-0.34,3.53) circle (2.0pt);
+        \draw[color=black] (-0.36,3.86) node {$C$};
+        \fill [color=black] (-2.9,1.75) circle (2.0pt);
+        \draw[color=black] (-2.88,1.4) node {$D$};
+        \fill [color=black] (-0.89,1.78) circle (2.0pt);
+        \draw[color=black] (-0.89,1.44) node {$E$};
+        \fill [color=black] (3.25,1.85) circle (2.0pt);
+        \draw[color=black] (3.25,1.49) node {$F$};
+    \end{scriptsize}
+\end{tikzpicture}

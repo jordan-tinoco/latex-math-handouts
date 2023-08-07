@@ -91,25 +91,24 @@ Si $\angle XAB = \angle XAC$, entonces los puntos $A$, $B$ y $C$ son colineales.
     Sean $P$, $Q$ y $R$ los puntos medios de $AE$, $AD$ y $DE$ respectivamente.
 
     \begin{multicols}{2}
-
         \begin{figure}[H]
             \centering
             \input{figures/figure-3}
         \end{figure}
 
-        Las rectas $PQ$, $QR$ y $PR$ son bases medias de $ADE$, por lo tanto son las respectivas bases medias de $ACE$, $BDE$ y $AFE$, así que estas pasan por $L$, $M$ y $N$.
+        Las rectas $PQ$, $QR$ y $PR$ son \textbf{bases medias} de \theTriangle{ADE}, por lo tanto son las respectivas bases medias de \theTriangle{ACE}, \theTriangle{BDE} y \theTriangle{AFE}, así que estas pasan por $L$, $M$ y $N$.
 
         Por semejanza, tenemos que
         \[
             \frac{LQ}{LP} = \frac{CD}{CE},\quad \frac{NP}{NR} = \frac{FA}{FD}\quad \text{y} \quad \frac{MR}{MQ} = \frac{BE}{BA}.
         \]
-        Al multiplicar se obtiene
+        Al multiplicar y reordenar se obtiene:
         \[
-            \frac{LQ}{LP} \cdot \frac{NP}{NR} \cdot \frac{MR}{MQ} = \frac{CD}{CE} \cdot \frac{FA}{FD} \cdot \frac{BE}{BA}
+            \ratioCM{Q}{P}{R}{L}{N}{M} = \ratioCM{A}{D}{E}{F}{C}{B}
         \]
     \end{multicols}
 
-    Pero este producto es igual a 1, ya que se cumple el~\refTheorem{\ref{t:menelaus-theorem}} para el triángulo $ADE$ con respecto a la transversal $B-C-F$.
+    Pero este producto es igual a 1, ya que se cumple el~\refTheorem{\ref{t:menelaus-theorem}} para el triángulo \theTriangle{ADE} con respecto a la transversal $B - C - F$.
     Se concluye entonces que $L$, $M$ y $N$ son colineales.
 \end{proof}
 
@@ -173,7 +172,7 @@ Si $\angle XAB = \angle XAC$, entonces los puntos $A$, $B$ y $C$ son colineales.
     \[
         1 = \frac{XB}{BY} \cdot \frac{YC}{CZ} \cdot \frac{ZA}{AX} \quad \text{y} \quad 1 = \frac{XF}{FY} \cdot \frac{YD}{DZ} \cdot \frac{ZE}{EX}.
     \]
-    Multiplicando estas 5 igualdades lado a lado, y viendo que 6 de las fracciones del lado izquierdo de la ecuación se cancelan con cada una las fracciones del lado derecho.
+    Multiplicando estas 5 igualdades lado a lado, y viendo que 6 de las proporciones del lado izquierdo de la ecuación se cancelan con cada una las proporciones del lado derecho.
     Quedándonos con lo que queríamos demostrar.
 
     \textbf{Caso 2.}
