@@ -1,0 +1,49 @@
+\definecolor{qqttzz}{rgb}{0,0.2,0.6}
+\definecolor{ccqqqq}{rgb}{0.8,0,0}
+\definecolor{qqqqcc}{rgb}{0,0,0.8}
+\definecolor{qqqqzz}{rgb}{0,0,0.6}
+\definecolor{wwwwww}{rgb}{0.4,0.4,0.4}
+
+\begin{tikzpicture}[scale = 1.6]
+    \clip(-2.86,1.38) rectangle (1.06,5.01);
+    \fill[line width=0.4pt,color=qqttzz,fill=qqttzz,fill opacity=0.1] (-1.87,4.73) -- (-1.58,2.14) -- (-0.11,2.71) -- cycle;
+    \draw [line width=1.2pt,domain=-2.86:1.06] plot(\x,{(--2.95-0.31*\x)/0.9});
+    \draw [line width=1.2pt,domain=-2.86:1.06] plot(\x,{(--1.87-0*\x)/1.06});
+    \draw [line width=1.2pt,color=wwwwww] (-1.78,3.9)-- (-1.53,1.76);
+    \draw [line width=1.2pt,color=wwwwww] (-1.78,3.9)-- (0.71,1.77);
+    \draw [line width=1.2pt,color=wwwwww] (-2.6,1.75)-- (-0.88,3.59);
+    \draw [line width=1.2pt,color=wwwwww] (-2.6,1.75)-- (0.73,3.03);
+    \draw [line width=1.2pt,color=wwwwww] (-1.53,1.76)-- (0.73,3.03);
+    \draw [line width=1.2pt,color=wwwwww] (-0.88,3.59)-- (0.71,1.77);
+    \draw [line width=1.2pt,dash pattern=on 6pt off 6pt,color=qqqqcc,domain=-2.86:1.06] plot(\x,{(--4.23-0.16*\x)/1.62});
+    \draw [line width=0.4pt,color=qqttzz] (-1.87,4.73)-- (-1.58,2.14);
+    \draw [line width=0.4pt,color=qqttzz] (-1.58,2.14)-- (-0.11,2.71);
+    \draw [line width=0.4pt,color=qqttzz] (-0.11,2.71)-- (-1.87,4.73);
+    \begin{scriptsize}
+        \normalsize
+        \fill [color=black] (-1.78,3.9) circle (2.0pt);
+        \draw[color=black] (-2, 4.2) node {$A$};
+        \fill [color=black] (-0.88,3.59) circle (2.0pt);
+        \draw[color=black] (-0.65,3.73) node {$B$};
+        \fill [color=black] (0.73,3.03) circle (2.0pt);
+        \draw[color=black] (0.9,3.2) node {$C$};
+        \fill [color=black] (-2.6,1.75) circle (2.0pt);
+        \draw[color=black] (-2.61,1.5) node {$D$};
+        \fill [color=black] (-1.53,1.76) circle (2.0pt);
+        \draw[color=black] (-1.52,1.5) node {$E$};
+        \fill [color=black] (0.71,1.77) circle (2.0pt);
+        \draw[color=black] (0.66,1.5) node {$F$};
+        \fill [color=qqqqzz] (-1.65,2.77) circle (1.6pt);
+        \draw[color=qqqqzz] (-1.9,2.94) node {$M$};
+        \fill [color=qqqqzz] (-0.3,2.63) circle (1.6pt);
+        \draw[color=qqqqzz] (-0.55,2.45) node[fill = white, rounded corners = 5pt, inner sep=0.8pt] {$P$};
+        \fill [color=qqqqzz] (-0.02,2.61) circle (1.6pt);
+        \draw[color=qqqqzz] (0.30,2.42) node {$N$};
+        \fill [color=black] (-1.87,4.73) circle (2.0pt);
+        \draw[color=black] (-1.65,4.82) node {$X$};
+        \fill [color=black] (-1.58,2.14) circle (2.0pt);
+        \draw[color=black] (-1.70,1.95) node {$Z$};
+        \fill [color=black] (-0.11,2.71) circle (2.0pt);
+        \draw[color=black] (-0.10,2.96) node {$Y$};
+    \end{scriptsize}
+\end{tikzpicture}

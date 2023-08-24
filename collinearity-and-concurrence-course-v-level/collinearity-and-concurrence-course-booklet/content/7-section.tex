@@ -1,2 +1,53 @@
 \newpage
-\section{}
+\section{Conocimiento previo}
+
+
+\begin{section-theorem.tcb}{Ley de los Senos}{law-of-sines}
+    Sea el triángulo $ABC$ con circunradio $R$.
+    Entonces
+    \[
+        \frac{a}{\sen(\angle A)} = \frac{b}{\sen(\angle B)} = \frac{c}{\sen(\angle C)} = 2R.
+    \]
+\end{section-theorem.tcb}
+
+\textbf{Pista:} Considerar las antípodas de los vértices en el circuncírculo de $\triangle ABC$, notar ciertas igualdades de ángulos por cuadriláteros cíclicos y luego utilizar la definción del seno para el triángulo rectángulo.
+
+
+\begin{section-theorem.tcb}{Teorema de bisectriz generalizada}{ratio-lemma}
+    Dado el triángulo $ABC$, sea el punto $X$ en $BC$.
+    Entonces se cumple que
+    \[
+        \frac{BX}{XC} = \frac{AB}{AC} \cdot \frac{\sen(\angle BAX)}{\sen(\angle XAC)}.
+    \]
+\end{section-theorem.tcb}
+
+\textbf{Pista:} Utilizar el~\refTheorem{\ref{t:law-of-sines}} y la siguiente identidad trigonométrica:
+\[
+    \text{Si}\ \alpha + \beta = 180^\circ\text{,}\ \text{entonces}\ \sen(\alpha) = \sen(\beta).
+\]
+
+\begin{section-property}[Potencia de un punto exterior]\label{power-external-point}
+Sean $AD$ y $CD$ dos rectas que se intersecan en $X$ tales que $X - A - B$ y $X - C - D$.
+Entonces el cuadrilátero $ABCD$ es cíclico si y solo si
+\[
+    \overline{XA} \cdot \overline{XB} = \overline{XC} \cdot \overline{XD}.
+\]
+\end{section-property}
+
+\begin{multicols}{2}
+    \begin{proof}
+        Rápidamente nos damos cuenta de que $\angle CXB = \angle AXD\quad (\ast).$
+
+        Entonces $ABCD$ es cíclico
+        \begin{align*}
+            &\iff \angle ABC = \angle ADC\\
+            &\iff \angle XBC = \angle ADX\\
+            &\overset{(\ast)}{\iff} \triangle XBC \sim \triangle XDA \ \overset{(\ast)}{\iff} \ \frac{\overline{XB}}{\overline{XC}} = \frac{\overline{XD}}{\overline{XA}}\\[2mm]
+            &\iff \overline{XA} \cdot \overline{XB} = \overline{XC} \cdot \overline{XD}. \qedhere
+        \end{align*}
+    \end{proof}
+    \begin{figure}[H]
+        \centering
+        \input{figures/l5/figure-6}
+    \end{figure}
+\end{multicols}

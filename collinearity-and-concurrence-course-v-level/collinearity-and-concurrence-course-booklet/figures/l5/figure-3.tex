@@ -1,0 +1,35 @@
+\definecolor{qqqqcc}{rgb}{0,0,0.8}
+
+\begin{tikzpicture}[scale = 2.3]
+    \clip(-0.61,-1.12) rectangle (1.8,1.44);
+    \draw [line width=1.2pt] (0.63,0.17) circle (1.01cm);
+    \draw [line width=1.2pt] (-0.24,-0.33)-- (1.51,-0.33);
+    \draw [line width=1.2pt] (1.51,-0.33)-- (0.31,1.12);
+    \draw [line width=1.2pt] (0.31,1.12)-- (-0.24,-0.33);
+    \draw [line width=1.2pt] (-0.31,0.53)-- (0.28,-0.78);
+    \draw [line width=1.2pt] (0.28,-0.78)-- (1.41,0.81);
+    \draw [line width=1.2pt] (1.41,0.81)-- (-0.24,-0.33);
+    \draw [line width=1.2pt] (-0.31,0.53)-- (1.51,-0.33);
+    \draw [line width=1pt,dash pattern=on 7pt off 3pt,color=qqqqcc,domain=-0.61:1.8] plot(\x,{(--0.08--0.21*\x)/1.12});
+    \begin{scriptsize}
+        \normalsize
+        \fill [color=black] (0.31,1.12) circle (1.2pt);
+        \draw[color=black] (0.26,1.29) node[fill = white, rounded corners = 5pt, inner sep=0.8pt] {$A$};
+        \fill [color=black] (-0.24,-0.33) circle (1.2pt);
+        \draw[color=black] (-0.39,-0.39) node[fill = white, rounded corners = 5pt, inner sep=0.8pt] {$B$};
+        \fill [color=black] (1.51,-0.33) circle (1.2pt);
+        \draw[color=black] (1.66,-0.34) node[fill = white, rounded corners = 5pt, inner sep=0.8pt] {$C$};
+        \fill [color=black] (-0.31,0.53) circle (1.2pt);
+        \draw[color=black] (-0.46,0.59) node[fill = white, rounded corners = 5pt, inner sep=0.8pt] {$D$};
+        \fill [color=black] (1.41,0.81) circle (1.2pt);
+        \draw[color=black] (1.51,0.91) node[fill = white, rounded corners = 5pt, inner sep=0.8pt] {$E$};
+        \fill [color=black] (0.28,-0.78) circle (1.2pt);
+        \draw[color=black] (0.27,-0.92) node[fill = white, rounded corners = 5pt, inner sep=0.8pt] {$P$};
+        \fill [color=black] (-0.1,0.05) circle (1.2pt);
+        \draw[color=black] (-0.25,0.18) node[fill = white, rounded corners = 5pt, inner sep=0.8pt] {$Q$};
+        \fill [color=black] (1.02,0.26) circle (1.2pt);
+        \draw[color=black] (1.01,0.45) node[fill = white, rounded corners = 5pt, inner sep=0.8pt] {$R$};
+        \fill [color=black] (0.47,0.16) circle (1.2pt);
+        \draw[color=black] (0.45,0.34) node[fill = white, rounded corners = 5pt, inner sep=0.8pt] {$I$};
+    \end{scriptsize}
+\end{tikzpicture}

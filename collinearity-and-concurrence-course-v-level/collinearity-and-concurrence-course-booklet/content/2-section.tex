@@ -13,7 +13,7 @@
 Tres rectas son concurrentes si pasan por un punto común.
 Sabiendo esto, veamos el primer hecho fundamental para abordar los problemas de concurrencia.
 
-\begin{section-theorem.tcb}[\textbf{Teorema de Ceva}]
+\begin{section-theorem.tcb}{Teorema de Ceva}{}
     Dado un triángulo $ABC$, sean $D$, $E$ y $F$ puntos sobre los lados $BC$, $CA$ y $AB$ (o sus prolongaciones), respectivamente.
     Entonces las rectas $AD$, $BE$ y $CF$ son concurrentes si y sólo si
     \begin{gather*}
@@ -26,16 +26,16 @@ De igual forma muchos otros problemas pueden ser resueltos por el teorema de Cev
 
 Es importante resaltar que la manipulación de razones con áreas no funciona, pues a partir de la manipulación de áreas también puede ser demostrado este teorema, y lo único que se obtendría es un avanze circular, por ello es mejor hacerlo con semejanza de triángulos, potencia de punto o trigonometría como se verá más adelante.
 
-\begin{section-definition.tcb}
+\begin{section-definition.tcb}{Ceviana}{}
     A toda recta que parte del vértice hacia el lado opuesto se le denomina \textit{ceviana.}
 \end{section-definition.tcb}
 
-\begin{section-definition.tcb}[\textbf{Triángulo ceviano}]
+\begin{section-definition.tcb}{Triángulo ceviano}{}
     Para todo punto $P$, las cevianas desde $A$, $B$ y $C$ que pasan por $P$ y cortan a los lados opuestos en $A'$, $B'$ y $C'$.
     El triángulo $A'B'C'$ es el triángulo ceviano de $P$ y sus vértices se llaman trazas cevianas de $P$.
 \end{section-definition.tcb}
 
-\begin{section-theorem.tcb}[\textbf{Ceva trigonométrico}]
+\begin{section-theorem.tcb}{Ceva trigonométrico}{}
     Las rectas $AD$, $BE$ y $CF$ son cevianas concurrentes del triángulo $ABC$ si y sólo si
     \begin{gather*}
         \frac{sen(\angle BAD)}{sen(\angle DAC)} \cdot \frac{sen(\angle CBE)}{sen(\angle EBA)} \cdot \frac{sen(\angle ACF)}{sen(\angle FCB)} = 1.
@@ -44,58 +44,149 @@ Es importante resaltar que la manipulación de razones con áreas no funciona, p
 
 La manipulación trigonométrica del teorema de Ceva se vuelve muy importante a la hora de enfrentarse a problemas que pueden parecer práticamente inaccesibles, pues es más general y más aplicable que la semajanza de triángulos.
 
-\begin{section-definition.tcb}[\textbf{El punto de Gergonne}]
+\begin{section-definition.tcb}{El punto de Gergonne}{}
     Sea $ABC$ un triángulo, y sean $D$, $E$ y $F$ los puntos de tangencia del incírculo con $BC$, $CA$ y $AB$, respectivamente.
     Entonces, $AD$, $BE$ y $CF$ son concurrentes.
 \end{section-definition.tcb}
 
-\begin{section-definition.tcb}[\textbf{El punto de Nagel}]
+\begin{section-definition.tcb}{El punto de Nagel}{}
     Sea $ABC$ un triángulo, y sean $D'$, $E'$ y $F'$ los puntos de tangencia de los excírculos respectivos a $A$, $B$ y $C$ con $BC$, $CA$ y $AB$, respectivamente.
     Entonces, $AD'$, $BE'$ y $CF'$ son concurrentes.
 \end{section-definition.tcb}
 
 
-\begin{section-theorem.tcb}[\textbf{Teorema de Ceva sobre la circunferencia}]
+\begin{section-theorem.tcb}{Teorema de Ceva sobre la circunferencia}{}
     Sean $ABC$ y $DEF$ dos triángulos sobre la misma circunferencia.
     Entonces las rectas $AD$, $BE$ y $CF$ son concurrentes si y sólo si
     \[\frac{BD}{DC} \cdot \frac{CE}{EA} \cdot \frac{AF}{FB} = 1.\]
 \end{section-theorem.tcb}
 
-\begin{section-definition.tcb}[\textbf{Triángulo circunceviano}]
+\begin{section-definition.tcb}{Triángulo circunceviano}{}
     A todo punto que no esté sobre alguno de los lados de un triángulo dado es posible asignarle un nuevo triángulo, que surge a partir de la intersección de las cevianas con el circuncírculo del triángulo.
 \end{section-definition.tcb}
 
-\begin{section-theorem.tcb}[\textbf{Teorema de Steinbart}]
+\begin{section-theorem.tcb}{Teorema de Steinbart}{}
     Sea $ABC$ un triángulo, $D$, $E$ y $F$ los puntos de tanagencia del incírculo con los lados $BC$, $CA$ y $AB$, respectivamente.
     Sean $P$, $Q$ y $R$ puntos sobre el incírculo de $ABC$.
     Llamemos $A'$, $B'$ y $C'$ las intersecciones de $EF$ con $PD$, $DF$ con $QE$ y $DE$ con $FR$.
     Entonces $AP$, $BQ$ y $CR$ son concurrentes si y sólo si $DP$, $EQ$ y $FR$ son concurrentes.
 \end{section-theorem.tcb}
 
-\begin{section-theorem.tcb}[\textbf{Teorema de Jacobi}]
+\begin{section-theorem.tcb}{Teorema de Jacobi}{}
     Sea $ABC$ un triángulo, y sean $X$, $Y$, $Z$ tres puntos en el plano tales que $\angle YAC = \angle BAZ$, $\angle ZBA = \angle CBX$, $\angle XCB = \angle ACY$.
     Entonces las rectas $AX$, $BY$ y $CZ$ son concurrentes.
 \end{section-theorem.tcb}
 
-\begin{section-definition.tcb}[\textbf{Puntos isotómicos}]
+\begin{section-definition.tcb}{Puntos isotómicos}{}
     Dos puntos son isotómicos si estos coinciden al ser reflejados por el punto medio del segmento al que pertenecen.
 \end{section-definition.tcb}
 
-\begin{section-definition.tcb}[\textbf{Conjugados isotómicos}]
+\begin{section-definition.tcb}{Conjugados isotómicos}{}
     Dado un triángulo $ABC$ se tienen tres cevianas $AD$, $BE$ y $CF$ las cuales son concurrentes en un punto $P$.
     Sean $D'$, $E'$ y $F'$ las reflexiones de $D$, $E$ y $F$ sobre los puntos medios de $BC$, $CA$ y $AB$ respectivamente.
     Entonces las rectas $AD'$, $BE'$ y $CF'$ son concurrentes.
 \end{section-definition.tcb}
 
-\begin{section-definition.tcb}[\textbf{Cevianas isogonales}]
+\begin{section-definition.tcb}{Cevianas isogonales}{}
     Dos cevianas son isogonales del $\triangle ABC$ si ambas parte del mismo vértice del triángulo y una es la reflexión de la otra con respecto a la bisectriz interna de $\triangle ABC$.
 \end{section-definition.tcb}
 
-\begin{section-definition.tcb}[\textbf{Conjugados isogonales}]
+\begin{section-definition.tcb}{Conjugados isogonales}{}
     Dado un triángulo $ABC$ se tienen tres cevianas $AD$, $BE$ y $CF$ las cuales son concurrentes en un punto $P$.
     Sean $AD'$, $BE'$ y $CF'$ las reflexiones de $AD$, $BE$ y $CF$ sobre las bisectrices de $\angle A$, $\angle B$ y $\angle C$ respectivamente.
     Entonces las rectas $AD'$, $BE'$, $CF'$ son concurrentes.
 \end{section-definition.tcb}
+
+
+\begin{section-theorem.tcb}{Steiner}{steiner-theorem}
+    Sean $D$ y $E$ dos puntos sobre el segmento $BC$ del triángulo $ABC$ tal que $\angle BAE = \angle DAC$.
+    Así
+    \[
+        \frac{BD}{CD} \cdot \frac{BE}{CE} = \left(\frac{AB}{AC}\right)^2.
+    \]
+\end{section-theorem.tcb}
+
+\begin{figure}[H]
+    \centering
+    \input{figures/l3/figure-3}
+\end{figure}
+
+\begin{proof}
+    Aplicando el~\refTheorem{\ref{t:ratio-lemma}} al $\triangle ABC$ con los puntos $D$ y $E$, respectivamente, se obtiene:
+    \begin{align*}
+        \frac{BD}{DC} = \frac{AB}{AC} \cdot \frac{\sen(\angle BAD)}{\sen(\angle DAC)} \quad \land \quad
+        \frac{BE}{EC} = \frac{AB}{AC} \cdot \frac{\sen(\angle BAE)}{\sen(\angle EAC)} \\[3mm]
+        \Rightarrow \frac{BD}{DC} \cdot \frac{BE}{EC} = \left(\frac{AB}{AC}\right)^2 \cdot \frac{\sen(\angle BAD)}{\sen(\angle DAC)} \cdot \frac{\sen(\angle BAE)}{\sen(\angle EAC)}
+    \end{align*}
+    Pero como $\angle BAE = \angle DAC$, entonces $\angle BAD = \angle EAC$, de donde se sigue el resultado.
+\end{proof}
+
+
+\subsection{Simedianas}
+
+\begin{section-definition.tcb}{Simediana}{}
+    La simediana correspondiente al vértice $A$ se define como la reflexión de $A$\nobreakdash-mediana con respecto a la bisectriz interna del ángulo $\angle BAC$.
+    En otras palabras, es la recta isogonal correspondiente a la mediana que parte del mismo vértice de referencia.
+\end{section-definition.tcb}
+
+\begin{figure}[H]
+    \centering
+    \input{figures/l3/figure-1}
+    \caption{La recta $AL$ es la $A$-simediana del triángulo $ABC$.}
+    \label{fig:symmedian-definition}
+\end{figure}
+
+En el caso de la figura~\ref{fig:symmedian-definition}, la recta $AL$ es la $A$-simediana del $\triangle ABC$.
+Es decir $\angle BAL = \angle MAC$.
+No hace falta decir que todo triángulo contiene tres simedianas.
+Por la \refDefinition{1.4} vista en la clase anterior, sabemos que, al concurrir las medianas en el baricentro, las simedianas comparten también un punto en común, llamado el \textbf{punto de Lemoine}.
+
+
+\begin{section-lemma.tcb}{}{symmendian-proportion}
+    Sea $N$ un punto sobre el segmento $BC$; entonces, $N$ pertenece a la $A$\nobreakdash-simediana si y solo si
+    \[
+        \frac{BN}{NC} = \left(\frac{AB}{AC}\right)^2.
+    \]
+\end{section-lemma.tcb}
+
+\begin{proof}
+    Es una aplicación directa del~\refTheorem{\ref{t:steiner-theorem}}.
+\end{proof}
+
+
+\begin{section-lemma.tcb}{}{simedian-lemma}
+    Sea $D$ el punto de intersección de las tangentes por $B$ y $C$ al circuncírculo del triángulo $ABC$.
+    Luego, $AD$ es una simediana de $\triangle ABC$.
+\end{section-lemma.tcb}
+
+\begin{proof}
+    Supongamos que las prolongaciones de los lados $AB$ y $AC$ cortan a la paralela a $BC$ por $P$ en $S$ y $T$, respectivamente.
+    Es claro que $\angle PSB = \angle CBA$ y $\angle PTC = \angle BCA$.
+    Además, $\angle PBS = \angle BCA$ y $\angle PCT = \angle CBA$ por la condición de tangencia de $PB$ y $PC$.
+
+    \begin{figure}[H]
+        \centering
+        \input{figures/l3/figure-2}
+        \caption{Una forma de construir e identificar la $A$-simediana.}
+    \end{figure}
+
+    De este modo, $\triangle BPS \sim \triangle CAB \sim \triangle TPC$, lo que a su vez implica que:
+    \begin{align*}
+        \frac{SP}{PB} = \frac{AB}{AC} \ \land \ \frac{PC}{PT} = \frac{AB}{AC}
+        \ \Rightarrow \ \frac{SP}{PB} \cdot \frac{PC}{PT} &= \left(\frac{AB}{AC}\right)^2\\
+        \frac{SP}{PB} \cdot \frac{PC}{PT} &= \left(\frac{AS}{AT}\right)^2 \quad \text{(Por $\triangle CAB \sim \triangle TAS$)}\\
+        \frac{SP}{PT}  &= \left(\frac{AS}{AT}\right)^2 \quad \text{($PB = PC$ por tangencia)}
+    \end{align*}
+    luego, por el lema~\ref{l:symmendian-proportion}, $AP$ es simediana de $\triangle SAT$ y, de paso, también de $\triangle BAC$.
+\end{proof}
+
+
+\begin{section-definition.tcb}{Recta de Lemoine}{}
+    Sea el triángulo $ABC$ y $\Omega$ su circuncírculo, las tangentes a $\Omega$ por $A$, $B$ y $C$ se intersecan con los lados opuestos $BC$, $AC$ y $BA$ en los puntos $E$, $F$ y $D$, respectivamente.
+    Así, se cumple que $E$, $F$ y $D$ están sobre una misma recta, llamada la \textbf{recta de Lemoine} del triángulo $ABC$.
+\end{section-definition.tcb}
+
+
 
 
 
@@ -155,4 +246,46 @@ Sección de ejercicios y problemas para el autoestudio.
     Sea $ABC$ un triángulo.
     Se toman los puntos $D$, $E$ y $F$ en las mediatrices de $BC$, $CA$ y $AB$ respectivamente.
     Probar que las rectas que pasan por $A$, $B$ y $C$ que son perpendiculares a $EF$, $FD$ y $DE$, respectivamente, son concurrentes.
+\end{section-problem}
+
+\begin{section-exercise}
+    Realizar la construcción de las tres simedianas de un triángulo $ABC$ con la ayuda del Lemma~\ref{simedian-lemma} y ubicar el punto de \textbf{Lemoine}.
+\end{section-exercise}
+
+\begin{section-exercise}
+    Realizar la construcción de la recta de \textbf{Lemoine} para un triángulo $ABC$.
+\end{section-exercise}
+
+\begin{section-problem}
+    Sea $L$ el punto de \textbf{Lemoine} de un triángulo $ABC$ y $M$ el punto en $BC$ tal que $AM$ contiene a $L$.
+    Demostrar que
+    \[
+        \frac{AL}{LM} = \frac{BA^2 + AC^2}{BC^2}.
+    \]
+\end{section-problem}
+
+\begin{section-problem}
+    Las bisectrices interna y externa del ángulo $\angle BAC$ de $\triangle ABC$, intersecan a la recta $BC$ en $E$ y $D$, respectivamente.
+    El circuncírculo de $\triangle DEA$ interseca al circuncírculo de $\triangle ABC$ en $X$.
+    Probar que $AX$ es la $A$-simediana de $\triangle ABC$.
+\end{section-problem}
+
+\begin{section-problem}
+    Sea $AD$ una altura de $\triangle ABC$.
+    Consideremos $AD$ como diámetro de una circunferencia que corta los $AB$ y $AC$ en $K$ y $L$, respectivamente.
+    Las tangentes a la circunferencia en los puntos $K$ y $L$ se intersectan en un punto $M$.
+    Demuestra que la recta $AM$ divide $BC$ por la mitad.
+\end{section-problem}
+
+\begin{section-problem}
+    Un cuadrilátero convexo $ABCD$ tiene $AD = CD$ y $\angle DAB = \angle ABC < 90^\circ$.
+    La recta por $D$ y el punto medio de $BC$ intersecta a la recta $AB$ en un punto $E$.
+    Demuestra qur $\angle BEC = \angle DAC$.
+\end{section-problem}
+
+\begin{section-problem}
+    Una recta paralela a $BC$ corta a los lados $AB$ y $AC$ en $M$ y $N$ en el $\triangle ABC$, respectivamente.
+    Sea $P$ el punto de corte de $BN$ y $CM$.
+    Sea $Q$ el segundo punto de corte de los circuncírculos de $MPB$ y $NCP$.
+    Demostrar que $\angle BAQ = \angle PAC$.
 \end{section-problem}

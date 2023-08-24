@@ -1,0 +1,11 @@
+\definecolor{tttttt}{rgb}{0.2,0.2,200}
+
+\begin{tikzpicture}[scale = 1.1]
+    \clip(-3.6,1.24) rectangle (5.9,2.72);
+    \draw [line width=1.2pt,domain=-3.6:5.9] plot(\x,{(--3.82--0.2*\x)/2.08});
+    \begin{scriptsize}
+        \fill (-1.2,1.72) circle (2.5pt);
+        \fill (0.88,1.92) circle (2.5pt);
+        \fill (3.93,2.21) circle (2.5pt);
+    \end{scriptsize}
+\end{tikzpicture}
