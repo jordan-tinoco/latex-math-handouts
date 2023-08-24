@@ -1,0 +1,31 @@
+\definecolor{ttttff}{rgb}{0.2,0.2,1}
+%dash pattern=on 5pt off 2pt
+%[fill = white, rounded corners = 5pt, inner sep=0.8pt]
+\begin{tikzpicture}[scale = 0.65]
+    \clip(8.45,-6.14) rectangle (23.62,4.58);
+    \draw [line width=1.2pt] (15.6,-3.7) circle (1.05cm);
+    \draw [line width=1.2pt] (10.53,0.69) circle (1.9cm);
+    \draw [line width=1.2pt] (19.73,0.87) circle (3.51cm);
+    \draw [dash pattern=on 6pt off 6pt,domain=8.45:23.62] plot(\x,{(--25.45-1.98*\x)/0.84});
+    \draw [dash pattern=on 6pt off 6pt,domain=8.45:23.62] plot(\x,{(--3.14-0.55*\x)/2.08});
+    \draw [dash pattern=on 6pt off 6pt,domain=8.45:23.62] plot(\x,{(-22.13--1.49*\x)/-2.14});
+    \draw [dash pattern=on 6pt off 6pt,domain=8.45:23.62] plot(\x,{(--20.12-1.58*\x)/-2.08});
+    \draw [dash pattern=on 6pt off 6pt,domain=8.45:23.62] plot(\x,{(-26.17--0.99*\x)/2.19});
+    \draw [dash pattern=on 6pt off 6pt,domain=8.45:23.62] plot(\x,{(-35.94--2.28*\x)/0.77});
+    \draw [line width=0.8pt, dash pattern=on 6pt off 2pt,color=ttttff,domain=8.45:23.62] plot(\x,{(-88.14--6.4*\x)/-0.09});
+    \begin{scriptsize}
+        \normalsize
+        \fill [color=black] (15.6,-3.7) circle (4pt);
+        \draw[color=black] (15.98,-3.18) node {$O_1$};
+        \fill [color=black] (19.73,0.87) circle (4pt);
+        \draw[color=black] (20.25,1.41) node {$O_2$};
+        \fill [color=black] (10.53,0.69) circle (4pt);
+        \draw[color=black] (11.01,1.18) node {$O_3$};
+        \fill [color=black] (13.84,-5.65) circle (4pt);
+        \draw[color=black] (13.28,-5.1) node {$P_1$};
+        \fill [color=black] (13.79,-2.14) circle (4pt);
+        \draw[color=black] (13.1,-1.41) node {$Q_2$};
+        \fill [color=black] (13.76,0.75) circle (4pt);
+        \draw[color=black] (13.19,1.76) node {$Q_3$};
+    \end{scriptsize}
+\end{tikzpicture}

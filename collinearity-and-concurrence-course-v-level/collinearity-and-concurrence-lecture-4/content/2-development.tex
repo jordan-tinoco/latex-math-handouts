@@ -21,7 +21,7 @@ Hay tres formas más comunes de angulear que nos permiten probar que tres puntos
     \caption{Tres configuraciones de colinealidad.}
 \end{figure}
 
-En la primera configuración\footnote{Comenzando de izquierda a derecha.}, necesitaremos dos puntos adicionales que ya son colineales con nuestro punto ``medio'' $B$.
+En la primera configuración, comenzando de izquierda a derecha, necesitaremos dos puntos adicionales que ya son colineales con nuestro punto ``medio'' $B$.
 Sean esos puntos $X$ e $Y$.
 Si $\angle XBA = \angle YBC$, entonces los puntos $A$, $B$ y $C$ son colineales.
 
@@ -130,15 +130,27 @@ Si $\angle XAB = \angle XAC$, entonces los puntos $A$, $B$ y $C$ son colineales.
 \end{figure}
 
 \begin{multicols}{2}
-    Naturalmente, existen muchas configuraciones aparte de las mostradas en la figura \ref{fig:pappus-theorem}, pero esta es la más común.
+    Naturalmente, existen muchas configuraciones aparte de las mostradas en la figura \ref{fig:pappus-theorem}, pero estas son las más comunes.
 
-    Una manera mnemotécnica de indentificar y no olvidar los puntos colineales es la mostrado en la figura~\ref{fig:pappus-mnemonic}.
+    Una manera mnemotécnica de indentificar y no olvidar los puntos colineales es la mostrada en la figura~\ref{fig:pappus-mnemonic}.
+
+    Donde la primera y segunda fila contienen a los trios de puntos que sabemos son colineales y la tercera los nuevos puntos $N$, $P$ y $M$.
+    Cada uno de estos es la intersección de las rectas formadas con los puntos en posición diagonal de las columnas en la que dicho punto no está.
     \begin{figure}[H]
         \centering
-        \includegraphics[width=3.4cm]{images/pappus-points}
+        \begin{tabular}{|c|c|c|}
+            \hline
+            A & B & C\\\hline
+            D & E & F\\
+            \hline \hline
+            N & P & M\\
+            \hline
+        \end{tabular}
         \caption{Mnemotécnia de Pappus.}
         \label{fig:pappus-mnemonic}
     \end{figure}
+    \vspace{-4mm}
+    Es decir $N = \overline{BF} \cap \overline{CE}$, $P = \overline{AF} \cap \overline{CD}$ y $M = \overline{AE} \cap \overline{BD}$.
 \end{multicols}
 
 \begin{proof}
@@ -203,7 +215,6 @@ Si $\angle XAB = \angle XAC$, entonces los puntos $A$, $B$ y $C$ son colineales.
     Como $\angle PYN = \angle PZM$, por \textit{(LAL)} obtenemos que $\triangle PYN \sim \triangle PZM$ y por lo tanto $\angle YPN = \angle ZPM$.
     Ya que $Y - P - Z$ son colineales, por consiguiente $N - P - M$.
 \end{proof}
-
 
 
 
