@@ -116,7 +116,7 @@ La manipulación trigonométrica del teorema de Ceva se vuelve muy importante a 
     \begin{align*}
         \frac{BD}{DC} = \frac{AB}{AC} \cdot \frac{\sen(\angle BAD)}{\sen(\angle DAC)} \quad \land \quad
         \frac{BE}{EC} = \frac{AB}{AC} \cdot \frac{\sen(\angle BAE)}{\sen(\angle EAC)} \\[3mm]
-        \Rightarrow \frac{BD}{DC} \cdot \frac{BE}{EC} = \left(\frac{AB}{AC}\right)^2 \cdot \frac{\sen(\angle BAD)}{\sen(\angle DAC)} \cdot \frac{\sen(\angle BAE)}{\sen(\angle EAC)}
+        \implies \frac{BD}{DC} \cdot \frac{BE}{EC} = \left(\frac{AB}{AC}\right)^2 \cdot \frac{\sen(\angle BAD)}{\sen(\angle DAC)} \cdot \frac{\sen(\angle BAE)}{\sen(\angle EAC)}
     \end{align*}
     Pero como $\angle BAE = \angle DAC$, entonces $\angle BAD = \angle EAC$, de donde se sigue el resultado.
 \end{proof}
@@ -173,7 +173,7 @@ Por la \refDefinition{1.4} vista en la clase anterior, sabemos que, al concurrir
     De este modo, $\triangle BPS \sim \triangle CAB \sim \triangle TPC$, lo que a su vez implica que:
     \begin{align*}
         \frac{SP}{PB} = \frac{AB}{AC} \ \land \ \frac{PC}{PT} = \frac{AB}{AC}
-        \ \Rightarrow \ \frac{SP}{PB} \cdot \frac{PC}{PT} &= \left(\frac{AB}{AC}\right)^2\\
+        \ \implies \ \frac{SP}{PB} \cdot \frac{PC}{PT} &= \left(\frac{AB}{AC}\right)^2\\
         \frac{SP}{PB} \cdot \frac{PC}{PT} &= \left(\frac{AS}{AT}\right)^2 \quad \text{(Por $\triangle CAB \sim \triangle TAS$)}\\
         \frac{SP}{PT}  &= \left(\frac{AS}{AT}\right)^2 \quad \text{($PB = PC$ por tangencia)}
     \end{align*}
@@ -242,19 +242,21 @@ Sección de ejercicios y problemas para el autoestudio.
     \[\frac{AO}{OL} = \frac{AN}{NB} + \frac{AM}{MC}.\]
 \end{section-exercise}
 
-\begin{section-problem}
-    Sea $ABC$ un triángulo.
-    Se toman los puntos $D$, $E$ y $F$ en las mediatrices de $BC$, $CA$ y $AB$ respectivamente.
-    Probar que las rectas que pasan por $A$, $B$ y $C$ que son perpendiculares a $EF$, $FD$ y $DE$, respectivamente, son concurrentes.
-\end{section-problem}
 
 \begin{section-exercise}
-    Realizar la construcción de las tres simedianas de un triángulo $ABC$ con la ayuda del Lemma~\ref{simedian-lemma} y ubicar el punto de \textbf{Lemoine}.
+    Realizar la construcción de las tres simedianas de un triángulo $ABC$ con la ayuda del Lemma~\ref{l:simedian-lemma} y ubicar el punto de \textbf{Lemoine}.
 \end{section-exercise}
 
 \begin{section-exercise}
     Realizar la construcción de la recta de \textbf{Lemoine} para un triángulo $ABC$.
 \end{section-exercise}
+
+
+\begin{section-problem}
+    Sea $ABC$ un triángulo.
+    Se toman los puntos $D$, $E$ y $F$ en las mediatrices de $BC$, $CA$ y $AB$ respectivamente.
+    Probar que las rectas que pasan por $A$, $B$ y $C$ que son perpendiculares a $EF$, $FD$ y $DE$, respectivamente, son concurrentes.
+\end{section-problem}
 
 \begin{section-problem}
     Sea $L$ el punto de \textbf{Lemoine} de un triángulo $ABC$ y $M$ el punto en $BC$ tal que $AM$ contiene a $L$.

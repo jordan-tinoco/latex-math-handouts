@@ -86,24 +86,21 @@ Si $\angle XAB = \angle XAC$, entonces los puntos $A$, $B$ y $C$ son colineales.
 \begin{proof}
     Sean $P$, $Q$ y $R$ los puntos medios de $AE$, $AD$ y $DE$ respectivamente.
 
-    \begin{multicols}{2}
-        \begin{figure}[H]
-            \centering
-            \input{figures/l4/figure-3}
-        \end{figure}
+    \begin{figure}[H]
+        \centering
+        \input{figures/l4/figure-3}
+    \end{figure}
 
-        Las rectas $PQ$, $QR$ y $PR$ son \textbf{bases medias} de \theTriangle{ADE}, por lo tanto son las respectivas bases medias de \theTriangle{ACE}, \theTriangle{BDE} y \theTriangle{AFE}, así que estas pasan por $L$, $M$ y $N$.
+    Las rectas $PQ$, $QR$ y $PR$ son \textbf{bases medias} de \theTriangle{ADE}, por lo tanto son las respectivas bases medias de \theTriangle{ACE}, \theTriangle{BDE} y \theTriangle{AFE}, así que estas pasan por $L$, $M$ y $N$.
 
-        Por semejanza, tenemos que
-        \[
-            \frac{LQ}{LP} = \frac{CD}{CE},\quad \frac{NP}{NR} = \frac{FA}{FD}\quad \text{y} \quad \frac{MR}{MQ} = \frac{BE}{BA}.
-        \]
-        Al multiplicar y reordenar se obtiene:
-        \[
-            \ratioCM{Q}{P}{R}{L}{N}{M} = \ratioCM{A}{D}{E}{F}{C}{B}
-        \]
-    \end{multicols}
-
+    Por semejanza, tenemos que
+    \[
+        \frac{LQ}{LP} = \frac{CD}{CE},\quad \frac{NP}{NR} = \frac{FA}{FD}\quad \text{y} \quad \frac{MR}{MQ} = \frac{BE}{BA}.
+    \]
+    Al multiplicar y reordenar se obtiene:
+    \[
+        \ratioCM{Q}{P}{R}{L}{N}{M} = \ratioCM{A}{D}{E}{F}{C}{B}
+    \]
     Pero este producto es igual a 1, ya que se cumple el~\refTheorem{\ref{t:menelaus-theorem}} para el triángulo \theTriangle{ADE} con respecto a la transversal $B - C - F$.
     Se concluye entonces que $L$, $M$ y $N$ son colineales.
 \end{proof}
@@ -125,29 +122,7 @@ Si $\angle XAB = \angle XAC$, entonces los puntos $A$, $B$ y $C$ son colineales.
     \label{fig:pappus-theorem}
 \end{figure}
 
-\begin{multicols}{2}
-    Naturalmente, existen muchas configuraciones aparte de las mostradas en la figura \ref{fig:pappus-theorem}, pero estas son las más comunes.
-
-    Una manera mnemotécnica de indentificar y no olvidar los puntos colineales es la mostrada en la figura~\ref{fig:pappus-mnemonic}.
-
-    Donde la primera y segunda fila contienen a los trios de puntos que sabemos son colineales y la tercera los nuevos puntos $N$, $P$ y $M$.
-    Cada uno de estos es la intersección de las rectas formadas con los puntos en posición diagonal de las columnas en la que dicho punto no está.
-    \begin{figure}[H]
-        \centering
-        \begin{tabular}{|c|c|c|}
-            \hline
-            A & B & C\\\hline
-            D & E & F\\
-            \hline \hline
-            N & P & M\\
-            \hline
-        \end{tabular}
-        \caption{Mnemotécnia de Pappus.}
-        \label{fig:pappus-mnemonic}
-    \end{figure}
-    \vspace{-4mm}
-    Es decir $N = \overline{BF} \cap \overline{CE}$, $P = \overline{AF} \cap \overline{CD}$ y $M = \overline{AE} \cap \overline{BD}$.
-\end{multicols}
+Naturalmente, existen muchas configuraciones aparte de las mostradas en la figura~\ref{fig:pappus-theorem}, pero estas son las más comunes.
 
 \begin{proof}
     Sean $M = AE \cap BD$, $N = BF \cap CE$ y $P = AF \cap CD$.
@@ -157,18 +132,16 @@ Si $\angle XAB = \angle XAC$, entonces los puntos $A$, $B$ y $C$ son colineales.
     Si estas se intersecan, sea $AE \cap BF = X$.
     Sea $Y = BF \cap CD$ y $Z = AE \cap CD$.
 
-    \begin{multicols}{2}
-        \begin{figure}[H]
-            \centering
-            \input{figures/l4/figure-5}
-        \end{figure}
+    \begin{figure}[H]
+        \centering
+        \input{figures/l4/figure-5}
+    \end{figure}
 
-        Dado que $M$, $N$ y $P$ son laterales a $\triangle XYZ$, podemos usar el~\refTheorem{\ref{t:menelaus-theorem}} para tratar de probar que son colineales, es decir necesitamos probar que
-        \[
-            \frac{XN}{NY} \cdot \frac{YP}{PZ} \cdot \frac{ZM}{MX} = 1.
-        \]
-        Ahora, trataremos de encontrar cada una de estas tres proporciones por medio de la aplicación del~\refTheorem{\ref{t:menelaus-theorem}} con otras rectas que se cruzen con $\triangle XYZ$.
-    \end{multicols}
+    Dado que $M$, $N$ y $P$ son laterales a $\triangle XYZ$, podemos usar el~\refTheorem{\ref{t:menelaus-theorem}} para tratar de probar que son colineales, es decir necesitamos probar que
+    \[
+        \frac{XN}{NY} \cdot \frac{YP}{PZ} \cdot \frac{ZM}{MX} = 1.
+    \]
+    Ahora, trataremos de encontrar cada una de estas tres proporciones por medio de la aplicación del~\refTheorem{\ref{t:menelaus-theorem}} con otras rectas que se cruzen con $\triangle XYZ$.
 
     Para lograr esto, usaremos el~\refTheorem{\ref{t:menelaus-theorem}} tres veces en el $\triangle XYZ$ con las transversales $C - N - E$, $A - P - F$ y $D - M - B$, respectivamente, obtendremos
     \[
@@ -189,29 +162,49 @@ Si $\angle XAB = \angle XAC$, entonces los puntos $A$, $B$ y $C$ son colineales.
     Trataremos de encontrar igualdades análogas tal que no usen segmentos que contengan $X$.
     En realidad podemos lograr esto, usando rectas paralelas para encontrar triángulos semejantes.
 
-    \begin{multicols}{2}
-        \begin{figure}[H]
-            \centering
-            \input{figures/l4/figure-6}
-        \end{figure}
+    \begin{figure}[H]
+        \centering
+        \input{figures/l4/figure-6}
+    \end{figure}
 
-        Por el criterio \textit{(AA)}, obtenemos que $\triangle CYN \sim \triangle CZE$.
-        \[
-            \therefore  \quad \frac{CY}{YN} = \frac{CZ}{ZE} \quad \Rightarrow \quad \frac{CY}{YN} \cdot \frac{ZE}{CZ} = 1.
-        \]
-        Así mismo, obtenemos las siguientes semejanzas $\triangle PYF \sim \triangle PZA$, $\triangle DYB \sim \triangle DZM$, $\triangle YCB \sim \triangle ZCA$ y $\triangle YDF \sim \triangle ZDE$.
-        De donde, sacamos igualdades análogas.
-    \end{multicols}
+    Por el criterio \textit{(AA)}, obtenemos que $\triangle CYN \sim \triangle CZE$.
+    \[
+        \therefore  \quad \frac{CY}{YN} = \frac{CZ}{ZE} \quad \implies \quad \frac{CY}{YN} \cdot \frac{ZE}{CZ} = 1.
+    \]
+    Así mismo, obtenemos las siguientes semejanzas $\triangle PYF \sim \triangle PZA$, $\triangle DYB \sim \triangle DZM$, $\triangle YCB \sim \triangle ZCA$ y $\triangle YDF \sim \triangle ZDE$.
+    De donde, sacamos igualdades análogas.
 
     Multiplicando estas igualdades, obtenemos
     \begin{align*}
         &\frac{CY}{YN} \cdot \frac{ZE}{CZ} \cdot \frac{PY}{YF} \cdot \frac{ZA}{PZ} \cdot \frac{DY}{YB} \cdot \frac{ZM}{DZ} \cdot \frac{YB}{YC} \cdot \frac{ZC}{ZA} \cdot \frac{YF}{YD} \cdot \frac{ZD}{ZE} = 1\\[3mm]
-        &\therefore \quad \frac{PY}{YN} \cdot \frac{ZM}{PZ} = 1 \quad \Rightarrow \quad \frac{PY}{YN} = \frac{PZ}{ZM}
+        &\therefore \quad \frac{PY}{YN} \cdot \frac{ZM}{PZ} = 1 \quad \implies \quad \frac{PY}{YN} = \frac{PZ}{ZM}
     \end{align*}
     Como $\angle PYN = \angle PZM$, por \textit{(LAL)} obtenemos que $\triangle PYN \sim \triangle PZM$ y por lo tanto $\angle YPN = \angle ZPM$.
     Ya que $Y - P - Z$ son colineales, por consiguiente $N - P - M$.
 \end{proof}
 
+\begin{remark.tcb}
+    Una manera mnemotécnica de indentificar y no olvidar los puntos colineales es la mostrada en la figura~\ref{fig:pappus-mnemonic}.
+    \begin{multicols}{2}
+        Donde la primera y segunda fila contienen a los trios de puntos que sabemos son colineales y la tercera los nuevos puntos $N$, $P$ y $M$.
+        Cada uno de estos es la intersección de las rectas formadas con los puntos en posición diagonal de las columnas en la que dicho punto no está.
+        \begin{figure}[H]
+            \centering
+            \begin{tabular}{|c|c|c|}
+                \hline
+                A & B & C\\\hline
+                D & E & F\\
+                \hline \hline
+                N & P & M\\
+                \hline
+            \end{tabular}
+            \caption{Mnemotécnia de Pappus.}
+            \label{fig:pappus-mnemonic}
+        \end{figure}
+        \vspace{-4mm}
+        Es decir $N = \overline{BF} \cap \overline{CE}$, $P = \overline{AF} \cap \overline{CD}$ y $M = \overline{AE} \cap \overline{BD}$.
+    \end{multicols}
+\end{remark.tcb}
 
 
 \subsection{Teorema de Desargues}
@@ -249,19 +242,17 @@ Claramente, al igual que el~\refTheorem{\ref{t:pappus-theorem}}, el teorema de D
     Sean $\triangle ABC$ y $\triangle XYZ$ dos triángulos en perspectiva a un punto, entonces $AX$, $BY$ y $CZ$ son concurrentes con el punto $O$.
     Sea $P = AB \cap XY$, $R = BC \cap YZ$ y $Q = CA \cap ZX$.
 
-    \begin{multicols}{2}
-        \begin{figure}[H]
-            \centering
-            \input{figures/l4/figure-9}
-        \end{figure}
+    \begin{figure}[H]
+        \centering
+        \input{figures/l4/figure-9}
+    \end{figure}
 
-        Aplicando el~\refTheorem{\ref{t:menelaus-theorem}} a los triángulos $\triangle OAB$ con la transversal $P - Y - X$, $\triangle OBC$ con la transversal $R - Z - Y$ y $\triangle OCA$ con la transversal $Q - Z - X$, obtenemos que;
-        \begin{align*}
-            \frac{OX}{XA} \cdot \frac{AP}{PB} \cdot \frac{BY}{YO} &= 1,\\[1mm]
-            \frac{OY}{YB} \cdot \frac{BR}{RC} \cdot \frac{CZ}{ZO} &= 1\quad \text{y}\\[1mm]
-            \frac{OZ}{ZC} \cdot \frac{CQ}{QA} \cdot \frac{AX}{XO} &= 1.
-        \end{align*}
-    \end{multicols}
+    Aplicando el~\refTheorem{\ref{t:menelaus-theorem}} a los triángulos $\triangle OAB$ con la transversal $P - Y - X$, $\triangle OBC$ con la transversal $R - Z - Y$ y $\triangle OCA$ con la transversal $Q - Z - X$, obtenemos que;
+    \begin{align*}
+        \frac{OX}{XA} \cdot \frac{AP}{PB} \cdot \frac{BY}{YO} = 1,&&
+        \frac{OY}{YB} \cdot \frac{BR}{RC} \cdot \frac{CZ}{ZO} = 1 && \text{y} &&
+        \frac{OZ}{ZC} \cdot \frac{CQ}{QA} \cdot \frac{AX}{XO} = 1.
+    \end{align*}
 
     Multiplicando estas tres igualdades, llegamos al siguiente resultado
     \[
@@ -272,20 +263,18 @@ Claramente, al igual que el~\refTheorem{\ref{t:pappus-theorem}}, el teorema de D
     Ahora, probaremos la otra dirección.
     Sean $\triangle ABC$ y $\triangle XYZ$ dos triángulos en perspectiva a un recta, entonces los puntos $P = AB \cap XY$, $Q = CA \cap ZX$ y $R = BC \cap YZ$ son colineales.
 
-    \begin{multicols}{2}
-        \begin{figure}[H]
-            \centering
-            \input{figures/l4/figure-10}
-        \end{figure}
+    \begin{figure}[H]
+        \centering
+        \input{figures/l4/figure-10}
+    \end{figure}
 
-        Sean $O = BY \cap CZ$.
-        Debemos de probar que $AX$ también pasa por $O$.
+    Sean $O = BY \cap CZ$.
+    Debemos de probar que $AX$ también pasa por $O$.
 
-        Observemos los triángulos \theTriangle{QCZ} y \theTriangle{PBY}.
-        Las rectas $QP$, $CB$ y $ZY$ con concurrentes en $R$, así que los triángulos están en perspectiva con respecto a ese punto.
+    Observemos los triángulos \theTriangle{QCZ} y \theTriangle{PBY}.
+    Las rectas $QP$, $CB$ y $ZY$ con concurrentes en $R$, así que los triángulos están en perspectiva con respecto a ese punto.
 
-        Por la dirección del teorema de Desargues que acabamos de demostrar, se deduce que los triángulos deben de estar en perspectiva respecto a una recta.
-    \end{multicols}
+    Por la dirección del teorema de Desargues que acabamos de demostrar, se deduce que los triángulos deben de estar en perspectiva respecto a una recta.
 
     Es decir, los puntos $QC \cap PB = A$, $CZ \cap BY = O$ y $ZQ \cap YP = X$ son colineales.
     Con esto, probamos que $AX$ pasa por $O$, luego \theTriangle{ABC} y \theTriangle{XYZ} están en perspectiva respecto al punto $O$.
@@ -303,19 +292,18 @@ Claramente, al igual que el~\refTheorem{\ref{t:pappus-theorem}}, el teorema de D
 \begin{proof}
     Sean $X = BC \cap DE$, $Y = DE \cap FA$ y $Z = FA \cap BC$.
 
-    \begin{multicols}{2}
-        \begin{figure}[H]
-            \centering
-            \input{figures/l5/figure-1}
-        \end{figure}
-        Al usar el teorema de \textbf{Menelao} tres veces en \theTriangle{XYZ}, primero con la transversal $A - B - M$, después con la transversal $P - C - D$ y finalmente con $F - N - E$, respectivamente, obtenemos que
-        \begin{align*}
-            &\ratioCM{X}{Y}{Z}{M}{A}{B} = 1,\\[3mm]
-            &\ratioCM{X}{Y}{Z}{D}{P}{C} = 1\ \text{y}\\[3mm]
-            &\ratioCM{X}{Y}{Z}{E}{F}{N} = 1.
-        \end{align*}
-    \end{multicols}
-    \vspace{-10mm}
+
+    \begin{figure}[H]
+        \centering
+        \input{figures/l5/figure-1}
+    \end{figure}
+    Al usar el teorema de \textbf{Menelao} tres veces en \theTriangle{XYZ}, primero con la transversal $A - B - M$, después con la transversal $P - C - D$ y finalmente con $F - N - E$, respectivamente, obtenemos que
+    \begin{align*}
+        &\ratioCM{X}{Y}{Z}{M}{A}{B} = 1, &&
+        &\ratioCM{X}{Y}{Z}{D}{P}{C} = 1 &&\text{y}&&
+        &\ratioCM{X}{Y}{Z}{E}{F}{N} = 1.
+    \end{align*}
+
     Multiplicando estas tres igualdades y reordenando los miembros, obtenemos que
     \begin{align*}
         \ratioCM{X}{Y}{Z}{M}{P}{N} \cdot \frac{(YA\cdot YF) \cdot (ZB\cdot ZC) \cdot (XD\cdot XE)}{(AZ\cdot FZ) \cdot (BX \cdot CX) \cdot (DY\cdot EF)} = 1. \tag{$\ast$}
