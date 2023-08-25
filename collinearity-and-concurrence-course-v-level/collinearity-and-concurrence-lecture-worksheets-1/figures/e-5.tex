@@ -1,19 +1,23 @@
 
 %dash pattern=on 5pt off 2pt
-%[fill = white, rounded corners = 5pt, inner sep=0.8pt]
-\begin{tikzpicture}[scale = 1.8]
-    \clip(-5.39,-0.83) rectangle (0.2,9.99);
-    \draw [line width=1.2pt] (-3.03,4.71) circle (1.56cm);
+%[fill = white, rounded corners = 4pt, inner sep = 1pt]
+\begin{tikzpicture}[scale = 1]
+    \clip(-4.56,-5.46) rectangle (12.59,8.27);
+    \draw [line width=1.2pt,domain=-4.56:12.59] plot(\x,{(--37.46--1.84*\x)/-12.37});
+    \draw [line width=1.2pt,domain=-4.56:12.59] plot(\x,{(-3.3-0.5*\x)/-3.11});
     \begin{scriptsize}
         \normalsize
-        \fill [color=black] (-3.03,4.71) circle (1.6pt);
-        \fill [color=black] (-2.11,3.45) circle (1.8pt);
-        \draw[color=black] (-2.09,3.11) node {$A$};
-        \fill [color=black] (-1.56,5.21) circle (1.8pt);
-        \draw[color=black] (-1.32,5.09) node {$D$};
-        \fill [color=black] (-4.32,3.84) circle (1.8pt);
-        \draw[color=black] (-4.63,3.57) node {$C$};
-        \fill [color=black] (-2.59,6.2) circle (1.8pt);
-        \draw[color=black] (-2.54,6.58) node {$B$};
+        \fill [color=black] (8.2,-4.25) circle (4pt);
+        \draw[color=black] (8.15,-3.62) node {$F$};
+        \fill [color=black] (-4.18,-2.41) circle (4pt);
+        \draw[color=black] (-4.2,-1.83) node {$B$};
+        \fill [color=black] (-0.81,-2.91) circle (4pt);
+        \draw[color=black] (-0.86,-2.29) node {$E$};
+        \fill [color=black] (1.89,1.37) circle (4pt);
+        \draw[color=black] (1.77,1.85) node {$D$};
+        \fill [color=black] (-1.22,0.87) circle (4pt);
+        \draw[color=black] (-1.36,1.42) node {$C$};
+        \fill [color=black] (4.96,1.86) circle (4pt);
+        \draw[color=black] (4.85,2.39) node {$A$};
     \end{scriptsize}
 \end{tikzpicture}

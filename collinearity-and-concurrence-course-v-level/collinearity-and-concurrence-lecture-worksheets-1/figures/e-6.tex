@@ -1,22 +1,29 @@
-
+\definecolor{ttqqcc}{rgb}{0.33,0.33,0.33}
 %dash pattern=on 5pt off 2pt
-%[fill = white, rounded corners = 5pt, inner sep=0.8pt]
-\begin{tikzpicture}[scale = 1.2]
-    \clip(-9.94,-1.27) rectangle (3.48,11.31);
-    \draw [line width=1.2pt] (-3.5,4.81) circle (5.8cm);
+%[fill = white, rounded corners = 4pt, inner sep = 1pt]
+\begin{tikzpicture}[scale = 0.2]
+    \clip(-25.62,-26.27) rectangle (66,33.59);
+    \fill[line width=0pt,color=ttqqcc,fill=ttqqcc,fill opacity=0.15] (6.61,12.72) -- (-11.52,12.51) -- (1.5,7) -- cycle;
+    \fill[line width=0pt,color=ttqqcc,fill=ttqqcc,fill opacity=0.15] (19.71,2.91) -- (-22.05,-22.92) -- (17.8,-21.31) -- cycle;
+    \draw [line width=1.2pt] (6.61,12.72)-- (-11.52,12.51);
+    \draw [line width=1.2pt] (-11.52,12.51)-- (1.5,7);
+    \draw [line width=1.2pt] (1.5,7)-- (6.61,12.72);
+    \draw [line width=1.2pt] (19.71,2.91)-- (-22.05,-22.92);
+    \draw [line width=1.2pt] (-22.05,-22.92)-- (17.8,-21.31);
+    \draw [line width=1.2pt] (17.8,-21.31)-- (19.71,2.91);
     \begin{scriptsize}
         \normalsize
-        \fill [color=black] (-9.28,5.22) circle (2.5pt);
-        \draw[color=black] (-9.7,5.01) node {$E$};
-        \fill [color=black] (2.27,4.23) circle (2.5pt);
-        \draw[color=black] (2.69,4.04) node {$B$};
-        \fill [color=black] (-1.11,10.09) circle (2.5pt);
-        \draw[color=black] (-1.07,10.68) node {$F$};
-        \fill [color=black] (0.34,0.46) circle (2.5pt);
-        \draw[color=black] (0.35,-0.17) node {$D$};
-        \fill [color=black] (-9.05,6.48) circle (2.5pt);
-        \draw[color=black] (-9.56,6.49) node {$A$};
-        \fill [color=black] (2.25,5.56) circle (2.5pt);
-        \draw[color=black] (2.75,5.66) node {$C$};
+        \fill [color=black] (-11.52,12.51) circle (15pt);
+        \draw[color=black] (-13.61,13.01) node {$B$};
+        \fill [color=black] (1.5,7) circle (15pt);
+        \draw[color=black] (2.06,5.38) node {$C$};
+        \fill [color=black] (6.61,12.72) circle (15pt);
+        \draw[color=black] (8.33,14.37) node {$A$};
+        \fill [color=black] (19.71,2.91) circle (15pt);
+        \draw[color=black] (21.18,4.55) node {$X$};
+        \fill [color=black] (-22.05,-22.92) circle (15pt);
+        \draw[color=black] (-23.95,-22.72) node {$Y$};
+        \fill [color=black] (17.8,-21.31) circle (15pt);
+        \draw[color=black] (17.84,-22.72) node {$Z$};
     \end{scriptsize}
 \end{tikzpicture}
