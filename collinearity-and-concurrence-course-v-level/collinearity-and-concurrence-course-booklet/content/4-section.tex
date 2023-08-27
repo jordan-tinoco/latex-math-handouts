@@ -1,0 +1,283 @@
+\newpage
+\section{Homotecia}
+
+
+
+\subsection{Homotecia en polígonos}
+
+\begin{section-definition.tcb}{Homotecia}{homothety-definition}
+    La homotecia es una transformación geométrica la que, dado un punto $P$ en el plano y un número real $k \neq 0$, traslada cada punto $Q$ del plano a un punto $Q'$ de modo que
+    \begin{itemize}
+        \item Los punto $P$, $Q$ y $Q'$ son colineaes, y
+        \item $\dfrac{Q' P}{QP} = k$.
+    \end{itemize}
+\end{section-definition.tcb}
+
+El punto $P$ se llama \textbf{centro de homotecia}, $k$ es la \textbf{razón de homotecia} y los punto $Q$ y $Q'$ son nombrados \textbf{elementos homólogos}.
+
+Si $k$ es un número real positivo, diremos que la homotecia es \textbf{directa}; en este caso, los elementos homólogos yacen a un mismo lado del centro de homotecia $P$; en contraste, la homotecia es \textbf{inversa} si $k$ es negativo, en la que los elementos homólogos yacen en lados opuestos con respecto a $P$.
+
+En caso de aplicar una homotecia con centro $P$ y razón $k$ a $n$ puntos $P_1$, $P_2$, $\cdots$, $P_n$ y obtener los puntos homólogos $P'_1$, $P'_2$, $\cdots$, $P'_n$, se dice que los polígonos, no necesariamente convexos, $P_1 P_2 \cdots P_n$ y $P'_1 P'_2 \cdots P'_n$ son \textbf{homotéticos}.
+En esta situación todos los elementos correspondientes (tales como lados, diagonales, etc) también son elementos homólgos.
+
+\begin{figure}[H]
+    \centering
+    \input{figures/l6/figure-1}
+    \caption{Una homotecia directa envía \theTriangle{ABC} a \theTriangle{A' B' C'} y una inversa manda \theTriangle{ABC} a \theTriangle{A'' B'' C''}.}
+    \label{fig:homothety-definition}
+\end{figure}
+
+\begin{remark.tcb}
+    Para una mayor fomalidad, usaremos la siguiente notación;
+    \[
+        \homothety{O}{\pm k}{P}{P'}
+    \]
+    La cual se lee ``La homotecia directa/inversa con centro $O$ y razón $k$, envía $P$ a $P'$."
+\end{remark.tcb}
+
+Utilizando la notación, para describir la figura~\ref{fig:homothety-definition}, quedaría como:
+\[
+    \homothety{P}{k_1}{\theTriangle{ABC}}{\theTriangle{A' B' C'}} \quad \text{ y } \quad \homothety{P}{- k_2}{\theTriangle{ABC}}{\theTriangle{A'' B'' C''}}.
+\]
+
+\subsubsection{Propiedades}
+Entre las propiedades más importantes de la homotecia tenemos:
+\begin{itemize}
+    \item Los lados correspondientes de dos figuras homotéticas son paralelos.
+    \item La razón de las áreas de dos figuras homotéticas es igual al cuadrado de la razón de homotecia.
+    \item Los puntos notables de figuras homotéticas son siempre colineales con el centro de homotecia.
+    \item La homotecia perserva ángulo y por ende tangencias.
+\end{itemize}
+
+
+\subsubsection{Ejemplos}
+
+\begin{section-example.tcb}{La recta de Euler}{}
+    Dado un triángulo cualquiera el circuncentro, ortocentro y baricentro son colineales.
+\end{section-example.tcb}
+
+\begin{multicols}{2}
+
+    \begin{solution}
+        Sea \theTriangle{ABC} el triángulo, $H$ y $O$ su ortocentro y circuncentro; $D$ y $E$ pies de alturas desde $A$ y $B$; $L$ y $M$ puntos medios de $BC$ y $AC$, respectivamente.
+
+        Claramente \homothety{G}{-2}{\theTriangle{LMO}}{\theTriangle{ABH}}, es decir los triángulos \theTriangle{ABH} y \theTriangle{LMO} son homotéticos, pues sus lados son paralelos y
+        \[
+            k = \dfrac{AB}{LM} = -2.
+        \]
+        Luego, $AL$, $BM$ y $HO$ son concurrentes en el baricentro $G$.
+    \end{solution}
+
+    \begin{figure}[H]
+        \centering
+        \input{figures/l6/figure-2}
+        \caption{La Lecta de Euler.}
+    \end{figure}
+\end{multicols}
+
+
+\begin{section-example.tcb}{La circunferencia de los nueve puntos}{}
+    Dado un triángulo cualquiera, los pies de las alturas, los puntos medios de los lados, y los puntos medios de los segmentos que van del vértice al ortocentro están en una misma circunferencia.
+\end{section-example.tcb}
+\begin{solution}
+    \begin{multicols}{2}
+        Sea \theTriangle{ABC} el triángulo, $D$, $E$ y $F$ pies de alturas, $X$, $Y$ y $Z$ intersecciones de las alturas con el circuncírculo, $L$, $M$ y $N$ puntos medios, $A'$, $B'$ y $C$ puntos diametralmente opuestos, y $P$, $Q$ y $R$ puntos medios de $AH$, $BH$ y $CH$, respectivamente.
+        El centro de esta circunferencia se ubica sobre la recta que va del ortocentro al circuncentro.
+
+
+        Recordemos que $D$, $E$ y $F$ son puntos medios de $HX$, $HY$ y $HX$, respectivamente.
+        Y también que $L$, $M$ y $N$ son puntos medios de $HA'$, $HB'$ y $HC'$, respectivamente.
+
+
+        De este modo el eneágono $AC' ZBXA' CB' Y$ es homotético a $PNFQDLRME$ con razón $1/2$ y centro $H$, y como el primero es cíclico, el segundo también debe serlo.
+
+        Pero como el centro de homotecia es $H$ y la razón \inverseOfD{2}, el centro del círculo de los nueve puntos debe ser el punto medio de $OH$.\qedhere
+        \begin{figure}[H]
+            \centering
+            \input{figures/l6/figure-3}
+            \caption{Circunferencia de los nueve puntos.}
+        \end{figure}
+    \end{multicols}
+\end{solution}
+
+
+
+\subsection{Homotecia en circunferencias}
+Dadas dos circunferencias de radios finitos y no concéntricas, siempre existen dos homotecias que transforman una circunferencia en la otra.
+
+\begin{section-definition.tcb}{Exsimilicentro e insimilicentro}{}
+    Sean dos circunferencias $\Omega_1$ y $\Omega_2$ con centros $O_1$ y $O_2$ y radios $r_1$ y $r_2$, respectivamente.
+    Consideremos los puntos $P$ y $Q$ tales que
+    \[
+        \homothety{P}{\dfrac{r_1}{r_2}}{\Omega_1}{\Omega_2} \quad \  \text{y}\  \quad \homothety{Q}{-\dfrac{r_1}{r_2}}{\Omega_1}{\Omega_2}.
+    \]
+    Entonces $P$ y $Q$ son el \textbf{exsimilicentro} e \textbf{insimilicentro} de $\Omega_1$ y $\Omega_2$, respectivamente.
+    Además, son puntos únicos.
+\end{section-definition.tcb}
+
+¿Cómo construir el exsimilicentro y el insimilicentro?
+Un método general es el siguiente: Trazamos dos diámetros $AB$ y $CD$ en $\Omega_1$ y $\Omega_2$, respectivamente, tales que $AB || CD$.
+Luego, $P = AD \cap BD$ y $Q = AD \cap BD$.
+
+\begin{figure}[H]
+    \centering
+    \input{figures/l6/figure-5}
+    \caption{Trazado general del exsimilicentro e insimilicentro de dos circunferencias.}
+\end{figure}
+
+Una situación particular y muy frecuente en competiciones matemáticas sucede cuando $\Omega_1$ y $\Omega_2$ están en ``posición general", es decir, no son cocéntricas, sus radios poseen distinta longitud positiva y no poseen puntos comunes.
+En este contexto, podemos obtener el exsimilicentro $P$ como el punto común de las tangentes externas de $\Omega_1$ y $\Omega_2$, mientras tanto, $Q$ sería el punto de intersección de las tangentes internas de $\Omega_1$ y $\Omega_2$, de aquí los prefijos ex- e in-, como se muestra en la figura~\ref{fig:ex-in-similaricenter}.
+
+\begin{figure}[H]
+    \centering
+    \input{figures/l6/figure-4}
+    \caption{El exsimilicentro $P$ e insimilicentro $Q$ de $\Omega_1$ y $\Omega_2$.}
+    \label{fig:ex-in-similaricenter}
+\end{figure}
+
+\begin{section-theorem.tcb}{Monge}{monge-theorem}
+    Sean $\Omega_1$, $\Omega_2$ y $\Omega_3$ tres circunferencias.
+    Los exsimilicentros $P_1$ de $\Omega_1$ y $\Omega_2$; $P_2$ de $\Omega_2$ y $\Omega_3$, y $P_3$ de $\Omega_3$ y $\Omega_1$ son colineales.
+\end{section-theorem.tcb}
+
+\begin{proof}
+    Sea $O_1$ el circuncentro de $\Omega_1$ y $r_1$ el radio.
+    Se definen de manera análoga $O_2$, $O_3$, $r_2$ y $r_3$.
+
+    Por el teorema de Menelao aplicado al \theTriangle{O_1 O_2 O_3}, es suficiente probar que
+    \[
+        \ratioCM{O_3}{O_1}{O_2}{P_3}{P_1}{P_2} = 1,
+    \]
+    \begin{figure}[H]
+        \centering
+        \input{figures/l6/figure-6}
+        \caption{Teorema de Monge.}
+    \end{figure}
+    pero por definción, tenemos que
+    \[
+        \ratioCM{O_3}{O_1}{O_2}{P_3}{P_1}{P_2} = \dfrac{r_3}{r_1} \cdot \dfrac{r_1}{r_2} \cdot \dfrac{r_2}{r_3} = 1
+    \]
+    la conclusión es inmedianta. \qedhere
+\end{proof}
+
+
+\begin{section-theorem.tcb}{Monge D'Alembert}{monge-d-alembert-theorem}
+    Sean $\Omega_1$, $\Omega_2$ y $\Omega_3$ tres circunferencias.
+    El exsimilicentro de $\Omega_1$ y $\Omega_2$, el insimilicentro de $\Omega_2$ y $\Omega_3$, y el insimilicentro de $\Omega_3$ y $\Omega_1$ son colineales.
+\end{section-theorem.tcb}
+\begin{proof}
+    Similar a la prueba del~\refTheorem{\ref{t:monge-theorem}}.
+    Esta demostración se deja como ejercicio al lector.
+\end{proof}
+
+\begin{figure}[H]
+    \centering
+    \input{figures/l6/figure-7}
+    \caption{Teorema de Monge D'Alembert.}
+\end{figure}
+
+
+
+\subsubsection{Estrategias}
+La homotecia en circunferencias resulta útil cuando:
+\begin{itemize}
+    \item Hay tangentes comunes.
+    \item Hay circunferencias tangentes, interna o externamente.
+    \item Hay cuerdas paralelas.
+\end{itemize}
+
+\subsubsection{Ejemplos}
+
+\begin{section-example.tcb}{}{}
+    Dos circunferencias iguales $C_1$ y $C_2$ son tangentes internamente a un circunferencia $C_3$ en dos puntos $A$ y $B$, respectivamente.
+    Sea $C$ un punto en $C_3$.
+    Si $D$ y $E$ son las intersecciones de $AC$ y $BC$ con $C_1$ y $C_2$, respectivamente, pruebe que $AB || DE$.
+\end{section-example.tcb}
+\begin{solution}
+    Rápidamente nos damos cuenta de \homothety{A}{k}{C_1}{C_3} y \homothety{B}{k}{C_2}{C_3}.
+    \begin{multicols}{2}
+        \begin{figure}[H]
+            \centering
+            \input{figures/l6/figure-8}
+        \end{figure}
+        En la homotecia se tiene que $D \to C$ y $E \to C$, y cómo los radios son iguales la razón de homotecia es la misma, en este caso $k$, entonces
+        \[
+            \dfrac{AD}{AC} = \dfrac{BE}{BC} = k \quad \implies \quad AB || DE. \qedhere
+        \]
+    \end{multicols}
+\end{solution}
+
+
+\begin{section-example.tcb}{}{}
+    Sea $ABCD$ un cuadrilátero convexo ex-inscrible\footnote{Existe una circunferencia tangente externamente a $AB$, $BC$, $CD$ y $DA$.} tal que $D$ es el más cercano a la circunferencia exinscrita.
+    Sean $E$ y $F$ las intersecciones de $AB$ con $CD$ y $BC$ con $AD$, respectivamente, y sean $K$ y $L$ las intersecciones de las bisectrices de $\angle DAE$ con $DE$ y de $\angle DCF$ con $DF$, respectivamente.
+    Demostrar que $AC$, $KL$ y la bisectriz del ángulo $\angle ADE$ concurren.
+\end{section-example.tcb}
+\begin{solution}
+    Sea $\Gamma$ la circunferencia ex-inscrita a $ABCD$, y sean $\Gamma_1$ y $\Gamma_2$ los incírculos de $ADE$ y $CDF$, respectivamente.
+    Llamemos $O$, $O_1$ y $O_2$ a los centros de $\Gamma$, $\Gamma_1$ y $\Gamma_2$ respectivamente.
+
+    \begin{figure}[H]
+        \centering
+        \input{figures/l6/figure-9}
+    \end{figure}
+
+    Como $DE$ es la tangente común interna a $\Gamma$ y $\Gamma_1$, y además $AO$ es bisectriz, entonces $K$ es el centro de homotecia interno de $\Gamma$ y $\Gamma_1$.
+    De manera análoga $L$ es el centro de similitud interno entre $\Gamma$ y $\Gamma_2$.
+    Pero $A$ y $C$ son los centro de homotecia externa de $\Gamma$ con $\Gamma_1$ y $\Gamma$ con $\Gamma_2$, respectivamente, entonces por el~\refTheorem{\ref{t:monge-d-alembert-theorem}} $AC$ y $KL$ deben cortarse en el centro de homotecia externo de $\Gamma_1$ y $\Gamma_2$, y así la recta $O_1 O_2$, que es la bisectriz de $\angle ADE$, debe pasar por dicho punto.
+\end{solution}
+
+
+
+
+\subsection{Agregados culturales y preguntas}
+
+\begin{itemize}
+    \item La palabra \textbf{homotecia} deriva del griego \textit{homo} = semejante, y del \textit{tithénai} = colocar, disponer.
+    \item El triángulo medial es el que se forma con los puntos medios de los lados de un triángulo dado.
+    \item La composición de dos homotecias se logra aplicando una homotecia con un centro dado, y a esa transformación se le aplica otra homotecia con otro centro dado.
+    El resultado vendría siendo algo como una homotecia de la homotecia inicial.
+    \item Existe una transformación llamada \textbf{semejanza espiral} o \textbf{rotohomotecia}.
+    La cual es una composición de una homotecia y una rotación respecto a un centro dado.
+    Esta transformación es muy útil en la resolución de problemas de mayor dificultad.
+\end{itemize}
+
+
+
+\subsection{Ejercicios y Problemas}
+
+Sección de ejercicios y problemas para el autoestudio.
+
+\begin{section-exercise}
+    Da un triángulo \theTriangle{ABC} y punto $O$ fuera de él, construye con regla y compas un triángulo \theTriangle{XYZ} tal que \homothety{O}{2}{\theTriangle{ABC}}{\theTriangle{XYZ}}.
+\end{section-exercise}
+
+
+\begin{section-problem}
+    Dado el triángulo \theTriangle{ABC} y su circuncírculo $\Omega$, demostrar que el triángulo medial $A' B' C'$ es homotético al triángulo \theTriangle{ABC}.
+    Encontrar el centro de homotecia y la razón de homotecia.
+\end{section-problem}
+
+\begin{section-problem}
+    Demostar que si dos circunferencias son tangentes internamente en un punto $A$ y si una secante común interseca a las circunferencias en $B'$, $B$, $C$ y $C'$, entonces $\angle B' AC = \angle BAC'$.
+\end{section-problem}
+
+\begin{section-problem}
+    El \theTriangle{ABC} tiene inscrita una circunferencia.
+    Supongamos que $M$ es el punto de tangencia de la circunferencia con el lado $AC$, $MK$ es el diámetro.
+    La recta $BK$ corta $AC$ en el punto $N$.
+    Demostrar que $AM = NC$
+\end{section-problem}
+
+\begin{section-problem}
+    El incírculo de \theTriangle{ABC} tiene centro $I$ y toca a $BC$ en $E$.
+    $AD$ es una altura de \theTriangle{ABC}, $M$ es el punto medio $AD$.
+    Sea $I_A$ el A-excentro de \theTriangle{ABC}.
+    Demostrar que $M$, $E$ e $I_A$ con colienales.
+\end{section-problem}
+
+\begin{section-problem}
+    Sea $\Omega$ y $\Gamma$ dos círculos tangentes en $D$, de forma que $\Gamma$ yace en el interior de $\Omega$.
+    Se traza una cuerda de $AB$ en $\Omega$ de modo que $AB$ es tangente a $\Gamma$ en $C$.
+    Probar que $DC$ bisecta al arco $\wideparen{AB}$ que no contiene a $AD$.
+\end{section-problem}

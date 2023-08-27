@@ -111,9 +111,11 @@ Si $\angle XAB = \angle XAC$, entonces los puntos $A$, $B$ y $C$ son colineales.
 \subsection{Teorema de Pappus}
 
 \begin{section-theorem.tcb}{Teorema de Pappus}{pappus-theorem}
-    Sean $A$, $B$ y $C$ tres puntos colineales (no necesariamente en ese orden) y $D$, $E$ y $F$ otros tres puntos colineales (no necesariamente en ese orden).
+    Sean $A$, $B$ y $C$ tres puntos colineales, no necesariamente en ese orden, y $D$, $E$ y $F$ otros tres puntos colineales, no necesariamente en ese orden.
     Entonces, los puntos de intersección de las rectas $AE$, $BD$; $AF$, $CD$ y $BF$, $CE$ son colineales.
 \end{section-theorem.tcb}
+
+Naturalmente, existen muchas configuraciones aparte de las mostradas en la figura~\ref{fig:pappus-theorem}, pero estas son las más comunes.
 
 \begin{figure}[H]
     \centering
@@ -121,8 +123,6 @@ Si $\angle XAB = \angle XAC$, entonces los puntos $A$, $B$ y $C$ son colineales.
     \caption{Teorema de Pappus.}
     \label{fig:pappus-theorem}
 \end{figure}
-
-Naturalmente, existen muchas configuraciones aparte de las mostradas en la figura~\ref{fig:pappus-theorem}, pero estas son las más comunes.
 
 \begin{proof}
     Sean $M = AE \cap BD$, $N = BF \cap CE$ y $P = AF \cap CD$.
@@ -205,6 +205,7 @@ Naturalmente, existen muchas configuraciones aparte de las mostradas en la figur
         Es decir $N = \overline{BF} \cap \overline{CE}$, $P = \overline{AF} \cap \overline{CD}$ y $M = \overline{AE} \cap \overline{BD}$.
     \end{multicols}
 \end{remark.tcb}
+
 
 
 \subsection{Teorema de Desargues}
@@ -291,23 +292,20 @@ Claramente, al igual que el~\refTheorem{\ref{t:pappus-theorem}}, el teorema de D
 
 \begin{proof}
     Sean $X = BC \cap DE$, $Y = DE \cap FA$ y $Z = FA \cap BC$.
-
-
-    \begin{figure}[H]
-        \centering
-        \input{figures/l5/figure-1}
-    \end{figure}
     Al usar el teorema de \textbf{Menelao} tres veces en \theTriangle{XYZ}, primero con la transversal $A - B - M$, después con la transversal $P - C - D$ y finalmente con $F - N - E$, respectivamente, obtenemos que
     \begin{align*}
         &\ratioCM{X}{Y}{Z}{M}{A}{B} = 1, &&
         &\ratioCM{X}{Y}{Z}{D}{P}{C} = 1 &&\text{y}&&
         &\ratioCM{X}{Y}{Z}{E}{F}{N} = 1.
     \end{align*}
-
     Multiplicando estas tres igualdades y reordenando los miembros, obtenemos que
     \begin{align*}
         \ratioCM{X}{Y}{Z}{M}{P}{N} \cdot \frac{(YA\cdot YF) \cdot (ZB\cdot ZC) \cdot (XD\cdot XE)}{(AZ\cdot FZ) \cdot (BX \cdot CX) \cdot (DY\cdot EF)} = 1. \tag{$\ast$}
     \end{align*}
+    \begin{figure}[H]
+        \centering
+        \input{figures/l5/figure-1}
+    \end{figure}
     Ahora por la \textbf{Propiedad~\ref{power-external-point}} sabemos que para los puntos $X$, $Y$ y $Z$ se cumple que
     \begin{align*}
         XD \cdot XE = XC \cdot XB \quad \land \quad
@@ -384,21 +382,22 @@ La demostración de este caso y de cualquier otro es análoga a la primera.
 El~\refTheorem{\ref{t:pascal-theorem}} puede presentar versiones degeneradas, aunque puede suceder, el caso más habitual ya no consiste en un paralelismo, sino en la transformación de un polígono de seis lados a un polígono de cinco, cuatro o tres lados.
 
 
-\begin{section-example.tcb}{}{}
+\begin{section-example.tcb}{}{lemoine-line}
     Sea $\omega$ el circuncírculo del \theTriangle{ABC}.
     Las tangentes a $\omega$ por lo puntos $A$, $B$ y $C$ intersecan a las rectas $BC$, $CA$ y $AB$ en los puntos $D$, $E$ y $F$, respectivamente.
     Probar que los puntos $D$, $E$ y $F$ está alineados.
 \end{section-example.tcb}
 
-\begin{figure}[H]
-    \centering
-    \input{figures/l5/figure-4}
-\end{figure}
-
 \begin{solution}
     Aplicando el~\refTheorem{\ref{t:pascal-theorem}} al hexágono degenerado $AABBCC$.
     Tenemos que los puntos $AA \cap BC = D$, $AB \cap CC = F$ y $BB \cap CA = E$ son colineales.
 \end{solution}
+
+\begin{figure}[H]
+    \centering
+    \input{figures/l5/figure-4}
+    \caption{Ejemplo~\ref{e:lemoine-line}.}
+\end{figure}
 
 Existen $\dfrac{5!}{2} = 60$ maneras de posibles de formar un hexágono con 6 puntos distribuidos en una circunferencia, y, por el \refTheorem{\ref{t:pascal-theorem}}, a cada hexágono le corresponde una recta de Pascal.
 Estas 60 rectas de Pascal pasan de tres en tres por 20 puntos llamados puntos de Steiner, que su vez están de cuatro en cuatro sobre 15 rectas, llamadas rectas de Plucker.
