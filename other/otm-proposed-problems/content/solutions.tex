@@ -1,0 +1,111 @@
+\newpage
+\section{\large Soluciones y Criterios}
+
+\textbf{Problema 1.1.}
+\begin{solution}[1]
+    Tras un breve análisis notamos que
+    \begin{equation}
+        S(x) = - \frac{x + 3}{7},\ \text{para $x = -10, -17, -24$}.
+    \end{equation}
+    Por lo tanto, si definimos al polinomio $T(x) = S(x) + \dfrac{x + 3}{7}$, entonces los valores $-10$, $-17$ y $-24$ será raíces de $T(x)$.
+    Además, como $S(x)$ es mónico, entonces $T(x)$ también lo será.
+    Así, por el teorema del factor podemos escribir a $T(x)$ como
+    \begin{equation}
+        T(x) = (x + 10)(x + 17)(x + 24)
+    \end{equation}
+    Por consiguiente,
+    \begin{align*}
+        &T(-3) = S(-3) + \dfrac{-3 + 3}{7} = S(-3) + 0\\[2mm]
+        &T(-3) = (-3 + 10)(-3 + 17)(-3 + 24)\\[2mm]
+        &S(-3) = (7)(14)(21) = 2058
+    \end{align*}
+    Luego, $S(-3) - 35 = 2058 - 35 = \boxed{2023}$.
+\end{solution}
+
+
+\textbf{Solución 1. Criterios de evaluación.}
+\begin{itemize}
+    \item \textbf{3 puntos.} Por llegar al resultado $(1)$.
+    \item \textbf{3 puntos.} Por llegar al resultado $(2)$.
+    \item \textbf{1 puntos.} Por indicar la respuesta correcta.
+\end{itemize}
+\vspace{10mm}
+
+\begin{solution}[2]
+    Como $S(x)$ es un polinomio cúbico y mónico, podemos decir que tiene la forma
+    \begin{equation}
+        S(x) = x^3 + ax^2 + bx + c.
+    \end{equation}
+    Así, al utilizar los valores que nos dan de datos, podemos formar el siguiente sistema de ecuaciones $3 \times 3$
+    \begin{equation}
+        \begin{cases}
+            S(-10) = (-10)^3 + a (-10)^2 + b (-10) + c = 1\\
+            S(-17) = (-17)^3 + a (-17)^2 + b (-17) + c = 2\\
+            S(-24) = (-24)^3 + a (-24)^2 + b (-24) + c = 3
+        \end{cases}
+        \implies
+        \begin{cases}
+            100a - 10b + c = 1001\\
+            289a - 17b + c = 4915\\
+            576a - 24b + c = 13827
+        \end{cases}
+    \end{equation}
+    Luego de resolver este sistema, vemos que tiene como soluciones a    $a = 51$, $b = \dfrac{5725}{7}$ y $c = \dfrac{28557}{7}$, por consiguiente
+    \begin{equation}
+        S(x) = x^3 + 51x^2 + \frac{5725}{7}x + \frac{28557}{7}.
+    \end{equation}
+    Así, $S(-3) - 35 = (-3)^3 + 51(-3)^2 + \frac{5725}{7}(-3) + \frac{28557}{7} - 35 = 2058 - 35 = \boxed{2023}$.
+\end{solution}
+
+\textbf{Solución 2. Criterios de evaluación.}
+\begin{itemize}
+    \item \textbf{1 puntos.} Por llegar al resultado $(3)$.
+    \item \textbf{2 puntos.} Por llegar al resultado $(4)$.
+    \item \textbf{3 puntos.} Por resolver el sistema correctamente y llegar al resultado $(5)$.
+    \item \textbf{1 puntos.} Por indicar la respuesta correcta.
+\end{itemize}
+
+
+
+\newpage
+\textbf{Problema 1.2.}
+\begin{solution}[1]
+    Por las fórmulas de Vieta sabemos que la suma de las raíces es igual al coeficiente de $x^2$ dividido entre el coeficiente principal por menos uno en el polinomio dado, es decir
+    \[a + b + c =  -\frac{0}{6} = 0.\]
+    Además, es conocido que si $x + y + z = 0$, entonces $x^3 + y^3 + z^3 = 3xyz$.
+    Es claro que $(a + b) + (b + c) + (c + a) = 2(a + b + c) = 0$, entonces $(a + b)^3 + (b + c)^3 + (c + a)^3 = 3(a + b)(b + c)(c + a) = 3(-c)(-a)(-b) = -3abc$.
+    Luego, sabemos que el producto de las raíces es el término independiente entre el coeficiente principal por menos uno, es decir
+    \[
+        (a + b)^3 + (b + c)^3 + (c + a)^3 = -3\left(-\frac{4046}{6}\right) = \boxed{2023}.\qedhere
+    \]
+\end{solution}
+\begin{solution}[2]
+    Por las fórmulas de Vieta sabemos que $a + b + c = 0$.
+    Entonces,
+    \[
+        (a + b)^3 + (b + c)^3 + (c + a)^3 = (-c)^3 + (-a)^3 + (-b)^3 = -(a^3 + b^3 + c^3)
+    \]
+    Por propiedad sabemos que $-(a^3 + b^3 + c^3) = - 3abc$, nuevamente por Vieta
+    \[
+        (a + b)^3 + (b + c)^3 + (c + a)^3 = -3\left(-\frac{4046}{6}\right) = \boxed{2023}.\qedhere
+    \]
+\end{solution}
+
+\begin{solution}[3]
+    Desarrollando, tenemos que
+    \begin{align*}
+        (a + b)^3 + (b + c)^3 + (c + a)^3 &= (a^3 + 3a^2 b + 3ab^2 + b^3) + (b^3 + 3b^2 c + 3bc^2 + c^3) + (c^3 + 3c^2 a + 3ca^2 + a^3)\\
+                                          &= (3a^3 + 3a^2 b + 3ac^2) - a^3 + (3b^3 + 3b^2 a + 3bc^2) - b^3 \\&+ (3c^3 + 3c^2 a + 3c^2 a) - c^3\\
+                                            &= 3a^2(a + b + c) - a^3 + 3b^2(a + b + c) - b^3 + 3c^2(a + b + c) - c^3\\
+                                        &= - (a^3 + b^3 + c^3)
+    \end{align*}
+    Luego el mismo procediemiento en las soluciones 1 y 2.
+\end{solution}
+
+
+\textbf{Criterios de evaluación.}
+\begin{itemize}
+    \item \textbf{2 puntos.} Por utilizar correctamente las fórmulas de Vieta..
+    \item \textbf{4 puntos.} Por deducir que $(a + b)^3 + (b + c)^3 + (c + a)^3 = -3abc$.
+    \item \textbf{1 puntos.} Por indicar la respuesta correcta.
+\end{itemize}
