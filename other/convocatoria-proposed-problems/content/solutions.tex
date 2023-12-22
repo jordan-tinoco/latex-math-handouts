@@ -1,0 +1,75 @@
+\newpage
+\section{\large Soluciones}
+
+\textbf{Problema 1.1.}
+\begin{solution}
+    Notemos que $\inverseOf{i(i + 1)} = \inverseOf{i} - \inverseOf{i + 1}$, por lo que cada sumando del lado izquierdo de la ecuación lo podemos expresar como fraciones parciales.
+    Donde claramente, dicha suma es telescópica, es decir
+    \begin{align*}
+        \iff \left[\inverseOf{x - 1} - \inverseOf{x}\right] + \left[ \inverseOf{x} - \inverseOf{x + 1}\right] + \cdots + \left[\inverseOf{x + 62} - \inverseOf{x + 63}\right] &= \frac{64}{57}\\[2mm]
+        \iff \inverseOf{x - 1} - \inverseOf{x + 63} &= \frac{64}{57}\\[2mm]
+        \iff \frac{64}{(x - 1)(x + 63)} &= \frac{64}{57}\\[2mm]
+        \iff (x - 1)(x + 63) &= 57\\[2mm]
+        \iff x^2 + 62x - 63 &= 57\\[2mm]
+        \iff x^2 + 62x + 31^2 &= 120 + 31^2\\[2mm]
+        \iff (x + 31)^2 &= 1081
+    \end{align*}
+    Luego, las soluciones son $x_1 = -31 + \sqrt {1081}$ y $x_2 = -31 - \sqrt {1081}$.
+\end{solution}
+
+\textbf{Problema 1.2.}
+\begin{solution}
+    Al sacar factor cómún $\frac{x^2}{2}$ tenemos que
+    \begin{align*}
+        \frac{x^2}{2}\left(1 + \frac{1}{1 + 2} + \frac{1}{1 + 2 + 3} + \cdots + \frac{1}{1 + 2 + 3 + \cdots + 4047}\right) &= 2024^2 - 1012 &&\\[2mm]
+        \frac{x^2}{2}\left(\sum_{i = 1}^{4047} \inverseOf{1 + 2 + \cdots + i}\right) &= 2024^2 - 1012 &&\\[2mm]
+        \frac{x^2}{2}\left(\sum_{i = 1}^{4047} \inverseOf{\frac{i(i + 1)}{2}}\right) &= 2024^2 - 1012 &&  (\text{Por Gauss})\\[2mm]
+        \frac{x^2}{2}\left(\sum_{i = 1}^{4047} \frac{2}{i(i + 1)}\right) &= 2024^2 - 1012 &&
+    \end{align*}
+    Notemos que $\inverseOf{i(i + 1)} = \inverseOf{i} - \inverseOf{i + 1}$, así la suma en cuestión es telescópica, luego
+    \begin{align*}
+        x^2\left(\frac{1}{1} - \frac{1}{4047 + 1}\right) &= 2024\left(2024 - \inverseOf{2}\right) &&\\[2mm]
+        x^2\left(\frac{4047}{4048}\right) &= \frac{2024 \cdot 4047}{2} &&\\[2mm]
+        x^2 &= 2024^2 \quad \therefore x = \pm 2024&& \qedhere
+    \end{align*}
+\end{solution}
+
+\textbf{Problema 1.3.}
+\begin{solution}
+    Primero encontremos $(Q \circ P)(x)$
+    \begin{align*}
+    &(Q \circ P)(x) = Q(P(x)) = 3\left( \frac{x - 1}{3} \right)^2 - 2\left( \frac{x - 1}{3} \right)\\
+    &(Q \circ P)(x) = 3\left( \frac{x^2 - 2x + 1}{9} \right) - \frac{2x - 2}{3}\\
+    &(Q \circ P)(x) = \frac{x^2 - 2x + 1}{3} - \frac{2x - 2}{3} = \frac{x^2 - 2x + 1 - (2x - 2)}{3}\\
+    &(Q \circ P)(x) = \frac{x^2 - 4x + 3}{3}
+    \end{align*}
+    Sustituimos $(Q \circ P)(x)$ en $R(x)$ y simplificamos
+    \begin{align*}
+        &R(x) = (Q \circ P)(x) - 673x = \frac{x^2 - 4x + 3}{3} - 673x\\
+        &R(x) = \frac{x^2 - 4x + 3 - 2019x}{3} = \frac{x^2 - 2023x + 3}{3}
+    \end{align*}
+    Finalmente, evaluamos $R(2025)$
+    \[
+        R(2025) = \frac{(2025)^2 - 2025\times 2023 + 3}{3} = 2\cdot 675 + 1 = 1351 \qedhere
+    \]
+\end{solution}
+
+\textbf{Problema 1.4.}
+\begin{solution}
+    Sabemos que $a^3 + 3a - 1 = 0 \implies a^3 = 1 - 3a$.
+    También, sabemos por Vieta que $a + b + c = 0$, $ab + bc + ca = 3$ y $abc = 1$.
+    Por lo tanto, la expresión es equivalente a
+    \begin{align*}
+        &\frac{1}{1 - 3a + 1 - 3b} + \frac{1}{1 - 3b + 1 - 3c} + \frac{1}{1 - 3c + 1 - 3a}\\[2mm]
+        &\implies \frac{1}{2 - 3(a + b)} + \frac{1}{2 - 3(b + c)} + \frac{1}{2 - 3(c + a)}\\[2mm]
+        &\implies \frac{1}{2 + 3a} + \frac{1}{2 + 3b} + \frac{1}{2 + 3c}
+    \end{align*}
+    Luego, solo desarrollamos y evaluamos
+    \begin{align*}
+        &\frac{(3a + 2)(3b + 2) + (3b + 2)(3c + 2) + (3c + 2)(3a + 2)}{(3a + 2)(3b + 2)(3c + 2)}\\[2mm]
+        &\implies \frac{(9ab + 6a + 6b + 4) + (9bc + 6b + 6c + 4) + (9ca + 6c + 6a + 4)}{27abc + 12(a + b + c) + 18(ab + bc + ca) + 8}\\[2mm]
+        &\implies \frac{ 12(a + b + c) + 9(ab + bc + ca) + 12}{27abc + 12(a + b + c) + 18(ab + bc + ca) + 8}\\[2mm]
+        &\implies \frac{ 12(0) + 9(3) + 12}{27(1) + 12(0) + 18(3) + 8} = \frac{27 + 12}{27 + 54 + 8}  = \boxed{\frac{39}{89}}\qedhere
+    \end{align*}
+
+\end{solution}

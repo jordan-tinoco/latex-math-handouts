@@ -1,0 +1,173 @@
+\theoremstyle{definition}
+
+%With section
+\newtheorem{lemma}{Lema}[section]
+\newtheorem{example}{Ejemplo}[section]
+\newtheorem{theorem}{Teorema}[chapter]
+\newtheorem{proposition}{Proposición}[section]
+\newtheorem{problem}{Problema}[section]
+\newtheorem{property}{Propiedad}[section]
+\newtheorem{exercise}{Ejercicio}[section]
+\newtheorem{corollary}{Corolario}[section]
+\newtheorem{definition}{Definición}[section]
+
+%Without numeration
+\newtheorem*{note}{Nota}
+
+
+%Text Color Box styles
+\newtcbtheorem[use counter*= theorem, number within=chapter]{theorem.tcb}{Teorema}
+{
+    enhanced,
+    frame empty,
+    interior empty,
+    coltitle = black,
+    colbacktitle = gray!15!white,
+    fonttitle = \bfseries,
+    extras broken = {frame empty, interior empty},
+    borderline = {0.3mm}{0mm}{black},
+    breakable = true,
+    top = 4mm,
+    before skip = 3.5mm,
+    attach boxed title to top left = {yshift = -3mm, xshift = 3mm},
+    boxed title style = {boxrule = 0mm, borderline = {0.1mm}{0mm}{black}},
+    varwidth boxed title,
+    separator sign none, description delimiters parenthesis,
+    description font=\bfseries,
+    terminator sign={.\hspace{1mm}}
+}
+{t}
+
+\newtcbtheorem[number within=section]{tcb-problem-style}{Problema}
+{
+    enhanced,
+    frame empty,
+    interior empty,
+    coltitle = black,
+    colbacktitle = white,
+    fonttitle = \bfseries,
+    extras broken = {frame empty, interior empty},
+    borderline = {0.4mm}{0mm}{black},
+    breakable = true,
+    top = 4mm,
+    before skip = 3.5mm,
+    attach boxed title to top left = {yshift = -3mm, xshift = 3mm},
+    boxed title style = {boxrule = 0.3mm, borderline = {0.3mm}{0mm}{black}},
+    varwidth boxed title,
+    terminator sign={.\hspace{1mm}}
+}
+{p}
+
+\newtcbtheorem[number within=section]{example.tcb}{Ejemplo}
+{
+    enhanced,
+    frame empty,
+    interior empty,
+    coltitle = black,
+    colback = white,
+    colbacktitle = gray!15!white,
+    fonttitle = \bfseries,
+    borderline = {0.2mm}{0mm}{black},
+    breakable = true,
+    before skip = 3.5mm,
+    after skip = 0mm,
+    top = 1mm,
+    bottom = 1mm,
+    left = 1mm,
+    right = 1mm,
+    separator sign none, description delimiters parenthesis,
+    description font=\bfseries,
+    terminator sign={.\hspace{1mm}}
+}
+{e}
+
+\newtcbtheorem[number within=section]{definition.tcb}{Definición}
+{
+    enhanced,
+    frame empty,
+    interior empty,
+    coltitle = black,
+    colbacktitle = gray!15!white,
+    fonttitle = \bfseries,
+    extras broken = {frame empty, interior empty},
+    borderline = {0.3mm}{0mm}{black},
+    breakable = true,
+    top = 4mm,
+    before skip = 3.5mm,
+    attach boxed title to top left = {yshift = -3mm, xshift = 3mm},
+    boxed title style = {boxrule = 0mm, borderline = {0.1mm}{0mm}{black}},
+    varwidth boxed title,
+    separator sign none, description delimiters parenthesis,
+    description font=\bfseries,
+    terminator sign={.\hspace{1mm}}
+}
+{d}
+
+\newtcbtheorem[number within=section]{lemma.tcb}{Lema}
+{
+    enhanced,
+    frame empty,
+    interior empty,
+    coltitle = black,
+    colbacktitle = gray!15!white,
+    fonttitle = \bfseries,
+    extras broken = {frame empty, interior empty},
+    borderline = {0.3mm}{0mm}{black},
+    breakable = true,
+    top = 4mm,
+    before skip = 3.5mm,
+    attach boxed title to top left = {yshift = -3mm, xshift = 3mm},
+    boxed title style = {boxrule = 0mm, borderline = {0.1mm}{0mm}{black}},
+    varwidth boxed title,
+    separator sign none, description delimiters parenthesis,
+    description font=\bfseries,
+    terminator sign={.\hspace{1mm}}
+}
+{l}
+
+
+\newtcolorbox{box.tcb}[1][]
+{
+    enhanced,
+    frame empty,
+    interior empty,
+    coltitle=black,
+    colbacktitle=gray!15!white,
+    fonttitle=\bfseries,
+    extras broken = {frame empty, interior empty},
+    borderline = {0.3mm}{0mm}{black},
+    breakable = true,
+    top = 4mm,
+    before skip = 3.5mm,
+    attach boxed title to top left = {yshift = -3mm, xshift = 3mm},
+    title=#1
+}
+
+\newtcolorbox[auto counter]{remark.tcb}[1][]
+{
+    breakable,
+    title = Observación~\thetcbcounter.,
+    colback = white,
+    colbacktitle = gray!15!white,
+    coltitle = black,
+    fonttitle = \bfseries,
+    bottomrule = 0pt,
+    toprule = 0pt,
+    leftrule = 2.5pt,
+    rightrule = 0pt,
+    titlerule = 0pt,
+    arc = 2pt,
+    outer arc = 2pt,
+    colframe = black
+}
+
+%Enviroments section-x.tcb
+
+
+\newenvironment{problem.tcb}
+{
+    \begin{tcb-problem-style}{}{}
+    }{
+    \end{tcb-problem-style}
+}
+

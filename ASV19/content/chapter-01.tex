@@ -1,0 +1,131 @@
+\chapter{\textbf{Propiedades básicas - Parte I}}
+
+Un \textit{polinomio} es una expresión de la forma
+\[
+    P(x) = a_n x^n + a_{n - 1} x^{n - 1} + \ldots + a_1 x + a_0 = \sum_{i = 0}^{n} a_i x^i.
+\]
+Los números $a_i$ diremos se dicen \textit{coefientes} del polinomio $P(x)$.
+Usualmente, consideramos $a_i$, en $\Z$, $\Q$, $\R$, $\C$ y decimos que el polinomio tiene coeficientes enteros, racionales, reales o complejos, respectivamente.
+Denotamos por $\Z[x]$, $\Q[x]$, $\R[x]$, $\C[x]$ el conjunto de polinomios con coeficientes enteros, racionales reales o complejos, respectivamente.
+
+El coeficiente $a_0$ se dice el \textit{término constante}.
+Por la definición, se sigue que dos polinomios
+\[
+    P(x) = \sum_{i = 0}^{n} a_i x^i \ \text{y} \ Q(x) = \sum_{i = 0}^{m} b_i x^i
+\]
+son iguales si y solo si $a_i = b_i$ para todo $i$ (si $m > n$, entonces $b_{n + 1} = \ldots = b_m = 0$).
+
+Definimos el \textit{grado} del polinomio $P(x) = \ds \sum_{i = 0}^{n} a_i x^i $ como el mayor entero $i$ tal que $a_i \neq 0$ y denotamos el grado por $\deg P(x)$.
+Si $i$ es el mayor entero $i$ tal que $a_i \neq 0$, decimos que $a_i$ es el \textit{coeficiente principal} de $P(x)$.
+Si el coeficiente principal es igual a 1, decimos que el polinomio es \textit{mónico}.
+Observe que el grado de un polinomio constante $P(x) = a_0 \neq 0$ es cero.
+No damos ningún grado al \textit{polinomio cero} $P(x) \equiv 0$ (i.e. el polinomio cuyos coeficientes son todos ceros)\footnote{Por conveción, también podemos asignar al polinomio cero el grado $- \infty$.}.
+Normalmente, omitimos los términos que tiene coeficiente cero.
+Por ejemplo, escribimos el polinomio $0x^3 + 1x^2 + 2x + 0$ como $x^2 + 2x$.
+Este es claramente un ejemplo de un polinomio mónico de grado 2.
+
+Podemos realizar algunas operaciones sobre polinomios.
+
+Por ejemplo, si $P(x) = \ds \sum_{i = 0}^{n} a_i x^i$ y $Q(x) = \ds \sum_{i = 0}^{m} b_i x^i $ son dos polinomios y $n \leq m$, entonces la suma y el producto de $P(x)$ y $Q(x)$ es definida por
+\[
+    P(x) + Q(x) = \sum_{h = 0}^{m} (a_h + b_h) x^h \ \ \text{y} \ \ P(x)Q(x) = \sum_{h = 0}^{n + m} \left(\sum_{i + j = h} a_i b_j \right)x^h,
+\]
+respectivamente.
+Sabiendo lo anterior obtenemos lo siguiente.
+\begin{theorem.tcb}{}{}
+    Sea $P(x)$ y $Q(x)$ dos polinomios y sea $k$ un entero positivo.
+    Entonces,
+    \begin{enumerate}
+        \item $\deg [P(x) Q(x)] = \deg P(x) + \deg Q(x)$
+        \item $\deg [P(x) + Q(x)] \leq \max (\deg P(x), \deg Q(x))$
+        \item $\deg [P(x)^k] = k \cdot \deg P(x)$.
+    \end{enumerate}
+\end{theorem.tcb}
+
+
+
+
+\section{Identidades}
+
+El término \textit{identidad} designa una igualdad que se cumple para todo valor permitido de las incognitas que contenga (normalmente todo los números reales o todos los números complejos).
+Cuando está claro por el contexto a menudo se omite específicar explicidamente el rango permitido de las incognitas.
+Por ejemplo, las siguientes ecuaciones son identidades:
+\begin{align*}
+    a^2 - b^2 &= (a - b)(a + b),\\
+    a^3 - b^3 &= (a - b)(a^2 + ab + b^2),\\
+    (a + b + c)^2 &= a^2 + b^2 + c^2 + 2(a + b + c),\\
+    \frac{a^2}{a + b} + \frac{b^2}{b + c} + \frac{c^2}{c + a} &= \frac{b^2}{a + b} + \frac{c^2}{b + c} + \frac{a^2}{a + c}.
+\end{align*}
+Las primeras tres se cumplen para todos los valores reales (o complejos) $a$, $b$ y $c$, mientras que el último solo se cumple si ninguno de los valores $a + b$, $b + c$ y $c + a$ es cero.
+Sin embargo, la ecuaciones a continuación no cumplen con este criterio ya que no se cumplen universalmente:
+\begin{align*}
+    2x + 1 &= 5,\\
+    \frac{1}{x - 2} + \frac{1}{x} &= 3,\\
+    a^3 + b^3 + c^3 &= 3abc.
+\end{align*}
+Las identidades son los pilares de los cálculos matemáticos.
+Se encuentran comunmente en las competiciones matemáticas, donde muchos problemas requieren de su conocimiento.
+
+Aquí recopilamos algunas de las identidades más útiles.
+Es importante que, para mejorar tu fortaleza en el trabajo con expresiones algebraicas, te esforcés en aprender estas identidades.
+
+\begin{box.tcb}[Identidades Útiles]
+    \vspace{-0.5cm}
+    \begin{align*}
+        &a^2 - b^2 = (a - b)(a + b) && \text{(Diferencia de cuadrados)}\\[2mm]
+        &(a + b)^2 = a^2 + 2ab + b^2 && \text{(Binomio al cuadrado)}\\[2mm]
+        &(a + b + c)^2 = a^2 + b^2 + c^2 + 2(ab + bc + ca) && \text{(Trinomio al cuadrado)}\\[2mm]
+        &a^n - b^n = (a - b)(a^{n - 1} + a^{n - 2}b + \cdots + b^{n - 1}) && \text{(Diferencia de potencias)}\\[2mm]
+        &a^n + b^n = (a + b)(a^{n - 1} - a^{n - 2}b + \cdots + b^{n - 1}) \ \text{con $n$ impar} && \text{(Suma de potencias)}\\[2mm]
+        &a^3 + b^3 + c^3 - 3abc = (a + b + c)(a^2 + b^2 + c^2 - ab - bc - ca) && \text{(Identidad de Gauss)}\\[2mm]
+        &(a + b)^n = a^n + \binom{n}{1} a^{n - 1}b + \cdots + \binom{n}{k} a^{n -k}b^k + \cdots + b^n && \text{(Binomio de Newton)}
+    \end{align*}
+\end{box.tcb}
+
+\begin{remark.tcb}
+    La \textit{Identidad de Gauss} implica que si $a + b + c = 0$, entonces $a^3 + b^3 + c^3 = 3abc$.
+\end{remark.tcb}
+
+\begin{remark.tcb}
+    El \textit{Binomio al cuadrado} tiene un caso general, esto es, sean $x_1, x_2 , \ldots, x_n$ $n$ números, entonces
+    \[
+        (x_1 + \cdots + x_n)^2 = x_1^2 + \cdots + x_n^2 + 2 \sum_{1 \leq i < j \leq n} x_i x_j.
+    \]
+\end{remark.tcb}
+
+Por ejemplo, cuando $n = 4$ tenemos
+\[
+    (a + b + c + d)^2 = a^2 + b^2 + c^2 + d^2 + 2 (ab + ac + ad + bc + bd + cd).
+\]
+
+\begin{remark.tcb}
+    El caso general del \textit{Binomio de Newton} es de especial interés.
+    Sean $x_1, x_2,\ldots, x_n$ $n$ números y sea $m$ un entero positivo, entonces
+    \[
+        (x_1 + \cdots + x_n)^m = \sum_{0 \leq i_1, i_2, \ldots, i_n \leq m}^{ i_1 + i_2 + \cdots + i_n = m } \binom{m}{i_1, i_2, \ldots, i_n} x_1^{i_1} x_2^{i_2} \cdot \ldots \cdot x_n^{i_n}.
+    \]
+    Esta identidad es llamada \textit{Identidad Multinomial}.
+\end{remark.tcb}
+Por ejemplo, cuando $n = m = 3$ tenemos
+\[
+    (a + b + c)^3 = a^3 + b^3 + c^3 + 3(a^2 b + b^2 c + c^2 a + b^2 a + c^2 b + a^2 c) + 6abc.
+\]
+
+Muchos problemas elementales de álgebra se simplifican enormemente con las identidades.
+No obstante, veremos algunas de las aplicaciones creativas en soluciones más complejas.
+
+
+
+
+\section{El coeficiente de $x^d$}
+
+\section{Factorización y sus implicaciones}
+
+\section{Valores de polinomios}
+
+\section{División, MCD de polinomios}
+
+\section{La composición de polinomios}
+
+\section{Polinomios pares e impares}
+
