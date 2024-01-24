@@ -1,0 +1,405 @@
+\section{Desarrollo}
+
+\subsection{Definiciones}
+
+Un \textbf{\emph{polinomio}} en $x$ es una expresión de la forma
+\[
+    P(x) = a_d x^d + a_{d - 1} x^{d - 1} + \ldots + a_1 x + a_0
+\]
+donde $d$ es un entero mayor o igual que cero.
+Los números $a_1, a_2, a_3, \dots, a_d$ son llamados los \textbf{\emph{coeficientes}} de $P(x)$, y estos pueden ser enteros, racionales, reales o complejos.
+Por la definición, se sigue que dos polinomios
+\[
+    P(x) = a_d x^d + a_{d - 1} x^{d - 1} + \ldots + a_1 x + a_0 \quad \text{y} \quad Q(x) = b_e x^e + a_{e - 1} x^{e - 1} + \ldots + b_1 x + b_0
+\]
+son iguales si y solo si $a_i = b_i$ para todo $i$ (si $d > e$, entonces $b_{e + 1} = \ldots = b_d = 0$).
+
+Definimos el \textbf{\emph{grado}} del polinomio $P(x)$ como el mayor entero $i$ tal que $a_i \neq 0$ y denotamos el grado por $\deg P(x)$.
+Si $i$ es el mayor entero $i$ tal que $a_i \neq 0$, decimos que $a_i$ es el \textbf{\emph{coeficiente principal}} de $P(x)$.
+Si el coeficiente principal es igual a 1, decimos que el polinomio es \textbf{\emph{mónico}}.
+
+Observemos que el grado de un polinomio constante $P(x) = a_0 \neq 0$ es cero.
+No damos ningún grado al \textbf{\emph{polinomio cero}} $P(x) \equiv 0$ (\ie el polinomio cuyos coeficientes son todos ceros).
+
+Podemos realizar algunas operaciones sobre polinomios.
+Por ejemplo, si $P(x) = a_n x^n + \ldots + a_1 x + a_0$ y $Q(x) = b_m x^m + \ldots + b_1 x + b_0$ son dos polinomios y $m \geq n$, entonces la suma y el producto de $P(x)$ y $Q(x)$ es definida por
+\begin{align*}
+    P(x) + Q(x) =& (a_0  + b_0) + (a_1 + b_1)x + (a_2 + b_2)x^2 + \cdots\\
+    &+ (a_n + b_n)x^n + b_{n + 1} x^{n + 1} + \cdots + b_m x^m\\[2mm]
+    P(x)Q(x) =& a_0 b_0 + (a_0 b_1 + a_1 b_0)x + (a_0 b_2 + a_1 b_1 + a_2 b_0)x^2 + \cdots \\
+    &+ (a_0 b_r + a_1 b_{r - 1} + \cdots + a_{r - 1}b_1 + a_r b_0)x^r + \cdots + (a_n b_m)x^{m + n}
+\end{align*}
+respectivamente.
+
+Se dan nombres especiales a polinomios con grados bajos:
+\begin{table}[H]
+    \centering
+    \begin{tabular}{p{1.5cm} p{2.5cm} p{6.5cm}}
+        \hline
+        Grado & Nombre & Forma \\
+        \hline \hline
+        1 & Líneal & $P(x) = a_1 x + a_0$\\
+        2 & Cuadrático & $P(x) = a_2 x^2 + a_1 x + a_0$\\
+        3 & Cúbico & $P(x) = a_3 x^3 + a_2 x^2 + a_1 x + a_0$\\
+        4 & Cuártico & $P(x) = a_4 x^4 + a_3 x^3 + a_2 x^2 + a_1 x + a_0$\\
+        \hline
+    \end{tabular}
+\end{table}
+Los polinomios de grado dos y tres son de especial interés debido a la gran cantidad de problemas en la que estos aparecen, a lo largo del curso veremos las propiedades más importantes de estos polinomios.
+
+\begin{example}
+    Sean $P(x) = x^3 - 5x^2 + 7$ y $Q(x) = -2x^2 + x - 10$ dos polinomios.
+    Desarrolle las siguientes operaciones,
+    \begin{tasks}(4)
+        \task $P(x) + Q(x)$
+        \task $P(x) Q(x)$
+        \task $Q(x) - P(x)$
+        \task $11 P(x) - x Q(x)$
+    \end{tasks}
+\end{example}
+\begin{solution}
+    1. Sustituyendo los polinomios $P(x) + Q(x) = (x^3 - 5x^2 + 7) + (-2x^2 + x - 10)$, tenemos
+    \begin{align*}
+        P(x) + Q(x) &= (x^3 + 0x^3) + (-5 x^2 - 2x^2) + (0x + x) + (7 - 10)\\
+        &= (x^3) + (-7x^2) + (x) + (-3) = \boxed{x^3 - 7x^2 + x - 3}.
+    \end{align*}
+    2. Sustituyendo los polinomios $P(x) Q(x) = (x^3 - 5x^2 + 7)(-2x^2 + x - 10)$, tenemos
+    \begin{align*}
+        P(x) Q(x) &= (x^3)(-2x^2 + x - 10) + (-5x^2)(-2x^2 + x - 10) + (7)(-2x^2 + x - 10)\\
+        &= (-2x^5 + x^4 - 10x^3) + (10x^4 - 5x^3 + 50x^2) + (-14x^2 + 7x - 70)\\
+        &= -2x^5 + (x^4 + 10x^4) + ( - 10x^3 - 5x^3) + (50x^2 -14x^2) + 7x - 70\\
+        &= \boxed{-2x^5 + 11x^4 - 15x^3 + 36x^2 + 7x - 70}.
+    \end{align*}
+    3. Sustituyendo los polinomios $Q(x) - P(x) = (-2x^2 + x - 10) - (x^3 - 5x^2 + 7)$, tenemos
+    \begin{align*}
+        Q(x) - P(x) &= (0x^3 - x^3) + (- 2x^2 + 5 x^2) + (x - 0x) + (- 10 - 7)\\
+        &= (-x^3) + (3x^2) + (x) + (-17) = \boxed{-x^3 + 3x^2 + x - 17}.
+    \end{align*}
+    4. Sustituyendo los polinomios $11P(x) - xQ(x) = 11(x^3 - 5x^2 + 7) - x(-2x^2 + x - 10)$, tenemos
+    \begin{align*}
+        P(x) + Q(x) &= (11x^3 - 55x^2 + 77) - (-2x^3 + x^2 - 10x)\\
+        &= (11x^3 + 2x^3) + (-55 x^2 - x^2) + (0x + 10x) + (77 - 0)\\
+        &= (13x^3) + (-56x^2) + (10x) + (77) = \boxed{13x^3 - 56x^2 + 10x + 77}.\qquad\qquad\qquad\qedhere
+    \end{align*}
+\end{solution}
+
+
+Sabiendo lo anterior obtenemos lo siguiente.
+\begin{theorem.tcb}{}{}
+    Sea $P(x)$ y $Q(x)$ dos polinomios y sea $k$ un entero positivo.
+    Entonces,
+    \begin{enumerate}
+        \item $\deg [P(x) Q(x)] = \deg P(x) + \deg Q(x)$
+        \item $\deg [P(x) + Q(x)] \leq \max (\deg P(x), \deg Q(x))$
+        \item $\deg [P(x)^k] = k \cdot \deg P(x)$.
+    \end{enumerate}
+\end{theorem.tcb}
+
+Si tenemos dos polinomios $P(x) = a_n x^n + \ldots + a_1 x + a_0$ y $Q(x) = b_m x^m + \ldots + b_1 x + b_0$ y sustituimos cada $x$ de $P(x)$ por el polinomio $Q(x)$ obtenemos la expresión $P\left(Q(x)\right) = (P \circ Q)(x)$ y decimos que es una \textbf{\emph{composición}} de $P(x)$ con $Q(x)$.
+Por ejemplo, si tenemos $P(x) = x^2 - x + 5$ y $Q(x) = 7 - 3x$ vemos que $(P \circ Q)(x) = (7 - 3x)^2 - (7 - 3x) + 5 = (49 - 42x + 9x^2) - 7 + 3x + 5 = 9x^2 - 39x + 47$.
+
+La composición de polinomios es asociativa, es decir, $(P \circ Q) \circ R = P \circ (Q \circ R)$, mas no conmutativa, salvo casos especiales, así que generalmente supondremos que $P \circ Q \neq  Q \circ P$.
+
+\begin{remark.tcb}
+    Notemos que $P(x)^n \neq P^n(x)$.
+    Entendemos a $P(x)^n$ como $P(x)$ elevado a la $n$-ésima potencia, en cambio $P^n(x)$ es la composición $n$-ésima de $P(x)$ consigo mismo, es decir
+    \[
+        P^n(x) = \underbrace{P(P(P\dots P(P}_{n\ \text{veces}\ P} (x))\dots)).
+    \]
+\end{remark.tcb}
+
+
+Como hemos visto, cualquier polinomio $P(x)$ de grado no negativo tiene una representación \textit{genérica} como la siguiente
+\[
+    P(x) = a_d x^d + a_{d - 1} x^{d - 1} + \ldots + a_1 x + a_0 = \sum_{i = 0}^{d} a_i x^i,
+\]
+donde $a_d, a_{d - 1}, \ldots, a_1, a_0$ son números complejos.
+El término $a_d x^d$ es llamado el \textbf{\emph{término principal}} y $a_0$ es llamado el \textbf{\emph{término constante}}.
+El valor del polinomio en $x = c$, el cual denotamos por $P(c)$, es
+\[
+    P(c) = a_d c^d + a_{d - 1}c^{d - 1} + \ldots + a_1 c + a_0.
+\]
+De especial interés son los casos de $P(0)$, $P(1)$ y $P(-1)$.
+    $P(0) = a_0$, el cual es el término constante,
+\[
+    P(1) = a_d + a_{d - 1} + \ldots + a_0
+\]
+que es llamado la \textbf{\emph{suma de coeficientes}} y $P(-1) = a_0 - a_1 + \ldots + (-1)^d a_d.$
+
+Otras cuestiones sobre polinomios son:
+\begin{enumerate}
+    \item \textbf{Completo}: Un polinomio completo cumple que $a_i \neq 0$ para todo entero $i$.
+    \item \textbf{Ordenado}: Un polinomio está ordenado si sus términos están escritos de manera decreciente (o creciente) respecto al exponente de $x$.
+    \item \textbf{Multi variable}: Un polinomio puede estar en términos de más de una variable, por ejemplo el polinomio $P(x, y) = x^3 + 3x^2 y + 3xy^2 + y^3$.
+\end{enumerate}
+
+\begin{example}
+    Sabiendo que $P(x + 1) = x + 3$, hallar $P(x)$.
+\end{example}
+\begin{solution}
+    \textbf{1ra forma.} Escribiendo $(x + 3)$ en función de $x$, esto es $P(x + 1) = x + 1 + 2$.
+    Luego, donde aparezca $(x + 1)$ se colocará $x$, es decir $P(x) = x + 2$.
+
+    \textbf{2da forma.} Haciendo un cambio de variable $y = x + 1 \implies x = y - 1$.
+    Escribiendo la expresión original en términos de $y$: $P(y) = y - 1 + 3 \implies P(y) = y + 2$.
+    Una vez reducida, se hace $y = x$ y por lo tanto $P(x) = x + 2$.
+\end{solution}
+
+\begin{example}
+    Sabiendo que los polinomios $P(x)$ y $F(x)$ cumplen $P(x - 3) = 5x - 7$ y $P[F(x) + 2] = 10x - 17$, hallar $F(x - 2)$
+\end{example}
+\begin{solution}
+    En el primer polinomio en lugar de $x$ ponemos $F(x) + 5$:
+    \begin{align*}
+        P(F(x) + 5 - 3) =&  5 (F(x) + 5) - 7\\
+        P(F(x) + 2) =& 5F(x) + 18\\
+        10x - 17 =& 5F(x) + 18
+    \end{align*}
+    Despejando tenemos $F(x) = 2x - 7$.
+    Así $F(x - 2)$ será $F(x - 2) = 2(x - 2) - 7 = \boxed{2x - 11}$.
+\end{solution}
+
+\begin{example}
+    Si $P(x) = ax^2 + b$ y $P^2(x) = 8x^4 + 24x^2 + c$, hallar el valor de $a + b + c$.
+\end{example}
+\begin{solution}
+    Evaluamos $P^2(x) = P(P(x))$,
+    \begin{align*}
+        P(P(x)) =& a (ax^2 + b)^2 + b\\
+        8x^4 + 24x^2 + c =& a (a^2 x^4 + 2abx^2 + b^2) + b\\
+        8x^4 + 24x^2 + c =& a^3 x^4 + 2a^2 bx^2 + ab^2 + b
+    \end{align*}
+    Ya que los polinomios son iguales, por simple inspección vemos que $a^3 = 8$, $2a^2 b = 24$ y $ab^2 + b = c$.
+    Una vez resuelto este sistema de ecuaciones, tenemos que $a = 2$, $b = 3$ y $c = 21$, por lo tanto $a + b + c = 26$.
+\end{solution}
+
+\begin{example}
+    El polinomio $P(x) = ax^4 + bx^3 + cx^2 + dx + e$ es tal que, $P(0) = 0$, $P(-1) = 6$ y $P(x) = P(1 - x)$.
+    Hallar el valor de $(2c - b)$
+    \begin{tasks}[label=\Alph*)](5)
+        \task $2a$
+        \task $(3 - a)$
+        \task 4
+        \task 5
+        \task 6
+    \end{tasks}
+\end{example}
+
+\begin{solution}
+    Como $P(0) = 0 \implies e = 0$.
+    Además $P(x) = P(1 - x)$, implica que $P(0) = P(1) = 0$
+    \begin{equation}
+        \implies a + b + c + d = 0.
+    \end{equation}
+    También $P(-1) = 6$
+    \begin{equation}
+        \implies a - b + c - d = 6
+    \end{equation}
+    Y por último $P(-1) = P(2) = 6 \implies 16a + 8b + 4c + 2d = 6$
+    \begin{equation}
+        \implies 8a + 4b + 2c + d = 3
+    \end{equation}
+    Por lo hemos obtenido un sistema de ecuaciones.
+    Sumando $(1) + (2)$ obtenemos $a + c = 3 \implies a = 3 - c$.
+    Restando $(1) - (2)$ obtenemos $b + d = 3 \implies d = 3 - b$.
+    Sustituyendo esto dos resultados en $(3)$
+    \[
+        8(3 - c) + 4b + 2c - 3 - b = \implies -6c + 3b = -18 \implies \boxed{2c - b = 6}. \qedhere
+    \]
+\end{solution}
+
+
+
+\subsection{Ejercicios y problemas}
+Ejercicios y problemas para el autoestudio.
+
+\begin{multicols}{2}
+
+    \begin{exercise}
+        Calcular la suma de coeficientes de $P(x) = (x - 1)^{20} + (x - 2)^7 + x^3 + 5$
+        \begin{tasks}[label=\Alph*)](3)
+            \task 3
+            \task 5
+            \task 7
+            \task 9
+            \task 11
+        \end{tasks}
+    \end{exercise}
+
+    \begin{exercise}
+        Si $P(x) = (x + 2)^5 + (x - 3)^3 - (x + 2)(x - 3)$, el término independiente de $P$ es
+        \begin{tasks}[label=\Alph*)](3)
+        \task 15
+        \task 13
+        \task 11
+        \task 10
+        \task 9
+        \end{tasks}
+    \end{exercise}
+
+    \begin{exercise}
+        Hallar el término independiente del polinomio de grado siete
+        \[
+            P(x) = x^{n + 2} + x^{m - 1} + \ldots + mx + (m + n)
+        \]
+        que es completo y ordenado.
+        \begin{tasks}[label=\Alph*)](3)
+        \task 16
+        \task 12
+        \task 8
+        \task 10
+        \task 6
+        \end{tasks}
+    \end{exercise}
+
+    \begin{exercise}
+        Si el polinomio ordenado decreciente y completo
+        \[
+            P(x) = x^{2a + 1} + 2x^{b + 3} + 3x^{c + 2} + \ldots
+        \]
+        posee $2c$ términos, hallar $a + b + c$.
+        \begin{tasks}[label=\Alph*)](3)
+        \task 12
+        \task 13
+        \task 14
+        \task 15
+        \task 16
+        \end{tasks}
+    \end{exercise}
+
+    \begin{exercise}
+        Si $P(x, y)$ es un polinomio cero, hallar $m^n$
+        \[
+            P(x, y) = (10 - m)x^2 y + nxy^2 + 5x^2 y - 2xy^2.
+        \]
+        \begin{tasks}[label=\Alph*)](3)
+        \task 15
+        \task 30
+        \task 125
+        \task 225
+        \task N.A
+        \end{tasks}
+    \end{exercise}
+
+
+    \begin{exercise}
+        Multiplica y simplifica
+        \[
+            (2x^2 - x - 3)(1 + 2x - x^2).
+        \]
+        Escribir la respuesta en potencias ascendentes de $x$.
+    \end{exercise}
+
+    \begin{exercise}
+        Encontrar el coeficiente de $x^3$ en la expansión de
+        \[
+            (2x^3 - 5x^2 + 2x - 1)(3x^3 + 2x^2 - 9x + 7).
+        \]
+    \end{exercise}
+
+    \begin{exercise}
+        Multiplica y simplifica
+        \[
+            (1 + x)(1 + x^2)(1 - x + x^2).
+        \]
+        Escribir la respuesta en potencias ascendentes de $x$.
+    \end{exercise}
+
+    \begin{exercise}
+        Nos dan el polinomio
+        \[
+            f(x) = 2x^3 + 3x^2 - 8x + c,
+        \]
+        donde $c$ es un número distinto de cero.
+        Se da además que $f(-3) = 0$, hallar $c$.
+    \end{exercise}
+
+    \begin{exercise}
+        Hallar el valor de cada una de las constantes $a, b, c$ tal que
+        \[
+            6x^3 - 7x^2 - x + 2 = (x - 1)(ax^2 + bx + c).
+        \]
+    \end{exercise}
+
+    \begin{exercise}
+        Un polinomio $f(x)$ es definido en término de las constantes $a, b, c$ como
+        \[
+            f(x) = 2x^3 + ax^2 + bx + c.
+        \]
+        Además $f(2) = f(-1) = 0$ y $f(1) = -14$.
+        Hallar el valor de $a + bc$
+    \end{exercise}
+
+    \begin{exercise}
+        Sean los polinomios $P(t) = 3t - 4$ y $Q(t) = 2t^2 - 5t + 8$.
+        Encontrar las siguientes operaciones
+        \begin{tasks}(2)
+            \task $P(t) + Q(t)$
+            \task $7P(t) - 6Q(t)$
+            \task $P(t)Q(t)$
+            \task $(P \circ Q)(t)$
+            \task $(Q \circ P)(t)$
+        \end{tasks}
+    \end{exercise}
+
+    \begin{exercise}
+        Sea $Q(x) = \frac{1}{5} x - 2$ y $P(x) = Q^4(x)$, probar que $P(1560) = 0$.
+    \end{exercise}
+
+    \begin{exercise}
+        Señalar las proposiciones falsas:
+        \begin{enumerate}[label=\Roman*.]
+            \item Si sumamos un polinomios de grado cuatro con uno de grado seis, entonces el grado del polinomio resultante es seis.
+            \item Si restamos dos polinomios del mismo grado, el resultado siempre será de un grado menor.
+            \item Si el grado de $P(x)$ es mayor que el grado de $Q(x)$, el que tiene más términos es $P(x)$.
+        \end{enumerate}
+        \begin{tasks}(2)
+            \task I y II
+            \task II solamente
+            \task I solamente
+            \task II y III
+            \task Ninguna
+        \end{tasks}
+    \end{exercise}
+
+    \begin{problem}
+        Sea $P(x)$ un polinomio mónico de grado tres, donde su término constante es 5 y se cumple que $P(x + 1) = P(x) + nx + 2$.
+        Hallar la suma de los coeficientes del término cuadrático y el término líneal.
+    \end{problem}
+
+    \begin{problem}
+        Hallar un polinomio cuadrático cuyo coeficiente de $x$ y término independiente son iguales, además cumple que $P(1) = 7$ y $P(2) = 18$.
+    \end{problem}
+
+    \begin{problem}
+        Hallar el valor de $\alpha_1 + \alpha_2 - \alpha_3$ si se cumple que
+        \[
+            50x^3 + 5x^2 - 8x + 1 = \alpha_1 (\alpha_2 x + 1)^{\alpha_1} (\alpha_2 x - \alpha_1)^{\alpha_3}.
+        \]
+    \end{problem}
+
+    \begin{problem}
+        Calcular la suma de los coeficientes de siguiente polinomio completo
+        \[
+            P(x) = c(x^a + x^b) + a(x^b + x^c) + b(x^a + x^c) + abc.
+        \]
+    \end{problem}
+
+    \begin{problem}
+        Si $P(x) = x^2 + xy + xz + yz$, hallar el valor de $E = \sqrt {P(y)P(z)P(0)}$.
+    \end{problem}
+
+    \begin{problem}
+        Sabiendo que $P(x) = ax + b$ y $P^3(x) = 8x + 154$, determinar el valor de $P^2(3)$.
+    \end{problem}
+
+    \begin{problem}
+        Dado que
+        \begin{align*}
+            Q(x) &= 2x + 3 \\
+            Q\left[ F(x) + G(x) \right] &= 4x + 3 \\
+            Q\left[ F(x) - G(x) \right] &= 7
+        \end{align*}
+        Calcular $F(G(F(G(\dots F(G(1))\dots))))$.
+    \end{problem}
+\end{multicols}

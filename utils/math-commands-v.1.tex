@@ -12,95 +12,35 @@
 \newcommand{\R}{\ensuremath{\mathbb{R}}}
 \newcommand{\C}{\ensuremath{\mathbb{C}}}
 
-\newcommand{\ZP}{\ensuremath{\mathbb{Z^+}}}
-\newcommand{\ZN}{\ensuremath{\mathbb{Z^-}}}
-\newcommand{\ZNN}{\ensuremath{\mathbb{Z}^{\geq 0}}}
-
-\newcommand{\RP}{\ensuremath{\mathbb{R}^+}}
-\newcommand{\RN}{\ensuremath{\mathbb{R}^-}}
-\newcommand{\RNN}{\ensuremath{\mathbb{R}^{\geq 0}}}
+\newcommand{\positiveSet}[1]{\ensuremath{#1^+}}
+\newcommand{\negativeSet}[1]{\ensuremath{#1^-}}
+\newcommand{\nonnegativeSet}[1]{\ensuremath{#1^{\geq 0}}}
 
 %Useful commands
+\newcommand{\ie}{\ensuremath{\text{i.e.}\ }}
+\newcommand{\ds}{\displaystyle}
+\renewcommand{\max}[1]{\ensuremath{máx #1}}
+\newcommand{\inverseOf}[1]{\frac{1}{#1}}
+\newcommand{\fullMod}[2]{\equiv #1 \pmod{#2}}
 \newcommand{\refTheorem}[1]{\textbf{Teorema #1}}
 \newcommand{\refDefinition}[1]{\textbf{Definición #1}}
-\newcommand{\theTriangle}[1]{\ensuremath{\triangle #1}}
-%ration Ceva and Menelao
-\newcommand{\ratioCM}[6]{\ensuremath{\frac{#1 #4}{#4 #2} \cdot \frac{#2 #5}{#5 #3} \cdot \frac{#3 #6}{#6 #1}}}
-\renewcommand{\emptyset}{\varnothing}
-\newcommand{\inverseOf}[1]{\frac{1}{#1}}
 \newcommand{\inverseOfD}[1]{\ensuremath{\dfrac{1}{#1}}}
+
+
+% -- Geometry commads --
+\renewcommand{\emptyset}{\varnothing}
+\newcommand{\theTriangle}[1]{\ensuremath{\triangle #1}}
 \newcommand{\homothety}[4]{\ensuremath{H\hspace{-1mm}\left(#1, #2\right) : #3 \to #4}}
-\newcommand{\fullMod}[2]{\equiv #1 \pmod{#2}}
-\newcommand{\upla}[2]
-{
-    (#1_1, #1_2, \ldots, #1_{#2})
-}
-\newcommand{\kupla}[3][k]
-{
-    (#2_{#3}, \ldots, #2_{#1})
-}
-\newcommand{\polynom}[3][x]
-{
-    #3_{#2} #1^{#2} + #3_{#2 - 1} #1^{#2 - 1} + \cdots + #3_{1} #1 + #3_{0}
-}
-\newcommand{\asum}[3][x]%arithmetic sum
-{
-    \ifstrempty{#2}
-    {
-        #1_{1} +
-        #1_{2}
-    }
-    {
-        #1_{#2} +
-        #1_{#2 + 1}
-    }
-    + \cdots + #1_{#3}
-}
-
-\newcommand{\gprod}[3][x]%product
-{
-    \ifstrempty{#2}
-    {
-        #1_{1} \cdot
-        #1_{2}
-    }
-    {
-        #1_{#2} \cdot
-    #1_{#2 + 1}
-    }
-    \cdots #1_{#3}
-}
-
-\newcommand{\problemImage}[2]
-{
+\newcommand{\ratioCM}[6]{\ensuremath{\frac{#1 #4}{#4 #2} \cdot \frac{#2 #5}{#5 #3} \cdot \frac{#3 #6}{#6 #1}}}
+\newcommand{\problemImage}[2]{
     \begin{center}
         \includegraphics[width=#2]{#1}
-    \end{center}
-}
+    \end{center}}
 
-
-
-
-%Enviroments
-\newenvironment{source-problem}
-{
-    \vspace{-5mm}
-    \begin{flushright}
-        \begin{itshape}
-        (}{)
-        \end{itshape}
-    \end{flushright}
-}
-
-\newenvironment{solution}[1][]
-{
-    \ifstrempty{#1}
+\newenvironment{solution}[1][]{
+    \ifstrempty{#1}{
+        \begin{proof}[\textnormal{\textbf{Solución}}]}
     {
-        \begin{proof}[\textnormal{\textbf{Solución}}]
-    }
-    {
-        \begin{proof}[\textnormal{\textbf{Solución #1}}]
-    }
+        \begin{proof}[\textnormal{\textbf{Solución #1}}]}
     }{
-    \end{proof}
-}
+    \end{proof}}

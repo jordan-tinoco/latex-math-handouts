@@ -2,6 +2,7 @@
 \addto\captionsspanish{\renewcommand{\proofname}{\textnormal{\textbf{Demostración}}}}
 \DeclareSymbolFont{yhlargesymbols}{OMX}{yhex}{m}{n}
 \DeclareMathAccent{\wideparen}{\mathord}{yhlargesymbols}{"F3}
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
 
 %\renewcommand{\theenumi}{\alph{enumi}}
 
@@ -12,59 +13,15 @@
 \newcommand{\R}{\ensuremath{\mathbb{R}}}
 \newcommand{\C}{\ensuremath{\mathbb{C}}}
 
-\newcommand{\ZP}{\ensuremath{\mathbb{Z^+}}}
-\newcommand{\ZN}{\ensuremath{\mathbb{Z^-}}}
-\newcommand{\ZNN}{\ensuremath{\mathbb{Z}^{\geq 0}}}
-
-\newcommand{\RP}{\ensuremath{\mathbb{R}^+}}
-\newcommand{\RN}{\ensuremath{\mathbb{R}^-}}
-\newcommand{\RNN}{\ensuremath{\mathbb{R}^{\geq 0}}}
 
 %Useful commands
-\newcommand{\textbfit}[1]{\textbf{\textit{#1}}}
 \newcommand{\ds}{\displaystyle}
-\newcommand{\refTheorem}[1]{\textbf{Teorema #1}}
-\newcommand{\refDefinition}[1]{\textbf{Definición #1}}
 \renewcommand{\emptyset}{\varnothing}
-\newcommand{\inverseOf}[1]{\ensuremath{\frac{1}{#1}}}
-\newcommand{\inverseOfD}[1]{\ensuremath{\dfrac{1}{#1}}}
 \newcommand{\fullMod}[2]{\equiv #1 \pmod{#2}}
-
-\newcommand{\upla}[2]
-{
-    (#1_1, #1_2, \ldots, #1_{#2})
-}
-\newcommand{\kupla}[3][k]
-{
-    (#2_{#3}, \ldots, #2_{#1})
-}
-\newcommand{\polynom}[3][x]
-{
-    #3_{#2} #1^{#2} + #3_{#2 - 1} #1^{#2 - 1} + \cdots + #3_{1} #1 + #3_{0}
-}
-
-
-\newcommand{\problemImage}[2]
-{
-    \begin{center}
-        \includegraphics[width=#2]{#1}
-    \end{center}
-}
-
-
-
+\newcommand{\mcd}[2]{\ensuremath{mcd(#1, #2)}}
+\newcommand{\mcm}[2]{\ensuremath{mcm(#1, #2)}}
 
 %Enviroments
-\newenvironment{source-problem}
-{
-    \vspace{-5mm}
-    \begin{flushright}
-        \begin{itshape}
-        (}{)
-        \end{itshape}
-    \end{flushright}
-}
-
 \newenvironment{solution}[1][]
 {
     \ifstrempty{#1}

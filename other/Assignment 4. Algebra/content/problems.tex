@@ -1,0 +1,97 @@
+\section{Problems}
+
+\begin{problem}
+    Let $x_1, x_2, \cdots, x_n > 0$ such that $\frac{1}{1 + x_1} + \ldots + \frac{1}{1 + x_n} = 1$.
+    Prove that
+    \[
+        x_1 x_2 \ldots x_n \geq (n - 1)^n.
+    \]
+\end{problem}
+
+\begin{solution}
+    We see that
+    \[
+        1 - \frac{1}{1 + x_1} = \frac{1}{1 + x_2} + \ldots + \frac{1}{1 + x_n} \geq (n - 1) \sqrt[n - 1]{\frac{1}{1 + x_2} \times \ldots \times \frac{1}{1 + x_n}} = \frac{n - 1}{\sqrt[n - 1]{(1 + x_2) \ldots (1 + x_n)}}
+    \]
+    So
+    \[
+        \frac{x_1}{1 + x_1} \geq \frac{n - 1}{\sqrt[n - 1]{(1 + x_2) \ldots (1 + x_n)}}
+    \]
+    Generally
+    \[
+        \frac{x_k}{1 + x_k} \geq \frac{n - 1}{\sqrt[n - 1]{\prod_{i \neq k} (1 + x_i)}}
+    \]
+    Multiply this result for $k = 1, 2, \ldots, n$ we find that
+    \begin{align*}
+        \frac{x_1}{1 + x_1} \cdot \ldots \cdot \frac{x_n}{1 + x_n} &\geq \frac{(n - 1)^{n - 1}}{\sqrt[n - 1]{(1 + x_1)^{n - 1} \cdot (1 + x_2)^{n - 1} \ldots (1 + x_n)^{n - 1}}}\\
+        \frac{x_1}{1 + x_1} \cdot \ldots \cdot \frac{x_n}{1 + x_n} &\geq \frac{(n - 1)^{n - 1}}{(1 + x_1)\cdot (1 + x_2) \ldots (1 + x_n)}\\
+        \implies x_1 x_2 \ldots x_n &\geq (n - 1)^n. \qedhere
+    \end{align*}
+\end{solution}
+
+
+\begin{problem}
+    For positive $a,b,c$ prove that
+    \[
+        \sqrt {\frac{a}{ b + c}} + \sqrt {\frac{b}{c + a}} + \sqrt {\frac{c}{ a + b}} > 2
+    \]
+\end{problem}
+\begin{solution}
+    Given real numbers $x_1, \ldots, x_n$ we have
+    \[
+        \sqrt[n]{x_1 \cdot x_2 \ldots \cdot x_n} \geq \frac{n}{\frac{1}{x_1} + \frac{1}{x_2} + \ldots + \frac{1}{x_n}}.
+    \]
+    where the case of equality occurs when $x_1 = x_2 = \ldots = x_n$.
+    So, we find that
+    \[
+        \sqrt {\frac{a}{ b + c}} = \sqrt {1 \cdot \frac{a}{ b + c}} \geq \frac{2}{1 + \frac{b + c}{a}} \geq \frac{2a}{a + b + c}
+    \]
+    Similary $\sqrt {\frac{b}{ c + a}} \geq \frac{2b}{a + b + c}$ and $\sqrt {\frac{c}{a + b}} \geq \frac{2c}{a + b + c}$ where the equality occurs when $1 = \frac{a}{ b + c} = \frac{b}{c + a} = \frac{c}{ a + b}$ it's which no posible.
+    Then $\sqrt {\frac{a}{ b + c}} + \sqrt {\frac{b}{c + a}} + \sqrt {\frac{c}{ a + b}} > 2$.
+\end{solution}
+
+
+
+
+\begin{problem}
+    For positive $a,b,c,d$ prove that
+    \[
+        1 < \frac{a}{a + b + c} + \frac{b}{b + c + d} + \frac{c}{c + d + a} + \frac{d}{d + a + b} < 2.
+    \]
+\end{problem}
+\begin{solution}
+    Since $a,b,c,d$ are positive, we find
+    \[
+        1 < \frac{a^2}{a^2 + ab + ac} + \frac{b^2}{b^2 + bc + bd} + \frac{c^2}{c^2 + cd + ac} + \frac{d^2}{d^2 + ad + bd} < 2.
+    \]
+    and we take $A = \frac{a^2}{a^2 + ab + ac} + \frac{b^2}{b^2 + bc + bd} + \frac{c^2}{c^2 + cd + ac} + \frac{d^2}{d^2 + ad + bd}$.
+    By Cauchy-Schwars we find that
+    \begin{align*}
+        \left(a^2 + b^2 + c^2 + d^2 + ab + 2ac + ad + bc + 2bd + cd\right)\cdot A &\geq (a + b + c + d)^2\\
+        \iff \left[(a + c)^2 + (a + c)(b + d) + (b + d)^2\right]\cdot A &\geq (a + c)^2 + 2(a + c)(b + d) + (b + d)^2\\
+        \iff A &\geq \frac{(a + c)^2 + 2(a + c)(b + d) + (b + d)^2}{(a + c)^2 + (a + c)(b + d) + (b + d)^2}
+    \end{align*}
+    Since $(a + c)^2 + 2(a + c)(b + d) + (b + d)^2 > (a + c)^2 + (a + c)(b + d) + (b + d)^2$, hence $A > 1$.
+
+    It's clear that
+    \begin{align*}
+        -2 < - \frac{a}{a + b + c} - \frac{b}{b + c + d} - \frac{c}{c + d + a} - \frac{d}{d + a + b} < -1\\
+        2 < \frac{b + c}{a + b + c} + \frac{c + d}{b + c + d} + \frac{d + a}{c + d + a} + \frac{a + b}{d + a + b} < 3.
+    \end{align*}
+    Set $B = \left(\frac{b + c}{a + b + c} + \frac{c + d}{b + c + d} + \frac{d + a}{c + d + a} + \frac{a + b}{d + a + b}\right)$.
+    By Cauchy-Schwars we find that
+    \begin{align*}
+        \left[(b + c)(a + b + c) + (c + d)(b + c + d) + (d + a)(c + d + a) + (a + b)(d + a + b)\right] \cdot B &\geq \left[2(a + b + c + d)\right]^2\\
+        \left[ (a + b + c + d)^2 + a^2 + b^2 + c^2 + d^2 + (a + c)(b + d)\right] \cdot B &\geq \left[2(a + b + c + d)\right]^2
+    \end{align*}
+    We know that $(a + b + c + d)^2 > a^2 + b^2 + c^2 + d^2 + (a + c)(b + d)$ because this inequality is reducible to $(a + c)(b + d) + 2(ac + bd) > 0$ which is true because all number are positive.
+    Hence
+    \[
+        2(a + b + c + d)^2 > (a + b + c + d)^2 + a^2 + b^2 + c^2 + d^2 + (a + c)(b + d).
+    \]
+    Thus
+    \begin{align*}
+        B &\geq \frac{4(a + b + c + d)^2}{(a + b + c + d)^2 + a^2 + b^2 + c^2 + d^2 + (a + c)(b + d)} > \frac{4(a + b + c + d)^2}{2(a + b + c + d)^2} = 2.
+    \end{align*}
+    Hence $B > 2$.
+\end{solution}
