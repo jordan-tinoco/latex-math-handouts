@@ -1,0 +1,135 @@
+\section{Desarrollo}
+
+\begin{definition}[Fórmulas de Vieta]
+    Sea el polinomio $P(x) = a_n x^n + a_{n - 1} x^{n - 1} + \cdots  + a_1 x + a_0$ de grado $n$ con raíces $r_1, r_2, \ldots, r_n$,
+    entonces
+    \begin{align*}
+        r_1 + r_2 + \cdots + r_n &= - \frac{a_{n - 1}}{a_n}\\
+        r_1 r_2 + r_1 r_3 + \cdots + r_{n - 1} r_n &= \frac{a_{n - 2}}{a_n}\\
+        r_1 r_2 r_3 + r_1 r_2 r_4 + \cdots + r_{n - 2} r_{n - 1} r_n &= -\frac{a_{n - 3}}{a_n}\\
+        \vdots\\
+        r_1 r_2 \cdots r_n &= (-1)^n \cdot \frac{a_0}{a_n}
+    \end{align*}
+\end{definition}
+
+Por el teorema del factor, podemos escribir el polinomio como
+\[
+    a_n x^n + a_{n - 1} x^{n - 1} + \cdots  + a_1 x + a_0 = a_n (x - r_1)(x - r_2) \cdots (x - r_n).
+\]
+Al expandir los $n$ factores lineales del lado derecho, obtenemos el siguiente resultado
+\[
+    a_n x^n - a_n(r_1 + r_2 + \cdots + r_n)x^{n - 1} + a_n(r_1 r_2 + r_1 r_3 + \cdots + r_{n - 1} r_n)x^{n - 2} + \cdots + (-1)^n a_n r_1 r_2 \cdots r_n,
+\]
+donde el signo del coeficiente de $x^k$ está dado por $(-1)^{n - k}$.
+Comparando los coeficientes correspondientes obtenemos el resultado deseado.
+
+Las fórmulas de Vieta pueden ser útiles al calcular expresiones que involucran las raíces de un polinomio sin tener que calcular los valores de las propias raíces.
+Para ser más prácticos, en esta sesión de clase solo nos centraremos en las fórmulas de Vieta para polinomios cuadráticos y cúbicos.
+
+\begin{remark.tcb}
+        Para el polinomio cuadrático $P(x) = a_2 x^2 + a_1 x + a_0$ con raíces $r_1$ y $r_2$, tenemos
+        \begin{align*}
+            r_1 + r_2 = - \frac{a_1}{a_2} \quad \land \quad
+            r_1 r_2 = +\frac{a_0}{a_2}
+        \end{align*}
+\end{remark.tcb}
+\begin{remark.tcb}
+    Para el polinomio cúbico $P(x) = a_3 x^3 + a_2 x^2 + a_1 x + a_0$ con raíces $r_1$, $r_2$ y $r_3$, tenemos
+    \begin{align*}
+        r_1 + r_2 + r_3 = - \frac{a_2}{a_3} \quad \land \quad
+        r_1 r_2 + r_2 r_3 + r_3 r_1 = +\frac{a_1}{a_3} \quad \land \quad
+        r_1 r_2 r_3 = - \frac{a_0}{a_3}
+    \end{align*}
+\end{remark.tcb}
+
+\begin{example}
+    Si $p$ y $q$ son raíces de la ecuación $x^2 + 2bx + 2c = 0$, determina el valor de $\frac{1}{p^2} + \frac{1}{q^2}.$
+\end{example}
+\begin{solution}
+    Aplicando las fórmulas de Vieta, tenemos $p + q = - 2b$ y $pq = 2c$.
+    Podemos transformar la expresión deseada de la siguiente manera,
+    \[
+        \inverseOf{p^2} + \inverseOf{q^2} = \frac{p^2 + q^2}{p^2 q^2} = \frac{p^2 + 2pq + q^2 - 2pq}{p^2 q^2} = \frac{ (p + q)^2 - 2pq}{(pq)^2}
+    \]
+    Sustituyendo valores, obtenemos $\dfrac{(p + q)^2 - 2pq}{(pq)^2} = \dfrac{ (-2b)^2 - 2(2c)}{(2c)^2} = \boxed{\dfrac{b^2 - c}{c^2}}$.
+\end{solution}
+
+\begin{example}
+    El polinomio $x^3 - 7 x^2 + 3x + 1$ tiene raíces $r_1, r_2$ y  $r_3$, hallar el valor de $\dfrac{1}{r_1} + \dfrac{1}{r_2} + \dfrac{1}{r_3}$.
+\end{example}
+\begin{solution}
+    Por Vieta sabemos que $r_1 r_2 + r_2 r_3 + r_3 r_1 = 3$ y $r_1 r_2 r_3 = -1$.
+    Además, notemos que
+    \[
+        \frac{r_1 r_2 + r_2 r_3 + r_3 r_2}{r_1 r_2 r_3} = \frac{r_1 r_2}{r_1 r_2 r_3} + \frac{r_2 r_3}{r_1 r_2 r_3} + \frac{r_3 r_1}{r_1 r_2 r_3} = \frac{1}{r_3} + \frac{1}{r_1} + \frac{1}{r_2}
+    \]
+    Por lo tanto $\frac{1}{r_3} + \frac{1}{r_1} + \frac{1}{r_2} = \frac{3}{-1} = \boxed{-3}$.
+\end{solution}
+
+\begin{example}[1986 URSS]
+    Las raíces del polinomio $x^2 + ax + b + 1$ son números naturales.
+    Mostrar que $a^2 + b^2$ no es un primo.
+\end{example}
+\begin{solution}
+    Para demostrar que $a^2 + b^2$ no es primo, basta demostrar que es el producto de dos enteros mayores a 1.
+    Digamos entonces que $r_1$ y $r_2$ son las raíces, por Vieta $r_1 + r_2 = -a$ y $r_1 r_2 = b + 1$.
+    Elevando al cuadrado y sumando tenemos $a^2 + b^2 = (r_1 + r_2)^2 + (r_1 r_2 - 1)^2$, al desarrollar llegamos a
+    \begin{align*}
+        a^2 + b^2 &= r^2_1 + 2r_1 r_2 + r^2_2 + r^2_1 r^2_2 - 2r_1 r_2 + 1 \\
+        &= r^2_1 + r^2_2 + r^2_1 r^2_2+ 1\\
+        &= (r^2_1 + 1)(r^2_2 + 1).
+    \end{align*}
+    Por dato $r_1$ y $r_2$ son naturales por lo que $(r^2_1 + 1)$ y $(r^2_2 + 1)$ son naturales mayores a 1 y hemos terminado.
+\end{solution}
+
+\begin{example}[AIME II, 2008]
+    Sean $r, s$ y $t$ las tres raíces de la ecuación $8x^3 + 1001x + 2008 = 0$.
+    Hallar el valor de $(r + s)^3 + (s + t)^3 + (t + r)^3$.
+\end{example}
+\begin{solution}
+    Por Vieta, sabemos que $r +  s + t = 0$ y $r s t = -251$.
+    Por la primera ecuación, obtenemos $r + s = -t$ y por tanto $(r + s)^3 = - t^3$.
+    Análogamente, llegamos a
+    \[
+        (r + s)^3 + (s + t)^3 + (t + r)^3 =  -(r^3 + s^3 + t^3)
+    \]
+    Por la identidad de Gauss, tenemos que $r^3 + s^3 + t^3 - 3rst = 0$ y por tanto $-(r^3 + s^3 + t^3) = -3rst \implies -(r^3 + s^3 + t^3) = -3(-251) = \boxed{753}$.
+\end{solution}
+
+
+
+
+\subsection{Ejercicios y problemas}
+
+Ejercicios y problemas para el autoestudio.
+
+\begin{multicols}{2}
+    \begin{exercise}
+        Sean $r_1$ y $r_2$ las raíces del polinomio $P(x) = ax^2 + bx + c$.
+        Encontrar los siguientes valores en función del los coeficientes de $P.$
+        \begin{multicols}{3}
+            \begin{enumerate}
+                \item $r_1 - r_2$
+                \item $\frac{1}{r_1} - \frac{1}{r_2}$
+                \item $r^2_1 + r^2_2$
+                \item $r^3_1 + r^3_2$
+                \item $(r_1 + 1)^2 + (r_2 + 1)^2$
+            \end{enumerate}
+        \end{multicols}
+    \end{exercise}
+
+    \begin{problem}
+        Sean $a$ y $b$ las raíces de la ecuación $x^2 - 6x + 5 = 0$, encuentra $(a + 1)(b + 1).$
+    \end{problem}
+
+    \begin{problem}
+        Dado que $m$ y $n$ son raíces del polinomio $6x^2 - 5x - 3$, encuentra un polinomio cuyas raíces sean
+        $m - n^2$ y $n - m^2$, sin calcular los valores de $m$ y $n$.
+    \end{problem}
+
+    \begin{problem}
+        ¿Para qué valores reales positivos de $m$, las raíces $x_1$ y $x_2$ de la ecuación
+        \[x^2 - \left( \frac{2m - 1}{2} \right)x  + \frac{m^2 - 3}{2} = 0\]
+        cumplen que $x_1 = x_2 - \frac{1}{2}$?
+    \end{problem}
+\end{multicols}
