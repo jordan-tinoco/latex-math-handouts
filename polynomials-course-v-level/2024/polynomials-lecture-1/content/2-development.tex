@@ -30,8 +30,18 @@ Por ejemplo, si $P(x) = a_n x^n + \ldots + a_1 x + a_0$ y $Q(x) = b_m x^m + \ldo
     &+ (a_0 b_r + a_1 b_{r - 1} + \cdots + a_{r - 1}b_1 + a_r b_0)x^r + \cdots + (a_n b_m)x^{m + n}
 \end{align*}
 respectivamente.
+Al analizar el grado del resultado de estas operaciones, vemos que se describen por el siguiente teorema.
+\begin{theorem.tcb}{}{}
+    Sea $P(x)$ y $Q(x)$ dos polinomios y sea $k$ un entero positivo.
+    Entonces,
+    \begin{enumerate}
+        \item $\deg [P(x) Q(x)] = \deg P(x) + \deg Q(x)$
+        \item $\deg [P(x) + Q(x)] \leq \max (\deg P(x), \deg Q(x))$
+        \item $\deg [P(x)^k] = k \cdot \deg P(x)$.
+    \end{enumerate}
+\end{theorem.tcb}
 
-Se dan nombres especiales a polinomios con grados bajos:
+También, se dan nombres especiales a polinomios con grados bajos.
 \begin{table}[H]
     \centering
     \begin{tabular}{p{1.5cm} p{2.5cm} p{6.5cm}}
@@ -46,12 +56,13 @@ Se dan nombres especiales a polinomios con grados bajos:
     \end{tabular}
     \caption{Nombre de polinomios comunes.}
 \end{table}
-Los polinomios de grado dos y tres son de especial interés debido a la gran cantidad de problemas en la que estos aparecen, a lo largo del curso veremos las propiedades más importantes de estos polinomios.
+Los polinomios de grado dos y tres son de especial interés, debido a que estos aparecen en gran cantidad de problemas.
+Más adelante veremos propiedades importantes así como problemas que involucran estos polinomios.
 
 \begin{example}
     Sean $P(x) = x^3 - 5x^2 + 7$ y $Q(x) = -2x^2 + x - 10$ dos polinomios.
     Desarrolle las siguientes operaciones,
-    \begin{tasks}[label=\alph*.](4)
+    \begin{tasks}(4)
         \task $P(x) + Q(x)$
         \task $P(x) Q(x)$
         \task $Q(x) - P(x)$
@@ -59,24 +70,26 @@ Los polinomios de grado dos y tres son de especial interés debido a la gran can
     \end{tasks}
 \end{example}
 \begin{solution}
-    a. Sustituyendo los polinomios $P(x) + Q(x) = (x^3 - 5x^2 + 7) + (-2x^2 + x - 10)$, tenemos
+    Veamos la solución de cada inciso.
+
+    A) Sustituyendo los polinomios $P(x) + Q(x) = (x^3 - 5x^2 + 7) + (-2x^2 + x - 10)$, tenemos
     \begin{align*}
         P(x) + Q(x) &= (x^3 + 0x^3) + (-5 x^2 - 2x^2) + (0x + x) + (7 - 10)\\
         &= (x^3) + (-7x^2) + (x) + (-3) = \boxed{x^3 - 7x^2 + x - 3}.
     \end{align*}
-    b. Sustituyendo los polinomios $P(x) Q(x) = (x^3 - 5x^2 + 7)(-2x^2 + x - 10)$, tenemos
+    B) Sustituyendo los polinomios $P(x) Q(x) = (x^3 - 5x^2 + 7)(-2x^2 + x - 10)$, tenemos
     \begin{align*}
         P(x) Q(x) &= (x^3)(-2x^2 + x - 10) + (-5x^2)(-2x^2 + x - 10) + (7)(-2x^2 + x - 10)\\
         &= (-2x^5 + x^4 - 10x^3) + (10x^4 - 5x^3 + 50x^2) + (-14x^2 + 7x - 70)\\
         &= -2x^5 + (x^4 + 10x^4) + ( - 10x^3 - 5x^3) + (50x^2 -14x^2) + 7x - 70\\
         &= \boxed{-2x^5 + 11x^4 - 15x^3 + 36x^2 + 7x - 70}.
     \end{align*}
-    c. Sustituyendo los polinomios $Q(x) - P(x) = (-2x^2 + x - 10) - (x^3 - 5x^2 + 7)$, tenemos
+    C) Sustituyendo los polinomios $Q(x) - P(x) = (-2x^2 + x - 10) - (x^3 - 5x^2 + 7)$, tenemos
     \begin{align*}
         Q(x) - P(x) &= (0x^3 - x^3) + (- 2x^2 + 5 x^2) + (x - 0x) + (- 10 - 7)\\
         &= (-x^3) + (3x^2) + (x) + (-17) = \boxed{-x^3 + 3x^2 + x - 17}.
     \end{align*}
-    d. Sustituyendo los polinomios $11P(x) - xQ(x) = 11(x^3 - 5x^2 + 7) - x(-2x^2 + x - 10)$, tenemos
+    D) Sustituyendo los polinomios $11P(x) - xQ(x) = 11(x^3 - 5x^2 + 7) - x(-2x^2 + x - 10)$, tenemos
     \begin{align*}
         P(x) + Q(x) &= (11x^3 - 55x^2 + 77) - (-2x^3 + x^2 - 10x)\\
         &= (11x^3 + 2x^3) + (-55 x^2 - x^2) + (0x + 10x) + (77 - 0)\\
@@ -84,23 +97,12 @@ Los polinomios de grado dos y tres son de especial interés debido a la gran can
     \end{align*}
 \end{solution}
 
-
-Visto lo anterior, damos paso al siguiente teorema.
-\begin{theorem.tcb}{}{}
-    Sea $P(x)$ y $Q(x)$ dos polinomios y sea $k$ un entero positivo.
-    Entonces,
-    \begin{enumerate}
-        \item $\deg [P(x) Q(x)] = \deg P(x) + \deg Q(x)$
-        \item $\deg [P(x) + Q(x)] \leq \max (\deg P(x), \deg Q(x))$
-        \item $\deg [P(x)^k] = k \cdot \deg P(x)$.
-    \end{enumerate}
-\end{theorem.tcb}
-
-Si tenemos dos polinomios $P(x) = a_n x^n + \ldots + a_1 x + a_0$ y $Q(x) = b_m x^m + \ldots + b_1 x + b_0$ y sustituimos cada $x$ de $P(x)$ por el polinomio $Q(x)$ obtenemos la expresión $P\left(Q(x)\right) = (P \circ Q)(x)$ y decimos que es una \textbf{\emph{composición}} de $P(x)$ con $Q(x)$.
+Veamos otra operación, si tenemos dos polinomios $P(x) = a_n x^n + \ldots + a_1 x + a_0$ y $Q(x) = b_m x^m + \ldots + b_1 x + b_0$ y sustituimos cada $x$ de $P(x)$ por el polinomio $Q(x)$ obtenemos la expresión $P\left(Q(x)\right) = (P \circ Q)(x)$.
+Decimos que es una \textbf{\emph{composición}} de $P(x)$ con $Q(x)$.
 Por ejemplo, si tenemos $P(x) = x^2 - x + 5$ y $Q(x) = 7 - 3x$ vemos que $(P \circ Q)(x) = (7 - 3x)^2 - (7 - 3x) + 5 = (49 - 42x + 9x^2) - 7 + 3x + 5 = 9x^2 - 39x + 47$.
 
-La composición de polinomios es asociativa, es decir, $(P \circ Q) \circ R = P \circ (Q \circ R)$, mas no conmutativa, salvo casos especiales, así que generalmente supondremos que $P \circ Q \neq  Q \circ P$.
-
+La composición de polinomios es asociativa, esto es $(P \circ Q) \circ R = P \circ (Q \circ R)$, mas no conmutativa (salvo casos especiales) así que generalmente supondremos que $P \circ Q \neq  Q \circ P$.
+\\
 \begin{remark.tcb}
     Notemos que $P(x)^n \neq P^n(x)$.
     Entendemos a $P(x)^n$ como $P(x)$ elevado a la $n$-ésima potencia, en cambio $P^n(x)$ es la composición $n$-ésima de $P(x)$ consigo mismo, es decir
@@ -108,7 +110,6 @@ La composición de polinomios es asociativa, es decir, $(P \circ Q) \circ R = P 
         P^n(x) = \underbrace{P(P(P\dots P(P}_{n\ \text{veces}\ P} (x))\dots)).
     \]
 \end{remark.tcb}
-
 
 Como hemos visto, cualquier polinomio $P(x)$ de grado no negativo tiene una representación \textit{genérica} como la siguiente
 \[
@@ -121,17 +122,18 @@ El valor del polinomio en $x = c$, el cual denotamos por $P(c)$, es
     P(c) = a_d c^d + a_{d - 1}c^{d - 1} + \ldots + a_1 c + a_0.
 \]
 De especial interés son los casos de $P(0)$, $P(1)$ y $P(-1)$.
-    $P(0) = a_0$, el cual es el término constante,
+Estos son, $P(0) = a_0$, el cual es el término constante,
 \[
-    P(1) = a_d + a_{d - 1} + \ldots + a_0
+    P(1) = a_d + a_{d - 1} + \ldots + a_0,
 \]
 que es llamado la \textbf{\emph{suma de coeficientes}} y $P(-1) = a_0 - a_1 + \ldots + (-1)^d a_d.$
 
-Otras cuestiones sobre polinomios son:
+Otras cuestiones sobre polinomios son los siguientes.
 \begin{enumerate}
     \item \textbf{Completo}: Un polinomio completo cumple que $a_i \neq 0$ para todo entero $i$.
     \item \textbf{Ordenado}: Un polinomio está ordenado si sus términos están escritos de manera decreciente (o creciente) respecto al exponente de $x$.
-    \item \textbf{Multi variable}: Un polinomio puede estar en términos de más de una variable, por ejemplo el polinomio $P(x, y) = x^3 + 3x^2 y + 3xy^2 + y^3$.
+    \item \textbf{Multivariable}: Un polinomio puede estar en términos de más de una variable, por ejemplo el polinomio $P(x, y) = x^3 + 3x^2 y + 3xy^2 + y^3$.
+    \item \textbf{Homogeneo}: Un polinomio multivariable cuyos términos tienen el mismo \emphtext{grado absoluto}, por ejemplo $Q(m, n, p) = 2m p^5 - 3m^3 n^2 p + n^6$.
 \end{enumerate}
 
 \begin{example}
@@ -370,11 +372,11 @@ Ejercicios y problemas para el autoestudio.
 
     \begin{exercise}
         Señalar las proposiciones falsas:
-        \begin{enumerate}[label=\Roman*.]
-            \item Si sumamos un polinomios de grado cuatro con uno de grado seis, entonces el grado del polinomio resultante es seis.
-            \item Si restamos dos polinomios del mismo grado, el resultado siempre será de un grado menor.
-            \item Si el grado de $P(x)$ es mayor que el grado de $Q(x)$, el que tiene más términos es $P(x)$.
-        \end{enumerate}
+        \begin{tasks}[label=\Roman*.](1)
+            \task Si sumamos dos polinomios de grado cuatro con uno de grado seis, entonces el grado del polinomio resultante es seis.
+            \task Si restamos dos polinomios del mismo grado, el resultado siempre será de un grado menor.
+            \task Si el grado de $P(x)$ es mayor que el grado de $Q(x)$, el que tiene más términos es $P(x)$.
+        \end{tasks}
         \begin{tasks}(2)
             \task I y II
             \task II solamente
@@ -396,7 +398,7 @@ Ejercicios y problemas para el autoestudio.
     \begin{problem}
         Hallar el valor de $\alpha_1 + \alpha_2 - \alpha_3$ si se cumple que
         \[
-            50x^3 + 5x^2 - 8x + 1 = \alpha_1 (\alpha_2 x + 1)^{\alpha_1} (\alpha_2 x - \alpha_1)^{\alpha_3}.
+            50x^3 + 5x^2 - 8x + 1 = \alpha_1 (\alpha_3 x + 1)^{\alpha_1} (\alpha_2 x - \alpha_1)^{\alpha_3}.
         \]
     \end{problem}
 

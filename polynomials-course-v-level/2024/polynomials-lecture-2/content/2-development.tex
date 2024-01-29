@@ -40,7 +40,7 @@ Es importante que, para mejorar tu fortaleza en el trabajo con expresiones algeb
 
 Por ejemplo, podemos factorizar la expresión $(a^2 - b^2)^3 + (b^2 - c^2)^3 + (c^2 - a^2)^3$.
 Primero, notemos que $a^2 - b^2 + b^2 - c^2 + c^2 - a^2 = 0$.
-Por lo tanto, por la Identidad de Gauss, obtenemos que
+Por tanto, utilizando la Identidad de Gauss, obtenemos que
 \[
     (a^2 - b^2)^3 + (b^2 - c^2)^3 + (c^2 - a^2)^3 = 3 (a^2 - b^2)(b^2 - c^2)(c^2 - a^2).
 \]
@@ -66,7 +66,7 @@ Dado un polinomio cuadrático $P(x) = ax^2 + bx + c$ donde $a, b, c \in \R$, est
     Factorizar el polinomio $10x^2 - 13x - 3$.
 \end{example}
 \begin{solution}
-    Calculamos el valor $(10)(-3) = -30$, después escribimos los siguientes paréntesis
+    Primero calculamos el valor $(10)(-3) = -30$, después escribimos los siguientes paréntesis
     \[
         \inverseOf{10} (10x + \ \ )(10x + \ \ ).
     \]
@@ -87,7 +87,7 @@ No todos los polinomios cuadráticos pueden ser factorizados fácilmente.
 Por ejemplo, al tratar de factorizar $x^2 + 6x - 1$ llegar directamente a $(x + 3 - \sqrt {10})(x-3-\sqrt {10})$ no resulta tan evidente, por lo cual podemos auxiliarnos en técnicas como la \textbf{completación de cuadrados}.
 Si se tiene el polinomio $P(x) = x^2 \pm bx$ entonces podemos expresarlo de la forma:
 \[
-    P(x) = \left( x \pm \frac{b}{2} \right)^2 - \left( \frac{b}{2} \right)^2
+    P(x) = \left( x \pm \frac{b}{2} \right)^2 - \left( \frac{b}{2} \right)^2.
 \]
 Lo cual facilita aplicar la diferencia de cuadrados.
 
@@ -129,7 +129,7 @@ Lo cual facilita aplicar la diferencia de cuadrados.
     Lo cual es fácil ver cuando evaluamos $R(u) = u^2 - (u+17)u + 17u = u^2 - u^2 - 17u + 17u = 0.$
 \end{solution}
 
-El polinomio anterior resulta que puede ser factorizado como $R(x) = (x - u)(x - 17)$, que al igualarlo a cero y analizamos, cada factor nos da una raíz.
+El polinomio anterior resulta que puede ser factorizado como $R(x) = (x - u)(x - 17)$, que al igualarlo a cero y analizarlo, cada factor nos da una raíz.
 Luego, vemos que $x = u, 17$ son sus raíces.
 Es decir, que si factorizamos un polinomio hasta sus factores lineales automáticamente obtenemos sus raíces.
 
@@ -137,14 +137,12 @@ Es decir, que si factorizamos un polinomio hasta sus factores lineales automáti
     Dado $f(x) = x^3 - 3x^2 + 6x - 40$, probar que $(x - 5)$ no es factor un de $f(x)$.
 \end{example}
 \begin{solution}
-    Supongamos que $(x - 5)$ es un factor de $f(x)$, entonces debe pasar que
-    \[
-        f(x) = (x - 5)g(x)
-    \]
-    para un polinomio cuadrático $g(x)$.
+    Supongamos que $(x - 5)$ es un factor de $f(x)$, entonces debe pasar que $f(x) = (x - 5)g(x)$ para un polinomio cuadrático $g(x)$.
     Si $(x - 5)$ es factor de $f(x)$, al evaluarlo en $x = 5$ vemos que dicho factor se hace cero, es decir $f(5) = 0$.
     Pero vemos que $f(5) = 5^3 - 3(5)^2 + 6(5) - 40 = 40 \neq 0$, una contradicción.
 \end{solution}
+
+Sabiendo las definciones anteriores, veamos el siguiente teorema.
 
 \begin{theorem.tcb}{Teorema del factor}{}\label{factor-theorem}
 Dado un polinomio $P(x)$ con grado $n$ y un número $a \in \R$, diremos que $a$ es una raíz de $P(x)$ si y sólo si $(x - a)$ es un factor de $P(x)$, \ie
@@ -153,6 +151,9 @@ Dado un polinomio $P(x)$ con grado $n$ y un número $a \in \R$, diremos que $a$ 
 \]
 para algún polinomio $Q(x)$.
 \end{theorem.tcb}
+Demostrar este teorema se reduce a observar la correlación de las raíces y los factores lineales, dicha demostración se deja como ejercicio al lector.
+El teorema del factor es un teorema muy útil y recurrente en los problemas de polinomios cuando se conocen algunas raíces.
+Además de implicar ciertos resultados como el siguiente.
 
 Sean $a_1, a_2$ y $a_3$ tres raíces distintas de un polinomio cúbico $P(x)$, por el teorema anterior sabemos que
 \[
@@ -163,18 +164,19 @@ Como $P(a_2) = (a_2 - a_1)Q(a_2) = 0$ y tenemos que $a_2 \neq a_1$, necesariamen
 \[
     Q(x) = (x - a_2)R(x)
 \]
-para algún polinomio líneal $R(x)$.
-Análogamente, tendremos que $R(x) = (x - a_3)S(x)$, para algún polinomio constante $S(x) = c$.
+para algún polinomio lineal $R(x)$.
+Análogamente, tendremos que $R(x) = (x - a_3)S(x)$, para algún polinomio constante $S(x) = C$.
 Luego
 \[
-    P(x) = c(x - a_1)(x - a_2)(x - a_3) \mbox{, con } c \in \R.
+    P(x) = C(x - a_1)(x - a_2)(x - a_3),\ \text{con}\  C \in \R.
 \]
-Vemos que saber las raíces de $P(x)$ nos condujo a su factorización.
-Además, generalizando obtenemos el siguiente resultado.
+Donde cabe mencionar que la constante $C$ es igual al coeficiente principal.
+En resumen, vemos que saber las raíces de $P(x)$ nos condujo a su factorización.
+Esto, además, podemos generalizarlo y obtener el siguiente resultado.
 \begin{remark.tcb}
     Sea el polinomio $P(x)$ de grado $n$ y raíces $r_i$ con $1 \leq i \leq n$, este puede ser expresado como
     \begin{equation}
-        P(x) = c(x - r_1)(x - r_2)\cdots(x - r_{n-1})(x - r_n), \ \text{donde}\ c \in \R.
+        P(x) = C(x - r_1)(x - r_2)\cdots(x - r_{n-1})(x - r_n), \ \text{donde}\ C \in \R.
     \end{equation}
 \end{remark.tcb}
 De este resultado obtenemos las siguientes propiedades.
@@ -231,7 +233,7 @@ A esta fórmula le conoceremos como la \textbf{\emph{fórmula general}} cuadrát
 \end{proof}
 
 \begin{example}
-    Sabiendo que $a_1 = m + 2$, $a_2 = m - 1$ y $a_3 = 1 - m$ son los coeficientes del al ecuación $a_1 x^4 + a_2 x^2 + a_3 = 0$, tal que $a_2 - a_1 = a_3 - a_2$.
+    Sabiendo que $a_1 = m + 2$, $a_2 = m - 1$ y $a_3 = 1 - m$ son los coeficientes del la ecuación $a_1 x^4 + a_2 x^2 + a_3 = 0$, tal que $a_2 - a_1 = a_3 - a_2$.
     Determinar el valor de mayor raíz.
 \end{example}
 \begin{solution}
@@ -241,14 +243,22 @@ A esta fórmula le conoceremos como la \textbf{\emph{fórmula general}} cuadrát
     \[
         y = \frac{-2 \pm \sqrt{2^2 - 4(5)(-1)}}{2(5)} = \frac{-2 \pm \sqrt{24}}{10} = \frac{-2 \pm 2\sqrt{6}}{10} = \frac{-1 \pm \sqrt{6}}{5}.
     \]
-    Por consiguiente las raíces de $x$ son las raíces cuadradas de estos valores, es decir $x = \pm \sqrt {\frac{-1 \pm \sqrt{6}}{5}}$.
-    Luego de un breve análisis vemos que la mayor de las raíces es $\sqrt {\frac{-1 + \sqrt{6}}{5}}$.
+    Por consiguiente las raíces de la ecuación original, son las raíces cuadradas de estos dos valores, es decir
+    \[
+        x = \pm \sqrt {\frac{-1 \pm \sqrt{6}}{5}}.
+    \]
+    Después de un breve análisis, vemos que la mayor de las raíces es $\sqrt {\frac{-1 + \sqrt{6}}{5}}$.
 \end{solution}
 
-En el ejemplo anterior, las raíces $x = \pm \sqrt {\frac{-1 - \sqrt{6}}{5}}$ son valores complejos, cuya forma reducida es $x = \pm \sqrt {\frac{1 + \sqrt{6}}{5}} i$, donde $i = \sqrt {-1}$ es la \textbf{\emph{unidad imaginaria}}.
-En general, dependerá del contexto del problema si estos valores son tomados en cuenta o no.
+En el ejemplo anterior, las raíces
+\[
+    x = \pm \sqrt {\frac{-1 - \sqrt{6}}{5}} = \pm \sqrt {\frac{1 + \sqrt{6}}{5}} i
+\]
+son valores complejos.
+Donde $i = \sqrt {-1}$ se conoce como la \textbf{\emph{unidad imaginaria}}.
 
-En nuestro curso no veremos el tema de \emphtext{Números Complejos} tal cual, pero al menos tendremos en cuenta elementos básicos como su definición.
+En general, dependerá del contexto del problema si estos valores son tomados en cuenta o no.
+En nuestro curso no veremos el tema de \emphtext{Números Complejos} tal cual, pero al menos tendremos en cuenta elementos básicos como su definición y algunas propiedades.
 
 
 
@@ -280,8 +290,8 @@ Para el polinomio $P(x) = ax^2 + bx + c$, la cantidad $\Delta = b^2 - 4ac$, es l
 \end{solution}
 
 
-En la ecuación polinómica $ax^3 + bx^2 + cx + d = 0$, con $a \neq 0$, al hacer la sustitución $y = x + \frac{b}{3a}$ se obtiene como resultado la ecuación de la forma $y^3 + py + q$, que se nombra como la ecuación \textbf{\emph{cúbica reducida}},
-donde
+Para el polinomio $P(x) = ax^3 + bx^2 + cx + d$, podemos plantear la ecuación polinómica $ax^3 + bx^2 + cx + d = 0$, con $a \neq 0$.
+Al hacer la sustitución $y = x + \frac{b}{3a}$ se obtiene como resultado la ecuación de la forma $y^3 + py + q$, que se nombra como la ecuación \textbf{\emph{cúbica reducida}}, donde
 \[
     p = \frac{3ac - b^2}{3a^2}\quad\text{y}\quad q = \frac{2b^3 - 9abc + 27a^2 d}{27a^3}.
 \]
@@ -304,28 +314,17 @@ Esta ecuación nos ayuda a obtener la valor $\Delta = \dfrac{q^2}{4} + \dfrac{p^
     \caption{Análisis de discriminate para polinomios cúbicos.}
 \end{table}
 
+En las próximas clases veremos una manera directa de obtener las raíces de una ecuación cúbica reducida.
+Por medio de un metodo conocido como el \emphtext{Método de Cardano}.
+
 
 
 \subsection{Ejercicios y problemas}
 
 Ejercicios y problemas para el autoestudio.
 
-\begin{exercise}
-    Determina las raíces los siguientes polinomios con el método que más te guste
-    \begin{tasks}(3)
-        \task $x^2 + x - 20$
-        \task $9t^2 + 88t - 20$
-        \task $x^3 - 6x + 9$
-        \task $x^3 - 1331$
-        \task $-21x^2 - 11x + 2$
-        \task $r^4 - 13r^2 + 36$
-        \task $x^3 - 9x^2 - 9x - 15$
-        \task $12p^2 - 7p - 12$
-        \task $(c + d)^2 - 18(c + d) + 65$
-    \end{tasks}
-\end{exercise}
-
 \begin{multicols}{2}
+
     \begin{exercise}
         Sea $f(x) = 3x^3 - 2x^2 - 12x + 8$.
         \begin{tasks}[label=\alph*.](1)
@@ -368,7 +367,7 @@ Ejercicios y problemas para el autoestudio.
     \begin{exercise}
         Resolver la ecuación
         \[
-            x^3 + x^2 - (x - 1)(x - 2)(x - 2) = 12.
+            x^3 + x^2 - (x - 1)(x - 2)(x - 3) = 12.
         \]
     \end{exercise}
 
@@ -388,5 +387,67 @@ Ejercicios y problemas para el autoestudio.
         Sean $a, b$ y $c$ números reales positivos.
         ¿Es posible que cada uno de los polinomios $P(x) = ax^2 + bx + c \mbox{, } Q(x) = bx^2 + cx + a \mbox{ y } R(x) = cx^2 + ax + b$ tenga sus dos raíces reales?
     \end{problem}
+
+    \begin{problem}
+        Sean $a$ y $b$ enteros.
+        Determinar todas las soluciones de la ecuación
+        \[(ax - b)^2 + (bx - a)^2 =  x,\] si se sabe que tiene una solución entera.
+    \end{problem}
+
+    \begin{problem}
+        Supóngase que el polinomio $5x^3 + 4x^2 - 8x + 6$ tiene tres raíces reales $a, b \mbox{ y } c$.
+        Encuentra el valor de
+        \[a(1 + b + c) + b(1 + a + c) + c(1 + a + b).\]
+    \end{problem}
+
+    \begin{exercise}
+        Factorizar y determinar las raíces de los siguientes polinomios ya sea usando agrupación, identidades o completación de cuadrado.
+        \begin{tasks}[label=\Alph*)](1)
+        \task $x^2 + 2x - 1$
+        \task $x^3 - 1331$
+        \task $12x^2 - 75$
+        \task $n^2 + 2n + 3mn + 6m$
+        \task $2ax^2 + bx^2 - 2ay^2 - by^2$
+        \task $x^2 + 10x + 1$
+        \task $x^3 - 9x^2 - 9x - 15$
+        \task $yz^2 - y^3 + z^3 - y^2 z$
+        \task $x^2 - 2x + 6$
+        \task $x^3 + x^2 - x - 1$
+            \task $4x^2 + 9y^2 + z^2 + 12xy - 4xz - 6yz$
+        \end{tasks}
+    \end{exercise}
+
+    \begin{exercise}
+        Factorizar y determinar las raíces de los siguientes polinomios usando la factorización clásica.
+        \begin{tasks}[label=\Alph*)](1)
+        \task $x^2 + x - 20$
+        \task $9t^2 + 88t - 20$
+        \task $12p^2 - 7p - 12$
+        \task $(c + d)(c + d - 18) + 65$
+        \task $-21x^2 - 11x + 2$
+        \task $r^4 - 13r^2 + 36$
+        \end{tasks}
+    \end{exercise}
+
+    \begin{exercise}
+        Resolver las siguientes ecuaciones utilizando la fórmula general.
+        \begin{tasks}[label=\Alph*)](1)
+        \task $x^2 = x + 3$
+        \task $2x^2 + 39 = -18x$
+        \task $5x^2 + 3x + 1 = 0$
+        \task $2x^2 + 23 = 14x$
+        \task $x^2 = 2x + 48$
+        \end{tasks}
+    \end{exercise}
+
+    \begin{exercise}
+        Determinar la cantidad de raíces de las siguientes ecuaciones cúbicas.
+        \begin{tasks}[label=\Alph*)](1)
+            \task $x^3 - 6x^2 - 6x - 14$
+            \task $x^3 - 7x + 6$
+            \task $x^3 - 9x^2 + 24x - 16$
+            \task $x^3 - 6x + 9$
+        \end{tasks}
+    \end{exercise}
 
 \end{multicols}
