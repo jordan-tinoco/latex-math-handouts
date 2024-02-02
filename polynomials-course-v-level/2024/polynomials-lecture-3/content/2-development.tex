@@ -1,99 +1,321 @@
 \section{Desarrollo}
 
-\begin{definition}[Fórmulas de Vieta]
-    Sea el polinomio $P(x) = a_n x^n + a_{n - 1} x^{n - 1} + \cdots  + a_1 x + a_0$ de grado $n$ con raíces $r_1, r_2, \ldots, r_n$,
-    entonces
+\subsection{Factorización}
+
+Factorizar un polinomio significa descomponer la expresión original en un producto de polinomios con grados menores.
+Tenemos dos herramientas principales para esto: agrupar o usar identidades.
+La aplicación de la primera herramienta incluye dividir la expresión en grupos con factores comunes.
+Por ejemplo,
+\[
+    a^2 + ab + bc + ca = (a^2 + ab) + (ac + bc) = a(a + b) + c(a + b) = (a + c)(a + b).
+\]
+
+\begin{example}
+    Factorizar la siguiente expresión $xyz + 3xy + 2xz - yz + 6x - 3y - 2z - 6$.
+\end{example}
+\begin{solution}
+    Agrupamos la expresión de arriba como $(xyz + 3xy) + (2xz + 6x) - (yz + 3y) - (2z + 6)$.
+    Ahora podemos sacar el factor $z + 3$ para cada grupo, $(z + 3)(xy + 2x - y - 2)$.
+    Nuevamente, podemos agrupar la expresión $xy + 2x - y - 2$ como $x(y + 2) - (y + 2) = (x - 1)(y + 2)$.
+    Por tanto, nuestra expresión queda factorizada como $(x - 1)(y + 2)(z + 3)$.
+\end{solution}
+
+El segundo caso se refiere a identidades para factorizar.
+Las identidades son los pilares de los cálculos matemáticos.
+Se encuentran comúnmente en las competiciones matemáticas, donde muchos problemas requieren de su conocimiento.
+
+Aquí recopilamos algunas de las identidades más útiles.
+Es importante que, para mejorar tu fortaleza en el trabajo con expresiones algebraicas, te esforcés en aprender estas identidades.
+
+\textbf{Identidades útiles}
+\begin{align*}
+    &\text{(Diferencia de cuadrados)}     && a^2 - b^2 = (a - b)(a + b)\\[2mm]
+    &\text{(Binomio al cuadrado)}         && (a + b)^2 = a^2 + 2ab + b^2\\[2mm]
+    &\text{(Trinomio al cuadrado)}        && (a + b + c)^2 = a^2 + b^2 + c^2 + 2(ab + bc + ca)\\[2mm]
+    &\text{(Identidad de Gauss)}          && a^3 + b^3 + c^3 - 3abc = (a + b + c)(a^2 + b^2 + c^2 - ab - bc - ca)\\[2mm]
+    &\text{(Identidad de Argand)}         && a^4 + a^2 + 1 = (a^2 - a + 1)(a^2 + a + 1)\\[2mm]
+    &\text{(Identidad de Sophie Germain)} && a^4 + 4 b^4 = (a^2 - 2ab + 2b^2)\left(a^2 + 2ab + 2b^2\right)\\[2mm]
+    &\text{(Identidad de Brahmagupta)}    && (a^2 + b^2) (x^2 + y^2) = (ax + by)^2 + (ay - bx)^2\\[2mm]
+    &\text{(Diferencia de potencias)}     && a^n - b^n = (a - b)(a^{n - 1} + a^{n - 2}b + \cdots + b^{n - 1})\\[2mm]
+    &\text{(Suma de potencias)}           && a^n + b^n = (a + b)(a^{n - 1} - a^{n - 2}b + \cdots + b^{n - 1}) \ \text{con $n$ impar}\\[1.5mm]
+    &\text{(Binomio de Newton)}           && (a + b)^n = a^n + \binom{n}{1} a^{n - 1}b + \cdots + \binom{n}{k} a^{n -k}b^k + \cdots + b^n
+\end{align*}
+
+Por ejemplo, podemos factorizar la expresión $(a^2 - b^2)^3 + (b^2 - c^2)^3 + (c^2 - a^2)^3$.
+Primero, notemos que $a^2 - b^2 + b^2 - c^2 + c^2 - a^2 = 0$.
+Por tanto, utilizando la Identidad de Gauss, obtenemos que
+\[
+    (a^2 - b^2)^3 + (b^2 - c^2)^3 + (c^2 - a^2)^3 = 3 (a^2 - b^2)(b^2 - c^2)(c^2 - a^2).
+\]
+Que por diferencia de cuadrados, $3 (a^2 - b^2)(b^2 - c^2)(c^2 - a^2) = 3 (a - b)(b - c)(c - a) (a + b)(b + c)(c + a)$.
+
+
+
+\subsubsection{Factorización clásica}
+
+Dado un polinomio cuadrático $P(x) = ax^2 + bx + c$ donde $a, b, c \in \R$, este puede ser factorizado como
+\begin{gather*}
+    P(x) = \frac{(ax + \triangle)(ax + \square)}{a},\ \text{donde}\
+    \begin{cases}
+        \triangle + \square = b\\
+        \triangle \times \square = ac
+    \end{cases}
+\end{gather*}
+
+\begin{example}
+    Factorizar el polinomio $10x^2 - 13x - 3$.
+\end{example}
+\begin{solution}
+    Primero calculamos el valor $(10)(-3) = -30$, después escribimos los siguientes paréntesis
+    \[
+        \inverseOf{10} (10x + \ \ )(10x + \ \ ).
+    \]
+    Luego, nos preguntamos lo siguiente ¿qué números cumplen que al sumarse den $-13$ y al multiplicarse den $-30$?
+    Tras un breve análisis nos damos cuenta de que dichos números son $-15$ y 2.
+    El mayor (sin considerar el signo) se coloca en el primer paréntesis, el menor en el segundo y finalmente se reduce la expresión.
+    Es decir,
+    \[
+        \inverseOf{10} (10x - 15)(10x + 2) = \inverseOf{10} (5)(2x - 3)(2)(5x + 1) = \boxed{(2x - 3)(5x + 1)}. \qedhere
+    \]
+\end{solution}
+
+
+
+\subsubsection{Completación de cuadrados}
+
+No todos los polinomios cuadráticos pueden ser factorizados fácilmente.
+Por ejemplo, al tratar de factorizar $x^2 + 6x - 1$ llegar directamente a $\left(x + 3 - \sqrt {10}\right)\left(x - 3-\sqrt {10}\right)$ no resulta tan evidente, por lo cual podemos auxiliarnos en técnicas como la \textbf{completación de cuadrados}.
+Si se tiene el polinomio $P(x) = x^2 \pm bx$ entonces podemos expresarlo de la forma:
+\[
+    P(x) = \left( x \pm \frac{b}{2} \right)^2 - \left( \frac{b}{2} \right)^2.
+\]
+Lo cuál facilita aplicar la diferencia de cuadrados.
+
+\begin{example}
+    Factorizar el polinomio $R(r) = r^2 - 10r + 7$.
+\end{example}
+\begin{solution}
+    Utilizando la completación de cuadrados en la expresión $r^2 - 10r$, tenemos que
     \begin{align*}
-        r_1 + r_2 + \cdots + r_n &= - \frac{a_{n - 1}}{a_n}\\
-        r_1 r_2 + r_1 r_3 + \cdots + r_{n - 1} r_n &= \frac{a_{n - 2}}{a_n}\\
-        r_1 r_2 r_3 + r_1 r_2 r_4 + \cdots + r_{n - 2} r_{n - 1} r_n &= -\frac{a_{n - 3}}{a_n}\\
-        \vdots\\
-        r_1 r_2 \cdots r_n &= (-1)^n \cdot \frac{a_0}{a_n}
+        R(r) =& r^2 - 10r + 7\\
+        =& \left( r - \frac{10}{2} \right)^2 - \left( \frac{10}{2} \right)^2 + 7
+        = \left( r - 5 \right)^2 - 18\\
+        =& \left( r - 5 + \sqrt {18} \right)\left( r - 5 - \sqrt {18} \right)
     \end{align*}
+    De esta manera sabemos que $R(r) = \left[ r - \left( 5 - 3\sqrt {2} \right)\right]\left[ r - \left( 5 + 3\sqrt {2} \right)\right]$.
+\end{solution}
+
+
+\subsection{Definiciones}
+
+\begin{definition}[Raíz de un Polinomio]
+    La \textbf{\emph{raíz}} o \textbf{\emph{cero}} de un polinomio $P(x) = a_d x^d + \cdots + a_1 x + a_0$ es un número $r$, tal que $P(r) = 0$.
+    También, diremos que $r$ es una solución de la ecuación $ a_d x^d + \cdots + a_1 x + a_0 = 0$.
 \end{definition}
 
-Por el teorema del factor, podemos escribir el polinomio como
-\[
-    a_n x^n + a_{n - 1} x^{n - 1} + \cdots  + a_1 x + a_0 = a_n (x - r_1)(x - r_2) \cdots (x - r_n).
-\]
-Al expandir los $n$ factores lineales del lado derecho, obtenemos el siguiente resultado
-\[
-    a_n x^n - a_n(r_1 + r_2 + \cdots + r_n)x^{n - 1} + a_n(r_1 r_2 + r_1 r_3 + \cdots + r_{n - 1} r_n)x^{n - 2} + \cdots + (-1)^n a_n r_1 r_2 \cdots r_n,
-\]
-donde el signo del coeficiente de $x^k$ está dado por $(-1)^{n - k}$.
-Comparando los coeficientes correspondientes obtenemos el resultado deseado.
+\begin{definition}[Factor de un Polinomio]
+    Dado $P(x)$ un polinomio con grado $n$ y un número $a \in \R$, diremos que $(x - a)$ es un \emphtext{factor} de $P(x)$ si se cumple que
+    \[
+        P(x) = (x - a)Q(x),
+    \]
+    para algún polinomio $Q(x)$ con $\deg Q(x) = n - 1$.
+\end{definition}
 
-Las fórmulas de Vieta pueden ser útiles al calcular expresiones que involucran las raíces de un polinomio sin tener que calcular los valores de las propias raíces.
-Para ser más prácticos, en esta sesión de clase solo nos centraremos en las fórmulas de Vieta para polinomios cuadráticos y cúbicos.
+\begin{example}
+    Demuestre que $u$ es raíz del polinomio $R(x) = x^2 - (u + 17) x + 17u$.
+\end{example}
+\begin{solution}
+    Para demostrar que $u$ es raíz de $R(x)$, basta probar que $R(u) = 0$.
+    Lo cual es fácil ver cuando evaluamos $R(u) = u^2 - (u+17)u + 17u = u^2 - u^2 - 17u + 17u = 0.$
+\end{solution}
 
+El polinomio anterior resulta que puede ser factorizado como $R(x) = (x - u)(x - 17)$, que al igualarlo a cero y analizarlo, cada factor nos da una raíz.
+Luego, vemos que $x = u, 17$ son sus raíces.
+Es decir, que si factorizamos un polinomio hasta sus factores lineales automáticamente obtenemos sus raíces.
+
+\begin{example}
+    Dado $f(x) = x^3 - 3x^2 + 6x - 40$, probar que $(x - 5)$ no es factor un de $f(x)$.
+\end{example}
+\begin{solution}
+    Supongamos que $(x - 5)$ es un factor de $f(x)$, entonces debe pasar que $f(x) = (x - 5)g(x)$ para un polinomio cuadrático $g(x)$.
+    Si $(x - 5)$ es factor de $f(x)$, al evaluarlo en $x = 5$ vemos que dicho factor se hace cero, es decir $f(5) = 0$.
+    Pero vemos que $f(5) = 5^3 - 3(5)^2 + 6(5) - 40 = 40 \neq 0$, una contradicción.
+\end{solution}
+
+Sabiendo las definiciones anteriores, veamos el siguiente teorema.
+
+\begin{theorem.tcb}{Teorema del factor}{}\label{factor-theorem}
+Dado un polinomio $P(x)$ con grado $n$ y un número $a \in \R$, diremos que $a$ es una raíz de $P(x)$ si y solo si $(x - a)$ es un factor de $P(x)$, \ie
+\[
+    P(a) = 0 \iff P(x) = (x - a)Q(x)
+\]
+para algún polinomio $Q(x)$.
+\end{theorem.tcb}
+Demostrar este teorema se reduce a observar la correlación de las raíces y los factores lineales, dicha demostración se deja como ejercicio al lector.
+El teorema del factor es un teorema muy útil y recurrente en los problemas de polinomios cuando se conocen algunas raíces.
+Además de implicar ciertos resultados como el siguiente.
+
+Sean $a_1, a_2$ y $a_3$ tres raíces distintas de un polinomio cúbico $P(x)$, por el teorema anterior sabemos que
+\[
+    P(x) = (x - a_1)Q(x),
+\]
+para algún polinomio cuadrático $Q(x)$.
+Como $P(a_2) = (a_2 - a_1)Q(a_2) = 0$ y tenemos que $a_2 \neq a_1$, necesariamente $Q(a_2) = 0$, es decir $a_2$ es raíz de $Q$, nuevamente por el teorema anterior sabemos que
+\[
+    Q(x) = (x - a_2)R(x)
+\]
+para algún polinomio lineal $R(x)$.
+Análogamente, tendremos que $R(x) = (x - a_3)S(x)$, para algún polinomio constante $S(x) = C$.
+Luego
+\[
+    P(x) = C(x - a_1)(x - a_2)(x - a_3),\ \text{con}\  C \in \R.
+\]
+Donde cabe mencionar que el número $C$ es igual al coeficiente principal.
+En resumen, vemos que saber las raíces de $P(x)$ nos condujo a su factorización.
+Esto, además, podemos generalizarlo y obtener el siguiente resultado.
 \begin{remark.tcb}
-    Para el polinomio cuadrático $P(x) = a_2 x^2 + a_1 x + a_0$ con raíces $r_1$ y $r_2$, tenemos
-    \begin{align*}
-        r_1 + r_2 = - \frac{a_1}{a_2} \quad \land \quad
-        r_1 r_2 = +\frac{a_0}{a_2}.
-    \end{align*}
-    Para el polinomio cúbico $P(x) = a_3 x^3 + a_2 x^2 + a_1 x + a_0$ con raíces $r_1$, $r_2$ y $r_3$, tenemos
-    \begin{align*}
-        r_1 + r_2 + r_3 = - \frac{a_2}{a_3} \quad \land \quad
-        r_1 r_2 + r_2 r_3 + r_3 r_1 = +\frac{a_1}{a_3} \quad \land \quad
-        r_1 r_2 r_3 = - \frac{a_0}{a_3}.
-    \end{align*}
+    Sea el polinomio $P(x)$ de grado $n$ y raíces $r_i$ con $1 \leq i \leq n$, este puede ser expresado como
+    \begin{equation}
+        P(x) = C(x - r_1)(x - r_2)\cdots(x - r_{n-1})(x - r_n), \ \text{donde}\ C \in \R.
+    \end{equation}
 \end{remark.tcb}
+De este resultado obtenemos las siguientes propiedades.
+\begin{enumerate}
+    \item Un polinomio de grado $n$ tiene como máximo $n$ raíces.
+    \item Si una cantidad $m \leq n$ de los $r_i$ son iguales, digamos a $k$, se cumple que $P(x) = (x - k)^m Q(x)$.
+    Entonces diremos que la raíz $k$ tiene multiplicidad $m$.
+\end{enumerate}
 
 \begin{example}
-    Si $p$ y $q$ son raíces de la ecuación $x^2 + 2bx + 2c = 0$, determina el valor de $\frac{1}{p^2} + \frac{1}{q^2}.$
+    Sea $P(x)$ un polinomio con coeficientes enteros y suponga que $P(1)$ y $P(2)$ son ambos impares.
+    Demuestre que no existe ningún entero $n$ para el cual $P(n) = 0$.
 \end{example}
 \begin{solution}
-    Aplicando las fórmulas de Vieta, tenemos $p + q = - 2b$ y $pq = 2c$.
-    Podemos transformar la expresión deseada de la siguiente manera,
-    \[
-        \inverseOf{p^2} + \inverseOf{q^2} = \frac{p^2 + q^2}{p^2 q^2} = \frac{p^2 + 2pq + q^2 - 2pq}{p^2 q^2} = \frac{ (p + q)^2 - 2pq}{(pq)^2}
-    \]
-    Sustituyendo valores, obtenemos $\dfrac{(p + q)^2 - 2pq}{(pq)^2} = \dfrac{ (-2b)^2 - 2(2c)}{(2c)^2} = \boxed{\dfrac{b^2 - c}{c^2}}$.
+    Nos piden demostrar que $P(x)$ no tiene raíces enteras.
+    Supongamos lo contrario, que existe un entero $n$ tal que $P(n) = 0$.
+    Entonces, por el teorema del factor tenemos $P(x) = (x - n)Q(x)$, con $Q(x)$ un polinomio con coeficientes enteros.
+    Así podemos ver que, $P(1) = (1 - n)Q(1)$ y $P(2) = (2 - n)Q(2)$ son impares, pero $(1 - n)$ y $(2 - n)$ son enteros consecutivos, así que uno de ellos debe ser par.
+    Por lo tanto, $P(1)$ o bien $P(2)$ tiene que ser par, lo cual contradice las condiciones del problema.
+    Luego, $n$ no existe.
 \end{solution}
 
 \begin{example}
-    El polinomio $x^3 - 7 x^2 + 3x + 1$ tiene raíces $r_1, r_2$ y  $r_3$, hallar el valor de $\dfrac{1}{r_1} + \dfrac{1}{r_2} + \dfrac{1}{r_3}$.
+    Sea $M(x)$ un polinomio cúbico con coeficientes enteros y sean $a, b, c \in \Z$ distintos tal que $M(a) = M(b) = M(c) = 2$.
+    Demostrar que no existe un $d \in \Z$ para el que $M(d) = 3.$
 \end{example}
 \begin{solution}
-    Por Vieta sabemos que $r_1 r_2 + r_2 r_3 + r_3 r_1 = 3$ y $r_1 r_2 r_3 = -1$.
-    Además, notemos que
-    \[
-        \frac{r_1 r_2 + r_2 r_3 + r_3 r_2}{r_1 r_2 r_3} = \frac{r_1 r_2}{r_1 r_2 r_3} + \frac{r_2 r_3}{r_1 r_2 r_3} + \frac{r_3 r_1}{r_1 r_2 r_3} = \frac{1}{r_3} + \frac{1}{r_1} + \frac{1}{r_2}
-    \]
-    Por lo tanto $\frac{1}{r_3} + \frac{1}{r_1} + \frac{1}{r_2} = \frac{3}{-1} = \boxed{-3}$.
+    Sea $N(x) = M(x) - 2$, como $a, b$ y $c$ son raíces de $N(x)$, por el teorema del factor $N(x) = \alpha (x - a)(x - b)(x - c)$, para algún entero $\alpha$.
+    Si para algún entero $d$ se cumple $M(d) = 3$, entonces $N(d) = \alpha (d - a)(d - b)(d - c) = 1$.
+    Para que esto suceda los factores deben ser 1 o $-1$, por lo tanto, dos de ellos tendrían que ser iguales.
+    Pero por la condición $a \neq b \neq c$ esto no puede ser, luego $d$ no existe.
 \end{solution}
 
-\begin{example}[1986 URSS]
-    Las raíces del polinomio $x^2 + ax + b + 1$ son números naturales.
-    Mostrar que $a^2 + b^2$ no es un primo.
-\end{example}
-\begin{solution}
-    Para demostrar que $a^2 + b^2$ no es primo, basta demostrar que es el producto de dos enteros mayores a 1.
-    Digamos entonces que $r_1$ y $r_2$ son las raíces, por Vieta $r_1 + r_2 = -a$ y $r_1 r_2 = b + 1$.
-    Elevando al cuadrado y sumando tenemos $a^2 + b^2 = (r_1 + r_2)^2 + (r_1 r_2 - 1)^2$, al desarrollar llegamos a
+
+
+\subsection{Análisis de raíces en polinomios cuadráticos y cúbicos}
+
+\subsubsection{Fórmula general}
+
+En un polinomio cuadrático $P(x) = ax^2 + bx + c$ con $a \neq 0$, podemos encontrar sus dos raíces en función de los coeficientes.
+A esta fórmula le conoceremos como la \textbf{\emph{fórmula general}} cuadrática.
+\[
+    x_1 = \frac{-b - \sqrt {b^2 - 4ac}}{2a}\quad\land\quad x_2 = \frac{-b + \sqrt {b^2 - 4ac}}{2a}.
+\]
+\begin{proof}
+    Completemos cuadrados en el polinomio
     \begin{align*}
-        a^2 + b^2 &= r^2_1 + 2r_1 r_2 + r^2_2 + r^2_1 r^2_2 - 2r_1 r_2 + 1 \\
-        &= r^2_1 + r^2_2 + r^2_1 r^2_2+ 1\\
-        &= (r^2_1 + 1)(r^2_2 + 1).
+        P(x) =& a \left( x^2 + \frac{b}{a}x + \frac{c}{a} \right) = a \left[ \left( x + \frac{b}{2a} \right)^2 - \left( \frac{b}{2a} \right)^2 + \frac{c}{a} \right] && (\text{Sumando y restando} \left( b/2a \right)^2)\\
+        =& a \left[ \left( x + \frac{b}{2a} \right)^2 - \left( \frac{b^2 - 4ac}{4a^2}\right) \right]  && (\text{Simplificando})\\
+        =& a \left[ x + \frac{b}{2a} - \frac{\sqrt {b^2 - 4ac}}{2a}\right]\left[ x + \frac{b}{2a} + \frac{\sqrt {b^2 - 4ac}}{2a}\right]  && (\text{Por diferencia de cuadrados})\\
+        =& a \left[ x - \left( \frac{-b + \sqrt {b^2 - 4ac}}{2a} \right) \right]\left[ x - \left( \frac{-b - \sqrt {b^2 - 4ac}}{2a} \right) \right] && (\text{Agrupando coeficientes})
     \end{align*}
-    Por dato $r_1$ y $r_2$ son naturales por lo que $(r^2_1 + 1)$ y $(r^2_2 + 1)$ son naturales mayores a 1 y hemos terminado.
-\end{solution}
+    Así, por el teorema del factor, se obtiene el resultado deseado.
+\end{proof}
 
-\begin{example}[AIME II, 2008]
-    Sean $r, s$ y $t$ las tres raíces de la ecuación $8x^3 + 1001x + 2008 = 0$.
-    Hallar el valor de $(r + s)^3 + (s + t)^3 + (t + r)^3$.
+\begin{example}
+    Sabiendo que $a_1 = m + 2$, $a_2 = m - 1$ y $a_3 = 1 - m$ son los coeficientes de la ecuación $a_1 x^4 + a_2 x^2 + a_3 = 0$, tal que $a_2 - a_1 = a_3 - a_2$.
+    Determinar el valor de mayor raíz.
 \end{example}
 \begin{solution}
-    Por Vieta, sabemos que $r +  s + t = 0$ y $r s t = -251$.
-    Por la primera ecuación, obtenemos $r + s = -t$ y por tanto $(r + s)^3 = - t^3$.
-    Análogamente, llegamos a
+    De la condición $a_2 - a_1 = a_3 - a_2 \implies (m - 1) - (m + 2) = (2 - m) - (m - 1) \implies -3 = -2m + 3 \implies m = 3$.
+    Luego, la ecuación es $5x^4 + 2x^2 - 1 = 0$, haciendo $y = x^2$ tenemos la cuadrática $5y^2 + 2y - 1$.
+    Que aplicando la fórmula general, obtenemos
     \[
-        (r + s)^3 + (s + t)^3 + (t + r)^3 =  -(r^3 + s^3 + t^3)
+        y = \frac{-2 \pm \sqrt{2^2 - 4(5)(-1)}}{2(5)} = \frac{-2 \pm \sqrt{24}}{10} = \frac{-2 \pm 2\sqrt{6}}{10} = \frac{-1 \pm \sqrt{6}}{5}.
     \]
-    Por la identidad de Gauss, tenemos que $r^3 + s^3 + t^3 - 3rst = 0$ y por tanto $-(r^3 + s^3 + t^3) = -3rst \implies -(r^3 + s^3 + t^3) = -3(-251) = \boxed{753}$.
+    Por consiguiente las raíces de la ecuación original, son las raíces cuadradas de estos dos valores, es decir
+    \[
+        x = \pm \sqrt {\frac{-1 \pm \sqrt{6}}{5}}.
+    \]
+    Después de un breve análisis, vemos que la mayor de las raíces es $\sqrt {\frac{-1 + \sqrt{6}}{5}}$.
 \end{solution}
 
+En el ejemplo anterior, las raíces
+\[
+    x = \pm \sqrt {\frac{-1 - \sqrt{6}}{5}} = \pm \sqrt {\frac{1 + \sqrt{6}}{5}} i
+\]
+son valores complejos.
+Donde $i = \sqrt {-1}$ se conoce como la \textbf{\emph{unidad imaginaria}}.
+
+En general, dependerá del contexto del problema si estos valores son tomados en cuenta o no.
+En nuestro curso no veremos el tema de \emphtext{Números Complejos} tal cuál, pero al menos tendremos en cuenta elementos básicos como su definición y algunas propiedades.
+
+
+
+\subsubsection{Análisis de discriminate}
+
+Para el polinomio $P(x) = ax^2 + bx + c$, la cantidad $\Delta = b^2 - 4ac$, es llamada \textbf{\emph{discriminante}} y su signo conduce a tres casos.
+\begin{table}[H]
+    \centering
+    \begin{tabular}{| p{1.4cm} | p{6.5cm} | p{6.5cm} |}
+        \hline
+        Caso & Descripción & Ejemplo \\ \hline
+        $\Delta > 0$ & El polinomio $P(x)$ tiene dos raíces reales distintas.&
+            $P(x) = x^2 - 5x + 6$ con raíces $x = 2, 5$ y $\Delta = 1$. \\\hline
+        $\Delta = 0$ & El polinomio $P(x)$ tiene una raíz real, que es una raíz \textbf{\emph{doble}}.&
+            $P(x) = x^2 - 6x + 9$ con raíz doble $x = 3$ y $\Delta = 0$. \\\hline
+        $\Delta < 0$ & El polinomio $P(x)$ no tiene raíces reales.&
+            $P(x) = x^2 - 5x + 7$ sin raíces reales y $\Delta = -3$. \\\hline
+    \end{tabular}
+    \caption{Análisis de discriminate para polinomios cuadráticos.}
+\end{table}
+
+\begin{example}
+    ¿Para qué valores de $\delta$ el polinomio $\delta x^2 + 2x + 1 - \frac{1}{\delta}$ tiene sus dos raíces iguales?
+\end{example}
+\begin{solution}
+    Si el polinomio tiene raíces iguales, quiere decir que su discriminante es nulo, es decir $\Delta = 4 - 4\delta \left(1 - \frac{1}{\delta}\right) = 0$.
+    Multiplicando por $\delta$ y dividiendo por 4, $ \delta - \delta (\delta - 1) = 0 \implies 2\delta - \delta^2 = 0$.
+    Luego, $\delta = 2$ es la única posibilidad.
+\end{solution}
+
+
+Para el polinomio $P(x) = ax^3 + bx^2 + cx + d$, podemos plantear la ecuación polinómica $ax^3 + bx^2 + cx + d = 0$, con $a \neq 0$.
+Al hacer la sustitución $y = x + \frac{b}{3a}$ se obtiene como resultado la ecuación de la forma $y^3 + py + q$, que se nombra como la ecuación \textbf{\emph{cúbica reducida}}, donde
+\[
+    p = \frac{3ac - b^2}{3a^2}\quad\text{y}\quad q = \frac{2b^3 - 9abc + 27a^2 d}{27a^3}.
+\]
+Esta ecuación nos ayuda a obtener la valor $\Delta = \dfrac{q^2}{4} + \dfrac{p^3}{27}$ que llamaremos \textbf{\emph{discriminante}} y su signo conduce a tres casos.
+\begin{table}[H]
+    \centering
+    \begin{tabular}{| p{1.4cm} | p{6.5cm} | p{6.5cm} |}
+        \hline
+        Caso & Descripción & Ejemplo \\ \hline
+        $\Delta > 0$ & El polinomio $P(x)$ tiene una raíz real y dos raíces complejas.&
+            $P(x) = x^3 - 3x^2 + x - 3$ con raíces $x = 3, \pm i$ y $\Delta = 0.074$.
+            Cuya forma reducida es $y^3 - 2y - 4$. \\\hline
+        $\Delta = 0$ & El polinomio $P(x)$ en el caso de que $p = q = 0$ tiene una raíz de multiplicidad tres.
+        Si $p = -q \neq 0$ tiene dos raíces reales (una simple y una doble, respectivamente).&
+            $P(x) = x^3 - 3x + 2$ con raíz simple $x = -2$, raíz doble $x = 1$ y $\Delta = 0$.
+            Cuando $p = q = 0$, es claro que $P(x) = x^3$ y la raíz triple es 0.\\\hline
+        $\Delta < 0$ & El polinomio $P(x)$ tiene tres raíces reales diferentes.&
+            $P(x) = x^3 - 2x^2 - x + 2$ con raíces $x = -1, 1, 2$ y $\Delta = -0.33$. \\\hline
+    \end{tabular}
+    \caption{Análisis de discriminate para polinomios cúbicos.}
+\end{table}
+
+En las próximas clases veremos una manera directa de obtener las raíces de una ecuación cúbica reducida.
+Por medio de un método conocido como el \emphtext{Método de Cardano}.
 
 
 
@@ -101,33 +323,288 @@ Para ser más prácticos, en esta sesión de clase solo nos centraremos en las f
 
 Ejercicios y problemas para el autoestudio.
 
+\showLine
+
 \begin{multicols}{2}
+
     \begin{exercise}
-        Sean $r_1$ y $r_2$ las raíces del polinomio $P(x) = ax^2 + bx + c$.
-        Encontrar los siguientes valores en función del los coeficientes de $P.$
-        \begin{multicols}{3}
-            \begin{enumerate}
-                \item $r_1 - r_2$
-                \item $\frac{1}{r_1} - \frac{1}{r_2}$
-                \item $r^2_1 + r^2_2$
-                \item $r^3_1 + r^3_2$
-                \item $(r_1 + 1)^2 + (r_2 + 1)^2$
-            \end{enumerate}
-        \end{multicols}
+        Factorizar y determinar las raíces usando factorización clásica.
+        \begin{tasks}(1)
+            \task $x^2 + x - 20$
+            \task $9t^2 + 88t - 20$
+            \task $12p^2 - 7p - 12$
+            \task $(c + d)(c + d - 18) + 65$
+            \task $-21x^2 - 11x + 2$
+            \task $r^4 - 13r^2 + 36$
+        \end{tasks}
+    \end{exercise}
+
+    \begin{exercise}
+        Resolver las siguientes ecuaciones utilizando la fórmula general.
+        \begin{tasks}(2)
+            \task $x^2 = x + 3$
+            \task $2x^2 + 39 = -18x$
+            \task $5x^2 + 3x + 1 = 0$
+            \task $2x^2 + 23 = 14x$
+            \task $x^2 = 2x + 48$
+        \end{tasks}
+    \end{exercise}
+
+    \begin{exercise}
+        Determinar la cantidad de raíces de las siguientes ecuaciones cúbicas.
+        \begin{tasks}(2)
+            \task $x^3 - 6x^2 - 6x - 14$
+            \task $x^3 - 7x + 6$
+            \task $x^3 - 9x^2 + 24x - 16$
+            \task $x^3 - 6x + 9$
+        \end{tasks}
+    \end{exercise}
+
+    \begin{exercise}
+        Indicar cuál no es un factor de $Q(x, y) = x^4 y^3 - 2x^3 y^4 + x^2 y^5$.
+        \begin{tasks}(3)
+            \task $x$
+            \task $y$
+            \task $x - y$
+            \task $x^2 + xy$
+            \task $x + y$
+        \end{tasks}
+    \end{exercise}
+
+    \begin{exercise}
+        Señalar un término de un factor de $F(x) = 8x^2 - 22x + 15$.
+        \begin{tasks}(5)
+            \task $8x$
+            \task $x$
+            \task 5
+            \task 3
+            \task $2x$
+        \end{tasks}
+    \end{exercise}
+
+    \begin{exercise}
+        Indicar un factor del polinomio $P(a) = a^2 + 2ab + b^2 - c^2 - d^2 - 2cd$.
+        \begin{tasks}(2)
+            \task $a + b - c + d$
+            \task $a + b + c + d$
+            \task $a - b + c - d$
+            \task $a + b + c - d$
+            \task $a + b - c - d$
+        \end{tasks}
+    \end{exercise}
+
+    \begin{exercise}
+        Factorizar el polinomio $P(x, y) = (x + 1)^2 - (y - 2)^2$ e indicar un factor.
+        \begin{tasks}(3)
+            \task $x + y - 1$
+            \task $x - y - 2$
+            \task $x - y - 3$
+            \task $x - y - 4$
+            \task $x - y - 5$
+        \end{tasks}
+    \end{exercise}
+
+    \begin{exercise}
+        Dar la suma de coeficientes de un factor del polinomio $R(y) = y^{2m + 2} - y^{m + 1} - 30$.
+        \begin{tasks}(5)
+            \task 1
+            \task 2
+            \task 7
+            \task 3
+            \task 6
+        \end{tasks}
+    \end{exercise}
+    
+    \begin{exercise}
+        Indicar la cantidad de factores de $(mn + pq)^2 + (mq - pn)^2$.
+        \begin{tasks}(5)
+            \task 1
+            \task 2
+            \task 3
+            \task 4
+            \task 5
+        \end{tasks}
+    \end{exercise}
+
+    \begin{exercise}
+        Factorizar $M(x,y) = x^4 - 5x^2 y^2 + 4y^4$ y dar como respuesta la suma de los factores lineales.
+        \begin{tasks}(3)
+            \task $2x + y$
+            \task $2x - y$
+            \task $4y$
+            \task $4x$
+            \task $2x + 2y$
+        \end{tasks}
+    \end{exercise}
+
+    \begin{exercise}
+        Indicar la suma de los términos independientes de los factores de $R(x) = (x + 2y - 3)(x + 2y + 5) + 15$.
+        \begin{tasks}(3)
+            \task 2
+            \task $2(2y + 1)$
+            \task $y + 2$
+            \task 3
+            \task $2y + 2$
+        \end{tasks}
+    \end{exercise}
+
+    \begin{exercise}
+        Luego de factorizar $F(x,y) = (x + y + 2)^2 - 4x - 4y - 5$ el polinomio tiene la forma
+        \[
+            (ax + by + c)(dx + ey + f)
+        \]
+        sabiendo que $f < 0$, calcular $\frac{a + b + c}{d + e + f}$.
+        \begin{tasks}(5)
+            \task 3
+            \task 1
+            \task 0
+            \task 4
+            \task $-2$
+        \end{tasks}
+    \end{exercise}
+
+    \begin{exercise}
+        Reducir la expresión
+        \[
+            (x^2 - x + 1)(x^2 + x + 1)(x^4 - x^2 + 1)(x^4 - 1) + 1.
+        \]
+        \begin{tasks}(5)
+            \task $x^{24}$
+            \task $-x^{12}$
+            \task $x^{12}$
+            \task $x^2$
+            \task $x^{18}$
+        \end{tasks}
+    \end{exercise}
+
+    \begin{exercise}
+        Teniendo $a + b + c = \inverseOf{(a - b)(b - c)} + \inverseOf{(b - c)(c - a)} + \inverseOf{(c - a)(a - b)}$, calcular
+        \[
+            \frac{(a + b - c)^2}{ab} + \frac{(b + c - a)^2}{bc} + \frac{(c + a - b)^2}{ca}.
+        \]
+        \begin{tasks}(5)
+            \task 10
+            \task 13
+            \task 15
+            \task 12
+            \task 14
+        \end{tasks}
+    \end{exercise}
+
+    \begin{exercise}
+        Si $a^2 + b^2 + c^2 = 2$, calcular
+        \begin{align*}
+            &- 4(ab + bc + ca)[(a + b + c)^2 - (ab + bc + ca)]\\
+            &+ (a + b + c)^4
+        \end{align*}
+        \begin{tasks}(5)
+            \task 1
+            \task 2
+            \task 4
+            \task 3
+            \task 5
+        \end{tasks}
+    \end{exercise}
+
+    \begin{exercise}
+        Sabiendo que $x + y + z = 0$, calcular el valor de
+        \[
+            \frac{(x^3 + y^3 + z^3)(x^2 + y^2 + z^2)^2}{xyz^5 + xy^5 z + x^5 yz}.
+        \]
+        \begin{tasks}(5)
+            \task 3
+            \task 1
+            \task $-4$
+            \task $-6$
+            \task 6
+        \end{tasks}
+    \end{exercise}
+
+    \begin{exercise}
+        Si $a + b + c = 1$ y $a^3 + b^3 + c^3 = 4$.
+        Hallar el valor de $\inverseOfD{a + bc} + \inverseOfD{b + ac} + \inverseOfD{c + ab}$.
+        \begin{tasks}(5)
+            \task $-2$
+            \task $-1$
+            \task 0
+            \task 1
+            \task 2
+        \end{tasks}
+    \end{exercise}
+
+    \begin{exercise}
+        Sea $f(x) = 3x^3 - 2x^2 - 12x + 8$.
+        \begin{tasks}[label=\alph*.](1)
+            \task Usar el teorema del factor para probar que $(x + 2)$ es factor de $f(x)$.
+            \task Factorizar $f(x)$ completamente.
+        \end{tasks}
+    \end{exercise}
+
+    \begin{exercise}
+        El polinomio $x^3 + 4x^2 + 7x + k$, donde $k$ es una constante, es denotado por $f(x)$.
+        \begin{tasks}[label=\alph*.](1)
+            \task Dado que $(x + 2)$ es un factor de $f(x)$, probar que $k = 6$.
+            \task Expresar $f(x)$ como el producto de un factor lineal y uno cuadrático.
+        \end{tasks}
+    \end{exercise}
+
+    \begin{exercise}
+        Usar el teorema del factor para demostrar que $(x + 3)$ es un factor de $x^3 + 5x^2 - 2x - 24$.
+        Luego, factorize completamente el polinomio.
+    \end{exercise}
+
+    \begin{exercise}
+        Usar el teorema del factor para probar que $(x - 5)$ es un factor de $x^3 - 19x - 30$.
+        Después, factorize el polinomio en tres factores lineales.
+    \end{exercise}
+
+    \begin{exercise}
+        Un polinomio cúbico es definido en términos de la constante $k$ como
+        \[
+            P(x) = x^3 + x^2 - x + k,\quad x \in \R.
+        \]
+        Dado que $(x - k)$ es un factor de $P(x)$ determinar los posibles valores de $k$.
+    \end{exercise}
+
+    \begin{exercise}
+        Use el teorema del factor para demostrar $(x + 2)$ es factor de $2x^3 + 3x^2 - 5x - 6$.
+        Luego, factorize el polinomio en tres factores lineales.
+    \end{exercise}
+
+    \begin{exercise}
+        Hallar las raíces del polinomio
+        \[
+            x^3 + x^2 - (x - 1)(x - 2)(x - 3) - 12.
+        \]
+    \end{exercise}
+
+    \begin{exercise}
+        Si la ecuación cumple $6x^2 + xy = 15y^2$ con $x, y \neq 0$, hallar todos los valores de $\frac{x}{y}$.
+    \end{exercise}
+
+    \begin{exercise}
+        Sabiendo que la ecuación $x = K^2(x - 1)(x - 2)$ con $K \in \R$, tiene raíces reales, hallar $K$.
+    \end{exercise}
+
+    \begin{exercise}
+        Encontrar las soluciones de la ecuación $m^2 - 3m + 1 = n^2 + n - 1$, con $m, n \in \positiveSet{\Z}$.
     \end{exercise}
 
     \begin{problem}
-        Sean $a$ y $b$ las raíces de la ecuación $x^2 - 6x + 5 = 0$, encuentra $(a + 1)(b + 1).$
+        Sean $a, b$ y $c$ números reales positivos.
+        ¿Es posible que cada uno de los polinomios $P(x) = ax^2 + bx + c$, $Q(x) = bx^2 + cx + a$ y $R(x) = cx^2 + ax + b$ tenga sus dos raíces reales?
     \end{problem}
 
     \begin{problem}
-        Dado que $m$ y $n$ son raíces del polinomio $6x^2 - 5x - 3$, encuentra un polinomio cuyas raíces sean
-        $m - n^2$ y $n - m^2$, sin calcular los valores de $m$ y $n$.
+        Sean $a$ y $b$ enteros.
+        Determinar todas las soluciones de la ecuación
+        \[
+            (ax - b)^2 + (bx - a)^2 =  x,
+        \] si se sabe que tiene una solución entera.
     \end{problem}
 
     \begin{problem}
-        ¿Para qué valores reales positivos de $m$, las raíces $x_1$ y $x_2$ de la ecuación
-        \[x^2 - \left( \frac{2m - 1}{2} \right)x  + \frac{m^2 - 3}{2} = 0\]
-        cumplen que $x_1 = x_2 - \frac{1}{2}$?
+        Sea $P(x)$ un polinomio cúbico mónico tal que $P(1) = 1$, $P(2) = 2$ y $P(3) = 3$.
+        Encontrar $P(4).$
     \end{problem}
 \end{multicols}
