@@ -1,0 +1,200 @@
+\section{Desarrollo}
+
+\subsection{Polinomios simétricos elementales}
+
+Un polinomio de dos variables $P(x, y)$ es simétrico si $P(x, y) = P(y, x)$ para toda $x$, $y$.
+Por ejemplo, $7x^2 - 5xy + 7y^2$ es simétrico, ya que $P(x, y) = 7x^2 - 5xy + 7y^2$ es igual a $P(y, x) = 7y^2 - 5yx + 7x^2$.
+
+Así mismo, un polinomio de tres variables $P(x, y, z)$ es simétrico si $P(x, y, z) = P(x, z, y) = P(y, x, z) = P(y, z, x) = P(z, x, y) = P(z, y, x)$.
+Por ejemplo, $13x^5 + 13y^5 + 13z^5 - 8xyz + 1$ es simétrico, ya que
+\begin{align*}
+    P(x, y, z) = 13x^5 + 13y^5 + 13z^5 - 8xyz + 1\\
+    P(x, z, y) = 13x^5 + 13z^5 + 13y^5 - 8xzy + 1\\
+    P(y, x, z) = 13y^5 + 13x^5 + 13z^5 - 8yxz + 1\\
+    P(y, z, x) = 13y^5 + 13z^5 + 13x^5 - 8yzx + 1\\
+    P(z, x, y) = 13z^5 + 13x^5 + 13y^5 - 8zxy + 1\\
+    P(z, y, x) = 13z^5 + 13y^5 + 13x^5 - 8zyx + 1
+\end{align*}
+son todos iguales.
+De manera general, un polinomio de $n$ variables $P(x_1, x_2, \dots, x_n)$ es simétrico si
+\[
+    P(x_1, x_2, \cdots, x_n) = P(x_1, x_3, \cdots, x_n) = \cdots,
+\]
+es decir si $P(x)$ evaluado en todas las permutaciones de las $n$ variables da el mismo resultado.
+Resulta que los polinomios simétricos más simples son los que tienen sus variables con grado 1, como por ejemplo $x + y$, $xy$, $x + y + z$, etc.
+Esto se puede llevar a la formalización, por lo cual veamos la siguiente definición.
+
+\begin{definition}[Polinomio simétrico elemental]
+    Sea $k \in \left\{ 1, 2, \cdots, n \right\}$.
+    El $k$-ésimo polinomio simétrico elemental en las variables $x_1, \cdots, x_n$ es el polinomio\footnote{$\sigma_k$: Se lee sigma sub k.} $\sigma_k$ definido por
+    \[
+        \sigma_k = \sigma_k(x_1, x_2, \cdots, x_n) = \Sigma x_{i_1} x_{i_2} \cdots x_{i_k}
+    \]
+    donde la suma se realiza sobre los subconjuntos $\left\{ i_1, i_2, \cdots, i_k \right\}$ de tamaño $k$ del conjunto $\left\{ 1, 2, \cdots, n\right\}$.
+\end{definition}
+
+Para más claridad veamos algunos casos:
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|l|}
+        \hline
+        Variables & Polinomios simétricos elementales \\
+        \hline \hline
+        $a$, $b$
+        &
+        $
+        \begin{array}{lcl}
+            \sigma_1 &=& a + b\\
+            \sigma_2 &=& ab
+        \end{array}
+        $
+        \\\hline
+        $a$, $b$, $c$
+        &
+        $
+        \begin{array}{lcl}
+            \sigma_1 &=& a + b + c\\
+            \sigma_2 &=& ab + bc + ca\\
+            \sigma_3 &=& abc
+        \end{array}
+        $
+        \\\hline
+        $a$, $b$, $c$, $d$
+        &
+        $
+        \begin{array}{lcl}
+            \sigma_1 &=& a + b + c + d\\
+            \sigma_2 &=& ab + ac + ad + bc + bd + da\\
+            \sigma_3 &=& abc + bcd + cda\\
+            \sigma_4 &=& abcd
+        \end{array}
+        $
+        \\\hline
+        $a$, $b$, $c$, $d$, $e$
+        &
+        $
+        \begin{array}{lcl}
+            \sigma_1 &=& a + b + c + d + e\\
+            \sigma_2 &=& ab + ac + ad + ae + bc + bd + be + cb + ce + de\\
+            \sigma_3 &=& abc + abd + abe + acd + ace + ade + bcd + bce + bde + ced\\
+            \sigma_4 &=& abcd + abce + abde + acde + bced\\
+            \sigma_5 &=& abcde
+        \end{array}
+        $
+        \\\hline
+    \end{tabular}
+    \caption{Ejemplos de polinomios simétricos elementales.}
+\end{table}
+
+\begin{example}
+    Hallar el valor de $(x^2 + y^2)$ sabiendo que $x + y = 1\ \land\ x^4 + y^4 = 7$.
+\end{example}
+\begin{solution}
+    Elevando al cuadrado la primera ecuación $x^2 + 2xy + y^2 = 1 \implies x^2 + y^2 = 1 - 2xy$.
+    Por tanto, el ejercicio se reduce a encontrar el valor de $xy$.
+    Veamos que
+    \begin{align*}
+        (x^2 + y^2)^2 &= (1 - 2xy)^2 && 2x^2 y^2 - 4xy - 6 = 0\\
+        x^4 + 2x^2 y^2 + y^4 &= 1 - 4xy + 4x^2 y^2 && 2(x^2 y^2 - 2xy - 3) = 0\\
+        x^4 + y^4 &= 2x^2 y^2 - 4xy + 1 && 2(xy - 3)(xy + 1) = 0\\
+        7 &= 2x^2 y^2 - 4xy + 1 && \implies xy = 3\ \lor \ xy = -1
+    \end{align*}
+    Sabiendo los posibles valores de $xy$, vemos que $(x^2 + y^2)$ puede tomar los valores de $-5$ y 3.
+\end{solution}
+
+Otra notación útil para polinomios simétricos, es la siguiente.
+
+\begin{definition}[Suma simétrica de potencias]
+    La suma simétrica de la $k$-ésimas potencias en las variables $x_1, \cdots, x_n$ es el polinomio $s_k$ definido por
+    \[s_k = s_k(x_1, x_2, \cdots, x_n) = x_1^k + x_2^k + \cdots + x_n^k, \quad \forall k \in \Z^{\geq 0}.\]
+\end{definition}
+
+Algunas relaciones clásicas entre las sumas simétricas de potencias y los polinomios simétricos elementales, como por ejemplo $s_2 = \sigma_1^2 - 2\sigma_2$ para cualquier cantidad de variables.
+La relación $s_k = \sigma_1 s_{k - 1} - \sigma_2 s_{k - 2}$ para dos variables y $s_k = \sigma_1 s_{k - 1} - \sigma_2 s_{k - 2} + \sigma_3 s_{k - 3}$ para tres variables.
+Estas relaciones son casos particulares de la llamadas \textbf{Fórmulas de Newton}.
+Se invita al estudiante investigar por su propia cuenta sobre estas fórmulas.
+
+
+
+\subsection{Fórmulas de Vieta}
+
+Ya conociendo los polinomios simétricos elementales, podemos volver a ver la definición de las fórmulas de Vieta que ya conocemos.
+Sea $P(x) = a_n x^n + a_{n - 1} x^{n - 1} + \cdots  + a_1 x + a_0$ un polinomio con raíces $r_1, r_2, \cdots, r_n$,
+entonces
+\begin{gather*}
+    \sigma_k = (-1)^k\times \frac{a_{n - k}}{a_n}.
+\end{gather*}
+
+\begin{example}
+    Determine el producto de las raíces de $50x^{50} + 49x^{49} + \cdots + x + 1.$
+\end{example}
+\begin{solution}
+    Por las fórmulas de Vieta, tenemos que
+    \[
+        \sigma_{50} = (-1)^{50} \times \frac{a_0}{a_{50}} = \boxed{\frac{1}{50}}. \qedhere
+    \]
+\end{solution}
+
+
+
+\subsection{Ejercicios y problemas}
+
+Ejercicios y problemas para el autoestudio.
+
+\showLine
+\begin{multicols}{2}
+    \begin{problem}
+        Consideremos el polinomio $P(x) = x^n - (x - 1)^n$, donde $n$ es un entero positivo impar.
+        Encontrar el valor de la suma y el valor del producto de sus raíces.
+    \end{problem}
+
+    \begin{problem}
+        Encontrar los números reales $x$ y $y$, que satisfacen
+        \[
+            \left\{
+            \begin{array}{rcl}
+                x^3 + y^3 & =& 7\\
+                x^2 + y^2 + x + y + xy & =& 4
+            \end{array}
+            \right.
+        \]
+    \end{problem}
+
+    \begin{problem}
+        Encontrar todas las soluciones reales del sistema
+        \[
+            \left\{
+            \begin{array}{rcl}
+                x + y + z & =& 1\\
+                x^3 + y^3 + z^3 + xyz & =& x^4 + y^4 + z^4 + 1
+            \end{array}
+            \right.
+        \]
+    \end{problem}
+
+    \begin{problem}
+        Sean $x$, $y$ y $z$ números reales, encontrar todas las soluciones del siguiente sistema de ecuaciones
+        \[
+            \left\{
+            \begin{array}{rcl}
+                x + y + z & =& 6\\
+                x^2 + y^2 + z^2 & =& 30\\
+                x^3 + y^3 + z^3 & =& 132
+            \end{array}
+            \right.
+        \]
+    \end{problem}
+
+    \begin{problem}
+        Si $\alpha + \beta + \gamma = 0$, demostrar que
+        \[3 (\alpha^2 + \beta^2 + \gamma^2) (\alpha^5 + \beta^5 + \gamma^5) = 5 (\alpha^3 + \beta^3 + \gamma^3) (\alpha^4 + \beta^4 + \gamma^4).\]
+    \end{problem}
+
+    \begin{problem}
+        Sean $a$, $b$ y $c$ números reales distintos de cero, con $a + b + c \neq 0$.
+        Probar que si
+        \[\frac{1}{a} + \frac{1}{b} + \frac{1}{c} = \frac{1}{a + b + c},\]
+        entonces para $n$ impar se cumple
+        \[\frac{1}{a^n} + \frac{1}{b^n} + \frac{1}{c^n} = \frac{1}{a^n + b^n + c^n}.\]
+    \end{problem}
+\end{multicols}
