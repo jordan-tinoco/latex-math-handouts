@@ -1,6 +1,6 @@
 \section{Desarrollo}
 
-\begin{definition}[Fórmulas de Vieta]
+\begin{theorem.tcb}{Fórmulas de Vieta}{}
     Sea el polinomio $P(x) = a_n x^n + a_{n - 1} x^{n - 1} + \cdots  + a_1 x + a_0$ de grado $n$ con raíces $r_1, r_2, \ldots, r_n$,
     entonces
     \begin{align*}
@@ -10,7 +10,7 @@
         \vdots\\
         r_1 r_2 \cdots r_n &= (-1)^n \cdot \frac{a_0}{a_n}
     \end{align*}
-\end{definition}
+\end{theorem.tcb}
 
 Por el teorema del factor, podemos escribir el polinomio como
 \[
@@ -106,7 +106,7 @@ Ejercicios y problemas para el autoestudio.
     \begin{exercise}
         Sean $r_1$ y $r_2$ las raíces del polinomio $P(x) = ax^2 + bx + c$.
         Encontrar los siguientes valores en función del los coeficientes de $P(x)$.
-        \begin{tasks}[label=\roman*.](2)
+        \begin{tasks}(2)
             \task $r_1 - r_2$
             \task $\frac{1}{r_1} - \frac{1}{r_2}$
             \task $r^2_1 + r^2_2$
@@ -115,30 +115,37 @@ Ejercicios y problemas para el autoestudio.
         \end{tasks}
     \end{exercise}
 
-    \begin{problem}
+    \begin{exercise}
         Sean $a$ y $b$ las raíces de la ecuación $x^2 - 6x + 5 = 0$, encontrar $(a + 1)(b + 1)$.
-    \end{problem}
+    \end{exercise}
 
-    \begin{problem}
+    \begin{exercise}
         Dado que $m$ y $n$ son raíces del polinomio $6x^2 - 5x - 3$, encuentra un polinomio cuyas raíces sean
         $m - n^2$ y $n - m^2$, sin calcular los valores de $m$ y $n$.
-    \end{problem}
+    \end{exercise}
 
-    \begin{problem}
+    \begin{exercise}
+        Sea el polinomio $5x^3 + 4x^2 - 8x + 6$ con raíces reales $a, b$ y $c$, hallar
+        \[
+            a(1 + b + c) + b(1 + a + c) + c(1 + a + b).
+        \]
+    \end{exercise}
+
+    \begin{exercise}
         ¿Para qué valores reales positivos de $m$, las raíces $x_1$ y $x_2$ de la ecuación
         \[
             x^2 - \left( \frac{2m - 1}{2} \right)x  + \frac{m^2 - 3}{2} = 0
         \]
         cumplen que $x_1 = x_2 - \frac{1}{2}$?
-    \end{problem}
+    \end{exercise}
 
-    \begin{problem}
-        Dado el polinomio $5x^3 + 4x^2 - 8x + 6$ con raíces reales $a, b$ y $c$.
-        Encuentra el valor de
+    \begin{exercise}
+        Supóngase que el polinomio $5x^3 + 4x^2 - 8x + 6$ tiene tres raíces reales $a, b$ y $c$.
+        Probar que
         \[
-            a(1 + b + c) + b(1 + a + c) + c(1 + a + b).
+            5^2 a \left(\frac{a + b}{2}\right) + 5^2 b \left(\frac{b + c}{2}\right) + 5^2 c \left(\frac{c + a}{2}\right) = 3^3 + 1.
         \]
-    \end{problem}
+    \end{exercise}
 
     \begin{problem}
         Sea $P(x) = mx^3 + mx^2 + nx + n$ un polinomio cuyas raíces son $a, b$ y $c$.
@@ -149,10 +156,16 @@ Ejercicios y problemas para el autoestudio.
     \end{problem}
 
     \begin{problem}
-        Supóngase que el polinomio $5x^3 + 4x^2 - 8x + 6$ tiene tres raíces reales $a, b$ y $c$.
-        Probar que
+        Si $z$, $t$ son las raíces del polinomio $x^2 + 2x + 4$, calcular el valor de
         \[
-            5^2 a \left(\frac{a + b}{2}\right) + 5^2 b \left(\frac{b + c}{2}\right) + 5^2 c \left(\frac{c + a}{2}\right) = 3^3 + 1.
+            (z + t)^7 - z^7 - t^7.
         \]
+    \end{problem}
+
+    \begin{problem}
+        Sean $a, b, c \in R$ tal que los polinomios $ax^2 + bx + c$ y $cx^2 + bx + a$
+        tienen dos raíces reales distintas cada uno ($r_1$, $r_2$) y ($r_3$, $r_4$) respectivamente.
+        Se sabe que los números $r_1, r_2, r_3, r_4$ forman, en ese orden, una progresión aritmética.
+        Demostrar que $a + c = 0.$
     \end{problem}
 \end{multicols}

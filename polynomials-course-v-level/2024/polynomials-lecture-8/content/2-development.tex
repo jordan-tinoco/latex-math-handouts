@@ -2,38 +2,38 @@
 
 \subsection{Polinomios simétricos elementales}
 
-Un polinomio de dos variables $P(x, y)$ es simétrico si $P(x, y) = P(y, x)$ para toda $x$, $y$.
-Por ejemplo, $7x^2 - 5xy + 7y^2$ es simétrico, ya que $P(x, y) = 7x^2 - 5xy + 7y^2$ es igual a $P(y, x) = 7y^2 - 5yx + 7x^2$.
+Diremos que un polinomio de dos variables $P(x,y)$ es simétrico si cumple $P(x, y) = P(y, x)$, \eg\, $P(x,y) = 7x^2 - 5xy + 7y^2$ es simétrico, ya que este es igual a $P(y, x) = 7y^2 - 5yx + 7x^2$.
+Análogamente, un polinomio de tres variables $P(x, y, z)$ es simétrico si cumple $P(x, y, z) = P(x, z, y) = P(y, x, z) = P(y, z, x) = P(z, x, y) = P(z, y, x)$.
 
-Así mismo, un polinomio de tres variables $P(x, y, z)$ es simétrico si $P(x, y, z) = P(x, z, y) = P(y, x, z) = P(y, z, x) = P(z, x, y) = P(z, y, x)$.
-Por ejemplo, $13x^5 + 13y^5 + 13z^5 - 8xyz + 1$ es simétrico, ya que
+Por ejemplo, el polinomio $P(x, y, z) = 13x^5 + 13y^5 + 13z^5 - 8xyz + 1$ es simétrico, ya que
 \begin{align*}
-    P(x, y, z) = 13x^5 + 13y^5 + 13z^5 - 8xyz + 1\\
+    P(x, y, z) = 13x^5 + 13y^5 + 13z^5 - 8xyz + 1 &&
     P(x, z, y) = 13x^5 + 13z^5 + 13y^5 - 8xzy + 1\\
-    P(y, x, z) = 13y^5 + 13x^5 + 13z^5 - 8yxz + 1\\
+    P(y, x, z) = 13y^5 + 13x^5 + 13z^5 - 8yxz + 1 &&
     P(y, z, x) = 13y^5 + 13z^5 + 13x^5 - 8yzx + 1\\
-    P(z, x, y) = 13z^5 + 13x^5 + 13y^5 - 8zxy + 1\\
+    P(z, x, y) = 13z^5 + 13x^5 + 13y^5 - 8zxy + 1 &&
     P(z, y, x) = 13z^5 + 13y^5 + 13x^5 - 8zyx + 1
 \end{align*}
-son todos iguales.
-De manera general, un polinomio de $n$ variables $P(x_1, x_2, \dots, x_n)$ es simétrico si
+son todos el mismo polinomio.
+De manera general, un polinomio $P(x_1, x_2, \dots, x_n)$ de $n$ variables es simétrico si para cualquier permutación de las $n$ variables se obtiene el mismo resultado, \ie
 \[
-    P(x_1, x_2, \cdots, x_n) = P(x_1, x_3, \cdots, x_n) = \cdots,
+    P(x_1, x_2, \cdots, x_n) = P(x_1, x_3, \cdots, x_n) = \cdots = P(x'_1, x'_2, \cdots, x'_n),
 \]
-es decir si $P(x)$ evaluado en todas las permutaciones de las $n$ variables da el mismo resultado.
-Resulta que los polinomios simétricos más simples son los que tienen sus variables con grado 1, como por ejemplo $x + y$, $xy$, $x + y + z$, etc.
-Esto se puede llevar a la formalización, por lo cual veamos la siguiente definición.
+donde $x'_1, x'_2, \cdots, x'_n$ representa una permutación de las variables $x_1, x_2, \cdots, x_n$.
+Los polinomios simétricos más simples son aquellos donde todas sus variables tienen grado 1, como por ejemplo $x + y$, $xy$, $x + y + z$, etc.
+Estos polinomio son llamados \emphtext{polinomios simétricos elementales} y podemos formalizarlo como se sigue.
 
 \begin{definition}[Polinomio simétrico elemental]
-    Sea $k \in \left\{ 1, 2, \cdots, n \right\}$.
-    El $k$-ésimo polinomio simétrico elemental en las variables $x_1, \cdots, x_n$ es el polinomio\footnote{$\sigma_k$: Se lee sigma sub k.} $\sigma_k$ definido por
+    Sea $n > 0$ un entero y un entero $k$ con $1 \leq k \leq n$.
+    Diremos que el $k$-ésimo polinomio simétrico elemental en las variables $x_1, \cdots, x_n$ es el polinomio
     \[
-        \sigma_k = \sigma_k(x_1, x_2, \cdots, x_n) = \Sigma x_{i_1} x_{i_2} \cdots x_{i_k}
+        \sigma_k = \sigma_k(x_1, x_2, \cdots, x_n) = \sum x_{i_1} x_{i_2} \cdots x_{i_k},
     \]
-    donde la suma se realiza sobre los subconjuntos $\left\{ i_1, i_2, \cdots, i_k \right\}$ de tamaño $k$ del conjunto $\left\{ 1, 2, \cdots, n\right\}$.
+    cuya la suma se realiza sobre los subconjuntos $\left\{ i_1, i_2, \cdots, i_k \right\}$ de $k$ elementos del conjunto $\left\{ 1, 2, \cdots, n\right\}$.
 \end{definition}
 
-Para más claridad veamos algunos casos:
+Donde el polinomio $\sigma_k$ lo leeremos como \emphtext{sigma k} o \emphtext{sigma sub k}.
+Ahora, para aclarar esta definición, veamos algunos ejemplos.
 \begin{table}[H]
     \centering
     \begin{tabular}{|c|l|}
@@ -86,22 +86,6 @@ Para más claridad veamos algunos casos:
     \caption{Ejemplos de polinomios simétricos elementales.}
 \end{table}
 
-\begin{example}
-    Hallar el valor de $(x^2 + y^2)$ sabiendo que $x + y = 1\ \land\ x^4 + y^4 = 7$.
-\end{example}
-\begin{solution}
-    Elevando al cuadrado la primera ecuación $x^2 + 2xy + y^2 = 1 \implies x^2 + y^2 = 1 - 2xy$.
-    Por tanto, el ejercicio se reduce a encontrar el valor de $xy$.
-    Veamos que
-    \begin{align*}
-        (x^2 + y^2)^2 &= (1 - 2xy)^2 && 2x^2 y^2 - 4xy - 6 = 0\\
-        x^4 + 2x^2 y^2 + y^4 &= 1 - 4xy + 4x^2 y^2 && 2(x^2 y^2 - 2xy - 3) = 0\\
-        x^4 + y^4 &= 2x^2 y^2 - 4xy + 1 && 2(xy - 3)(xy + 1) = 0\\
-        7 &= 2x^2 y^2 - 4xy + 1 && \implies xy = 3\ \lor \ xy = -1
-    \end{align*}
-    Sabiendo los posibles valores de $xy$, vemos que $(x^2 + y^2)$ puede tomar los valores de $-5$ y 3.
-\end{solution}
-
 Otra notación útil para polinomios simétricos, es la siguiente.
 
 \begin{definition}[Suma simétrica de potencias]
@@ -109,10 +93,38 @@ Otra notación útil para polinomios simétricos, es la siguiente.
     \[s_k = s_k(x_1, x_2, \cdots, x_n) = x_1^k + x_2^k + \cdots + x_n^k, \quad \forall k \in \Z^{\geq 0}.\]
 \end{definition}
 
-Algunas relaciones clásicas entre las sumas simétricas de potencias y los polinomios simétricos elementales, como por ejemplo $s_2 = \sigma_1^2 - 2\sigma_2$ para cualquier cantidad de variables.
-La relación $s_k = \sigma_1 s_{k - 1} - \sigma_2 s_{k - 2}$ para dos variables y $s_k = \sigma_1 s_{k - 1} - \sigma_2 s_{k - 2} + \sigma_3 s_{k - 3}$ para tres variables.
+Existen relaciones entre las sumas simétricas de potencias y los polinomios simétricos elementales.
+Por ejemplo $s_2 = \sigma_1^2 - 2\sigma_2$ para cualquier cantidad de variables, $s_k = \sigma_1 s_{k - 1} - \sigma_2 s_{k - 2}$ para dos variables y $s_k = \sigma_1 s_{k - 1} - \sigma_2 s_{k - 2} + \sigma_3 s_{k - 3}$ para tres variables.
 Estas relaciones son casos particulares de la llamadas \textbf{Fórmulas de Newton}.
-Se invita al estudiante investigar por su propia cuenta sobre estas fórmulas.
+Se invita al lector investigar más sobre estas fórmulas.
+
+\begin{example}
+    Hallar el valor de $(x^2 + y^2)$ sabiendo que $x + y = 1\ \land\ x^4 + y^4 = 7$.
+\end{example}
+\begin{solution}[1]
+    Elevando al cuadrado la primera ecuación $x^2 + 2xy + y^2 = 1 \implies x^2 + y^2 = 1 - 2xy$.
+    Por tanto, el ejercicio se reduce a encontrar el valor de $xy$.
+    Veamos que
+    \begin{align*}
+    (x^2 + y^2)^2 &= (1 - 2xy)^2 && 2x^2 y^2 - 4xy - 6 = 0\\
+    x^4 + 2x^2 y^2 + y^4 &= 1 - 4xy + 4x^2 y^2 && 2(x^2 y^2 - 2xy - 3) = 0\\
+    x^4 + y^4 &= 2x^2 y^2 - 4xy + 1 && 2(xy - 3)(xy + 1) = 0\\
+    7 &= 2x^2 y^2 - 4xy + 1 && \implies xy = 3\ \lor \ xy = -1
+    \end{align*}
+    Sabiendo los posibles valores de $xy$, vemos que $(x^2 + y^2)$ puede tomar los valores de $-5$ y 3.
+\end{solution}
+
+\begin{solution}[2]
+    Claramente $\sigma_1 = s_1 = 1$ y $s_4 = 7$.
+    De la relación $s_2 = \sigma_1^2 - 2\sigma_2 \implies s_2 = 1 - 2\sigma_2 \implies \sigma_2 = \frac{1 - s_2}{2}$.
+    De la relación $s_k = \sigma_1 s_{k - 1} - \sigma_2 s_{k - 2}$ obtenemos
+    \begin{align*}
+        s_3 &= \sigma_1 s_2 - \sigma_2 s_1 && s_4 = \sigma_1 s_3 - \sigma_2 s_2\\
+        s_3 &= s_2 - \sigma_2 && s_4 = s_3 - \sigma_2 s_2
+    \end{align*}
+    Operando $s_4 = s_2 - \sigma_2 - \sigma_2 s_2 = s_2 (1 - \sigma_2) - \sigma_2 = s_2\left(\dfrac{s_2 + 1}{2}\right) + \left(\dfrac{s_2 - 1}{2}\right) \implies 2s_4 = s_2^2 + 2s_2 - 1 \implies s_2^2 + 2s_2 - 15 = 0$, lo cual puede factorizarse como $(s_2 + 5)(s_2 - 3)$.
+    Luego, los valores son $-5$ y 3.
+\end{solution}
 
 
 
@@ -129,10 +141,7 @@ entonces
     Determine el producto de las raíces de $50x^{50} + 49x^{49} + \cdots + x + 1.$
 \end{example}
 \begin{solution}
-    Por las fórmulas de Vieta, tenemos que
-    \[
-        \sigma_{50} = (-1)^{50} \times \frac{a_0}{a_{50}} = \boxed{\frac{1}{50}}. \qedhere
-    \]
+    Por las fórmulas de Vieta, tenemos que $\sigma_{50} = (-1)^{50} \cdot \dfrac{a_0}{a_{50}} = \dfrac{1}{50}.$
 \end{solution}
 
 
