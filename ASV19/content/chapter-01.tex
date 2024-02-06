@@ -19,7 +19,7 @@ Definimos el \textit{grado} del polinomio $P(x) = \ds \sum_{i = 0}^{n} a_i x^i $
 Si $i$ es el mayor entero $i$ tal que $a_i \neq 0$, decimos que $a_i$ es el \textit{coeficiente principal} de $P(x)$.
 Si el coeficiente principal es igual a 1, decimos que el polinomio es \textit{mónico}.
 Observe que el grado de un polinomio constante $P(x) = a_0 \neq 0$ es cero.
-No damos ningún grado al \textit{polinomio cero} $P(x) \equiv 0$ (i.e. el polinomio cuyos coeficientes son todos ceros)\footnote{Por conveción, también podemos asignar al polinomio cero el grado $- \infty$.}.
+No damos ningún grado al \textit{polinomio cero} $P(x) \equiv 0$ (\ie el polinomio cuyos coeficientes son todos ceros)\footnote{Por convección, también podemos asignar al polinomio cero el grado $- \infty$.}.
 Normalmente, omitimos los términos que tiene coeficiente cero.
 Por ejemplo, escribimos el polinomio $0x^3 + 1x^2 + 2x + 0$ como $x^2 + 2x$.
 Este es claramente un ejemplo de un polinomio mónico de grado 2.
@@ -48,8 +48,8 @@ Sabiendo lo anterior obtenemos lo siguiente.
 
 \section{Identidades}
 
-El término \textit{identidad} designa una igualdad que se cumple para todo valor permitido de las incognitas que contenga (normalmente todo los números reales o todos los números complejos).
-Cuando está claro por el contexto a menudo se omite específicar explicidamente el rango permitido de las incognitas.
+El término \textit{identidad} designa una igualdad que se cumple para todo valor permitido de las incognitas que contenga (normalmente todos los números reales o todos los números complejos).
+Cuando está claro por el contexto a menudo se omite especificar explícitamente el rango permitido de las incognitas.
 Por ejemplo, las siguientes ecuaciones son identidades:
 \begin{align*}
     a^2 - b^2 &= (a - b)(a + b),\\
@@ -58,14 +58,14 @@ Por ejemplo, las siguientes ecuaciones son identidades:
     \frac{a^2}{a + b} + \frac{b^2}{b + c} + \frac{c^2}{c + a} &= \frac{b^2}{a + b} + \frac{c^2}{b + c} + \frac{a^2}{a + c}.
 \end{align*}
 Las primeras tres se cumplen para todos los valores reales (o complejos) $a$, $b$ y $c$, mientras que el último solo se cumple si ninguno de los valores $a + b$, $b + c$ y $c + a$ es cero.
-Sin embargo, la ecuaciones a continuación no cumplen con este criterio ya que no se cumplen universalmente:
+Sin embargo, las ecuaciones a continuación no cumplen con este criterio, ya que no se cumplen universalmente:
 \begin{align*}
     2x + 1 &= 5,\\
     \frac{1}{x - 2} + \frac{1}{x} &= 3,\\
     a^3 + b^3 + c^3 &= 3abc.
 \end{align*}
 Las identidades son los pilares de los cálculos matemáticos.
-Se encuentran comunmente en las competiciones matemáticas, donde muchos problemas requieren de su conocimiento.
+Se encuentran comúnmente en las competiciones matemáticas, donde muchos problemas requieren de su conocimiento.
 
 Aquí recopilamos algunas de las identidades más útiles.
 Es importante que, para mejorar tu fortaleza en el trabajo con expresiones algebraicas, te esforcés en aprender estas identidades.\\
@@ -171,8 +171,8 @@ No obstante, veremos algunas de las aplicaciones creativas en soluciones más co
         (c + a)^2 &= 4 + b + b^2\\
         (a + b)^2 &= 5 + c + c^2.
     \end{align*}
-    Al sumarlas, econtramos que $(a + b + c)^2 - (a + b + c) - 12 = 0$.
-    Sustituimos $t = a + b + c$, y simplifcar a $t^2 - t - 12 = 0$, lo que da $t = 4$ o $t = -3$.
+    Al sumarlas, encontramos que $(a + b + c)^2 - (a + b + c) - 12 = 0$.
+    Sustituimos $t = a + b + c$, y simplificar a $t^2 - t - 12 = 0$, lo que da $t = 4$ o $t = -3$.
     Si $t = 4$, entonces $a + b + c = 4$ y sustituyendo en las ecuaciones anteriores, obtenemos $(4 - a)^2 = 3 + a + a^2$, es decir, $9a = 13$, por tanto $x = \frac{9}{13}$.
     Por el mismo argumento $y = \frac{3}{4}$ y $z = \frac{9}{11}$, asi encontramos la solución $(x,y,z) = \left(\frac{9}{13}, \frac{3}{4}, \frac{9}{11}\right)$.
     Si $t = 3$, entonces $a + b + c = 3$, y por el mismo argumento encontramos la solución $(x,y,z) = \left(-\frac{5}{6}, -1, -\frac{5}{4}\right)$.
@@ -287,10 +287,10 @@ De aquí que, el coeficiente de $x^{50}$ es la suma de los coeficientes de los m
     \[
         (1 + x + x^2 + \cdots + x^{100})^3 = (1 + x + \cdots + x^{100})(1 + x + \cdots + x^{100})(1 + x + \cdots + x^{100}).
     \]
-    De este modo, el término $x^{100}$ debe surguir de un producot de al forma $x^a x^b x^c$ de los respectivos factores donde $a + b + c = 100$ y $a,b, c \geq 0$.
+    De este modo, el término $x^{100}$ debe surgir de un producto de al forma $x^a x^b x^c$ de los respectivos factores donde $a + b + c = 100$ y $a,b, c \geq 0$.
     Sea $a = 0$, entonces $b + c = 100$ y se tiene 101 casos.
-    Si $a = 1$, entonces $b + c = 99$ y se tiene 100  casos.
-    Similarmente, cuando $a = 100$, entoces $b + c = 0$ y solo se tiene un caso.
+    Si $a = 1$, entonces $b + c = 99$ y se tiene 100 casos.
+    Similarmente, cuando $a = 100$, entonces $b + c = 0$ y solo se tiene un caso.
     Por tanto, el número total de casos es
     \[
         1 + 2 + \cdots + 101 = 5151.\qedhere
@@ -299,7 +299,7 @@ De aquí que, el coeficiente de $x^{50}$ es la suma de los coeficientes de los m
 
 \begin{example}[Olimpiada Italiana de Matemáticas, 2013. Local Round. Federico Poloni]
     Sean $P(x)$ y $Q(x)$ dos trinomios.
-    ¿Al menos, cuántos monomios distinto de cero tiene el producto $P(x) Q(x)$?
+    ¿Al menos, cuántos monomios distintos de cero tiene el producto $P(x) Q(x)$?
 \end{example}
 \begin{solution}
     Asumamos que $P(x) = Ax^R + Bx^S + Cx^T$ y $Q(x) = ax^r + bx^s + cx^t$
@@ -310,7 +310,7 @@ De aquí que, el coeficiente de $x^{50}$ es la suma de los coeficientes de los m
         P(x) Q(x) = Aax^{R + r} + \cdots + Ccx^{T + t},
     \]
     y es un producto con 9 términos.
-    Es claro que los monomios $x^{R + r}$ y $x^{T + t}$ no se pueden cancelar debido a la minimalidad y maximalidad.
+    Es claro que los monomios $x^{R + r}$ y $x^{T + t}$ no se pueden cancelar debido a la mínimalidad y maximalidad.
     Es decir, el producto tiene al menos dos términos.
     Ahora daremos un ejemplo con exactamente dos términos, esto es, considerando el polinomio $x^4 + 4$.
     Si lo factorizamos, tendremos que
@@ -321,7 +321,7 @@ De aquí que, el coeficiente de $x^{50}$ es la suma de los coeficientes de los m
 \end{solution}
 
 \begin{example}
-    Se define una famila de polinomios recursivamente por
+    Se define una familia de polinomios recursivamente por
     \begin{align*}
         P_0(x) &= x - 2,\\
         P_k(x) &= P_{k - 1}^2(x) - 2 \ \ \text{si} \ k \geq 1.
@@ -350,7 +350,7 @@ De aquí que, el coeficiente de $x^{50}$ es la suma de los coeficientes de los m
 \end{example}
 \begin{solution}
     Notemos que todos los coeficientes del polinomio $P(-x)$ son no negativos.
-    de hecho todos sus coeficientes son los valores absolutos de los coeficientes del polinomio $P(x)$.
+    De hecho todos sus coeficientes son los valores absolutos de los coeficientes del polinomio $P(x)$.
     Así todos los coeficientes del polinomio
     \[
         Q(x) = P(-x)P(- x^3)P(- x^5)P(- x^7)P(- x^9)
@@ -380,7 +380,7 @@ De aquí que, el coeficiente de $x^{50}$ es la suma de los coeficientes de los m
 
     Ahora, está claro que si remplazamos el polinomio $ax + b$ por $-ax - b$, la condición no cambia.
     De este modo, sin perdida de generalidad asumimos que $\frac{a}{b} = 1$ y tenemos dos casos.
-    Si $\frac{d}{b} = 1$, entonces tenemos $(ax + b)^{1000} - (ax + b)^{1000}$ lo cual solo da coeficientes iguales a cero, una contradición.
+    Si $\frac{d}{b} = 1$, entonces tenemos $(ax + b)^{1000} - (ax + b)^{1000}$ lo cuál solo da coeficientes iguales a cero, una contradicción.
     Si $\frac{d}{b} = -1$, entonces tenemos $(ax + b)^{1000} - (ax - b)^{1000}$, lo cual tiene exactamente 500 coeficientes distintos de cero.
 \end{solution}
 
@@ -389,10 +389,10 @@ De aquí que, el coeficiente de $x^{50}$ es la suma de los coeficientes de los m
     \[
         P(x)^2 = 1 + x + x^{100} Q(x).
     \]
-    Hallar el coeficiente de $x^{99}$ en la expasión de $\left(1 + P(x)\right)^{100}$.
+    Hallar el coeficiente de $x^{99}$ en la expansión de $\left(1 + P(x)\right)^{100}$.
 \end{example}
 \begin{solution}
-    Notemos que la expansión de $\left(1 + P(x)\right)^{100} + \left(1 - P(x)\right)^{100}$ tenemos solo potencias pares de $P(x)$.
+    Notemos que la expansión de $\left(1 + P(x)\right)^{100} + \left(1 - P(x)\right)^{100}$ tenemos únicamente potencias pares de $P(x)$.
     En realidad, la expresión de arriba es un polinomio en $P(x)^2 = 1 + x + x^{100} Q(x)$ de grado 50.
     Tomando la ecuación en módulo $x^{100}$, el mayor coeficiente de la expresión es $2(1 + x)^{50}$; de este modo no existe el término con $x^{99}$ en la expansión.
     Por otra parte, ya que $P(0) = 1$ podemos encontrar que el polinomio $P(x) - 1$ es divisible por $x$.
@@ -410,13 +410,13 @@ De aquí que, el coeficiente de $x^{50}$ es la suma de los coeficientes de los m
 \end{example}
 \begin{solution}
     Sea $F(x) = a_0 + a_1 x + \cdots$ y $G(x) = b_0 + b_1 x + \cdots$.
-    Por el término constante obtenemos que $a_0 b_0 = 1$ lo cual nos da $a_0 = b_0 = 1$.
+    Por el término constante obtenemos que $a_0 b_0 = 1$ que implica $a_0 = b_0 = 1$.
     Por el coeficiente de $x$ obtenemos $a_1 b_0 + a_0 b_1 = 1$, por lo tanto, $a_1 + b_1 = 1$.
-    Sin perdidad de generalidad, asumimos que $a_1 = 1$ y $b_1 = 0$.
+    Sin perdida de generalidad, asumimos que $a_1 = 1$ y $b_1 = 0$.
     Si $G(x) = 1$, entonces hemos terminado, de esta manera podemos asumir que hay al menos un monomio distinto de cero en $G(x)$, digamos $x^k$, tal que $G(x) = 1 + x^k + \cdots$.
     Mirando a los coeficientes de $x^i$ para $x = 1, 2,\ldots, k$ concluimos que $a_0 = a_1 = a_2 = \cdots = a_{k - 1} = 1$ y $a_k = 0$.
 
-    Ahora mostraremos que cualquier monomio en $G$ es de la forma $x^{kr}$ para algún $r$ (o en términos de polinomios $G(x) = Q(x^k)$ para algún polinomio $Q$ con coeficientes ceros o unos) y que todo monomio distinto de cero en $F$ ocurre en una serie de monomios distintos de cero de la forma $x^{kr} + x^{kr + 1} + x^{kr + 2} + \cdots + x^{kr + (k - 1)}$ (o en términos de polinomos $F(x) = (1 + x + x^2 + \cdots + x^{k - 1}) P(x^k)$ para algún polinomio $P(x)$ con coeficientes ceros o unos).
+    Ahora mostraremos que cualquier monomio en $G$ es de la forma $x^{kr}$ para algún $r$ (o en términos de polinomios $G(x) = Q(x^k)$ para algún polinomio $Q$ con coeficientes ceros o unos) y que todo monomio distinto de cero en $F$ ocurre en una serie de monomios distintos de cero de la forma $x^{kr} + x^{kr + 1} + x^{kr + 2} + \cdots + x^{kr + (k - 1)}$ (o en términos de polinomios $F(x) = (1 + x + x^2 + \cdots + x^{k - 1}) P(x^k)$ para algún polinomio $P(x)$ con coeficientes ceros o unos).
     Tenga en cuenta que esto resolverá el problema haciendo $T(x) = P(x^k)$.
 
     Supongamos, por el contrario, que este no es el caso.
@@ -428,30 +428,30 @@ De aquí que, el coeficiente de $x^{50}$ es la suma de los coeficientes de los m
     Donde $a,b < kr + s$ y el monomio $x^{kr + s}$ el la primera desviación en nuestro patrón propuesto, resulta que $b = k r'$ para algún $r'\leq r$ y por consiguiente $a = k(r - r')$.
     De nuevo ya que $x^{kr + s}$ fue el primer monomio malo, esto debe comenzar una racha de monomios $x^{k(r - r')} + x^{k(r - r') + 1} + \cdots + x^{k(r - r') + (k - 1)}$ en $F$.
     Pero entonces el coeficiente de $x^{kr + s}$ en $F(x) G(x)$ obtiene una contribución de 1 desde $x^{k(r - r') + s} \cdot x^{kr'}$ y otra contribución de 1 desde $x^0 \cdot x^{kr + s}$.
-    Ya que cualquier contribución adicional sólo sería posible, el coeficiente de $x^{kr + s}$ en el producto será al menos 2, una contradicción.
+    Ya que cualquier contribución adicional solo sería posible, el coeficiente de $x^{kr + s}$ en el producto será al menos 2, una contradicción.
 
     Si el primer monomio malo está en $F$, entonces hay algún $r$ tal que $F$ solo contenga un subconjunto propio de los monomios $x^{kr}, x^{kr + 1}, \ldots, x^{kr + k - 1}$.
     Digamos que contiene $x^{kr + i}$ pero no a $x^{kr + j}$ para algunos $0 \leq i, j < k$.
     El monomio $x^{kr + j}$ debe ocurrir en $F(x) G(x)$, digamos $x^a \cdot x^b$.
-    Ya que la serie $x^{kr}, \ldots, x^{rk + k - 1}$ contiene el monomio malo con menor grado, debemo tener $b = kr'$ para algún $1 \leq r' \leq r$ y por tanto $a = k(r - r') + j$.
-    Ya que este es el menor, $F$ debe contener la serie completa
+    Puesto que la serie $x^{kr}, \ldots, x^{rk + k - 1}$ contiene el monomio malo con menor grado, debemos tener $b = kr'$ para algún $1 \leq r' \leq r$ y por tanto $a = k(r - r') + j$.
+    Como este es el menor, $F$ debe contener la serie completa
     \[
         x^{k(r - r')} + x^{k(r - r') + 1} + \cdots + x^{k(r - r') + k - 1}.
     \]
-    Ahor veamos cuántas veces el monomio $x^{kr + i}$ aparece en $F(x) G(x)$.
+    Ahora veamos cuántas veces el monomio $x^{kr + i}$ aparece en $F(x) G(x)$.
     Este aparece una vez en $x^{k(r - r') + i} \cdot x^{kr'}$ y una vez en $x^{kr + i}\cdot x^0$.
     Esto es, aparece al menos dos veces, una contradicción.
 \end{solution}
 
 \begin{example}[Olimpiada Matemática de Moscow, 1994]
-    ¿Existe un polinomio $P(x)$ con un coeficiente negativo tal que para cualquer potencia $P(x)^n$ con $n > 1$ todos los coeficientes son positivos?
+    ¿Existe un polinomio $P(x)$ con un coeficiente negativo tal que para cualquier potencia $P(x)^n$ con $n > 1$ todos los coeficientes son positivos?
 \end{example}
 \begin{solution}
     La respuesta es sí.
-    Sea $P(x) = a_d x^d + \cdots + a_0$ que tiene coefientes positivos.
-    Entonces todas sus potencias tienen coefientes positivos.
+    Sea $P(x) = a_d x^d + \cdots + a_0$ que tiene coeficientes positivos.
+    Entonces todas sus potencias tienen coeficientes positivos.
     Tomar a $f(x) = x^4 + x^3 + x + 1$ y sea $g(x) = f(x) - \epsilon x^2$ para algún $\epsilon > 0$ lo suficientemente pequeño.
-    Entonces todos los coefientes de $g(x)^2$ y $g(x)^3$ están cerca de los coeficientes de
+    Entonces todos los coeficientes de $g(x)^2$ y $g(x)^3$ están cerca de los coeficientes de
     \[
         f(x)^2 = x^9 + 2x^7 + x^6 + 2x^5 + 4x^4 + 2x^3 + x^2 + 2x + 1
     \]
@@ -459,8 +459,8 @@ De aquí que, el coeficiente de $x^{50}$ es la suma de los coeficientes de los m
     \[
         f(x)^3 = x^{12} + 3x^{11} + 3x^{10} + 4x^9 + 9x^8 + 9x^7 + 6x^6 + 9x^5 + 9x^4 + 4x^3 + 3x^2 + 3x + 1.
     \]
-    Los coeficientes de $f(x)^2$ y $f(x)^3$ son todos positivos y por lo tanto los coefientes de $g(x)^2$ y $g(x)^3$ debe ser positivos.
-    Por tanto, ya que todos los enteros positivos $n$ puede escribirse como $n = 2a + 3b$ para algunos enteros no negativos $a, b$ todas las potencias $g(x)^n$ tiene solo coefiecientes positivos.
+    Los coeficientes de $f(x)^2$ y $f(x)^3$ son todos positivos, por lo tanto, los coeficientes de $g(x)^2$ y $g(x)^3$ debe ser positivos.
+    En consecuencia, ya que todos los enteros positivos $n$ puede escribirse como $n = 2a + 3b$ para algunos enteros no negativos $a, b$ todas las potencias $g(x)^n$ tiene solo coeficientes positivos.
 \end{solution}
 
 
@@ -500,8 +500,7 @@ Por ejemplo,
     \]
 \end{solution}
 
-El segundo caso se refiere a identidades para factorizar.
-Por ejemplo, podemos factorizar la expresión
+El segundo caso se refiere a identidades para factorizar,\eg, podemos factorizar la expresión
 \[
     (a^2 - b^2)^3 + (b^2 - c^2)^3 + (c^2 - a^2)^3.
 \]
@@ -542,16 +541,16 @@ Ahora por la identidad de \textit{Diferencia de cuadrados}, encontramos que
     Esto significa que si una de las variables $x, y, z$ es 2, entonces $x = y = z = 2$.
     Asi, asumiendo que $x,y, z \neq 2$ y multiplicando todas las ecuaciones encontramos que
     \[
-        (x - 1)^2 (y - 1)^2 (z - 1)^2 + 6(x + 1)^2 (y + 1)^2 (z + 1)^2 = 0
+       (x - 1)^2 (y - 1)^2 (z - 1)^2 + 6(x + 1)^2 (y + 1)^2 (z + 1)^2 = 0
     \]
-    lo cual claramente no tiene soluciones.
+    lo cuál claramente no tiene soluciones.
 \end{solution}
 
 \begin{example}[Revista Mathematics and Youth, 2005]
     Sean $x, y, z, t$ números reales.
     Considere el polinomio
     \[
-        F(x,y,z,t) = 9 (x^2 y^2 + y^2 z^2 + z^2 t^2 + t^2 x^2) + 6xz (y^2 + t^2) - 6yt(x^2 + z^2) - 4xyzt.
+        F(x,y,z,t) = 9 (x^2 y^2 + y^2 z^2 + z^2 t^2 + t^2 x^2) + 6xz (y^2 + t^2) - 6yt(x^2 + z^2) - 4 xyz t.
     \]
     \begin{enumerate}
         \item Probar que el polinomio puede ser factorizado como el producto de dos polinomios cuadráticos.
@@ -573,7 +572,7 @@ Ahora por la identidad de \textit{Diferencia de cuadrados}, encontramos que
 \end{solution}
 
 \begin{note}
-    Por el segundo punto, también podríamos haber escrito $F(x, y, z, t)$ como se sigue
+    Por el segundo punto, también se pudo haber escrito $F(x, y, z, t)$ como se sigue
     \[
         F(x, y, z, t) = (3zy + xy - zt - 3xt)^2 + 8(xy + zt)^2 \geq 8.
     \]
@@ -654,7 +653,7 @@ Estos dos conceptos son dependientes del contexto, esto es, el polinomio $1 +x^2
     \[
         P(x) = (x^2 - 12x + 11)^4 + 23 = Q(x) H(x) R(x),
     \]
-    donde $Q(x), H(x)$ y $R(x)$ tienen coefientes enteros.
+    donde $Q(x), H(x)$ y $R(x)$ tienen coeficientes enteros.
     Ya que el producto de los coeficientes principales de $Q$, $H$ y $R$ debe ser igual al coeficiente principal de $P$, el cual es 1, cada uno de los coeficientes deben ser $\pm 1$.
     Si uno de los coeficientes es -1, entonces un segundo coeficientes debe ser -1 y podemos multiplicar ambos por -1.
     En consecuencia podemos asumir que $Q$, $H$ y $R$ son mónicos.
@@ -703,24 +702,24 @@ Estos dos conceptos son dependientes del contexto, esto es, el polinomio $1 +x^2
 Con el fin de resolver el siguiente problema, necesitamos un criterio útil de irreducibilidad.
 
 \begin{definition}[Criterio de Eisenstein]\index{Criterio!Eisenstein}\label{eisenstein}
-    Supongamos que $P(x) = a_d x^d + a_{d - 1} x^{d - 1} + \cdots + a_0$ es un polinomio con coefientes enteros y que existe un pripo $p$ tal que $p$ no divide a $a_d$ , pero divide a todos los $a_{d - 1}, \ldots, a_0$ y $p^2$ no divide a $a_0$.
+    Supongamos que $P(x) = a_d x^d + a_{d - 1} x^{d - 1} + \cdots + a_0$ es un polinomio con coeficientes enteros y que existe un primo $p$ tal que $p$ no divide $a_d$, pero divide a todos los $a_{d - 1}, \ldots, a_0$ y $p^2$ no divide a $a_0$.
     Entonces $P(x)$ es irreducible sobre los enteros.
 \end{definition}
 \begin{proof}
-    Supongamos por el contrario que $P(x) = f(x) g(x)$ donde $f(x) = b_0 + b_1 x + \cdots$ y $g(x) = c_0 + c_1 x + \cdots$ son polinomios no constantes con coeficientes enteros.
-    Ya que el producto de los coeficientes principales de $f$ y $g$ es $a_d$ el cual no es multiplo de $p$, los coeficientes principales de $f$ y $g$ no son multiplos de $p$.
-    Por lo tanto hay un mínimo índice $k$ tal que $b_k$ no es multiplo de $p$ y hay un mínimo índice $m$ tal que $c_m$ no es multiplo de $p$.
+    Supongamos, por el contrario, que $P(x) = f(x) g(x)$ donde $f(x) = b_0 + b_1 x + \cdots$ y $g(x) = c_0 + c_1 x + \cdots$ son polinomios no constantes con coeficientes enteros.
+    Ya que el producto de los coeficientes principales de $f$ y $g$ es $a_d$ el cuál no es múltiplo de $p$, los coeficientes principales de $f$ y $g$ no son múltiplos de $p$.
+    Por lo tanto, hay un mínimo índice $k$ tal que $b_k$ no es múltiplo de $p$ y hay un mínimo índice $m$ tal que $c_m$ no es múltiplo de $p$.
     Entonces por el coeficiente de $x^{k + m}$ obtenemos
     \[
         a_{k + m} = (b_0 c_{m + k} + \cdots + b_{k - 1} c_{m + 1}) + b_k c_m + (b_{k + 1} c_{m - 1} + \cdots + b_{m + k} c_0).
     \]
-    Cada término en el lado derecho de la ecuación excepto el de en medio es multiplo de $p$, porque $b_0, \cdots, b_{k - 1}$ y $c_0, \cdots, c_{k - 1}$ son multiplos de $p$.
-    Ya que el término de en medio no es multiplo de $p$, se sigue que $a_{m + k}$ no es multiplo de $p$.
+    Cada término en el lado derecho de la ecuación excepto el de en medio es múltiplo de $p$, porque $b_0, \cdots, b_{k - 1}$ y $c_0, \cdots, c_{k - 1}$ son múltiplos de $p$.
+    Ya que el término de en medio no es múltiplo de $p$, se sigue que $a_{m + k}$ no es múltiplo de $p$.
     Así $m + k = d$.
     Pero esto significa que $b_k x^k$ y $c_m x^m$ deben ser los términos principales de $f$ y $g$.
-    En particular, $k,m > 0$ por tanto $b_0$ y $b_0$son ambos multiplos de $p$.
-    Pero esto haría a $a_0$ un multiplo de $p^2$, contradiciendo la hipótesis.
-    Esto es una contradicción y por consiguiente $P(x)$ es irreducible sobre los enteros.
+    En particular, $k,m > 0$ por tanto $b_0$ y $b_0$son ambos múltiplos de $p$.
+    Pero esto haría a $a_0$ un múltiplo de $p^2$, contradiciendo la hipótesis.
+    Esto es una contradicción y por consiguiente $P(x)$ es irreducible sobre en los enteros.
 \end{proof}
 
 \begin{example}[Mathematical Reflections, S18. Titu Andreescu]
@@ -737,7 +736,7 @@ Con el fin de resolver el siguiente problema, necesitamos un criterio útil de i
     Para $n = 9$, tenemos $P(x) = x^5 +36$.
     Si podemos factorizar en la forma deseada entonces uno de los factores sería línea.
     Por lo tanto, $P(x) = x^5 + 36$ debería tener una raíz entera, los cual es imposible.
-    Similarmente, cuando $n = 8$, $P(x) = x^4 + 32$ tiene una raíz entero e implica el mismo razonamiento.
+    Similarmente, cuando $n = 8$, $P(x) = x^4 + 32$ tiene una raíz entera e implica el mismo razonamiento.
     Para $n = 4, 5, 6, 7$ al menos uno de los factores debe se constante.
     Para $n = 16$, tenemos
     \begin{align*}
@@ -805,7 +804,7 @@ El valor del polinomio en $x = c$, el cual es denotado por $P(c)$, es
 \[
     P(c) = a_d c^d + a_{d - 1}c^{d - 1} + \ldots + a_1 c + a_0.
 \]
-De especial interes son los casos de $P(1)$ y $P(-1)$, i.e.,
+De especial interés son los casos de $P(1)$ y $P(-1)$, \ie
 \[
     P(1) = a_d + a_{d - 1} + \ldots + a_0
 \]
@@ -860,7 +859,7 @@ el cual es llamado la \textit{suma de coeficientes} y
 \end{solution}
 
 \begin{example}
-    Sea $P(x) = a_0 + \ldots + a_n x^n$ un polinomio con coeficientes enteros talque $P(-1) = 0$ y $P(\sqrt {2}) \in \Z$.
+    Sea $P(x) = a_0 + \ldots + a_n x^n$ un polinomio con coeficientes enteros talque $P(-1) = 0$ y $P\left(\sqrt {2}\right) \in \Z$.
     Probar que existe un entero $0 \leq k \leq n$ talque $P(k) + a_k$ es par.
 \end{example}
 \begin{solution}
@@ -869,7 +868,7 @@ el cual es llamado la \textit{suma de coeficientes} y
     \[
         \sum a_{2i} = \sum a_{2i + 1}.
     \]
-    Ya que $P(\sqrt {2}) \in \Z$, encontramos que $\sum 2^i a_{2i} + \sqrt {2} \sum 2^i a_{2i + 1} \in \Z$, por lo tanto
+    Ya que $P\left(\sqrt {2}\right) \in \Z$, encontramos que $\sum 2^i a_{2i} + \sqrt {2} \sum 2^i a_{2i + 1} \in \Z$, por lo tanto
     \[
         \sum 2^i a_{2i + 1} = 0.
     \]
@@ -881,21 +880,21 @@ el cual es llamado la \textit{suma de coeficientes} y
 \begin{example}[Olimpiada Matemática de Zhautykov, 2014]
     Encontrar todos los polinomios $P(x)$ con coeficientes enteros talque
     \[
-        P(1 + \sqrt {3}) = 2 + \sqrt {3}, \quad P(3 + \sqrt {5}) = 3 + \sqrt {5}.
+        P\left(1 + \sqrt {3}\right) = 2 + \sqrt {3}, \quad P\left(3 + \sqrt {5}\right) = 3 + \sqrt {5}.
     \]
 \end{example}
 \begin{solution}
     Sea $Q(x) = P(x) - x$.
-    Claramente, $Q(3 +  \sqrt {5}) = 0$.
+    Claramente, $Q\left(3 +  \sqrt {5}\right) = 0$.
     Además, ya que $Q(x)$ tiene coeficientes enteros, tenemos que si $D$ no es un cuadrado perfecto,
-    $a, b$ son números racionales y $Q(a + b\sqrt {D}) = c + e\sqrt {D}$ para algunos números racionales $c, e$, entonces
+    $a, b$ son números racionales y $Q\left(a + b\sqrt {D}\right) = c + e\sqrt {D}$ para algunos números racionales $c, e$, entonces
     \[
-        Q(a - b \sqrt {D}) = c - e \sqrt {D}.
+        Q\left(a - b \sqrt {D}\right) = c - e \sqrt {D}.
     \]
-    Esto implica que $Q(3 - \sqrt {5}) = 0$.
+    Esto implica que $Q\left(3 - \sqrt {5}\right) = 0$.
     Entonces $Q(x)$ es divisible por
     \[
-        \left(x - (3 - \sqrt {5})\right) \left(x - (3 + \sqrt {5})\right) = x^2 - 6x + 4.
+        \left(x - \left(3 - \sqrt {5}\right)\right) \left(x - \left(3 + \sqrt {5}\right)\right) = x^2 - 6x + 4.
     \]
     Ahora, $Q(x) = P(x) - x = (x^2 - 6x + 4) R(x).$
     para algún polinomio $R(x)$ con coeficientes enteros.
@@ -909,12 +908,12 @@ el cual es llamado la \textit{suma de coeficientes} y
     \[
         R\left(1 + \sqrt {3}\right)  R\left(1 - \sqrt {3}\right) = \frac{1}{44}.
     \]
-    Pero $R(x)$ tiene coeficientes enteros, así
+    Pero $R(x)$ tiene coeficientes enteros, asi
     \[
-        R\left(1 + \sqrt {3}\right) = a + b\sqrt {3} \quad \text{y} \quad R\left(1 - \sqrt {3}\right) = a - b\sqrt {3}
+        R\left(1 + \sqrt {3}\right) = a + b\sqrt {3} \quad \text{y} \quad R\left(1 - \sqrt {3}\right) = a - b\sqrt {3},
     \]
     para algunos enteros $a,b$.
-    Entonces $R\left(1 + \sqrt {3}\right) R\left(1 - \sqrt {3}\right) = a^2 - 3b^2$ lo cual es un entero, contradicción.
+    Entonces $R\left(1 + \sqrt {3}\right) R\left(1 - \sqrt {3}\right) = a^2 - 3b^2$ lo cuál es un entero, contradicción.
 \end{solution}
 
 Una propiedad interesante de los polinomios con coeficientes enteros es que para todos los enteros arbitrarios $r,s$ tenemos
@@ -933,7 +932,7 @@ Pues como $a_1, \ldots, a_d$ son todos enteros, vemos que
 es un entero.
 En consecuencia, hallamos el siguiente teorema.
 
-\begin{theorem}
+\begin{theorem}{}{}
     Sea $P(x)$ un polinomio con coeficientes enteros.
     Entonces, la razón $\dfrac{P(r) - P(s)}{r - s}$ es un entero para todo los enteros distintos $r, s$.
 \end{theorem}
@@ -946,7 +945,7 @@ ya que $\dfrac{P(12) - P(10)}{12 - 10} = \dfrac{1}{2}$ no es un entero.
 
 
 \begin{example}
-    ¿Existe un polinomio $P(x)$ talque ninguno de sus coeficientes distintos de cero es un entero, $P(0) = 0$ y para cualquier enteros distintos $a,b$ tenemos que $\frac{P(a) - P(b)}{a - b}$ es un entero?
+    ¿Existe un polinomio $P(x)$ talque ninguno de sus coeficientes distintos de cero es un entero, $P(0) = 0$ y para cualquiera enteros distintos $a,b$ tenemos que $\frac{P(a) - P(b)}{a - b}$ es un entero?
 \end{example}
 \begin{solution}
     La respuesta es sí.
@@ -993,7 +992,7 @@ ya que $\dfrac{P(12) - P(10)}{12 - 10} = \dfrac{1}{2}$ no es un entero.
 
 
 \begin{note}
-    El ejemplo previo puede ser usado para resolver el siguiente problema de nuestro papa Titu Andreescu (Mathematical Reflections U451):
+    El ejemplo previo puede ser usado para resolver el siguiente problema de Titu Andreescu (Mathematical Reflections U451):
 
     Sean $x_1, x_2, x_3, x_4$ las raíces del polinomio $2018 x^4 + x^3 + 2018x^2 - 1$.
     Evaluar la expresión
@@ -1032,11 +1031,11 @@ ya que $\dfrac{P(12) - P(10)}{12 - 10} = \dfrac{1}{2}$ no es un entero.
         &= 10 + (N + 20)(N + 19) \cdot \ldots \cdot (N + 11) - (N + 10) \cdot \ldots \cdot (N + 1),
     \end{align*}
     donde tomamos a $N = c_1 - 1$.
-    Es fácil verficar que
+    Es fácil verificar que
     \[
         (N + 20)(N + 19) \cdot \ldots \cdot (N + 11) \quad \text{y} \quad (N + 10) \cdot \ldots \cdot (N + 1)
     \]
-    no son iguales (el primero es mayor para $N \geq -10$ y el segundo es mayor para $N \leq -11$) y ambos son divisibles por $10!$.
+    son distintos (el primero es mayor para $N \geq -10$ y el segundo es mayor para $N \leq -11$) y ambos son divisibles por $10!$.
     En consecuencia
     \[
         \abs{(N + 20)(N + 19) \cdot \ldots \cdot (N + 11) - (N + 10) \cdot \ldots \cdot (N + 1)} \geq 10!.
@@ -1049,8 +1048,8 @@ ya que $\dfrac{P(12) - P(10)}{12 - 10} = \dfrac{1}{2}$ no es un entero.
     Por tanto, para todo entero $k$ tomamos $m = k + c_1 - 1$ y obtenemos la conclusión.
 \end{solution}
 
-Otra propiedad intersante de los polinomios con coeficientes enteros es la similitud entre $P(c)$ y la expansión de un número entero en base $c$.
-Si comenzamos con la expansón del entero $\overline{a_d a_{d - 1} \ldots a_0}_c$ (donde como siempre $0 \leq a_i \leq c - 1$ para todo $0 \leq i \leq d$) podemos definir el polinomio
+Otra propiedad interesante de los polinomios con coeficientes enteros es la similitud entre $P(c)$ y la expansión de un número entero en base $c$.
+Si comenzamos con la expansión del entero $\overline{a_d a_{d - 1} \ldots a_0}_c$ (donde como siempre $0 \leq a_i \leq c - 1$ para todo $0 \leq i \leq d$) podemos definir el polinomio
 \[
     P(x) = a_d x^d + a_{d - 1} x^{d - 1} + \ldots + a_1 x + a_0,
 \]
@@ -1123,7 +1122,7 @@ En cambio, si tenemos el polinomio $P$ y conocemos todos los coeficientes $a_i$ 
     Si $a_n = a_{n - 1} = N$, entonces $f(2N) + h(2N) = (2N)^{n + 1} + (2N)^n + M$, donde $M$ es un número de $k$ dígitos en base $2N$ para algún $k \leq k - 1$.
     Así $f(2N) + h(2N)$ puede tomar todos los valores enteros desde $(2N)^{n + 1} + (2n)^n$ a $(2N)^{n + 1} + (2N)^n + (2N)^{n - 1} - 1$.
     Combinando estos tres casos, podemos ver que $f(2N) + h(2N)$ puede tomar todos los valores desde 0 hasta $(2N)^{n + 1} + (2N)^n + (2N)^{n - 1} - 1$.
-    Sin embargo está claro que como a lo sumo dos coeficientes de $f + h$ son $2N$, el valor más grande posible de $f(2N) + h(2N)$ es
+    Sin embargo, está claro que como a lo sumo dos coeficientes de $f + h$ son $2N$, el valor más grande posible de $f(2N) + h(2N)$ es
     \[
         (2N - 1)(1 + 2N + \cdots + (2N)^{n - 2}) + (2N)(2N)^{n - 1} + (2N)(2N)^n
     \]
@@ -1131,14 +1130,14 @@ En cambio, si tenemos el polinomio $P$ y conocemos todos los coeficientes $a_i$ 
     \[
         (2N)^{n + 1} + (2N)^n + (2N)^{n - 1} - 1.
     \]
-    Así estos valores son los únicos de $f(2N) + h(2N)$ que cumplen y por lo tanto el número de elementos en el conjunto es $(2N)^{n - 1} ( (2N)^2 + 2N + 1)$.
+    Así estos valores son los únicos de $f(2N) + h(2N)$ que cumplen, por lo tanto, el número de elementos en el conjunto es $(2N)^{n - 1} ( (2N)^2 + 2N + 1)$.
 \end{solution}
 
 Proporcionamos un maravilloso problema de la olimpiada Rusa del 2003 basado en la interpretación base $c$ en el valor de polinomio $P(c)$.
 
 \begin{example}[Olimpiada Rusa de Matemáticas, 2003. Alexander Khrabrov]
-    Sea $P(x)$ y $Q(x)$ dos polinomios con coeficintes enteros no negativos tal que todos los coeficientes de $P(x)$ son menores o iguales a $m$.
-    Si exixte enteros $a < b$ talque $P(a) = Q(a)$, $P(b) = Q(b)$ y $b > m$, probar que $P(x) = Q(x)$.
+    Sea $P(x)$ y $Q(x)$ dos polinomios con coeficientes enteros no negativos tal que todos los coeficientes de $P(x)$ son menores o iguales a $m$.
+    Si existen enteros $a < b$ talque $P(a) = Q(a)$, $P(b) = Q(b)$ y $b > m$, probar que $P(x) = Q(x)$.
 \end{example}
 \begin{solution}
     Asumamos que
@@ -1146,9 +1145,9 @@ Proporcionamos un maravilloso problema de la olimpiada Rusa del 2003 basado en l
         P(x) = \sum_{i = 0}^{n} c_i x^i \quad \text{y} \quad Q(x) = \sum_{i = 0}^{k} d_i x^i
     \]
     y $0 \leq c_i \leq m < b$.
-    Por tanto vemos que $P(b)$ escrito en base $b$ es $\overline{c_n c_{n -1} \cdots c_0}_b$.
+    En consecuencia, vemos que $P(b)$ escrito en base $b$ es $\overline{c_n c_{n -1} \cdots c_0}_b$.
     Si todos los coeficientes de $Q$ con menores a $b$ hemos terminado.
-    Si no , entonces existe un índice menor $i$ talque $d_i \geq b$.
+    Si no, entonces existe un índice menor $i$ talque $d_i \geq b$.
     En ese caso podemos escribir $d_i = bq + r$ con $0 = r < b$.
     Ahora construyamos el polinomio $Q_1$ desde $Q$ cambiando $d_{i + 1}$ por $d_{i + 1} + q$ y $d_i$ por $r$.
     Entonces es obvio que $Q_1(b) = Q(b)$.
@@ -1161,9 +1160,9 @@ Proporcionamos un maravilloso problema de la olimpiada Rusa del 2003 basado en l
     \end{align*}
     Esto implica que $Q_1(a) < Q(a)$.
     Si iteramos este proceso, entonces el índice donde $d_i$ primero iguala o excede a $b$ solo puede incrementar.
-    Así en a los más $n$ pasos, obtenemos el polinomio $Q_s$ el cual todos sus coeficientes son menores que $b$ y con $P(b) = Q(b) = Q_s(b)$.
+    Así en a los más $n$ pasos, obtenemos el polinomio $Q_s$ el cuál todo sus coeficientes son menores que $b$ y con $P(b) = Q(b) = Q_s(b)$.
     La igualdad $P(b) = Q_s(b)$ implica que $P$ y $Q_s$ deben ser iguales, pero la desigualdad $Q_s (a) < Q(a)$ contradice la suposición.
-    Por tanto nuestra primera suposición es falsa y tenemos $P(x) = Q(x)$.
+    Por tanto, nuestra primera suposición es falsa y tenemos $P(x) = Q(x)$.
 \end{solution}
 
 \begin{example}[Tuymada\footnote{Tuymada es una olimpiada que se realiza en la republica rusa de Sakha}, 2007. Aleksander Golovanov]
@@ -1173,9 +1172,9 @@ Proporcionamos un maravilloso problema de la olimpiada Rusa del 2003 basado en l
     \]
     y
     \[
-        g(x) = b_{100} x^{100} + b_{99} x^{99} + \ldots + b_1 x + b_0
+        g(x) = b_{100} x^{100} + b_{99} x^{99} + \ldots + b_1 x + b_0.
     \]
-    sabiendo que los coeficientes de uno es la permutación del otro y para todo $i$ tenemos $a_i \neq b_i$.
+    Sabiendo que los coeficientes de uno es la permutación del otro y para todo $i$ tenemos $a_i \neq b_i$.
     ¿Existen dos polinomios tales que para todo real $x$ tengamos $f(x) \geq g(x)$?
 \end{example}
 \begin{solution}
@@ -1207,13 +1206,13 @@ Sabemos que para cualquier entero positivo $b$ y cualquier entero $a$, dividir $
 \]
 Usando la división de polinomios obtenemos un resultado similar.
 Primero consideremos polinomios con coeficientes racionales.
-Exactamente los mismos argumentos trabajan para coeficientes reales o complejos, aunque como veremos a bajo los coeficientes enteros requiere un cuidado extra.
+Los mismos argumentos trabajan para coeficientes reales o complejos, aunque como veremos abajo los coeficientes enteros requiere un cuidado extra.
 Suponga $B(x)$ como cualquier polinomio no cero.
-Entonces para cuales quiera polinomios $A(x)$, existe polinomios único $Q(x)$, $R(x)$ talque
+Entonces para cualesquiera polinomios $A(x)$, existe polinomios único $Q(x)$, $R(x)$ talque
 \[
     A(x) = B(x) Q(x) + R(x), \quad \deg{R(x)} < \deg{B(x)}.
 \]
-Así que en lugar del resto con menor magnitud, es decir, satisface la desigualdad $0 \leq r \leq b - 1$, tenemos un condición análogo del resto con el grado menor.
+Así que en lugar del resto con menor magnitud, es decir, satisface la desigualdad $0 \leq r \leq b - 1$, tenemos una condición análoga del resto con el grado menor.
 El hecho de arriba es llamado \textit{Teorema de la División Polinómica}\index{Teorema!División Polinómica}
 Este puede probarse usando una inducción simple en el grado de $A(x)$ o equivalentemente por la división larga de polinomios.
 Cuando $R(x) = 0$, decimos que el polinomio $A(x)$ es divisible por el polinomio $B(x)$.
@@ -1232,22 +1231,22 @@ Ya que $\deg{R(x)} < \deg{x^2 + 2} = 2$, podemos escribir que $R(x) = ax + b$, d
 \[
     P(x) = (x^2 + 2)Q(x) + ax + b.
 \]
-Si $A(x)$ y $B(x)$ tiene coeficientes enteros, entonces no podemos encontrar siempre polinomios $Q(x)$ y $R(x)$ con coeficidentes enteros tales que
+Si $A(x)$ y $B(x)$ tiene coeficientes enteros, entonces no podemos encontrar siempre polinomios $Q(x)$ y $R(x)$ con coeficientes enteros tales que
 \[
     A(x) = B(x) Q(x) + R(x) \quad \text{y} \quad \deg{R(x)} < \deg{B(x)}.
 \]
-Por ejemplo, si $B(x) = 2x^2 + 1$ y $Q \neq 0$ tiene enteros coeficientes, entonces el coeficiente principal de $B(x) Q(x) + R(x)$ siempre será multiplo de 2.
-Por lo tanto no podemos escribir $A(x) = x^3$ en esta forma.
-Sin embargo si asumimos que $B(x)$ es un polinomio mónico, entonces este problema desaparece y tenemos el siguiente resultado.
+Por ejemplo, si $B(x) = 2x^2 + 1$ y $Q \neq 0$ tiene enteros coeficientes, entonces el coeficiente principal de $B(x) Q(x) + R(x)$ siempre será múltiplo de 2.
+Por lo tanto, no podemos escribir $A(x) = x^3$ en esta forma.
+Sin embargo, si asumimos que $B(x)$ es un polinomio mónico, entonces este problema desaparece y tenemos el siguiente resultado.
 
 \begin{corollary}
-    Si $A(x)$ es un polinomio con coeficientes enteros y $B(x)$ es un polinomio mónico con coeficientes enteros, entonces existen polinomios único $Q(x)$, $R(x)$ con coneficientes enteros tales que
+    Si $A(x)$ es un polinomio con coeficientes enteros y $B(x)$ es un polinomio mónico con coeficientes enteros, entonces existen polinomios único $Q(x)$, $R(x)$ con coeficientes enteros tales que
     \[
         A(x) = B(x) Q(x) + R(x), \quad \deg{R(x)} < \deg{B(x)}.
     \]
 \end{corollary}
 
-Esto puede probarse imitando la demostración anterior y viendo que siempre que $B$ sea mónico podemos realizar una división larga o derivandolo como un colorario del resultado para coeficientes racionales.
+Esto puede probarse imitando la demostración anterior y viendo que siempre que $B$ sea mónico podemos realizar una división larga o derivar a un colorario del resultado para coeficientes racionales.
 Por este resultado, encontramos $A(x)=B(x)Q(x)+R(x)$ donde $Q$ and $R$ tiene coeficientes racionales.
 Ahora suponga $q_k x^k$ es el monomio con mayor grado en $Q$ para el cual el coeficiente no es un entero.
 Entonces viendo el coeficiente de $x^{k + \deg{B}}$, obtenemos una contradicción.
@@ -1293,20 +1292,20 @@ Por el \textit{Máximo Común Divisor}\index{Máximo Común Divisor} (MCD) de do
 Por el \textit{Mínimo Común Múltiplo}\index{Mínimo Común Múltiplo} (MCM) de dos polinomios $A(x)$, $B(x)$ con coeficientes racionales queremos decir un polinomio mónico $L(x)$ del menor grado divisible por ambos polinomios.
 
 \begin{example}[Olimpiada Italiana de Matemática, 2015. Ronda Distrital]
-    Sean $P(x)$, $Q(x)$ dos polinomios mónicos con coeficientes enteros tal que su MCD es $(x-1)(x-2)$ y su mínimo común múltiplo (LCM) es
+    Sean $P(x)$, $Q(x)$ dos polinomios mónicos con coeficientes enteros tal que su MCD es $(x - 1)(x - 2)$ y su mínimo común múltiplo (LCM) es
     \[
-        (x-1)^2(x-2)^2(x-3)(x-1).
+        (x - 1)^2 (x - 2)^2 (x - 3)(x + 1).
     \]
     Si además asumimos $\deg P(x) < \deg Q(x)$, ¿Cuántos polinomios $P(x)$ existen para los cuales hay un $Q(x)$ que satisface estas condiciones?
 \end{example}
 
 \begin{solution}
-    Sea $D(x)=\mcd{P(x)}{Q(x)}$ y $L(x) = \mcm{P(x)}{Q(x)}$.
-    Análogamente paro el caso de enteros, encontramos que
+    Sea $D(x) = \mcd{P(x)}{Q(x)}$ y $L(x) = \mcm{P(x)}{Q(x)}$.
+    Análogamente, paro el caso de enteros, encontramos que
     \[
         L(x) = \frac{P(x) Q(x)}{D(x)},
     \]
-    i.e.,
+    \ie
     \[
         L(x) D(x) = P(x) Q(x).
     \]
@@ -1314,14 +1313,14 @@ Por el \textit{Mínimo Común Múltiplo}\index{Mínimo Común Múltiplo} (MCM) d
     \[
         P(x) Q(x) = (x - 1)^3 (x - 2)^4 (x - 3) (x + 1).
     \]
-    El polinomio $(x - 1)(x - 2)$ es común para ambos polinomio $P(x)$ y $Q(x)$.
+    El polinomio $(x - 1)(x - 2)$ es divisor común para ambos polinomio $P(x)$ y $Q(x)$.
     Después cancelando esos factores, vemos que
     \[
         \frac{P(x)}{(x - 1)(x - 2)} \cdot \frac{Q(x)}{(x - 1)(x - 2)} = (x - 1)(x - 2)^2 (x - 3)(x + 1).
     \]
-    Los factores de la derecha deben repartirse entre $P(x)$ y $Q(x)$, y ya que los factores de la izquierda son primos relativos debemos dar ambos facotres de $(x - 2)^2$ al mismo polinomio.
+    Los factores de la derecha deben repartirse entre $P(x)$ y $Q(x)$, y ya que los factores de la izquierda son primos relativos debemos dar ambos factores de $(x - 2)^2$ al mismo polinomio.
     Así, esto es posible en $2^4 = 16$ maneras.
-    Ya que el producto $P(x) Q(x)$ es de grado 9, encontramos que $\deg{P(x)} \neq \deg{Q(x)}$, así en exactamente $\frac{16}{2} = 8$ caso tenemos $\deg{P(x)} < \deg{Q(x)}$.
+    Como el producto $P(x) Q(x)$ es de grado 9, encontramos que $\deg{P(x)} \neq \deg{Q(x)}$, de esta manera en exactamente $\frac{16}{2} = 8$ caso tenemos $\deg{P(x)} < \deg{Q(x)}$.
 \end{solution}
 
 
@@ -1332,14 +1331,14 @@ Entonces, por el teorema de División Polinómica, encontramos que hay polinomio
 \]
 Si $R_1(x) = 0$, entonces $B(x)$ divide a $A(x)$ y por tanto $B(x)$ (dividido por su coeficiente principal) es el mayor común divisor.
 Si $R_1(x) \neq 0$, entonces cualquier común divisor de $A(x)$ y $B(x)$ también divide a $R_1(x)$.
-Asi $B(x)$ y $R_1(x)$ tiene elmismo MCD.
+Asi $B(x)$ y $R_1(x)$ tiene el mismo MCD.
 Continuando, dividimos $B(x)$ por $R_1(x)$, entonces
 \[
     B(x) = R_1(x) Q_2(x) + R_2(x), \quad \deg{R_2(x)} < \deg{R_1(x)} < \deg{B(x)}.
 \]
 Iterando este proceso, ya que el grado siempre decrece, eventualmente debe obtener el caso donde $R_{n + 1}(x) = 0$.
 En este caso , $R_n(x)$ (dividido por su coeficiente principal) es el mayor común divisor de $A(x)$, $B(x)$.
-Si $R_n (x)$ es un polinomio constante, entonces los polinomios $A(x)$, $B(x)$ no debe tener divisores comunes no constantes y son llamados \textit{primo relativos}\index{Primo relativos, coprimos} o \textit{coprimo}.
+Si $R_n (x)$ es un polinomio constante, entonces los polinomios $A(x)$, $B(x)$ no debe tener divisores no constantes comunes, esto se llaman \textit{primos relativos}\index{Primos relativos, coprimos} o \textit{coprimo}.
 Por otra parte, ya que
 \[
     R_1(x) = A(x) - B(x) Q_1(x)
@@ -1353,14 +1352,14 @@ Continuando de esta manera, encontraremos eventualmente que hay polinomios $R(x)
     R_n(x) = R(x) A(x) + S(x) B(x).
 \]
 El caso interesante es cuando $A(x), B(x)$ son coprimos.
-En este caso dividiendo através de el polinomio constante $R_n$ muestra que hay polinomios $R(x)$, $S(x)$ talque
+En este caso dividiendo a través del polinomio constante $R_n$ muestra que hay polinomios $R(x)$, $S(x)$ talque
 \[
     1 = R(x) A(x) + S(x) B(x).
 \]
 Así acabamos de demostrar el siguiente colorario.
 
 \begin{corollary}[Identidad de Bezout para polinomios]\index{Colorario!Identidad de Bezout}
-    Para cualquiera dos polinomios coprimo $P(x)$, $Q(x)$ con coeficiente racionales,
+    Para cualquiera dos polinomios coprimo $P(x)$, $Q(x)$ con coeficientes racionales,
     existen polinomios $R(x)$, $S(x)$ con coeficientes racionales tales que
     \[
         1 = R(x) P(x) + S(x) Q(x)
@@ -1372,8 +1371,8 @@ Por ejemplo, $\sqrt {2} + \sqrt {3}$ es un número algebraico ya que $P\left(\sq
 \[
     P(x) = x^4 - 10x^2 + 1.
 \]
-Un polinomio no cero $P(x)$ con coeficientes enteros de grado minimo para el cual $P(\alpha) = 0$ es llamado un \textit{polinomio mínimo} \index{Polinomio!Mínimo} del número algebraico $\alpha$.
-Por la condición de minimalidad del grado, tenemos que este polinomio es irreducible sobre $\Q[x]$ y por tanto sobre $\Z[x]$.
+Un polinomio no cero $P(x)$ con coeficientes enteros de grado mínimo para el cual $P(\alpha) = 0$ es llamado un \textit{polinomio mínimo} \index{Polinomio!Mínimo} del número algebraico $\alpha$.
+Por la condición de mínimalidad del grado, tenemos que este polinomio es irreducible sobre $\Q[x]$, y por tanto sobre $\Z[x]$.
 Además, haciendo $R(\alpha) = 0$ para algún polinomio arbitrario $R(x)$ con coeficientes enteros.
 Por la suposición del grado mínimo, $\deg{P(x)} \leq \deg{R(x)}$.
 Entonces por el teorema de División Polinómica, se puede escribir
@@ -1381,7 +1380,7 @@ Entonces por el teorema de División Polinómica, se puede escribir
     R(x) = P(x) Q(x) + S(x)
 \]
 para algunos polinomios $Q(x), S(x)$ con coeficientes racionales, donde $\deg{S(x)} < \deg{P(x)}$.
-Multiplicando amboss lados por el mínimo común denominador de los coeficientes de los polinomios $Q(x), S(x)$ podemos asumir que $Q(x)$, $S(x)$ tiene coeficientes enteros.
+Multiplicando ambos lados por el mínimo común denominador de los coeficientes de los polinomios $Q(x), S(x)$ podemos asumir que $Q(x)$, $S(x)$ tiene coeficientes enteros.
 Ahora tomando $x = \alpha$ encontramos que $S(\alpha) = 0$.
 Por tanto, la condición de grado mínimo implica que $S(x) = 0$, i.e., $R(x)$ es divisible por $P(x)$.
 Asi todos los polinomios con $\alpha$ como raíz son múltiplos del polinomio mínimo.
@@ -1396,8 +1395,27 @@ Asi todos los polinomios con $\alpha$ como raíz son múltiplos del polinomio m�
         Q(x) = x^{2n} + x^{2(n - 1)} + \ldots + x^2 + 1.
     \]
 \end{example}
+\begin{solution}
+    Si $x \neq 1$, entonces
+    \begin{align*}
+        \frac{P(x)}{Q(x)} &= \frac{(x^4 - 1) P(x)}{(x^4 - 1) Q(x)}\\
+        &= \frac{x^{4(n + 1)} - 1}{(x^2 + 1)(x^{2(n + 1)} - 1)}\\[2mm]
+        &= \frac{(x^{2(n + 1)} - 1)(x^{2(n + 1)} + 1)}{(x^2 + 1)(x^{2(n + 1)} - 1)}\\[2mm]
+        &= \frac{x^{2(n + 1)} + 1}{x^2 + 1}.
+    \end{align*}
+    Si $Q(x)$ divide a $P(x)$, entonces el último cociente debe ser un polinomio.
+    Si $(n + 1)$ es impar, entonces $x^{2(n + 1)} + 1$ es divisible por $x^2 + 1$ y hemos terminado.
+    Si $(n + 1)$ es par, entonces $x^2 + 1$ divide a $x^{2(n + 1)} - 1$.
+    Así, el resto de dividir $x^{2(n + 1)} + 1$ por $x^2 + 1$ es 2 y vemos que $Q(x)$ no divide a $P(x)$.
+    Por lo que $n$ debe ser par y todos los números pares cumplen la propiedad deseada.
+\end{solution}
+
+\begin{example}
+    Sea $f(x) = a_0 + a_1 x + \cdots + a_4 x^4$ donde $a_4 \neq 0$.
+    Los restos de $f$ cuando es dividido por $(x - 2003)$, $(x - 2004)$, $(x - 2005)$, $(x - 2006)$ y $(x - 2007)$ son 24, $-6$, 4, $-6$, 24.
+    Hallar el valor de $f(2008)$.
+\end{example}
 
 %\section{La composición de polinomios}
 
 %\section{Polinomios pares e impares}
-
