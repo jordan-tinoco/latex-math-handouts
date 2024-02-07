@@ -1415,6 +1415,45 @@ Asi todos los polinomios con $\alpha$ como raíz son múltiplos del polinomio m�
     Los restos de $f$ cuando es dividido por $(x - 2003)$, $(x - 2004)$, $(x - 2005)$, $(x - 2006)$ y $(x - 2007)$ son 24, $-6$, 4, $-6$, 24.
     Hallar el valor de $f(2008)$.
 \end{example}
+\begin{solution}
+    El resto cuando el polinomio $f(x)$ es dividido por $(x - a)$ es\footnote{Este es una reformulación del hecho que $(x - a)$ divide a $f(x) - f(a)$.} $f(a)$.
+    De este modo la hipótesis puede reformularse como
+    \[
+        f(2023) = f(2007) = 24, \quad f(2004) = f(2006) = -6, \quad \text{y} \quad f(2005) = 4.
+    \]
+    Haciendo $f(x) = g(x - 2005)$, necesitamos encontrar un polinomio cuártico $g$ con $g(0) = 4$, $g(1) = g(-1) = -6$ y $g(2) = g(-2) = 24$.
+    Ya que los valores de $g$ son simétricos, buscamos un polinomio de la forma $g(x) = 4 + ax^2 + bx^4$.
+    Entonces tenemos $-6 = g(1) = 4 + a + b$ y $24 = g(2) = 4 + 4a + 16b$.
+    Resolviendo esas dos ecuaciones encontramos los valores de $a = -15$ y $b = 5$.
+    En consecuencia $g(x) = 4 - 15x^2 + 5x^4$ es una posibilidad.
+    Esta es la única solución, porque si $h(x)$ es cualquier otro polinomio cuártico con los mismos valores en 0, $\pm 1$, $\pm 2$, entonces $g(x) - h(x)$ tiene, como máximo, grado 4, pero tiene esos cinco puntos como raíces, y por lo tanto debe ser un polinomio cero.
+    Así
+    \[
+        f(x) = 4 - 15(x - 2005)^2 + 5(x - 2005)^4
+    \]
+    y
+    \[
+        f(2008) = 4 - 15\cdot 9 + 5\cdot 81 = 274. \qedhere
+    \]
+\end{solution}
+
+En la solución de arriba encontramos un polinomio de grado cuatro $f(x)$ con valores prescritos en cinco puntos específicamente para este fin.
+Cabría preguntarse si existe una forma más sistemática de hacer esto.
+Uno de esos métodos es la Fórmula de Interpolación de Lagrange\index{Interpolación de Lagrange}.
+Supongamos que queremos hallar un polinomio de grado a lo más $n$ para lo cual tenemos los valores prescritos de $(n + 1)$ puntos, digamos $f(x_i) = a_i$ para $i = 0, \ldots, n$.
+Como se indicó anteriormente, solo existe un polinomio, ya que la diferencia de dos polinomios sería un polinomio de grado como máximo $n$ con $(n + 1)$ raíces.
+
+El polinomio $(x - x_0)(x - x_1)\cdots(x - x_{k - 1})(x - x_{k + 1})\cdots(x - x_0)$ desaparece en $x_0$, $x_1$, $\ldots$, $x_{k - 1}$, $x_{k + 1}$, $\ldots$, $x_n$, esto es, en cualquiera de los $x_i$ excepto $x_k$.
+Por lo tanto el polinomio
+\[
+    \frac{(x - x_0)(x - x_1)\cdots(x - x_{k - 1})(x - x_{k + 1})\cdots(x - x_0)}{(x_k - x_0)(x_k - x_1)\cdots(x_k - x_{k - 1})(x_k - x_{k + 1})\cdots(x_k - x_0)}
+\]
+desaparece en cualquier $x_i$ como $x_k$ y tomas los valores de 1 a $x_k$.
+Por lo tanto
+\[
+    f(x) = \sum_{k = 0}^{n} a_k \frac{\prod_{i \neq k} (x - x_i)}{\prod_{i \neq k} (x_k - x_i)}
+\]
+es un polinomio de grado a lo máximo $n$ (ya que, cada sumando tiene grado a lo máximo $n$) que toma los valores $a_k$ en $x = x_k$.
 
 %\section{La composición de polinomios}
 
