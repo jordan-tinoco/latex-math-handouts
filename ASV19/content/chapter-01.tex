@@ -447,7 +447,7 @@ De aquí que, el coeficiente de $x^{50}$ es la suma de los coeficientes de los m
     ¿Existe un polinomio $P(x)$ con un coeficiente negativo tal que para cualquier potencia $P(x)^n$ con $n > 1$ todos los coeficientes son positivos?
 \end{example}
 \begin{solution}
-    La respuesta es sí.
+    La respuesta es sí,
     Sea $P(x) = a_d x^d + \cdots + a_0$ que tiene coeficientes positivos.
     Entonces todas sus potencias tienen coeficientes positivos.
     Tomar a $f(x) = x^4 + x^3 + x + 1$ y sea $g(x) = f(x) - \epsilon x^2$ para algún $\epsilon > 0$ lo suficientemente pequeño.
@@ -468,7 +468,7 @@ De aquí que, el coeficiente de $x^{50}$ es la suma de los coeficientes de los m
 \section{Factorización y sus implicaciones}
 
 Factorizar una expresión algebraica significa descomponer la expresión original en un producto de expresiones con grados menores.
-Tenemos dos herramientas principales para esto; agrupar o usar identidades.
+Tenemos dos herramientas principales para esto: agrupar o usar identidades.
 La aplicación de la primera herramienta incluye dividir la expresión en grupos con factores comunes.
 Por ejemplo,
 \[
@@ -1276,7 +1276,8 @@ Por tanto $Q$ y de ahí $R(x)=A(x)-B(x)Q(x)$ tiene coeficientes enteros.
         T(x)=(x-8)(x-12)(x-2017)H(x)+R(x),
     \]
     donde $\deg R(x) < \deg (x-8)(x-12)(x-2017)=3$, i.e., $\deg R(x) \leq 2$.
-    Ahora, tomemos $x=8$, $12$, $2017$ en la identidad anterior. Obtenemos
+    Ahora, tomemos $x=8$, $12$, $2017$ en la identidad anterior.
+    Obtenemos
     \[
         T(8)=R(8),\quad T(12)=R(12),\quad T(2017)=R(2017),
     \]
@@ -1331,7 +1332,7 @@ Entonces, por el teorema de División Polinómica, encontramos que hay polinomio
 \]
 Si $R_1(x) = 0$, entonces $B(x)$ divide a $A(x)$ y por tanto $B(x)$ (dividido por su coeficiente principal) es el mayor común divisor.
 Si $R_1(x) \neq 0$, entonces cualquier común divisor de $A(x)$ y $B(x)$ también divide a $R_1(x)$.
-Asi $B(x)$ y $R_1(x)$ tiene el mismo MCD.
+Asi $B(x)$ y $R_1(x)$ tiene el mismo \textit{MCD}.
 Continuando, dividimos $B(x)$ por $R_1(x)$, entonces
 \[
     B(x) = R_1(x) Q_2(x) + R_2(x), \quad \deg{R_2(x)} < \deg{R_1(x)} < \deg{B(x)}.
@@ -1416,7 +1417,7 @@ Asi todos los polinomios con $\alpha$ como raíz son múltiplos del polinomio m�
     Hallar el valor de $f(2008)$.
 \end{example}
 \begin{solution}
-    El resto cuando el polinomio $f(x)$ es dividido por $(x - a)$ es\footnote{Este es una reformulación del hecho que $(x - a)$ divide a $f(x) - f(a)$.} $f(a)$.
+    El resto cuando el polinomio $f(x)$ es dividido por $(x - a)$ es\footnote{Esta es una reformulación del hecho que $(x - a)$ divide a $f(x) - f(a)$.} $f(a)$.
     De este modo la hipótesis puede reformularse como
     \[
         f(2023) = f(2007) = 24, \quad f(2004) = f(2006) = -6, \quad \text{y} \quad f(2005) = 4.
@@ -1426,7 +1427,7 @@ Asi todos los polinomios con $\alpha$ como raíz son múltiplos del polinomio m�
     Entonces tenemos $-6 = g(1) = 4 + a + b$ y $24 = g(2) = 4 + 4a + 16b$.
     Resolviendo esas dos ecuaciones encontramos los valores de $a = -15$ y $b = 5$.
     En consecuencia $g(x) = 4 - 15x^2 + 5x^4$ es una posibilidad.
-    Esta es la única solución, porque si $h(x)$ es cualquier otro polinomio cuártico con los mismos valores en 0, $\pm 1$, $\pm 2$, entonces $g(x) - h(x)$ tiene, como máximo, grado 4, pero tiene esos cinco puntos como raíces, y por lo tanto debe ser un polinomio cero.
+    Esta es la única solución, porque si $h(x)$ es cualquier otro polinomio cuártico con los mismos valores en 0, $\pm 1$, $\pm 2$, entonces $g(x) - h(x)$ tiene, como máximo, grado 4, pero tiene esos cinco puntos como raíces, por lo tanto, debe ser un polinomio cero.
     Así
     \[
         f(x) = 4 - 15(x - 2005)^2 + 5(x - 2005)^4
@@ -1444,7 +1445,7 @@ Supongamos que queremos hallar un polinomio de grado a lo más $n$ para lo cual 
 Como se indicó anteriormente, solo existe un polinomio, ya que la diferencia de dos polinomios sería un polinomio de grado como máximo $n$ con $(n + 1)$ raíces.
 
 El polinomio $(x - x_0)(x - x_1)\cdots(x - x_{k - 1})(x - x_{k + 1})\cdots(x - x_0)$ desaparece en $x_0$, $x_1$, $\ldots$, $x_{k - 1}$, $x_{k + 1}$, $\ldots$, $x_n$, esto es, en cualquiera de los $x_i$ excepto $x_k$.
-Por lo tanto el polinomio
+Por lo tanto, el polinomio
 \[
     \frac{(x - x_0)(x - x_1)\cdots(x - x_{k - 1})(x - x_{k + 1})\cdots(x - x_0)}{(x_k - x_0)(x_k - x_1)\cdots(x_k - x_{k - 1})(x_k - x_{k + 1})\cdots(x_k - x_0)}
 \]
@@ -1453,7 +1454,114 @@ Por lo tanto
 \[
     f(x) = \sum_{k = 0}^{n} a_k \frac{\prod_{i \neq k} (x - x_i)}{\prod_{i \neq k} (x_k - x_i)}
 \]
-es un polinomio de grado a lo máximo $n$ (ya que, cada sumando tiene grado a lo máximo $n$) que toma los valores $a_k$ en $x = x_k$.
+es un polinomio de grado a lo máximo $n$ (porque, cada sumando tiene grado a lo máximo $n$) que toma los valores $a_k$ en $x = x_k$.
+Esta es la extremadamente poderosa Fórmula de Interpolación de Lagrange.
+
+Como ejemplo de su utilidad cabe señalar que este demuestra que un polinomio $f(x)$ de grado $n$ toma valores racionales en $(n + 1)$ valores racionales de $x$ tiene coeficientes racionales.
+(Si todos los $x_i$ y $a_i$ son racionales, entonces la fórmula de arriba es un polinomio con coeficientes racionales, pero este es el único polinomio de grado a lo máximo $n$ con $f(x_i) = a_i$.)
+
+Para el problema de anterior la fórmula de Interpolación de Lagrange nos da
+\begin{align*}
+    f(x) &= \frac{(x - 2004)(x - 2005)(x - 2006)(x - 2007)}{(-1)(-2)(-3)(-4)} \cdot 24\\[1mm]
+    &+ \frac{(x - 2003)(x - 2005)(x - 2006)(x - 2007)}{(1)(-1)(-2)(-3)} \cdot (-6)\\[1mm]
+    &+ \frac{(x - 2003)(x - 2004)(x - 2006)(x - 2007)}{(2)(1)(-1)(-2)} \cdot 4\\[1mm]
+    &+ \frac{(x - 2003)(x - 2004)(x - 2005)(x - 2007)}{(3)(2)(1)(-1)} \cdot (-6)\\[1mm]
+    &+ \frac{(x - 2003)(x - 2004)(x - 2005)(x - 2006)}{(4)(3)(2)(1)} \cdot 24
+\end{align*}
+Luego volvemos a calcular $f(2008) = 274$.
+
+\begin{example}
+    Sea $P(x)$ un polinomio mónico de grado cuatro tal que $f(1 + 2^n) = 1 + 8^n$ para todo $n = 1, 2, 3, 4$.
+    Hallar el valor de $P(1)$.
+\end{example}
+\begin{solution}[1]
+    Es claro que $P(2) = 9$, $P(5) = 65$, $P(9) = 513$ y $P(17) = 4097$.
+    Asumamos que $P(1) = a$.
+    Entonces,
+    \begin{align*}
+        P(x) &= \frac{(x - 2)(x - 5)(x - 9)(x - 17)}{512} \cdot a\\[1mm]
+        &+ \frac{(x - 1)(x - 5)(x - 9)(x - 17)}{-315} \cdot 9\\[1mm]
+        &+ \frac{(x - 1)(x - 2)(x - 9)(x - 17)}{576} \cdot 65\\[1mm]
+        &+ \frac{(x - 1)(x - 2)(x - 5)(x - 17)}{-1792} \cdot 513\\[1mm]
+        &+ \frac{(x - 1)(x - 2)(x - 5)(x - 9)}{23040} \cdot 4097.
+    \end{align*}
+    Como $P(x)$ es mónico, examinando el coeficiente de $x^4$ en ambos lados, obtenemos
+    \[
+        1 = \frac{a}{512} - \frac{9}{315} + \frac{65}{576} - \frac{513}{1792} + \frac{4097}{23040}.
+    \]
+    Entonces, $a = 513$.
+\end{solution}
+\begin{solution}[2]
+    La declaración del problema nos dice que el polinomio
+    \[
+        P(x) - (x - 1)^3 - 1 = P(x) - x^3 + 3x^2 - 3x
+    \]
+    tiene cuatro raíces reales, \ie\ $x = 2, 4, 9, 17$.
+    Como el polinomio es mónico podemos encontrar que $P(x) - x^3 + 3x^2 - 3x$ es también un polinomio mónico.
+    Por consiguiente,
+    \[
+        P(x) - x^3 + 3x^2 - 3x = (x - 2)(x - 5)(x - 9)(x - 19).
+    \]
+    Haciendo $x = 1$, hallamos que $P(1) = 1 + 512 = 513$.
+\end{solution}
+
+\begin{example}[Sebian TST 2016. Dusan Djukic]
+    Definida una familia de polinomios como
+    \[
+        P_0(x) = x^3 - 4x \quad\text{y}\quad P_{n + 1}(x) = P_n(1 + x)P_n(1 - x) - 1.
+    \]
+    Probar que $x^{2016}$ divide a $P_{2016}(x)$.
+\end{example}
+\begin{solution}
+    Claramente, $P_n(x) = P_n(-x)$.
+    Ahora, vemos que tenemos
+    \begin{align*}
+        P_{n + 2}(x) &= P_{n + 1}(1 + x)P_{n + 1}(1 - x) - 1\\
+        &= \left[P_n(2 + x)P_n(-x) - 1\right]\left[P_n(2 - x)P_n(x) - 1\right] - 1\\
+        &= P_n(2 + x)P_n(2 - x)P_n(x)^2 - \left(P_n(2 + x) + P_n(2 - x)\right)P_n(x).
+    \end{align*}
+    Encontramos que $P_{n + 2}(x)$ es divisible por $P_n(x)$.
+    Así, como $P_0(2) = 0$, entonces $P_n(2) = 0$, para todo número natural par $n$.
+    Haciendo $x = 0$ en el polinomio $P_n(2 + x) + P_n(2 - x)$, obtenemos $P_n(2) + P_n(2) = 0$ para todos los números naturales impares $n$.
+    En consecuencia $P_n(2 + x) + P_n(2 - x)$ es divisible por $x$, por tanto, el término $x^1$ se cancela en la división por $x^2$.
+    Ahora, si existe algún $k \geq 2$ tal que $x^k(x - 2)$ divide a $P_n(x)$, tenemos que $x^{k + 2}(x - 2)$ divide a $P_{n + 2}(x)$.
+    Como $P_2(x)$ es divisible por $x^2(x - 2)$, obtenemos por inducción que $x^{2n}(x - 2)$ divide a $P_{2n}(x)$, lo que da la conclusión.
+\end{solution}
+
+\begin{example}
+    Definida una familia de polinomios como
+    \[
+        P_1(x) = 2x, \quad P_2(x) = 2(x^2 + 1)
+    \]
+    y para todo $n \geq 3$,
+    \[
+        P_n(x) = (2x)P_{n - 1}(x) - (x^2 - 1)P_{n - 2}(x).
+    \]
+    Probar que $P_n(x)$ es divisible por $(x^2 + 1)$ si y solo si $n \fullMod{2}{4}$.
+\end{example}
+\begin{solution}
+    Dado que el polinomio característico de esta recursividad de coeficiente constante es
+    \[
+        T^2 - 2x T + (x^2 - 1) = (T - x - 1)(T - x + 1),
+    \]
+    vemos que la solución general es $P_n(x) = c_1 (x + 1)^n + c_2 (x - 1)^n$ para algunas constantes $c_1$, $c_2$.
+    Reemplazando los valores iniciales dados, encontramos que
+    \[
+        P_n(x) = (x + 1)^n + (x - 1)^n.
+    \]
+    Haciendo $n = r + 4k$, donde $0 \leq r \leq 3$.
+    Entonces,
+    \[
+        P_n(x) = (x + 1)^r [(x + 1)^4]^k + (x - 1)^r [(x - 1)^4]^k.
+    \]
+    Escribiendo la expresión anterior como
+    \[
+        (x + 1)^r [(1 + x^2)(x^2 + 4x + 5) - 4]^k + (x - 1)^r [(1 + x^2)(x^2 - 4x + 5) - 4]^k.
+    \]
+    Luego el resto de tal polinomio cuando es dividido por $(1 + x^2)$ es el mismo que el resto de $(-4)^k[(x + 1)^r + (x - 1)^r]$.
+    Probando $r = 0, 1, 2, 3$ encontramos que solo en $r = 2$ la expresión anterior es divisible por $(1 + x^2)$.
+\end{solution}
+
 
 %\section{La composición de polinomios}
 
