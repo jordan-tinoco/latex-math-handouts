@@ -1,14 +1,14 @@
 \section{Desarrollo}
 
 \begin{theorem.tcb}{Fórmulas de Vieta}{}
-    Sea el polinomio $P(x) = a_n x^n + a_{n - 1} x^{n - 1} + \cdots  + a_1 x + a_0$ de grado $n$ con raíces $r_1, r_2, \ldots, r_n$,
-    entonces
+    Dado $P(x) = a_n x^n + a_{n - 1} x^{n - 1} + \cdots  + a_1 x + a_0$ de grado $n$ con raíces $r_1, r_2, \ldots, r_n$, se cumple que
     \begin{align*}
-        r_1 + r_2 + \cdots + r_n &= - \frac{a_{n - 1}}{a_n}\\
-        r_1 r_2 + r_1 r_3 + \cdots + r_{n - 1} r_n &= \frac{a_{n - 2}}{a_n}\\
-        r_1 r_2 r_3 + r_1 r_2 r_4 + \cdots + r_{n - 2} r_{n - 1} r_n &= -\frac{a_{n - 3}}{a_n}\\
-        \vdots\\
-        r_1 r_2 \cdots r_n &= (-1)^n \cdot \frac{a_0}{a_n}
+        r_1 + r_2 + \ldots + r_n &= - \frac{a_{n - 1}}{a_n}\\[2mm]
+        r_1 r_2 + r_1 r_3 + \ldots + r_{n - 1} r_n &= \frac{a_{n - 2}}{a_n}\\[2mm]
+        r_1 r_2 r_3 + r_1 r_2 r_4 + \ldots + r_{n - 2} r_{n - 1} r_n &= -\frac{a_{n - 3}}{a_n}\\[2mm]
+        &\vdots\\[2mm]
+        r_1 r_2 \cdots r_{n - 1} + r_1 r_2 \cdots r_{n - 1}r_n + \ldots + r_2 r_3 \cdots r_n &= (-1)^{n - 1} \left(\frac{a_1}{a_n}\right)\\[2mm]
+        r_1 r_2 \cdots r_n &= (-1)^n \left(\frac{a_0}{a_n}\right)
     \end{align*}
 \end{theorem.tcb}
 
@@ -27,18 +27,32 @@ Las fórmulas de Vieta pueden ser útiles al calcular expresiones que involucran
 Para ser más prácticos, en esta sesión de clase solo nos centraremos en las fórmulas de Vieta para polinomios cuadráticos y cúbicos.
 
 \begin{remark.tcb}
-    Para el polinomio cuadrático $P(x) = a_2 x^2 + a_1 x + a_0$ con raíces $r_1$ y $r_2$, tenemos
-    \begin{align*}
-        r_1 + r_2 = - \frac{a_1}{a_2} \quad \land \quad
-        r_1 r_2 = +\frac{a_0}{a_2}.
-    \end{align*}
-    Para el polinomio cúbico $P(x) = a_3 x^3 + a_2 x^2 + a_1 x + a_0$ con raíces $r_1$, $r_2$ y $r_3$, tenemos
-    \begin{align*}
-        r_1 + r_2 + r_3 = - \frac{a_2}{a_3} \quad \land \quad
-        r_1 r_2 + r_2 r_3 + r_3 r_1 = +\frac{a_1}{a_3} \quad \land \quad
-        r_1 r_2 r_3 = - \frac{a_0}{a_3}.
-    \end{align*}
+    \begin{center}
+        Fórmulas de Vieta para polinomios cuadráticos y cúbicos.
+    \end{center}
+    %\showLine
+
+    \setlength{\columnsep}{0.5cm}
+    \setlength{\columnseprule}{0.1pt}
+    \begin{multicols}{2}
+        Para $P(x) = a_2 x^2 + a_1 x + a_0$ con raíces $r_1$ y $r_2$.
+        \begin{align*}
+            r_1 + r_2 &= - \frac{a_1}{a_2}\\[1mm]
+            r_1 r_2 &= +\frac{a_0}{a_2}.
+        \end{align*}
+        \\
+        \vspace{5mm}\\
+        Para $P(x) = a_3 x^3 + a_2 x^2 + a_1 x + a_0$ con raíces $r_1$, $r_2$ y $r_3$.
+        \begin{align*}
+            r_1 + r_2 + r_3 &= - \frac{a_2}{a_3}\\[1mm]
+            r_1 r_2 + r_2 r_3 + r_3 r_1 &= +\frac{a_1}{a_3}\\[1mm]
+            r_1 r_2 r_3 &= - \frac{a_0}{a_3}.
+        \end{align*}
+    \end{multicols}
 \end{remark.tcb}
+
+
+\subsection{Ejemplos}
 
 \begin{example}
     Si $p$ y $q$ son raíces de la ecuación $x^2 + 2bx + 2c = 0$, determina el valor de $\frac{1}{p^2} + \frac{1}{q^2}.$

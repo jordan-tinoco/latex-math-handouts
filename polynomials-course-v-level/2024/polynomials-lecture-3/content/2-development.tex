@@ -27,18 +27,20 @@ Se encuentran comúnmente en las competiciones matemáticas, donde muchos proble
 Aquí recopilamos algunas de las identidades más útiles.
 Es importante que, para mejorar tu fortaleza en el trabajo con expresiones algebraicas, te esforcés en aprender estas identidades.
 
+\vspace{2mm}
+
 \textbf{Identidades útiles}
 \begin{align*}
-    &\text{(Diferencia de cuadrados)}     && a^2 - b^2 = (a - b)(a + b)\\[2mm]
-    &\text{(Binomio al cuadrado)}         && (a + b)^2 = a^2 + 2ab + b^2\\[2mm]
-    &\text{(Trinomio al cuadrado)}        && (a + b + c)^2 = a^2 + b^2 + c^2 + 2(ab + bc + ca)\\[2mm]
-    &\text{(Identidad de Gauss)}          && a^3 + b^3 + c^3 - 3abc = (a + b + c)(a^2 + b^2 + c^2 - ab - bc - ca)\\[2mm]
-    &\text{(Identidad de Argand)}         && a^4 + a^2 + 1 = (a^2 - a + 1)(a^2 + a + 1)\\[2mm]
+    &\text{(Diferencia de cuadrados)} && a^2 - b^2 = (a - b)(a + b)\\[2mm]
+    &\text{(Binomio al cuadrado)} && (a + b)^2 = a^2 + 2ab + b^2\\[2mm]
+    &\text{(Trinomio al cuadrado)} && (a + b + c)^2 = a^2 + b^2 + c^2 + 2(ab + bc + ca)\\[2mm]
+    &\text{(Identidad de Gauss)} && a^3 + b^3 + c^3 - 3abc = (a + b + c)(a^2 + b^2 + c^2 - ab - bc - ca)\\[2mm]
+    &\text{(Identidad de Argand)} && a^4 + a^2 + 1 = (a^2 - a + 1)(a^2 + a + 1)\\[2mm]
     &\text{(Identidad de Sophie Germain)} && a^4 + 4 b^4 = (a^2 - 2ab + 2b^2)\left(a^2 + 2ab + 2b^2\right)\\[2mm]
-    &\text{(Identidad de Brahmagupta)}    && (a^2 + b^2) (x^2 + y^2) = (ax + by)^2 + (ay - bx)^2\\[2mm]
-    &\text{(Diferencia de potencias)}     && a^n - b^n = (a - b)(a^{n - 1} + a^{n - 2}b + \cdots + b^{n - 1})\\[2mm]
-    &\text{(Suma de potencias)}           && a^n + b^n = (a + b)(a^{n - 1} - a^{n - 2}b + \cdots + b^{n - 1}) \ \text{con $n$ impar}\\[1.5mm]
-    &\text{(Binomio de Newton)}           && (a + b)^n = a^n + \binom{n}{1} a^{n - 1}b + \cdots + \binom{n}{k} a^{n -k}b^k + \cdots + b^n
+    &\text{(Identidad de Brahmagupta)} && (a^2 + b^2) (x^2 + y^2) = (ax + by)^2 + (ay - bx)^2\\[2mm]
+    &\text{(Diferencia de potencias)} && a^n - b^n = (a - b)(a^{n - 1} + a^{n - 2}b + \cdots + b^{n - 1})\\[2mm]
+    &\text{(Suma de potencias)} && a^n + b^n = (a + b)(a^{n - 1} - a^{n - 2}b + \cdots + b^{n - 1}) \ \text{con $n$ impar}\\[1.5mm]
+    &\text{(Binomio de Newton)} && (a + b)^n = a^n + \binom{n}{1} a^{n - 1}b + \cdots + \binom{n}{k} a^{n -k}b^k + \cdots + b^n
 \end{align*}
 
 Por ejemplo, podemos factorizar la expresión $(a^2 - b^2)^3 + (b^2 - c^2)^3 + (c^2 - a^2)^3$.
@@ -68,9 +70,9 @@ Dado un polinomio cuadrático $P(x) = ax^2 + bx + c$ donde $a, b, c \in \R$, est
 \begin{solution}
     Primero calculamos el valor $(10)(-3) = -30$, después escribimos los siguientes paréntesis
     \[
-        \inverseOf{10} (10x + \ \ )(10x + \ \ ).
+        \inverseOf{10} (10x\ + \ \ )(10x\ + \ \ ).
     \]
-    Luego, nos preguntamos lo siguiente ¿qué números cumplen que al sumarse den $-13$ y al multiplicarse den $-30$?
+    Luego, nos preguntamos lo siguiente ¿qué números cumplen que al sumarse den $(-13)$ y al multiplicarse den $(-30)$?
     Tras un breve análisis nos damos cuenta de que dichos números son $-15$ y 2.
     El mayor (sin considerar el signo) se coloca en el primer paréntesis, el menor en el segundo y finalmente se reduce la expresión.
     Es decir,
@@ -176,7 +178,7 @@ Esto, además, podemos generalizarlo y obtener el siguiente resultado.
 \begin{remark.tcb}
     Sea el polinomio $P(x)$ de grado $n$ y raíces $r_i$ con $1 \leq i \leq n$, este puede ser expresado como
     \begin{equation}
-        P(x) = C(x - r_1)(x - r_2)\cdots(x - r_{n-1})(x - r_n), \ \text{donde}\ C \in \R.
+        P(x) = C(x - r_1)(x - r_2)\cdots(x - r_{n-1})(x - r_n), \ \text{donde}\ C \in \R.\label{eq:equation}
     \end{equation}
 \end{remark.tcb}
 De este resultado obtenemos las siguientes propiedades.
@@ -196,7 +198,7 @@ De este resultado obtenemos las siguientes propiedades.
     Entonces, por el teorema del factor tenemos $P(x) = (x - n)Q(x)$, con $Q(x)$ un polinomio con coeficientes enteros.
     Así podemos ver que, $P(1) = (1 - n)Q(1)$ y $P(2) = (2 - n)Q(2)$ son impares, pero $(1 - n)$ y $(2 - n)$ son enteros consecutivos, así que uno de ellos debe ser par.
     Por lo tanto, $P(1)$ o bien $P(2)$ tiene que ser par, lo cual contradice las condiciones del problema.
-    Luego, $n$ no existe.
+    Por lo cual, $n$ no existe.
 \end{solution}
 
 \begin{example}
@@ -224,7 +226,7 @@ A esta fórmula le conoceremos como la \textbf{\emph{fórmula general}} cuadrát
 \begin{proof}
     Completemos cuadrados en el polinomio
     \begin{align*}
-        P(x) =& a \left( x^2 + \frac{b}{a}x + \frac{c}{a} \right) = a \left[ \left( x + \frac{b}{2a} \right)^2 - \left( \frac{b}{2a} \right)^2 + \frac{c}{a} \right] && (\text{Sumando y restando} \left( b/2a \right)^2)\\
+        P(x) =& a \left( x^2 + \frac{b}{a}x + \frac{c}{a} \right) = a \left[ \left( x + \frac{b}{2a} \right)^2 - \left( \frac{b}{2a} \right)^2 + \frac{c}{a} \right] && (\text{Sumando y restando} \textstyle\left( \frac{b}{2a} \right)^2)\\
         =& a \left[ \left( x + \frac{b}{2a} \right)^2 - \left( \frac{b^2 - 4ac}{4a^2}\right) \right]  && (\text{Simplificando})\\
         =& a \left[ x + \frac{b}{2a} - \frac{\sqrt {b^2 - 4ac}}{2a}\right]\left[ x + \frac{b}{2a} + \frac{\sqrt {b^2 - 4ac}}{2a}\right]  && (\text{Por diferencia de cuadrados})\\
         =& a \left[ x - \left( \frac{-b + \sqrt {b^2 - 4ac}}{2a} \right) \right]\left[ x - \left( \frac{-b - \sqrt {b^2 - 4ac}}{2a} \right) \right] && (\text{Agrupando coeficientes})
@@ -233,12 +235,12 @@ A esta fórmula le conoceremos como la \textbf{\emph{fórmula general}} cuadrát
 \end{proof}
 
 \begin{example}
-    Sabiendo que $a_1 = m + 2$, $a_2 = m - 1$ y $a_3 = 1 - m$ son los coeficientes de la ecuación $a_1 x^4 + a_2 x^2 + a_3 = 0$, tal que $a_2 - a_1 = a_3 - a_2$.
+    Dado la ecuación $a_1 x^4 + a_2 x^2 + a_3 = 0$ con coeficientes $a_1 = (m + 2)$, $a_2 = (m - 1)$ y $a_3 = (1 - m)$, tal que $a_2 - a_1 = a_3 - a_2$.
     Determinar el valor de mayor raíz.
 \end{example}
 \begin{solution}
-    De la condición $a_2 - a_1 = a_3 - a_2 \implies (m - 1) - (m + 2) = (2 - m) - (m - 1) \implies -3 = -2m + 3 \implies m = 3$.
-    Luego, la ecuación es $5x^4 + 2x^2 - 1 = 0$, haciendo $y = x^2$ tenemos la cuadrática $5y^2 + 2y - 1$.
+    Usando la condición, $a_2 - a_1 = a_3 - a_2 \implies (m - 1) - (m + 2) = (2 - m) - (m - 1) \iff -3 = -2m + 3 \iff m = 3$.
+    Luego, la ecuación es $5x^4 + 2x^2 - 1 = 0$, haciendo $y = x^2$ encontramos la cuadrática $5y^2 + 2y - 1$.
     Que aplicando la fórmula general, obtenemos
     \[
         y = \frac{-2 \pm \sqrt{2^2 - 4(5)(-1)}}{2(5)} = \frac{-2 \pm \sqrt{24}}{10} = \frac{-2 \pm 2\sqrt{6}}{10} = \frac{-1 \pm \sqrt{6}}{5}.
@@ -263,6 +265,8 @@ En nuestro curso no veremos el tema de \emphtext{Números Complejos} tal cuál, 
 
 
 \subsubsection{Análisis de discriminate}
+
+\renewcommand{\arraystretch}{1.2}
 
 Para el polinomio $P(x) = ax^2 + bx + c$, la cantidad $\Delta = b^2 - 4ac$, es llamada \textbf{\emph{discriminante}} y su signo conduce a tres casos.
 \begin{table}[H]
@@ -311,7 +315,8 @@ Esta ecuación nos ayuda a obtener la valor $\Delta = \dfrac{q^2}{4} + \dfrac{p^
         $\Delta < 0$ & El polinomio $P(x)$ tiene tres raíces reales diferentes.&
             $P(x) = x^3 - 2x^2 - x + 2$ con raíces $x = -1, 1, 2$ y $\Delta = -0.33$. \\\hline
     \end{tabular}
-    \caption{Análisis de discriminate para polinomios cúbicos.}
+    \caption{Análisis de discriminante para polinomios cúbicos.}
+    \label{tab:table}
 \end{table}
 
 En las próximas clases veremos una manera directa de obtener las raíces de una ecuación cúbica reducida.
@@ -383,6 +388,31 @@ Ejercicios y problemas para el autoestudio.
     \end{exercise}
 
     \begin{exercise}
+        Dar la suma de coeficientes de un factor del polinomio $R(y) = y^{2m + 2} - y^{m + 1} - 30$.
+        \begin{tasks}(5)
+            \task 1
+            \task 2
+            \task 7
+            \task 3
+            \task 6
+        \end{tasks}
+    \end{exercise}
+
+    \begin{exercise}
+        Indicar la cantidad de factores de
+        \[
+            (mn + pq)^2 + (mq - pn)^2.
+        \]
+        \begin{tasks}(5)
+            \task 1
+            \task 2
+            \task 3
+            \task 4
+            \task 5
+        \end{tasks}
+    \end{exercise}
+
+    \begin{exercise}
         Indicar un factor del polinomio $P(a) = a^2 + 2ab + b^2 - c^2 - d^2 - 2cd$.
         \begin{tasks}(2)
             \task $a + b - c + d$
@@ -401,28 +431,6 @@ Ejercicios y problemas para el autoestudio.
             \task $x - y - 3$
             \task $x - y - 4$
             \task $x - y - 5$
-        \end{tasks}
-    \end{exercise}
-
-    \begin{exercise}
-        Dar la suma de coeficientes de un factor del polinomio $R(y) = y^{2m + 2} - y^{m + 1} - 30$.
-        \begin{tasks}(5)
-            \task 1
-            \task 2
-            \task 7
-            \task 3
-            \task 6
-        \end{tasks}
-    \end{exercise}
-    
-    \begin{exercise}
-        Indicar la cantidad de factores de $(mn + pq)^2 + (mq - pn)^2$.
-        \begin{tasks}(5)
-            \task 1
-            \task 2
-            \task 3
-            \task 4
-            \task 5
         \end{tasks}
     \end{exercise}
 
@@ -478,20 +486,6 @@ Ejercicios y problemas para el autoestudio.
     \end{exercise}
 
     \begin{exercise}
-        Teniendo $a + b + c = \inverseOf{(a - b)(b - c)} + \inverseOf{(b - c)(c - a)} + \inverseOf{(c - a)(a - b)}$, calcular
-        \[
-            \frac{(a + b - c)^2}{ab} + \frac{(b + c - a)^2}{bc} + \frac{(c + a - b)^2}{ca}.
-        \]
-        \begin{tasks}(5)
-            \task 10
-            \task 13
-            \task 15
-            \task 12
-            \task 14
-        \end{tasks}
-    \end{exercise}
-
-    \begin{exercise}
         Si $a^2 + b^2 + c^2 = 2$, calcular
         \begin{align*}
             &- 4(ab + bc + ca)[(a + b + c)^2 - (ab + bc + ca)]\\
@@ -503,6 +497,24 @@ Ejercicios y problemas para el autoestudio.
             \task 4
             \task 3
             \task 5
+        \end{tasks}
+    \end{exercise}
+
+    \begin{exercise}
+        Teniendo
+        \begin{align*}
+            a + b + c &= \inverseOf{(a - b)(b - c)} +\inverseOf{(b - c)(c - a)} \\& +\inverseOf{(c - a)(a - b)},
+        \end{align*}
+        calcular
+        \[
+            \frac{(a + b - c)^2}{ab} + \frac{(b + c - a)^2}{bc} + \frac{(c + a - b)^2}{ca}.
+        \]
+        \begin{tasks}(5)
+            \task 10
+            \task 13
+            \task 15
+            \task 12
+            \task 14
         \end{tasks}
     \end{exercise}
 
@@ -522,7 +534,10 @@ Ejercicios y problemas para el autoestudio.
 
     \begin{exercise}
         Si $a + b + c = 1$ y $a^3 + b^3 + c^3 = 4$.
-        Hallar el valor de $\inverseOfD{a + bc} + \inverseOfD{b + ac} + \inverseOfD{c + ab}$.
+        Hallar el valor de
+        \[
+            \inverseOfD{a + bc} + \inverseOfD{b + ac} + \inverseOfD{c + ab},
+        \]
         \begin{tasks}(5)
             \task $-2$
             \task $-1$
