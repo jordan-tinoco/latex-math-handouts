@@ -6,7 +6,7 @@
         r_1 + r_2 + \ldots + r_n &= - \frac{a_{n - 1}}{a_n}\\[2mm]
         r_1 r_2 + r_1 r_3 + \ldots + r_{n - 1} r_n &= \frac{a_{n - 2}}{a_n}\\[2mm]
         r_1 r_2 r_3 + r_1 r_2 r_4 + \ldots + r_{n - 2} r_{n - 1} r_n &= -\frac{a_{n - 3}}{a_n}\\[2mm]
-        &\vdots\\[2mm]
+        \rddots\qquad \qquad &\vdots\\[2mm]
         r_1 r_2 \cdots r_{n - 1} + r_1 r_2 \cdots r_{n - 1}r_n + \ldots + r_2 r_3 \cdots r_n &= (-1)^{n - 1} \left(\frac{a_1}{a_n}\right)\\[2mm]
         r_1 r_2 \cdots r_n &= (-1)^n \left(\frac{a_0}{a_n}\right)
     \end{align*}
@@ -27,35 +27,25 @@ Las fórmulas de Vieta pueden ser útiles al calcular expresiones que involucran
 Para ser más prácticos, en esta sesión de clase solo nos centraremos en las fórmulas de Vieta para polinomios cuadráticos y cúbicos.
 
 \begin{remark.tcb}
-    \begin{center}
-        Fórmulas de Vieta para polinomios cuadráticos y cúbicos.
-    \end{center}
-    %\showLine
+        Si $r_1$ y $r_2$ son las raíces de $P(x) = a_2 x^2 + a_1 x + a_0$, entonces
+        \begin{gather*}
+            r_1 + r_2 = - \frac{a_1}{a_2} \quad\text{y}\quad r_1 r_2 = +\frac{a_0}{a_2}.
+        \end{gather*}
 
-    \setlength{\columnsep}{0.5cm}
-    \setlength{\columnseprule}{0.1pt}
-    \begin{multicols}{2}
-        Para $P(x) = a_2 x^2 + a_1 x + a_0$ con raíces $r_1$ y $r_2$.
-        \begin{align*}
-            r_1 + r_2 &= - \frac{a_1}{a_2}\\[1mm]
-            r_1 r_2 &= +\frac{a_0}{a_2}.
-        \end{align*}
-        \\
-        \vspace{5mm}\\
-        Para $P(x) = a_3 x^3 + a_2 x^2 + a_1 x + a_0$ con raíces $r_1$, $r_2$ y $r_3$.
-        \begin{align*}
-            r_1 + r_2 + r_3 &= - \frac{a_2}{a_3}\\[1mm]
-            r_1 r_2 + r_2 r_3 + r_3 r_1 &= +\frac{a_1}{a_3}\\[1mm]
-            r_1 r_2 r_3 &= - \frac{a_0}{a_3}.
-        \end{align*}
-    \end{multicols}
+        Si $r_1$, $r_2$ y $r_3$ son las raíces de $P(x) = a_3 x^3 + a_2 x^2 + a_1 x + a_0$, entonces
+
+        \begin{gather*}
+            r_1 + r_2 + r_3 = - \frac{a_2}{a_3},\quad
+            r_1 r_2 + r_2 r_3 + r_3 r_1 = +\frac{a_1}{a_3}\quad\text{y}\quad
+            r_1 r_2 r_3 = - \frac{a_0}{a_3}.
+        \end{gather*}
 \end{remark.tcb}
 
 
 \subsection{Ejemplos}
 
 \begin{example}
-    Si $p$ y $q$ son raíces de la ecuación $x^2 + 2bx + 2c = 0$, determina el valor de $\frac{1}{p^2} + \frac{1}{q^2}.$
+    Si $p$ y $q$ son raíces de la ecuación $x^2 + 2bx + 2c = 0$, determina el valor de $\inverseOfD{p^2} + \inverseOfD{q^2}.$
 \end{example}
 \begin{solution}
     Aplicando las fórmulas de Vieta, tenemos $p + q = - 2b$ y $pq = 2c$.
@@ -78,7 +68,44 @@ Para ser más prácticos, en esta sesión de clase solo nos centraremos en las f
     Por lo tanto $\frac{1}{r_3} + \frac{1}{r_1} + \frac{1}{r_2} = \frac{3}{-1} = \boxed{-3}$.
 \end{solution}
 
-\begin{example}[1986 URSS]
+\begin{example}[China, 1997]
+    Dada la ecuación $x^2 + (2a - 1)x + a^2 = 0$ con dos raíces reales positivas, donde $a$ es un entero.
+    Si $x_1, x_2$ son sus raíces, hallar el valor de $\abs*{\sqrt {x_1} - \sqrt {x_2}}$.
+\end{example}
+\begin{solution}
+    Como las dos raíces son positivas implica que $1 - 2a \geq 0$, \ie, $a \leq \inverseOfD{2}$.
+    Ya que $a$ es un entero, sucede que\footnote{No hace falta hallar el valor de $a$, pero es necesario saber que $a \leq 0$.} $a \leq 0$.
+    Entonces,
+    \[
+        \abs*{\sqrt {x_1} - \sqrt {x_2}} = \sqrt {\left(\abs*{\sqrt {x_1} - \sqrt {x_2}}\right)^2}
+        = \sqrt {x_1 + x_2 - 2\sqrt {x_1 x_2}}
+        = \sqrt {1 - 2a + 2a}
+        = \boxed{1}. \qedhere
+    \]
+\end{solution}
+
+\begin{example}[CHNMOL, 1996]
+    Sean $x_1$ y $x_2$ las raíces de la ecuación $x^2 + x - 3 = 0$.
+    Hallar el valor de $x^3_1 - 4x_2^2 + 19$.
+\end{example}
+\begin{solution}
+    Por la fórmulas de Vieta, $x_1 + x_2 = -1$ y $x_1 x_2 = -3$.
+    Definamos a $A = x_1^3 - 4x_2^2 + 19$ y $B = x_2^3 - 4x_1^2 + 19$.
+    Entonces,
+    \begin{align*}
+        A + B &= (x_1^3 + x_2^3) - 4(x_1^2 + x_2^2) + 38
+        = (x_1 + x_2)\left[(x_1 + x_2)^2 - 3x_1 x_2\right] - 4\left[(x_1 + x_2)^2 - 2x_1 x_2\right] + 38\\
+        &= (-1)(1 + 9) - 4(1 + 6) + 38\\
+        &= 0\\[3mm]
+        A - B &= (x_1^3 - x_2^3) - 4(x_1^2 - x_2^2)
+        = (x_1 - x_2)\left[(x_1 + x_2)^2 - x_1 x_2 + 4(x_1 + x_2)\right]\\
+        &= (x_1 - x_2)(1 + 3 - 4)\\
+        &= 0
+    \end{align*}
+    Luego, vemos que $2A = (A + B) + (A - B) = 0$, \ie, $\boxed{A = 0}$.
+\end{solution}
+
+\begin{example}[URSS, 1986]
     Las raíces del polinomio $x^2 + ax + b + 1$ son números naturales.
     Mostrar que $a^2 + b^2$ no es un primo.
 \end{example}
@@ -108,6 +135,43 @@ Para ser más prácticos, en esta sesión de clase solo nos centraremos en las f
     Por la identidad de Gauss, tenemos que $r^3 + s^3 + t^3 - 3rst = 0$ y por tanto $-(r^3 + s^3 + t^3) = -3rst \implies -(r^3 + s^3 + t^3) = -3(-251) = \boxed{753}$.
 \end{solution}
 
+\begin{example}[China, 1996]
+    La ecuación cuadrática $x^2 - px + q = 0$ tiene dos raíces reales $\alpha$ y $\beta$.
+    \begin{enumerate}
+        \item Hallar la ecuación cuadrática que tiene como raíces a $\alpha^3$ y $\beta^3$.
+        \item Si la nueva ecuación sigue siendo $x^2 - px + q = 0$, hallar los pares ordenados $(p, q)$.
+    \end{enumerate}
+\end{example}
+\begin{solution}
+    Veamos cada uno de los incisos.
+    \begin{enumerate}
+        \item Por la fórmulas de Vieta tenemos $\alpha + \beta = p$ y $\alpha\beta = q$, luego, encontramos que
+        \begin{align*}
+            \alpha^3 \cdot \beta^3 &= (\alpha\beta)^3 = q^3\\
+            \alpha^3 + \beta^3 &= (\alpha + \beta)^3 - 3\alpha\beta(\alpha + \beta) = p^3 - 3pq = p(p^2 - 3q)
+        \end{align*}
+        De donde obtenemos la ecuación $x^2 - p(p^2 - 3q)x + q^3 = 0.$
+        \item Si la nueva ecuación es identica a la original, debe cumplirse que $p(p^2 - 3q) = p$ y $q^3 = q$.
+        La ecuación $q^3 = q$, implica que $q = 0, 1, -1$.
+        Veamos, entonces, cada unos de estos casos:
+        \begin{enumerate}
+            \item Cuando $q = 0$, entonces $p^3 = p$, de donde obtenemos $p = 0, 1, -1$.
+            \item Cuando $q = 1$, entonces $p^3 = 4p$, de donde obtenemos $p = 0, 2, -2$.
+            \item Cuando $q = -1$, entonces $p^3 = -2p$, de donde obtenemos $p = 0$.
+        \end{enumerate}
+        De estos siete resultados, obtenemos las siguientes siete ecuaciones
+        \begin{align*}
+            x^2 = 0 && x^2 - x = 0 && x^2 + x = 0 && x^2 + 1 = 0\\
+            x^2 - 2x + 1 = 0 && x^2 + 2x + 1 = 0 && x^2 - 1 = 0 &&
+        \end{align*}
+        Entre ellas solo $x^2 + 1 = 0$ no tiene raíces reales, por lo que las seis restantes satisfacen con las condiciones.
+        Por lo tanto, los pares ordenados $(p, q)$ son
+        \[
+            (0, 0),\ (1, 0),\ (-1, 0),\ (2, 1),\ (-2, 1),\ (0, -1). \qedhere
+        \]
+    \end{enumerate}
+\end{solution}
+
 
 
 \subsection{Ejercicios y problemas}
@@ -118,15 +182,38 @@ Ejercicios y problemas para el autoestudio.
 \begin{multicols}{2}
 
     \begin{exercise}
-        Sean $r_1$ y $r_2$ las raíces del polinomio $P(x) = ax^2 + bx + c$.
-        Encontrar los siguientes valores en función del los coeficientes de $P(x)$.
+        Encontrar la suma y el producto de las raíces de $2x^2 + 5x - 11$.
+    \end{exercise}
+
+    \begin{exercise}
+        Sean $p$ y $a$ las raíces del polinomio $P(x) = ax^2 + bx + c$.
         \begin{tasks}(2)
-            \task $r_1 - r_2$
-            \task $\frac{1}{r_1} - \frac{1}{r_2}$
-            \task $r^2_1 + r^2_2$
-            \task $r^3_1 + r^3_2$
-            \task $(r_1 + 1)^2 + (r_2 + 1)^2$
+            \task $p - q$
+            \task $\dfrac{1}{p} - \dfrac{1}{q}$
+            \task $p^2 + q^2$
+            \task $p^3 + q^3$
+            \task $(p + 1)^2 + (q + 1)^2$
         \end{tasks}
+    \end{exercise}
+
+    \begin{exercise}
+        El polinomio $x^3 - ax^2 + bx - 2010$ tiene tres raíces enteras positivas.
+        ¿Cuál es el menor valor posible para $a$?
+    \end{exercise}
+
+    \begin{exercise}
+        Sean $p, q$ y $r$ las tres raíces de $x^3 + 5x^2 + 6x + c$.
+        Si $pq = -2$, hallar la suma de todos los posibles valores de $c$.
+    \end{exercise}
+
+    \begin{exercise}
+        La suma de los cuadrados de las raíces de la ecuación $x^2 + 2hx = 3$ es 582.
+        Hallar el valor absoluto de $h$.
+    \end{exercise}
+
+    \begin{exercise}
+        Encontrar la suma y el producto de las raíces, reales o imaginarias, del polinomio $2x^3 + 3x^2 + 4x + 5$.
+        Sabiendo que las raíces son distintas.
     \end{exercise}
 
     \begin{exercise}
@@ -146,6 +233,11 @@ Ejercicios y problemas para el autoestudio.
     \end{exercise}
 
     \begin{exercise}
+        Sean $p, q$ y $r$ las tres raíces de $x^3 + 5x^2 + 5x + 5$.
+        Hallar el polinomio mónico con raíces $pq, qr$ y $rp$.
+    \end{exercise}
+
+    \begin{exercise}
         ¿Para qué valores reales positivos de $m$, las raíces $x_1$ y $x_2$ de la ecuación
         \[
             x^2 - \left( \frac{2m - 1}{2} \right)x  + \frac{m^2 - 3}{2} = 0
@@ -154,32 +246,96 @@ Ejercicios y problemas para el autoestudio.
     \end{exercise}
 
     \begin{exercise}
-        Supóngase que el polinomio $5x^3 + 4x^2 - 8x + 6$ tiene tres raíces reales $a, b$ y $c$.
-        Probar que
+        Si $a$ y $b$ satisfacen las ecuaciones
         \[
-            5^2 a \left(\frac{a + b}{2}\right) + 5^2 b \left(\frac{b + c}{2}\right) + 5^2 c \left(\frac{c + a}{2}\right) = 3^3 + 1.
+            a + \frac{10}{b} = 100\quad \text{y} \quad \frac{100}{a} + 10b = 1.
         \]
+        Determine el producto de todos los valores posibles de $ab$.
+    \end{exercise}
+
+    \begin{exercise}
+        Sean $r_1, r_2$ y $r_3$ las raíces del polinomio $x^3 - x^2 + x - 2$, determina el valor de $r_1^3 + r_2^3 + r_3^3$.
+    \end{exercise}
+
+    \begin{exercise}
+        Dado el polinomio $x^2 - px + q$ con raíces $\alpha$ y $\beta$.
+        Hallar los pares ordenados $(p, q)$ tal que el polinomio cuadrático con raíces $\alpha^2$ y $\beta^2$ es igual a $x^2 - px + q$.
     \end{exercise}
 
     \begin{problem}
+        Hallar la suma de todas los valores reales $x$ que satisfacen
+        \[
+            \left(x + \inverseOfD{x} - 17\right)^2 = x + \inverseOfD{x} + 17.
+        \]
+    \end{problem}
+
+    \begin{problem}
         Sea $P(x) = mx^3 + mx^2 + nx + n$ un polinomio cuyas raíces son $a, b$ y $c$.
-        Demostrar que
-        \[
-            \frac{1}{a} + \frac{1}{b} + \frac{1}{c} = \frac{1}{a + b + c}.
-        \]
+        Probar que $\dfrac{1}{a} + \dfrac{1}{b} + \dfrac{1}{c} = \dfrac{1}{a + b + c}$.
     \end{problem}
 
     \begin{problem}
-        Si $z$, $t$ son las raíces del polinomio $x^2 + 2x + 4$, calcular el valor de
-        \[
-            (z + t)^7 - z^7 - t^7.
-        \]
+        Dado el polinomio $2x^2 - 5x - a$, con $a$ una constante.
+        Si la relación entre las dos raíces es $x_1 : x_2 = 2 : 3$, hallar el valor de $x_2 - x_1$.
     \end{problem}
 
     \begin{problem}
-        Sean $a, b, c \in R$ tal que los polinomios $ax^2 + bx + c$ y $cx^2 + bx + a$
-        tienen dos raíces reales distintas cada uno ($r_1$, $r_2$) y ($r_3$, $r_4$) respectivamente.
-        Se sabe que los números $r_1, r_2, r_3, r_4$ forman, en ese orden, una progresión aritmética.
-        Demostrar que $a + c = 0.$
+        Sean $a, b \in \R$ que cumplen $a^2 + 3a + 1 = 0$ y $b^2 + 3b + 1 = 0$, hallar el valor de $\dfrac{a}{b} + \dfrac{b}{a}$.
+    \end{problem}
+
+    \begin{problem}
+        Sean $p, q \in \R$ distintos, tal que $2p^2 - 3p - 1 = 0$ y $q^2 + 3q - 2 = 0$.
+        Hallar el valor de $\dfrac{pq + p + 1}{q}$.
+    \end{problem}
+
+    \begin{problem}
+        Sean $a, b, c \in R$.
+        El polinomio $ax^2 + bx + c$ tiene raíces $r_1$ y $r_2$, el polinomio $cx^2 + bx + a$ tiene raíces $r_3$ y $r_4$.
+        Se sabe que los números $r_1, r_2, r_3$ y $r_4$ forman (en ese orden) una \textit{progresión aritmética}.
+        Probar que $a + c = 0.$
+    \end{problem}
+
+    \begin{problem}
+        Hallar el rango del parámetro $m$, si la ecuación $8x^2 + (m + 1)x + (m - 7) = 0$ tiene dos raíces negativas.
+    \end{problem}
+
+    \begin{problem}
+        Dos compañeros de clase están hablando casualmente y uno le dice al otro
+        \begin{itemize}
+            \item \textbf{Brisa Marina}: Gerald mirá, estoy pensado en un polinomio con raíces naturales, de la forma
+            $P(x) = 2x^3 - 2ax^2 + (a^2 - 81)x - c$ con $a$ y $c$ naturales.
+            ¿Podés decirme cuáles son los valores de $a$ y $c$?.
+            \item \textbf{Gerald}: (Después algunos los cálculos) Vos sos loca, hay varios polinomios que cumplen.
+            \item \textbf{Brisa Marina}: Dale pues, qué te quejás.
+            Te doy el valor de $a$.
+            (Le escribe un entero positivo) ¿Y ahora? ¿cuál es el valor de $c$?
+            \item \textbf{Gerald}: Lo mismo, hay varios polinomios, pero los dos posibles valores de $c$ son ...
+        \end{itemize}
+        Hallar la suma de los valores de $c$ que Gerald le dijo a Brisa Marina.
+    \end{problem}
+
+    \begin{problem}
+        Todas las raíces del polinomio $z^6 - 10z^5 + Az^4 + Bz^3 + Cz^2 + Dz + 16$ son enteros positivos (posiblemente repetidos).
+        ¿Cuál es el valor de $B$?
+    \end{problem}
+
+    \begin{problem}
+        Sean $x_1 < x_2 < x_3$ las tres raíces reales de la ecuación
+        \[
+            \sqrt {2014} x^3 - 4029x^2 + 2 = 0.
+        \]
+        Hallar el valor de $x_2(x_1 + x_3).$
+    \end{problem}
+
+    \begin{problem}
+        Sea $m \in \R$ no menor a $(-1)$, tal que
+        \[
+            x^2 + 2(m - 2)x + m^2 - 3m + 3 = 0,
+        \]
+        tiene dos raíces reales distintas $x_1$ y $x_2$.
+        \begin{itemize}
+            \item Si $x_1^2 + x_2^2 = 6$, hallar el valor de $m$.
+            \item Hallar el máximo valor de $\dfrac{m x_1^2}{1 - x_1} + \dfrac{m x_2^2}{1 - x_2}$.
+        \end{itemize}
     \end{problem}
 \end{multicols}
