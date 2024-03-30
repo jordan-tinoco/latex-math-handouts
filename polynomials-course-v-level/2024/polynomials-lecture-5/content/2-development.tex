@@ -1,32 +1,76 @@
 \section{Desarrollo}
 
-\subsection{División de polinomios}
+\begin{definition}[División con resto]
+    Para cualesquiera dos polinomios $F(x)$ y $G(x)$ existen dos los polinomios únicos $Q(x)$ y $R(x)$, tal que
+    \[
+        F(x) = G(x)Q(x) + R(x),\ \text{con}\ 0 \leq \deg{R(x)} < \deg{G(x)}.
+    \]
+    Donde el \emphtext{cociente} y el \emphtext{resto} (o \emphtext{residuo}) de la división son $Q(x)$ y $R(x)$, respectivamente.
+    Cuando $R(x) = 0$, diremos que $G(x)$ divide a $F(x)$, y lo vamos a denotar como $G(x) \mid F(x)$.
+\end{definition}
+Por ejemplo, con $F(x) = x^7 - 1$ y $G(x) = x^3 + x + 1$ llegaremos a que
+\[
+    x^7 - 1 = (x^3 + x + 1)(x^4 - x^2 - x + 1) + (2 x^2 - 2).
+\]
+Con cociente $Q(x) = x^4 - x^2 - x + 1$ y resto $R(x) = 2 x^2 - 2$.
+Para abreviar, diremos $G(x) \mid F(x)$ como $G \mid F$, puesto que en una división de polinomios los polinomios iniciales deben estar en la misma variable.
+Por ejemplo, no es posible dividir $M(a) = a^3$ entre $N(b) = b^2$.
+
+
+\subsection{Métodos de división}
+
+Para realizar una división entre polinomios existen varios métodos, algunos más usados o convenientes que otros.
+Entre los más conocidos tenemos, el método clásico, el método de Horner y el método de Ruffini.
+En este documento solo expondremos los más importantes.
+Cabe mencionar que todos los métodos expuestos requieren de \textbf{polinomios completos y ordenados}.
+
+Además, los métodos para la división de polinomios generalmente son recursivos.
+Una propiedad que nos permite describir por algoritmo y más aún auxiliarnos en diagramas.
 
 \subsubsection{División larga}
-Se recomienda cuando los polinomios a dividir son de una sola variable o para polinomios homogéneos.
-El algoritmo es el siguiente:
 
+Se recomienda la división larga cuando los polinomios a dividir son de una sola variable o bien son polinomios homogéneos de dos variables.
+
+\textbf{Algoritmo.}
 \begin{enumerate}
     \item Completar y ordenar los dos polinomios, tanto el divisor como el dividendo.
     \item Dividir el primer término del dividendo por el primer término del divisor para obtener el primer término del cociente.
     \item Multiplicar el divisor con signo cambiado por los términos del cociente y sumar en orden el producto obtenido con el dividendo.
-    \item Tratar el resto obtenido en el paso anterior como el nuevo dividiendo y repetir los pasos b y c.\footnote{En general, los métodos para la división de polinomios son recursivos.}.
-    \item Continuar el proceso hasta que el resto obtenido tenga un grado menor al divisor o bien al obtener cero.
+    \item Tratar el resto obtenido en el paso 3, como un nuevo dividiendo y repetir los pasos 2 y 3.
+    \item Continuar el proceso hasta que el resto obtenido tenga un grado menor al divisor, o bien sea igual a cero.
 \end{enumerate}
 
+\begin{example}
+    Dividir $(x^2 + 2x^4 - 3x^3 + x - 2)$ entre $(- 3x + 2 + x^2)$.
+\end{example}
+\begin{multicols}{2}
+    \begin{solution}
+        Primero completamos, ordenamos y acomodamos los dos polinomios.
+        Aplicamos las operaciones descritas según el algoritmo.
+
+        Luego, obtenemos el cociente $(2x^2 + 3x + 6)$ y el resto $(13x - 14)$.
+        Finalmente, como complemento, podemos expresar dividiendo como
+        \[
+            (x^2 - 3x + 2)(2x^2 + 3x + 6) + (13x - 14).\qedhere
+        \]
+    \end{solution}
+    $\polylongdiv[style=D]{2x^4 - 3x^3 + x^2 +  x - 2}{x^2 - 3x + 2}$
+\end{multicols}
 
 
 \subsubsection{Método de Horner}
 
-Se recomienda usar el método de Horner cuando el polinomio divisor es de segundo grado o más.
-Se opera solamente con los coeficientes de los polinomios ordenados y completos.
-Los coeficientes se distribuyen en un cuadro como el que sigue:
-\begin{figure}[htb]
+Se recomienda usar el método de Horner cuando el divisor es un polinomio de segundo grado o más.
+Los coeficientes de los polinomios se distribuyen en un cuadro como el que siguiente.
+
+\begin{figure}[H]
     \centering
-    %\includegraphics[width=8cm]{images/metodo-de-horner}
+    \includegraphics[width=10cm]{images/esquema-grafico-horner}
+    \caption{Esquema gráfico del método de Horner.}
+    \label{fig:figure}
 \end{figure}
 
-Algoritmo del método de Horner
+\textbf{Algoritmo.}
 \begin{enumerate}
     \item Se anotan los coeficientes del dividiendo en la parte superior del cuadro en forma horizontal.
     \item Se anotan los coeficientes del divisor en la parte izquierda del cuadro en forma vertical con los signos cambiados a excepción del primero.
@@ -38,48 +82,75 @@ Algoritmo del método de Horner
     \item Para finalizar, se suman directamente las columnas correspondientes al residuo, lo que conformará los coeficientes del polinomio residuo o resto.
 \end{enumerate}
 
+\begin{example}
+    Dividir $(6x^5 - 20x^4 - 13x^3 + 25x^2 - 12x + 7)$ entre $(3x^2 - x + 1)$
+\end{example}
+\begin{multicols}{2}
+    \begin{solution}
+        Acomodamos los polinomios en el gráfico.
+        En particular, teniendo cuidado con el divisor.
+        La cantidad de columnas para resto esta dada por $(5 - 2) + 1 = 2$.
+
+        Realizamos las operaciones, luego, obtenemos el coeciente $(2x^3 - 6x^2 - 7x + 8)$ y el resto $(3x - 1)$.
+        Finalmente, como complemento, podemos expresar el dividendo como
+        \[
+            (3x^2 - x + 1)(2x^3 - 6x^2 - 7x + 8) + (3x - 1) \qedhere
+        \]
+    \end{solution}
+
+    \begin{gather*}
+        \begin{array}{c|cccc|cc}
+             3 & 6 & -20 & -13 & 25 & -12 &  7 \\\hline
+            +1 &   &  +2 &  -2 &    &     &    \\
+            -1 &   &     &  -6 & +6 &     &    \\
+               &   &     &     & -7 &  +7 &    \\
+               &   &     &     &    &  +8 & -8 \\\hline
+               & 2 &  -6 &  -7 &  8 &  +3 & -1
+        \end{array}
+    \end{gather*}
+\end{multicols}
 
 
 \subsubsection{Método de Ruffini}
 
-Se recomienda usar este método cuando el divisor tiene la forma $ax \pm b$.
-El método de Ruffini se considera como un caso particular del método de Horner.
-Este método se apoya de un cuadro como el siguiente
-\begin{figure}[htb]
+Se recomienda usar el método de Ruffini cuando el divisor tiene la forma $ax \pm b$.
+Este método se apoya de un esquema como el siguiente.
+\begin{figure}[H]
     \centering
-    %\includegraphics[width=5.5cm]{images/metodo-de-ruffini}
+    \includegraphics[width=6cm]{images/esquema-grafico-ruffini}
+    \caption{Esquema gráfico del método de Ruffini.}
+    \label{fig:figure2}
 \end{figure}
-Donde $\square$ es el resultado de resolver la ecuación $ax \pm b = 0$.
+Donde en el recuadro izquierdo se coloca $\left(-\frac{b}{a}\right)$, es decir, la solución de la ecuación $ax \pm b = 0$.
+Cabe mencionar que el método de Ruffini se considera como un caso particular del método de Horner.
 
-Algoritmo del método de Ruffini
+\textbf{Algoritmo.}
 \begin{enumerate}
-    \item Se anotan los coeficientes del dividiendo en forma horizontal y el valor de $\square$ en la columna izquierda.
-    \item Se baja el primer coeficiente del dividendo y se multiplica por el valor de $\square$, el resultado se anota en la siguiente columna,
-    debajo del segundo coeficiente del dividendo.
+    \item Se anotan los coeficientes del dividiendo en forma horizontal y el valor de $\left(-\frac{b}{a}\right)$ en el recuadro izquierdo.
+    \item Se baja el primer coeficiente del dividendo y se multiplica por el valor de $\left(-\frac{b}{a}\right)$, el resultado se anota en la siguiente columna, debajo del segundo coeficiente del dividendo.
     \item Se suman las cantidades de la segunda columna y se sigue el mismo procedimiento hasta obtener un término debajo del último coeficiente del dividendo.
     \item El residuo es la suma de cantidades de la última columna.
 \end{enumerate}
 
+\begin{example}
+    Dividir $(2x^3 + 5x^2 + 10x - 8)$ entre $(x + 3)$.
+\end{example}
+\begin{multicols}{2}
+    \begin{solution}
+        Acomodamos los polinomios en el gráfico.
+        Realizamos las operaciones, donde obtenemos el cociente $(2x^2 - x + 13)$ y el resto $-47$.
+        Finalmente, como complemento, podemos expresar el dividendo como
+        \[
+            (x + 3)(2x^2 - x + 13) - 47. \qedhere
+        \]
+    \end{solution}
+    \[
+        \polyhornerscheme[x=-3]{2x^3 + 5x^2 + 10x - 8}
+    \]
+\end{multicols}
 
 
 \subsection{Divisibilidad polinómica}
-
-\begin{definition}[División con resto]
-    Para cualesquiera dos polinomios $F(x)$ y $G(x)$ existen dos los polinomios únicos $Q(x)$ y $R(x)$, tal que
-    \[
-        F(x) = G(x)Q(x) + R(x),\ \text{con}\ 0 \leq \deg{R(x)} < \deg{G(x)}.
-    \]
-    Donde el \emphtext{cociente} y el \emphtext{resto} (o \emphtext{residuo}) de la división son $Q(x)$ y $R(x)$, respectivamente.
-    Cuando $R(x) = 0$, diremos que $G(x)$ divide a $F(x)$, y lo vamos a denotar como $G(x) \mid F(x)$.
-\end{definition}
-Por ejemplo, con $F(x) = x^7 - 1$ y $G(x) = x^3 + x + 1$ llegaremos a que
-\[
-    x^7 - 1 = (x^3 + x + 1)(x^4 - x^2 - x + 1) + 2 x^2 - 2.
-\]
-Con cociente $Q(x) = x^4 - x^2 - x + 1$ y resto $R(x) = 2 x^2 - 2$.
-Abreviaremos $G(x) \mid F(x)$ como $G \mid F$, puesto que en una división de polinomios los polinomios iniciales deben estar en la misma variable.
-Por ejemplo, no es posible dividir $M(a) = a^3$ entre $N(b) = b^2$.
-
 
 \begin{theorem.tcb}{Teorema del resto}{}
     Dado un polinomio $P(x)$ con grado $n$ y un número $a \in \R$.
