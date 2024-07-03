@@ -1,0 +1,94 @@
+\section*{Solutions}
+
+\begin{prob}
+    Defina qué es un polinomio, mencione las partes más importantes (grados, cantidad de términos, raíces, término principal e independiente) y finalmente de un ejemplo.
+\end{prob}
+
+\begin{solution}
+    Un polinomio es una expresión de la forma
+    \[
+        P(x) = a_d x^d + a_{d - 1} x^{d - 1} + \cdots + a_2 x^2 + a_1 x + a_0
+    \]
+    con $d$ entero no negativo $\left(d \in \Z^{\geq 0}\right)$ y cada $a_i x^i$ es un término.
+    El valor de $d$ se conoce como el grado del polinomio, un polinomio de grado $d$ tiene $(d + 1)$ términos.
+    El término con mayor exponente ($d$) es el término principal y término con menor exponente $(0)$ es el término independiente.
+
+    La raíz un polinomio es un valor $r$ que al evaluarlo da cero, un polinomio de grado $d$ tiene a lo sumo $d$ raíces.
+
+    \textbf{Ejemplo:} $R(x) = x^5 + 2x^3 + 3x + 1$.
+\end{solution}
+
+
+\begin{prob}
+    Encontrar un polinomio con raíces $0$, $-3$, $5$ y $7$ dónde su coeficiente principal es $-1$.
+\end{prob}
+
+\begin{solution}
+    Sea $V(x)$ el polinomio en cuestión, por propiedad (teorema del factor generalizado) es fácil ver que
+    \[
+        V(x) = (-1)(x - 0)(x + 3)(x - 5)(x - 7)
+    \]
+    Luego de simplificar la expresión obtenemos
+    \[
+        V(x) = -x^4 + 9x^3 + x^2 + 105x \qedhere
+    \]
+\end{solution}
+
+
+\begin{prob}
+    Hallar $Q(z)$, si $T\left(Q(z) - 3\right) = 6z + 2$ y $T(z + 3) = 2z + 10$.
+\end{prob}
+
+\begin{solution}
+    En la definición de $T$ hacemos la evaluación $z = Q(z) - 6$ y obtenemos lo siguiente
+    \begin{align*}
+        T\left[(Q(z) - 6) + 3\right] &= 2(Q(z) - 6) + 10 &&
+        &6z + 2 &= 2Q(z) - 2 \quad \text{(Por dato)}\\
+        T(Q(z) - 3) &= 2Q(z) - 12 + 10 &&
+        &6z + 4 &= 2Q(z)\\
+        T(Q(z) - 3) &= 2Q(z) - 2 &&
+        &Q(z) &= 3z + 2
+    \end{align*}
+    Es decir, la respuesta es $Q(z) = 3z + 2$.
+\end{solution}
+
+\begin{prob}
+    Sea $W(x)$ un polinomio mónico con coeficientes enteros.
+    Probar que si existen cuatro enteros diferentes $a$, $b$, $c$ y $d$ tal que $W(a) = W(b) = W(c) = W(d) = 6$,
+    entonces no existe un entero $r$ tal que $W(r) = 11$.
+\end{prob}
+
+\begin{solution}
+    Considerando al polinomio $X(x) = W(x) - 6$ es claro que $a, b, c$ y $d$ serían sus raíces, por tanto
+    \[
+        X(x) = (1)(x - a)(x - b)(x - c)(x - d)Y(x)
+    \]
+    Asumiendo que exista un $r$ talque $W(r) = 11$ tendríamos que $X(r) = 11 - 6 = 5$, es decir
+    \[
+        5 = (r - a)(r - b)(r - c)(r - d)Y(r)
+    \]
+    Como $X(x)$ es un polinomio de coeficientes enteros (por estar definido en función de $W$) y 5 es un número primo, en el resultado anterior el lado derecho solo tiene cuatro posibilidades\footnote{Para más claridad no se consideró $Y(r)$ en las posibilidades, sin embargo el análisis y el resultado serían los mismos.}
+    \begin{align*}
+        5 &= (1)(5)(1)(1) && &5 &= (-1)(-5)(1)(1)\\
+        5 &= (1)(5)(-1)(-1) && &5 &= (-1)(-5)(-1)(-1)
+    \end{align*}
+    Lo cual implicaría que al menos dos de las variables $a, b, c$ y $d$ son iguales.
+    Esto es una contradicción, luego, $r$ no existe.
+\end{solution}
+
+\begin{prob}
+    Determine un polinomio cúbico $S(a)$ en los reales, con una raíz igual a cero y que satisface $S(a - 1) = 18a^2 + S(a)$.
+\end{prob}
+
+\begin{solution}
+    Si consideramos la expresión $S(a - 1) - S(a) = 18 a^2$ notamos que esta es una expresión telescópica en la suma, es decir
+    \begin{align*}
+        \sum_{i = 1}^{a} \left[S(i - 1) - S(i)\right] &= \sum_{i = 1}^{a} 18 i^2\\
+        S(1 - 1) - S(a) &= 18 \left(1^2 + 2^2 + \cdots + (a - 1)^2 + a^2\right)\\
+        S(0) - S(a) &= 18\cdot \frac{a(a + 1)(2a + 1)}{6}
+    \end{align*}
+    Como nos dicen que una raíz es igual a cero entonces $S(0) = 0$, por lo tanto\footnote{Otra manera de resolverlo es considerando una forma canonica de $S$ y hacer evaluaciones concretas en el polinomio.}, el polinomio que buscamos es
+    \[
+        S(a) = -3a(a + 1)(2a + 1). \qedhere
+    \]
+\end{solution}

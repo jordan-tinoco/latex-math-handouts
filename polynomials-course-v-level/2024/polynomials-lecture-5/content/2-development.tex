@@ -31,6 +31,8 @@ Una propiedad que nos permite describir por algoritmo y más aún auxiliarnos en
 
 Se recomienda la división larga cuando los polinomios a dividir son de una sola variable o bien son polinomios homogéneos de dos variables.
 
+\vspace{1cm}
+
 \textbf{Algoritmo.}
 \begin{enumerate}
     \item Completar y ordenar los dos polinomios, tanto el divisor como el dividendo.
@@ -69,6 +71,10 @@ Los coeficientes de los polinomios se distribuyen en un cuadro como el que sigui
     \caption{Esquema gráfico del método de Horner.}
     \label{fig:figure}
 \end{figure}
+
+Ahora veamos su algoritmo.
+
+\vspace{1cm}\\
 
 \textbf{Algoritmo.}
 \begin{enumerate}
@@ -170,16 +176,16 @@ Cabe mencionar que el método de Ruffini se considera como un caso particular de
 Notemos que el teorema del resto implica al teorema del factor, teorema que ya hemos estudiado.
 
 \begin{theorem.tcb}{Teorema del factor}{}
-    Dado un polinomio $P(x)$ con grado $n$ y un número $a \in \R$, diremos que $a$ es una raíz de $P(x)$ si y solo si $(x - a)$ es un factor de $P(x)$, \ie
+    Sea $P(x)$ un polinomio y sea $a \in \R$.
+    Se cumple que $a$ es raíz de $P(x)$ si y solo si $(x - a)$ es un factor de $P(x)$, \ie
     \[
-        P(a) = 0 \iff P(x) = (x - a)Q(x)
+        P(a) = 0 \iff P(x) = (x - a)Q(x).
     \]
-    para algún polinomio $Q(x)$.
 \end{theorem.tcb}
 \begin{proof}
     Si tenemos que $P(a) = 0$ y analizamos el residuo en $P(x) = (x - a)Q(x) + R(x)$.
-    Por el teorema del resto, sabemos que $P(a) = R(x) = 0$ y por tanto $(x - a)$ es un factor de $P(x)$.
-    Si tenemos que $P(x) = (x - a)Q(x)$, entonces al evaluar $P(a)$, claramente $P(a) = 0$ y por tanto $a$ es una raíz de $P(x)$.
+    Por el teorema del resto, sabemos que $P(a) = R(x) = 0$, por tanto $(x - a)$ es un factor de $P(x)$.
+    Si tenemos que $P(x) = (x - a)Q(x)$, entonces al evaluar $P(a)$, claramente $P(a) = 0$, por tanto $a$ es una raíz de $P(x)$.
 \end{proof}
 
 \begin{theorem.tcb}{Teorema fundamental del Álgebra}{}
@@ -276,68 +282,91 @@ Ejercicios y problemas para el autoestudio.
 
 \showLine
 \begin{multicols}{2}
-    \begin{problem}
+
+    \begin{exercise}
+        Dado los polinomios $P(x) = 2x^5 + x^4 + ax^2 + bx + c$ y $Q(x) = x^4 - 1$, se sabe que $Q \mid P$.
+        Hallar $\dfrac{a + b}{a - b}$.
+    \end{exercise}
+
+    \begin{exercise}
+        Dado los polinomios $P(x) = 16x^5 + ax^2 + bx + c$ y $Q(x) = 2 x^3 - x^2 + 1$, se sabe que $Q \mid P$.
+        Hallar $a + b + c$.
+    \end{exercise}
+
+    \begin{exercise}
         Si el polinomio $3x^5 + 6x^3 - 3x$ se le divide entre $x + 1$ se obtiene como resultado un cociente de grado $m$, un término independiente $b$ y un resto $a$.
         Hallar $m + a + b$.
-    \end{problem}
+    \end{exercise}
 
-    \begin{problem}
+    \begin{exercise}
         Al dividir $x^4 - x^2 - 2x + 1$ entre $x^2 + x + 1$, determine el producto de los términos del cociente.
-    \end{problem}
+    \end{exercise}
 
-    \begin{problem}
+    \begin{exercise}
         Si $P(x - 2) = x^3 - 10x^2 + 28x - 24$, hallar el resto de dividir $P(x)$ por $x - 3$
-    \end{problem}
+    \end{exercise}
 
-    \begin{problem}
-        Si el resto de la división de $6x^4 - 11x^2 + ax + b$ entre $3x^2 - 3x - 1$ es $3x + 2$.
+    \begin{exercise}
+        Si $6x^4 - 11x^2 + ax + b$ dividido entre $3x^2 - 3x - 1$ deja resto $3x + 2$.
         Hallar $a - b$.
-    \end{problem}
+    \end{exercise}
 
-    \begin{problem}
-        Para que la división de $x^4 + ax^2 + b$ entre $x^2 + x + 1$ sea exacta, encuentre los valores de $a$ y $b$ apropiados.
-    \end{problem}
+    \begin{exercise}
+        Si la división de $x^4 + ax^2 + b$ entre $x^2 + x + 1$ es exacta, encuentre los valores de $a$ y $b$ apropiados.
+    \end{exercise}
 
-    \begin{problem}
-        Si el polinomio $P(x) = ax^4 + bx^3 + cx^2 + 3x + 1$ se divide por $x^2 - x + 2$ se obtiene un cociente cuya suma de coeficientes es 22 y un resto $R(x) = 10x - 1$, calcular $b + c$.
-    \end{problem}
+    \begin{exercise}
+        Si el polinomio
+        \[
+            P(x) = ax^4 + bx^3 + cx^2 + 3x + 1
+        \]
+        se divide por $x^2 - x + 2$ se obtiene un cociente cuya suma de coeficientes es 22 y un resto $R(x) = 10x - 1$, calcular $b + c$.
+    \end{exercise}
 
-    \begin{problem}
-        Al dividir el polinomio $P(x) = 55x^3 + (166 + b)x - x^2 - 2$ entre $Q(x) = ax^2 - 39x + 2$, el residuo es de la forma $R(x) = mx$.
+    \begin{exercise}
+        Al dividir el polinomio
+        \[
+            P(x) = 55x^3 + (166 + b)x - x^2 - 2
+        \]
+        entre $Q(x) = ax^2 - 39x + 2$, el residuo es de la forma $R(x) = mx$.
         Calcular el valor de $a + b$.
+    \end{exercise}
+
+    \begin{exercise}
+        Calcular el valor de $a + b$ si $(1 + i)$ es raíz del polinomio $x^5 + ax^3 + b$.
+    \end{exercise}
+
+    \begin{exercise}
+        ¿Para qué valores de $k$ se cumple que $(x - 2)$ es un factor del polinomio $x^3 + 2kx^2 + k^2 x + k - 3$?
+    \end{exercise}
+
+    \begin{exercise}
+        Encontrar el resto cuando
+        \[
+            (x + 3)^5 + (x + 2)^8 + (5x + 9)^{1997}
+        \]
+        es dividido por $(x + 2)$.
+    \end{exercise}
+
+    \begin{exercise}
+        Para un polinomio desconocido que deja un resto 2 al dividirlo por $(x - 1)$, y un resto 1 al dividirlo por $(x - 2)$.
+        ¿Cuál es el resto que se obtiene si este polinomio es dividido por $(x - 1)(x - 2)$?
+    \end{exercise}
+
+    \begin{exercise}
+        Encontrar el resto cuando $x^{2006} + x^{2005} + \cdots + x + 1$ es dividido por $(x + 1)$.
+    \end{exercise}
+
+    \begin{exercise}
+        Sea $F(x) = x^4 + x^3 + x^2 + x + 1$.
+        Encontrar el residuo cuando $F(x^5)$ es dividido por $F(x)$.
+    \end{exercise}
+
+    \begin{problem}
+        Determinar todos los enteros positivos $n$, tales que el polinomio $x^n + x - 1$ sea divisible por el polinomio $x^2 - x + 1$.
     \end{problem}
 
     \begin{problem}
         ¿Qué valor adquiere $\dfrac{n + 19}{k + 1}$, si la división $\dfrac{x^{19} - nx + k}{x^2 - 2x + 1}$ es exacta?
-    \end{problem}
-
-    \begin{problem}
-        Calcular el valor de $a + b$ si $1 + i$ es raíz del polinomio $x^5 + ax^3 + b$.
-    \end{problem}
-
-    \begin{problem}
-        ¿Para qué valores de $k$ se cumple que $x - 2$ es factor de $x^3 + 2kx^2 + k^2 x + k - 3$?
-    \end{problem}
-
-    \begin{problem}
-        Para un polinomio desconocido que deja un resto 2 al dividirlo por $x - 1$, y un resto 1 al dividirlo por $x - 2$.
-        ¿Cuál es el resto que se obtiene si este polinomio es dividido por $(x - 1)(x - 2)$?
-    \end{problem}
-
-    \begin{problem}
-        Encontrar el resto cuando $(x + 3)^5 + (x + 2)^8 + (5x + 9)^{1997}$ es dividido por $x + 2$.
-    \end{problem}
-
-    \begin{problem}
-        Encontrar el resto cuando $x^{2006} + x^{2005} + \cdots + x + 1$ es dividido por $x + 1$.
-    \end{problem}
-
-    \begin{problem}
-        Sea $F(x) = x^4 + x^3 + x^2 + x + 1$.
-        Encontrar el residuo cuando $F(x^5)$ es dividido por $F(x)$.
-    \end{problem}
-
-    \begin{problem}
-        Determinar todos los enteros positivos $n$, tales que el polinomio $x^n + x - 1$ sea divisible por el polinomio $x^2 - x + 1$.
     \end{problem}
 \end{multicols}
