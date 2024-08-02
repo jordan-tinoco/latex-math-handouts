@@ -1,6 +1,49 @@
 \section{Desarrollo}
 
+\begin{definition.tcb}{Ecuaciones Diofánticas}{}
+    Se llama \textbf{ecuación diofántica} o \textbf{ecuación diofantina} a cualquier ecuación polinomial con coeficientes enteros cuya
+    solución se restringe únicamente a aquellos valores enteros que la satisfacen.
+\end{definition.tcb}
+
+Es decir, una expresión de la forma
+\[
+    a_1 x_1 + a_2 x_2 + \cdots + a_n x_n = 0, \quad \text{con} \quad 1 \leq i \leq n,\ a_i \in \Z.
+\]
+donde la $n$-upla de números enteros $(r_1, r_2, \ldots, r_n)$ hace la igualdad.
+Es claro que una ecuación diofántica puede tener una o más $n$-upla que hagan la igualdad.
+
+\begin{definition.tcb}{}{}
+    A una $n$-upla, con $n$ entero, que satisface una ecuación diofántica, se le llama \textbf{solución} de la ecuación.
+    Una ecuación diofántica con una o más soluciones se llama ecuación \textbf{soluble}, así también, una ecuación diofántica sin
+    soluciones se llama ecuación \textbf{insoluble} o \textbf{irresoluble}.
+\end{definition.tcb}
+
+Una ecuación diofántica se dice que tiene una familia de soluciones cuando un conjunto de estas, o todas sus soluciones,
+puede ser expresada en función de un o más parámetros enteros.
+Como por ejemplo, la ecuación $x^2 + 2y^2 = z^2$ vemos tiene soluciones $(-2, 0, 2)$, $(-1, 2, 3)$, $(2, 4, 6)$, $\ldots$,
+las cuales podemos expresar como
+\[
+    \begin{cases}
+        x = r^2 - 2\\
+        y = 2r\\
+        z = r^2 + 2
+    \end{cases}
+\]
+donde $r$ es un número entero sin ninguna restricción, lo cual hace que la ecuación diofántica tenga infinita soluciones de esta forma.
+
 
 \subsection{Ejercicios y problemas}
 
 Ejercicios y problemas para el autoestudio.
+
+\begin{exercise}
+    Hallar la cantidad de parejas de enteros positivos $x_1, x_2$ tales que $x_1 \cdot x_2 = 25 \cdot 15^3$.
+\end{exercise}
+
+\begin{exercise}
+    Probar que la ecuación $x^2 + 2y^2 = z^2$ tiene como solución a $x = a^2 - 2b^2$, $y = 2ab$ y $z = a^2 + 2b^2$ donde $a, b \in \Z$.
+\end{exercise}
+
+\begin{exercise}
+    Probar que la ecuación $x^3 = 2y^3$ no tiene soluciones enteras.
+\end{exercise}
