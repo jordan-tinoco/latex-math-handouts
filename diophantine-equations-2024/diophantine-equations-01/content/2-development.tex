@@ -1,5 +1,7 @@
 \section{Desarrollo}
 
+\subsection{Definiciones}
+
 \begin{definition.tcb}{Ecuaciones Diofánticas}{}
     Se llama \textbf{ecuación diofántica} o \textbf{ecuación diofantina} a cualquier ecuación polinomial con coeficientes enteros cuya
     solución se restringe únicamente a aquellos valores enteros que la satisfacen.
@@ -7,9 +9,9 @@
 
 Es decir, una expresión de la forma
 \[
-    a_1 x_1 + a_2 x_2 + \cdots + a_n x_n = 0, \quad \text{con} \quad 1 \leq i \leq n,\ a_i \in \Z.
+    a_1 x_1 + a_2 x_2 + \cdots + a_n x_n = b, \quad \text{con} \quad 1 \leq i \leq n,\ a_i, b \in \Z.
 \]
-donde la $n$-upla de números enteros $(r_1, r_2, \ldots, r_n)$ hace la igualdad.
+Donde la $n$-upla de números enteros $(r_1, r_2, \ldots, r_n)$ hace la igualdad.
 Es claro que una ecuación diofántica puede tener una o más $n$-upla que hagan la igualdad.
 
 \begin{definition.tcb}{}{}
@@ -18,10 +20,8 @@ Es claro que una ecuación diofántica puede tener una o más $n$-upla que hagan
     soluciones se llama ecuación \textbf{insoluble} o \textbf{irresoluble}.
 \end{definition.tcb}
 
-Una ecuación diofántica se dice que tiene una familia de soluciones cuando un conjunto de estas, o todas sus soluciones,
-puede ser expresada en función de un o más parámetros enteros.
-Como por ejemplo, la ecuación $x^2 + 2y^2 = z^2$ vemos tiene soluciones $(-2, 0, 2)$, $(-1, 2, 3)$, $(2, 4, 6)$, $\ldots$,
-las cuales podemos expresar como
+Una ecuación diofántica se dice que tiene una familia de soluciones cuando un conjunto de estas, o todas, puede ser expresada en función de uno o más parámetros enteros.
+Como por ejemplo la ecuación $x^2 + 2y^2 = z^2$, vemos que tiene soluciones $(-2, 0, 2)$, $(-1, 2, 3)$, $(2, 4, 6)$, $\ldots$, las cuales podemos expresar como
 \[
     \begin{cases}
         x = r^2 - 2\\
@@ -29,7 +29,53 @@ las cuales podemos expresar como
         z = r^2 + 2
     \end{cases}
 \]
-donde $r$ es un número entero sin ninguna restricción, lo cual hace que la ecuación diofántica tenga infinita soluciones de esta forma.
+donde $r$ es un número entero sin ninguna restricción, por lo que la ecuación diofántica tiene infinitas soluciones de esta forma.
+
+Ahora, nos centraremos en el conjunto de métodos elementales para la resolución de Ecuaciones Diofánticas, a lo largo del curso
+haremos uso de estos métodos, tales como factorización, identidades algebraicas, desigualdades, parametrización y congruencias.
+
+\subsection{Método de factorización}
+
+El método de factorización consiste transformar una expresión algebraica como producto de otras expresiones algebraicas, muchas veces de grado menor.
+Como trabajamos en números enteros esto nos permite asociar estas expresiones con los divisores de otros números enteros.
+Logrando así, obtener un conjunto de casos muchas veces más sencillos de resolver.
+
+Es decir, si tenemos una expresión de la forma
+\[
+    (a_1 x_1 + a_2 x_2 + \cdots + a_n x_n)(b_1 x_1 + b_2 x_2 + \cdots + b_n x_n) \cdots (r_1 x_1 + r_2 x_2 + \cdots + r_n x_n) = k,
+\]
+donde $1 \leq j \leq n$ tenemos $a_j, b_j, \ldots, r_j, k \in \Z$.
+Si $k_1, k_2, \ldots, k_m$ son los divisores de $k$, podemos asociar las expresiones del lado izquierdo con estos divisores, formando sistemas de ecuaciones como por ejemplo
+\[
+    \begin{cases}
+        a_1 x_1 + a_2 x_2 + \cdots + a_n x_n = k_1\\
+        b_1 x_1 + b_2 x_2 + \cdots + b_n x_n = k_2\\
+        \quad \qquad \vdots\\
+        r_1 x_1 + r_2 x_2 + \cdots + r_n x_n = k_p,
+    \end{cases}
+\]
+claramente, dependerá del problema como escoger estas asociaciones.
+
+Ahora, algunas identidades algebraicas nos pueden simplificar la factorización, aquí exponemos una pequeña lista de las más comunes.
+\vspace{2mm}
+
+\textbf{Identidades útiles}
+\begin{align*}
+    &\text{(Completación de rectángulo)} && xy + iy + jx + ij = (x + i)(y + j)\\[2mm]
+    &\text{(Diferencia de cuadrados)} && a^2 - b^2 = (a - b)(a + b)\\[2mm]
+    &\text{(Binomio al cuadrado)} && (a + b)^2 = a^2 + 2ab + b^2\\[2mm]
+    &\text{(Trinomio al cuadrado)} && (a + b + c)^2 = a^2 + b^2 + c^2 + 2(ab + bc + ca)\\[1.5mm]
+    &\text{(Identidad I)} && a^2 + b^2 + c^2 - ab - bc - ca = \frac{1}{2}\left[ (a - b)^2 + (b - c)^2 + (c - a)^2 \right]\\[1.5mm]
+    &\text{(Identidad de Gauss)} && a^3 + b^3 + c^3 - 3abc = (a + b + c)(a^2 + b^2 + c^2 - ab - bc - ca)\\[2mm]
+    &\text{(Identidad de Argand)} && a^4 + a^2 + 1 = (a^2 - a + 1)(a^2 + a + 1)\\[2mm]
+    &\text{(Identidad de Sophie Germain)} && a^4 + 4 b^4 = (a^2 - 2ab + 2b^2)\left(a^2 + 2ab + 2b^2\right)\\[2mm]
+    &\text{(Identidad de Brahmagupta)} && (a^2 + b^2) (x^2 + y^2) = (ax + by)^2 + (ay - bx)^2\\[2mm]
+    &\text{(Diferencia de potencias)} && a^n - b^n = (a - b)(a^{n - 1} + a^{n - 2}b + \cdots + b^{n - 1})\\[2mm]
+    &\text{(Suma de potencias)} && a^n + b^n = (a + b)(a^{n - 1} - a^{n - 2}b + \cdots + b^{n - 1}) \ \text{para $n$ impar}\\[1.5mm]
+    &\text{(Binomio de Newton)} && (a + b)^n = a^n + \binom{n}{1} a^{n - 1}b + \cdots + \binom{n}{k} a^{n -k}b^k + \cdots + b^n
+\end{align*}
+
+A continuación, tenemos una serie de ejercicios con los cuales podemos prácticar y aplicar el método de factorización.
 
 
 \subsection{Ejercicios y problemas}
@@ -45,5 +91,72 @@ Ejercicios y problemas para el autoestudio.
 \end{exercise}
 
 \begin{exercise}
+    Hallar todos los números naturales $x,y$ para los cuales $\dfrac{5}{x} + \dfrac{6}{y} = 1$.
+\end{exercise}
+
+\begin{exercise}
     Probar que la ecuación $x^3 = 2y^3$ no tiene soluciones enteras.
 \end{exercise}
+
+\begin{exercise}
+    Resolver $y^2 = x^3 - x$ sobre los enteros.
+\end{exercise}
+
+\begin{exercise}
+    Hallar los enteros positivos $x,y,z$ tal que $3^x + 4^y = z^2$.
+\end{exercise}
+
+\begin{exercise}
+    Encuentre todos los enteros positivos $x, y$ tales que $xy - x + y = 49$.
+\end{exercise}
+
+\begin{exercise}
+    Encuentre todas las soluciones enteras de la ecuación
+    \[
+        (x^2 + 1)(y^2 + 1) + 2(x - y)(1 - xy) = 4(1 + xy).
+    \]
+\end{exercise}
+
+\begin{exercise}
+    Encuentre todos los enteros positivos $n$ tales que, $n^4 + 4^n$ es primo.
+\end{exercise}
+
+\begin{exercise}
+    ¿Para qué valores de $a$ y $b$ se da la igualdad $a^2 - 4ab = - 4b^2 + 9$?
+\end{exercise}
+
+\begin{exercise}
+    Resuelve la siguiente ecuación en enteros $x^2 + 6xy + 8y^2 + 3x + 6y = 2$.
+\end{exercise}
+
+\begin{exercise}
+    Para cada entero $n$ sea $s(n)$ el número de pares ordenados $(x, y)$ de enteros positivos para los cuales
+    \[
+        \frac{1}{x} + \frac{1}{y} = \frac{1}{n}.
+    \]
+    Encuentre todos los números enteros positivos $n$ para los cuales $s(n) = 5$.
+\end{exercise}
+
+\begin{exercise}
+    Hallar todas las soluciones enteras de la ecuación $x^3 + y^3 - 3xy = 3$.
+\end{exercise}
+
+\begin{exercise}
+    Hallar todas las soluciones enteras de $x^2(y - 1) + y^2(x - 1) = 1$.
+\end{exercise}
+
+\begin{exercise}
+    Sean p y q números primos distintos.
+    Encuentre el número de pares de enteros positivos $x, y$ que satisfacen la ecuación
+    \[
+        \frac{p}{x} + \frac{q}{y} = 1.
+    \]
+\end{exercise}
+
+\begin{problem}
+    Encuentre todos los pares de enteros $(x, y)$ tales que $x^6 + 3x^3 + 1 = y^4$.
+\end{problem}
+
+\begin{problem}
+    Encuentre todos los pares $(x, y)$ de enteros tales que $xy + \dfrac{x^3+ y^3}{3} = 2007$.
+\end{problem}
