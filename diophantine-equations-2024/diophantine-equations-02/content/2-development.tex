@@ -10,16 +10,57 @@ Los axiomas elementales sobre desigualdades son los siguientes
 \end{enumerate}
 Todas las demás desigualdades se derivan de estos axiomas.
 Como por ejemplo
+\begin{enumerate}
+    \item Si $a > b$ y $c < 0$, entonces $ac < bc$.
+    \item Si $0 < a < 1$, entonces $a^2 < a$.
+    \item Si $|a| > 1$, entonces $a^2 > a$.
+\end{enumerate}
+
+Cuando se tiene una desigualdad de una variable, los pasos comunes son perecidos a los de resolver una ecuación líneal.
+Como por ejemplo,
+\begin{multicols}{2}
     \begin{enumerate}
-        \item Si $a > b$ y $c < 0$, entonces $ac < bc$.
-        \item Si $0 < a < 1$, entonces $a^2 < a$.
-        \item Si $|a| > 1$, entonces $a^2 > a$.
+        \item Remover denominadores.
+        \item Remover paréntesis y corchetes.
+        \item Mover términos para combinarlos.
+        \item Mover términos semejantes.
+        \item Normalizar coeficientes.
     \end{enumerate}
-Asi como el siguiente teorema.
-\begin{theorem}
+\end{multicols}
+
+\begin{example}
+    Dado que $2(x - 2) - 3(4x - 1) = 9(1 - x)$ y $y < x + 9$, comparar las cantidades $\dfrac{y}{\pi}$ y $\dfrac{10}{31}y$.
+\end{example}
+\begin{solution}
+    Resolviendo la ecuación líneal obtenemos que $x = -10$, por lo que $y < -10 + 9$ es decir $y < -1$.
+    Es fácil ver que, $\dfrac{1}{\pi} < \dfrac{10}{31}$, así que al multiplicar por el número negativo $y$ la respuesta es clara.
+\end{solution}
+
+Ahora, vemos los siguientes teoremas.
+
+\begin{theorem.tcb}{}{}
     Si $x$ es un número real, entonces $x^2 \geq 0$.
     La igualdad se da si y solo si $x = 0$.
-\end{theorem}
+\end{theorem.tcb}
+
+\begin{theorem.tcb}{Desigualdad Media Aritmética - Geometríca}{}
+    Dado $n$ números reales positivos $x_1$, $x_2$, $\ldots$, $x_n$ se tiene que
+    \[
+        \dfrac{x_1 + x_2 + \cdots + x_n}{n} \geq \sqrt[n]{x_1 x_2 \cdots x_n}.
+    \]
+    Donde la igualdad se da cuando $x_1 = x_2 = \cdots = x_n$.
+\end{theorem.tcb}
+
+\begin{theorem.tcb}{Desigualdad Cauchy-Schwartz}{}
+    Dado los reales positivos $a_1, a_2, \ldots, a_n$ y $b_1, b_2, \ldots, b_n$ se tiene que
+    \[
+        (a_1^2 + a_2^2 + \cdots + a_n^2)(b_1^2 + b_2^2 + \cdots + b_n^2) \geq (a_1 b_1 + a_2 b_2 + \cdots + a_n b_n)^2.
+    \]
+    Donde la igualdad se da si $b_i = k a_i$ para todo $a_i \neq 0$ con $i = 1, 2, \ldots, n$
+\end{theorem.tcb}
+
+Finalmente, se proponen unos ejercicios para prácticar estas técnicas.
+
 
 
 \subsection{Ejercicios y problemas}
@@ -27,7 +68,70 @@ Asi como el siguiente teorema.
 Ejercicios y problemas para el autoestudio.
 
 \begin{exercise}
+    Sabiendo que $ac < 0$, argumentar cuántas de las siguiente desiguadades pueden ser verdaderas.
+    \[
+        \frac{a}{c} < 0,\quad ac^2 < 0,\quad a^2 c < 0,\quad c^3 a < 0,\quad ca^3 < 0.
+    \]
+\end{exercise}
+
+\begin{exercise}
+    Hay cuatro afirmaciones como se indica a continuación:
+    \begin{itemize}
+        \item[(i)] Cuando $0 < x < 1$, entonces $\dfrac{1}{1 + x} < 1 - x + x^2$;
+        \item[(ii)] Cuando $0 < x < 1$, entonces $\dfrac{1}{1 + x} > 1 - x + x^2$;
+        \item[(iii)] Cuando $-1 < x < 0$, entonces $\dfrac{1}{1 + x} < 1 - x + x^2$;
+        \item[(iv)] Cuando $-1 < x < 0$, entonces $\dfrac{1}{1 + x} > 1 - x + x^2$.
+    \end{itemize}
+    Dar como respuesta las afirmaciones correctas.
+\end{exercise}
+
+\begin{exercise}
+    Dado los números reales $a,b$.
+    Si $a = \dfrac{x + 3}{4}$, $b = \dfrac{2x + 1}{3}$ y $b < \dfrac{7}{3} < 2a$, hallar el rango de valores para $x$.
+\end{exercise}
+
+\begin{exercise}
+    Dado que $a < b < c < 0$ ordenar de manera descendiente los números $\dfrac{a}{b + c}$, $\dfrac{b}{c + a}$ y $\dfrac{c}{a + b}$.
+\end{exercise}
+
+\begin{exercise}
+    Probar que para reales no negativos $x,y,z$ se cumple que
+    \[
+        a^2 + b^2 + c^2 \geq ab + bc + ca.
+    \]
+\end{exercise}
+
+\begin{exercise}
+    Sean $a,b,c$ reales no negativos, probar que
+    \[
+        (a + b)(b + c)(c + a) \geq 8abc.
+    \]
+\end{exercise}
+
+\begin{exercise}
+    Sean $a,b,c > 0$ probar que
+    \[
+        \frac{a^3}{bc} + \frac{b^3}{ca} + \frac{c^3}{ab} \geq a + b + c.
+    \]
+\end{exercise}
+
+\begin{exercise}
+    Sean $a,b,c$ reales positivos tales que $abc = 1$.
+    Probar que
+    \[
+        a^2 + b^2 + c^2 \geq a + b + c.
+    \]
+\end{exercise}
+
+\begin{exercise}
     Hallar todas las duplas positivas $(x,y)$ tal que $x^3 - y^3 = xy + 61$.
+\end{exercise}
+
+\begin{exercise}
+    Resolver la siguiente ecuación en los enteros positivos $x,y,z$
+    \[
+        \frac{1}{x} + \frac{1}{y} + \frac{1}{z} = \frac{3}{5}.
+    \]
 \end{exercise}
 
 \begin{exercise}
@@ -35,7 +139,24 @@ Ejercicios y problemas para el autoestudio.
 \end{exercise}
 
 \begin{exercise}
-    Determine todas las parejas de enteros $(x, y)$ tales que $1 + 2^x + 2^{2x + 1} = y^2$.
+    Determinar todos los números enteros positivos $(x,y,z)$ que sean solución de
+    \[
+        \left(1 + \dfrac{1}{x}\right)\left(1 + \dfrac{1}{y}\right)\left(1 + \dfrac{1}{z}\right) = 2.
+    \]
+\end{exercise}
+
+\begin{exercise}
+    Hallar todas las soluciones en enteros de la ecuación
+    \[
+        x^3 + (x + 1)^3 + (x + 2)^3 + \cdots + (x + 7)^2 = y^3.
+    \]
+\end{exercise}
+
+\begin{exercise}
+    Determinar todos los números enteros positivos $(x,y,z)$ que sean solución de
+    \[
+        xy + yz + zx - xyz = 2
+    \]
 \end{exercise}
 
 \begin{exercise}
@@ -46,14 +167,19 @@ Ejercicios y problemas para el autoestudio.
 \end{exercise}
 
 \begin{exercise}
-    Determinar todos los números enteros positivos $(x,y,z)$ que sean solución de las siguientes ecuaciones
-    \begin{enumerate}
-        \item $\left(1 + \dfrac{1}{x}\right)\left(1 + \dfrac{1}{y}\right)\left(1 + \dfrac{1}{z}\right) = 2$
-        \item $xy + yz + zx - xyz = 2$
-        \item $(x + y)^2 + 3x + y + 1 = z^2$
-    \end{enumerate}
+    Determinar todos los números enteros positivos $(x,y,z)$ que sean solución de
+    \[
+        (x + y)^2 + 3x + y + 1 = z^2
+    \]
 \end{exercise}
 
 \begin{exercise}
-    Encuentra todos los pares de números positivos $(a, b)$ tales que $ab^2 + b + 7$ divide a $a^2 b + a + b$.
+    Determine todas las parejas de enteros $(x, y)$ tales que
+    \[
+        1 + 2^x + 2^{2x + 1} = y^2.
+    \]
 \end{exercise}
+
+\begin{problem}
+    Encuentra todos los pares de números positivos $(a, b)$ tales que $ab^2 + b + 7$ divide a $a^2 b + a + b$.
+\end{problem}
