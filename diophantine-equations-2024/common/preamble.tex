@@ -1,11 +1,12 @@
-\renewcommand{\normalsize}{\fontsize{13}{14}\selectfont}
+\usepackage{mlmodern}
+\usepackage[T1]{fontenc}
+\usepackage{setspace}
 \usepackage[spanish]{babel}
-\usepackage[charter]{mathdesign}
 \usepackage{fancyhdr}
+\usepackage[left=2.5cm, right=2.5cm, top=2cm, bottom=2cm]{geometry}
+
 \usepackage{multicol}
 \usepackage{tasks}
-
-\usepackage[left=2.5cm, right=2.5cm, top=2cm, bottom=2cm]{geometry}
 
 % -- math packages --
 \usepackage{float}
@@ -13,8 +14,8 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{mathtools}
-\allowdisplaybreaks
 
+\allowdisplaybreaks
 
 %Text color box dependences
 \usepackage{tcolorbox}
@@ -25,7 +26,7 @@
 \tcbuselibrary{skins}
 
 % -- Set values --
-\setlength{\parskip}{1.5mm}
+\setlength{\parskip}{1.7mm}
 \setlength{\parindent}{0pt}
 \setlength{\headsep}{3mm}
 
@@ -34,3 +35,6 @@
 
 \input{../../utils/math-commands-v.1}
 \input{../../utils/math-sections.v2}
+
+\renewcommand{\normalsize}{\fontsize{13}{13}\selectfont}
+\setstretch{1.2}
