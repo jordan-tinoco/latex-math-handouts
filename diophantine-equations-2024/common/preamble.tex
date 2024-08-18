@@ -6,23 +6,8 @@
 
 \usepackage{multicol}
 \usepackage{tasks}
+\settasks{label=\Alph*)}
 
-% -- math packages --
-\usepackage{float}
-\usepackage{amsthm}
-\usepackage{amsmath}
-\usepackage{amsfonts}
-\usepackage{mathtools}
-
-%Text color box dependences
-\usepackage{tcolorbox}
-\usepackage{varwidth}
-
-\tcbuselibrary{theorems}
-\tcbuselibrary{breakable}
-\tcbuselibrary{skins}
-
-% -- Set values --
 \renewcommand{\normalsize}{\fontsize{13.5}{15.5}\selectfont} %propuesta 1
 %\renewcommand{\normalsize}{\fontsize{13}{15.5}\selectfont} %propuesta 2
 
@@ -30,10 +15,7 @@
 \setlength{\parindent}{0pt}
 \setlength{\headsep}{3mm}
 
-\allowdisplaybreaks
-\spanishdecimal{.}
-
-\settasks{label=\Alph*)}
-
-\input{../../utils/math-commands.v1}
+\input{../../utils/math-commands.v2.dependency}
+\input{../../utils/math-sections.v3.dependency}
+\input{../../utils/math-commands.v2}
 \input{../../utils/math-sections.v3}
