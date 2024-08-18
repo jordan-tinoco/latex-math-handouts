@@ -1,6 +1,5 @@
 \usepackage{mlmodern}
 \usepackage[T1]{fontenc}
-\usepackage{setspace}
 \usepackage[spanish]{babel}
 \usepackage{fancyhdr}
 \usepackage[left=2.5cm, right=2.5cm, top=2cm, bottom=2cm]{geometry}
@@ -15,8 +14,6 @@
 \usepackage{amsfonts}
 \usepackage{mathtools}
 
-\allowdisplaybreaks
-
 %Text color box dependences
 \usepackage{tcolorbox}
 \usepackage{varwidth}
@@ -26,15 +23,17 @@
 \tcbuselibrary{skins}
 
 % -- Set values --
+\renewcommand{\normalsize}{\fontsize{13.5}{15.5}\selectfont} %propuesta 1
+%\renewcommand{\normalsize}{\fontsize{13}{15.5}\selectfont} %propuesta 2
+
 \setlength{\parskip}{1.7mm}
 \setlength{\parindent}{0pt}
 \setlength{\headsep}{3mm}
 
-\settasks{label=\Alph*)}
+\allowdisplaybreaks
 \spanishdecimal{.}
 
-\input{../../utils/math-commands-v.1}
-\input{../../utils/math-sections.v2}
+\settasks{label=\Alph*)}
 
-\renewcommand{\normalsize}{\fontsize{13}{13}\selectfont}
-\setstretch{1.2}
+\input{../../utils/math-commands.v1}
+\input{../../utils/math-sections.v3}
