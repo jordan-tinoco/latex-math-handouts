@@ -18,15 +18,15 @@ En muchos casos, el método paramétrico proporciona una prueba de la existencia
     Transformando la ecuación convenientemente
     \begin{multline*}
         12m + mn = 97 + 5n \iff
-        m(15 + n) = 97 + 5n\\ \iff
-        m = \frac{97 + 5n}{15 + n} \iff
-        m = 5 + \frac{22}{n + 15}.
+        m(12 + n) = 97 + 5n\\ \iff
+        m = \frac{97 + 5n}{12 + n} \iff
+        m = 5 + \frac{37}{n + 12}.
     \end{multline*}
-    Consideremos la variable $t = \frac{22}{n + 15}$ con lo cual $m = t + 5$, como $m$ es entero necesariamente $t$
+    Consideremos la variable $t = \frac{37}{n + 12}$ con lo cual $m = t + 5$, como $m$ es entero necesariamente $t$
     también lo es.
-    Es fácil ver $n = \frac{22}{t} - 15$, ya que $n$ es entero, entonces $t$ debe ser divisor de 22.
-    Con esta información, es claro que los posibles valores son $t \in \{\pm 1, \pm 2, \pm 11 \}$.
-    Luego, las soluciones de la ecuación es $(m,n) \in \{(4, -37), (6, 7), (3, -26), (7, -4), (-6, -17), (16, -17)\}$.
+    Es fácil ver $n = \frac{37}{t} - 12$, ya que $n$ es entero, entonces $t$ debe ser divisor de 37.
+    Con esta información, es claro que los posibles valores son $t \in \{\pm 1, \pm 37 \}$.
+    Finalmente, las soluciones de la ecuación están dadas por $(m,n) \in \{(4, -49), (6, 25), (-32, -13), (42, -11)\}$.
 \end{solution}
 
 Como vimos en el ejemplo anterior, la idea es expresar las variables $m$ y $n$ en términos de un parámetro $t$,
@@ -119,4 +119,16 @@ En esta segunda parte haremos una pequeña clase práctica para recordar las té
     \[
         x(x + 1)(x + 7)(x + 8) = y^2.
     \]
+\end{exercise}
+
+\begin{exercise}
+    Hallar las soluciones enteras de la ecuación $13x - 7y = 0$, si las variables cumplen que $80 < x + y < 120$.
+\end{exercise}
+
+\begin{exercise}
+    Probar que existe infinitos pares ordenas de enteros positivos $(m,n)$ tal que
+    \[
+        \frac{m + 1}{n} + \frac{n + 1}{m}
+    \]
+    es un entero positivo.
 \end{exercise}
