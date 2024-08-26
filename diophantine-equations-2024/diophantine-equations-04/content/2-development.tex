@@ -14,7 +14,7 @@ Ahora, vemos algunas definiciones.
     En este caso escribimos $a \modulo{b}{m}$.
 \end{definition}
 
-\begin{theorem}[Propiedades de Congrencia]
+\begin{theorem.box}{Propiedades de Congrencia}{}
     Sean los enteros $a,b,c,d,m$ con $m \geq 1$.
     \begin{enumerate}
         \item Si $a \modulo{c}{m}$ y $c \modulo{d}{m}$, entonces $a \modulo{d}{m}$.
@@ -22,42 +22,120 @@ Ahora, vemos algunas definiciones.
         \item Si $a \modulo{c}{m}$, entonces $a^n \modulo{c^n}{m}$ para todo entero positivo $n$.
         \item Si $ab \modulo{bc}{m}$, entonces $a \modulo{c}{\frac{m}{d}}$ donde $d = mcd(b,m)$.
     \end{enumerate}
-\end{theorem}
+\end{theorem.box}
 
-\begin{theorem}[Pequeño teorema de Fermat]
+\begin{example}
+    Hallar el resto cuando $6^{1987}$ es dividido por 37.
+\end{example}
+\begin{solution}
+    Como $6^2 = 36 = 37 - 1$ es claro que $6^2 \modulo{-1}{37}$.
+    Asi al considerar $6^{1987} = 6\cdot 6^{1986} = 6\cdot (6^2)^{993}$ tenemos que $6^{1987} \equiv 6(-1)^{993} \equiv -6 \modulo{31}{37}$.
+    Por lo cual, el resto de la división de $6^{1987}$ por 37 es 31.
+\end{solution}
+
+\begin{theorem.box}{Pequeño teorema de Fermat}{}
     Si $p$ es primo y $a$ es un entero primo relativo con $p$, entonces $a^{p - 1} \modulo{1}{p}$.
-\end{theorem}
+\end{theorem.box}
 
-\begin{theorem}[Teorema de Euler]
+\begin{theorem.box}{Teorema de Euler}{}
     Si $a$ y $n$ son dos enteros positivos, entonces
     \[
         a^{\varphi(n)} \modulo{1}{n}.
     \]
     Donde $\varphi(n)$ representa\footnote{Se conoce a $\varphi(x)$ como la función phi de Euler.} la cantidad de primos relativos menores a $n$.
-\end{theorem}
+\end{theorem.box}
 
 Es claro que el teorema de Fermat es un caso concreto del teorema de Euler, puesto que un primo $p$ tiene exactamente
 $(p - 1)$ primos relativos, por la propia definición de números primos, el resultado es evidente.
 
-De estas definiciones y teoremas se obtienen los siguientes resultados.
+De estas definiciones y teoremas se obtienen los restos cuadráticos (o de potencia $n$) respecto a un módulo.
 \begin{multicols}{2}
     \begin{itemize}
         \item $x^2 \modulo{0,1}{3}$
         \item $x^2 \modulo{0,1}{4}$
+        \item $x^2 \modulo{0,\pm 1}{5}$
         \item $x^2 \modulo{0,1,4}{8}$
         \item $x^2 \modulo{0,1,4,9}{16}$
         \item $x^3 \modulo{0,\pm 1}{9}$
+        \item $x^3 \modulo{0,\pm 1}{7}$
         \item $x^4 \modulo{0,1}{16}$
         \item $x^5 \modulo{0,\pm 1}{11}$
     \end{itemize}
 \end{multicols}
-Estos resultados pueden ser probados fácilmente, algunos son resultados inmediatos de teoremas como Fermat o Euler.
+Estos restos pueden ser probados fácilmente, algunos son resultados inmediatos de teoremas como Fermat o Euler.
 O bien, se puede considerar el conjunto de residuos de cada módulo y luego investigar el comportamiento de las potencias.
-En cualquier caso, se deja al lector el ejercicios de probar estos resultados.
+Veamos un ejemplo.
+
+\begin{example}
+    Probar que para todo entero $x$ se tiene $x^2 \modulo{0,1}{4}$.
+\end{example}
+\begin{solution}
+    Cuando $x = 2x_1$, entonces $x^2 = 4x_1^2 \modulo{0}{4}$.
+    Ahora, es claro que $\varphi(4) = 2$, aplicando Euler tenemos $x^2 \modulo{1}{4}$.
+\end{solution}
+
+Se deja al lector el ejercicio de probar los demás resultados.
+
+\begin{example}
+    Hallar todos los enteros $x,y$ tal que $15x^2 - 7y^2 = 9$.
+\end{example}
+\begin{solution}[1]
+    Analizando la ecuación en módulo 3 tenemos que $-7y^2 \modulo{0}{3}$, es claro que $y$ es múltiplo de 3, es decir $y = 3y_1$.
+    Por tanto,
+    \[
+        15x^2 - 7(9y_1^2) = 9 \iff 5x^2 - 7(3y_1^2) = 3
+    \]
+    donde en módulo 3 obtenemos que $x$ también es múltiplo 3, es decir $x = 3x_1$.
+    Esto es,
+    \[
+        5(9x_1^2) - 7(3y_1^2) = 3 \iff 5(3x_1^2) - 7y_1^2 = 1 \iff 15x_1^2 - 7y_1^2 = 1.
+    \]
+    Al analizar la última ecuación en módulo 3 obtenemos que $y_1^2 \modulo{-1}{3}$, lo cual no es resto cuadrático en módulo 3.
+    Luego, la ecuación no tiene soluciones.
+\end{solution}
+
+\begin{solution}[2]
+    Analizando en módulo 5 tenemos que $-7y^2 \modulo{1}{5}$ por lo cual\footnote{¿Podés justificar por qué?} $y^2 \modulo{3}{5}$,
+    este resto no es posible en módulo 5.
+    Luego, la ecuación no tiene soluciones enteras.
+\end{solution}
+
 
 \subsection{Ejercicios y problemas}
 
 Ejercicios y problemas para el autoestudio.
+
+\begin{exercise}
+    Demostrar que 7 divide a $3^{2n + 1} + 2^{n + 2}$ para todo natural $n$.
+\end{exercise}
+
+\begin{exercise}
+    Hallar los restos cuadráticos en módulo 13.
+\end{exercise}
+
+\begin{exercise}
+    Probar que no existen enteros positivos $a,b$ tales que $a^2 - 3b^2 = 8$.
+\end{exercise}
+
+\begin{exercise}
+    ¿Existen enteros positivos $x,y$ tal que $x^3 = 2^y + 15$?
+\end{exercise}
+
+\begin{exercise}
+    Probar que la ecuación $x^2 + 3xy - 2y^2 = 122$ no tiene soluciones enteras
+\end{exercise}
+
+\begin{exercise}
+    Demostrar que la ecuación $x^2 - 7y = 3$ no tiene soluciones enteras.
+\end{exercise}
+
+\begin{exercise}
+    Demostrar que no hay enteros para los cuales $800000007 = x^2 + y^2 + z^2$.
+\end{exercise}
+
+\begin{exercise}
+    Hallar las soluciones enteras de la ecuación $x^2 - 5y^2 = 2$.
+\end{exercise}
 
 \begin{exercise}
     Si se cumple que $n \modulo{4}{9}$, probar que la ecuación $x^3 + y^3 + z^3 = n$ no tiene soluciones enteras.
@@ -65,6 +143,10 @@ Ejercicios y problemas para el autoestudio.
 
 \begin{exercise}
     Probar que la ecuación $(x + 1)^2 + (x + 2)^2 + \cdots + (x + 2001)^2 = y^2$ no es soluble en enteros $x,y$.
+\end{exercise}
+
+\begin{exercise}
+    Hallar las soluciones de enteros tal que $a^3 + 2b^3 + 4c^3 = 9d^3$.
 \end{exercise}
 
 \begin{exercise}
@@ -91,10 +173,10 @@ Ejercicios y problemas para el autoestudio.
 \end{exercise}
 
 \begin{exercise}
-    Si $n$ es un entero positivo tal que la ecuación $x^3 - 3xy^2 + y^3 = n$ tiene tres soluciones enteras $(x,y)$.
-    Probar que la ecuación es insoluble cuando $n = 2891$.
+    Determinar las posibles soluciones enteras no negativas $(x_1, x_2, \ldots, x_{14})$ de la ecuación $x_1^4 + x_2^4 + \cdots + x_{14}^4 = 15999$.
 \end{exercise}
 
 \begin{exercise}
-    Determinar las posibles soluciones enteras no negativas $(x_1, x_2, \ldots, x_{14})$ de la ecuación $x_1^4 + x_2^4 + \cdots + x_{14}^4 = 15999$.
+    Si $n$ es un entero positivo tal que la ecuación $x^3 - 3xy^2 + y^3 = n$ tiene tres soluciones enteras $(x,y)$.
+    Probar que la ecuación es insoluble cuando $n = 2891$.
 \end{exercise}
