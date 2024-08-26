@@ -1,6 +1,32 @@
 \section{Desarrollo}
 
+\subsection{Congruencia en entero}
+Veamos algunas definiciones importantes.
+\begin{definition}[Divisibilidad]
+    Si $a$ y $b$ son enteros, se dice que $a$ divide a $b$ o que $b$ es múltiplo de $a$ si $b = aq$ para algún entero $q$,
+    y se denota por $a \mid b$.
+\end{definition}
+
+\begin{definition}[Congruencias]
+    Dados dos enteros $a$, $b$ y un entero positivo $m$, decimos que $a$ es congruente con $b$ módulo $m$ si $(a - b)$ es múltiplo de $m$.
+    En este caso escribimos $a \modulo{b}{m}$.
+\end{definition}
+
+\begin{theorem}[Propiedades de Congrencia]
+    Sean los enteros $a,b,c,d,m$ con $m \geq 1$.
+    \begin{enumerate}
+        \item Si $a \modulo{c}{m}$ y $c \modulo{d}{m}$, entonces $a \modulo{d}{m}$.
+        \item Si $a \modulo{c}{m}$ y $b \modulo{d}{m}$, entonces $ab \modulo{cd}{m}$.
+        \item Si $a \modulo{c}{m}$, entonces $a^n \modulo{c^n}{m}$ para todo entero positivo $n$.
+        \item Si $ab \modulo{bc}{m}$, entonces $a \modulo{c}{\frac{m}{(b,m)}}$ donde $(b,m)$ denota el máximo común divisor de $b$ y $m$.
+    \end{enumerate}
+\end{theorem}
+
+\begin{theorem}[Pequeño teorema de Fermat]
+    Si $p$ es primo y $a$ es un entero primo relativo con $p$, entonces $a^{p - 1} \modulo{1}{p}$.
+\end{theorem}
+
+
 
 \subsection{Ejercicios y problemas}
-
 Ejercicios y problemas para el autoestudio.

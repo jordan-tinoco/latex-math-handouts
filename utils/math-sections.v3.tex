@@ -22,28 +22,26 @@
 }
 
 
-\newtcbtheorem[use counter*= theorem, number within=section]{box.theorem}{Teorema}
+\newtcbtheorem[use counter*= theorem, number within=section]{theorem.box}{Teorema}
 {
     enhanced,
-    frame empty,
-    interior empty,
     coltitle = black,
     colbacktitle = gray!15!white,
-    fonttitle = \small\bfseries,
-    extras broken = {frame empty, interior empty},
-    borderline = {0.3mm}{0mm}{black},
+    colback = white,
+    fonttitle = \bfseries,
     breakable = true,
-    bottom = 0.5mm,         % Reduce el margen inferior
-    left = 2mm,           % Reduce el margen izquierdo
-    right = 2mm,          % Reduce el margen derecho,
-    top = 3mm,
-    before skip = 3.5mm,
-    attach boxed title to top left = {yshift = -3mm, xshift = 2mm},
-    boxed title style = {boxrule = 0mm, borderline = {0.2mm}{0mm}{black}},
-    varwidth boxed title,
-    separator sign none, description delimiters parenthesis,
-    description font=\bfseries,
-    terminator sign={.\hspace{1mm}}
+    separator sign none,
+    description delimiters parenthesis,
+    top=0mm,
+    right=0mm,
+    bottom=0mm,
+    terminator sign={.},
+    colframe=black,
+    boxrule=0pt,
+    leftrule=2pt,
+    left=1mm,
+    arc = 1.5pt,
+    outer arc = 1.5pt,
 }
 {t}
 
@@ -111,3 +109,27 @@
     terminator sign={.\hspace{1mm}}
 }
 {t}
+
+\newtcbtheorem[number within=section]{definition.box}{Definición}
+{
+    enhanced,
+    coltitle = black,
+    colback = white,
+    fonttitle = \bfseries,
+    breakable = true,
+    attach title to upper,
+    separator sign none,
+    description delimiters parenthesis,
+    top = 0mm,
+    right = 0mm,
+    bottom=0mm,
+    description font=\bfseries,
+    terminator sign={:\hspace{2mm}},
+    colframe=black,
+    boxrule=0pt,
+    leftrule=2pt,
+    left=1mm,
+    arc = 0pt,
+    outer arc = 0pt,
+}
+{d}
