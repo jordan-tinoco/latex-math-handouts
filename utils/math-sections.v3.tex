@@ -6,9 +6,17 @@
 \newtheorem{theorem}{Teorema}[section]
 \newtheorem{problem}{Problema}[section]
 \newtheorem{property}{Propiedad}[section]
-\newtheorem{exercise}{Ejercicio}[section]
+\newtheorem{exercise}{Ejercicio}
 \newtheorem{corollary}{Corolario}[section]
 \newtheorem{definition}{Definición}[section]
+
+
+\newcounter{activitycounter}
+\NewDocumentEnvironment{activity}{O{} O{} +b}
+{
+    \stepcounter{activitycounter}
+    \textbf{Act. \theactivitycounter}\ \textbf{[#1]}\textbf{[#2]}.\hspace{2mm}#3
+}{}
 
 %Without numeration
 \newtheorem*{note}{Nota}
