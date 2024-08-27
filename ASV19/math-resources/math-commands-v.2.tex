@@ -1,10 +1,19 @@
-\renewcommand{\qedsymbol}{$\blacksquare$}
-\addto\captionsspanish{\renewcommand{\proofname}{\textnormal{\textbf{Demostración}}}}
-\DeclareSymbolFont{yhlargesymbols}{OMX}{yhex}{m}{n}
-\DeclareMathAccent{\wideparen}{\mathord}{yhlargesymbols}{"F3}
-\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+\usepackage{amsthm}
+\usepackage{amssymb}
 
-%\renewcommand{\theenumi}{\alph{enumi}}
+\usepackage{amsmath}
+\allowdisplaybreaks
+
+\renewcommand{\qedsymbol}{$\blacksquare$}
+\renewcommand{\emptyset}{\varnothing}
+\renewcommand{\max}[1]{\ensuremath{máx #1}}
+\newcommand{\fullMod}[2]{\equiv #1 \pmod{#2}}
+\renewcommand{\proofname}{\textnormal{\textbf{Demostración}}}
+
+\newcommand{\abs}[1]{\left\lvert #1 \right\rvert}
+
+\newcommand{\ie}{\ensuremath{\text{i.e.}}}
+\newcommand{\eg}{\ensuremath{\text{e.g.}}}
 
 %Number sets
 \newcommand{\N}{\ensuremath{\mathbb{N}}}
@@ -13,26 +22,17 @@
 \newcommand{\R}{\ensuremath{\mathbb{R}}}
 \newcommand{\C}{\ensuremath{\mathbb{C}}}
 
+\newcommand{\positiveSet}[1]{\ensuremath{#1^+}}
+\newcommand{\myhrule}[1]{\vspace{#1mm}\hrule}
+\newcommand{\negativeSet}[1]{\ensuremath{#1^-}}
+\newcommand{\nonnegativeSet}[1]{\ensuremath{#1^{\geq 0}}}
 
-%Useful commands
+%Useful math commands
 \newcommand{\ds}{\displaystyle}
-\newcommand{\ie}{\ensuremath{\text{i.e.}}}
-\newcommand{\eg}{\ensuremath{\text{e.g.}}}
-\renewcommand{\emptyset}{\varnothing}
-\newcommand{\fullMod}[2]{\equiv #1 \pmod{#2}}
+\newcommand{\invers}[1]{\frac{1}{#1}}
+\newcommand{\inversD}[1]{\ensuremath{\dfrac{1}{#1}}}
 \newcommand{\mcd}[2]{\ensuremath{mcd(#1, #2)}}
 \newcommand{\mcm}[2]{\ensuremath{mcm(#1, #2)}}
-
-%Enviroments
-\newenvironment{solution}[1][]
-{
-    \ifstrempty{#1}
-    {
-        \begin{proof}[\textnormal{\textbf{Solución}}]
-    }
-    {
-        \begin{proof}[\textnormal{\textbf{Solución #1}}]
-    }
-    }{
-    \end{proof}
-}
+\newcommand{\refTheo}[1]{\textbf{Teorema #1}}
+\newcommand{\refDef}[1]{\textbf{Definición #1}}
+\newcommand{\ddotsr}{\ds\cdot^{\ds\cdot^{\ds\cdot}}}

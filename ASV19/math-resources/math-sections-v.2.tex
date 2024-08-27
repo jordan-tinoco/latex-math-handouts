@@ -1,148 +1,46 @@
+\usepackage{ifthen}
+\usepackage{tcolorbox}
+\usepackage{varwidth}
+
+\tcbuselibrary{theorems}
+\tcbuselibrary{breakable}
+\tcbuselibrary{skins}
+
 \theoremstyle{definition}
 
-%With section
 \newtheorem{counter}{Contador}[section]
-%\newtheorem{lemma}{Lema}[section]
-%\newtheorem{proposition}{Proposición}[section]
 \newtheorem{problem}{Problema}[section]
-%\newtheorem{property}{Propiedad}[section]
-%\newtheorem{exercise}{Ejercicio}[section]
 \newtheorem{corollary}{Corolario}[chapter]
-
-%Without numeration
+\newtheorem{example}{Ejemplo}[chapter]
+\newtheorem{definition}{Definición}[chapter]
+\newtheorem{remark}{Observación}
 \newtheorem*{note}{Nota}
 
-
-%Text Color Box styles
-
-\newtheorem{theorem.1}{Teorema}[chapter]
-\newtcbtheorem[auto counter]{theorem}{Teorema}
+\newenvironment{solution}[1][]
 {
-    enhanced,
-    frame empty,
-    interior empty,
-    coltitle = black,
-    colbacktitle = gray!15!white,
-    fonttitle = \bfseries,
-    extras broken = {frame empty, interior empty},
-    borderline = {0.3mm}{0mm}{black},
-    breakable = true,
-    top = 4mm,
-    before skip = 3.5mm,
-    attach boxed title to top left = {yshift = -3mm, xshift = 3mm},
-    boxed title style = {boxrule = 0mm, borderline = {0.1mm}{0mm}{black}},
-    varwidth boxed title,
-    separator sign none, description delimiters parenthesis,
-    description font=\bfseries,
-    terminator sign={.\hspace{1mm}}
-}
-{t}
-
-\newtheorem{example}{Ejemplo}[chapter]
-\newtcbtheorem[number within=chapter]{example.1}{Ejemplo}
-{
-    enhanced,
-    frame empty,
-    interior empty,
-    coltitle = black,
-    colback = white,
-    colbacktitle = gray!15!white,
-    fonttitle = \bfseries,
-    borderline = {0.2mm}{0mm}{black},
-    breakable = true,
-    before skip = 3.5mm,
-    after skip = 0mm,
-    top = 1mm,
-    bottom = 1mm,
-    left = 1mm,
-    right = 1mm,
-    separator sign none, description delimiters parenthesis,
-    description font=\bfseries,
-    terminator sign={.\hspace{1mm}}
-}
-{e}
-
-
-\newtheorem{definition}{Definición}[chapter]
-\newtcbtheorem[number within=chapter]{definition.1}{Definición}
-{
-    enhanced,
-    frame empty,
-    interior empty,
-    coltitle = black,
-    colbacktitle = gray!15!white,
-    fonttitle = \bfseries,
-    extras broken = {frame empty, interior empty},
-    borderline = {0.3mm}{0mm}{black},
-    breakable = true,
-    top = 4mm,
-    before skip = 3.5mm,
-    attach boxed title to top left = {yshift = -3mm, xshift = 3mm},
-    boxed title style = {boxrule = 0mm, borderline = {0.1mm}{0mm}{black}},
-    varwidth boxed title,
-    separator sign none, description delimiters parenthesis,
-    description font=\bfseries,
-    terminator sign={.\hspace{1mm}}
-}
-{d}
-
-\newtcbtheorem[number within=section]{lemma}{Lema}
-{
-    enhanced,
-    frame empty,
-    interior empty,
-    coltitle = black,
-    colbacktitle = gray!15!white,
-    fonttitle = \bfseries,
-    extras broken = {frame empty, interior empty},
-    borderline = {0.3mm}{0mm}{black},
-    breakable = true,
-    top = 4mm,
-    before skip = 3.5mm,
-    attach boxed title to top left = {yshift = -3mm, xshift = 3mm},
-    boxed title style = {boxrule = 0mm, borderline = {0.1mm}{0mm}{black}},
-    varwidth boxed title,
-    separator sign none, description delimiters parenthesis,
-    description font=\bfseries,
-    terminator sign={.\hspace{1mm}}
-}
-{l}
-
-
-\newtcolorbox{box.tcb}[1][]
-{
-    enhanced,
-    frame empty,
-    interior empty,
-    coltitle=black,
-    colbacktitle=gray!15!white,
-    fonttitle=\bfseries,
-    extras broken = {frame empty, interior empty},
-    borderline = {0.3mm}{0mm}{black},
-    breakable = true,
-    top = 4mm,
-    before skip = 3.5mm,
-    attach boxed title to top left = {yshift = -3mm, xshift = 3mm},
-    title=#1
+    \begin{proof}[\textnormal{\textbf{Solución\ifthenelse{\equal{#1}{}}{}{ #1}}}]
+    }{
+    \end{proof}
 }
 
-
-\newtheorem{remark}{Observación}
-\newtcolorbox[auto counter]{remark.1}[1][]
+\newtcbtheorem[number within=chapter]{theorem}{Teorema}
 {
-    breakable,
-    title = Observación~\thetcbcounter.,
-    colback = white,
-    colbacktitle = gray!15!white,
-    coltitle = black,
-    fonttitle = \bfseries,
-    bottomrule = 0pt,
-    toprule = 0pt,
-    leftrule = 2.5pt,
-    rightrule = 0pt,
-    titlerule = 0pt,
-    arc = 2pt,
-    outer arc = 2pt,
-    colframe = black
-}
-
+    enhanced
+    ,colback = gray!10!white
+    ,frame hidden
+    ,boxrule = 0sp
+    ,borderline west = {2.5pt}{0pt}{black}
+    ,sharp corners
+    ,attach title to upper
+    ,coltitle = black
+    ,fonttitle = \bfseries
+    ,description font = \mdseries
+    ,separator sign none,
+    ,terminator sign={.\hspace{2mm}}
+    ,description delimiters parenthesis,
+    right=1mm,
+    top=0mm,
+    left=1.5mm,
+    bottom=0mm,
+    breakable = true
+}{t}
