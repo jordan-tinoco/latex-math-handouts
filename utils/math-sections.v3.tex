@@ -25,7 +25,7 @@
 \newtcbtheorem[use counter*= theorem, number within=section]{theorem.box}{Teorema}
 {
     enhanced
-    ,colback = gray!10!white
+    ,colback = gray!13!white
     ,frame hidden
     ,boxrule = 0sp
     ,borderline west = {2.5pt}{0pt}{black}
@@ -45,7 +45,31 @@
 }
 {t}
 
-\newtcolorbox[auto counter]{remark.tcb}[1][]
+\newtcbtheorem[number within=section]{definition.box}{Definición}
+{
+    colback = gray!13!white
+    ,coltitle = black
+    ,colframe = white
+    ,boxrule = 0.3mm
+    ,attach title to upper
+    ,fonttitle = \bfseries
+    ,description font = \mdseries
+    ,separator sign none
+    ,terminator sign={.\hspace{2mm}}
+    ,description delimiters parenthesis,
+    right=1mm,
+    top=0mm,
+    left=1mm,
+    bottom=0mm,
+    arc = 3pt,
+    outer arc = 3pt,
+}
+{d}
+
+
+
+
+\newtcolorbox[auto counter]{remark.box}[1][]
 {
     breakable,
     title = Observación~\thetcbcounter.,
@@ -62,23 +86,3 @@
     outer arc = 2pt,
     colframe = black
 }
-
-\newtcbtheorem[number within=section]{definition.box}{Definición}
-{
-    colback = gray!10!white
-    ,colframe = white
-    ,coltitle = black
-    ,boxrule = 0pt
-    ,sharp corners
-    ,attach title to upper
-    ,fonttitle = \bfseries
-    ,description font = \mdseries
-    ,separator sign none
-    ,terminator sign={.\hspace{2mm}}
-    ,description delimiters parenthesis,
-    right=1mm,
-    top=0mm,
-    left=1mm,
-    bottom=0mm,
-}
-{d}
