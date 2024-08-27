@@ -24,24 +24,24 @@
 
 \newtcbtheorem[use counter*= theorem, number within=section]{theorem.box}{Teorema}
 {
-    enhanced,
-    coltitle = black,
-    colbacktitle = gray!15!white,
-    colback = white,
-    fonttitle = \bfseries,
-    breakable = true,
-    separator sign none,
-    description delimiters parenthesis,
+    enhanced
+    ,colback = gray!10!white
+    ,frame hidden
+    ,boxrule = 0sp
+    ,borderline west = {2.5pt}{0pt}{black}
+    ,sharp corners
+    ,attach title to upper
+    ,coltitle = black
+    ,fonttitle = \bfseries
+    ,description font = \mdseries
+    ,separator sign none,
+    ,terminator sign={.\hspace{2mm}}
+    ,description delimiters parenthesis,
+    right=1mm,
     top=0mm,
-    right=0mm,
+    left=1.5mm,
     bottom=0mm,
-    terminator sign={.},
-    colframe=black,
-    boxrule=0pt,
-    leftrule=2pt,
-    left=1mm,
-    arc = 1.5pt,
-    outer arc = 1.5pt,
+    breakable = true
 }
 {t}
 
@@ -112,24 +112,20 @@
 
 \newtcbtheorem[number within=section]{definition.box}{Definición}
 {
-    enhanced,
-    coltitle = black,
-    colback = white,
-    fonttitle = \bfseries,
-    breakable = true,
-    attach title to upper,
-    separator sign none,
-    description delimiters parenthesis,
-    top = 0mm,
-    right = 0mm,
-    bottom=0mm,
-    description font=\bfseries,
-    terminator sign={:\hspace{2mm}},
-    colframe=black,
-    boxrule=0pt,
-    leftrule=2pt,
+    colback = gray!10!white
+    ,colframe = white
+    ,coltitle = black
+    ,boxrule = 0pt
+    ,sharp corners
+    ,attach title to upper
+    ,fonttitle = \bfseries
+    ,description font = \mdseries
+    ,separator sign none
+    ,terminator sign={.\hspace{2mm}}
+    ,description delimiters parenthesis,
+    right=1mm,
+    top=0mm,
     left=1mm,
-    arc = 0pt,
-    outer arc = 0pt,
+    bottom=0mm,
 }
 {d}
