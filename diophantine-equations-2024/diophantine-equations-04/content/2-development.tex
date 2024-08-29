@@ -13,10 +13,10 @@ Ahora, vemos algunas definiciones.
     Dados dos enteros $a$, $b$ y un entero positivo $m$, decimos que $a$ es congruente con $b$ módulo $m$ si $(a - b)$ es múltiplo de $m$.
     En este caso escribimos $a \modulo{b}{m}$.
 \end{definition.box}
-Es decir, tenemos $a \modulo{b}{m} \iff (a - b) \mid m$.
-Con esto, podemos demostrar el siguiente teorema.
+Es decir, tenemos $a \modulo{b}{m} \iff m \mid (a - b)$.
+Con esto, podemos deducir y demostrar el siguiente teorema.
 
-\begin{theorem.box}{Propiedades de Congrencia}{}
+\begin{theorem.box}{Propiedades de Congrencias}{}
     Sean los enteros $a,b,c,d$ y $m \geq 1$.
     \begin{enumerate}
         \item Si $a \modulo{c}{m}$ y $c \modulo{d}{m}$, entonces $a \modulo{d}{m}$.
@@ -90,7 +90,7 @@ Se deja como ejercicio al lector probar los demás restos potenciales.
 \end{solution}
 
 \begin{solution}[2]
-    Analizando en módulo 5 tenemos que $-7y^2 \modulo{1}{5}$ por lo cual\footnote{¿Podés justificar por qué?} $y^2 \modulo{3}{5}$,
+    Analizando en módulo 5 tenemos que $-7y^2 \modulo{1}{5}$ por lo cual\footnote{¿Podés justificar el porqué?} $y^2 \modulo{3}{5}$,
     este resto no es posible en módulo 5.
     Luego, la ecuación no tiene soluciones enteras.
 \end{solution}
@@ -99,10 +99,6 @@ Se deja como ejercicio al lector probar los demás restos potenciales.
 \subsection{Ejercicios y problemas}
 
 Ejercicios y problemas para el autoestudio.
-
-\begin{exercise}
-    Demostrar que 7 divide a $3^{2n + 1} + 2^{n + 2}$ para todo natural $n$.
-\end{exercise}
 
 \begin{exercise}
     Hallar los restos cuadráticos en módulo 13.
@@ -133,7 +129,20 @@ Ejercicios y problemas para el autoestudio.
 \end{exercise}
 
 \begin{exercise}
-    Hallar las soluciones de enteros tal que $a^3 + 2b^3 + 4c^3 = 9d^3$.
+    Hallar las soluciones de enteros positivos tal que $a^3 + 2b^3 + 4c^3 = 9d^3$.
+\end{exercise}
+
+\begin{exercise}
+    Probar que la ecuación $x^3 + 3y^3 + 9z^3 - 9xyz = 0$ solo tiene la solución entera $(x,y,z) = (0,0,0)$.
+\end{exercise}
+
+\begin{exercise}
+    Probar que las ecuaciones
+    \begin{enumerate}
+        \item $6x^3 + 3 = y^6$
+        \item $x^3 + y^3 + 4 = z^3$
+    \end{enumerate}
+    no tiene soluciones para enteros positivos $x,y,z$.
 \end{exercise}
 
 \begin{exercise}
@@ -141,6 +150,18 @@ Ejercicios y problemas para el autoestudio.
     \[
         p^3 - q^5 = (p + q)^2.
     \]
+\end{exercise}
+
+\begin{exercise}
+    Demostrar que 7 divide a $3^{2n + 1} + 2^{n + 2}$ para todo natural $n$.
+\end{exercise}
+
+\begin{exercise}
+    Hallar un número infinito de enteros $n$ tal que $7 \mid 2^n + 27$.
+\end{exercise}
+
+\begin{exercise}
+    Si $r_k = 8^k + 6^k$, hallar el resto de la división de $a_{83}$ entre 49.
 \end{exercise}
 
 \begin{problem}

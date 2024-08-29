@@ -1,47 +1,76 @@
 \newpage
-\section{Notas de clase}
+\section{Plan de clase}
 
 \subsection{¿Qué?}
 
-Mostrar el uso de congruencias en enteros para la solución de ecuaciones diofánticas, dando énfasis a las ecuaciones insolubles
-y como las congruencias nos permiten probarlo.
-También, mostrar como las congruencias dan información de las soluciones, por medio de condiciones que deben cumplirse.
+Mostrar el uso de congruencias en enteros para la solución de ecuaciones diofánticas, dando énfasis en cómo las
+congruencias nos permiten probar que algunas ecuaciones son insolubles
+También, su utilidad para obtener información de las soluciones, por medio de condiciones que deben cumplirse.
 
 \subsection{¿Cómo?}
 
-Problema para motivar el tema.
-\par
-
-\begin{activity}[Ejercicio 3][10 min]
+Problema para motivar el tema.\par
+\begin{activity}[Ejercicio 2][10 min]
     Hallar los enteros positivos $a,b$ tales que $a^2 - 3b^2 = 8$.
-    \textit{Primero dar tiempo para intentar resolverlo por medio de los métodos anteriores y mostrar la dificultad que esto conlleva.
+    \textit{Primero dar tiempo para intentar resolverlo por medio de los métodos factorización, desigualdades y
+        parametrización.
+    Dar énfasis en la dificultad que esto conlleva.
     Para resolverlo, solo basta analizar la ecuación en módulo 3.}
 \end{activity}
 
 Dar una pequeña introducción a congruencias.
-Explicar las congruencias potenciales.
+Explicar qué son las congruencias potenciales.\par
 \begin{activity}[Prop. 6][10 min]
     Probar que para todo entero $x$ se tiene $x^3 \modulo{0,\pm 1}{9}$.
-    \textit{Probarlo utilizando un análisis de cada cubo en módulo 9.}
+    \textit{Probarlo utilizando un análisis de cada cubo en módulo 9.
+    Señalar que aquí no se puede usar los teoremas de Euler o Fermat}
 \end{activity}
 
-\begin{activity}[Ejercicio 2][15 min]
+\begin{activity}[Ejercicio 1][15 min]
     Ejercicio para los estudiantes.
-    Pasar a la pizarra.
+    \textit{Pasar a la pizarra.}
 \end{activity}
 
-\begin{activity}[Ejercicio 8][8 min]
+\begin{activity}[Ejercicio 7][8 min]
     Ejercicio para los estudiantes.
-    Este también se resuelve con un análisis en módulo 3.
+    \textit{Este también se resuelve con un análisis en módulo 3.}
 \end{activity}
 
-\begin{activity}[Ejercicio 9][15 min]
+\begin{activity}[Ejercicio 3][15 min]
     Ejemplo.
-    Se analiza la ecuación en módulo 9, obteniendo $a^3 + 2b^3 + 4c^3 \modulo{0}{9}$ lo cual no es posible porque no se
-    puede formar una combinación 0 y $\pm1$ (que son los restos cúbico módulo 9) de tal manera que se obtenga cero.
+    \textit{Se señala como usar los retos cúbicos, dar una comparación del uso en módulo 9 y en módulo 7.
+    Para resolverlo, solo basta análizar en módulo 7 y notar que las potencias de 2 tienen un patron de 1, 2 y 4 en módulo
+    7, lo cual hace imposible que $x^3$ sea resto cúbico en módulo 7. Luego, no hay soluciones.}
+\end{activity}
+
+\begin{activity}[Ejercicio 8][10 min]
+    Ejercicio para los estudiantes.
+    \textit{Se analiza la ecuación en módulo 9, obteniendo $a^3 + 2b^3 + 4c^3 \modulo{0}{9}$ lo cual no es posible porque no se
+    puede formar una combinación con 0, -1 y 1 (que son los restos cúbico módulo 9) de tal manera que se obtenga cero.}
 \end{activity}
 
 \begin{activity}[Problema 1][20 min]
     Ejemplo.
-    Mostrar como se involucran varios conocimientos  para lograr resolverlo.
+    \textit{Se hace la sustitución $x = w - 49$, con lo cual la ecuación se reduce a una cuadrática con ciertos coeficientes.
+    Notar que la ecuación debe ser múltiplo de 3 y por tanto múltiplo de una potencia de 3, luego señalar que una
+    parte de la ecuación no cumple esto, por tanto, no hay soluciones.}
 \end{activity}
+
+\begin{activity}[Ejercicio 9][8 min]
+    Ejercicio para los estudiantes (para finalizar la clase).
+    \textit{Se resuelve con un análisis en módulo 9.}
+\end{activity}
+
+
+\subsection{Comentarios}
+
+Preguntas claves: ¿me entendieron?
+¿me salté algún tema?
+¿se dio tiempo suficiente para pensar los problemas?
+¿participaron?
+¿problemas muy fáciles o muy difíciles, demasiados o muy pocos?
+¿mis explicaciones/ejemplos fueron suficientes o buenos?
+
+\foreach \x in {1,...,20}{
+    \myhrule{8.5}
+}

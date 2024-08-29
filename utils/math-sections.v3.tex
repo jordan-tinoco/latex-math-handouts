@@ -15,7 +15,8 @@
 \NewDocumentEnvironment{activity}{O{} O{} +b}
 {
     \stepcounter{activitycounter}
-    \textbf{Act. \theactivitycounter}\ \textbf{[#1]}\textbf{[#2]}.\hspace{2mm}#3
+    \textbf{Act. \theactivitycounter}\ \textbf{[#1]}\textbf{[#2]}.\hspace{2mm}#3\par
+    \smallskip
 }{}
 
 %Without numeration
@@ -33,11 +34,10 @@
 \newtcbtheorem[use counter*= theorem, number within=section]{theorem.box}{Teorema}
 {
     enhanced
-    ,colback = gray!13!white
-    ,frame hidden
-    ,boxrule = 0sp
+    ,colback = orange!23!white
+    ,boxrule = 0.3mm
+    ,colframe = white
     ,borderline west = {2.5pt}{0pt}{black}
-    ,sharp corners
     ,attach title to upper
     ,coltitle = black
     ,fonttitle = \bfseries
@@ -49,13 +49,15 @@
     top=0mm,
     left=1.5mm,
     bottom=0mm,
-    breakable = true
+    breakable = true,
+    arc = 3pt,
+    outer arc = 3pt
 }
 {t}
 
 \newtcbtheorem[number within=section]{definition.box}{Definición}
 {
-    colback = gray!13!white
+    colback = teal!16!white
     ,coltitle = black
     ,colframe = white
     ,boxrule = 0.3mm
