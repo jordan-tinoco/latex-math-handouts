@@ -9,6 +9,8 @@
 \newtheorem{exercise}{Ejercicio}
 \newtheorem{corollary}{Corolario}[section]
 \newtheorem{definition}{Definición}[section]
+\newtheorem{axiom}{Axioma}[section]
+\newtheorem{principle}{principio}[section]
 
 
 \newcounter{activitycounter}
@@ -35,9 +37,9 @@
 {
     enhanced
     ,colback = orange!23!white
-    ,boxrule = 0.3mm
-    ,colframe = white
-    ,borderline west = {2.5pt}{0pt}{black}
+    ,boxrule = 0.1mm
+    ,colframe = gray
+    ,borderline west = {2.6pt}{0pt}{black}
     ,attach title to upper
     ,coltitle = black
     ,fonttitle = \bfseries
@@ -89,10 +91,41 @@
     fonttitle = \bfseries,
     bottomrule = 0pt,
     toprule = 0pt,
-    leftrule = 2.5pt,
+    leftrule = 0pt,
     rightrule = 0pt,
     titlerule = 0pt,
     arc = 2pt,
     outer arc = 2pt,
-    colframe = black
+    colframe = black,
+    right=1mm,
+    top=0mm,
+    left=1mm,
+    bottom=0mm,
 }
+
+
+
+
+\newtcbtheorem[use counter*= principle, number within=section]{principle.box}{Principio}
+{
+    enhanced
+    ,colback = orange!23!white
+    ,boxrule = 0.1mm
+    ,colframe = gray
+    ,borderline west = {2.5pt}{0pt}{black}
+    ,attach title to upper
+    ,coltitle = black
+    ,fonttitle = \bfseries
+    ,description font = \mdseries
+    ,separator sign none,
+    ,terminator sign={.\hspace{2mm}}
+    ,description delimiters parenthesis,
+    right=1mm,
+    top=0mm,
+    left=1.5mm,
+    bottom=0mm,
+    breakable = true,
+    arc = 3pt,
+    outer arc = 3pt
+}
+{t}
