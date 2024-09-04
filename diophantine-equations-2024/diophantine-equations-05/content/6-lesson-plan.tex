@@ -3,14 +3,76 @@
 
 \subsection{¿Qué?}
 
-Mostrar el uso de los principios de Inducción Matemática y Descenso al infinito de Fermat (DIF).
-Dando a conocer en qué consiste el DIF y su utilizad en las ecuaciones diofánticas insolubles.
-Dar un repaso del principio de Inducción y mostra cómo este implica otros principios como el DIF y el buen orden, asi
-como su equivalencia.
-
-Si $n_0$ es el menor entero positivo para el cual $P(n_0)$ es cierto, entonces $P(n)$ es falso para todo $n<n_0$.
+Dar a conocer los principios de Inducción Matemática y Descenso al infinito de Fermat, además de mencionar el principio del Buen orden.
+Dando énfasis en el uso de estos principios para la solución de ecuaciones diofánticas, tanto solubles como insolubles.
+Mostrar ejemplos concretos de estos principios.
 
 \subsection{¿Cómo?}
+
+\begin{activity}[*][8 min]
+    Explicar inducción simple, utilizando la analogía de dóminos.
+    Hacer énfasis en el vocabulario y en el objectivo principal de la inducción ``El gran problema de la matemática es acceder al infinito con recursos finitos''.
+\end{activity}
+
+\begin{activity}[*][10 min]
+    Explicar inducción fuerte, explicar que un paso inductivo puede dar ``saltos'' [$P(n) \implies P(n + k)$] o
+    depender de uno o más pasos anteriores [$\left(P(1) \land P(2) \land \ldots \land P(n)\right) \implies P(n + 1)$].
+\end{activity}
+
+\begin{activity}[Ejemplo 1.1][15 min]
+    Leer el ejemplo 1.1, escribir y explicar la solución del ejemplo, además de hacer énfasis en cómo se aplica el vocabulario.
+    Comentar que la tésis de inducción generalmente se obtiene del enunciado, que el paso inductivo es muchas veces lo
+    más complicado en la inducción y en ciertos problemas hay que buscar el paso base.
+    Claramente, para problemas más difíciles esto tiene más complejidad.
+\end{activity}
+
+\begin{activity}[Ejercicio 1][10 min]
+    Dar unos 3 minutos de intento y luego pasar a la pizarra, que todos los estudiantes participen.
+    \par\hspace{5mm}\textbf{Solución.}
+    Notar que a partir de $n = 20$ la propiedad se empieza a cumplir, se hacen los primeros 5 o 6 casos que cumple y
+    luego es análogo al ejemplo 1.1.
+\end{activity}
+
+\begin{activity}[*][10 min]
+    Explicar el principio del buen orden, dar los resultados importantes y mostrar un ejemplo con los conjuntos del ejercicio 7 (1, 2, 3).
+\end{activity}
+
+\begin{activity}[*][15 min]
+    Explicar descenso infinito, utilizar la analogía de una escalera o bien la analogía de una reflexión entre espejos
+    hacía el infinito.
+    Mostrar la similitud con la inducción.
+    Mostrar las variantes.
+\end{activity}
+
+\begin{activity}[Ejemplo 1.2][10 min]
+    Leer el ejemplo, escribir y explicar la solución por contradicción.
+    Hacer énfasis en como se llega a una situación absurda (justificada por el descenso infinito) cuando se asume que existe una solución.
+    Además, resolver el ejercicio por medio de un argumento de buen order.
+    \par\hspace{5mm}\textbf{Solución 2.} Asumir que existe una solución mínima en el conjunto de soluciones, la cual
+    produce otra solución mínima contradiciendo la minimalidad de la primera, luego no hay soluciones.
+\end{activity}
+
+\begin{activity}[Ejercicio 2][10 min]
+    Se nota que las variables deben ser pares, luego una solución implicaría otra solución más pequeña y asi sucesivamente.
+    Se puede usar módulo 2.
+\end{activity}
+
+\begin{activity}[Ejercico 3][10 min]
+    Usando módulo 3, notamos que $a,b$ son múltiplos de 3, luego una solución implicaría otra solución más pequeña y asi sucesivamente.
+\end{activity}
+
+\begin{activity}[Ejercico 4][10 min]
+    Utilizar módulo 3 para obtener que dos de las variables son múltiplos de 3.
+\end{activity}
+
+\begin{activity}[Ejercico 5][10 min]
+    Utilizar módulo 4 para obtener que dos de las variables son múltiplos de 4.
+\end{activity}
+
+\textbf{Definición de buen orden con simbología.}
+\[
+    A \subseteq \N \land A \neq \emptyset \implies \exists m \in A \ \backslash \ \forall n \in A,\ m \leq n.
+\]
 
 
 \newpage
@@ -18,12 +80,11 @@ Si $n_0$ es el menor entero positivo para el cual $P(n_0)$ es cierto, entonces $
 
 Preguntas claves: ¿me entendieron?
 ¿me salté algún tema?
-¿se dio tiempo suficiente para pensar los problemas?
+¿di tiempo suficiente para pensar los problemas?
 ¿participaron?
 ¿problemas muy fáciles o muy difíciles, demasiados o muy pocos?
-¿mis explicaciones/ejemplos fueron suficientes o buenos?
+¿las explicaciones/ejemplos fueron suficientes y buenos?
 
-\foreach \x in {1,...,24}{
-    \myhrule{8.5}
+\foreach \x in {1,...,25}{
+    \myhrule{8.4}
 }
-
