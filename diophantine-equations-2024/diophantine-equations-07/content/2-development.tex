@@ -1,64 +1,42 @@
 \section{Desarrollo}
 Antes de empezar recordemos lo siguiente.
 
-\begin{definition.box}{El máximo común divisor}{}
-    de dos enteros positivos $a$ y $b$ es el mayor entero positivo que divide a ambos y podemos denotarlo como $mcd(a,b)$ o simplemente como $(a,b)$.
+\begin{definition.box}{Máximo divisor común}{}
+    Dados $a,b \in \Z^{\neq 0}$, el máximo $d \in \positiveSet{\Z}$ tal que $d \mid a$ y $d \mid b$ es el máximo divisor común,
+    y lo denotamos por $d = \mcd a b.$
 \end{definition.box}
 
-\begin{definition.box}{El Algoritmo de la división}{}
-    tomando $a\geq b>0$, $a = bq+r$, donde $r$ es conocido como residuo y satisface $0\leq r <b$.
+\begin{definition.box}{}{}
+    Dados $a,b \in \Z^{\neq 0}$, si $\mcd a b = 1$, entonces diremos que $a$ y $b$ son coprimos, primos relativos o primos entre sí.
 \end{definition.box}
 
-Ahora, observemos que si $d \mid a$ y $d\mid b$ entonces $d\mid r$.
-De igual forma, si $d \mid r$ y $d \mid b$ entonces $d\mid a$.
-Esto implica que el conjunto de divisores comunes de $a$ y $b$ es igual al conjunto de divisores comunes de $b$ y $r$.
-En particular $(a,b)=(b,r).$
-Sean $a$ y $b$ dos enteros positivos tal que $(a,b) = 1$ entonces diremos que $a$ y $b$ son coprimos o primos entre sí.
+\begin{theorem.box}{Algoritmo de la división}{}
+    Dados $a, b \in \Z$ con $b \neq 0$, existen $k,r \in \Z$ tales que $a = kb + r$ con $0 \leq r < |b|$, donde $k,r$ son únicos.
+\end{theorem.box}
 
-\begin{theorem.box}{}{} \label{tLinearEquation}
-Sean $a,b,c \in \Z$ con $a,b \neq 0$ la ecuación $ax + by = c$ cumple lo siguiente.
+\begin{theorem.box}{}{}
+Sean $a,b,c \in \Z$ con $a,b \neq 0$, la ecuación $ax + by = c$;
 \begin{enumerate}
-    \item La ecuación tiene solución si y sólo si $d = mcd(a,b)$ divide a $c$.
-    Aún más, dicha ecuación es equivalente a otra donde los coeficientes son coprimos.
-    \item Si $(x_0,y_0)$ es una solución particular, entonces todas las soluciones enteras son de la forma
+    \item tiene solución si y solo si $\mcd a b \mid c$, además, es equivalente a otra ecuación de coeficientes coprimos,
+    \item si $(x_0,y_0)$ es una solución particular, entonces la solución general es
     \[
         x = x_0+\frac{b}{d}t, \quad y = y_0 -\frac{a}{d}t, \quad t \in \Z.
     \]
-    \item Si $c = mcd(a,b)$ y $|a|$ y $|b|$ es diferente de 1, entonces una solución particular $(x_0,y_0)$ para la solución general.
-    Puede ser encontrada tal que $|x_0| < |b|$ y $|y_0| < |a|$.
+    \item si $c = \mcd a b$ y $|a|, |b| \neq 1$, entonces una solución particular $(x_0,y_0)$ cumple que $|x_0| < |b|$ y $|y_0| < |a|$.
 \end{enumerate}
 \end{theorem.box}
 
 \begin{example}
-    ¿Tiene la ecuación $24x+18y=12$ soluciones enteras?
+    Resolver la ecuación $5x - 3y = 52$ en enteros positivos.
 \end{example}
 \begin{solution}
-    Por supuesto, ya que $(24,18) = 6$ y $6 \mid 12$, por el teorema anterior podemos afirmar que sí tiene soluciones enteras.
-\end{solution}
-
-En notación de congruencias, el problema de resolver una ecuación lineal de dos incógnitas equivale a resolver la congruencia:
-\[
-    ax \modulo{c}{b}
-\]
-ya que si $ax \modulo{c}{b}$ entonces $ax-c=-by$.
-O sea $ax+by = c$.
-
-\begin{example}
-    Resolver la ecuación $5x-3y=52$ en enteros positivos.
-\end{example}
-\begin{solution}
-    Primero, verificamos que la ecuación tiene soluciones enteras.
-    Como 5 y 3 son coprimos o que $mcd(5,3)=1$ y $1\mid52$, entonces por el teorema anterior sí hay soluciones enteras.
-    Ahora, buscamos un múltiplo de 3 que, cuando se sume a 52, dé un número divisible por 5.
-    Esto es
+    Primero, como $\mcd 5 3 = 1$ y $1 \mid 52$, entonces la ecuación tiene soluciones enteras.
+    Ahora, analizando en módulo 5 tenemos que
     \[
-        52+3y \modulo{0}{5} \implies 2-2y \modulo{0}{5} \implies y \modulo{1}{5}
+        - 3y \modulo{52}{5} \implies 2y \modulo{2}{5} \implies y \modulo{1}{5}.
     \]
-    Notamos que una solución a esta congruencia es, efectivamente, $y = 1$.
-    Y que $52 + 3\cdot 1 = 55 = 5\cdot 11$ es, en efecto, un múltiplo de 5.
-    De donde es fácil ver que la ecuación tiene como solución para $x$ a 11.
-
-    Ya con la solución $(x_0,y_0)=(11,1)$ y con teorema anterior llegamos a que
+    Claramente $y = 1$ es solución a esta congruencia, sustituyendo en la ecuación original $5x - 3\cdot 1 = 52 \iff 5x = 55$
+    por lo cual, la ecuación tiene una solución $(11, 1)$, luego con la solución $(x_0,y_0)=(11,1)$ llegamos a
     \[
         (x,y) = (11+3t,1-5t), \mbox{ donde } t\in \Z.\qedhere
     \]
@@ -68,47 +46,53 @@ O sea $ax+by = c$.
     Resolver la siguiente ecuación $8c+7p=100$.
 \end{example}
 \begin{solution}
-    Análogamente al ejemplo anterior, verificamos que la ecuación tiene soluciones enteras.
-    Como 8 y 7 son coprimos claramente sí hay soluciones enteras.
-    Ahora, buscamos un múltiplo de 7 que, cuando se reste a 100, dé un número divisible por 8.
-    Esto es
+    Claramente la ecuación tiene soluciones enteras, analizando en módulo 8,
     \[
-        100-7p \modulo{0}{8} \implies 4+p \modulo{0}{8} \implies p \modulo{-4}{8}
+        7p \modulo{100}{8} \implies -p \modulo{4}{8} \implies p \modulo{-4}{8} \implies p \modulo{4}{8}.
     \]
-    Y rápidamente, podemos decir que $p = -4$ es una solución para dicha congruencia.
-    Al sustituirlo en la ecuación original obtenemos $c=16$.
-    Luego, con la solución $(x_0,y_0)=(16,-4)$ y con anterior llegamos a que
+    Rápidamente, podemos decir que $p = 4$ es una solución para dicha congruencia, sustituyendo en la ecuación obtenemos $c = 9$.
+    Luego, con la solución $(c_0, p_0) = (9, 4)$ tenemos
     \[
-        (c,p) = (16+7t,-4-8t), \mbox{ donde } t\in \Z.\qedhere
+        (c,p) = (9 + 7t, 4 - 8t),\quad \text{con}\ t\in \Z.\qedhere
     \]
 \end{solution}
 
 
+
 \subsection{Aplicando el algoritmo de Euclides}
 
-Usando el algoritmo de euclides podemos resolver ecuaciones lineales de la siguiente forma.
-Dada la ecuación $ax+by=c$ y $d = mcd(a,b)$, entonces:
+\begin{definition.box}{Algoritmo de Euclides}{}
+    Sean $a, b \in \Z^{\neq 0}$, si $a > b$ y se tiene $a = bk + r$ con $0 < r < b$, entonces
+    \[
+        \mcd a b = \mcd b r.
+    \]
+\end{definition.box}
+
+Podemos usar este algoritmo para resolver ecuaciones lineales de una manera iterativa.
+
+Sean $a,b, c \in \Z$ con $a,b \neq 0$ y $d = \mcd a b$, considerando la ecuación
+\[
+    ax + by = c.
+\]
 \begin{enumerate}
-    \item [1.] Obtener $d$, si $d\nmid c$, entonces no hay solución.
-    \item [2.] Si $d \mid c$, dividimos ambos términos de la ecuación por $d$.
-    \item [3.] Consideremos la ecuación $ax+by=c$, tal que $d = 1$. Podemos suponer esto en virtud del paso 2.
+    \item Si $d\nmid c$, entonces no hay solución.
+    \item Si $d \mid c$, entonces se divide la ecuación por $d$.
+    \item Por el paso anterior la ecuación tiene coeficiente coprimos;
     \begin{enumerate}
-        \item Si $a \mid c$, existe $c_0$ tal que $ac_0 = c$. Luego, hay una solución $x = c_0, \quad y = 0$.
-        \item Si $a \nmid c$ podemos suponer que $0 <|a|<|b|$, por el algoritmo de la división
+        \item Si $a \mid c$, entonces $ac_0 = c$, luego $(x,y) = (c_0, 0)$ es solución.
+        \item Si $a \nmid c$, entonces tomamos el menor de $|a|, |b|$ (supongamos que es $|a|$) y obtenemos
         \begin{align*}
-            b = aq_1+r_1, \quad 0<r_1<|a|\\
-            c = aq_2+r_2, \quad 0<r_2<|a|
+            b = aq_1 + r_1,\ \text{con}\ 0<r_1<|a|, && c = aq_2 + r_2,\ \text{con}\ 0 < r_2 < |a|.
         \end{align*}
     \end{enumerate}
-    \item [4.] Si sustituimos estas igualdades en la ecuación original, entonces
-    \begin{align*}
-        ax + (a q_1 + r_1) y &= aq_2 + r_2,\\
-        a(x + q_1 y -q_2) + r_1 y &= r_2,
-    \end{align*}
-    si tomando $z = x + q_1 y - q_2$, entonces la ecuación anterior se transforma en $az+r_1y=r_2$.
+    \item Sustituimos en la ecuación
+    \[
+        ax + (a q_1 + r_1) y = aq_2 + r_2 \iff a(x + q_1 y -q_2) + r_1 y = r_2.
+    \]
+    Si $z = x + q_1 y - q_2$, entonces la ecuación anterior se transforma en $az + r_1 y = r_2$.
     \begin{enumerate}
-        \item Si $r_1 \mid r_2$, caemos en 3.a.
-        \item Si $r_1 \nmid r_2$ caemos en 3.b y continuamos el proceso.
+        \item Si $r_1 \mid r_2$, entonces terminamos con el paso 3.a.
+        \item Si $r_1 \nmid r_2$, entonces vamos al paso 3.b y repetimos el proceso.
     \end{enumerate}
 \end{enumerate}
 
@@ -131,15 +115,6 @@ Dada la ecuación $ax+by=c$ y $d = mcd(a,b)$, entonces:
     \]
 \end{solution}
 
-\begin{example}
-    Resuelva la ecuación diofántica $125x-25y=28.$
-\end{example}
-
-\begin{example}
-    Resuelva la ecuación $69x+123y=3000.$
-\end{example}
-\par\textbf{\textup{Comentario.}} Esta ecuación es un ejemplo perfecto en donde se utiliza la recursividad del método.
-
 Hasta el momento sólo hemos trabajado en ecuaciones lineales de dos variables, pero en realidad la ecuación $ax+by=c$ no es más que un caso particular de la ecuación
 \[
     a_1 x_1 + a_2 x_2 + \ldots + a_n x_n = c,
@@ -147,7 +122,7 @@ Hasta el momento sólo hemos trabajado en ecuaciones lineales de dos variables, 
 donde $a_1, a_2, \dots, a_n,$ y $c$ son coeficientes.
 
 \begin{theorem.box}{}{}
-    La ecuación $a_1 x_1 + a_2 x_2 + \ldots + a_n x_n = c$ tiene solución si y sólo sí $mcd(a_1,a_2,\cdots,a_n) \mid c.$
+    La ecuación $a_1 x_1 + a_2 x_2 + \ldots + a_n x_n = c$ tiene solución si y solo si $\mcd {a_1}{a_2,\cdots,a_n} \mid c.$
 \end{theorem.box}
 
 \begin{example}
@@ -165,7 +140,7 @@ donde $a_1, a_2, \dots, a_n,$ y $c$ son coeficientes.
 \end{solution}
 
 \begin{definition.box}{}{}
-    Sean  $a_1,a_2,\ldots,a_n$ enteros positivos con $mcd(a_1,a_2,\ldots,a_n)=1$ se define a $g(a_1,a_2,\ldots,a_n)$
+    Sean  $a_1,a_2,\ldots,a_n$ enteros positivos con $\mcd{a_1}{a_2,\ldots,a_n} = 1$ se define a $g(a_1,a_2,\ldots,a_n)$
     como el mayor entero positivo $N$ para el cual
     \[
         a_1 x_1 + a_2 x_2 + \ldots + a_n x_n = N,
@@ -176,22 +151,25 @@ El problema de determinar $g(a_1,a_2,\ldots,a_n)$ es conocido como el problema d
 Fue este quien planteó el problema de encontrar la mayor cantidad de dinero que no se puede pagar con monedas de $a_1, a_2,\ldots,a_n$ centavos.
 El ejemplo clásico de este problema es que con monedas de 3 y 5 centavos nunca se podrá llegar a la cantidad de 7 centavos.
 
-\begin{theorem.box}{Sylvester}{}\label{sylvesterTheorem}
-Sean $a, b\in \Z+, (a,b)=1$, entonces $g(a,b)=ab-a-b.$
+\begin{theorem.box}{Sylvester}{}
+Sean $a,b \in \positiveSet{\Z}$, con $\mcd a b = 1$, entonces
+    \[
+        g(a,b) = ab - a - b.
+    \]
 \end{theorem.box}
 
 Para el caso de $n=2$, existe el Teorema de Sylvester el cual nos brinda el valor de $N$
 (rápidamente podemos verificar el ejemplo anterior con 3 y 5),
 pero para $n\geq2$ no se conoce ninguna fórmula explicíta, aunque sí se han encontrado rangos en donde $N$ puede estar.
-Estos caso para $n\geq2$ sobre pasan los objetivos de este escrito, se invita al lector investigar este tema por su cuenta.
+Estos caso para $n\geq2$ sobrepasan los objetivos de este escrito, se invita al lector investigar este tema por su cuenta.
 
-Finalmente por el \textbf{Teorema \ref{sylvesterTheorem}} podemos entender de mejor manera el siguiente teorema.
+Finalmente por con teorema de Sylvester podemos entender de mejor manera el siguiente teorema.
 
 \begin{theorem.box}{Chicken McNugget}{}\label{chickenMcNugget}
-    Sean $a, b\in \Z+;$ $(a,b)=1$, entonces
+    Sean $a, b\in \positiveSet{\Z}$ con $\mcd a b = 1$, se tiene
     \begin{enumerate}
-        \item[1.] $ax+by = n$ es insoluble $\forall x, y \in \mathbb{Z^{+}}$, si $n = ab - a - b.$
-        \item[2.] Si $n > ab - a - b$, entonces la ecuación es soluble.
+        \item Si $n = ab - a - b$, entonces $ax + by = n$ es insoluble $\forall x, y \in \positiveSet{\Z}$.
+        \item Si $n > ab - a - b$, entonces la ecuación es soluble.
     \end{enumerate}
 \end{theorem.box}
 
@@ -204,3 +182,16 @@ cumpla con el \textbf{Teorema \ref{chickenMcNugget}} punto 2.
 \subsection{Ejercicios y problemas}
 
 Ejercicios y problemas para el autoestudio.
+
+\begin{exercise}
+    ¿Tiene la ecuación $24x+18y=12$ soluciones enteras?
+\end{exercise}
+
+\begin{exercise}
+    Resuelva la ecuación diofántica $125x-25y=28.$
+\end{exercise}
+
+\begin{exercise}
+    Resuelva la ecuación $69x+123y=3000.$
+    (ejemplo donde se utiliza la recursividad del método de euclides.)
+\end{exercise}
