@@ -1,1 +1,26 @@
-\section{a}
+\section{Escritura de la solución de un problema}
+
+La resolución de problemas no es más que la aplicación de resultados previos cuya combinación produce la solución buscada. No hay ninguna diferencia en cuanto el rigor lógico: un problema se soluciona aplicando los mismos razonamientos lógicos que se aplicarían en un teorema. Ni tampoco hay ninguna diferencia en cuanto a la escritura; seguimos estando ante un texto matemático. Observemos el siguiente ejemplo (tomado de un enunciado de un examen real).
+
+\begin{problem}
+    Se considera la función f(x) definida por:
+        {  λx
+    f(x) =   e  - λ       si x < 0
+    (x- 1)e- x   si x ≥ 0
+    Hallar el valor de λ para que f sea una función continua.
+\end{problem}
+ \begin{solution}
+     La función f(x) está compuesta de dos trozos. En el trozo correspondiente a (-∞,0), la función está definida como eλx -λ, que es un función continua por ser la suma de una exponencial y una constante. En el intervalo [0,∞) la función es continua por ser el producto del polinomio x-1 y la exponencial e-x. Queda por comprobar la continuidad en el punto de corte, en x = 0. Recurrimos a los límites laterales:
+     Para que la función f(x) sea continua en todo ℝ, se tiene que cumplir 1 - λ = -1, esto es, λ = 2.
+ \end{solution}
+
+Como hemos visto en la solución, aparecen todos los ingredientes de una demostración normal. La única diferencia es que aquí se trata una función particular, pero los mecanismos de razonamiento y las convenciones de escritura son las mismas. El problema se ha resuelto con un análisis por casos:
+
+La función f(x) está compuesta de dos trozos.
+
+Se han justificado la aplicaciones de los resultados, como en el caso de la continuidad en (-∞,0):
+
+En el trozo correspondiente a (-∞,0), la función está definida como eλx - λ,
+que es un funci ón continua por ser la suma de una exponencial y una constante.
+
+o en el caso de la continuidad en x = 0, recurriendo a los límites laterales.

@@ -43,15 +43,56 @@ La consecuencia del teorema 2 consiste en dos enunciados, $p$ divide a $a$ y $p$
 En este ejemplo, la estructura lógica del teorema es más complicada.
 He aquí otro ejemplo de teorema.
 \begin{theorem}
-    Sea $n \geq 1$ un número natural.
-    La siguiente fórmula es cierta para todo n:
+    Sea $n \geq 1$ un natural.
+    La siguiente fórmula es cierta para todo $n$:
     \[
         1 + 2 + \cdots + n = \frac{n(n + 1)}{2}.
     \]
 \end{theorem}
 Aquí la estructura del teorema 3 es
 \begin{center}
-    Si $n\geq 1$ es un número natural,\\ entonces $1 + 2 + \cdots + n = \frac{n(n + 1)}{2}$ es una igualdad cierta.
+    Si $n\geq 1$ es un número natural, entonces\\ $1 + 2 + \cdots + n = \frac{n(n + 1)}{2}$ es una igualdad cierta.
 \end{center}
 a pesar de que en la redacción literal del teorema 3 la palabra “entonces” no aparece.
 En general, la estructura de un teorema es
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{images/Figura-premisas-consecuencia}\label{fig:figure}
+\end{figure}
+Entonces, ¿qué es un razonamiento?
+Un razonamiento es una cadena de argumentos que llevan desde las premisas a la consecuencia.
+El razonamiento es correcto cuando cada argumento es lógicamente correcto.
+Por tanto, si el teorema es de la forma
+\[
+    P \implies Q
+\]
+donde $P$ es la premisa y $Q$ la consecuencia, la demostración es una cadena de argumentos lógicamente correctos que parte de las premisas y acaba en la conclusión, como la siguiente:
+\[
+    P \implies R_1 \implies R_2 \implies \ldots \implies R_k \implies Q
+\]
+donde cada $R_i$ es un razonamiento intermedio.
+Un teorema puede ser demostrado con diferentes pruebas (unas serán más elegantes y simples que otras).
+Veamos la demostración del teorema 1.
+Empezamos por aplicar la definición de divisibilidad a los enteros $a$ y $b$.
+\begin{proof}
+    Como $a$ divide a $b$, entonces existe un entero $k_1$ tal que $b = a \cdot k_1$.
+    Análogamente, como $b$ divide a $c$, existe otro entero $k_2$ tal que $c = b \cdot k_2$.
+    \par\textbf{\small(La siguiente idea es combinar las dos igualdades obtenidas.)}\par
+    Dado que $b = a \cdot k_1$ y $c = b \cdot k_2$, podemos sustituir $b = a\cdot k_1$ en la segunda igualdad:
+    \[
+        c = b \cdot k_2 = a\cdot k_1 \cdot k_2 = a\cdot (k_1 \cdot k_2).
+    \]
+    \textbf{\small(Finalmente, anunciamos la consecuencia del teorema, que es una consecuencia lógica del argumento.)}\par
+    La igualdad $c = a \cdot (k_1 \cdot k_2)$ significa que $a$ divide a $c$.
+    Por tanto, la propiedad de divisibilidad es transitiva.
+\end{proof}
+El símbolo \qedsymbol\ se coloca al final de una prueba para indicar su fin.
+También se emplea el acrónimo QED, que en latín significa “como queríamos demostrar”.
+
+Hay una cuestión a la que los estudiantes tienen que prestar atención: las definiciones.
+Muchos estudiantes escriben demostraciones incorrectas porque no saben o no recuerdan las definiciones.
+Las definiciones son términos que fijan el significado de objetos y propiedades matemáticos.
+Por ejemplo, se define el valor absoluto porque es una función que aparece con suma frecuencia; en este caso, la definición se ha hecho por concisión y comodidad de uso.
+En cambio, la definición de continuidad recoge una propiedad abstracta, el que límite en un punto coincida con el valor de la función.
+Los términos matemáticos tienen significado diferente al que poseen en el lenguaje natural.
+Antes de escribir una prueba es una buena idea revisar las definiciones pertinentes.

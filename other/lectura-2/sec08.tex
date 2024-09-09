@@ -1,1 +1,59 @@
-\section{a}
+\section{Código interno y otras demostraciones mejorables}
+
+
+En esta sección analizaremos un par de demostraciones escritas por alumnos (son totalmente reales). Señalaremos cómo mejorarlas aplicando todo lo desarrollado en este documento hasta ahora, tanto de forma como de contenido.
+
+Teorema 12 Demostrar que hay un número infinito de primos.
+Prueba: Usando el método de reducción al absurdo, es decir, supondremos que hay un número primo, que llamaremos p, que es el último número primo, esto implicaría que habría un número finito de primos y veremos que esto es imposible.
+Suponiendo que p es el número primo más grande y construimos otro número q: q = (2 ⋅ 3 ⋅ 5 ⋅ 7 ⋅… ⋅ p) + 1 que es el resultado de multiplicar todos los números primos hasta el último p; después sumarle 1.
+Evidentemente q no es divisible por ningún primo pues siempre daría como resto 1 luego q es divisible solo por 1 y por sí mismo, es decir, q es primo. Por otra parte q es mayor que p. Luego p no es el mayor número primo. Por tanto no puede existir un número primo que sea el mayor y con esto verificamos la existencia de infinitos números primos.
+
+Analizaremos párrafo por párrafo. Empezamos con el primero:
+Usando el método de reducción al absurdo, es decir, supondremos que hay un número primo, que llamaremos p, que es el último número primo, esto implicaría que habría un número finito de primos y veremos que esto es imposible.
+
+El párrafo tiene que dividirse en frases. Las frases se amontonan unas tras otras separadas por comas; faltan conectores que las unan con sentido.
+Se mezclan los tiempos verbales (supondremos, llamaremos, implicaría, veremos).
+Es incorrecto gramaticalmente empezar con un gerundio y luego continuar con el futuro.
+El párrafo no es conciso porque no es claro. Es breve, pero confuso.
+La muletilla es decir sobra. También se puede decir por reducción al absurdo en lugar de método de reducción al absurdo; aquí método no aporta nada.
+El autor informa al lector del plan de la prueba y esto está bien.
+Para el segundo párrafo:
+Suponiendo que p es el número primo más grande y construimos otro número q: q = (2 ⋅ 3 ⋅ 5 ⋅ 7 ⋅… ⋅ p) + 1 que es el resultado de multiplicar todos los números primos hasta el último p; después sumarle 1.
+
+La conjunción y en la frase Suponiendo que p es el número primo más grande y construimos otro número q es incorrecta; distrae de la lectura.
+Lo normal habría sido poner la fórmula q = (2 ⋅ 3 ⋅ 5 ⋅ 7 ⋅… ⋅ p) + 1 en una línea aparte y centrada.
+El párrafo está mal puntuado; en particular, después de la fórmula para q.
+La última frase después sumarle 1 está incompleta, le falta el verbo. No es una explicación clara para el lector, sino una suerte de orden.
+Para el último párrafo:
+Evidentemente q no es divisible por ningún primo pues siempre daría como resto 1 luego q es divisible solo por 1 y por sí mismo, es decir, q es primo. Por otra parte q es mayor que p. Luego p no es el mayor número primo. Por tanto no puede existir un número primo que sea el mayor y con esto verificamos la existencia de infinitos números primos.
+
+El párrafo está faltamente puntuado. Véase la explicación sobre las oraciones causales y su puntuación en la sección anterior. Las expresiones evidentemente, pues, luego, por otra parte, por tanto llevan coma. Véase la corrección más abajo.
+No hemos verificado que la existencia de infinitos números primos (no los hemos contado), hemos demostrado que hay infinitos. Hay que ser precisos con el lenguaje.
+He aquí una posible reescritura de la prueba de este alumno; hemos seguido en lo posible el espíritu de su prueba (compárese con la prueba dada anteriormente).
+
+Teorema 13 Demostrar que hay un número infinito de primos.
+Prueba (corregida): Probaremos el resultado por reducción al absurdo. Supondremos que hay un número primo, al que llamaremos p, que será el primo más grande. Esto implica que hay un número finito de primos. Veremos que esto es imposible.
+
+Construimos otro número q como sigue:
+q = 2 ⋅3⋅5 ⋅7⋅...⋅p + 1
+Evidentemente, q no es divisible por ningún primo entre 2 y p, pues su división siempre daría como resto 1. En consecuencia, q es divisible solo por 1 y por sí mismo, es decir,q es primo. Por otra parte, q es un primo mayor que p. Por tanto, p no es el mayor número primo, como habíamos supuesto antes, y esto es una contradicción. Esto prueba que existe un número infinito de primos.
+
+He aquí la segunda prueba:
+
+Teorema 14 Sea p un número primo y a,b números enteros. Probar que si p∣(a ⋅ b), entonces es cierto que o bien p∣a o bien p∣b.
+Prueba: Suponemos que p ⁄∣b lo que implica que máximo común divisor entre ellos es 1, de este modo, existe un x1 y x2 que: px1 + ax2 = 1, multiplicamos los dos términos por b, quedando pbx1 + abx2 = b; como p∣a ⋅ b, obtenemos que ab = kp, siendo k un entero, sustituyendo, pbx1 + kpx2 = b, sacamos factor comun p=⇒p(bx1 + kx2) = b, con esto comprobamos que efectivamente p, si divide al menos a uno de ellos, p∣b.
+
+Como vemos la prueba solo consta de un párrafo.
+Suponemos que p ⁄ ∣b lo que implica que máximo común divisor entre ellos es 1, de este modo, existe un x1 y x2 que: px1 + ax2 = 1, multiplicamos los dos términos por b, quedando pbx1 + abx2 = b; como p∣a ⋅ b, obtenemos que ab = kp, siendo k un entero, sustituyendo, pbx1 + kpx2 = b, sacamos factor comun p=⇒p(bx1 + kx2) = b, con esto comprobamos que efectivamente p, si divide al menos a uno de ellos, p∣b.
+
+El autor tiene que introducir el siguiente argumento al principio de su prueba o no se comprenderá: Si se tiene que p∣a, entonces la conclusión es cierta. Supongamos entonces que
+p ⁄∣b.
+Falta una mención explícita al resultado que permite al autor concluir la existencia de x1 y x2, y ese resultado es el teorema de Bezout.
+La puntuación del párrafo es nefasta. Además, acumula las frases una tras otra, sin relación entre ellas, separadas por comas que confunden más que ayudan.
+El uso del gerundio es incorrecto. Confiere a la prueba una prisa absurda y confirma que el autor escribe por acumulación. Aquí no hay ninguna planificación de la escritura.
+En un texto no se puede poner el símbolo =⇒ como sustituto de una implicación. Las palabras priman sobre los símbolos.
+El texto parece más el registro de una conversación informal sobre el resultado que un texto matemático propiamente dicho.
+He aquí una posible corrección a esa prueba
+
+Teorema 15 Sea p un número primo y a,b números enteros. Probar que si p∣(a ⋅ b), entonces es cierto que o bien p∣a o bien p∣b.
+Prueba (corregida): Si se tiene que p∣a, entonces la conclusión es cierta. Supongamos entonces que p ⁄∣b. Esto implica que el máximo común divisor dep yb es 1. Por el teorema de Bezout, existen dos enteros x1 y x2 tal que px1 + ax2 = 1. Si en esta igualdad multiplicamos los dos términos por b, se obtiene pbx1 + abx2 = b. Por hipótesis, sabemos que p∣(a ⋅ b). Esto significa que existe un enterok con ab = kp. Si sustituimos esto en la ecuación antes obtenida tenemos pbx1 + (pk)x2 = b, o lo que es igual, p(bx1 + kx2) = b. De aquí se deduce claramente que p divide a b
