@@ -1,0 +1,112 @@
+\section{Tipos de demostración}
+
+Según la naturaleza del teorema o del problema que resolver, es preciso o recomendable un tipo de demostración particular.
+En lo que sigue estudiaremos los distintos tipos de demostración y los contextos en que aparecen.
+
+\subsection{Demostración directa}
+
+Una demostración directa es una demostración en que se aplican directamente resultados y definiciones que se dan por conocidos.
+La estructura de la demostración consiste en una cadena de implicaciones.
+He aquí un ejemplo de este tipo de demostración.
+
+\begin{theorem}
+    Sea $n$ un número natural.
+    Si al dividir $n$ por 3 da como resto 2, entonces, $n^3 + 1$ es divisible por 3.
+\end{theorem}
+\begin{proof}
+    Si $n$ da 2 como resto al dividirlo por 3, esto significa que existe un entero $q$ tal que $n = 3q + 2$.
+    Sustituimos en $n^3 + 1$ y desarrollamos:
+    \[
+        n^3 + 1 = (3q + 2)^3 + 1 = (27q^3 + 54q^2 + 36q + 8)+ 1 = 3(9q^3 + 18q^2 + 12q + 3)
+    \]
+    Se sigue que el último número obtenido es un múltiplo de 3 y, por tanto, el teorema es cierto.
+\end{proof}
+
+\subsection{Demostración por casos}
+
+A veces la estructura lógica de un teorema es de la forma $(P_1 \land P_2 \land \cdots \land P_k) \implies Q$, esto es, la premisa del teorema se puede descomponer en la disyunción de otras premisas, los casos.
+La estructura lógica es equivalente a $(P_1 \implies Q) \land (P_2 \implies Q) \land \ldots \lands (P_k\implies Q)$.
+La demostración del teorema consiste en probar por separado que la conclusión Q se sigue de cada caso $P_i,\ i = 1, \cdots,k$.
+La prueba del siguiente teorema se ha escrito por casos.
+\begin{theorem}
+    El producto de dos enteros consecutivos es siempre un número par.
+\end{theorem}
+\begin{proof}
+    Sea $x$ un entero.
+    Dividimos en dos casos la prueba, según $x$ sea par o impar.
+    \begin{itemize}
+        \item El caso en que $x$ es un número par.
+        En este caso, $x$ se puede escribir como x = 2k, para cierto entero k.
+        Entonces el producto $x(x + 1) = 2k(2k + 1)$, que es un número par.
+
+        \item El caso en que $x$ es un número impar.
+        Ahora $x = 2k + 1$, para cierto entero k.
+        Se sigue que $x(x + 1) = (2k + 1)(2k + 1 + 1) = (2k + 1)(2k + 2) = 2(2k + 1)(k + 1)$.
+        Esto implica que $x(x + 1)$ es par.
+    \end{itemize}
+\end{proof}
+
+
+
+\subsection{Demostración por reducción al absurdo}
+
+Este tipo de pruebas se llama también demostración por contradicción. Se niega la conclusión del teorema y se incorpora como una premisa más. A partir de ahí, se razona lógicamente hasta alcanzar una contradicción con alguna de las premisas del teorema. Como se ha obtenido una contradicción, no es posible la negación de la conclusión, y el teorema es cierto. A continuación se presenta una demostración por reducción al absurdo muy conocida.
+
+Teorema 6 Probar que el conjunto de los números primos es infinito.
+
+Prueba: Supongamos que hubiese un número finito de primos, digamos, {p1,p2,…,pn}. Construimos un nuevo número p como sigue:
+p = p1 ⋅p2 ⋅...⋅pn + 1
+La pregunta ahora es si p es primo o no. No puede ser compuesto, porque entonces algunos de los primos p1,…,pn tendría que dividir a p. Por su construcción, eso es imposible. Se sigue que p es primo. Esto contradice el hecho de que haya exactamente n primos. QED
+
+
+
+3.4 Demostración por contraposición
+A veces la demostración directa de un resultado resulta ser bastante difícil o enrevesada. Sin embargo, cuando el resultado se formula por contraposición la prueba se puede tornar fácil. Si el teorema tiene la estructura lógica P= ⇒Q, su contrapositivo es ¬Q= ⇒¬P. El ejemplo siguiente ilustra esta técnica.
+
+Teorema 7 Sea n un número entero. Si n2 es par, entonces n es par también.
+
+Prueba: Supongamos que n no es par. Entonces n se puede escribir como n = 2k + 1, para cierto entero k. Sustituyendo en n2 tenemos:
+
+n2 = (2k + 1)2 = 4k2 + 4k + 1 = 2(2k2 + 2k) + 1
+Esto prueba que n2 es impar. Por el contrapositivo, hemos probado que si n2 es par, entonces también lo es n. QED
+
+Aunque algunos alumnos las confunden, la demostración por contraposición es distinta a la demostración por reducción al absurdo. En esta última prueba es necesario obtener una contradicción, pero no así en la demostración por contraposición.
+
+
+3.5 Demostración por inducción
+Las demostraciones por inducción aparecen cuando el enunciado del teorema asevera que una propiedad P(n) es cierta para cualquier n ∈ ℕ, siendo P(n) una propiedad que depende de los números naturales. Consta de dos partes: una, llamada paso base, donde se demuestra que la propiedad es verdadera para un cierto n0; y otra, llamada paso inductivo, donde se prueba que, si P(n- 1) es cierta para n > n0, entonces P(n) es cierta. Si ambos pasos se demuestran correctamente, entonces P(n) es cierta para n ≥ n0. El teorema que viene a continuación presenta una sencilla prueba por inducción.
+
+Teorema 8 Demostrar que para todo número natural n se cumple la fórmula:
+n(n-+-1)
+1 + 2 + ...+  n =    2
+Prueba: La prueba tiene dos pasos, el paso base y el paso inductivo.
+Paso base. Se comprueba que la fórmula es cierta para n = 1. El miembro izquierdo de la fórmula da 1; el derecho, 1(1+ 1)
+--------
+2 = 1, con lo cual la fórmula se cumple.
+Paso inductivo. Ahora probaremos que si la fórmula es cierta para n-1, entonces también es cierta para n. La fórmula para n - 1 tiene la siguiente forma (sustitúyase n por n - 1):
+
+(n - 1)n
+1+  2+ ...+ (n - 1) = --------
+2
+
+Escribimos la suma de los n primeros números y aplicamos la fórmula anterior:
+
+
+El último término obtenido es la fórmula para n. Luego la fórmula es correcta para cualquier n ∈ ℕ. QED
+
+
+
+3.6 Demostración constructivas
+Las demostraciones constructivas, a diferencia de por ejemplo las de por reducción al absurdo, construyen explícitamente el objeto matemático que se pide en el enunciado. Se da con frecuencia en la resolución de problemas. En el resultado siguiente se pide construir las soluciones de la ecuación ax2 + bx + c = 0 y se da una demostración constructiva.
+
+Teorema 9 Sean a,b,c tres números reales con a no nulo. Probar que la ecuación ax2+bx+c = 0 tiene siempre solución, bien sea real o imaginaria.
+
+Prueba: Para construir la solución vamos a completar los cuadros en la ecuación. Primero, sacamos factor común a, puesto que a ⁄= 0, y después sumamos y restamos el término b2∕4a2:
+
+A continuación, completamos los cuadrados:
+
+Por último, despejamos la x:
+
+Según el valor de b2 - 4ac, tenemos tres casos: (1) raíces reales simples, cuando b2 - 4ac sea estrictamente positivo; (2) raíz real doble, cuando b2 - 4ac sea nulo; (3) y raíces complejas conjugadas, cuando b2 - 4ac sea estrictamente negativo. QED
+
+

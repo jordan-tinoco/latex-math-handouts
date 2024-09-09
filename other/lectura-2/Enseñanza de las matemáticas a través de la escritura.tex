@@ -1,8 +1,35 @@
 \documentclass[12pt]{article}
+\usepackage[spanish]{babel}
+\usepackage{fancyhdr}
+\usepackage{multicol}
+\usepackage{tasks}
+\usepackage[margin=2.5cm]{geometry}
+
+\setlength{\parskip}{1.5mm}
+\setlength{\parindent}{0pt}
+\setlength{\headsep}{3mm}
+
+\input{../../utils/math-commands.v2.dependency}
+\input{../../utils/math-sections.v3.dependency}
+\input{../../utils/math-sections.v3}
+
+\renewcommand{\normalsize}{\fontsize{13}{15}\selectfont} %Propuesta original {13}{15.5}
+\usepackage{mlmodern}
+\usepackage[T1]{fontenc}
 
 \title{Enseñanza de las matemáticas a través de la escritura}
 \author{Paco Gómez}
 
 \begin{document}
-Hola
+    \maketitle
+    \tableofcontents
+    \input{sec01}
+    \input{sec02}
+    \input{sec03}
+    \input{sec04}
+    %\input{sec05}
+    %\input{sec06}
+    %\input{sec07}
+    %\input{sec08}
+    %\input{sec09}
 \end{document}
