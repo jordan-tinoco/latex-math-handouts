@@ -1,0 +1,277 @@
+\documentclass[12pt]{scrartcl}
+\input{../../utils/math-commands.v2.dependency}
+\input{../../utils/math-sections.v3.dependency}
+\input{../../utils/math-commands.v2}
+\input{../../utils/math-sections.v3}
+
+\usepackage{amsmath}
+\usepackage{answers}
+\renewcommand{\solutionextension}{out}
+\title{UNIDAD IV: Ecuaciones Diofánticas}
+\author{Ricardo Largaespada & Darwing Mena}
+\date{7 de septiembre de 2024}
+
+\begin{document}
+\section{Ecuaciones Diofánticas I}
+\begin{example}
+En Gugulandia, el juego de basket es jugado con reglas diferentes.
+Existen apenas dos tipos de puntuaciones para las cestas: 5 y 11 puntos. ¿Es posible para un equipo hacer 39 puntos en un partido?
+\end{example}
+
+\textit{Solución.} Sean $x$ e $y$ los números de cestas de 5 y 11 puntos, respectivamente. El problema se resume en descubrir si existen enteros no negativos $x$ e $y$ tales que $5x+11y=39$. En lugar de probar los valores de $x$ e $y$, sumamos $11+5$ en ambos lados de la ecuación: $$5(x+1)+11(y+1)=55.$$ Como $5|55$ y $5|5(x+1)$, se sigue que $5|11(y+1)$ y, con más razón, $5|y+1$ pues $\mbox{mcd}(5,11)=1$. Del mismo modo, $11|x+1$. Así, $$55=5(x+1)+11(y+1)\ge 5\cdot 11+11\cdot 5=110,$$ pues $x+1,y+1\ge 1$. Obtenemos una contradicción.
+
+\begin{example}
+¿Cuál es el menor entero positivo $m$ para el cual todo número que $m$ puede ser obtenido como una puntuación en el juego de basket mencionado anteriormente?
+\end{example}
+
+\textit{Solución.} Como ya sabemos que $39$ no es posible, es natural concentrarnos procurando los números mayores que $39$ que no pueden ser puntuaciones. Vea que:
+\begin{align*}
+40 &= 5\cdot 8 +11\cdot 0\\
+41 &= 5\cdot 6 +11\cdot 1\\
+42 &= 5\cdot 4 +11\cdot 2\\
+43 &= 5\cdot 2 +11\cdot 3\\
+44 &= 5\cdot 0 +11\cdot 4
+\end{align*}
+Ahora sumamos $5$ a cada una de esas representaciones, obtenemos representaciones para los próximos $5$ números. Repitiendo ese argumento, podremos escribir cualquier número mayor que $39$ en la forma $5x+11y$ con $x$ e $y$ enteros no negativos. Concluimos así que $m=39$. Podríamos mostrar que todo número mayor que $44$ es de la forma $5x+11y$ con $x$ e $y$ enteros no negativos de otro modo. Si $n>44$, considere el conjunto: $$n-11\cdot 0,n-11\cdot 1,n-11\cdot 2,n-11\cdot 3,n-11\cdot 4.$$ Como $(11,5)=1$, el conjunto anterior es un sistema completo de restos módulo $5$ y consecuentemente existe $y\in\{0,1,2,3,4\}$ tal que $$n-11\cdot y=5x$$ Como $n>44$, se sigue que $x>0$.
+
+\begin{example}
+¿Cuáles y cuántos son los enteros positivos $n$ que no pueden ser obtenidos como puntuación en ese juego de basket?
+\end{example}
+
+\textit{Solución.} Necesitamos recordar un teorema de la clase 3:
+
+\begin{theorem}[Bezout]
+Si $d=\mbox{mcd}(a,b)$, entonces existen enteros $x$ e $y$ tales que $$ax+by=d.$$
+\end{theorem}
+La primera observación que haremos es que una vez encontrados enteros $x$ e $y$, cualquier múltiplo de $d$ puede ser representado como una combinación lineal de $a$ y $b$:$$a(kb)+b(ky)=kd.$$ Eso es particularmente interesante cuando $(a,b)=1$, donde obtenemos que cualquier entero es una combinación lineal de $a$ y $b$. Vea que eso no entra en conflicto con los ejemplos anteriores pues los enteros $x$ e $y$ mencionados en el teorema pueden ser negativos.\\
+
+La próxima proposición contiene lo que procuramos:
+\begin{proposition}
+Todo entero positivo $k$ puede ser escrito(de forma única) de una y solamente una de las siguientes formas: $$11y-5x,\mbox{ ó } 11y+5x,\mbox{ con } 0\le y<5 \mbox{ y } x\ge 0$$
+\end{proposition}
+Por el teorema de Bezout, existen $m$ y $n$ tales que $5m+11n=1$. Sean $q$ y $r$ el cociente y el resto en la división de $kn$ por $5$, $kn=5q+r,0\le r<0$. Así, \begin{align*}
+k & = 5(km)+11(kn)\\
+& = 5(km)+11(5q+r)\\
+& = 5(km+11q)+11r.
+\end{align*}
+Basta hacer $x=km+11q$ y $r=y$. 
+
+Para ver la unicidad, suponga que $11m\pm 5n=11a\pm 5b$ con $0\le m,a<5$. Entonces $11(m-a)=5(\pm b\pm n)$. Usando que $(11,5)=1$, se sigue que $5|m-a$. La única opción que tenemos $m=a$ pues el conjunto $\{0,1,2,3,4\}$ es un \textbf{scr}. Consecuentemente $\pm 5n =\pm 5b$ y $n=b$.\\
+
+Siendo así, los elementos del conjunto $$B(5,11)=\{11y-5x\in \mathbb{Z}_+^*;0\le y<5,x>0\}$$
+constituyen el conjunto de las puntuaciones que no pueden ser obtenidas. Esos elementos son: \begin{align*}
+y=1 \Rightarrow & 11y-5x=1,6\\
+y=2 \Rightarrow & 11y-5x=2,7,12,17\\
+y=3 \Rightarrow & 11y-5x=3,8,13,18,23,28\\
+y=4 \Rightarrow & 11y-5x=4,9,14,19,24,29,34,39
+\end{align*}
+La cantidad de tales enteros es $$20=\frac{(5-1)\cdot(11-1)}{2}.$$
+Vale el resultado más general:
+\begin{proposition}
+Dados los enteros positivos $a$ y $b$ con $\mbox{mcd}(a,b)=1$, existen exactamente $$\frac{(a-1)\cdot(b-1)}{2}.$$
+números enteros no negativos que no son de la forma $ax+by$ con $x,y\ge 0$.
+\end{proposition}
+Probaremos tal resultado en una clase futura haciendo el uso de la función parte entera.
+
+\begin{example}
+Suponga ahora que las puntuaciones del juego de basket de Gugulandia hayan cambiado a $a$ y $b$ puntos con $0<a<b$. Sabiendo que existen exactamente $35$ valores imposibles de puntuaciones y que uno de esos valores es $58$, encuentre $a$ y $b$.
+\end{example}
+
+\textit{Solución.} Perciba que debemos tener $\mbox{mcd}(a,b)=1$ pues en caso contrario cualquier valor que no fuese múltiplo de $(a,b)$ no sería una puntuación posible y sabemos que existen apenas un número finito de tales valores. En virtud de la proposición anterior, $(a-1)(b-1)=2\cdot 35=70$. Analicemos los posibles pares de divisores de $70$ teniendo en mente que $a<b$:\begin{align*}
+(a-1)(b-1) & = 1\cdot 70 \Rightarrow (a,b)=(2,71)\\
+(a-1)(b-1) & = 2\cdot 35 \Rightarrow (a,b)=(3,36)\\
+(a-1)(b-1) & = 5\cdot 14 \Rightarrow (a,b)=(6,15)\\
+(a-1)(b-1) & = 7\cdot 10 \Rightarrow (a,b)=(8,11)
+\end{align*}
+No podemos tener $(a,b)=(2,71)$ pues $58=2\cdot 29$. Excluyendo los otros dos casos en que $\mbox{mcd}(a,b)\not =1$, tenemos $a=8$ y $b=11$.\\
+
+La ecuación $ax+by=c$ es un ejemplo de una ecuación diofántica, una ecuación en que buscamos valores enteros para las variables. Tales ecuaciones reciben ese nombre en homenaje al matemático griego Diofanto. Puedes ver el vídeo: link.
+
+\begin{example}
+Determine todas las soluciones enteras de la ecuación $5x+3y=7$.
+\end{example}
+
+\textit{Solución.} Analizando ahora módulo $3$, $5x\equiv 7\equiv 1\pmod 3$. Esa condición impone restricciones sobre el resto de $x$ en la división por $3$. De entre los posibles restos en la división por $3$, a saber $\{0,1,2\}$, el único que satisface tal congruencia es el resto $2$. Siendo así, $x$ es de la forma $3k+2$ e $$y=\frac{7-5(3k+2)}{3}=-1-5k,$$ consecuentemente, todas las soluciones de la ecuación son de la forma $(x,y)=(3k+2,-1-5k)$.\\
+
+Notemos que para la solución de la congruencia $x=2$, obtenemos la solución $(x,y)=(2,1)$ de la ecuación. Basándonos en esos ejemplos, es natural imaginarnos que conociendo una solución de la congruencia consigamos describir todas las otras.
+
+\begin{theorem}
+La ecuación $ax+by=c$, donde $a,b,c$ son enteros, tiene una solución en enteros $(x,y)$, si y solamente si, $d=\mbox{mcd}(a,b)$ divide a $c$. En ese caso, si $(x_0,y_0)$ es una solución, entonces los pares $$(x_k,y_k)=\left( x_0+\frac{bk}{d}, y_0-\frac{ak}{d}\right),\,\, k\in \mathbb{Z}$$ son todas las soluciones enteras de la ecuación.
+\end{theorem}
+
+Dada la discusión anterior, resta apenas encontrar una forma de las soluciones. Si $(x,y)$ es otra solución, podemos escribir:\begin{align*}
+ax+by & = ax_0+by_0\\
+a(x-x_0) & = b(y_0-y)\\
+\frac{a}{d}(x-x_0) &=\frac{b}{d}(y_0-y)
+\end{align*}
+Como $\mbox{mcd}(a/d,b/d)=1$, tenemos $b/d|x-x_0$ y así podemos escribir $x=x_0+bk/d$. Sustituyendo en la ecuación original obtenemos $y=y_0-ak/d$.
+
+\begin{example}
+Encuentre todas las soluciones enteras de la ecuación $21x+48y=6$.
+\end{example}
+
+\textit{Solución.} La ecuación es equivalente a $7x+16y=2$. Una solución es $(x,y)=(-2,1)$. Por el teorema anterior, todas las soluciones son de la forma:$$(x_k,y_k)=(-2+16k,1-7k).$$
+
+\begin{example}
+Resuelva en los enteros la ecuación $2x+3y+5z=11$.
+\end{example}
+
+\textit{Solución.} Podemos transformar este problema aislando cualquiera de las variables al problema que ya sabemos resolver. Por ejemplo, podemos resolver $2x+3y=11-5z$. Suponiendo $z$ fijo, podemos encontrar que la solución particular $(x,y)=(4-z,1-z)$. Así, todas las soluciones son de la forma $(x,y)=(4-z+3k,1-z-2k),$ o sea, las soluciones de la ecuación original son de la forma $(x,y,x) = (4-z+3k,1-z-2k,z)$ con $k$ y $z$ enteros.\\ 
+
+Vamos ahora a estudiar algunos otros ejemplos de ecuaciones diofánticas no lineales:
+
+\begin{example}
+Pruebe que la ecuación $2^n+1=q^3$ no admite soluciones $(n,q)$ en enteros positivos.
+\end{example}
+
+\textit{Solución.} Es fácil ver que la ecuación, no admite soluciones si $n=1,2,3$. Así, podemos suponer que $n>3$. Factorizando, tenemos: $$(q-1)(q^2+q+1)=2^n,$$ y consecuentemente $q=2$ o $q=2k+1$, para algún $k\in \mathbb{N}$. Claramente, $q=2$ no produce solución. Entonces $q=2k+1$ y $q^3-1=8k^3+12k^2+6k$ es una potencia de $2$, mayor o igual a $16$. Entretanto: $$8k^3+12k^2+6k=2k(4k^2+6k+3),$$ no es una potencia de $2$, pues $4k^2+6k+3$ es impar. Así, la ecuación $2^n+1=q^3$ no admite soluciones enteras positivas.
+
+\begin{example}[URSS 1991]
+Encuentre todas la soluciones enteras del sistema $\left\lbrace \begin{array}{c}
+xz-2yt=3 \\xt+yz=1.
+\end{array}\right.$
+\end{example}
+
+\textit{Solución.} Una buena estrategia sera aplicar alguna manipulación algebraica, como sumar las ecuaciones, multiplicarlas, sumar un factor de correlación, entre otras para obtener alguna factorización envolviendo esos números. En este problema, vamos a elevar las ecuaciones al cuadrado.$$\left\lbrace \begin{array}{c}
+x^2z^2-4xyzt+4y^2t^2 = 9\\ x^2t^2+2xyzt+y^2z^2=1.
+\end{array}\right.$$
+Multiplicando la segunda por dos y sumándola con la primera, tenemos: \begin{align*}
+x^2(z^2+2t^2)+2y^2(z^2+2t^2) & = 11\\
+(x^2+2y^2)(z^2+2t^2) & = 11.
+\end{align*}
+Como cada una de los factores de arriba es un entero no negativo, tenemos dos casos: \begin{align*}
+\left\lbrace \begin{array}{c}
+x^2+2y^2 =11 \\ z^2+2t^2=1
+\end{array}\right. \Rightarrow (x,y,z,t)=(\pm 3,\pm 1, \pm 1, 0).\\
+\mbox{ ó }\\
+\left\lbrace \begin{array}{c}
+x^2+2y^2 =1 \\ z^2+2t^2=11
+\end{array}\right. \Rightarrow (x,y,z,t)=(\pm 1,0, \pm 3, \pm 1).
+\end{align*}
+Luego las únicas soluciones posibles son las cuádruplas $(\pm 3,\pm 1, \pm 1, 0)$ y $(\pm 1,0, \pm 3, \pm 1)$.
+
+\section{Problemas Propuestos}
+\Opensolutionfile{all-hints}
+
+\begin{problem}
+Encuentre todas las soluciones de $999x-4y=5000$.
+  \begin{hint}
+  
+  \end{hint}
+\end{problem}
+
+\begin{problem}
+Encuentre todos los enteros $x$ e $y$ tales que $147x+258y=369$.
+  \begin{hint}
+  
+  \end{hint}
+\end{problem}
+
+\begin{problem} [OTM 2019, Nivel 3]
+Determine todas las soluciones enteras  de la ecuación $x+5y=xy$.
+  \begin{hint}
+  
+  \end{hint}
+\end{problem}
+
+\begin{problem}
+Encuentre todas las soluciones enteras de $2x+3y+4z=5$.
+  \begin{hint}
+  
+  \end{hint}
+\end{problem}
+
+\begin{problem}
+Encuentre todas la soluciones enteras del sistema de ecuaciones:$$\left\lbrace \begin{array}{c}
+20x+44y+50z=10\\ 17x+13y+11z=19.
+\end{array}\right.$$
+  \begin{hint}
+  
+  \end{hint}
+\end{problem}
+
+\begin{problem}[Torneo de las Ciudades 1997]
+Sean $a,b$ enteros positivos tales que $a^2+b^2$ es divisible por $ab$. Muestre que $a=b$.
+  \begin{hint}
+  
+  \end{hint}
+\end{problem}
+
+\begin{problem}
+Encuentre una condición necesaria y suficiente para que $$x+b_1y+c_1z=d_1\mbox{ y }x+b_2y+c_2z=d_2$$tengan por lo menos una solución simultanea en enteros $x,y,z$ asumiendo que los coeficientes son enteros con $b_1\not = b_2$.
+  \begin{hint}
+  
+  \end{hint}
+\end{problem}
+
+\begin{problem}[ACM 1989]
+Sea $n$ un entero positivo. Si la ecuación $2x+2y+n=28$ tienen $28$ soluciones en enteros positivos $x,y$ e $z$, determine los posibles valores de $n$.
+  \begin{hint}
+  
+  \end{hint}
+\end{problem}
+
+\begin{comment}
+
+%{\problem[IMO 1959] Muestre que la fracción $\frac{21n+4}{14n+3}$ es irreducible para todo $n$ natural.}
+%{\problem Encuentre todos los enteros positivos tales que: $$\mbox{a) } n+1|n^3-1 \,\,\,
+%\mbox{b) } 2n-1|n^3-1 \,\,\, \mbox{c) } \frac{1}{n}+\frac{1}{m}=\frac{1}{143} \,\,\, \mbox{d) }2n^3+5|n^4+n+1$$}
+%{\problem Pruebe que si $f(x)$ es un polinomio con coeficientes enteros y $a,b$ son enteros cualesquiera, entonces $a-b|f(a)-f(b)$.}
+
+\begin{problem}[Bielorusia, 1998] \label{5}Los enteros $m$ y $n$ satisfacen la igualdad $$(m-n)^2=\frac{4mn}{m+n-1}$$ \begin{itemize}
+\item[a)] Probar que $m+n$ es un cuadrado perfecto.
+\item[b)] Encuentre todos los pares $(m,n)$ que satisfacen la ecuación de arriba.\end{itemize}
+\begin{hint}
+Sumando $4mn$ a ambos lados, obtenemos:\begin{align*}
+(m+n)^2 &= \frac{4mn}{m+n-1}+4mn = \frac{4mn(m+n)}{m+n-1}\Rightarrow\\ (m+n) &= \frac{4mn}{m+n-1} =(m-n)^2.
+\end{align*}
+Así, $m + n$ es el cuadrado de un entero. Si $m-n = t$, entonces $m + n = t^2$ y $(m, n) = (\frac{t^2+t}{2},\frac{t^2-t}{2})$. Recuerda verificar que para cualquier $t$ entero ese par es solución del problema.
+\end{hint}
+\end{problem}
+
+\begin{problem} \label{6} Sea $n>1$ y $k$ un entero positivo cualquiera. Probar que $(n-1)^2|(n^k-1)$ si y solamente si $(n-1)|k$.
+\begin{hint}
+    Vea que $$\frac{n^k-1}{(n-1)^2}=\mypar{\frac{n^{k-1}-1}{n-1}+\frac{n^{k-2}-1}{n-1}+\cdots+\frac{n-1}{n-1}+\frac{k}{n-1}}.$$ Como los números $\frac{n^l-1}{n-1}$ siempre son enteros, el número del lado izquierdo de la ecuación será entero si y solamente si el número $\frac{k}{n-1}$ es entero.
+\end{hint}
+\end{problem}
+
+\begin{problem}[OBM 2005]\label{7} Pruebe que la suma $1^k+2^k+\cdots+n^k$, donde $n$ es un entero y $k$ es impar, es divisible por $1+2+\cdots+n$.
+\begin{hint}
+    Comience dividiendo el problema en dos casos: $n$ es par o $n$ es impar. Sabemos que $1+2+\cdots+n = \frac{n(n+1)}{2}$. Para $n$ impar, basta mostrar que el número en cuestión es divisible por $n$ y $\frac{n+1}{2}$. El próximo paso es recordar el problema \ref{factsimportant}. Por la factorización de $x^n + y^n$, tenemos que $i^k + (n - i)^k$ es divisible por $n$. Haga otros tipos de pares para mostrar la divisibilidad por $\frac{n}{2}$. El caso cuando $n$ es par es análogo.
+\end{hint}
+\end{problem}
+
+\begin{problem} \label{8} Encuentre todos los enteros $n$ tales que $n+2009$ divide a $n^2+2009$ y $n+2010$ divide a $n^2+2010$.
+\begin{hint}
+    Utiliza la expresión $n+2009|n^2-2009^2$ y $n+2010|n^2-2010^2$ para simplificar las condiciones dadas. Luego, observa cómo puedes manipular estas expresiones para obtener información sobre $n$.
+\end{hint}
+\end{problem}
+
+\begin{problem}[OBM 2000] \label{9} ¿Es posible encontrar dos potencias de $2$, distintas y con el mismo número de cifras, tales que una pueda ser obtenida a través de una reordenación de los dígitos de la otra.
+\begin{hint}
+    No. Suponga, por absurdo, que existan dos potencias de $2$, $2^m < 2^n$, satisfaciendo el enunciado. Como $2^n$ es un múltiplo de $2^m$, podemos tener: $2^n = 2\cdot 2^m$, $4\cdot 2^m$, $8\cdot 2^m,\ldots$. Además de eso, como ambos poseen la misma cantidad de dígitos, tenemos $1 <\frac{2^n}{2^m} < 10$. Así, las únicas posibilidades son $2^n = 2\cdot 2^m, 4\cdot 2^m, 8\cdot 2^m$. Por el criterio de divisibilidad por $9$, como $2^m$ y $2^n$ poseen los mismos dígitos, podemos concluir que $2^n-2^m$ es un múltiplo de $9$. Entretanto, ninguna de las posibilidades anteriores satisface esa condición y llegamos a un absurdo.
+\end{hint}
+\end{problem}
+\end{comment}
+
+%{\problem[IMO 2003] Encuentre todos los pares de enteros positivos $(m,n)$ tales que $$\frac{m^2}{2mn-n^3+1}$$ es un entero positivo.}
+%{\problem[IMO 1994] Encuentre todos los pares ordenados $(m,n)$ donde $m$ y $n$ son enteros positivos tales que $\frac{n^3+1}{mn-1}$ es un entero.}
+%{\problem Pruebe que para cualquier entero positivo $m$, existe un número infinito de pares de enteros $(x,y)$ que satisfacen las condiciones:\begin{itemize}
+%\item[a)] $x$ e $y$ son primos entre sí,
+%\item[b)] $y$ divide a $x^2+m$,
+%\item[c)] $x$ divide a $y^2+m$.
+%\end{itemize}}
+
+%{\problem[Ibero 2013] Un conjunto $S$ de enteros positivos distintos se llama {\it canalero} si para cualesquiera tres números $a,b,c\in S$, todos diferentes, se cumple que $a$ divide a $bc$, $b$ divide a $ca$ y $c$ divide a $ab$.\begin{itemize}
+%\item Demostrar que para cualquier conjunto finito de enteros positivos $\{c_1,c_2,\ldots,c_n\}$ existen infinitos enteros $k$, tales que el conjunto $\{kc_1,kc_2,\ldots,kc_n\}$ es canalero.
+%\item Demostrar que para cualquier entero $n\ge 3$ existe un conjunto canalero que tiene exactamente $n$ elementos y ningún entero mayor que $1$ divide a todos sus elementos.
+%\end{itemize}}
+\Closesolutionfile{all-hints}
+
+\eject
+%\section{Sugerencias}
+%\begin{enumerate}
+%\input{all-hints.out}
+%\end{enumerate}
+
+\end{document}
