@@ -1,5 +1,5 @@
 \section{Desarrollo}
-Antes de empezar recordemos lo siguiente.
+Antes de empezar recordemos los siguientes resultados.
 
 \begin{definition.box}{Máximo divisor común}{}
     Dados $a,b \in \Z^{\neq 0}$, el máximo $d \in \positiveSet{\Z}$ tal que $d \mid a$ y $d \mid b$ es el máximo divisor común,
@@ -7,25 +7,41 @@ Antes de empezar recordemos lo siguiente.
 \end{definition.box}
 
 \begin{definition.box}{}{}
-    Dados $a,b \in \Z^{\neq 0}$, si $\mcd a b = 1$, entonces diremos que $a$ y $b$ son coprimos, primos relativos o primos entre sí.
+    Si $a,b \in \Z^{\neq 0}$ con $\mcd a b = 1$, entonces diremos que $a$ y $b$ son coprimos, primos relativos o primos entre sí.
+\end{definition.box}
+
+\begin{definition.box}{Combinación lineal}{}
+    Dados los enteros $a_1, a_2, \ldots, a_k$, definimos una combinación lineal de los números $\{a_i\}$ como un número de la forma
+    \[
+        a_1 x_1 + a_2 x_2 + \ldots + a_k x_k,
+    \]
+    donde los $\{x_i\}$ son enteros cualesquiera.
 \end{definition.box}
 
 \begin{theorem.box}{Algoritmo de la división}{}
-    Dados $a, b \in \Z$ con $b \neq 0$, existen $k,r \in \Z$ tales que $a = kb + r$ con $0 \leq r < |b|$, donde $k,r$ son únicos.
+    Si $a, b \in \Z$ con $b \neq 0$, entonces existen enteros únicos $(q,r)$ tales que $a = bq + r$ con $0 \leq r < |b|$.
 \end{theorem.box}
 
-\begin{theorem.box}{}{}
-Sean $a,b,c \in \Z$ con $a,b \neq 0$, la ecuación $ax + by = c$;
-\begin{enumerate}
-    \item tiene solución si y solo si $\mcd a b \mid c$, además, es equivalente a otra ecuación de coeficientes coprimos,
-    \item si $(x_0,y_0)$ es una solución particular, entonces la solución general es
+El siguiente resultado es un teorema muy conocido e importante en la teoría de números, con él damos inicio al
+estudio de las ecuaciones diofánticas lineales, este resultado es utilizado tanto para la demostración de teoremas como
+la resolución de problemas.
+
+\begin{theorem.box}{Bezout}{}
+    Si $d = \mcd a b$, entonces $d$ es el menor entero tal que
     \[
-        x = x_0+\frac{b}{d}t, \quad y = y_0 -\frac{a}{d}t, \quad t \in \Z.
+        ax + by = d,\ \text{con}\ x,y \in \Z.
     \]
-    \item si $c = \mcd a b$ y $|a|, |b| \neq 1$, entonces una solución particular $(x_0,y_0)$ cumple que $|x_0| < |b|$ y $|y_0| < |a|$.
-\end{enumerate}
 \end{theorem.box}
 
+\begin{theorem.box}{}{theorema3}
+    La ecuación diofántica $ax + by = c$ tendrá soluciones si y solo si $\mcd a b \mid c$.
+    Además, si $(x_0,y_0)$ es una solución particular, entonces la solución general es
+        \[
+            (x,y) = \left(x_0+\frac{b}{d}t,\ y_0 -\frac{a}{d}t\right) \quad \text{con}\ t \in \Z.
+        \]
+\end{theorem.box}
+
+Ejemplos.
 \begin{example}
     Resolver la ecuación $5x - 3y = 52$ en enteros positivos.
 \end{example}
@@ -35,7 +51,7 @@ Sean $a,b,c \in \Z$ con $a,b \neq 0$, la ecuación $ax + by = c$;
     \[
         - 3y \modulo{52}{5} \implies 2y \modulo{2}{5} \implies y \modulo{1}{5}.
     \]
-    Claramente $y = 1$ es solución a esta congruencia, sustituyendo en la ecuación original $5x - 3\cdot 1 = 52 \iff 5x = 55$
+    Claramente, $y = 1$ es solución a esta congruencia, sustituyendo en la ecuación original $5x - 3\cdot 1 = 52 \iff 5x = 55$
     por lo cual, la ecuación tiene una solución $(11, 1)$, luego con la solución $(x_0,y_0)=(11,1)$ llegamos a
     \[
         (x,y) = (11+3t,1-5t), \mbox{ donde } t\in \Z.\qedhere
@@ -46,7 +62,7 @@ Sean $a,b,c \in \Z$ con $a,b \neq 0$, la ecuación $ax + by = c$;
     Resolver la siguiente ecuación $8c+7p=100$.
 \end{example}
 \begin{solution}
-    Claramente la ecuación tiene soluciones enteras, analizando en módulo 8,
+    Claramente, la ecuación tiene soluciones enteras, analizando en módulo 8,
     \[
         7p \modulo{100}{8} \implies -p \modulo{4}{8} \implies p \modulo{-4}{8} \implies p \modulo{4}{8}.
     \]
@@ -62,45 +78,51 @@ Sean $a,b,c \in \Z$ con $a,b \neq 0$, la ecuación $ax + by = c$;
 \subsection{Aplicando el algoritmo de Euclides}
 
 \begin{definition.box}{Algoritmo de Euclides}{}
-    Sean $a, b \in \Z^{\neq 0}$, si $a > b$ y se tiene $a = bk + r$ con $0 < r < b$, entonces
+    Si $a, b \in \Z^{\neq 0}$ y $a = bq + r$ para algunos enteros $q,r$ con $0 < r < b$, entonces
     \[
         \mcd a b = \mcd b r.
     \]
 \end{definition.box}
 
-Podemos usar este algoritmo para resolver ecuaciones lineales de una manera iterativa.
+Podemos usar este algoritmo para resolver ecuaciones lineales de una manera iterativa, similar, a la manera en cómo
+se calcula el MCD de dos números grandes.
 
 Sean $a,b, c \in \Z$ con $a,b \neq 0$ y $d = \mcd a b$, considerando la ecuación
 \[
-    ax + by = c.
+    ax + by = c,
 \]
+se tienen los siguientes pasos:
 \begin{enumerate}
     \item Si $d\nmid c$, entonces no hay solución.
-    \item Si $d \mid c$, entonces se divide la ecuación por $d$.
+    \item Si $d \mid c$, entonces se divide la ecuación por $d$ obteniendo $a_1 x + b_1 y = c_1$.
     \item Por el paso anterior la ecuación tiene coeficiente coprimos;
     \begin{enumerate}
-        \item Si $a \mid c$, entonces $ac_0 = c$, luego $(x,y) = (c_0, 0)$ es solución.
-        \item Si $a \nmid c$, entonces tomamos el menor de $|a|, |b|$ (supongamos que es $|a|$) y obtenemos
+        \item[3.1.] Si $a_1 \mid c_1$, entonces $a_1 c_0 = c_1$, luego $(x,y) = (c_0, 0)$ es solución.
+        \item[3.2.] Si $a_1 \nmid c_1$, entonces tomamos el menor de $|a_1|, |b_1|$ y obtenemos\footnote{Aquí vamos a suponer que $|a_1|$ es el menor.}
         \begin{align*}
-            b = aq_1 + r_1,\ \text{con}\ 0<r_1<|a|, && c = aq_2 + r_2,\ \text{con}\ 0 < r_2 < |a|.
+            b_1 = a_1 q_1 + r_1,\ \text{con}\ 0<r_1<|a|, && c_1 = a_1 q_2 + r_2,\ \text{con}\ 0 < r_2 < |a|.
         \end{align*}
     \end{enumerate}
     \item Sustituimos en la ecuación
     \[
-        ax + (a q_1 + r_1) y = aq_2 + r_2 \iff a(x + q_1 y -q_2) + r_1 y = r_2.
+        a_1 x + (a_1 q_1 + r_1) y = a_1 q_2 + r_2 \iff a_1 (x + q_1 y - q_2) + r_1 y = r_2.
     \]
-    Si $z = x + q_1 y - q_2$, entonces la ecuación anterior se transforma en $az + r_1 y = r_2$.
+    Haciendo $z = x + q_1 y - q_2$, la ecuación anterior se transforma en $a_1 z + r_1 y = r_2$.
     \begin{enumerate}
-        \item Si $r_1 \mid r_2$, entonces terminamos con el paso 3.a.
-        \item Si $r_1 \nmid r_2$, entonces vamos al paso 3.b y repetimos el proceso.
+        \item[4.1.] Si $r_1 \mid r_2$, entonces terminamos con el paso 3.1.
+        \item[4.2.] Si $r_1 \nmid r_2$, entonces vamos al paso 3.2 y repetimos el proceso.
     \end{enumerate}
 \end{enumerate}
+
+Con estos pasos (o algoritmo) es posible resolver ecuaciones diofánticas lineales de coeficientes grandes, de una manera
+cíclica o iterativa, lo cual se reduce la complejidad.
+Veamos un ejemplo.
 
 \begin{example}
     Resuelva la siguiente ecuación $350x + 425y = 1200$.
 \end{example}
 \begin{solution}
-    Como $(350,425)=25$ y $25 \mid 1200$, dividimos ambos lados de la ecuación por $25$ y tenemos
+    Como $\mcd{350}{425} = 25$ y $25 \mid 1200$, dividimos ambos lados de la ecuación por $25$ y tenemos
     \[
         14x+17y=48
     \]
@@ -111,33 +133,56 @@ Sean $a,b, c \in \Z$ con $a,b \neq 0$ y $d = \mcd a b$, considerando la ecuació
     Escribiendo $z$ en términos de $x$ y $y=2$, obtenemos el valor de $x=1$.
     Luego, la solución general de la ecuación inicial es:
     \[
-        x=1+17k, \quad y=2-14k, \quad k \in \Z. \qedhere
+        x=1+17k, \quad y=2-14k, \quad\text{con}\ k \in \Z. \qedhere
     \]
 \end{solution}
 
-Hasta el momento sólo hemos trabajado en ecuaciones lineales de dos variables, pero en realidad la ecuación $ax+by=c$ no es más que un caso particular de la ecuación
+
+
+\subsection{Caso general de ecuaciones lineales}
+
+Hasta el momento solamente hemos trabajado en ecuaciones lineales de dos variables, pero en realidad la ecuación
+$ax + by = c$ es un caso concreto de la ecuación
 \[
     a_1 x_1 + a_2 x_2 + \ldots + a_n x_n = c,
 \]
 donde $a_1, a_2, \dots, a_n,$ y $c$ son coeficientes.
+También, cabe mencionar que el teorema de bezout se cumple para una cantidad $n$ de números, con lo cual
+se podrá hacer un tratamiento similar al caso de $n = 2$.
 
 \begin{theorem.box}{}{}
-    La ecuación $a_1 x_1 + a_2 x_2 + \ldots + a_n x_n = c$ tiene solución si y solo si $\mcd {a_1}{a_2,\cdots,a_n} \mid c.$
+    La ecuación diofántica $a_1 x_1 + a_2 x_2 + \ldots + a_n x_n = c$ tiene solución si y solo si $\mcd {a_1}{a_2,\cdots,a_n} \mid c.$
 \end{theorem.box}
 
+Veamos un ejemplo.
+
 \begin{example}
-    Resuelva la ecuación $3x+4y+5z=6$
+    Resuelva la ecuación $3x + 4y + 5z = 6$.
 \end{example}
 \begin{solution}
-    Primero garantizamos que $(3,4,5)=1$ efectivamente divide a 6.
-    Trabajando con módulo 5 tenemos que $3x+4y\modulo{1}{5}$, y de esto que $3x+4y=1+5s, \quad s \in \Z.$
-    Una solución para esta ecuación es $x=-1+3s$, $y=1-s$.
-    Usando el resultado anterior, obtenemos $x=-1+3s+4t$, $y = 1-s-3t$, con $t \in \Z$, y sustituyendo en la ecuación original $z=1-s$.
-    Por lo que todas las soluciones son
+    Primero, notamos que $\mcd{3}{4,5} = 1$ efectivamente divide a 6.
+    Trabajando en módulo 5 tenemos que $3x + 4y\modulo{1}{5}$ por lo cual $3x + 4y = 1 + 5s$, con $s \in \Z$.
+    Si tomamos a $s$ como una constante, una solución para esta ecuación es $(x_0, y_0) = (-1 + 3s, 1 - s)$.
+    Usando el teorema~\ref{t:theorema3}, obtenemos las soluciones generales de esta ecuación de dos variables
     \[
-        (x,y,z)=(-1+3s+4t,1-s-3t,1-s), \quad s,t \in \Z.\qedhere
+        (x,y) = (-1+3s+4t, 1-s-3t)\quad\text{con}\ t \in \Z.
+    \]
+    Sustituyendo esto en la ecuación original obtenemos $z = 1 - s$, por lo que todas las soluciones son
+    \[
+        (x,y,z)=(-1+3s+4t,1-s-3t,1-s), \quad \text{con}\ s,t \in \Z.\qedhere
     \]
 \end{solution}
+
+Como vemos en este ejemplo, una ecuación de tres variables la podemos reducir a una ecuación de dos variables,
+ecuación que sabemos cómo solucionarla, luego solo debemos revertir el proceso y dejar las soluciones en función
+de los parámetros que aparezcan.
+Análogamente, podemos resolver una ecuación de grado $n$ reduciéndola sucesivamente a una de grado dos y realizar un proceso similar.
+
+
+\subsection{Existencia de soluciones}
+
+Para concluir, veremos algunos resultados que estudian la existencia de soluciones para una ecuación diofántica, estos
+resultados ya son parte de una teoría de mayor complejidad, si se tiene curiosidad se invita al lector a investigar más a fondo.
 
 \begin{definition.box}{}{}
     Sean  $a_1,a_2,\ldots,a_n$ enteros positivos con $\mcd{a_1}{a_2,\ldots,a_n} = 1$ se define a $g(a_1,a_2,\ldots,a_n)$
@@ -147,9 +192,12 @@ donde $a_1, a_2, \dots, a_n,$ y $c$ son coeficientes.
     \]
     no tiene soluciones enteras.
 \end{definition.box}
-El problema de determinar $g(a_1,a_2,\ldots,a_n)$ es conocido como el problema de las monedas de Frobenius.
-Fue este quien planteó el problema de encontrar la mayor cantidad de dinero que no se puede pagar con monedas de $a_1, a_2,\ldots,a_n$ centavos.
-El ejemplo clásico de este problema es que con monedas de 3 y 5 centavos nunca se podrá llegar a la cantidad de 7 centavos.
+
+El problema de determinar $g(a_1,\ldots,a_n)$ es conocido como el problema de las monedas de Frobenius.
+Este problema fue planteado por Ferdinand Frobenius, quien se interesó en encontrar la mayor cantidad de dinero que no
+se puede representar como una combinación lineal de $n$ denominaciones de monedas,
+quizás el ejemplo más sencillo es con monedas de 3 y 5 centavos con las cuales nunca se podrá pagar una deuda de 7 centavos.
+El siguiente teorema brinda un valor de $N$ para el caso de $n=2$.
 
 \begin{theorem.box}{Sylvester}{}
 Sean $a,b \in \positiveSet{\Z}$, con $\mcd a b = 1$, entonces
@@ -157,24 +205,20 @@ Sean $a,b \in \positiveSet{\Z}$, con $\mcd a b = 1$, entonces
         g(a,b) = ab - a - b.
     \]
 \end{theorem.box}
+Con esto se puede analizar la ecuación $3x + 5y = 7$, como $g(3,5) = 3\cdot 5 - 3 - 5 = 7$
+entonces se tiene que 7 es el mayor entero para el cual no hay soluciones.
+Para los casos de $n\geq2$ hasta la fecha no se conoce ninguna fórmula explícita de $g$, cabe aclarar que estos temas
+ya son de una complejidad mayor a este curso.
+Finalmente, con el teorema sylvester podemos entender mejor el siguiente resultado.
 
-Para el caso de $n=2$, existe el Teorema de Sylvester el cual nos brinda el valor de $N$
-(rápidamente podemos verificar el ejemplo anterior con 3 y 5),
-pero para $n\geq2$ no se conoce ninguna fórmula explicíta, aunque sí se han encontrado rangos en donde $N$ puede estar.
-Estos caso para $n\geq2$ sobrepasan los objetivos de este escrito, se invita al lector investigar este tema por su cuenta.
-
-Finalmente por con teorema de Sylvester podemos entender de mejor manera el siguiente teorema.
-
-\begin{theorem.box}{Chicken McNugget}{}\label{chickenMcNugget}
-    Sean $a, b\in \positiveSet{\Z}$ con $\mcd a b = 1$, se tiene
+\begin{theorem.box}{Chicken McNugget}{}
+    Sean\footnote{Su historia es curiosa, debido a que fue enunciado en un McDonald's.} $a, b\in \positiveSet{\Z}$ con $\mcd a b = 1$, se tiene:
     \begin{enumerate}
-        \item Si $n = ab - a - b$, entonces $ax + by = n$ es insoluble $\forall x, y \in \positiveSet{\Z}$.
-        \item Si $n > ab - a - b$, entonces la ecuación es soluble.
+        \item[i.] Si $n = ab - a - b$, entonces $ax + by = n$ es insoluble $\forall x, y \in \positiveSet{\Z}$.
+        \item[ii.] Si $n > ab - a - b$, entonces la ecuación es soluble.
     \end{enumerate}
 \end{theorem.box}
-
-Como recomendación general, se deja que siempre se verifique que una ecuación diofántica lineal de dos variables
-cumpla con el \textbf{Teorema \ref{chickenMcNugget}} punto 2.
+Como recomendación general, se aconseja siempre verificar que una ecuación cumpla con el segundo punto del teorema anterior.
 
 
 
@@ -184,14 +228,53 @@ cumpla con el \textbf{Teorema \ref{chickenMcNugget}} punto 2.
 Ejercicios y problemas para el autoestudio.
 
 \begin{exercise}
-    ¿Tiene la ecuación $24x+18y=12$ soluciones enteras?
+    Resolver las siguientes ecuaciones:
+    \begin{multicols}{3}
+        \begin{enumerate}
+            \item $30x - 25y = 15$
+            \item $2x - 3y = 5$
+            \item $91a - 195b = 1079$
+            \item $35m - 25n = 3$
+            \item $24x + 18y = 12$
+            \item $125x - 25y = 28$
+            \item $69x + 123y = 3000$
+            \item $12p + 501q=1$
+            \item $97s + 98t=1000$
+        \end{enumerate}
+    \end{multicols}
 \end{exercise}
 
 \begin{exercise}
-    Resuelva la ecuación diofántica $125x-25y=28.$
+    Resuelva las siguientes ecuaciones:
+    \begin{multicols}{3}
+        \begin{enumerate}
+            \item $3x+10y+8z=34$
+            \item $5a+20b+5c=13$
+            \item $6x+10y+15z=37$
+            \item $m+p-q=6$
+            \item $4r-32s+12t=8$
+            \item $10x+2y-3z=7$
+        \end{enumerate}
+    \end{multicols}
 \end{exercise}
 
-\begin{exercise}
-    Resuelva la ecuación $69x+123y=3000.$
-    (ejemplo donde se utiliza la recursividad del método de euclides.)
-\end{exercise}
+\begin{problem}
+    Suponga que Fabiana gasta 40 pesos en una pulpería.
+    Si esta paga con un billete de 100, ¿cómo puede recibir el vuelto en billetes de 10 y 25 pesos?
+\end{problem}
+
+\begin{problem}
+    En el correo solo se tienen sellos de 14 y 21 céntimos.
+    ¿De qué manera puede formar con un valor de 7.77 euros?
+\end{problem}
+
+\begin{problem}
+    Queremos echar 21 litros de gasolina a un depósito.
+    Para ello, tenemos dos bidones, de 2 y 5 litros respectivamente.
+    Responder a las siguientes cuestiones:
+    \begin{enumerate}
+        \item ¿Es posible medir 21 litros con nuestros bidones? ¿Por qué?
+        \item En caso afirmativo, dar todas las combinaciones posibles.
+        \item Si suponemos que en nuestro depósito caben exactamente 22 litros, ¿cómo podemos echar 21 litros sin desbordar el depósito y sin retirar gasolina de él?
+    \end{enumerate}
+\end{problem}

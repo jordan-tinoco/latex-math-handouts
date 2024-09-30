@@ -1,0 +1,33 @@
+@startuml
+title Algoritmo para resolver ecuaciones diofánticas lineales
+scale 2
+
+state "<latex>ax + by = c</latex>" as s1
+note right
+<latex>\text{Con}\ a < b\ \text{y}\ d = mcd(a,b) </latex>
+end note
+
+state "<latex>\text{No hay \\soluciones}</latex>" as s2
+state "<latex>a_1x + b_1y = c_1</latex>" as s3
+
+state "<latex>\text{Solución}\ (x,y) = (c_0, 0)</latex>" as s31
+state "<latex>b_1 = a_1 q_1 + r_1,\ \text{con}\ 0<r_1<|a|\\ c_1 = a_1 q_2 + r_2,\ \text{con}\ 0 < r_2 < |a|.</latex>" as s32
+
+
+state "<latex>a_1 z + r_1 y = r_2</latex>" as s4
+
+
+
+s1 --> s2 : <latex>\text{Si}\ d \nmid c.</latex>
+s1 --> s3 : <latex>\text{Si}\ d \mid c,\ \text{se divide por}\ d.</latex>
+
+s3 --> s31 : <latex>\text{Si}\ a_1 \mid c_1,\ \text{con}\ c_0 = \frac{c_1}{a_1}.</latex>
+
+s3 --> s32 : <latex>\text{Si}\ a_1 \nmid c_1\ \text{y}\ a_1 < b_1.</latex>
+
+s32 -right-> s4 : <latex>\text{Sustituir y hacer}\\ z = x + q_1 y - q_2.</latex>
+
+s4 --> s31 : <latex>\text{Si}\ r_1 \mid r_2,\ \text{con}\ c_0 = \frac{r_2}{r_1}.</latex>
+
+s4 --> s32 : <latex>\text{Si}\ r_1 \nmid r_2.\\\text{se repite el proceso\\hasta hallar alguna solución}.</latex>
+@enduml
