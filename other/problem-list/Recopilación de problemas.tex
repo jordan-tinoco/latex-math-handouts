@@ -1,0 +1,36 @@
+\documentclass[12pt]{article}
+\usepackage{mlmodern}
+\usepackage[T1]{fontenc}
+\input{../../utils/math-commands.v2.dependency}
+\input{../../utils/math-commands.v2}
+\input{../../utils/math-sections.v3.dependency}
+\input{../../utils/math-sections.v3}
+
+\title{Recopilación de problemas}
+\author{J\_tinoco}
+\date{Octubre 2024}
+
+\begin{document}
+    \maketitle
+
+    \section{Variados}
+
+    \begin{problem}
+        Sea $a_0 = 1$ y $a_n = a_{n - 1}\left(4 - \frac{2}{n}\right)$ para $n \geq 1$.
+        Para cada entero $n \geq 1$, demuestre que
+        \begin{enumerate}
+            \item $a_n$ es un entero positivo.
+            \item $a_n$ es divisible por cada número primo $p$ tal que $n < p \leq 2n$.
+            \item Si $n$ es primo, entonces $a_n - 2$ es divisible entre $n$.
+        \end{enumerate}
+    \end{problem}
+
+    \begin{problem}
+        Sean $n \in \N^{> 1}$, $a \in \R^{\geq 1}$ y supongamos que existe entero poisitivo $n$ y $x_i$ con $1 < i \leq n$ tales que
+        $x_1 = 1$ y $\frac{x_i}{x_{i - 1}} = a + y_1$ con $2 \leq i \leq n$ donde $y_i \leq \frac{i}{i(i + 1)}$.
+        Probar que
+        \[
+            \sqrt[n - 1]{x_n} < a + \frac{1}{n - 1}.
+        \]
+    \end{problem}
+\end{document}
