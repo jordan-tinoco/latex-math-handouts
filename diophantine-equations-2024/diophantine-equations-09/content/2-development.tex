@@ -28,6 +28,73 @@ También, cuando un triángulo rectángulo tiene longitudes enteras, lo llamarem
         x = m^2 - n^2,\quad y = 2mn,\quad z = m^2 + n^2.
     \end{align*}
 \end{theorem.box}
+La mayoría de los problemas que implican ternas pitagóricas se reducen a utilizar las ternas ya conocidas o bien,
+demostrar que una ecuación no tiene soluciones porque su forma es de una ecuación de Fermat, luego veremos algunos teoremas sobre este aspecto.
+Por lo cual es importante conocer algunas ternas pitagóricas, en el cuadro 1 se muestran las primeras diez ternas
+pitagóricas con lo cual se invita al lector tenerlas presente.
+\begin{table}
+    \centering
+    \begin{tabular}{|c|c|c||c|c|}
+        \hline
+        x & y & z & m & n\\
+        \hline\hline
+        3  &  4 &  5 & 2 & 1\\
+        5  & 12 & 13 & 3 & 2\\
+        15 &  8 & 17 & 4 & 1\\
+        7  & 24 & 25 & 4 & 3\\
+        21 & 20 & 29 & 5 & 2\\
+        9  & 40 & 41 & 5 & 4\\
+        35 & 12 & 37 & 6 & 1\\
+        11 & 60 & 61 & 6 & 5\\
+        45 & 28 & 53 & 7 & 2\\
+        33 & 56 & 65 & 7 & 4\\
+        \hline
+    \end{tabular}
+    \caption{Las primeras ternas pitagóricas primitivas.}
+\end{table}
+
+\begin{lemma}
+    No existen dos enteros positivos tal que la suma y la diferencia de sus cuadrados también son cuadrados.
+\end{lemma}
+\begin{proof}
+    El lema es equivalente a demostrar que el sistema de ecuaciones
+    \[
+        \begin{cases}
+            x^2 + y^2 = z^2\\
+            x^2 - y^2 = w^2
+        \end{cases}
+    \]
+    es insoluble en los enteros positivos.
+    Asumamos por absurdo que dicho sistema tiene soluciones en los enteros positivos y consideremos el par $(x,y)$ tal que
+    $(x^2 + y^2)$ es mínimo, luego, es fácil ver que $\mcd x y = 1$.
+    Sumando las dos ecuaciones obtenemos que $2x^2 = z^2 + w^2$ por lo cual $z$ y $w$ tienen la misma paridad.
+    De aquí obtenemos que $(z + w)$ y $(z - w)$ son ambos pares, con esto podemos escribir
+    \begin{align*}
+        2x^2 = z^2 + w^2 \implies x^2 = \left(\frac{z + w}{2}\right)^2 + \left(\frac{z - w}{2}\right)^2
+    \end{align*}
+    la ecuación pitagórica de la derecha cumple con $\mcd{x}{\frac{z + w}{2}, \frac{z - w}{2}} = 1$, en caso contrario, es decir
+    $\mcd{x}{\frac{z + w}{2}, \frac{z - w}{2}} = d \geq 2$ tendríamos que $d \mid x$ y $d \mid \frac{z + w}{2} + \frac{z - w}{2} = z$
+    que por el sistema original obtenemos $d \mid y$ lo cual contradice que $\mcd x y = 1$.
+    Por tanto, existen enteros positivos $m,n$ tales que
+    \[
+        \frac{z + w}{2} = m^2 - n^2, \quad \frac{z - w}{2} = 2mn,
+    \]
+    o bien
+    \[
+        \frac{z + w}{2} = 2mn, \quad \frac{z - w}{2} = m^2 - n^2,
+    \]
+    ya que $2y^2 = z^2 - w^2$, en cualquiera de los dos casos tenemos que $2y^2 = 2(m^2 - n^2)\times 4mn$ y por tanto
+    $y^2 = 4mn(m^2 - n^2)$.
+    De esto obtenemos que $y = 2k$, luego $k^2 = mn(m + n)(m - n)$.
+    Ya que $m,n$ son primos relativos $(m + n)$ es impar, así los enteros $m, n, (m + n), (m - n)$ son todos primos relativos dos a dos.
+    Por lo cual, necesariamente $m = a^2, n = b^2, (m + n) = c^2, (m - n) = d^2$.
+    Pero de aquí que $a^2 + b^2 = c^2$ y $a^2 - b^2 = d^2$ es decir $(a,b,c,d)$ también es solución al sistema original
+    sin embargo
+    \[
+        a^2 + b^2 = m + n < 4mn(m^2 - n^2) = y^2 < x^2 + y^2
+    \]
+    lo cual contradice que $x^2 + y^2$ sea mínimo.
+\end{proof}
 
 La ecuación de Fermat o el último teorema de Fermat fue propuesta por el matemático francés Pierre de Fermat.
 En matemáticas, es un teorema famoso por su dificultad y el proceso de demostración de este teorema ha llevado a muchos descubrimientos importantes tanto en álgebra como en análisis.
