@@ -81,17 +81,16 @@ pitagóricas con lo cual se invita al lector tenerlas presente.
     \]
     o bien
     \[
-        \frac{z + w}{2} = 2mn, \quad \frac{z - w}{2} = m^2 - n^2,
+        \frac{z + w}{2} = 2mn, \quad \frac{z - w}{2} = m^2 - n^2.
     \]
-    ya que $2y^2 = z^2 - w^2$, en cualquiera de los dos casos tenemos que $2y^2 = 2(m^2 - n^2)\times 4mn$ y por tanto
+    Puesto que $2y^2 = z^2 - w^2$, en cualquiera de los dos casos anteriores tenemos que $2y^2 = 2(m^2 - n^2)\cdot 4mn$ y por tanto
     $y^2 = 4mn(m^2 - n^2)$.
     De esto obtenemos que $y = 2k$, luego $k^2 = mn(m + n)(m - n)$.
     Ya que $m,n$ son primos relativos $(m + n)$ es impar, así los enteros $m, n, (m + n), (m - n)$ son todos primos relativos dos a dos.
     Por lo cual, necesariamente $m = a^2, n = b^2, (m + n) = c^2, (m - n) = d^2$.
-    Pero de aquí que $a^2 + b^2 = c^2$ y $a^2 - b^2 = d^2$ es decir $(a,b,c,d)$ también es solución al sistema original
-    sin embargo
+    Pero de aquí que $a^2 + b^2 = c^2$ y $a^2 - b^2 = d^2$ es decir $(a,b,c,d)$ también es solución al sistema original, sin embargo
     \[
-        a^2 + b^2 = m + n < 4mn(m^2 - n^2) = y^2 < x^2 + y^2
+        a^2 + b^2 = m + n < 4mn(m^2 - n^2) = y^2 < x^2 + y^2,
     \]
     lo cual contradice que $x^2 + y^2$ sea mínimo.
 \end{proof}
@@ -100,7 +99,7 @@ La ecuación de Fermat o el último teorema de Fermat fue propuesta por el matem
 En matemáticas, es un teorema famoso por su dificultad y el proceso de demostración de este teorema ha llevado a muchos descubrimientos importantes tanto en álgebra como en análisis.
 
 Mientras estudiaba la obra del antiguo matemático griego Diofánto,
-Fermat escribió en el margen de su copia de un libro de Diofánto
+Fermat escribió en el margen de su copia de un libro de Diofánto:
 \begin{center}
     ``La ecuación a $a^n + b^n = c^n$ no tiene raíces enteras positivas para $n \geq 3$.
     He descubierto una prueba verdaderamente hermosa pero este margen es demasiado pequeño para contenerla.''
@@ -108,6 +107,7 @@ Fermat escribió en el margen de su copia de un libro de Diofánto
 Durante más de 350 años, muchos matemáticos intentaron demostrar la afirmación de Fermat o refutarla encontrando algún contraejemplo.
 En junio de 1993, Andrew Wiles, un matemático inglés de la Universidad de Princeton, afirmó que había demostrado el teorema.
 El 25 de octubre del siguiente año, Wiles envió una prueba revisada a tres colegas, después de que sus colegas la juzgaran completa, Wiles publicó su prueba.
+
 Los siguientes teoremas son ecuaciones de la forma del teorema de Fermat.
 
 \begin{theorem.box}{}{}
@@ -129,6 +129,23 @@ Los siguientes teoremas son ecuaciones de la forma del teorema de Fermat.
 \begin{theorem.box}{}{}
     La ecuación $x^4 + 4y^2 = z^2$ no tiene soluciones enteras positivas.
 \end{theorem.box}
+
+\begin{example}
+    Hallar los números $x \in \Z$ tales que $81 = (2x - x^2)(x^2 -2x + 2)$.
+\end{example}
+
+\begin{solution}
+    Operando sobre la expresión, se obtiene.
+    \begin{align*}
+        (2x - x^2)(x^2 -2x + 2) &= 81 \\
+        -(x^2 - 2x)(x^2 -2x + 2) &= 9^2 \\
+        -(x^2 - 2x + 1 - 1)(x^2 -2x + 1 + 1) &= 3^4\\
+        -\left[(x - 1)^2 - 1\right]\left[(x - 1)^2 + 1\right] &= 3^4\\
+        1 - (x - 1)^4 &= 3^4\\
+        3^4 + (x - 1)^4 &= 1^2
+    \end{align*}
+    Dicha expresión no puede tener soluciones enteras positivas, ya que esta tiene la forma del teorema 2.1, por lo cual no existe un entero $x$ tal que se cumpla la ecuación.
+\end{solution}
 
 
 
@@ -183,4 +200,11 @@ Ejercicios y problemas para el autoestudio.
     Probar que la ecuación $p = x^2 + y^2$ para un primo $p$ de la forma $p = 4k + 1$ con $k$ entero, tiene una y
     solamente una solución en los enteros sin tomar en cuenta las permutaciones de $x,y$.
     (Pista: Usar ternas pitagóricas y luego descenso infinito)
+\end{problem}
+
+\begin{problem}
+    Sea $\Delta ABC$ un triángulo no equilátero con lados de longitudes enteras.
+    Sea $D$ y $E$ los puntos medios de $BC$ y $CA$, respectivamente, y sea $G$ el baricentro de $\Delta ABC$.
+    Suponga que $D,C,E, G$ son cíclicos.
+    Hallar el menos perimetro posible de $\Delta ABC$.
 \end{problem}
