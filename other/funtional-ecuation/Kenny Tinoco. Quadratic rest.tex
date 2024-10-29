@@ -1,0 +1,105 @@
+\documentclass[12pt]{article}
+
+\input{preamble}
+
+\title{Restos cuadráticos y Símbolo de Legendre}
+\author{Kenny J. Tinoco}
+\date{Octubre de 2024}
+
+\begin{document}
+   \maketitle
+   \begin{definition.box}{Símbolo de Legendre}{}
+      Sea $p> 2$ un primo y $a$ un entero cualquiera, se tiene que
+      \[
+         \symLegendre a p =
+         \begin{cases}
+            0, &\text{si}\ p \mid q.\\
+            1, &\text{si}\ p \nmid q \ \text{y}\ a \ \text{es resto cuadrático en módulo}\ p.\\
+            -1,&\text{si}\ a \ \text{no es resto cuadrático en módulo}\ p.\\
+         \end{cases}
+      \]
+   \end{definition.box}
+
+   \begin{lemma}[Propiedades del símbolo de Legendre]
+      El símbolo de Legendre cumple los siguientes resultados.
+      \begin{enumerate}
+         \item [i)] Si $a \modulo{b}{p}$, entonces $\symLegendre a p = \symLegendre b p$.
+         \item [ii)] Si $p \nmid a$, entonces $\symLegendre{a^2}{p} = 1$.
+         \item [iii)] Para todos lo enteros $a,b$ se cumple $\symLegendre{ab}{p} = \symLegendre{a}{p} \symLegendre{b}{p}$.
+         \item [iv)] $\symLegendre{-1}{p} = (-1)^{\frac{p - 1}{2}}$, en concreto $\symLegendre{-1}{p} = 1$ si y solo si $p \modulo{1}{4}$.
+      \end{enumerate}
+   \end{lemma}
+
+   \begin{theorem.box}{Ley de reciprocidad cuadrática}{}
+      Sean $p, q$ dos primos impares, se cumple que
+      \[
+         \symLegendre{p}{q} \symLegendre{q}{p} = (-1)^{\frac{p - 1}{2} \cdot \frac{q - 1}{2}}.
+      \]
+   \end{theorem.box}
+
+   \begin{remark.box}{}{}
+      De la ley de reciprocidad cuadrática, obtenemos que
+      \[
+         \symLegendre p q =
+         \begin{cases}
+            \symLegendre q p, &\text{si}\ p\ \text{ó}\ q \modulo{1}{4}\\
+            - \symLegendre q p, &\text{si}\ p \equiv q \modulo{3}{4}
+         \end{cases}
+      \]
+   \end{remark.box}
+
+   \begin{theorem.box}{Criterio de Euler}{}
+      Sea $p > 2$ un primo y $a$ un entero cualquiera, entonces se cumple
+      \[
+         \symLegendre a p \modulo{a^{\frac{p - 1}{2}}}{p}.
+      \]
+   \end{theorem.box}
+
+   \begin{theorem.box}{}{}
+      Sea $p > 2$ un primo, entonces se cumple que
+      \[
+         \symLegendre{2}{p} = (-1)^{\frac{p^2 - 1}{8}}.
+      \]
+   \end{theorem.box}
+
+   \begin{remark.box}{}{}
+      Del teorema anterior, obtenemos que
+      \[
+         \symLegendre{2}{p} =
+         \begin{cases}
+            1, &\text{si}\ p \modulo{1,7}{8}\\
+            -1, &\text{si}\ p \modulo{3,5}{8}
+         \end{cases}
+      \]
+   \end{remark.box}
+
+   Veamos algunos ejercicios.
+   \begin{exercise}
+      Determinar los valores de los siguientes símbolos de Legendre.
+      \begin{multicols}{3}
+         \begin{enumerate}
+            \item $\symLegendre{44}{103}$
+            \item $\symLegendre{-60}{1019}$
+            \item $\symLegendre{2010}{1019}$
+            \item $\symLegendre{139}{433}$
+            \item $\symLegendre{523}{1103}$
+         \end{enumerate}
+      \end{multicols}
+   \end{exercise}
+
+   \begin{exercise}
+      Resolver las siguientes congruencias.
+      \begin{multicols}{2}
+         \begin{enumerate}
+            \item $x^2 \modulo{196}{1357}$
+            \item $x^2 + x \modulo{0}{13}$
+            \item $x^2 + 3x + 2 \modulo{0}{7}$
+            \item $x^2 + 5x + 13 \modulo{0}{11}$
+            \item $x^2 - 3x + 2 \modulo{8}{17}$
+            \item $25x^2 + 7x \modulo{7}{17}$
+            \item $x^2 + x + 7 \modulo{0}{189}$
+         \end{enumerate}
+      \end{multicols}
+   \end{exercise}
+
+\end{document}
