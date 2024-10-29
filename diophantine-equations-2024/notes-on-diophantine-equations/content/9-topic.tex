@@ -1,0 +1,222 @@
+\section{Tripla pitagóricas}
+
+En esta sesión abordaros el tema de ternas pitagóricas, perteneciente a la unidad de ecuaciones diofánticas clásicas.
+Nuestro objetivo principal será conocer e identificar cuando una ecuación diofántica cuadrática tiene soluciones o no tiene soluciones.
+
+Probablemente conozca la ecuación $x^2 + y^2 = z^2$ por el teorema de Pitágoras, el cual describe la relación entre los lados $x,y,z$ con respecto al ángulo recto.
+Si los lados son todos enteros positivos, estos forman una \textbf{tripla pitagórica} o \textbf{terna pitagórica}.
+Por ejemplo, $(x,y,z) = (3,4,5)$ es una terna pitagórica, asi como $(5,12,13)$ es también una terna pitagórica.
+También, cuando un triángulo rectángulo tiene longitudes enteras, lo llamaremos un triángulo pitagórico.
+
+\begin{lemma}
+    Sean $x,y,z$ una terna pitagórica y $d = \mcd{x}{y,z}$.
+    Entonces,
+    \begin{enumerate}
+        \item [i)] Se tiene $d = \mcd x y = \mcd y z = \mcd z x$.
+        \item [ii)] Si escribimos $x = d x_1$, $y = d y_1$ y $z = d z_1$, entonces $x_1, y_1, z_1$ es también una terna pitagórica.
+    \end{enumerate}
+\end{lemma}
+
+\begin{definition.box}{Terna pitagórica primitiva}{}
+    Se dice que una terna pitagórica es primitiva si $\mcd{x}{y,z} = 1$ o equivalentemente cualquiera de los $\mcd x y$, $\mcd y z$ o $\mcd z x$ es 1.
+\end{definition.box}
+
+\begin{lemma}
+    Sea $x,y,z$ una terna pitagórica primitiva, entonces, entre $x,y,z$ hay exactamente un número par, que bien puede ser $x$ o $y$.
+\end{lemma}
+
+\begin{theorem.box}{}{}
+    Sea $x,y,z$ una terna pitagórica primitiva de enteros positivos, con $y$ par.
+    Entonces, existen enteros coprimos no negativos $m,n$ con $m > n$ talque
+    \begin{align*}
+        x = m^2 - n^2,\quad y = 2mn,\quad z = m^2 + n^2.
+    \end{align*}
+\end{theorem.box}
+La mayoría de los problemas que implican ternas pitagóricas se reducen a utilizar las ternas ya conocidas o bien,
+demostrar que una ecuación no tiene soluciones porque su forma es de una ecuación de Fermat, luego veremos algunos teoremas sobre este aspecto.
+Por lo cual es importante conocer algunas ternas pitagóricas, en el cuadro 1 se muestran las primeras diez ternas
+pitagóricas con lo cual se invita al lector tenerlas presente.
+\begin{table}
+    \centering
+    \begin{tabular}{|c|c|c||c|c|}
+        \hline
+        x & y & z & m & n\\
+        \hline\hline
+        3  &  4 &  5 & 2 & 1\\
+        5  & 12 & 13 & 3 & 2\\
+        15 &  8 & 17 & 4 & 1\\
+        7  & 24 & 25 & 4 & 3\\
+        21 & 20 & 29 & 5 & 2\\
+        9  & 40 & 41 & 5 & 4\\
+        35 & 12 & 37 & 6 & 1\\
+        11 & 60 & 61 & 6 & 5\\
+        45 & 28 & 53 & 7 & 2\\
+        33 & 56 & 65 & 7 & 4\\
+        \hline
+    \end{tabular}
+    \caption{Las primeras ternas pitagóricas primitivas.}
+\end{table}
+
+\begin{lemma}
+    No existen dos enteros positivos tal que la suma y la diferencia de sus cuadrados también son cuadrados.
+\end{lemma}
+\begin{proof}
+    El lema es equivalente a demostrar que el sistema de ecuaciones
+    \[
+        \begin{cases}
+            x^2 + y^2 = z^2\\
+            x^2 - y^2 = w^2
+        \end{cases}
+    \]
+    es insoluble en los enteros positivos.
+    Asumamos por absurdo que dicho sistema tiene soluciones en los enteros positivos y consideremos el par $(x,y)$ tal que
+    $(x^2 + y^2)$ es mínimo, luego, es fácil ver que $\mcd x y = 1$.
+    Sumando las dos ecuaciones obtenemos que $2x^2 = z^2 + w^2$ por lo cual $z$ y $w$ tienen la misma paridad.
+    De aquí obtenemos que $(z + w)$ y $(z - w)$ son ambos pares, con esto podemos escribir
+    \begin{align*}
+        2x^2 = z^2 + w^2 \implies x^2 = \left(\frac{z + w}{2}\right)^2 + \left(\frac{z - w}{2}\right)^2
+    \end{align*}
+    la ecuación pitagórica de la derecha cumple con $\mcd{x}{\frac{z + w}{2}, \frac{z - w}{2}} = 1$, en caso contrario, es decir
+    $\mcd{x}{\frac{z + w}{2}, \frac{z - w}{2}} = d \geq 2$ tendríamos que $d \mid x$ y $d \mid \frac{z + w}{2} + \frac{z - w}{2} = z$
+    que por el sistema original obtenemos $d \mid y$ lo cual contradice que $\mcd x y = 1$.
+    Por tanto, existen enteros positivos $m,n$ tales que
+    \[
+        \frac{z + w}{2} = m^2 - n^2, \quad \frac{z - w}{2} = 2mn,
+    \]
+    o bien
+    \[
+        \frac{z + w}{2} = 2mn, \quad \frac{z - w}{2} = m^2 - n^2.
+    \]
+    Puesto que $2y^2 = z^2 - w^2$, en cualquiera de los dos casos anteriores tenemos que $2y^2 = 2(m^2 - n^2)\cdot 4mn$ y por tanto
+    $y^2 = 4mn(m^2 - n^2)$.
+    De esto obtenemos que $y = 2k$, luego $k^2 = mn(m + n)(m - n)$.
+    Ya que $m,n$ son primos relativos $(m + n)$ es impar, así los enteros $m, n, (m + n), (m - n)$ son todos primos relativos dos a dos.
+    Por lo cual, necesariamente $m = a^2, n = b^2, (m + n) = c^2, (m - n) = d^2$.
+    Pero de aquí que $a^2 + b^2 = c^2$ y $a^2 - b^2 = d^2$ es decir $(a,b,c,d)$ también es solución al sistema original, sin embargo
+    \[
+        a^2 + b^2 = m + n < 4mn(m^2 - n^2) = y^2 < x^2 + y^2,
+    \]
+    lo cual contradice que $x^2 + y^2$ sea mínimo.
+\end{proof}
+
+La ecuación de Fermat o el último teorema de Fermat fue propuesta por el matemático francés Pierre de Fermat.
+En matemáticas, es un teorema famoso por su dificultad y el proceso de demostración de este teorema ha llevado a muchos descubrimientos importantes tanto en álgebra como en análisis.
+
+Mientras estudiaba la obra del antiguo matemático griego Diofánto,
+Fermat escribió en el margen de su copia de un libro de Diofánto:
+\begin{center}
+    ``La ecuación a $a^n + b^n = c^n$ no tiene raíces enteras positivas para $n \geq 3$.
+    He descubierto una prueba verdaderamente hermosa pero este margen es demasiado pequeño para contenerla.''
+\end{center}
+Durante más de 350 años, muchos matemáticos intentaron demostrar la afirmación de Fermat o refutarla encontrando algún contraejemplo.
+En junio de 1993, Andrew Wiles, un matemático inglés de la Universidad de Princeton, afirmó que había demostrado el teorema.
+El 25 de octubre del siguiente año, Wiles envió una prueba revisada a tres colegas, después de que sus colegas la juzgaran completa, Wiles publicó su prueba.
+
+Los siguientes teoremas son ecuaciones de la forma del teorema de Fermat.
+
+\begin{theorem.box}{}{}
+    La ecuación $x^4 + y^4 = z^2$ no tiene soluciones enteras positivas.
+\end{theorem.box}
+
+\begin{theorem.box}{}{}
+    La ecuación $x^4 - y^4 = z^2$ no tiene soluciones enteras positivas.
+\end{theorem.box}
+
+\begin{theorem.box}{}{}
+    La ecuación $x^4 + y^2 = z^2$ no tiene soluciones enteras positivas.
+\end{theorem.box}
+
+\begin{theorem.box}{}{}
+    La ecuación $x^4 - 4y^2 = z^2$ no tiene soluciones enteras positivas.
+\end{theorem.box}
+
+\begin{theorem.box}{}{}
+    La ecuación $x^4 + 4y^2 = z^2$ no tiene soluciones enteras positivas.
+\end{theorem.box}
+
+\begin{example}
+    Hallar los números $x \in \Z$ tales que $81 = (2x - x^2)(x^2 -2x + 2)$.
+\end{example}
+
+\begin{solution}
+    Operando sobre la expresión, se obtiene.
+    \begin{align*}
+    (2x - x^2)(x^2 -2x + 2) &= 81 \\
+    -(x^2 - 2x)(x^2 -2x + 2) &= 9^2 \\
+    -(x^2 - 2x + 1 - 1)(x^2 -2x + 1 + 1) &= 3^4\\
+    -\left[(x - 1)^2 - 1\right]\left[(x - 1)^2 + 1\right] &= 3^4\\
+    1 - (x - 1)^4 &= 3^4\\
+    3^4 + (x - 1)^4 &= 1^2
+    \end{align*}
+    Dicha expresión no puede tener soluciones enteras positivas, ya que esta tiene la forma del teorema 2.1, por lo cual no existe un entero $x$ tal que se cumpla la ecuación.
+\end{solution}
+
+
+
+\subsection{Ejercicios y problemas}
+Ejercicios y problemas para el autoestudio.
+
+\begin{exercise}
+    Resolver las siguientes ecuaciones sobre los números naturales
+    \begin{multicols}{2}
+        \begin{enumerate}
+            \item $15y^4 - z^2 - 2y^2 z + 1 = 0$
+            \item $x^4 + y^4 - x^2 y^2 - z^2 - 2xyz = 0$
+            \item $x^4 y^4 - 2x^2 y^2 + 1 = x^4 + y^4$
+            \item $x^8 + y^8 - 3x^{4}y^4 = 625$
+            \item $y^4 = 168x^4 + 338x^3 y + y^2$
+        \end{enumerate}
+    \end{multicols}
+\end{exercise}
+
+\begin{exercise}
+    Resolver las siguientes ecuaciones sobre los números naturales
+    \begin{multicols}{2}
+        \begin{enumerate}
+            \item $2x^4 + 2x^2 + 1 = z^4$
+            \item $-14x^2 + y^4 = 49$
+            \item $3x^4 + y^4 - 102x^2 + 2061 = 0$
+            \item $3x^4 - 4x^2 + 1 = y^4$
+            \item $x^4 + 4x^3 + 297x^2 + 4x + 1 = y^4$
+        \end{enumerate}
+    \end{multicols}
+\end{exercise}
+
+\begin{problem}
+    Demostrar que el radio de la circunferencia inscrita en un triángulo pitagórico de lados enteros es siempre un número natural.
+\end{problem}
+
+\begin{problem}
+    Demostrar que el área de un triángulo pitagórico no puede ser un cuadrado perfecto.
+\end{problem}
+
+\begin{problem}
+    Hallar todas las soluciones en enteros positivos para el sistema de ecuaciones
+    \[
+        \begin{cases}
+            a^2 + b^2 = c^2\\
+            b^2 + c^2 = d^2.
+        \end{cases}
+    \]
+\end{problem}
+
+\begin{problem}
+    Probar que la ecuación $p = x^2 + y^2$ para un primo $p$ de la forma $p = 4k + 1$ con $k$ entero, tiene una y
+    solamente una solución en los enteros sin tomar en cuenta las permutaciones de $x,y$.
+    (Pista: Usar ternas pitagóricas y luego descenso infinito)
+\end{problem}
+
+\begin{problem}
+    Sea $\Delta ABC$ un triángulo no equilátero con lados de longitudes enteras.
+    Sea $D$ y $E$ los puntos medios de $BC$ y $CA$, respectivamente, y sea $G$ el baricentro de $\Delta ABC$.
+    Suponga que $D,C,E, G$ son cíclicos.
+    Hallar el menos perimetro posible de $\Delta ABC$.
+\end{problem}
+
+\begin{problem}
+    Hallar todos los $x,y \in \N$ tales que $x^2 + y^2 = 2017(x - y)$.
+\end{problem}
+
+\begin{problem}
+    Resolver la ecuación diofántica $x^{-2} + y^{-2} = z^{-2}.$
+\end{problem}

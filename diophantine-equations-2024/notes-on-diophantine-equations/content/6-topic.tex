@@ -1,0 +1,220 @@
+\section{Método de Congruencia}
+
+En esta sesión de clase se sigue con los métodos básico para la resolución de ecuaciones diofánticas, en concreto con
+el método de congruencia, el cual nos permite utilizar las propiedades de divisibilidad para hallar posibles soluciones de una ecuación.
+
+La congruencia en enteros es una poderosa herramienta en la solución de ecuaciones diofánticas, usualmente aplicaremos
+este método para probar que ciertas ecuaciones son insolubles o bien deducir condiciones que las soluciones deben cumplir.
+Ahora, vemos algunas definiciones.
+
+\begin{definition.box}{Divisibilidad}{}
+    Si $a$ y $b$ son enteros, se dice que $a$ divide a $b$ o que $b$ es múltiplo de $a$ si $b = aq$ para algún entero $q$,
+    y se denota por $a \mid b$.
+\end{definition.box}
+
+\begin{definition.box}{Congruencias}{}
+    Dados dos enteros $a$, $b$ y un entero positivo $m$, decimos que $a$ es congruente con $b$ módulo $m$ si $(a - b)$ es múltiplo de $m$.
+    En este caso escribimos $a \modulo{b}{m}$.
+\end{definition.box}
+Es decir, tenemos $a \modulo{b}{m} \iff m \mid (a - b)$.
+Con esto, podemos deducir y demostrar el siguiente teorema.
+
+\begin{theorem.box}{Propiedades de Congrencias}{}
+    Sean los enteros $a,b,c,d$ y $m \geq 1$.
+    \begin{enumerate}
+        \item Si $a \modulo{c}{m}$ y $c \modulo{d}{m}$, entonces $a \modulo{d}{m}$.
+        \item Si $a \modulo{c}{m}$ y $b \modulo{d}{m}$, entonces $ab \modulo{cd}{m}$.
+        \item Si $a \modulo{c}{m}$, entonces $a^n \modulo{c^n}{m}$ para todo entero positivo $n$.
+        \item Si $ab \modulo{bc}{m}$, entonces $a \modulo{c}{\frac{m}{d}}$ donde $d = mcd(b,m)$.
+    \end{enumerate}
+\end{theorem.box}
+
+\begin{example}
+    Hallar el resto cuando $6^{1987}$ es dividido por 37.
+\end{example}
+\begin{solution}
+    Como $6^2 = 36 = 37 - 1$ es claro que $6^2 \modulo{-1}{37}$.
+    Asi al considerar $6^{1987} = 6\cdot 6^{1986} = 6\cdot (6^2)^{993}$ tenemos que $6^{1987} \equiv 6(-1)^{993} \equiv -6 \modulo{31}{37}$.
+    Por lo cual, el resto de la división de $6^{1987}$ por 37 es 31.
+\end{solution}
+
+\begin{definition.box}{Función phi de Euler}{}
+    Para cualquier entero $n$ se denota a $\varphi(n)$ como cantidad de números de coprimos menores a $n$.
+\end{definition.box}
+
+\begin{theorem.box}{Teorema de Euler}{}
+    Si $a$ y $n$ son dos enteros positivos primos relativos entre si, entonces $a^{\varphi(n)} \modulo{1}{n}$.
+\end{theorem.box}
+
+\begin{theorem.box}{Pequeño teorema de Fermat}{}
+    Si $p$ es primo y $a$ es un entero primo relativo con $p$, entonces $a^{p - 1} \modulo{1}{p}$.
+\end{theorem.box}
+
+Es claro que el teorema de Fermat es un caso concreto del teorema de Euler, de la propia definición de números primos
+se deduce que un primo $p$ tiene exactamente $(p - 1)$ primos relativos, luego el resultado es evidente.
+
+De estas definiciones y teoremas se obtienen ciertos restos especiales, conocidos como restos potenciales respecto a
+un módulo, quizás los más famosos serían los restos cuadráticos, veamos algunos de ellos.
+\begin{align*}
+    &x^2 \modulo{0,1}{3}     && x^2 \modulo{0,1,4}{8}    && x^3 \modulo{0,\pm 1}{7}\\[2mm]
+    &x^2 \modulo{0,1}{4}     && x^2 \modulo{0,1,4,9}{16} && x^4 \modulo{0,1}{16}\\[1.6mm]
+    &x^2 \modulo{0,\pm 1}{5} && x^3 \modulo{0,\pm 1}{9}  && x^5 \modulo{0,\pm 1}{11}
+\end{align*}
+Estos restos pueden ser probados fácilmente, algunos son resultados inmediatos de teoremas como Fermat o Euler, asi mismo,
+se puede considerar el conjunto de residuos de cada módulo y luego investigar el comportamiento de las potencias.
+Veamos un ejemplo.
+
+\begin{example}
+    Probar que para todo entero $x$ se tiene $x^2 \modulo{0,1}{4}$.
+\end{example}
+\begin{solution}
+    Cuando $x = 2x_1$, entonces $x^2 = 4x_1^2 \modulo{0}{4}$.
+    Ahora, es claro que $\varphi(4) = 2$, aplicando Euler tenemos $x^2 \modulo{1}{4}$.
+\end{solution}
+
+Se deja como ejercicio al lector probar los demás restos potenciales.
+
+\begin{example}
+    Hallar todos los enteros $x,y$ tal que $15x^2 - 7y^2 = 9$.
+\end{example}
+\begin{solution}[1]
+    Analizando la ecuación en módulo 3 tenemos que $-7y^2 \modulo{0}{3}$, es claro que $y$ es múltiplo de 3, es decir $y = 3y_1$.
+    Por tanto,
+    \[
+        15x^2 - 7(9y_1^2) = 9 \iff 5x^2 - 7(3y_1^2) = 3
+    \]
+    donde en módulo 3 obtenemos que $x$ también es múltiplo 3, es decir $x = 3x_1$.
+    Esto es,
+    \[
+        5(9x_1^2) - 7(3y_1^2) = 3 \iff 5(3x_1^2) - 7y_1^2 = 1 \iff 15x_1^2 - 7y_1^2 = 1.
+    \]
+    Al analizar la última ecuación en módulo 3 obtenemos que $y_1^2 \modulo{-1}{3}$, lo cual no es resto cuadrático en módulo 3.
+    Luego, la ecuación no tiene soluciones.
+\end{solution}
+
+\begin{solution}[2]
+    Analizando en módulo 5 tenemos que $-7y^2 \modulo{1}{5}$ por lo cual\footnote{¿Podés justificar el porqué?} $y^2 \modulo{3}{5}$,
+    este resto no es posible en módulo 5.
+    Luego, la ecuación no tiene soluciones enteras.
+\end{solution}
+
+
+\subsection{Ejercicios y problemas}
+
+Ejercicios y problemas para el autoestudio.
+
+\begin{exercise}
+    Hallar los restos cuadráticos en módulo 13.
+\end{exercise}
+
+\begin{exercise}
+    Hallar los enteros positivos $a,b$ tales que $a^2 - 3b^2 = 8$.
+\end{exercise}
+
+\begin{exercise}
+    ¿Existen enteros positivos $x,y$ tal que $x^3 = 2^y + 15$?
+\end{exercise}
+
+\begin{exercise}
+    Probar que la ecuación $x^2 + 3xy - 2y^2 = 122$ no tiene soluciones enteras
+\end{exercise}
+
+\begin{exercise}
+    Demostrar que la ecuación $x^2 - 7y = 3$ no tiene soluciones enteras.
+\end{exercise}
+
+\begin{exercise}
+    Demostrar que no hay enteros para los cuales $800000007 = x^2 + y^2 + z^2$.
+\end{exercise}
+
+\begin{exercise}
+    Hallar las soluciones enteras de la ecuación $x^2 - 5y^2 = 2$.
+\end{exercise}
+
+\begin{exercise}
+    Hallar las soluciones de enteros positivos tal que $a^3 + 2b^3 + 4c^3 = 9d^3$.
+\end{exercise}
+
+\begin{exercise}
+    Probar que la ecuación $x^3 + 3y^3 + 9z^3 - 9xyz = 0$ solo tiene la solución entera $(x,y,z) = (0,0,0)$.
+\end{exercise}
+
+\begin{exercise}
+    Probar que las ecuaciones
+    \begin{enumerate}
+        \item $6x^3 + 3 = y^6$
+        \item $x^3 + y^3 + 4 = z^3$
+    \end{enumerate}
+    no tiene soluciones para enteros positivos $x,y,z$.
+\end{exercise}
+
+\begin{exercise}
+    Encontrar todas las soluciones $(p,q)$ de números primos tales que
+    \[
+        p^3 - q^5 = (p + q)^2.
+    \]
+\end{exercise}
+
+\begin{exercise}
+    Demostrar que 7 divide a $3^{2n + 1} + 2^{n + 2}$ para todo natural $n$.
+\end{exercise}
+
+\begin{exercise}
+    Hallar un número infinito de enteros $n$ tal que $7 \mid 2^n + 27$.
+\end{exercise}
+
+\begin{exercise}
+    Si $r_k = 8^k + 6^k$, hallar el resto de la división de $a_{83}$ entre 49.
+\end{exercise}
+
+\begin{problem}
+    Probar que la ecuación $(x + 1)^2 + (x + 2)^2 + \cdots + (x + 99)^2 = y^z$ no tiene soluciones enteras $(x,y,z)$ con $z > 1$.
+\end{problem}
+
+\begin{problem}
+    Determinar todos los primos $p$ para los cuales el sistema de ecuaciones
+    \[
+        \begin{cases}
+            p + 1 = 2x^2\\
+            p^2 + 1 = 2y^2
+        \end{cases}
+    \]
+    tiene soluciones enteras $(x,y)$.
+\end{problem}
+
+\begin{problem}
+    Probar que la ecuación $x^5 - y^2 = 4$ es insoluble en los enteros.
+\end{problem}
+
+\begin{problem}
+    Si $n$ es un entero positivo tal que la ecuación $x^3 - 3xy^2 + y^3 = n$ tiene tres soluciones enteras $(x,y)$.
+    Probar que la ecuación es insoluble cuando $n = 2891$.
+\end{problem}
+
+\begin{problem}
+    Determinar las posibles soluciones enteras no negativas $(x_1, x_2, \ldots, x_{14})$ de la ecuación $x_1^4 + x_2^4 + \cdots + x_{14}^4 = 15999$.
+\end{problem}
+
+\begin{exercise}
+    Probar que para todo entero $x$ se tiene $x^5 \modulo{0,\pm 1}{11}$.
+\end{exercise}
+
+\begin{problem}
+    Si se cumple que $n \modulo{4}{9}$, probar que la ecuación
+    \[
+        x^3 + y^3 + z^3 = n
+    \]
+    no tiene soluciones enteras.
+\end{problem}
+
+\begin{problem}
+    Probar que la ecuación
+    \[
+        (a + 2023)^2 + (a + 2022)^2 + \cdots + (a + 1)^2 = b^2
+    \]
+    no es soluble en enteros $a,b$.
+\end{problem}
+
+\begin{problem}
+    Hallar los pares $(a,b)$ de enteros positivos tales que satisfacen la ecuación $a^{b^2} = b^a$.
+\end{problem}

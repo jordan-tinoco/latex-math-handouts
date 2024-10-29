@@ -1,0 +1,42 @@
+\section{Introducción a las Ecuaciones Diofánticas}
+
+La resolución de ecuaciones es un tema que se presenta en secundaria desde los primeros niveles.
+Paralelamente se van estudiando los diferentes conjuntos numéricos a saber: el conjunto de números Naturales $(\N)$,
+el conjunto de números enteros $(\Z)$, el conjunto de números racionales $(\Q)$ y el conjunto de número Reales $(\R)$.
+
+Además, se repasan conceptos elementales de teoría de números como son: máximo común divisor, mínimo común múltiplo, números primos, etc.
+En este curso estudiaremos los métodos de resolución de un tipo especial de ecuaciones llamadas \textbf{Ecuaciones Diofánticas.}
+
+\subsection{Definiciones}
+
+\begin{definition.box}{Ecuación Diofántica}{}
+    Se llama {ecuación diofántica} o {ecuación diofantina} a cualquier ecuación polinomial con coeficientes enteros cuya
+    solución se restringe únicamente a aquellos valores enteros que la satisfacen.
+\end{definition.box}
+
+Es decir, una expresión de la forma
+\[
+    a_1 x_1 + a_2 x_2 + \cdots + a_n x_n = b, \quad \text{con} \quad 1 \leq i \leq n,\ a_i, b \in \Z.
+\]
+Donde la $n$-upla de números enteros $(r_1, r_2, \ldots, r_n)$ hace la igualdad.
+Es claro que una ecuación diofántica puede tener una o más $n$-upla que hagan la igualdad.
+
+\begin{definition.box}{}{}
+    A una $n$-upla, con $n$ entero, que satisface una ecuación diofántica, se le llama {solución} de la ecuación.
+    Una ecuación diofántica con una o más soluciones se llama ecuación {soluble}, así también, una ecuación diofántica sin
+    soluciones se llama ecuación {insoluble} o {irresoluble}.
+\end{definition.box}
+
+Una ecuación diofántica se dice que tiene una familia de soluciones cuando un conjunto de estas, o todas, puede ser expresada en función de uno o más parámetros enteros.
+Como por ejemplo la ecuación $x^2 + 2y^2 = z^2$, vemos que tiene soluciones $(-2, 0, 2)$, $(-1, 2, 3)$, $(2, 4, 6)$, $\ldots$, las cuales podemos expresar como
+\[
+    \begin{cases}
+        x = r^2 - 2\\
+        y = 2r\\
+        z = r^2 + 2
+    \end{cases}
+\]
+donde $r$ es un número entero sin ninguna restricción, por lo que la ecuación diofántica tiene infinitas soluciones de esta forma.
+
+Ahora, nos centraremos en el conjunto de métodos elementales para la resolución de Ecuaciones Diofánticas, a lo largo del curso
+haremos uso de estos métodos, tales como factorización, identidades algebraicas, desigualdades, parametrización y congruencias.

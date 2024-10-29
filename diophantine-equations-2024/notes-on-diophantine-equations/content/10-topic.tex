@@ -1,0 +1,110 @@
+\section{Ecuaciones de Pell}
+
+En sesión abordaremos el tema de ecuaciones de Pell, con el fin de analizar las formas de sus soluciones, asi como
+desarrolla habilidades y destrezas en la resolución de problemas que se relacionan con las ecuaciones de Pell.
+
+Hasta el momento solo hemos abordado ecuaciones cuadráticas, o grado par, por medio de las ternas pitagóricas y
+las ecuaciones de Fermat.
+Sin embargo, existe tipos de ecuaciones diofánticas cuadráticas muy especiales, conocidas como las ecuaciones de Pell.
+
+\begin{definition.box}{Ecuación de Pell}{}
+    Una ecuación diofántica de la forma
+    \[
+        x^2 - dy^2 = 1, \ \text{con} \ x,y \in \Z,
+    \]
+    donde $d \in \N$ no es cuadrado perfecto, es conocida como la ecuación de Pell.
+\end{definition.box}
+
+¿Por qué decimos que $d$ no es un cuadrado perfecto?
+Porque si esto fuera así, se formaría una diferencia de cuadrados, lo cual puede resolverse fácilmente asignado divisores a cada factor.
+De esta definición obtenemos.
+
+\begin{definition.box}{Ecuación de tipo Pell}{}
+    Una ecuación de la forma $x^2 - dy^2 = a$ para un entero $a$ usualmente la llamaremos como ecuación del Pell.
+\end{definition.box}
+
+De manera general, cualquier ecuación diofántica de dos variables puede reducirse a una ecuación del tipo Pell.
+Por lo cual esta ecuación diofántica resulta muy útil, con esto dicho la pregunta que surge es ¿cómo se resuelve una ecuación del tipo Pell?
+Resulta que estas ecuaciones tiene un tipo de solución muy sencillas de comprender, ya que a partir de una solución concreta pueden generarse una infinidad de soluciones.
+Similar a lo que ocurre con las soluciones de las ecuaciones diofánticas lineales.
+No obstante, la demostración de esto requiere conocer otros resultados en teoría de números, este escrito no abordará estos aspectos, sin embargo, se invita al lector investigarlo por su cuenta.
+
+\begin{definition.box}{}{}
+    El conjugado del número $z = x + y\sqrt{d}$ es definido por $\overline{z} = x - y \sqrt{d}$, y su módulo está dado por $N(z) = z \overline{z} = x^2 - dy^2 \in \Z$.
+\end{definition.box}
+
+\begin{theorem.box}{}{}
+    Para la ecuación de Pell $x^2 - dy^2 = 1$ si $(x_1, y_1)$ es la solución más pequeña, y se tiene una solución $(x_k, y_k)$, entonces
+    \begin{align*}
+        x_k + d y_k = (x_1 + dy_1)^r, \quad \text{para algún}\ r\in \positiveSet{\Z}.
+    \end{align*}
+\end{theorem.box}
+
+\begin{theorem.box}{}{}
+    La ecuación de Pell $x^2 - dy^2 = 1$ tiene infinitas soluciones enteras no negativas y si $(x_1, y_1)$ es la solución más pequeña,
+    la solución general está dada por
+    \begin{align*}
+        x_n = \dfrac{(x_1 + y_1 d)^n + (x_1 - y_1 d)^n}{2}, \quad
+        y_n = \dfrac{(x_1 + y_1 d)^n - (x_1 - y_1 d)^n}{2\sqrt{d}}
+    \end{align*}
+    con $n$ un natural.
+\end{theorem.box}
+
+Para la ecuación $x^2 - dy^2 = -1$, la situación es similar.
+Si $(x_1, y_1)$ es la solución minima, entonces la solución $(x_n, y_n)$ tiene la misma forma del teorema anterior para $n$ impar.
+
+¿Qué podemos decir del conjunto de soluciones para la ecuación $x^2 - dy^2 = a$ con $a \neq 1$?
+A diferencia de la ecuación de Pell, la ecuación $x^2 - dy^2 = a$ no necesariamente tiene soluciones.
+Sin embargo, si esta tiene una solución minima, entonces tiene una infinidad de soluciones.
+
+\begin{theorem.box}{}{}
+    La ecuación de tipo Pell $x^2 - dy^2 = a$ si tiene a $(x_1, y_1)$ como la solución más pequeña,
+    entonces tiene una cantidad infinita de soluciones.
+\end{theorem.box}
+
+En las siguientes clases abordaremos un método que nos permite encontrar las soluciones de una ecuación de Pell.
+Esta herramienta es conocida como fracciones continuas, se invita al lector investigar este tema.
+
+\subsection{Ejercicios y problemas}
+Ejercicios y problemas para el autoestudio.
+
+\begin{exercise}
+    Verificar que si $(x_1, y_1)$ es la solución mínima de la ecuación de Pell $x^2 - dy^2 = 1$, entonces
+
+    \begin{align*}
+        x_n = \dfrac{(x_1 + y_1 d)^n + (x_1 - y_1 d)^n}{2}, \quad
+        y_n = \dfrac{(x_1 + y_1 d)^n - (x_1 - y_1 d)^n}{2\sqrt{d}}
+    \end{align*}
+\end{exercise}
+
+\begin{exercise}
+    Hallar todas las soluciones enteras positivas de la ecuación $x^2 - 2y^2 = 1$.
+\end{exercise}
+
+\begin{exercise}
+    Demostrar que la ecuación $x^2 - dy^2 = -1$ no tienes soluciones cuando $d \modulo{3}{4}$.
+\end{exercise}
+
+\begin{problem}
+    Resolver en enteros la ecuación $x^2 + y^2 - 1 = 4xy$.
+\end{problem}
+
+\begin{problem}
+    Demostrar que la ecuación $x^2 - dy^2 = -1$ no tiene solución si $d$ es divisible por un primo de la forma $4k + 3$.
+\end{problem}
+
+\begin{problem}
+    Hallar todas las soluciones $x,y$ para la ecuación $x^2 - 3y^2 = 6$.
+\end{problem}
+
+\begin{problem}
+    Hallar todas las soluciones $x,y$ para la ecuación $x^2 - 7y^2 = 2$.
+\end{problem}
+
+\begin{problem}
+    Hallar todas las soluciones $x,y$ para la ecuación $x^2 - 7y^2 = 1$.
+\end{problem}
+
+\begin{problem}
+    Demostrar que si la diferencia de dos cubos consecutivos es $n^{2}$ con $n \in \N$, entonces $2n - 1$ es también un cuadrado.
+\end{problem}
