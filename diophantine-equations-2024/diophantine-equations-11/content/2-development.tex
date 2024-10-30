@@ -1,24 +1,25 @@
 \section{Desarrollo}
 
+\subsection{Definiciones}
+
 \begin{definition.box}{Fracción continua generalizada}{}
     Definiremos a una fracción continua generalizada como una expresión de la forma:
     \[
-        a_1 + \dfrac{b_1}{a_2 + \dfrac{b_2}{a_3 + \dfrac{b_3}{a_{n - 2} + \dfrac{\ddots}{a_{n - 1} + \dfrac{b_{n -1}}{a_n}}}}}
+        a_0 + \dfrac{b_0}{a_1 + \dfrac{b_1}{a_2 + \dfrac{b_2}{a_{n - 2} + \dfrac{\ddots}{a_{n - 1} + \dfrac{b_{n -1}}{a_n}}}}}
     \]
-    donde los $a_i$ y $b_i$, con $i =1,2, \ldots, n$, son números reales.
+    donde los $a_i$ y $b_i$, con $i = 0,1, \ldots, n$, son números reales.
 \end{definition.box}
-Donde los $a_i, b_i$ se llamarán términos de la fracción continua.
-Por lo cual, es posible encontrar fracciones continuas con una cantidad finita e infinita de términos.
+Los $a_i$ y $b_i$ se llamarán términos de la fracción continua, es fácil concluir que, es posible encontrar fracciones continuas con una cantidad finita e infinita de términos.
 Cuando todos los $b_i$ son iguales a 1 se forman un tipo de fracciones continuas importantes.
 
 \begin{definition.box}{Fracción continua simple}{}
-    Si todo $b_i = 1$ y para $i \geq 2$ se tiene que $a_i$ es positivo, entonces la expresión
+    Si todo $b_i = 1$ y para $i \geq 1$ se tiene que $a_i$ es positivo, entonces la expresión
     \[
-        a_1 + \dfrac{1}{a_2 + \dfrac{1}{a_{n - 2} + \dfrac{\ddots}{a_{n - 1} + \dfrac{1}{a_n}}}}
+        a_0 + \dfrac{1}{a_1 + \dfrac{1}{a_{n - 2} + \dfrac{\ddots}{a_{n - 1} + \dfrac{1}{a_n}}}}
     \]
-    se llamará fracción continua simple, y la denotaremos por $[a_1; a_2, a_3, \ldots, a_n]$
+    se llamará fracción continua simple, y la denotaremos por $[a_0; a_1, a_2, \ldots, a_n]$
 \end{definition.box}
-Es claro que para un número $[a_1] = a_1$ y para una fracción continua simple infinita se tiene $[a_1; a_2, a_3, \ldots]$.
+Es claro que para un número $[a_0] = a_0$ y para una fracción continua simple infinita se tiene $[a_0; a_1, a_2, \ldots]$.
 Esto toma relevancia a partir del siguiente teorema.
 
 \begin{theorem.box}{}{}
@@ -31,33 +32,76 @@ Del teorema anterior podemos deducir el siguiente resultado.
     Toda fracción continua simple con cantidad infinita de términos representa un número irracional.
 \end{corollary}
 
+Cabe mencionar que el corolario anterior implica que no todo real puede expresarse como una fracción continua.
+Además, los números irracionales que sí pueden ser expresados presentan una característica, esto es que sus términos
+se repiten de manera cíclica.
+
 \begin{definition.box}{Fracción continua periódica}{}
     Definiremos como fracción continua periódica a una fracción continua simple de la forma
     \[
-        [a_1; a_2, a_3, \ldots, a_n, \overline{a_{n + 1}, a_{n + 2},\ldots, a_{n + k}}],
+        [a_0; a_1, a_2, \ldots, a_n, \overline{a_{n + 1}, a_{n + 2},\ldots, a_{n + k}}],
     \]
-    donde $m \geq 1$, el periodo es la sucesión de términos $a_{n + 1}, a_{n + 2},\ldots, a_{n + k}$ y la longitud del periodo es $k$.
+    donde $k \geq 1$, el periodo es la sucesión de términos $a_{n + 1}, a_{n + 2},\ldots, a_{n + k}$ y la longitud del periodo es $k$.
 \end{definition.box}
 
-Cuando se tiene que $n = 0$ diremos que la fracción continua $[\overline{a_1;a_2, \ldots, a_k}]$ es una fracción continua periódica pura.
+Cuando se tiene que $n = 0$ diremos que la fracción continua $[\overline{a_0;a_1, \ldots, a_k}]$ es una fracción continua periódica pura.
 
 \begin{definition.box}{Convergentes $c_k$}{}
-    Dada la fracción continua infinita $[a_1; a_2, a_3, \ldots]$ se define la fracción
+    Los convergentes de la fracción continua simple $[a_0; a_1, a_2, \ldots]$ son las fracciones continuas simples finitas
     \[
-        c_k = [a_1; a_2, a_3, \ldots, a_k],\ \forall k \in \positiveSet{\Z},
+        c_k = [a_0; a_1, a_2, \ldots, a_k],\ \forall k \in \positiveSet{\Z}.
     \]
-    cono el convergente de la posición $k$.
 \end{definition.box}
 
+La definición de $c_k$ dice que son fracciones continuas finitas, entonces estos convergentes representan números racionales,
+por tanto, podemos decir que $c_k = \frac{p}{q}$, este echo nos permite encontrar resultados importantes, como por ejemplo los siguientes teoremas.
+
 \begin{theorem.box}{}{}
-    Si $c_n = \frac{p_n}{q_n}$ es el $n-$ésimo convergente de la fracción continua simple $[a_1; a_2, a_3, \ldots]$, entonces
+    Si $c_n = \frac{p_n}{q_n}$ es el $n-$ésimo convergente de la fracción continua simple $[a_0; a_1, a_2, \ldots]$, entonces
     \begin{align*}
-        p_1 = a_1,\ p_2 = a_2 p_1 + 1 \text{ y } p_n = a_n p_{n - 1} + p_{n - 2} \quad \forall n \geq 3\\
-        q_1 = 1,\ q_2 = a_2 \text{ y } q_n = a_n q_{n - 1} + q_{n - 2} \quad \forall n \geq 3
+        &p_0 = a_0, && q_0 = 1,\\
+        &p_1 = a_1 p_0 + 1, && q_1 = a_1,\\
+        &p_k = a_k p_{k - 1} + p_{k - 2},\ \forall k \geq 2 && q_k = a_k q_{k - 1} + q_{k - 2},\ \forall k \geq 2
     \end{align*}
 \end{theorem.box}
+
+\begin{theorem.box}{}{}
+    Si $c_k = \frac{p_k}{q_k}$ es el $n-$ésimo convergente de una fracción continua simple infinita, entonces
+    \[
+        p_n q_{n - 1} - p_{n - 1}q_n = (- 1)^{n-1}, \ \text{con}\ k \in \Z^{\geq 1}.
+    \]
+\end{theorem.box}
+Del teorema anterior es posible determinar que todo convergente de una fracción continua representa un fracción irreducible, este echo será de útilidad al momento de resolver ecuaciones diofánticas.
+\begin{corollary}
+    Si $c_k = \frac{p_k}{q_k}$ es un convergente de una fracción continua simple infinita, entonces $\mcd{p_k}{q_k} = 1$.
+\end{corollary}
+
+
+\subsection{Resolución de ecuación diofánticas}
+
 
 
 \subsection{Ejercicios y problemas}
 
 Ejercicios y problemas para el autoestudio.
+
+\begin{exercise}
+    Encontrar las fracciones continuas de las siguientes fracciones.
+    \begin{multicols}{3}
+        \begin{enumerate}
+            \item $\dfrac{45}{37}$
+            \item $\dfrac{51}{25}$
+            \item $\dfrac{43}{38}$
+            \item $\dfrac{120}{84}$
+            \item $\dfrac{35}{14}$
+        \end{enumerate}
+    \end{multicols}
+\end{exercise}
+
+\begin{problem}
+    Calcular el valor de
+    \[
+        \sqrt[8]{2207 - \frac{1}{2207 - \frac{1}{2207 - \ddots}}}.
+    \]
+    Expresar la respuesta con forma $\frac{a + b\sqrt{c}}{d}$ con $a,b,c,d \in \Z$.
+\end{problem}
