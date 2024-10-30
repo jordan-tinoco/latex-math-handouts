@@ -1,5 +1,50 @@
 \section{Desarrollo}
 
+\begin{definition.box}{Fracción continua generalizada}{}
+    Definiremos a una fracción continua generalizada como una expresión de la forma:
+    \[
+        a_1 + \dfrac{b_1}{a_2 + \dfrac{b_2}{a_3 + \dfrac{b_3}{a_{n - 2} + \dfrac{\ddots}{a_{n - 1} + \dfrac{b_{n -1}}{a_n}}}}}
+    \]
+    donde los $a_i$ y $b_i$, con $i =1,2, \ldots, n$, son números reales.
+\end{definition.box}
+Donde los $a_i, b_i$ se llamarán términos de la fracción continua.
+Por lo cual, es posible encontrar fracciones continuas con una cantidad finita e infinita de términos.
+Cuando todos los $b_i$ son iguales a 1 se forman un tipo de fracciones continuas importantes.
+
+\begin{definition.box}{Fracción continua simple}{}
+    Si todo $b_i = 1$ y para $i \geq 2$ se tiene que $a_i$ es positivo, entonces la expresión
+    \[
+        a_1 + \dfrac{1}{a_2 + \dfrac{1}{a_{n - 2} + \dfrac{\ddots}{a_{n - 1} + \dfrac{1}{a_n}}}}
+    \]
+    se llamará fracción continua simple, y la denotaremos por $[a_1; a_2, a_3, \ldots, a_n]$
+\end{definition.box}
+Es claro que para un número $[a_1] = a_1$ y para una fracción continua simple infinita se tiene $[a_1; a_2, a_3, \ldots]$.
+Esto toma relevancia a partir del siguiente teorema.
+
+\begin{theorem.box}{}{}
+    Si $x$ es número racional, entonces $x$ se puede expresar como una fracción continua simple con una cantidad finita de términos.
+\end{theorem.box}
+
+Del teorema anterior podemos deducir el siguiente resultado.
+
+\begin{corollary}
+    Toda fracción continua simple con cantidad infinita de términos representa un número irracional.
+\end{corollary}
+
+\begin{definition.box}{Fracción continua periódica}{}
+    Definiremos como fracción continua periódica a una fracción continua simple de la forma
+    \[
+        [a_1; a_2, a_3, \ldots, a_n, \overline{a_{n + 1}, a_{n + 2},\ldots, a_{n + k}}],
+    \]
+    donde $m \geq 1$, el periodo es la sucesión de términos $a_{n + 1}, a_{n + 2},\ldots, a_{n + k}$ y la longitud del periodo es $k$.
+\end{definition.box}
+
+Cuando se tiene que $n = 0$ diremos que la fracción continua $[\overline{a_1;a_2, \ldots, a_k}]$ es una fracción continua periódica pura.
+
+
+\begin{center}
+    Convergencia
+\end{center}
 
 \subsection{Ejercicios y problemas}
 
