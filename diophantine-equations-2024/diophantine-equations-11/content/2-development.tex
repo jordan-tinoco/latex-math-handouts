@@ -41,10 +41,22 @@ Del teorema anterior podemos deducir el siguiente resultado.
 
 Cuando se tiene que $n = 0$ diremos que la fracción continua $[\overline{a_1;a_2, \ldots, a_k}]$ es una fracción continua periódica pura.
 
+\begin{definition.box}{Convergentes $c_k$}{}
+    Dada la fracción continua infinita $[a_1; a_2, a_3, \ldots]$ se define la fracción
+    \[
+        c_k = [a_1; a_2, a_3, \ldots, a_k],\ \forall k \in \positiveSet{\Z},
+    \]
+    cono el convergente de la posición $k$.
+\end{definition.box}
 
-\begin{center}
-    Convergencia
-\end{center}
+\begin{theorem.box}{}{}
+    Si $c_n = \frac{p_n}{q_n}$ es el $n-$ésimo convergente de la fracción continua simple $[a_1; a_2, a_3, \ldots]$, entonces
+    \begin{align*}
+        p_1 = a_1,\ p_2 = a_2 p_1 + 1 \text{ y } p_n = a_n p_{n - 1} + p_{n - 2} \quad \forall n \geq 3\\
+        q_1 = 1,\ q_2 = a_2 \text{ y } q_n = a_n q_{n - 1} + q_{n - 2} \quad \forall n \geq 3
+    \end{align*}
+\end{theorem.box}
+
 
 \subsection{Ejercicios y problemas}
 
