@@ -13,8 +13,8 @@
       \[
          \symLegendre a p =
          \begin{cases}
-            0, &\text{si}\ p \mid q.\\
-            1, &\text{si}\ p \nmid q \ \text{y}\ a \ \text{es resto cuadrático en módulo}\ p.\\
+            0, &\text{si}\ p \mid a.\\
+            1, &\text{si}\ p \nmid a \ \text{y}\ a \ \text{es resto cuadrático en módulo}\ p.\\
             -1,&\text{si}\ a \ \text{no es resto cuadrático en módulo}\ p.\\
          \end{cases}
       \]
@@ -31,14 +31,14 @@
    \end{lemma}
 
    \begin{theorem.box}{Ley de reciprocidad cuadrática}{}
-      Sean $p, q$ dos primos impares, se cumple que
+      Sean $p, q$ dos primos impares distintos, se cumple que
       \[
          \symLegendre{p}{q} \symLegendre{q}{p} = (-1)^{\frac{p - 1}{2} \cdot \frac{q - 1}{2}}.
       \]
    \end{theorem.box}
 
    \begin{remark.box}{}{}
-      De la ley de reciprocidad cuadrática, obtenemos que
+      De la ley de reciprocidad cuadrática, obtenemos que:
       \[
          \symLegendre p q =
          \begin{cases}
@@ -63,7 +63,7 @@
    \end{theorem.box}
 
    \begin{remark.box}{}{}
-      Del teorema anterior, obtenemos que
+      Del teorema 3, podemos determinar lo siguiente:
       \[
          \symLegendre{2}{p} =
          \begin{cases}
