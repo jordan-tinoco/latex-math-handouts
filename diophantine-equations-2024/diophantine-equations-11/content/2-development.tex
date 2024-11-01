@@ -37,7 +37,7 @@ Además, los números irracionales que sí pueden ser expresados presentan una c
 se repiten de manera cíclica.
 
 \begin{definition.box}{Fracción continua periódica}{}
-    Definiremos como fracción continua periódica a una fracción continua simple de la forma
+    Definiremos como fracción continua periódica a una fracción continua simple infinita de la forma
     \[
         [a_0; a_1, a_2, \ldots, a_n, \overline{a_{n + 1}, a_{n + 2},\ldots, a_{n + k}}],
     \]
@@ -45,6 +45,9 @@ se repiten de manera cíclica.
 \end{definition.box}
 
 Cuando se tiene que $n = 0$ diremos que la fracción continua $[\overline{a_0;a_1, \ldots, a_k}]$ es una fracción continua periódica pura.
+
+Resulta que todo número irracional cuadrático puede ser expresado como una fracción continua periódica.
+Donde un número irracional cuadrático es una raíz no racional de una ecuación cuadrática, es decir los números de la forma $\frac{a + b\sqrt {d}}{c}$.
 
 \begin{definition.box}{Convergentes $c_k$}{}
     Los convergentes de la fracción continua simple $[a_0; a_1, a_2, \ldots]$ son las fracciones continuas simples finitas
@@ -66,12 +69,12 @@ por tanto, podemos decir que $c_k = \frac{p}{q}$, este echo nos permite encontra
 \end{theorem.box}
 
 \begin{theorem.box}{}{}
-    Si $c_k = \frac{p_k}{q_k}$ es el $n-$ésimo convergente de una fracción continua simple infinita, entonces
+    Si $c_n = \frac{p_n}{q_n}$ es el $n-$ésimo convergente de una fracción continua simple infinita, entonces
     \[
         p_n q_{n - 1} - p_{n - 1}q_n = (- 1)^{n-1}, \ \text{con}\ k \in \Z^{\geq 1}.
     \]
 \end{theorem.box}
-Del teorema anterior es posible determinar que todo convergente de una fracción continua representa un fracción irreducible, este echo será de útilidad al momento de resolver ecuaciones diofánticas.
+Del teorema anterior es posible determinar que todo convergente de una fracción continua representa una fracción irreducible, este echo será de útilidad al momento de resolver ecuaciones diofánticas.
 \begin{corollary}
     Si $c_k = \frac{p_k}{q_k}$ es un convergente de una fracción continua simple infinita, entonces $\mcd{p_k}{q_k} = 1$.
 \end{corollary}
@@ -79,6 +82,29 @@ Del teorema anterior es posible determinar que todo convergente de una fracción
 
 \subsection{Resolución de ecuación diofánticas}
 
+Si consideramos la ecuación diofántica lineal $ax + by = c$
+y consideramos la fracción $\frac{a}{b}$ y de donde su fracción
+continua tiene una cantidad $n$ de términos, con lo cual $c_n = \frac{a}{b}$.
+Del teorema 1.3 obtenemos que
+\[
+    a q_{n - 1} - b p_{n - 1} = (-1)^{n- 1}
+\]
+multiplicando esta expresión por $(-1)^{n - 1}c$ obtenemos
+\[
+    a \left[(-1)^{n - 1}q_{n - 1}c\right] - b \left[(-1)^{n - 1}p_{n - 1}c\right] = c
+\]
+con lo cual las soluciones de la ecuación estaría dada por
+\begin{align*}
+    x &= (-1)^{n - 1}q_{n - 1}c\\
+    y &= (-1)^{n}p_{n - 1}c.
+\end{align*}
+Es decir, que al calcular $c_{n - 1}$ podemos resolver la ecuación diofántica lineal.
+
+Sabemos que la ecuación de Pell
+\[
+    x^2 - d y^2 = 1
+\]
+siempre tiene una solución mínima $(x_0, y_0)$
 
 
 \subsection{Ejercicios y problemas}
