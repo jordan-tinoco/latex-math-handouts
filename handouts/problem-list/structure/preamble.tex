@@ -1,29 +1,21 @@
-\usepackage{amsmath}
-\usepackage{amsthm}
-\usepackage{amsfonts}
-\usepackage{amssymb}
+\usepackage{mlmodern}
+\usepackage[T1]{fontenc}
 \usepackage[spanish]{babel}
-\usepackage{float}
-\usepackage[table,xcdraw]{xcolor}
-\usepackage{graphicx}
-\usepackage{grffile}
-\usepackage{multicol}
-\usepackage{booktabs}
-\usepackage{subfigure}
-\usepackage[left=2cm,right=2cm,top=2cm,bottom=2.2cm]{geometry}
-\usepackage{polynom}
-\usepackage{tikz,lipsum,lmodern}
-\usepackage[most]{tcolorbox}
-\usepackage{titlesec}
-\usepackage{pst-node,wrapfig}
 \usepackage{fancyhdr}
-\label{key}
+\usepackage[left=2.5cm, right=2.5cm, top=2cm, bottom=2cm]{geometry}
+\usepackage{multicol}
+\usepackage{tasks}
 
-\spanishdecimal{.}
+\settasks{label=\Alph*)}
 
-\setlength{\columnsep}{0.8cm}
+\renewcommand{\normalsize}{\fontsize{13}{15}\selectfont} %propuesta 1 (13.5, 16)
+%\renewcommand{\normalsize}{\fontsize{13}{15.5}\selectfont} %propuesta 2 (13, 15.5)
+
+\setlength{\parskip}{1.7mm}
 \setlength{\parindent}{0pt}
-\setlength{\parskip}{2.5mm}
+\setlength{\headsep}{3.5mm}
 
-\input{../../utils/math-commands}
-\input{../../utils/math-sections}
+\input{../../utils/math-commands.v2.dependency}
+\input{../../utils/math-sections.v3.dependency}
+\input{../../utils/math-commands.v2}
+\input{../../utils/math-sections.v3}
