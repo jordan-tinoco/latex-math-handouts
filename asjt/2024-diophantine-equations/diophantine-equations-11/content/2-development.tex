@@ -21,7 +21,7 @@ Cuando todos los $b_i$ son iguales a 1 se forman un tipo de fracciones continuas
 \end{definition.box}
 
 \begin{example}
-    Hallar la fracción continua simple de $\frac{59}{11}$.
+    Hallar la fracción continua simple de $\dfrac{59}{11}$.
 \end{example}
 \begin{solution}
     Primero tratamos de llevar la fracción a una fracción propia, es decir
@@ -30,22 +30,22 @@ Cuando todos los $b_i$ son iguales a 1 se forman un tipo de fracciones continuas
     \]
     Tomamos la fracción $\frac{4}{11}$, la invertimos y obtenemos
     \[
-        \frac{59}{11} = 5 + \frac{1}{\frac{11}{4}}.
+        \frac{59}{11} = 5 + \dfrac{1}{\dfrac{11}{4}}.
     \]
     Y ahora realizamos el mismo procedimiento con $\frac{11}{4}$,
     \[
-        \frac{59}{11} = 5 + \frac{1}{2 + \frac{3}{4}} = 5 + \frac{1}{2 + \frac{1}{\frac{4}{3}}}.
+        \frac{59}{11} = 5 + \dfrac{1}{2 + \dfrac{3}{4}} = 5 + \dfrac{1}{2 + \dfrac{1}{\dfrac{4}{3}}}.
     \]
     Realizamos el mismo procedimiento con $\frac{4}{3}$,
     \[
-        \frac{59}{11} = 5 + \frac{1}{2 + \frac{1}{1 + \frac{1}{3}}}.
+        \frac{59}{11} = 5 + \dfrac{1}{2 + \dfrac{1}{1 + \dfrac{1}{3}}}.
     \]
-    Se termina el proceso cuando se llega a una fracción con númerador igual a 1, en este caso es $\frac{1}{3}$.
+    Se termina el proceso cuando se llega a una fracción con numerador igual a 1, en este caso es $\frac{1}{3}$.
     Luego, podemos concluir que $\frac{59}{11}$ está representada por la fracción continua simple finita $[5; 2, 1, 3]$ y esta representación es única.
 \end{solution}
 Cuando la fracción ya es propia, el término $a_0$ es igual a cero, por ejemplo:
 \[
-    \frac{6}{11} = 0 + \frac{1}{1 + \frac{1}{1 + \frac{1}{5}}} \implies \frac{6}{11} = [0; 1,1,5].
+    \frac{6}{11} = 0 + \dfrac{1}{1 + \dfrac{1}{1 + \dfrac{1}{5}}} \implies \frac{6}{11} = [0; 1,1,5].
 \]
 Es claro que para un número $[a_0] = a_0$ y para una fracción continua simple infinita se tiene $[a_0; a_1, a_2, \ldots]$.
 Esto toma relevancia a partir del siguiente teorema.
@@ -72,7 +72,7 @@ se repiten de manera cíclica, por ejemplo, $[1; 1, 2,1,2,1,2, \ldots]$.
     donde $k \geq 1$, el periodo es la sucesión de términos $a_{n}, a_{n + 1},\ldots, a_{n + k  - 1}$ y la longitud del periodo es $k$.
 \end{definition.box}
 
-Así, el ejemplo anterior sería $[1; 1, 2,1,2,1,2, \ldots] = [1; \overline{1,2}]$ con periódo $k = 2$, que además representa el número $\sqrt {3}$.
+Así, el ejemplo anterior sería $[1; 1, 2,1,2,1,2, \ldots] = [1; \overline{1,2}]$ con periodo $k = 2$, que además representa el número $\sqrt {3}$.
 Cuando se tiene que $n = 0$ diremos que la fracción continua $[\overline{a_0;a_1, \ldots, a_{k - 1}}]$ es una fracción continua periódica pura.
 
 Con la definición anterior, podemos entender el siguiente resultado.
@@ -108,7 +108,7 @@ entonces, podemos decir que $c_k = \frac{p}{q}$, este hecho nos permite encontra
         p_n q_{n - 1} - p_{n - 1}q_n = (- 1)^{n-1}, \ \text{con}\ k \in \Z^{\geq 1}.
     \]
 \end{theorem.box}
-Del teorema anterior es posible determinar que todo convergente de una fracción continua representa una fracción irreducible, este echo será de útilidad al momento de resolver ecuaciones diofánticas.
+Del teorema anterior es posible determinar que todo convergente de una fracción continua representa una fracción irreducible, este echo será de utilidad al momento de resolver ecuaciones diofánticas.
 \begin{corollary}
     Si $c_k = \frac{p_k}{q_k}$ es un convergente de una fracción continua simple infinita, entonces $\mcd{p_k}{q_k} = 1$.
 \end{corollary}
@@ -190,10 +190,10 @@ Teniendo presente que $\sqrt {d}$ es un número irracional cuadrático se cumple
     \begin{table}[H]
         \centering
         \begin{tabular}{c||c|c|c|c|c}
-            $k$ & 0 & 1 & 2 & 3 & 4 \\\hline\hline
-            $a_k$ & 2 & 1 & 1 & 1 & 4\\
-            $p_k$ & 2 & 3 & 5 & 8 & 37\\
-            $q_k$ & 1 & 1 & 2 & 3 & 14\\
+            $n$ & 0 & 1 & 2 & 3 & 4 \\\hline\hline
+            $a_n$ & 2 & 1 & 1 & 1 & 4\\
+            $p_n$ & 2 & 3 & 5 & 8 & 37\\
+            $q_n$ & 1 & 1 & 2 & 3 & 14\\
         \end{tabular}
     \end{table}
     Por lo cual, una solución para esta ecuación estaría dada por
@@ -208,10 +208,26 @@ Teniendo presente que $\sqrt {d}$ es un número irracional cuadrático se cumple
 
 Ejercicios y problemas para el autoestudio.
 
+
 \begin{exercise}
-    Encontrar las fracciones continuas de las siguientes fracciones.
+    Determinar cuál es el mayor de las siguientes fracciones:
     \begin{multicols}{3}
         \begin{enumerate}
+            \item[a)] $\dfrac{1}{1 + \dfrac{1}{1 + \dfrac{1}{1 + 1}}}$
+            \item[b)] $\dfrac{2}{2 + \dfrac{2}{2 + \dfrac{2}{2 + 2}}}$
+            \item[c)] $\dfrac{3}{3 + \dfrac{3}{3 + \dfrac{3}{3 + 3}}}$
+            \item[d)] $\dfrac{4}{4 + \dfrac{4}{4 + \dfrac{4}{4 + 4}}}$
+            \item[e)] $\dfrac{5}{5 + \dfrac{5}{5 + \dfrac{5}{5 + 5}}}$
+        \end{enumerate}
+    \end{multicols}
+\end{exercise}
+
+\begin{exercise}
+    Encontrar las fracciones continuas simples de las siguientes fracciones.
+    \begin{multicols}{4}
+        \begin{enumerate}
+            \item $\dfrac{41}{13}$
+            \item $-\dfrac{81}{57}$
             \item $\dfrac{45}{37}$
             \item $\dfrac{51}{25}$
             \item $\dfrac{43}{38}$
@@ -221,10 +237,55 @@ Ejercicios y problemas para el autoestudio.
     \end{multicols}
 \end{exercise}
 
+\begin{exercise}
+    Determinar la fracción continua simple para los irracionales
+    \begin{multicols}{3}
+        \begin{enumerate}
+            \item $4\sqrt {3}$
+            \item $-2\sqrt {6}$
+            \item $\sqrt {5}$
+        \end{enumerate}
+    \end{multicols}
+\end{exercise}
+
+\begin{exercise}
+    Determinar la fracción asociada a las fracciones continuas simples:
+    \begin{multicols}{3}
+        \begin{enumerate}
+            \item $[2; 3,2,4]$
+            \item $[-3; 2,4,5]$
+            \item $[0; 3,5,8,6]$
+        \end{enumerate}
+    \end{multicols}
+\end{exercise}
+
+\begin{exercise}
+    Resolver las siguientes ecuaciones por medio de fracciones continuas
+    \begin{multicols}{3}
+        \begin{enumerate}
+            \item $10x + 13y = 2$
+            \item $7x - 3y = 15$
+            \item $3x + 12y = 11$
+        \end{enumerate}
+    \end{multicols}
+\end{exercise}
+
+\begin{exercise}
+    Resolver las siguientes ecuaciones de Pell por medio de fracciones continuas
+    \begin{multicols}{3}
+        \begin{enumerate}
+            \item $a^2 - 10b^2 = 1$
+            \item $m^2 - 18n^2 = -1$
+            \item $x^2 - 23y^2 = 1$
+        \end{enumerate}
+    \end{multicols}
+\end{exercise}
+
+
 \begin{problem}
     Calcular el valor de
     \[
-        \sqrt[8]{2207 - \frac{1}{2207 - \frac{1}{2207 - \ddots}}}.
+        \sqrt[\displaystyle 8\ ]{2207 - \dfrac{1}{2207 - \dfrac{1}{2207 - \ddots}}}.
     \]
-    Expresar la respuesta con forma $\frac{a + b\sqrt{c}}{d}$ con $a,b,c,d \in \Z$.
+    Expresar la respuesta como un irracional cuadrático $\left(\frac{a + b\sqrt{c}}{d}\right)$.
 \end{problem}
