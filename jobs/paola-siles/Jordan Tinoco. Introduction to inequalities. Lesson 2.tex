@@ -1,0 +1,121 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+
+\input{preamble}
+
+\title{Introducción a desigualdades}
+\author{Kenny J. Tinoco}
+\date{Diciembre de 2024}
+
+\begin{document}
+    \maketitle
+
+    \section{Definiciones}
+    Empezaremos recordando unas tautologías sobre las proposiciones.\\
+
+    \textbf{Implicación ($\implies$)}\\
+    Dada dos proposiciones lógicas $A$ y $B$ diremos que $A$ implica a $B$ si el valor lógico de $A$ causa el valor lógico de $B$.
+    Denotaremos esta relación por el símbolo
+    \[
+        A \implies B.
+    \]
+    Existe varias maneras de verbalizar esta relación, por ejemplo: si $A$, entonces $B$, $A$ causa $B$, para que $B$ es necesario $A$, entre otros.\\
+
+    \textbf{Doble implicación ($\iff$)}\\
+    Si tenemos que $A \implies B$ y $B \implies A$ a la vez, podemos decir que existe una doble implicación entre $A$ y $B$.
+    Lo denotamos por
+    \[
+        A \iff B.
+    \]
+    Verbalizando esto es igual a: $A$ si y solo si $B$, $A \equiv B$.
+
+    Ahora recordemos las propiedades importantes de las desigualdades.
+    Sean $a, b$ y $c$ dos números reales, se cumple.
+    \begin{multicols}{2}
+        \begin{enumerate}
+            \item \textbf{Tricotomía}:\\ Se cumple que $a < b$, $a = b$ o $a > b$.
+            \item \textbf{Suma:}\\ Si $a \geq b$, entonces $a + c \geq b + c$ para cualquier $c$.
+            \item \textbf{Multiplicación:}\\
+            Si $a \geq b$ y $c \geq 0$, entonces $ac \geq bc$\\
+            Si $a \geq b$ y $c \leq 0$, entonces $ac \leq bc$
+            \item \textbf{Reflexividad:}\\ $a \geq a$
+            \item \textbf{Antisimetría:}\\ Si $a \geq b$ y $b\geq a$, entonces $a = b$.
+            \item \textbf{Transitividad:}\\ Si $a \geq b$ y $b \geq c$, entonces $a \geq c$\\.
+        \end{enumerate}
+    \end{multicols}
+
+    \section{Técnicas}
+    Cuando resolvemos desigualdades hay maneras comunes de avanzar con la solución, estas maneras son las técnicas.\\
+
+    \textbf{Comparación directa}
+    \begin{enumerate}
+        \item La desigualdad $A \geq B$ es verdadera si y solo si $A - B \geq 0$ es también verdadera.
+        \item La desigualdad $A \geq B$ con $B \neq 0$ es verdadera si y solo si $\frac{A}{B} \geq 1$ es verdadera.
+    \end{enumerate}
+
+    \textbf{Maximizar y reducir}
+    \par
+    Si tenemos la desigualdad $A \geq B$, entonces podemos partir la demostración encontrando valores $A_1, A_2, \ldots, A_k$ tales que
+    \[
+        A \geq A_1 \geq A_2 \geq \ldots \geq A_k \geq B.
+    \]
+
+    \textbf{Análisis de la desigualdad}
+    \par
+    Si tenemos la desigualdad $A \geq B$, entonces podemos partir la demostración encontrando desigualdades $(A_1 \geq B_1), (A_2 \geq B_2), \ldots, (A_k \geq B_k)$ tales que
+    \[
+       A \geq B \iff (A_1 \geq B_1) \iff (A_2 \geq B_2) \iff \ldots \iff (A_k \geq B_k)
+    \]
+    Muchas veces utilizaremos teoremas sobre desigualdades para simplificar las demostraciones de las desigualdades.
+
+    \section{Problemas}
+
+    \begin{prob-without-section}
+        Si $a,b,c$ son números reales arbitrarios, entonces probar que
+        \[
+            a^2 + b^2 + c^2 \geq ab + bc + ca.
+        \]
+    \end{prob-without-section}
+
+    \begin{prob-without-section}
+        Si $a,b$ son números reales tales que $a + b = 2$, probar que
+        \[
+            a^4 + b^4 \geq 2.
+        \]
+    \end{prob-without-section}
+
+    \begin{prob-without-section}
+        Si $a,b,c$ son números reales positivos, probar que
+        \[
+            a^3 + b^3 + c^3 + ab^2 + bc^2 + ca^2 \geq 2(a^2b + b^2 c + c^2 a).
+        \]
+    \end{prob-without-section}
+
+    \begin{prob-without-section}
+        Sea $a,b,x,y$ números reales cualesquiera.
+        Demostrar que
+        \[
+            (a^2 + b^2)(x^2 + y^2) \geq (ax + by)^2.
+        \]
+    \end{prob-without-section}
+
+    \begin{prob-without-section}
+        Probar que $a^2 + b^2 + c^2 + 3 \geq 2(a + b + c)$
+    \end{prob-without-section}
+
+    \begin{prob-without-section}
+        Si $x,y$ son reales positivos, probar que $x^2 + y^2 \geq \dfrac{(x - y)^2}{2}$.
+    \end{prob-without-section}
+
+    \begin{prob-without-section}
+        Probar que $x^4 + y^4 + z^2 + 1 \geq 2x(xy^2 - x + z + 1)$.
+    \end{prob-without-section}
+
+    \begin{prob-without-section}
+        Probar que para cualquier real $x$ se cumple que
+        \[
+            (x - 1)(x - 3)(x - 4)(x - 6) + 10 > 0.
+        \]
+    \end{prob-without-section}
+
+\end{document}
