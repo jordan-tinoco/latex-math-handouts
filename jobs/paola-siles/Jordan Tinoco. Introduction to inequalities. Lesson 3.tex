@@ -1,0 +1,36 @@
+\documentclass[12pt]{article}
+
+\input{preamble}
+
+\title{Introducción a desigualdades\\Medias}
+\author{Kenny J. Tinoco}
+\date{Febrero de 2025}
+
+\begin{document}
+    \maketitle
+
+    \section{Definiciones}
+
+    La desigualdad de medias es una parte importante en el estudio de las desigualdades, esta nos permite
+    simplificar el tratamiento que realizamos sobre las expresiones, reduciendo el tiempo y esfuerzo de resolución.
+
+    \begin{theorem}[Teorema de las medias]
+        Dado los números reales positivos $a_1, a_2, \ldots , a_k$ se cumple que
+        \[
+            \sqrt {\frac{a_1^2 + a_2^2 + \cdots + a_k^2}{k}} \geq \frac{a_1 + a_2 + \cdots + a_k}{k} \geq \sqrt[k]{a_1 a_2 \ldots a_k} \geq \frac{k}{\frac{1}{a_1} + \frac{1}{a_2} + \cdots + \frac{1}{a_k}},
+        \]
+        donde el caso de igualdad si y solo si $a_1 = a_2 = \cdots = a_k$.
+    \end{theorem}
+
+    Muchas desigualdades pueden ser resueltas con una aplicación concreta de las medias.
+
+    \section{Problemas}
+
+    \begin{prob-without-section}
+        Sean $a_1, a_2, \ldots, a_k$ números reales positivos tales que $a_1 a_2 \cdot a_k = 1$, demostrar que
+        \[
+            (1 + a_1)(1 + a_2) \cdots (1 + a_k) \geq 2^n.
+        \]
+    \end{prob-without-section}
+
+\end{document}
