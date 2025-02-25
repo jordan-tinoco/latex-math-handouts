@@ -6,9 +6,24 @@
 \usepackage[left=2.5cm, right=2.5cm, top=2cm, bottom=2cm]{geometry}
 \usepackage{multicol}
 \usepackage{tasks}
+\usepackage{listings}
+\usepackage{xcolor}
 
 \settasks{label=\Alph*)}
 
+\lstset{
+    language=Python,
+    basicstyle=\ttfamily\small,
+    numbers=left,            % Números de línea (elimínalos si no los quieres)
+    numberstyle=\color{blue}, % Estilo de los números de línea
+    numbersep=-6pt, % Ajusta este valor (puedes probar con 3pt o 2pt)
+    showspaces=false,
+    showstringspaces=false,
+    tabsize=4,
+    frame=single, % Agrega un marco alrededor del código
+    rulecolor=\color{blue!30}, % Color del borde del recuadro
+    backgroundcolor=\color{cyan!10} % Fondo celeste muy suave
+}
 \renewcommand{\normalsize}{\fontsize{13}{15}\selectfont} %propuesta 1 (13.5, 16)
 
 \setlength{\parskip}{1.7mm}
@@ -22,17 +37,61 @@
 \begin{document}
     \maketitle
 
+    \tableofcontents
+
     \section{Variables}
-    Una variable en Python es una dirección un nombre que el programador define la cual funciona como un puntero a cierta zona de memoria la cual tiene un valor.
+    Una \textbf{variable} en Python es el nombre que se asigna un dato almacenado con los cuales se harán operaciones,
+    estos datos pueden ser de distintas naturalezas que denotaremos como \textbf{tipo}, es decir, pueden ser de tipos
+    enteros (\textbf{int}), decimales (\textbf{float} o \textbf{double}), caracteres (\textbf{char}),
+    textos (\textbf{string}), valores booleanos (\textbf{bool}), listas (\textbf{list}), etc.
+
+    Para crear una variable escribimos su nombre y luego asignamos su valor por medio del operador de asignación ``$=$''.
+
+    Una cosa importante a tener en cuenta es que el nombre de una variable tiene ciertas restricciones, la primera es
+    que el nombre no puede iniciar por un número, la segunda es que no puede ser una palabra reservada del lenguaje y
+    la tercera es que no puede tener caracteres especiales excepto el ``\_'', vamos algunos ejemplos.
+    \begin{lstlisting}
+        aString = "cuatro"
+        aNumber = 4
+        aChar = 'c'
+        x = -1
+        isTrue = true
+        isFalse = false
+        xIsPositive = x > 0  #(es falso)
+    \end{lstlisting}
+
+    Variables validas:
+    \begin{lstlisting}
+        a1239892874 = 1
+        AGE = 67
+        my_lastname = "lopez"
+        _name = "luis"
+    \end{lstlisting}
+
+    Variables invalidas
+    \begin{lstlisting}
+        1x = 1
+        name-value = "luis"
+        first% = 3
+    \end{lstlisting}
+
+    Otro aspecto muy importante es escribir nombre de variables que tenga un sentido dentro del código, evitar escribir
+    variables de un solo caracter y en su lugar escribir un sustantivo.
     
     \section{Operadores}
+    -- Pendiente --
     
     \section{Números}
+    -- Pendiente --
     
     \section{Sentencias de control}
+    -- Pendiente --
 
     \section{Cíclos}
+    -- Pendiente --
     
     \section{Funciones}
+
+    -- Pendiente --
 
 \end{document}
