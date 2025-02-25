@@ -15,14 +15,17 @@
     language=Python,
     basicstyle=\ttfamily\small,
     numbers=left,            % Números de línea (elimínalos si no los quieres)
-    numberstyle=\color{blue}, % Estilo de los números de línea
+    numberstyle=\color{black}, % Estilo de los números de línea
     numbersep=-6pt, % Ajusta este valor (puedes probar con 3pt o 2pt)
     showspaces=false,
     showstringspaces=false,
     tabsize=4,
     frame=single, % Agrega un marco alrededor del código
     rulecolor=\color{blue!30}, % Color del borde del recuadro
-    backgroundcolor=\color{cyan!10} % Fondo celeste muy suave
+    backgroundcolor=\color{cyan!8}, % Fondo celeste muy suave
+    keywordstyle=\color{blue!70}, % Palabras reservadas en azul intenso
+    commentstyle=\color{brown!90}, % Comentarios en verde
+    stringstyle=\color{red!70} % Cadenas de texto en rojo
 }
 \renewcommand{\normalsize}{\fontsize{13}{15}\selectfont} %propuesta 1 (13.5, 16)
 
@@ -30,7 +33,7 @@
 \setlength{\parindent}{0pt}
 \setlength{\headsep}{3.5mm}
 
-\title{Manual introductorio a Python}
+\title{Manual introductorio a Python\\v1}
 \author{Kenny J. Tinoco}
 \date{Febrero de 2025}
 
@@ -39,11 +42,15 @@
 
     \tableofcontents
 
-    \section{Variables}
+    \vspace{5mm}
+    \hrule
+
+    \section{Programación imperativa}
+
+    \subsection{Variables}
     Una \textbf{variable} en Python es el nombre que se asigna un dato almacenado con los cuales se harán operaciones,
     estos datos pueden ser de distintas naturalezas que denotaremos como \textbf{tipo}, es decir, pueden ser de tipos
-    enteros (\textbf{int}), decimales (\textbf{float} o \textbf{double}), caracteres (\textbf{char}),
-    textos (\textbf{string}), valores booleanos (\textbf{bool}), listas (\textbf{list}), etc.
+    enteros (\textbf{int}), decimales (\textbf{float}), textos (\textbf{str}), valores booleanos (\textbf{bool}), listas (\textbf{list}), etc.
 
     Para crear una variable escribimos su nombre y luego asignamos su valor por medio del operador de asignación ``$=$''.
 
@@ -51,47 +58,512 @@
     que el nombre no puede iniciar por un número, la segunda es que no puede ser una palabra reservada del lenguaje y
     la tercera es que no puede tener caracteres especiales excepto el ``\_'', vamos algunos ejemplos.
     \begin{lstlisting}
-        aString = "cuatro"
-        aNumber = 4
-        aChar = 'c'
-        x = -1
-        isTrue = true
-        isFalse = false
-        xIsPositive = x > 0  #(es falso)
+    string = "Un string"
+    anotherStr = 'a'
+    integer = 4
+    x = -1
+    boolean = x > 0  # (es falso)
+    isTrue = True
+    isFalse = False
     \end{lstlisting}
 
-    Variables validas:
+    Variables válidas.
     \begin{lstlisting}
-        a1239892874 = 1
-        AGE = 67
-        my_lastname = "lopez"
-        _name = "luis"
+    a1239892874 = 1
+    x10 = 2
+    AGE = 67
+    my_lastname = "lopez"
+    _name = "luis"
     \end{lstlisting}
 
-    Variables invalidas
+    Variables inválidas.
     \begin{lstlisting}
-        1x = 1
-        name-value = "luis"
-        first% = 3
+    10x = 1
+    name-value = "luis"
+    first% = 3
     \end{lstlisting}
 
     Otro aspecto muy importante es escribir nombre de variables que tenga un sentido dentro del código, evitar escribir
-    variables de un solo caracter y en su lugar escribir un sustantivo.
-    
-    \section{Operadores}
-    -- Pendiente --
-    
-    \section{Números}
-    -- Pendiente --
-    
-    \section{Sentencias de control}
-    -- Pendiente --
+    variables de un solo carácter y en su lugar escribir un sustantivo.
 
-    \section{Cíclos}
-    -- Pendiente --
-    
-    \section{Funciones}
+    Vamos a entender como \textbf{sentencia} a cualquier operación sobre un valor, por ejemplo el siguiente código tiene dos sentencias.
+    \begin{lstlisting}
+    mySurname = "Tinoco"
+    print(mySurname)
+    \end{lstlisting}
 
+    Todo programa en Python está formado por un conjunto de sentencias que se escriben con el fin de obtener un resultado de interés.
+    Cada sentencia se escribe en una línea, sin embargo, es posible escribir más de una sentencia en una sola línea de
+    código separándolas por punto y coma.
+    \begin{lstlisting}
+    mySurname = "Tinoco"; print(mySurname)
+    \end{lstlisting}
+    Se recomienda nunca escribir más de una sentencia en una línea.
+
+    Si necesitamos escribir texto como una manera de señalar algún aspecto del código, podemos usar el símbolo ``$\#$''
+    la cual le indica a lenguaje que ignore todo lo que despues del símbolo, es decir, un comentario.
+
+    \begin{lstlisting}
+    # Este es un comentario y no se ejecuta.
+
+    aString = "Un texto" #Este es otro comentario
+    \end{lstlisting}
+    Los comentarios si bien son parte del lenguaje, en principio no deben usar casi nunca, ya que el código debe ser lo
+    suficientemente claro para tener que comentarlo.
+    En resumen NUNCA USAR COMENTARIOS.
+
+    La \textbf{identación} en líneas de código tiene una gran importancia ya que Python forma bloques de código por
+    medio de la identación, toma relevancia el tema de funciones, bloques condicionales, sentencias de control y clases.
+
+    \begin{lstlisting}
+    mySurname = "Tinoco"
+        print(mySurname)
+    \end{lstlisting}
+
+    El código anterior falla debido al significado especial de la identación.
+
+    Cuando hacemos un código como el siguiente
+    \begin{lstlisting}
+    name = "Rufo"
+    age = 34
+    \end{lstlisting}
+
+    El lenguaje automáticamente detecta los tipos de datos de los valores y fija ese tipo a la variable.
+    Si necesitamos convertir un valor de un tipo a otro hacemos uso de las palabras reservadas de Python.
+    \begin{lstlisting}
+    age = int("20")
+    print(age) # Se imprime el entero 20
+
+    fraction = 0.1
+    intFraction = int(fraction) # Se obtiene 0
+    \end{lstlisting}
+
+    Claramente hay tipos de datos que no puede ser transformados en otro.
+    \begin{lstlisting}
+    age = int("Valor")
+    \end{lstlisting}
+
+
+
+    \subsection{Operadores}
+
+    Los operadores de Python son símbolos que utilizamos para ejecutar operaciones sobre valores y  variables.
+    Podemos dividir los operadores en función del tipo de operación que realizan.
+    \begin{itemize}
+        \item Operador de asignación
+        \item Operadores aritméticos
+        \item Operadores de comparación
+        \item Operadores lógicos
+    \end{itemize}
+
+    El operador de asignación se utiliza para asignar un valor a una variable:
+    \begin{lstlisting}
+    age = 8
+    \end{lstlisting}
+    O para asignar un valor de variable a otra variable
+    \begin{lstlisting}
+    age = 8
+    anotherVariable = age
+    \end{lstlisting}
+
+
+    Python tiene varios operadores aritméticos como: $+$ (Suma), $-$ (Resta), $*$ (Multiplicacion), $\%$ (Resto), $**$ (Potencia),
+    $/$ (División) y $//$ (División entera).
+    \begin{lstlisting}
+    1 + 1 #2
+    2 - 1 #1
+    2 * 2 #4
+    4 / 2 #2
+    4 % 3 #1
+    4 ** 2 #16
+    4 // 2 #2
+    \end{lstlisting}
+
+    Los operadores numéricos generalmente retorna valores decimales (float), sin embargo, en los casos de resto ($\%$) y división entera ($//$)
+    solo se obtiene valores enteros.
+
+    Algo interesante sobre el operador $+$ es que permite ``sumar'' cadenas, ejemplo
+    \begin{lstlisting}
+    string1 = "Py"
+    string2 = "thon"
+    print(string1 + string2) #Imprime Python
+    \end{lstlisting}
+
+    Python define algunos operadores de comparación:
+    \begin{itemize}
+        \item $==$
+        \item $!=$
+        \item $>$
+        \item $<$
+        \item $>=$
+        \item $<=$
+    \end{itemize}
+    Puedes usar esos operadores para obtener un valor booleano (\textbf{True} o \textbf{False}) según el resultado.
+
+    \begin{lstlisting}
+    a = 1
+    b = 2
+    a == b #False
+    a != b #True
+    a > b #False
+    a <= b #True
+    \end{lstlisting}
+
+    Python nos proporciona los siguientes operadores booleanos
+    \begin{itemize}
+        \item not
+        \item and
+        \item or
+    \end{itemize}
+    Cuando se trabaja con atributos True o False, estos funcionan como AND, OR y NOT lógicos, y se utilizan a menudo en
+    la evaluación de expresiones condicionales if.
+
+    \begin{lstlisting}
+    condition1 = True
+    condition2 = False
+
+    not condition1 #se obtiene False
+    condition1 and condition2 #se obtiene False
+    condition1 or condition2 #se obtiene True
+    \end{lstlisting}
+
+
+    \subsection{Números}
+    Los números en Python pueden ser de tres tipos: entero (int), flotantes o reales (float) y complejos (complex).
+
+    Los números enteros se representan usando la clase int.
+    La cual nos ayuda definir de manera literal de la forma
+    \begin{lstlisting}
+    age = 8
+    \end{lstlisting}
+
+    Para los números flotantes definimos de manera literal de la forma
+    \begin{lstlisting}
+    fraction = 0.1
+    \end{lstlisting}
+
+    Para los complejos usamos la forma
+    \begin{lstlisting}
+    complexNumber = 2+3j
+    \end{lstlisting}
+
+    O usar el nombre reservado complex
+    \begin{lstlisting}
+    complexNumber = complex(2, 3)
+    \end{lstlisting}
+    Podemos acceder a los valores reales e imaginarios por medio del operador de acceso\footnote{El operador de accesos toma relevancia en la orientación de objecto.} ``.'' (punto).
+    \begin{lstlisting}
+    complexNumber.real #2.0
+    complexNumber.imag #3.0
+    \end{lstlisting}
+
+    La biblioteca estándar de Python ofrece funciones y constantes de utilidad matemática que son más precisas que los operadores normales.
+    \begin{itemize}
+        \item El paquete \textit{math} proporciona funciones y constantes matemáticas generales
+        \item El paquete \textit{cmath} proporciona utilidades para trabajar con números complejos.
+        \item El paquete \textit{decimal} proporciona utilidades para trabajar con decimales y números de punto flotante.
+        \item El paquete \textit{fractions} proporciona utilidades para trabajar con números racionales
+    \end{itemize}
+
+    Por ejemplo, en el paquete \textit{math} ofrece funciones como ``pow'', ``round'', ``abs'', ``factorial'' entre otras muchas.
+    \begin{lstlisting}
+    value = pow(2, 10) #2^(10) = 1024
+    sqrtOfInteger2 = pow(2, 0.5) #1.414213562...
+
+
+    value2 = round(sqrtOfInteger2) #1
+    value3 = round(sqrtOfInteger2, 3) #1.414
+    \end{lstlisting}
+
+
+
+    \subsection{Sentencias de control}
+
+    Lo interesante de hacer con los booleanos, y con las expresiones que devuelven un booleano en particular, es que
+    podemos tomar decisiones y tomar diferentes caminos según su valor True o False.
+    A esto se le conoce como bifurcaciones puesto que genera dos opciones en cómo puede ejecutar el programa, dando como resultado
+    una toma de decisiones.
+
+    En Python lo hacemos usando la declaración \textit{if}:
+
+    \begin{lstlisting}
+    condition = True
+
+    if (condition == True):
+        # Hacer algo
+    \end{lstlisting}
+
+    Cuando la condición se resuelve como True, como en el caso anterior, su bloque se ejecuta.
+    Pero ¿qué es un bloque?, un bloque es la parte que tiene una identación (sangría) de un nivel\footnote{De cuatro espacios generalmente.} a la derecha,
+    por ejemplo
+
+    \begin{lstlisting}
+    condition = True
+
+    if (condition == True):
+        print("The condition")
+        print("was true")
+    \end{lstlisting}
+
+    El bloque puede estar formado por una sola línea, o por varias líneas, y finaliza cuando se vuelve al nivel de identación anterior:
+
+    \begin{lstlisting}
+    condition = True
+
+    if (condition == True):
+        print("The condition")
+        print("was true")
+
+    print("Outside of the if")
+    \end{lstlisting}
+
+    En combinación con \textit{if}, puede tener un bloque \textit{else}, que se ejecuta si la prueba de condición de \textit{if} da como resultado False.
+    \begin{lstlisting}
+    condition = True
+
+    if (condition == True) :
+        print("The condition")
+        print("was True")
+    else:
+        print("The condition")
+        print("was False")
+    \end{lstlisting}
+
+    Y puedes tener diferentes casos vinculados con \textit{elif}, que se ejecutan si la comprobación anterior fue falsa.
+
+    \begin{lstlisting}
+    condition = True
+    name = "Roger"
+
+    if (condition == True):
+        print("The condition")
+        print("was True")
+    elif (name == "Roger"):
+        print("Hello Roger")
+    else:
+        print("The condition")
+        print("was False")
+    \end{lstlisting}
+
+    El segundo bloque en este caso se ejecuta si la condición es False y el valor de la variable de nombre es ``Roger''.
+    En una declaración \textbf{if}, puede tener solo una comprobación \textit{if} y \textit{else}, pero varias series de comprobaciones \textit{elif}.
+
+    \begin{lstlisting}
+    condition = True
+    name = "Roger"
+
+    if (condition == True):
+        print("The condition")
+        print("was True")
+    elif (name == "Roger"):
+        print("Hello Roger")
+    elif (name == "Syd"):
+        print("Hello Syd")
+    elif (name == "Flavio"):
+        print("Hello Flavio")
+    else:
+        print("The condition")
+        print("was False")
+    \end{lstlisting}
+
+    \textit{if} y \textit{else} también se pueden usar en formato en línea, lo que nos permite devolver un
+    valor u otro en función de una condición.
+
+    \begin{lstlisting}
+    a = 2
+    result = 2 if (a % 2 != 0) else 10*a
+    print(result) # Imprime 20
+    \end{lstlisting}
+
+
+    \subsection{Cíclos}
+
+    Los cíclos o cíclos son una parte esencial de la programación.
+    En Python tenemos dos tipos de cíclos: \textit{while} y \textit{for}.
+
+    \subsubsection{While}
+    El cíclo \textit{while} se definen utilizando la palabra clave while y repiten su bloque hasta que la condición se evalúa como False.
+
+    \begin{lstlisting}
+    condition = True
+
+    while (condition == True):
+        print("The condition is True")
+    \end{lstlisting}
+
+    Este es un cíclos infinito, nunca termina.
+
+    Detengamos el cíclo justo después de la primera iteración:
+
+    \begin{lstlisting}
+    condition = True
+
+    while (condition == True):
+        print("The condition is True")
+        condition = False
+
+    print("After the loop")
+    \end{lstlisting}
+
+    En este caso, se ejecuta la primera iteración, ya que la prueba de condición se evalúa como True, y en la segunda
+    iteración la prueba de condición se evalúa como False, por lo que el control pasa a la siguiente instrucción,
+    después del cíclo.
+    Es común tener un contador para detener la iteración después de una cierta cantidad de ciclos:
+
+    \begin{lstlisting}
+    count = 0
+
+    while (count < 10):
+        print("The condition is True")
+        count = count + 1
+
+    print("After the loop")
+    \end{lstlisting}
+
+    \subsubsection{For}
+
+    Mediante un cíclo \textit{for} podemos indicarle a Python que ejecute un bloque una cantidad de veces predeterminada,
+    por adelantado y sin necesidad de una variable y una condición independientes para comprobar su valor.
+    Por ejemplo, podemos iterar los elementos de una lista como una cadena.
+
+    \begin{lstlisting}
+    cadena = "Esta es una cadena."
+
+    for item in cadena:
+        print(item) #Se imprime cada caracter en la cadena
+    \end{lstlisting}
+
+    \subsubsection{Break y Continue}
+
+    Tanto los cíclos while como los for pueden interrumpirse dentro del bloque, utilizando dos palabras clave especiales: \textit{break} y \textit{continue}.
+    \begin{itemize}
+        \item La sentencia \textit{continue} detiene la iteración actual y le indica a Python que ejecute la siguiente.
+        \item La sentencia \textit{break} detiene el cíclo por completo y continúa con la siguiente instrucción después del final del cíclo.
+    \end{itemize}
+
+    Por ejemplo, en el siguiente código no se imprime ninguna letra ``a''.
+    \begin{lstlisting}
+    cadena = "Esta es una cadena."
+
+    for item in cadena:
+        if (item == "a"):
+            continue
+
+        print(item)
+    \end{lstlisting}
+
+    En el siguiente código se imprime sin llegar a la letra ``c''.
+    \begin{lstlisting}
+    cadena = "Esta es una cadena."
+
+    for item in cadena:
+        if (item == "c"):
+            break
+
+        print(item)
+    \end{lstlisting}
+
+
+    \subsection{Funciones}
+
+    Una función nos permite crear un conjunto de instrucciones que podemos ejecutar cuando sea necesario.
+    Las funciones son esenciales en Python y en muchos otros lenguajes de programación para crear programas
+    significativos, ya que nos permiten descomponer un programa en partes manejables, promueven la legibilidad y la
+    reutilización del código.
+    Aquí hay un ejemplo de función llamada hello que imprime ``Hola'':
+
+    \begin{lstlisting}
+    def hello():
+        print('Hola')
+    \end{lstlisting}
+
+    Esta es la definición de la función.
+    Hay un nombre (hello) y un cuerpo, el conjunto de instrucciones, que es la parte que sigue a los dos puntos y está
+    con una identación de un nivel a la derecha.
+    Para ejecutar esta función, debemos llamarla.
+    Esta es la sintaxis para llamar a la función:
+
+    \begin{lstlisting}
+    hello()
+    \end{lstlisting}
+
+    Podemos ejecutar esta función una vez o varias veces, el nombre de la función, hello, es muy importante.
+    Debe ser descriptivo, para que cualquiera que la llame pueda imaginar lo que hace la función.
+
+    Una función puede aceptar uno o más parámetros:
+
+    \begin{lstlisting}
+    def hello(name):
+        print('Hello ' + name + '!')
+    \end{lstlisting}
+
+    En este caso llamamos a la función pasando el argumento
+
+    \begin{lstlisting}
+    hello("Roger")
+    \end{lstlisting}
+
+    Así es como podemos aceptar múltiples parámetros:
+
+    \begin{lstlisting}
+    def hello(name, age):
+        print('Hello ' + name + ', you are ' + str(age) + ' years old!')
+    \end{lstlisting}
+
+    En este caso llamamos a la función pasando un conjunto de argumentos:
+    \begin{lstlisting}
+    hello("Roger", 20)
+    \end{lstlisting}
+
+    Una función puede devolver un valor mediante la sentencia \textit{return}.
+    Por ejemplo, en este caso, devolvemos el nombre del parámetro:
+    \begin{lstlisting}
+    def hello(name):
+        print('Hello ' + name + '!')
+        return name
+    \end{lstlisting}
+    Cuando la función cumple con la declaración de retorno, la función finaliza.
+
+    Puede devolver varios valores utilizando valores separados por comas:
+    \begin{lstlisting}
+    def hello(name):
+        print('Hello ' + name + '!')
+        return name, 'Roger', 8
+    \end{lstlisting}
+
+    En este caso, al llamar a hello('Syd'), el valor de retorno (nota: no lo que está impreso en la pantalla,
+    sino el valor de retorno) es una tupla que contiene esos 3 valores: ('Syd', 'Roger', 8):
+
+    \begin{lstlisting}
+    def hello(name):
+        print('Hello ' + name + '!')
+        return name, 'Roger', 8
+
+    print(hello('Syd')) #('Syd', 'Roger', 8)
+    \end{lstlisting}
+
+
+    \subsection{Ejercicios}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    \section{Programación orientada a objetos}
     -- Pendiente --
 
 \end{document}
