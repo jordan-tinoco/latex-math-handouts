@@ -143,7 +143,80 @@
     age = int("Valor")
     \end{lstlisting}
 
+    \subsubsection{Listas}
+    Las listas son otro tipo de datos en Python, estas permiten agrupar un conjunto de valores o variables bajo un mismo
+    nombre, por ejemplo.
 
+    \begin{lstlisting}
+    dogs = ["Keiko", "Max"]
+    \end{lstlisting}
+
+    Podemos verificar si un elemento pertenece a una lista por medio del operador \textit{in}, por ejemplo.
+    \begin{lstlisting}
+    contain = ("Firulais" in dogs)  #Retorna False
+    \end{lstlisting}
+
+    Podemos crear una lista vacía.
+    \begin{lstlisting}
+    myList = []
+    \end{lstlisting}
+
+    Podemos hacer referencia a elementos de las listas por medio índices, comenzando desde cero.
+    \begin{lstlisting}
+    print(dogs[0]) #Imprime Keiko
+    print(dogs[1]) #Imprime Max
+    \end{lstlisting}
+
+    Para editar el valor de un elemento también hacemos uso de su indice.
+    \begin{lstlisting}
+    dogs[1] = "Koby"
+    \end{lstlisting}
+
+    Podemos extraer una lista de otra, por ejemplo.
+    \begin{lstlisting}
+    dogs = ["Keiko", "Max", "Koby", "Logan", "Canela"]
+
+    myDogs = dogs[0:2]
+    print(myDogs) #Imprime  ["Keiko", "Max"]
+
+    print(dogs[1:]) #Imprime ["Koby", "Logan", "Canela"]
+    \end{lstlisting}
+
+    Podemos obtener la cantidad de elementos de una lista por medio del método \textit{len()}.
+    \begin{lstlisting}
+    dogs = ["Keiko", "Max", "Koby", "Logan", "Canela"]
+    quantity = len(dogs)
+    print(quantity) #Imprime 5
+    \end{lstlisting}
+
+    Para agregar un elemento a una lista podemos usar el método \textit{append()}, por ejemplo.
+    \begin{lstlisting}
+    list = [2, 3, 5, 7]
+    list.append(11)
+    \end{lstlisting}
+
+    Si deseamos agregar una lista a otra lista podemos usar el método \textit{extend()}.
+    \begin{lstlisting}
+    list = [2, 3, 5, 7]
+    list.extend([11, 13, 17, 23])
+    \end{lstlisting}
+
+    O también usar el operado ``$+=$''.
+    \begin{lstlisting}
+    list = [2, 3, 5, 7]
+    list += [11, 13, 17, 23]
+    \end{lstlisting}
+
+    Para eliminar un elemento de la lista usamos el método \textit{remove()}.
+    \begin{lstlisting}
+    list = [2, 3, 5, 7]
+    list.remove(5)
+
+    print(list) #Imprime [2, 3, 7]
+    \end{lstlisting}
+
+
+    \newpage
 
     \subsection{Operadores}
 
@@ -281,9 +354,9 @@
 
     Lo interesante de hacer con los booleanos, y con las expresiones que devuelven un booleano en particular, es que
     podemos tomar decisiones y tomar diferentes caminos según su valor True o False.
-    A esto se le conoce como bifurcaciones puesto que genera dos opciones en cómo puede ejecutar el programa, dando como resultado
-    una toma de decisiones.
 
+    A esto se le conoce como bifurcaciones ya que genera dos opciones en cómo puede ejecutar el programa, dando como resultado
+    una toma de decisiones.
     En Python lo hacemos usando la declaración \textit{if}:
 
     \begin{lstlisting}
@@ -378,7 +451,8 @@
 
     \subsection{Cíclos}
 
-    Los cíclos o cíclos son una parte esencial de la programación.
+    Los cíclos o bucles son una parte esencial de la programación.
+    Ya que nos permite realizar operaciones sobre un conjunto de valores con número menor de código.
     En Python tenemos dos tipos de cíclos: \textit{while} y \textit{for}.
 
     \subsubsection{While}
@@ -391,10 +465,11 @@
         print("The condition is True")
     \end{lstlisting}
 
-    Este es un cíclos infinito, nunca termina.
+    Este es un cíclos infinito, nunca termina porque la condición no cambia.
+    Esto producirá un error por desbordamiento de memoria.
 
-    Detengamos el cíclo justo después de la primera iteración:
-
+    Por lo cual es necesario que el bloque del cíclo tenga un caso donde el la condición cambie.
+    Veamos esto, deteniendo el cíclo justo después de la primera iteración:
     \begin{lstlisting}
     condition = True
 
@@ -507,7 +582,8 @@
 
     \begin{lstlisting}
     def hello(name, age):
-        print('Hello ' + name + ', you are ' + str(age) + ' years old!')
+        print('Hello ' + name + ', you are ' + str(age)
+                                                + ' years old!')
     \end{lstlisting}
 
     En este caso llamamos a la función pasando un conjunto de argumentos:
@@ -561,8 +637,7 @@
 
 
 
-
-
+    \newpage
     \section{Programación orientada a objetos}
     -- Pendiente --
 
