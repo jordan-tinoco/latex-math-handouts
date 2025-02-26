@@ -8,6 +8,7 @@
 \usepackage{tasks}
 \usepackage{listings}
 \usepackage{xcolor}
+\usepackage{amsthm}
 
 \settasks{label=\Alph*)}
 
@@ -27,6 +28,10 @@
     commentstyle=\color{brown!90}, % Comentarios en verde
     stringstyle=\color{red!70} % Cadenas de texto en rojo
 }
+
+\theoremstyle{definition}
+\newtheorem{exercise}{Ejercicio}[section]
+
 \renewcommand{\normalsize}{\fontsize{13}{15}\selectfont} %propuesta 1 (13.5, 16)
 
 \setlength{\parskip}{1.7mm}
@@ -253,7 +258,7 @@
     \end{lstlisting}
 
     Los operadores numéricos generalmente retorna valores decimales (float), sin embargo, en los casos de resto ($\%$) y división entera ($//$)
-    solo se obtiene valores enteros.
+    se obtiene valores enteros si los argumentos son enteros, en caso contrario se obtiene float.
 
     Algo interesante sobre el operador $+$ es que permite ``sumar'' cadenas, ejemplo
     \begin{lstlisting}
@@ -621,20 +626,63 @@
 
     \subsection{Ejercicios}
 
+    \begin{exercise}
+        Análisis de los valores float y enteros, probar los siguientes valores en un archivo .py con la ayuda del método print.
+        \begin{itemize}
+            \item Calcular 12 ** 34 y 12.0 ** 34.0 (notar como Python representa los números por medio de notación científica)
+            \item Calcular 1 / 12 ** 34 y ver como se representa.
+            \item Asignar los números $12.3\times 10^{45}$ y $12.3\times 10^{-45}$ a un variable usando la notación científica de Python (con e)\footnote{No confundir con la constante de Euler, la e indica exponente base 10.}.
+            \item Calcular 123 ** 456.
+            \item Calcular 123.0 ** 456.0.
+            \item Calcular 123.0 ** 456 y 123 ** 456.0.
+        \end{itemize}
+    \end{exercise}
 
+    \begin{exercise}
+        Usando $==$, $<=$ y $>=$ comparar
+        \begin{itemize}
+            \item 123 con 123.0
+            \item 123 con 123 + 1.0e-10
+            \item 123 con 123 + 1.0e-20
+        \end{itemize}
+    \end{exercise}
 
+    \begin{exercise}
+        Ver la diferencias entre
+        \begin{itemize}
+            \item print(123456) y print(123, 456)
+            \item print(``Un comentario'') y print(``Un'', ``comentario'')
+        \end{itemize}
+    \end{exercise}
 
+    \begin{exercise}
+        Hacer un programa que calcule la media aritmética de 6 números que se ingresan por pantalla.
+    \end{exercise}
 
+    \begin{exercise}
+        Hacer un programa que pida dos ángulos de un triángulo por pantalla e imprima si el triángulo es acutángulo, rectángulo y obtuso.
+    \end{exercise}
 
+    \begin{exercise}
+        Hacer un programa que pida el radio de una circunferencia y calcule e imprima su área y perímetro.
+    \end{exercise}
 
+    \begin{exercise}
+        Dado un triángulo rectángulo $ABC$ con $AB = BC$, hacer un programa que imprima el valor del ángulo $\angle ABC$ si se ingresa las medidas de $AC$ y la altura desde $B$ hacia $AC$.
+    \end{exercise}
 
+    \begin{exercise}
+        Hacer un programa que pida los lados de un triángulo y calcule el inradio.
+    \end{exercise}
 
+    \begin{exercise}
+        Hacer un programa que pida dos números enteros y calcule su MCD, por medio del algoritmo de Euclides.
+    \end{exercise}
 
-
-
-
-
-
+    \begin{exercise}
+        Hacer un programa que pida por pantalla un número entero $n$ mayor a cero y menor a 100.
+        Que pida $n$ números por pantalla y calcule la media geometríca.
+    \end{exercise}
 
 
     \newpage
