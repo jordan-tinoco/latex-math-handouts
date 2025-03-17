@@ -9,6 +9,13 @@
 \usepackage{listings}
 \usepackage{xcolor}
 \usepackage{amsthm}
+\usepackage{hyperref}
+
+\hypersetup
+{
+    colorlinks = true,
+    linkcolor = black
+}
 
 \settasks{label=\Alph*)}
 
@@ -106,19 +113,17 @@
     Se recomienda nunca escribir más de una sentencia en una línea.
 
     Si necesitamos escribir texto como una manera de señalar algún aspecto del código, podemos usar el símbolo ``$\#$''
-    la cual le indica a lenguaje que ignore todo lo que despues del símbolo, es decir, un comentario.
+    la cual le indica a lenguaje que ignore todo lo que después del símbolo, es decir, un comentario.
 
     \begin{lstlisting}
     # Este es un comentario y no se ejecuta.
 
     aString = "Un texto" #Este es otro comentario
     \end{lstlisting}
-    Los comentarios si bien son parte del lenguaje, en principio no deben usar casi nunca, ya que el código debe ser lo
-    suficientemente claro para tener que comentarlo.
-    En resumen NUNCA USAR COMENTARIOS.
+    Se recomienda NUNCA USAR COMENTARIOS, ya que el código bien escrito no necesita comentarios.
 
-    La \textbf{identación} en líneas de código tiene una gran importancia ya que Python forma bloques de código por
-    medio de la identación, toma relevancia el tema de funciones, bloques condicionales, sentencias de control y clases.
+    La \textbf{identación} tiene una gran importancia en Python, debido a que este forma bloques por
+    medio de la identación, esto toma relevancia con los temas de funciones, condicionales, sentencias de control y clases.
 
     \begin{lstlisting}
     mySurname = "Tinoco"
@@ -668,7 +673,8 @@
     \end{exercise}
 
     \begin{exercise}
-        Dado un triángulo rectángulo $ABC$ con $AB = BC$, hacer un programa que imprima el valor del ángulo $\angle ABC$ si se ingresa las medidas de $AC$ y la altura desde $B$ hacia $AC$.
+        Dado un triángulo rectángulo, hacer un programa que pida por pantalla la hipotenusa y la altura relativa a la
+        hipotenusa, y calcule el ángulo opuesto a dicha altura.
     \end{exercise}
 
     \begin{exercise}
