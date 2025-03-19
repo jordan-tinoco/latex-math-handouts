@@ -4,7 +4,7 @@
 
 \title{Introducción a desigualdades\\Medias}
 \author{Kenny J. Tinoco}
-\date{Febrero de 2025}
+\date{Marzo de 2025}
 
 \begin{document}
     \maketitle
@@ -19,12 +19,123 @@
         \[
             \sqrt {\frac{a_1^2 + a_2^2 + \cdots + a_k^2}{k}} \geq \frac{a_1 + a_2 + \cdots + a_k}{k} \geq \sqrt[k]{a_1 a_2 \ldots a_k} \geq \frac{k}{\frac{1}{a_1} + \frac{1}{a_2} + \cdots + \frac{1}{a_k}},
         \]
-        donde el caso de igualdad si y solo si $a_1 = a_2 = \cdots = a_k$.
+        donde el caso de igualdad se da si y solo si $a_1 = a_2 = \cdots = a_k$.
     \end{theorem}
 
-    Muchas desigualdades pueden ser resueltas con una aplicación concreta de las medias.
+    De izquierda a derecha llamaremos a estas cantidades como media cuadrática (\textbf{MC}), media aritmética (\textbf{MA}), media geométrica (\textbf{MG}) y media armónica (\textbf{MH}).
+
+    Muchas desigualdades pueden ser resueltas con una aplicación concreta de las medias de la mano de un buen manipuleo.
 
     \section{Problemas}
+
+    \begin{prob-without-section}
+        Sean $a,b,c > 0$ probar que
+        \[
+            \frac{a + b}{c} + \frac{b + c}{a} + \frac{c + a}{b} \geq 6.
+        \]
+    \end{prob-without-section}
+
+    \begin{prob-without-section}
+        Probar para todo $x$ real que se cumple
+        \[
+            \frac{x^2 + 2}{\sqrt {x^2 + 1}} \geq 2.
+        \]
+    \end{prob-without-section}
+
+    \begin{prob-without-section}
+        Para los números no negativos $a,b,c,d$ demostrar que se cumple
+        \[
+            \sqrt {(a + c)(b + d)} \geq \sqrt {ab} + \sqrt {cd}.
+        \]
+    \end{prob-without-section}
+
+    \begin{prob-without-section}
+        Sean $a,b,c > 0$ probar que
+        \[
+            \frac{(a + b + c)^3}{27} \geq \frac{(a + b)(b + c)(c + a)}{8}.
+        \]
+    \end{prob-without-section}
+
+    \begin{prob-without-section}
+        Sean los reales positivos $a,b,c$, demostrar que
+        \[
+            (a + b + c)^3 \geq a^3 + b^3 + c^3 + 24abc.
+        \]
+    \end{prob-without-section}
+
+    \begin{prob-without-section}
+        Dados los reales positivos $a,b$ y $c$, probar que
+        \[
+            \frac{a^3 + b^3 + c^3}{3} \geq \frac{a^2 b + b^2 c + c^2 a + a b^2 + b c^2 + c a^2}{6} \geq abc.
+        \]
+    \end{prob-without-section}
+
+    \begin{prob-without-section}
+        Dado los números positivos $w,x,y,z$ probar que
+        \[
+            (w + x + y + z)\left(\frac{1}{w} + \frac{1}{x} + \frac{1}{y} + \frac{1}{z}\right) \geq 16.
+        \]
+        De manera general, demostrar que para $n$ números reales positivos $x_i$ se cumple
+        \[
+            (x_1 + x_2 + \ldots + x_n)\left(\frac{1}{x_1} + \frac{1}{x_2} + \ldots + \frac{1}{x_n}\right) \geq n^2.
+        \]
+    \end{prob-without-section}
+
+    \begin{prob-without-section}
+        Dado los reales postivos $a,b,c$, probar que se cumple
+        \[
+            a^3 + b^3 + c^3 + ab^2  + bc^2  + ca^2  \geq 2(a^2 b + b^2 c + c^2 a).
+        \]
+    \end{prob-without-section}
+
+    \begin{prob-without-section}
+        Demostrar que para todo entero $n$ y los reales positivos $a,b$ se cumple que
+        \[
+            a^{n + 1} + b^{n + 1} \geq a^n b + a b^n.
+        \]
+    \end{prob-without-section}
+
+    \begin{prob-without-section}
+        Dado los reales positivos $x,y$ demostrar que
+        \[
+            \frac{1}{xy} \geq \frac{x}{x^4 + y^2} + \frac{y}{y^4 + x^2}.
+        \]
+    \end{prob-without-section}
+
+    \begin{prob-without-section}
+        Sí $a,b,c > 0$. Demostrar que
+        \[
+            \frac{1}{a^2} + \frac{1}{b^2} + \frac{1}{c^2} \geq \frac{a + b + c}{abc}
+        \]
+    \end{prob-without-section}
+
+    \begin{prob-without-section}
+        Para cualquiera números reales $x, y > 1$, demostrar que
+        \[
+            \frac{x^2}{y - 1} + \frac{y^2}{x - 1} \geq 8.
+        \]
+    \end{prob-without-section}
+
+    \begin{prob-without-section}
+        Para todos los reales no negativos $x,y,z$ demostrar que
+        \[
+            \frac{(x + y + z)^2}{3} \geq x \sqrt {yz} + y \sqrt {zx} + z \sqrt {xy}.
+        \]
+    \end{prob-without-section}
+
+    \begin{prob-without-section}
+        Para números reales positivos $a,b,c$ tales que $a + b + c = 1$, demostrar que
+        \[
+            \frac{1}{3} \geq ab + bc + ca.
+        \]
+    \end{prob-without-section}
+
+    \begin{prob-without-section}
+        Sean $x,y,z$ reales positivos, probar que
+        \[
+            \frac{2}{x + y} + \frac{2}{y + z} + \frac{2}{z + x} \geq \frac{9}{x + y + z}.
+        \]
+    \end{prob-without-section}
 
     \begin{prob-without-section}
         Sean $a_1, a_2, \ldots, a_k$ números reales positivos tales que $a_1 a_2 \cdot a_k = 1$, demostrar que
