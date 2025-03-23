@@ -38,6 +38,7 @@
 
 \theoremstyle{definition}
 \newtheorem{exercise}{Ejercicio}[section]
+\newtheorem{example}{Ejemplo}[section]
 
 \renewcommand{\normalsize}{\fontsize{13}{15}\selectfont} %propuesta 1 (13.5, 16)
 
@@ -626,6 +627,27 @@
         return name, 'Roger', 8
 
     print(hello('Syd')) #('Syd', 'Roger', 8)
+    \end{lstlisting}
+
+    \begin{example}
+        Realizar una función que calcule el factorial de un entero ingresado por pantalla.
+    \end{example}
+
+    \begin{lstlisting}
+    def factorial(value):
+        if(value < 0):
+            print("Valor invalido.")
+            exit()
+
+        if(value == 0):
+            return 1;
+
+        result = 1
+        while(value != 0):
+            result = result * value
+            value = value - 1
+
+        return result
     \end{lstlisting}
 
 
