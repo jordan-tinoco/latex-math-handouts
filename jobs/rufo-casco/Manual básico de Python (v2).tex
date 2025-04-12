@@ -9,6 +9,10 @@
 \usepackage{listings}
 \usepackage{xcolor}
 \usepackage{amsthm}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathtools}
 \usepackage{hyperref}
 
 \hypersetup
@@ -739,6 +743,19 @@
         junto con la cantidad de elementos de cada lista.
         Luego, que indique cuál lista tiene más elementos.
     \end{exercise}
+
+
+    La forma común de estas dos sumas
+
+    \begin{align*}
+        &x - \frac{x^3}{3} + \frac{x^5}{5} - \frac{x^7}{7} - \ldots + (-1)^n \frac{x^{2n + 1}}{2n + 1}\\[5mm]
+        &\frac{1}{x} - \frac{1}{3 x^3} + \frac{1}{5 x^5} - \frac{1}{7 x^7} - \ldots + (-1)^n \frac{1}{(2n + 1)x^{2n + 1}}
+    \end{align*}
+    Es la suma
+    \begin{align*}
+        &x^{signo} - \frac{1}{3} (x^3)^{signo} + \frac{1}{5} (x^5)^{signo} - \frac{1}{7} (x^7)^{signo} - \ldots + (-1)^n \frac{1}{2n + 1} (x^{2n + 1})^{signo}
+    \end{align*}
+    Si el signo es positivo es la primera suma, si es negativo es la segunda.
 
 
     \newpage
