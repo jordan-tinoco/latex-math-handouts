@@ -1,1 +1,115 @@
-\section{Conceptos}
+\section{Fundamentos}
+
+En esta segunda sesión repasaremos aspectos fundamentales sobre los polinomios.
+
+\subsection{Conceptos}
+
+\begin{definition}
+    Un \textit{monomio} en la variable $x$ es una expresión $c x^k$ donde $c$ es una constante y $k$ un entero no negativo.
+\end{definition}
+
+Un polinomio es la suma de finitos monomios.
+En otras palabras un polinomio es una expresión de la forma
+\[
+    a_n x^n + a_{n - 1} x^{n - 1} + \ldots + a_1 x + a_0
+\]
+Asumamos que $a_n \neq 0$.
+En este caso, los números $a_n, a_{n - 1}, \ldots, a_1, a_0$ se llaman los coeficientes del polinomio, y $n$ es llamado el grado del polinomio.
+
+Los polinomios pueden ser sumados y multiplicados.
+Para $A(x) = a_0 + a_1 x + a_2 x^2 + \ldots +a_n x^n$ y $B(x) = b_0 + b_1 x + b_2 x^2 + \ldots + b_n x^n$ definimos
+\begin{align*}
+    A(x) + B(x) &= (a_0 + b_0) + (a_1 + b_1)x + (a_2 + b_2)x^2 + \ldots\\[2mm]
+    A(x)B(x) &= a_0 b_0 + (a_0 b_1 + a_1 b_0)x + (a_0 b_2 + a_1 b_1 + a_2 b_0)x^2 + \ldots
+\end{align*}
+Para los motivos de este documento consideraremos a los polinomios con coeficientes reales, racionales, enteros, complejos o incluso
+valores que son residuos en módulo de algún primo $p$.
+
+\subsection{División de polinomios}
+
+\begin{definition}
+    Para los polinomios $F(x)$ y $G(x)$, llamamos \textit{cociente} y $\textit{resto}$ a los polinomios $Q(x)$ y $R(x)$,
+    respectivamente, si
+    \[
+        F(x) = Q(x) G(x) + R(x)
+    \]
+    y $\deg{R} < \deg{G}$.
+\end{definition}
+
+\begin{theorem}
+    El cociente y resto siempre existen y son únicos.
+\end{theorem}
+
+\begin{theorem}[Bezout version 1]
+    El resto de $P(x)$ dividido por $(x - a)$ es igual a $P(a)$.
+\end{theorem}
+
+\begin{theorem}[Bezout version 2]
+    Un número $a$ es raíz de $P(x)$ si y solo si $(x - a) | P(x)$.
+\end{theorem}
+
+\begin{corollary}
+    Si $a_1, a_2, \ldots, a_n$ son raíces distintas de $P(x)$, entonces
+    \[
+        (x - a_1)(x - a_2)\ldots(x - a_n) | P(x).
+    \]
+\end{corollary}
+
+\begin{theorem}
+    El polinomio $P(x)$ con grado $n$ tiene a lo más $n$ raíces.
+\end{theorem}
+
+\begin{corollary}
+    Si $A(x)$ y $B(x)$ no son iguales, y su grado es a lo máximo $n$, entonces la ecuación $A(x) = B(x)$ tiene a lo sumo $n$ raíces.
+\end{corollary}
+
+\begin{example}
+    Probar que
+    \[
+        a \frac{(x - b)(x - c)}{(a - b)(a - c)} + b \frac{(x - c)(x - a)}{(b - c)(b - a)} + c \frac{(x - a)(x - b)}{(c - a)(c - b)} = x.
+    \]
+\end{example}
+
+\begin{solution}
+    Denotemos por $P(x)$ al lado izquierdo de la ecuación.
+    Sabemos que $P(x)$ es un polinomio con grado a lo sumo 2 y $P(a) = a$, $P(b) = b$ y $P(c) = c$.
+    Por tanto, por el corolario previo $P(x) = x$.
+\end{solution}
+
+\begin{example}
+    Dado el entero positivo $n$.
+    El polinomio $P(x)$ satisface $P(i) = 2^i$ para todo $i = 0, 1, \ldots, n$.
+    Probar que $\deg{P} \geq n$.
+\end{example}
+
+\begin{solution}
+    Considere el polinomio $Q(x) = 2P(x) - P(x + 1)$.
+    Es obvio que $\deg{Q} = \deg{P}$.
+    Y los números $0, 1, \ldots, n-1$ son raíces de $Q$, por lo cual $\deg{Q} \geq n$.
+\end{solution}
+
+\begin{example}
+    Dado el polinomio $P(x)$ con grado tres.
+    Llamaremos a una tripleta de números reales $(a, b, c)$ \textit{cíclica} si $P(a) = b$, $P(b) = c$ y $P(c) = a$.
+    Probar que existen a lo más nueve tripletas cíclicas.
+\end{example}
+
+\begin{solution}
+    Dividamos la solución
+    \begin{enumerate}
+        \item Tripletas cíclicas diferentes no tienen elementos compartidos.
+        Supongamos lo contrario y que hay dos tripletas cíclicas con números iguales $(a, b, c)$ y $(a, d, e)$.
+        Con base en la definición de tripleta cíclica, $b = P(a)$ y $d = P(a)$, por tanto $d = b$.
+        Y $c = P(b)$ y $e = P(d) = P(b)$, por tanto $c = e$.
+        Esto implica que las tripletas son iguales.
+        \item Todos los números en cualquier tripleta cíclica son raíces del polinomio $Q(x) = P(P(P(x))) - x$.
+        Consideremos cualquier tripleta cíclica $(a, b, c)$.
+        \[
+            P(P(P(a))) = P(P(b)) = P(c) = a.
+        \]
+        \item El grado del polinomio $P(P(P(x))) - x$ es 27, ya que si existen 10 tripletas cíclicas distintas, entonces existen 30 raíces distintas para $Q(x)$.
+        Lo cual es absurdo. \qedhere
+    \end{enumerate}
+\end{solution}
+
+\subsection{Raíces}
