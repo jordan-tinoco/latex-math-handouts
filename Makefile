@@ -9,3 +9,6 @@ help: ## Show this help message
 clean: ## Clean all auxiliar file of pdf
 	find ./out -type f ! -name "*.pdf" -delete
 	find ./out -type d -empty -delete
+
+gpc: ## git push origin current branch
+	git push origin $(shell git rev-parse --abbrev-ref HEAD)
