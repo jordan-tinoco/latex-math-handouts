@@ -1,6 +1,7 @@
 \section{Fundamentos}
 
-En esta segunda sesión repasaremos aspectos fundamentales sobre los polinomios.
+En esta segunda sesión repasaremos aspectos fundamentales sobre los polinomios que debemos conocer, veremos conceptos de
+polinomios, divisiones, raíces y una serie de teoremas importantes.
 
 \subsection{Conceptos}
 
@@ -36,7 +37,7 @@ valores que son residuos en módulo de algún primo $p$.
     y $\deg{R} < \deg{G}$.
 \end{definition}
 
-\begin{theorem}
+\begin{theorem}[División polinómica]
     El cociente y resto siempre existen y son únicos.
 \end{theorem}
 
@@ -66,7 +67,7 @@ valores que son residuos en módulo de algún primo $p$.
 \begin{example}
     Probar que
     \[
-        a \frac{(x - b)(x - c)}{(a - b)(a - c)} + b \frac{(x - c)(x - a)}{(b - c)(b - a)} + c \frac{(x - a)(x - b)}{(c - a)(c - b)} = x.
+        a \frac{(x - b)(x - c)}{(a - b)(a - c)} + b \frac{(x - c)(x - a)}{(b - c)(b - a)} + c \frac{(x - a)(x - b)}{(c - a)(c - b )} = x.
     \]
 \end{example}
 
@@ -113,3 +114,87 @@ valores que son residuos en módulo de algún primo $p$.
 \end{solution}
 
 \subsection{Raíces}
+
+\begin{theorem}[Teorema Fundamental del álgebra]
+    Cualquier polinomio no constante con coeficientes complejos tiene al menos una raíz compleja.
+    Equivalentemente, todo polinomio de grado $n \geq 1$ con coeficientes complejos pude factorizarse como
+    \[
+        P(z) = a_n (z - z_1)(z - z_2) \ldots (z - z_n),
+    \]
+    donde $a_n \neq 0$, y $z_1, z_2, \ldots, z_n \in \C$ (considerando la multiplicidad).
+\end{theorem}
+
+\begin{example}
+    Dado el polinomio $P(x) \in \R [x]$ tal que $P(x) \geq 0$ para todo real $a$.
+    Probar que existen polinomios $Q(x), R(x) \in \R [x]$ para el cual $P(x) = Q(x)^2 + R(x)^2$.
+\end{example}
+
+\begin{solution}
+    Sea $P(x) \in \R[x]$ sea un polinomio con coeficientes reales.
+    Por el teorema Fundamental del álgebra, $P(x)$ puede factorizarse como
+    \[
+        P(x) =  c \prod{j = 1}{c} (x - \alpha_j),
+    \]
+    donde $c \in \R$ y $\alpha_j \in \C$.
+    Ya que $P(x)$ tiene coeficientes reales, cualquier raíz no real $\alpha$ debe tener su conjugado complejo $\overline{\alpha}$ en la factorización.
+    De esta manera, los factores reales de $P(x)$ son productos de
+    \begin{itemize}
+        \item Factores lineales: $(x - r)^{2k}$, correspondientes a raíces reales.
+        \item Factores cuadráticos irreducibles: $a x^2 + bx + c$ con $b^2 - 4ac < 0$.
+    \end{itemize}
+    Si consideramos un polinomio cuadrático $x^2 + bx + c$ sin raíces reales (es decir $b^2 - 4c < 0$) y completando cuadrados, obtenemos que
+    \begin{align*}
+        x^2 + bx + c = \left(x + \frac{b}{2}\right)^2 + \left(c -\frac{b^2}{4}\right) = \left(x + \frac{b}{2}\right)^2 + \frac{4c - b^2}{4}.
+    \end{align*}
+    Esto puede escribirse como
+    \[
+        x^2 + bx + c = \left(x + \frac{b}{2}\right)^2 + \left(\frac{\sqrt{4c - b^2}}{2}\right)^2
+    \]
+    Por la identidad de Brahmagupta sabemos que el producto de dos sumas de dos cuadrados es igual a la suma de dos cuadrados, esto es
+    \[
+        (a^2 + b^2)(c^2 + d^2) = (ac - bd)^2 + (ad + bc)^2
+    \]
+    Así que cada factor de $P(x)$ puede ser representado como la suma de dos cuadrados, por lo cual, $P(x)$ puede ser escrito de la forma
+    \[
+        P(x) = Q(x)^2 + R(x)^2
+    \]
+    con $Q(x), R(x) \in \R[x]$.
+\end{solution}
+
+\subsubsection{Raíces en intervalos}
+Aquí haremos uso de algunos teoremas de cálculo y sus corolarios.
+
+\begin{theorem}[Teorema del valor intermedio]
+    Sea $f(x)$ una función continua en un intervalo cerrado $[a, b]$, asumamos que se toman los valores extremos con signos opuestos, es decir
+    \[
+        f(a) \cdot \f(b) < 0,
+    \]
+    entonces existe un punto $c \in (a, b)$ tal que $f(c) = 0$.
+\end{theorem}
+
+
+
+\subsection{Interpolación de Lagrange}
+
+\begin{theorem}
+    Para reales distintos $x_0, x_1, \ldots, x_n$ y cualesquiera $y_0, y_1, \ldots, y_n$ definimos
+    \[
+        P_i(x) = \frac{(x - x_0)(x - x_1)\ldots(x - x_{i - 1})(x - x_{i + 1})\ldots(x - x_n)}{(x_i - x_0)(x_i - x_1)\ldots(x_i - x_{i - 1})(x_i - x_{i + 1})\ldots(x_i - x_n)},
+    \]
+    así, el único polinomio $P(x)$ con grado como máximo $n$ tal que $P(x_i) = y_i$ para todo $i = 0, 1, \ldots, n$ es igual a
+    \[
+        y_0 P_0(x) + y_1 P_1(x) + \ldots + y_n P_n(x)
+    \]
+\end{theorem}
+
+\begin{example}
+    Dado el polinomio $P(x)$ con coeficientes reales y grado 10.
+    ¿Cuál es el mayor número de intersecciones que $y = P(x)$ y el círculo $x^2 + y^2 = 1$ puede tener?
+\end{example}
+
+\begin{solution}
+    La respuesta es 20.
+    Supongamos que hay más de 20 intersecciones, considerando el polinomio $Q(x) =  x^2 + P(x)^2 - 1$.
+    Si $(x_0, y_0)$ es un punto de intersección, entonces $x_0$ es raíz de $Q(x)$.
+    Pero $\deg{(Q)} = 20$, así que solo pueden existir a lo máximo 20 valores $x_0$.
+\end{solution}
