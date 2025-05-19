@@ -1,0 +1,136 @@
+\section{Solución de los ejercicios}
+
+\begin{corollary}
+    Si un polinomio de grado $n$ tiene $n + 1$ raíces, entonces $P(x) \equiv 0$.
+\end{corollary}
+\begin{proof}
+    Sea el polinomio $P(x) = a_n x^n + a_{n - 1} x^{n - 1} + \ldots + a_1 x + a_0$,
+    de grado $n$, con $n + 1$ raíces reales distintas $r_1, r_2, \ldots, r_{n + 1}$.
+    Por el teorema del factor, el polinomio puede ser escrito como
+    \[
+        P(x) = C (x - r_1)(x - r_2) \ldots (x - r_{n + 1}).
+    \]
+    Sin embargo, al desarrollar el lado derecho de la expresión obtenemos un polinomio de grado $n + 1$, cuyo término principal sería $C x^{n + 1}$.
+    Como este término no aparece al lado izquierdo, entonces $C = 0$.
+    Luego, $P(x) \equiv 0$.
+\end{proof}
+
+\begin{exercise}
+    Probar que
+    \[
+        a \frac{(x - b)(x - c)}{(a - b)(a - c)} + b \frac{(x - c)(x - a)}{(b - c)(b - a)} + c \frac{(x - a)(x - b)}{(c - a)(c - b )} = x.
+    \]
+\end{exercise}
+
+\begin{solution}
+    Diremos que el lado izquierdo de la expresión es el polinomio $P(x)$, consideremos el polinomio $Q(x) = P(x) - x$, vamos a demostrar que $Q(x) \equiv 0$.
+    Podemos notar que $P(x)$ tiene a lo sumo grado dos, por lo cual $Q(x)$ también tiene a lo sumo grado dos.
+    Al evaluar $a, b$ y $c$ en $Q(x)$, obtenemos que $Q(a) = Q(b) = Q(c) = 0$, es decir, un polinomio de grado a lo sumo dos tiene tres raíces, por tanto $Q(x) \equiv 0$, luego $P(x) = x$.
+\end{solution}
+
+\begin{exercise}
+    Sean $p,q,r$ tres números reales no nulos tales que $-p, 2q$ y $3r$ son raíces de la ecuación $x^3 + px^2 + qx + r = 0$, encontrar los valores de $p,q$ y $r$.
+\end{exercise}
+
+\begin{solution}
+    Los valores son $(p,q,r) = \left(-\frac{2}{3}, -\frac{1}{4}, \frac{1}{6}\right)$.
+    Sea el polinomio $Q(x) = x^3 + px^2 + qx + r$, como $-p, 2q$ y $3r$ son sus raíces y es mónico, por el teorema del factor podemos escribirlo como
+    \begin{align*}
+        Q(x) &= (x + p)(x - 2q)(x - 3r)\\
+        &= x^3 + (p - 2q - 3r)x^2 + (-2pq + 6qr - 3pr)x + 6pqr.
+    \end{align*}
+    Comparando los coeficientes de la ecuación inicial con los del polinomio $Q(x)$, obtenemos el sistema
+    \[
+        \begin{cases}
+            p - 2q - 3r = p & \\
+            -2pq + 6qr - 3pr = q & \\
+            6pqr = r &
+        \end{cases}
+    \]
+    De la primera ecuación vemos que $2q + 3r = 0$, de la segunda obtenemos
+    \begin{align*}
+        -2pq + 6qr - 3pr = q\\
+        -p(2q + 3r) + 6qr = q \\
+        6qr = q \implies r = \frac{1}{6}
+    \end{align*}
+    Como $r = \frac{1}{6}$, entonces $q = -\frac{1}{4}$.
+    Finalmente, en la tercera ecuación al sustituir $q$ y $r$ obtenemos $p = -\frac{2}{3}$.
+\end{solution}
+
+\begin{exercise}
+    Si $a,b,c,x,y$ son números reales tales que
+    \[
+        \begin{cases}
+            a^3 + ax + y = 0\\
+            b^3 + bx + y = 0\\
+            c^3 + cx + y = 0
+        \end{cases}
+    \]
+    y $a \neq b \neq c$, determinar el valor de $a + b + c$.
+\end{exercise}
+
+\begin{solution}
+    La respuesta es $a + b +  c = 0$.
+    Consideremos el polinomio $A(k) = k^3 + xk + y$, es claro que $a,b$ y $c$ son raíces de $A(k)$, por el teorema del factor,
+    podemos escribir a $A(k)$ como
+    \begin{align*}
+        A(k) &= (x - a)(x - b)(x - c)\\
+        &= x^3 - (a + b + c)x^2 + (ab + bc + ca)x - abc
+    \end{align*}
+    Como la definición inicial de $A(k)$ no tiene un término cuadrático, entonces $a + b + c$ debe ser cero.
+\end{solution}
+
+\begin{exercise}
+    Encontrar las condiciones necesarias y suficientes sobres los naturales $m,n$ para que el polinomio
+    \[
+        \sum_{k = 0}^{m^n} x^k,
+    \]
+    sea divisible entre $x^3 + x^2 + x + 1$.
+\end{exercise}
+
+\begin{solution}
+    La respuesta es $m = 4p - 1$ y $n = 2q - 1$ con $p,q \in \N$.
+    Sea $P(x)$ el polinomio.
+    Como $x^3 + x^2 + x + 1 = (x + 1)(x^2 + 1)$, entonces $(x + 1)(x^2 + 1)$ divide a $P(x)$ si y solo si $-1$ y $i$ son raíces de $P(x)$.
+    \begin{itemize}
+        \item Para que $-1$ sea raíz de $P(x)$ solo basta que el grado de $P(x)$ sea impar.
+        Un polinomio de grado impar tiene una cantidad par de términos, si este se evalua en $-1$, entonces los términos se cancelan entre sí.
+        Ejemplo,
+        \[
+            x^5 + x^4 + x^3 + x^2 + x + 1 \implies (-1)^5 + (-1)^4 + (-1)^3 + (-1)^2 + (-1) + 1 = 0.
+        \]
+        \item Para que $i$ sea raíz, el grado de $P(x)$ debe ser congruente con $-1$ en módulo $4$.
+        Como la suma de cuatro potencias consecutivas de $i$ se cancelan, es necesario que $P(x)$ tenga una cantidad de términos múltiplos de cuatro.
+        \item Cualquier potencia impar de un número de la forma $4k - 1$ es de la forma $4t - 1$. \qedhere
+    \end{itemize}
+\end{solution}
+
+\begin{exercise}
+    Sea $a,b,c,d \in \R$, sin tres o cuatro de ellos iguales a cero a la vez, tales que
+    \[
+        \frac{a}{b + c + d} + \frac{b}{a + c + d} + \frac{c}{a + b + d} + \frac{d}{a + b + c} = 1.
+    \]
+    Determinar el valor de
+    \[
+        \frac{a^2}{b + c + d} + \frac{b^2}{a + c + d} + \frac{c^2}{a + b + d} + \frac{d^2}{a + b + c} = 1.
+    \]
+\end{exercise}
+
+\begin{solution}
+    La respuesta es cero.
+    Sea $k = a + b + c + d$, la condición puede ser escrita como
+    \[
+        \frac{a}{k - a} + \frac{b}{k - b} + \frac{c}{k - c} + \frac{d}{k - d} = 1.
+    \]
+    Notemos que $\frac{a}{k - a} = \frac{a - k + k}{k - a} = \frac{k}{k - a} - 1$, esto puede ser realizado con las demás fracciones, con lo cual obtenemos
+    \[
+        \frac{k}{k - a} + \frac{k}{k - b} + \frac{k}{k - c} + \frac{k}{k - d} = 5.
+    \]
+    Veamos que $\frac{a^2}{k - a} = \frac{a^2 - k^2 + k^2}{k - a} = \frac{k^2}{k - a} - (a + k)$, análogamente con las demas fracciones, obtenemos que
+    \begin{align*}
+        \frac{a^2}{k - a} + \frac{b^2}{k - b} + \frac{c^2}{k - c} + \frac{d^2}{k - d} &= \frac{k^2}{k - a} + \frac{k^2}{k - b} + \frac{k^2}{k - c} + \frac{k^2}{k - d} - (a + b + c + d + 4k)\\
+        &= k\left(\frac{k}{k - a} + \frac{k}{k - b} + \frac{k}{k - c} + \frac{k}{k - d}\right) - 5k\\
+        &= k(5) - 5k\\
+        &= 0
+    \end{align*}
+\end{solution}
