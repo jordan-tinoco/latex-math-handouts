@@ -1,25 +1,6 @@
 \documentclass[12pt, paper=letter]{scrartcl}
 
-\usepackage{mlmodern}
-\usepackage[T1]{fontenc}
-\usepackage[spanish]{babel}
-\usepackage{fancyhdr}
-\usepackage[left=2.5cm, right=2.5cm, top=2.3cm, bottom=3cm]{geometry}
-\usepackage{multicol}
-\usepackage{tasks}
-\usepackage{hyperref}
-\usepackage{tocloft}
-
-\settasks{label=\Alph*)}
-
-\setlength{\parskip}{1.7mm}
-\setlength{\parindent}{0pt}
-\setlength{\headsep}{3.5mm}
-
-\input{../../utils/math-commands.v2.dependency}
-\input{../../utils/math-sections.v3.dependency}
-\input{../../utils/math-commands.v2}
-\input{../../utils/math-sections.v3}
+\usepackage{../../utils/jtinoco.eng.v1}
 
 \title {\Large EXCL Season 4 Assignment 5}
 \date{12 June 2025}
@@ -28,14 +9,14 @@
 \begin{document}
     \maketitle
 
-    \begin{problem-wos}
+    \begin{problem*}
         Positive $a,b,c$ satisfy $a + b + c = 1$.
         Prove that
         \[
             \frac{ab + c}{a + b} + \frac{bc + a}{b + c} + \frac{ca + b}{c + a} \geq 2.
         \]
-    \end{problem-wos}
-    \begin{solution}
+    \end{problem*}
+    \begin{solution*}
         By $a + b + c = 1$ we have $c = 1 - a - b$, thus $ab + c = ab - a - b + 1 = (1 - a)(1 - b)$, and $a + b = 1 - c$.
         Likewise for $(bc + a)$ and $(ca + b)$, we found that original inequality is equivalent to
         \[
@@ -49,17 +30,17 @@
         \begin{align*}
             \left(\frac{zx}{y} + \frac{xy}{z} + \frac{yz}{x}\right)\left(\frac{xy}{z} + \frac{yz}{x} + \frac{zx}{y}\right) &\geq (x + y + z)^2\\[3mm]
             \iff \frac{xy}{z} + \frac{yz}{x} + \frac{zx}{y} &\geq x + y + z\\[2mm]
-            \implies \frac{xy}{z} + \frac{yz}{x} + \frac{zx}{y} &\geq 2
-        \end{align*}\qedhere
-    \end{solution}
+            \implies \frac{xy}{z} + \frac{yz}{x} + \frac{zx}{y} &\geq 2.
+        \end{align*}
+    \end{solution*}
 
-    \begin{problem-wos}
+    \begin{problem*}
         If $a,b,c > 0$, prove that
         \[
             \frac{3(ab + bc + ca)}{2(a + b + c)} \geq \frac{ab}{a + b} + \frac{bc}{b + c} + \frac{ca}{c + a}.
         \]
-    \end{problem-wos}
-    \begin{solution}
+    \end{problem*}
+    \begin{solution*}
         Multiplying by $a + b + c$, we have
         \begin{align*}
             \iff \frac{3(ab + bc + ca)}{2} &\geq (a + b + c)\left(\frac{ab}{a + b} + \frac{bc}{b + c} + \frac{ca}{c + a}\right)\\[3mm]
@@ -68,15 +49,15 @@
             \iff \frac{1}{a} + \frac{1}{b} + \frac{1}{c} &\geq 2\left(\frac{1}{a + b} + \frac{1}{b + c} + \frac{1}{c + a}\right)
         \end{align*}
         By AM-HM inequality, we know that $\frac{1}{a} + \frac{1}{b} \geq \frac{4}{a + b}$, $\frac{1}{b} + \frac{1}{c} \geq \frac{4}{b + c}$ and $\frac{1}{c} + \frac{1}{a} \geq \frac{4}{c + a}$ adding these inequalities we obtain the result.
-    \end{solution}
+    \end{solution*}
     
-    \begin{problem-wos}
+    \begin{problem*}
         If $a,b,c > 0$, prove that
         \[
             \frac{a}{(b + c)^2} + \frac{b}{(c + a)^2} + \frac{c}{(a + b)^2} \geq \frac{9}{4(a + b + c)}
         \]
-    \end{problem-wos}
-    \begin{solution}
+    \end{problem*}
+    \begin{solution*}
         Since the inequality is homogeneous, we may assume WLOG that $a + b + c = 3$.
         So the inequality we wish to prove is
         \[
@@ -88,16 +69,16 @@
             \frac{f(a) + f(b) + f(c)}{3} &\geq f \left(\frac{a + b + c }{3}\right)\\[3mm]
             \iff f(a) + f(b) + f(c) &\geq 3 f(1)\\[3mm]
             \iff f(a) + f(b) + f(c) &\geq 3 \left(\frac{1}{(3 - 1)^2}\right) = \frac{3}{4}
-        \end{align*}\qedhere
-    \end{solution}
+        \end{align*}
+    \end{solution*}
 
-    \begin{problem-wos}
+    \begin{problem*}
         If $a,b,c > 0$ are the sides of a triangle, find the minimum value of
         \[
             \frac{\sqrt {a}}{\sqrt {b} + \sqrt {c} - \sqrt {a}} + \frac{\sqrt {b}}{\sqrt {c} + \sqrt {a} - \sqrt {b}} + \frac{\sqrt {c}}{\sqrt {a} + \sqrt {b} - \sqrt {c}}.
         \]
-    \end{problem-wos}
-    \begin{solution}
+    \end{problem*}
+    \begin{solution*}
         Let $x = \sqrt {b} + \sqrt {c} - \sqrt {a}$, $\quad y = \sqrt {c} + \sqrt {a} - \sqrt {b}\quad$ and $\quad z = \sqrt {a} + \sqrt {b} - \sqrt {c}$.
 
         We have that $y + z = 2 \sqrt {a} \iff \sqrt {a} = \frac{y + z}{2}$, likewise, for $\sqrt {b}$ and $\sqrt {c}$.
@@ -107,5 +88,5 @@
             \iff \frac{1}{2} \left(\frac{x}{y} + \frac{y}{x} + \frac{y}{z} + \frac{z}{y} + \frac{z}{x} + \frac{x}{z}\right)
             \geq \frac{1}{2} (2 + 2 + 2) = 3.
         \end{align*}
-    \end{solution}
+    \end{solution*}
 \end{document}
