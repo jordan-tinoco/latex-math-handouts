@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{jtinoco.eng.v1}[2025/06/15 J_tinoco English Package v1]
+\ProvidesPackage{jtinoco.eng.v1}[2025/06/16 J_tinoco English Package v1]
 
 \RequirePackage[utf8]{inputenc}
 \RequirePackage{mlmodern}
@@ -53,6 +53,7 @@
 
 
 %Math sections
+\RequirePackage{ifthen}
 \theoremstyle{definition}
 %Without section
 \newtheorem{axiom*}{Axiom}
@@ -65,6 +66,8 @@
 \newtheorem{example*}{Example}
 \newtheorem{problem*}{Problem}
 \newtheorem{exercise*}{Exercise}
+\newtheorem{remark*}{Remark}
+\newtheorem{hint*}{Hint}
 %With section
 \newtheorem{axiom}{Axiom}[section]
 \newtheorem{principle}{Principle}[section]
@@ -76,3 +79,11 @@
 \newtheorem{example}{Example}[section]
 \newtheorem{problem}{Problem}[section]
 \newtheorem{exercise}{Exercise}[section]
+\newtheorem{remark}{Remark}[section]
+
+\newenvironment{solution*}[1][]
+{
+    \begin{proof}[\textnormal{\textbf{Solution\ifthenelse{\equal{#1}{}}{}{ #1}}}]
+    }{
+    \end{proof}
+}
