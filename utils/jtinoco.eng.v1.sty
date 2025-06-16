@@ -1,0 +1,70 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{jtinoco.eng.v1}[2025/06/15 J_tinoco English Package v1]
+
+\RequirePackage[utf8]{inputenc}
+\RequirePackage{mlmodern}
+\RequirePackage[T1]{fontenc}
+
+\RequirePackage{geometry}
+\geometry{left=2.5cm, right=2.5cm, top=2.3cm, bottom=3cm}
+
+\RequirePackage{multicol}
+\RequirePackage{hyperref}
+\RequirePackage{tocloft}
+
+\setlength{\parskip}{1.7mm}
+\setlength{\parindent}{0pt}
+\setlength{\headsep}{3.5mm}
+
+
+%Math commands
+\RequirePackage{amsthm}
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\allowdisplaybreaks
+%Renew command
+\renewcommand{\emptyset}{\ensuremath{\varnothing}}
+\renewcommand{\qedsymbol}{\ensuremath{\blacksquare}}
+\newcommand{\ie}{\ensuremath{\text{i.e.}}}
+\newcommand{\eg}{\ensuremath{\text{e.g.}}}
+%Number sets
+\newcommand{\N}{\ensuremath{\mathbb{N}}}
+\newcommand{\Z}{\ensuremath{\mathbb{Z}}}
+\newcommand{\Q}{\ensuremath{\mathbb{Q}}}
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+\newcommand{\C}{\ensuremath{\mathbb{C}}}
+\newcommand{\positiveSet}[1]{\ensuremath{#1^+}}
+\newcommand{\negativeSet}[1]{\ensuremath{#1^-}}
+\newcommand{\nonnegativeSet}[1]{\ensuremath{#1^{\geq 0}}}
+%Useful math commands
+\newcommand{\ds}{\displaystyle}
+\newcommand{\reciprocal}[1]{\ensuremath{\frac{1}{#1}}}
+\newcommand{\reciprocalDis}[1]{\ensuremath{\dfrac{1}{#1}}}
+\newcommand{\mcd}[2]{\ensuremath{\text{mcd}(#1, #2)}}
+\newcommand{\modulo}[2]{\ensuremath{\equiv #1\ (\text{mód}\ #2)}}
+
+
+%Math sections
+\theoremstyle{definition}
+%Without section
+\newtheorem{axiom*}{Axiom}
+\newtheorem{principle*}{Principle}
+\newtheorem{definition*}{Definition}
+\newtheorem{property*}{Property}
+\newtheorem{lemma*}{Lemma}
+\newtheorem{theorem*}{Theorem}
+\newtheorem{corollary*}{Corollary}
+\newtheorem{example*}{Example}
+\newtheorem{problem*}{Problem}
+\newtheorem{exercise*}{Exercise}
+%With section
+\newtheorem{axiom}{Axiom}[section]
+\newtheorem{principle}{Principle}[section]
+\newtheorem{definition}{Definition}[section]
+\newtheorem{property}{Property}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[section]
+\newtheorem{example}{Example}[section]
+\newtheorem{problem}{Problem}[section]
+\newtheorem{exercise}{Exercise}[section]
