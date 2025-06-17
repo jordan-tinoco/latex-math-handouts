@@ -1,5 +1,54 @@
 \section{Fundamentos}
 
 \begin{definition}[Función]
-
 \end{definition}
+
+\begin{example}
+    Encontrar todas las funciones $f: \R \to \R$ tal que
+    \[
+        f(xf(y) - f(x)) = 2f(x) + xy.
+    \]
+\end{example}
+\begin{solution*}
+    La única función que cumple es $f(x) = 1 - x$ para todo $x \in \R$.
+    Haciendo $x = 1$ en la ecuación obtenemos
+    \[
+        f(f(y) - f(1)) = y + 2f(1),
+    \]
+    de donde vemos que $f$ es biyectiva.
+    Por lo cual, existe un $a \in \R$ tal que $f(a) = 0$.
+    Haciendo $x = a$ en la ecuación original, obtenemos
+    \[
+        f(af(y)) = ay,
+    \]
+    Por lo cual, $f(af(0)) = 0 = f(a)$ lo que implica que $a (f(0) - 1) = 0$.
+    Si $a = 0$, al evaluar $y = 0$ en la ecuación original obtenemos
+    \[
+        f(-f(x)) = 2f(x)
+    \]
+    donde la única solución es $f(x) = -2x$, pero esta función no cumple.
+    Por lo cual $f(0) = 1$.
+    Haciendo $x = y = 1$ en la ecuación original, vemos que
+    \[
+        f(f(1) - f(1)) = 2f(1) + 1  = f(0)  = 1
+    \]
+    Por lo cual, $f(1) = 0 = f(a)$.
+    Así, cuando $x = 1$ en la ecuación original, obtenemos
+    \[
+        f(f(y)) = y
+    \]
+    Haciendo $y = 1$, ecuación original, vemos
+    \[
+        f(-f(x)) = 2f(x) + x
+    \]
+    Ahora con $x \to f(x)$, $f(-x) = f(x) + 2x$.
+    Haciendo $y \to f(y)$ en la ecuación original, obtenemos
+    \begin{align*}
+        f(xy - f(x)) &= 2f(x) + xf(y)\\
+        f(f(x) - xy) + 2(f(x) - xy) &= 2f(x) + xf(y)\\
+        f(f(x) - xy) &= xf(y) + 2xy = x(f(y) + 2y)\\
+        f(f(x) - xy) &= xf(-y)\\
+        f(f(x) + xy) &= xf(y)
+    \end{align*}
+    Con $y = 1$ en este último resultado, $f(f(x) + x) = 0 = f(1)$ de donde obtenemos que $f(x) = 1 - x$ para toda $x \in \R$.
+\end{solution*}
