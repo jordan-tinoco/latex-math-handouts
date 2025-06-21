@@ -1,6 +1,16 @@
 \section{Fundamentos}
 
 \begin{definition}[Función]
+    Sean $X$ y $Y$ dos conjuntos.
+    Una función $f : X \to Y$ es una relación con un valor de $Y$ para cada $x \in X$, y lo denotamos por $f(x) = y$.
+\end{definition}
+
+\begin{definition}[Inyectiva]
+    Una función $f : X \to Y$ es inyectiva si para todo $y \in Y$, existe a lo más un elemento $x \in X$ tal que $f(x) = y$.
+\end{definition}
+
+\begin{definition}[Sobreyectiva]
+    Una función $f : X \to Y$ es sobreyectiva si para todo $y \in Y$, existe al menos un elemento $x \in X$ tal que $f(x) = y$.
 \end{definition}
 
 \begin{example}
@@ -11,44 +21,43 @@
 \end{example}
 \begin{solution*}
     La única función que cumple es $f(x) = 1 - x$ para todo $x \in \R$.
-    Haciendo $x = 1$ en la ecuación obtenemos
+    Sea $P(x,y)$ la evaluación en la función.
+    Usando $P(1,y)$, obtenemos que
     \[
-        f(f(y) - f(1)) = y + 2f(1),
+        f(f(y) - f(1)) = y + 2f(1),\quad \forall y \in \R,
     \]
-    de donde vemos que $f$ es biyectiva.
-    Por lo cual, existe un $a \in \R$ tal que $f(a) = 0$.
-    Haciendo $x = a$ en la ecuación original, obtenemos
+    por la cual $f$ es biyectiva.
+    Como $f$ es biyectiva, existe un $a \in \R$ tal que $f(a) = 0$.
+    Usando $P(a,y)$, obtenemos
     \[
-        f(af(y)) = ay,
+        f(af(y)) = ay, \quad \forall y \in \R.
     \]
-    Por lo cual, $f(af(0)) = 0 = f(a)$ lo que implica que $a (f(0) - 1) = 0$.
-    Si $a = 0$, al evaluar $y = 0$ en la ecuación original obtenemos
+    Con $y = 0$ en esta ecuación encontramos que $f(af(0)) = 0 = f(a)$ lo que implica que $a (f(0) - 1) = 0$.
+    Si $a = 0$, usando $P(x,0)$ tenemos que $f(-f(x)) = 2f(x)$ donde la única solución es $f(x) = -2x$, pero esta función no cumple.
+    Por tanto $f(0) = 1$.
+    Usando $P(1,1)$, obtenemos que
+    \begin{align*}
+        f(f(1) - f(1)) &= 2f(1) + 1 \\
+        f(0) &= 2f(1) + 1 \\
+        0 &= f(1)\\
+        f(a) &= f(1)
+    \end{align*}
+    por lo cual $a = 1$.
+    Así, usando $P(1,y)$ obtenemos
     \[
-        f(-f(x)) = 2f(x)
+        f(f(y)) = y, \quad \forall y \in \R.
     \]
-    donde la única solución es $f(x) = -2x$, pero esta función no cumple.
-    Por lo cual $f(0) = 1$.
-    Haciendo $x = y = 1$ en la ecuación original, vemos que
+    Usando $P(f(x),1)$, encontramos
     \[
-        f(f(1) - f(1)) = 2f(1) + 1  = f(0)  = 1
+        f(-x) = f(x) + 2x, \quad \forall x \in \R
     \]
-    Por lo cual, $f(1) = 0 = f(a)$.
-    Así, cuando $x = 1$ en la ecuación original, obtenemos
-    \[
-        f(f(y)) = y
-    \]
-    Haciendo $y = 1$, ecuación original, vemos
-    \[
-        f(-f(x)) = 2f(x) + x
-    \]
-    Ahora con $x \to f(x)$, $f(-x) = f(x) + 2x$.
-    Haciendo $y \to f(y)$ en la ecuación original, obtenemos
+    Usando este último resultado y $P(x, f(y))$, tenemos que
     \begin{align*}
         f(xy - f(x)) &= 2f(x) + xf(y)\\
-        f(f(x) - xy) + 2(f(x) - xy) &= 2f(x) + xf(y)\\
-        f(f(x) - xy) &= xf(y) + 2xy = x(f(y) + 2y)\\
-        f(f(x) - xy) &= xf(-y)\\
-        f(f(x) + xy) &= xf(y)
+        \implies f(f(x) - xy) + 2\left[f(x) - xy\right] &= 2f(x) + xf(y)\\
+        \iff f(f(x) - xy) &= xf(y) + 2xy\\
+        \iff f(f(x) - xy) &= x\left[f(y) + 2y\right]\\
+        \implies f(f(x) - xy) &= xf(-y)
     \end{align*}
-    Con $y = 1$ en este último resultado, $f(f(x) + x) = 0 = f(1)$ de donde obtenemos que $f(x) = 1 - x$ para toda $x \in \R$.
+    Con $y = -1$ en este último resultado, $f(f(x) + x) = 0 = f(1)$ de donde obtenemos que $f(x) = 1 - x$ para toda $x \in \R$.
 \end{solution*}
