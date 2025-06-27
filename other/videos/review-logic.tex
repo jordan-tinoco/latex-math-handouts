@@ -1,0 +1,186 @@
+\documentclass[10pt]{beamer}
+\usetheme{Boadilla}
+\usepackage{ragged2e}
+\justifying
+
+\usepackage[utf8]{inputenc}
+\usepackage{mlmodern}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+
+\newtheorem{definicion}{Definición}
+\newtheorem{ejemplo}{Ejemplo}
+\newtheorem{teorema}{Teorema}
+
+\input{../../utils/math-commands.v2.dependency.tex}
+\input{../../utils/math-commands.v2.tex}
+
+\title{Repaso sobre proposiciones}
+\author{J\_tinoco}
+\date{Junio 2025}
+
+\begin{document}
+    \frame{\titlepage}
+    \begin{frame}
+        \frametitle{Un poco de lógica}
+        La \textbf{lógica} es una manera sistemática de pensar que nos permite deducir información nueva a partir de
+        información ya conocida, enriqueciendo así el significado de los enunciados.
+
+        \vspace{2mm}
+        La lógica juega un papel importante en matemáticas.
+
+        \vspace{2mm}
+        Con un proceso de deducción podemos obtener información tanto correcta como incorrecta.
+
+        \begin{ejemplo}
+            \begin{enumerate}
+                \item Un círculo $\omega$ tiene radio 10.
+                \item Si un círculo cualquiera tiene radio $r$, entonces su area es $\pi r^2$ unidades cuadradas.
+                \item El área de $\omega$ es $100 \pi$ unidades cuadradas.
+            \end{enumerate}
+        \end{ejemplo}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Proposiciones}
+        Una \textbf{proposición} es un enunciado que puede ser falso o verdadero.
+        Podríamos pensar a las proposiciones como piezas de información que pueden ser correctas o incorrectas.
+        Aplicamos la lógica sobre estas piezas con el fín de producir otras piezas de información (que también son proposiciones).
+
+        \begin{ejemplo}
+            \begin{itemize}
+                \item Todos los triángulos acutángulos son isósceles.
+                \item $\sqrt {2} \notin \Z$
+                \item El conjunto $\{1, 3, 5, 45, 2025\}$ tiene cuatro elementos.
+                \item Algunos triángulos rectángulos son isósceles.
+                \item $\{1, 0, 2\} \cap \N = \emptyset$
+                \item 5 = 2
+                \item $\sqrt {2025} \in \irr$
+                \item $\Z \subseteq \N$
+                \item Cualquier número par es divisible por 2.
+                \item $2025 \in Z$
+            \end{itemize}
+        \end{ejemplo}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Proposiciones}
+        Ejemplos de oraciones que no son proposiciones.
+        \begin{ejemplo}
+            \begin{tabular}{l | p{6cm}}
+                \hline
+                No proposiciones & Proposiciones \\\hline\hline
+                Sumando 5 a ambos lados. & Sumando 5 a ambos lados de $x - 5 = 2020$ obtenemos $x = 2025$. \\\hline
+                $\Z$ & $1000 \in \Z$\\\hline
+                2025 & 2025 no es un número.\\\hline
+                ¿Cuál es la solución de $2x = 84$? & La solución de $2x = 84$ es 42.
+            \end{tabular}
+        \end{ejemplo}
+
+        Es común denotar las proposiciones por letras, por ejemplo
+        \begin{center}
+            Q: La solución de $2x = 84$ es 42.
+        \end{center}
+    \end{frame}
+
+
+    \begin{frame}
+        \frametitle{Tipos de proposiciones}
+        \begin{itemize}
+            \item Hasta el momento hemos visto proposiciones que describen aspectos unitarios, a esto se conoce como \textbf{proposición simple}.
+            \item Por otra parte, cuando hacemos combinaciones de proposiciones simples obtenemos nuevas proposiciones llamadas \textbf{proposiciones compuestas}.
+        \end{itemize}
+
+        \vspace{2mm}
+        Conjunción.
+
+        La letra \textbf{``y''} puede usarse para combinar proposiciones en una nueva proposición llamada \textbf{conjunción}.
+        Ejemplo,
+        \begin{center}
+            P: El número 2 es par y el número 3 es impar.
+        \end{center}
+        Tabla de verdad
+        \begin{center}
+            \begin{tabular}{| c | c || c |}
+                \hline
+                A & B & P: A $\land$ B \\\hline\hline
+                V & V & V\\\hline
+                V & F & F\\\hline
+                F & V & F\\\hline
+                F & F & F\\\hline
+            \end{tabular}
+        \end{center}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Tipos de proposiciones}
+        Disyunción.
+
+        Así mismo, la letra \textbf{``o''} nos permite obtener proposición llamadas \textbf{disyunciones}.
+        Ejemplo,
+        \begin{center}
+            P: El número 100 es impar o el número 2025 es par.
+        \end{center}
+        Tabla de verdad
+        \begin{center}
+            \begin{tabular}{| c | c || c |}
+                \hline
+                A & B & P: A $\lor$ B \\\hline\hline
+                V & V & V\\\hline
+                V & F & V\\\hline
+                F & V & V\\\hline
+                F & F & F\\\hline
+            \end{tabular}
+        \end{center}
+
+        \vspace{1mm}
+        Negación.
+
+        Consiste en cambiar el valor de verdad de una proposición por su opuesto.
+        \begin{center}
+            \begin{tabular}{| c || c |}
+                \hline
+                P & $\neg$ P \\\hline\hline
+                V & F\\\hline
+                F & V\\\hline
+            \end{tabular}
+        \end{center}
+
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Tipos de proposiciones}
+        Implicación (Si, entonces).
+
+        Una proposición muy importante es la implicación, está nos permite deducir el valor de una proposición con base
+        al valor de otra.
+        También conocida como proposición condicional. Ejemplo,
+        \begin{center}
+            R: Si el entero $a$ es múltiplo de seis, entonces $a$ es divisible por dos.
+        \end{center}
+        Tabla de verdad
+        \begin{center}
+            \begin{tabular}{| c | c || c |}
+                \hline
+                A & B & P: A $\implies$ B \\\hline\hline
+                V & V & V\\\hline
+                V & F & F\\\hline
+                F & V & V\\\hline
+                F & F & V\\\hline
+            \end{tabular}
+        \end{center}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Más sobre las implicación}
+    \end{frame}
+
+
+    \begin{frame}
+        \frametitle{Ejercicios}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Bibliografía}
+    \end{frame}
+\end{document}
